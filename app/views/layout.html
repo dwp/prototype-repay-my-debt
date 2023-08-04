@@ -27,14 +27,9 @@
 
 {% if useAutoStoreData %}
   {% block footer %}
-
     {{ govukFooter({
       meta: {
         items: [
-        {
-          href: "archives",
-          text: "View archived scenarios"
-        },
           {
             href: "https://govuk-prototype-kit.herokuapp.com/",
             text: "GOV.UK Prototype Kit " + releaseVersion
@@ -45,8 +40,7 @@
           }
         ]
       }
-    })
-}}
+    }) }}
 
 
 
