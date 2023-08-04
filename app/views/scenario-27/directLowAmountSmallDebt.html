@@ -1,0 +1,203 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		{% if data['authoriseDD']=='yesDD'%}
+
+		
+		<form class="form" action="LowDebitDetails" method="post">
+								
+											
+											<div class="govuk-form-group">
+												  <fieldset class="govuk-fieldset">
+												    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb20">
+												      <h1 class="govuk-fieldset__heading">
+												      <span class="govuk-caption-xl">Step 2 of 4</span>
+												        Choose a payment plan
+												      </h1>
+												    </legend>
+												    
+												 <div class="govuk-inset-text mt0">
+							Once your plan is setup, you can sign in to make changes to your plan, pay additional amounts or get help and support.
+								    </div> 
+
+												    
+												     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+												    <div class="govuk-radios">
+												    
+												    
+												    <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="6Month" name="paymentChoices" type="radio" value="6Month">
+												        <label class="govuk-label govuk-radios__label" for="6Month">
+												          <b>&pound;60.00</b> &ndash; 6 monthly payments
+												        </label>
+												        
+												      </div>
+
+												      
+												       <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="12Month" name="paymentChoices" type="radio" value="12Month">
+												        <label class="govuk-label govuk-radios__label" for="12Month">
+												          <b>&pound;30.00</b> &ndash; 12 monthly payments
+												        </label>
+												        
+												      </div>
+												     
+												      
+												      
+												       <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="24Month" name="paymentChoices" type="radio" value="24Month">
+												        <label class="govuk-label govuk-radios__label" for="24Month">
+												          <b>&pound;15.00</b> &ndash; 24 monthly payments
+												        </label>
+												        
+												      </div>
+												      
+												      
+												     
+												      
+												      
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="36Month" name="paymentChoices" type="radio" value="36Month">
+												        <label class="govuk-label govuk-radios__label" for="36Month">
+												          <b>&pound;10.00</b> &ndash; 36 monthly payments
+												        </label>
+												        
+												      </div>
+												      
+												      
+												       <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="48Month" name="paymentChoices" type="radio" value="48Month">
+												        <label class="govuk-label govuk-radios__label" for="48Month">
+												          <b>&pound;8.00</b> &ndash; 48 monthly payments
+												        </label>
+												        
+												      </div>
+												      
+												       <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="72Month" name="paymentChoices" type="radio" value="72Month">
+												        <label class="govuk-label govuk-radios__label" for="72Month">
+												          <b>&pound;5.00</b> &ndash; 72 monthly payments
+												        </label>
+												        
+												      </div>
+
+												      
+									
+												  <div class="govuk-radios__divider">or</div>
+												      
+												     
+								      <div class="govuk-radios__item">
+								        <input class="govuk-radios__input" id="lowPayments" name="paymentChoices" type="radio" value="lowPayments">
+								        <label class="govuk-label govuk-radios__label govuk-label--s" for="lowPayments">
+								         I can't afford any of these amounts
+								        </label>
+										<!-- This can be higher or lower than the suggested amount based on what you can afford -->
+								      </div>
+								   
+									</div>												      
+												      
+												      
+												      
+												    </div>
+												  </fieldset>
+												</div>
+											
+											
+											<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form>
+										
+										
+									<!--// Fixed amount end -->	
+									
+									
+									{% else %}
+									
+									<!--<h1 class="govuk-heading-xl mb30">You must be the account holder and the only person needed to authorise Direct Debits</h1> -->
+									
+									<h1 class="govuk-heading-xl mb30">You cannot set up a Direct Debit online</h1>
+
+<p> You must be an account holder and be able to authorise Direct Debits with your bank or building society.</p>
+									
+									<p>If you have a joint account and you and your partner both need to authorise Direct Debits, you can set up a Direct Debit by downloading and completing a Direct Debit mandate:</p>
+
+		<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+ Direct Debit mandate
+</button>
+		  
+		  
+		  <p>You need to post the Direct Debit mandate to:</p>
+
+		  <p>Debt Accounting &amp; Finance<br>
+		  	 Warbreck House<br>
+		  	 Blackpool<br>
+		  	 FY2 0YE<br>
+		  	 United Kingdom</p>
+
+		  	 
+
+
+		
+		
+		
+		
+			<div class="govuk-inset-text">
+							<h2 class="govuk-heading-m">A flexible payment plan may work for you</h2>
+
+										<p>This is not a Direct Debit &ndash; you must sign in each month and make at least one payment.</p>
+						
+						<p><a href="helpSupportDD" class="secondary-invert">Flexible payment plan</a></p>
+								</div>
+		
+
+								
+								
+								
+<p>Alternatively, you must contact Debt Management to discuss the options available to you.</p>
+
+
+					   			
+
+
+					   					<h2 class="govuk-heading-m">Debt Management</h2>
+									  <ul class="govuk-list">
+									  <li>Telephone: 0800 916 0647</li>
+									  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+									</ul>
+									<p class="govuk-body">
+									  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+									</p>		
+		
+									
+									{% endif %}	
+									
+										
+
+    </div>
+</div>
+
+{% endblock %}

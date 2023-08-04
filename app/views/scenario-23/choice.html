@@ -1,0 +1,381 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+	   <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+									{% if data['choose-what']=='want-pay'%}
+									 <h1 class="govuk-heading-xl">Payment options </h1>
+
+	    {% include "includes/amountOwed2.html" %}
+
+
+
+
+			<form class="form" action="fullPayment3" method="post">
+			<div class="govuk-form-group">
+			  <fieldset class="govuk-fieldset">
+				    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s visually-hidden">
+				      <h2 class="govuk-heading-s mb0">
+				        Choose a payment option:
+				      </h2>
+				    </legend>
+
+
+
+			      <div class="govuk-radios">
+			      <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="full-amount" name="payment-options" type="radio" value="full-amount" aria-describedby="full-amount-hint">
+				        <label class="govuk-label govuk-radios__label govuk-label--s" for="full-amount">
+				         Pay the full amount
+				        </label>
+				        <span id="full-amount-hint" class="govuk-hint govuk-radios__hint">
+				          A one off payment will be taken from your account
+				        </span>
+				      </div>
+				      
+				      
+				     <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="fixed-plan" name="payment-options" type="radio" value="fixed-plan" aria-describedby="fixed-plan-hint">
+				        <label class="govuk-label govuk-radios__label govuk-label--s" for="fixed-plan">
+				          Set up a Direct Debit payment plan
+				        </label>
+				        <span id="fixed-plan-hint" class="govuk-hint govuk-radios__hint">
+				         Choose a payment plan with fixed monthly payments
+				        </span>
+				      </div>
+				       <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="flexible-amount" name="payment-options" type="radio" value="flexible-amount" aria-describedby="flexible-amount-item-hint">
+				        <label class="govuk-label govuk-radios__label govuk-label--s" for="flexible-amount">
+				         Set up a flexible payment plan
+				        </label>
+				        <span id="flexible-amount-hint" class="govuk-hint govuk-radios__hint">
+				        Sign in each month and make at least one payment &ndash; when you pay is up to you
+				        </span>
+				      </div>
+				      
+				      
+				     
+				     
+				    </div>
+
+
+			  </fieldset>
+			</div>
+
+			<button class="govuk-button" data-module="govuk-button">
+			  Continue
+			</button>
+			</form>
+
+										<!--// choose payment end -->
+										
+										
+										
+										
+										
+										
+									
+
+
+
+
+
+									{% elif data['choose-what']=='want-help'%}
+
+					<form class="form" action="helpSupport" method="post">
+
+
+
+						        <div class="govuk-form-group">
+										  <fieldset class="govuk-fieldset">
+										    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+										      <h1 class="govuk-fieldset__heading">
+										      How would you describe your financial situation?
+										      </h1>
+										    </legend>
+
+
+										    <div class="govuk-radios">
+										      <div class="govuk-radios__item">
+										        <input class="govuk-radios__input" id="help-struggling" name="help-choice" type="radio" value="help-struggling">
+										        <label class="govuk-label govuk-radios__label" for="help-struggling">
+										          I do not have much money so I'm unsure how much I can pay
+										        </label>
+										      </div>
+										      <!--<div class="govuk-radios__item">
+										        <input class="govuk-radios__input" id="help-understanding" name="help-choice" type="radio" value="help-understanding">
+										        <label class="govuk-label govuk-radios__label" for="help-understanding">
+										          I do not understand my debt
+										        </label>
+										      </div>-->
+										      <div class="govuk-radios__item">
+										        <input class="govuk-radios__input" id="help-advice" name="help-choice" type="radio" value="help-advice">
+										        <label class="govuk-label govuk-radios__label" for="help-advice">
+										          I have no money and need further advice
+										        </label>
+										      </div>
+
+
+										    </div>
+										  </fieldset>
+										</div>
+
+
+
+
+
+
+						<button class="govuk-button" data-module="govuk-button">
+						  Continue
+						</button>
+
+						</form>
+
+									<!--// Help and support end -->
+									
+									
+									
+									
+									
+									
+									{% elif data['choose-what']=='want-breakdown'%}
+									
+									
+									
+									
+									<h1 class="govuk-heading-xl mb30">Details of what you owe</h1>
+									
+									
+									{% include "includes/amountOwed2.html" %}
+
+
+
+					   					 <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+          Universal Credit
+        </span>
+      </h2>
+  <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+		Advance payment
+      </div>
+    </div>
+    <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+    
+        
+									        	<!--<table class="govuk-table mt0">
+												  <caption class="govuk-table__caption"><span class="visually-hidden">Details of debt</span></caption>
+												  <thead class="govuk-table__head">
+
+												  <tbody class="govuk-table__body">
+												  
+												  	<tr class="govuk-table__row">
+												      <th scope="row" class="govuk-table__header">Amount owed</th>
+												      <td class="govuk-table__cell">&pound;1000.00</td>
+												    </tr>
+
+
+												     <tr class="govuk-table__row">
+												      <th scope="row" class="govuk-table__header">Debt type</th>
+												      <td class="govuk-table__cell">Advance payment</td>
+												    </tr>
+
+												  <tr class="govuk-table__row">
+												      <th scope="row" class="govuk-table__header">Date period</th>
+												      <td class="govuk-table__cell">26 June 2020</td>
+												    </tr>
+
+
+												  </tbody>
+												</table>-->
+												
+												
+												 <div class="flexibleBanner">
+												 
+												 	<ul class="govuk-list">
+													 	<li>
+														 	<h3>Amount owed</h3>
+														 	<b>&pound;500.00</b>
+													 	</li>
+													 	<li>
+														 	<h3>Date of advance:</h3>
+														 	<b>26 June 2020</b>
+													 	</li>
+												 	</ul>
+												<!--<p>Amount owed: &pound;1000.00</p>
+												<p>Date period: 26 June 2020</p>-->
+												 </div>
+    
+       
+      <p>If you have any questions, contact Universal Credit directly:</p>
+
+
+												<ul class="govuk-list">
+												  <li>Telephone: 0800 328 5644</li>
+												    <li>Textphone: 0800 328 1344</li>
+												    <li>Monday to Friday, 8am to 6pm (closed on bank holidays)</li>
+												</ul>
+
+											<p class="govuk-body">
+											  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+											</p>
+
+    </div>
+  </div>
+  
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+          Social Fund
+        </span>
+      </h2>
+      <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
+        Migrated Social Fund: Budgeting loan
+      </div>
+    </div>
+    <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2">
+
+		
+		
+		 <div class="flexibleBanner">
+												 
+												 	<ul class="govuk-list">
+													 	<li>
+														 	<h3>Amount owed</h3>
+														 	<b>&pound;500.00</b>
+													 	</li>
+													 	<li>
+														 	<h3>Application date</h3>
+														 	<b>8 September 2020</b>
+													 	</li>
+												 	</ul>
+												 </div>
+		
+		
+		<p>If you have any questions, contact Social Fund directly:</p>
+
+
+												<ul class="govuk-list">
+												  <li>Telephone: 0800 169 0140</li>
+
+												    <li>Monday to Friday, 8am to 6pm (closed on bank holidays)</li>
+												</ul>
+
+											<p class="govuk-body">
+											  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+											</p>
+		
+		
+		
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-3">
+          HMRC
+        </span>
+      </h2>
+     <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-3">
+       Tax Credits overpayment
+      </div>
+    </div>
+    <div id="accordion-with-summary-sections-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-3">
+
+												
+												
+												 <div class="flexibleBanner">
+												 
+												 	<ul class="govuk-list">
+													 	<li>
+														 	<h3>Amount owed</h3>
+														 	<b>&pound;500.00</b>
+													 	</li>
+													 	<li>
+														 	<h3>Award period ended</h3>
+														 	<b>10 October 2019</b>
+													 	</li>
+												 	</ul>
+												 </div>
+												
+												<p>If you have any questions, you should contact HMRC directly:</p>
+
+
+												<ul class="govuk-list">
+												  <li>Telephone: 0345 300 3900</li>
+
+												    <li>Monday to Friday, 8am to 4pm (closed on bank holidays)</li>
+												</ul>
+
+											<p class="govuk-body">
+											  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+											</p>
+    </div>
+  </div>
+  
+</div>
+ 
+	
+
+
+										<!--<p><a href="index" class="govuk-button">Finish</a></p>-->
+
+									<!--// view what you owe end -->
+									
+									
+									
+									
+
+
+
+									{% else %}
+
+									<h1 class="govuk-heading-l">Oops! you didn't select an option</h1>
+
+									<p>Don't worry, you can go back and try again.</p>
+
+
+									{% endif %}
+
+
+ 
+ 
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,248 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	  
+		
+		
+		
+		{% if data['paymentChoices']=='lowPayments'%}
+		
+		
+		<div class="govuk-grid-row">
+	
+			<div class="govuk-grid-column-full">
+	
+	
+			<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+		<!--<h1 class="govuk-heading-xl">
+			<span class="govuk-caption-xl">Step 2 of 4</span>
+			How a low monthly payment <br>plan works</h1>
+			<p><a href="lowPayChoice" class="govuk-button">Continue</a></p> -->
+			
+			
+			<div class="attention-card">
+
+			<h1 class="govuk-heading-l mb40">How a more affordable Direct Debit plan works</h1>
+			
+			
+			<ul class="govuk-list">
+			
+			
+			
+			<li>
+				<h2>Start your plan by entering an amount you can afford to pay each month </h2>
+				<p>If your financial situation improves, you should increase your payment plan or pay additional amounts.</p>
+			</li>	
+			
+			
+			<li class="two">
+				<h2>We may review your plan after 12 months</h2>
+				<p>If you have been unable to increase your payment plan, we will contact you to review your situation and see how much you can afford.</p>
+				
+			</li>
+				
+				<li class="three">
+					<h2>Sign up for notifications</h2>
+					<p>You can receive reminders that you can manage your plan when your situation changes, take action if there are any problems with payments and be notified of any review dates.</p>
+				</li>
+
+			</ul>
+			
+
+			<p><a href="lowPayChoice" class="attention-invert mt30">Continue</a></p>
+
+		</div>
+				
+				</div>
+				</div>
+				
+										    
+										     		
+													 
+			{% elif data['paymentChoices']=='customAmount'%}		
+			
+			
+			
+			<div class="govuk-grid-row">
+		
+				<div class="govuk-grid-column-three-quarters">
+		
+		
+				<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+			
+			
+			<h1 class="govuk-heading-xl">
+				   <span class="govuk-caption-xl">Step 2 of 5</span>
+					  Enter a different amount </h1>								 
+						
+		
+								
+						<div class="govuk-inset-text">
+						
+							
+						<p>The amount you enter needs to keep your debt within 72 monthly payments.</p>
+						<p>Based on what you owe, the minimum amount is £60.00.</p>
+						<p>We will then show you a breakdown of when you will be debt free.</p>
+						
+							 </div>
+			
+												
+																		
+							<form class="form" action="customSummary" method="post">
+
+
+								<div class="govuk-form-group">
+									 <fieldset class="govuk-fieldset">
+										<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+										  <h1 class="govuk-fieldset__heading">
+										
+											How much do you want to pay?
+										  </h1>
+										</legend>
+										
+					
+
+
+										 <div id="example-question" class="form-group inline">
+											<span class="c-form-input-denote govuk-body">£</span>
+											<input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="custom-amount">
+										  </div>
+
+									  </fieldset>
+								</div>
+																				
+																			  <!--   <details class="govuk-details mt20" data-module="govuk-details">
+											  <summary class="govuk-details__summary">
+												<span class="govuk-details__summary-text">
+												 I cannot afford to set up a plan online
+												</span>
+											  </summary>
+											  <div class="govuk-details__text">
+												<p>If you are unable to pay a minimum of &pound;5.00, you must contact Debt Management to discuss the options available to you.</p>
+									
+									
+																			   <h2 class="govuk-heading-m">Debt Management</h2>
+																		  <ul class="govuk-list">
+																			  <li>Telephone: 0800 916 0647</li>
+																			  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+																			</ul>
+																			<p class="govuk-body">
+																			  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+																			</p>
+									
+											  </div>
+											</details> -->
+																				
+									
+									
+																				<button class="govuk-button" data-module="govuk-button">
+																				  Continue
+																				</button>
+																				</form>
+																		
+																		
+				</div>
+			</div>							
+		
+		
+									{% else %}
+									
+		
+		<div class="govuk-grid-row">
+	
+			<div class="govuk-grid-column-three-quarters">
+	
+	
+			<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+<form class="form" action="directDebitDetailsTemp2" method="post">
+
+	
+	 <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+			<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+			  <h1 class="govuk-fieldset__heading">
+			   <span class="govuk-caption-xl">Step 3 of 5</span>
+			   What day of the month do you want your Direct Debit to be taken?
+			  </h1>
+			</legend>
+			
+			
+		<!--     <div class="govuk-inset-text mt0">
+
+		 <p><b>If your chosen date:</b>
+								 </p>
+
+		 <ul class="govuk-list govuk-list--bullet">
+									 <li>is not present in a particular month, your payment will be taken on the last working day</li>
+									<li>falls on a weekend or bank holiday, your payment will be taken on the next working day</li>
+								 </ul>
+								 
+			 </div> -->
+		
+			
+			
+		   <div class="govuk-inset-text mt0">
+		   
+		   
+		  <!--  <p>If your chosen day is not present in a particular month, your payment will be taken on the last working day.</p> -->
+						<p>You cannot set up a Direct Debit between the 29th and 31st of the month.</p>
+									<p>If your chosen day falls on a weekend or bank holiday, your payment will be taken on the next working day.</p>
+		   
+							   </div> 
+			
+		  
+			
+			
+			<span id="passport-issued-hint" class="govuk-hint">
+			  For example, enter 02 for the second day of the month
+			</span>
+		   
+				<div class="govuk-form-group">
+				  <label class="visually-hidden" for="paymentDay">
+					Payment day
+				  </label>
+				  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="paymentDay" name="paymentDay" type="text" pattern="[0-9]*" inputmode="numeric">
+				</div>
+
+		  </fieldset>
+	
+
+	
+	
+	
+	<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+	
+ </form>
+								
+			</div>
+		</div>				
+									
+						{% endif %}		
+
+
+									
+									
+									
+
+
+
+{% endblock %}

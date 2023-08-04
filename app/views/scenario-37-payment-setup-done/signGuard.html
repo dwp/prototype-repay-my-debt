@@ -1,0 +1,67 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+Sign in choice
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+
+
+    <!-- <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span> -->
+
+
+    <form class="form" action="inGuard" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Sign in to your Repay and manage benefit money you owe account
+            </h1>
+          </legend>
+
+
+          <br><br>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="inSecurity" name="inSign" type="radio" aria-describedby="sign-in-2-item-hint" value="inSecurity">
+              <label class="govuk-label govuk-radios__label" for="inSecurity">
+                <b>Sign in with security code and date of birth</b>
+              </label>
+              <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                This is on the letter we sent you, it contains only numbers and it can be up to 11 digits.
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="inRegister" name="inSign" type="radio" value="inRegister" aria-describedby="sign-in-item-hint">
+              <label class="govuk-label govuk-radios__label" for="inRegister">
+                <b>Sign in with your email address and password</b>
+              </label>
+              <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                You can sign in with your email address and password or create an account. You'll need to have a letter from DWP inviting you to use the service.
+              </div>
+            </div>
+
+
+
+          </fieldset>
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  {% endblock %}

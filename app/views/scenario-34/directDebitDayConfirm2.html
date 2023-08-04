@@ -1,0 +1,166 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+			   <h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+			   <p>What you owe:
+					   <span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+		<div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+
+
+		<h1 class="govuk-heading-xl">
+		<span class="govuk-caption-xl">Direct Debit payment day</span>
+		Summary</h1>
+
+		
+		
+		
+
+		
+		
+		
+	<div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+											
+											
+											
+
+												
+												
+
+												
+												
+												
+												<li>
+													<h3>New payment day</h3>
+													<b>
+													
+											Day {{ data['paymentDay'] }} of each month
+											
+											
+													
+													</b>
+												</li>
+												
+											<!--	<li>
+													<h3>Next payment will be taken</h3>
+													
+
+											
+											<b>
+											
+											  {{ data['paymentDay'] }} June 2021
+													
+											</b>
+													
+												</li> -->
+												
+									
+												
+											</ul>
+											
+											</div> 
+											
+											
+											
+																	
+						<!--<div class="govuk-inset-text">We need 3 days notice to change Direct Debit payments so your payments will remain the same for this month. Your new payments will start next month.</div>-->
+						
+			
+
+		
+		
+		
+		<h2 class="govuk-heading-m mt50">How this effects your payments</h2>
+		
+		<table class="govuk-table mb40">
+			 
+			 <caption class="visually-hidden">Payment day summary</caption>
+				
+		
+				  <tbody class="govuk-table__body">
+				  
+				
+					 <tr class="govuk-table__row">
+					  <th scope="row" class="govuk-table__header">Next payment date</th>
+					  <td class="govuk-table__cell">
+					  
+					   21 August 2021
+		
+					  
+					  </td>
+					  
+			
+					 </tr>
+					  
+					
+
+					
+					
+
+
+		
+				  </tbody>
+				</table>
+				
+				
+				
+			
+											
+					
+	
+	
+	
+	 <form class="form" action="ddPlanDay" method="post">
+  <fieldset class="visually-hidden">
+	<legend>Hidden field</legend>
+
+	<div>
+		<input id="yesPay" name="payDay" type="radio" value="yesPay" checked="checked">
+		<label for="yesPay">Yes</label>
+	  </div>
+	  
+	  <div>
+		<input id="noPay" name="payDay" type="radio" value="noPay">
+		<label for="noPay">No</label>
+	  </div>
+	  
+	  </fieldset>
+	  
+	  <button class="govuk-button mt20 mb20" data-module="govuk-button">Confirm</button>
+	 
+	  
+	 </form>								
+										
+																			
+										
+																				
+		
+											
+						
+
+
+	</div>
+</div>
+
+{% endblock %}

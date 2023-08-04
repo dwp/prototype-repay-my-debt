@@ -1,0 +1,128 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+									   									   
+
+
+										 
+										<span class="govuk-caption-xl">Flexible payment plan</span>
+										<form class="form" action="paymentReminders" method="post">
+								
+											
+											<div class="govuk-form-group">
+												  <fieldset class="govuk-fieldset">
+												    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb30">
+												      <h1 class="govuk-fieldset__heading">
+												        Choose your monthly<br>payment target
+												      </h1>
+												    </legend>
+												    
+												<div id="target-hint" class="govuk-hint mb20">
+												    	Choose a monthly payment target which works for you – you can make multiple payments in a month to meet your target
+												    </div> 
+			
+												    
+												     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+												    <div class="govuk-radios">
+												    
+												    <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="suggestedAmount" name="how-much3" type="radio" value="suggestedAmount">
+												        <label class="govuk-label govuk-radios__label" for="suggestedAmount">
+												          <b>&pound;30.00</b> &ndash; this is what you were paying on Universal Credit
+												        </label>
+												        
+												      </div>
+												  
+												  
+												  <div class="govuk-radios__divider">or</div>
+												    
+
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="oneHundredPound" name="how-much3" type="radio" value="FlexoneHundredPound">
+												        <label class="govuk-label govuk-radios__label" for="oneHundredPound">
+												          <b>&pound;100.00</b> &ndash; this will clear your debt within 6 months
+												        </label>
+												        
+												      </div>
+												      
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="fiftypound" name="how-much3" type="radio" value="FlexfiftyPound">
+												        <label class="govuk-label govuk-radios__label" for="fiftypound">
+												          <b>&pound;50.00</b> &ndash; this will clear your debt within 12 months
+												        </label>
+												        
+												      </div>
+												      
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="twentyFivePound" name="how-much3" type="radio" value="FlextwentyFivePound">
+												        <label class="govuk-label govuk-radios__label" for="twentyFivePound">
+												          <b>&pound;25.00</b> &ndash; this will clear your debt within 24 months
+												        </label>
+												        
+												      </div>
+												      
+												      
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="noAfford" name="how-much3" type="radio" value="noAfford">
+												        <label class="govuk-label govuk-radios__label" for="noAfford">
+												          I cannot meet any of these targets
+												        </label>
+												        
+												      </div>
+									
+												      
+												      
+												     
+								     
+									</div>												      
+												      
+												      
+												      
+												    </div>
+												  </fieldset>
+												</div>
+											
+											
+											<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form>
+				
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

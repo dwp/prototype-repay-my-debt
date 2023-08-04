@@ -1,0 +1,121 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+			   <h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+			   <p>What you owe:
+					   <span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+		<div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+<form class="form" action="reviewContactStoredAlt2" method="post">
+
+		
+	<div class="govuk-form-group">
+		  <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+			<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+			  <h1 class="govuk-fieldset__heading">
+				Does your current mobile number end with 714?
+			  </h1>
+			</legend>
+			
+
+								
+			<div class="flexibleBanner">
+
+				<ul class="govuk-list">
+
+	
+
+					<li>
+						<h3>Your mobile number:</h3>
+						<b>
+					********714
+						
+						
+						</b>
+					</li>
+
+					
+				</ul>
+				
+				
+				
+				
+				</div>	
+							
+							
+			<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+				  <div class="govuk-radios__item">
+					<input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="yesReminder" data-aria-controls="conditional-how-contacted-conditional">
+					<label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+					  Yes
+					</label>
+				  </div>
+				  
+
+				  
+				  <div class="govuk-radios__item">
+					  <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="changeReminder" data-aria-controls="conditional-how-contacted-conditional-3">
+					  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+						No
+					  </label>
+					</div>
+				  
+				  
+				  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+		  
+  
+					  <p>You should finish your payment review then contact Debt Management to change your number.</p>
+				  
+			   
+					  <h2 class="govuk-heading-m">Debt Management</h2>
+					<ul class="govuk-list">
+					  <li>Telephone: 0800 5871322</li>
+					  <li> Monday to Friday, 9am to 5pm</li>
+					</ul>
+					<p class="govuk-body">
+					  <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+					</p>
+		  
+				</div>
+		
+		  </fieldset>
+		</div>
+		
+		
+		
+		
+		
+		
+		<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+
+		
+		
+	 </form>
+	 
+
+
+
+	</div>
+</div>
+
+{% endblock %}

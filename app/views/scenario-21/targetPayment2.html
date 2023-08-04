@@ -1,0 +1,194 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+		
+		
+		{% if data['targetAmountsChoice']=='noAffordTarget'%}
+
+				
+		<h1 class="govuk-heading-xl">
+			<span class="govuk-caption-xl">Step 1 of 3</span>
+			Target summary</h1>
+			
+			
+			
+			
+			
+			
+	   <div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+
+												
+												<li>
+													<h3>Payment amount</h3>
+													<b>										    
+										   &pound;{{ data['payment-amount-target'] }}
+										    
+										    </b>
+												</li>
+	
+												
+												
+												<li>
+													<h3>Expected end of debt if target is met each month</h3>
+													<b>
+												November 2037
+													
+													
+													</b>
+												</li>
+
+												
+											</ul>
+											
+											</div>
+											
+
+				<p>This is a low target amount which is acceptable to start your plan but you should aim to pay more if you can.</p>
+								 
+				<p>Your flexible payment plan will be reviewed often &ndash; you can pay low amounts during difficult times but if the total amount you pay each month is regularly too low, we may contact you.</p>
+				
+				
+				
+				
+				<p><a href="targetPaymentToday" class="govuk-button">Continue</a></p>
+				
+				
+				
+				
+			
+				
+
+
+									{% else %}
+									
+									
+									
+									
+										<h1 class="govuk-heading-xl"><span class="govuk-caption-xl">Step 2 of 3</span> Make a payment towards <br>April's target</h1>
+
+
+
+
+
+										
+											<div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+												<li>
+													<h3>Total amount owed</h3>
+													<b>&pound;2000.00</b>
+												</li>
+												<li>
+													<h3>Monthly target</h3>
+
+														{% if data['targetAmountsChoice']=='6MonthTarget'%}
+													    
+													    <b>&pound;334.00</b>
+													    
+											
+														{% elif data['targetAmountsChoice']=='12MonthTarget'%}
+														
+														<b>&pound;166.00</b>
+														
+														
+														
+														{% elif data['targetAmountsChoice']=='24MonthTarget'%}
+														
+														<b>&pound;84.00</b>
+														
+														{% elif data['targetAmountsChoice']=='36MonthTarget'%}
+														
+														<b>&pound;56.00</b>
+														
+														{% elif data['targetAmountsChoice']=='twentyFiveTarget'%}
+														
+														<b>&pound;25.00</b>
+																	
+														
+														{% else %}
+														
+														<b>&pound;{{ data['payment-amount-target'] }}</b>
+													
+														
+														{% endif %}
+								
+												</li>
+												<li>
+													<h3>Paid this month</h3>
+													<b>&pound;0.00</b>
+												</li>
+											</ul>
+											
+											</div>
+											
+											
+											
+											
+
+										<form class="form" action="paymentRemindersFirst" method="post">
+
+
+											<div class="govuk-form-group">
+										          <fieldset class="govuk-fieldset" aria-describedby="pay-hint">
+											          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+												      <h1 class="govuk-fieldset__heading">
+												        How much do you want to pay today?
+												      </h1>
+												    </legend>
+												    
+												   <div id="pay-hint" class="govuk-hint mb20">
+												  You can make multiple payments in a month to meet your target</div>
+
+
+											         <div id="example-question" class="form-group inline">
+											            <span class="c-form-input-denote govuk-body">£</span>
+											            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="payment-amount">
+											          </div>
+
+										          </fieldset>
+									        </div>
+
+
+
+
+			<button class="govuk-button" data-module="govuk-button">
+			  Continue
+			</button>
+			</form>
+			
+			
+			{% endif %}
+			
+
+    </div>
+</div>
+
+{% endblock %}

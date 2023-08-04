@@ -1,0 +1,36 @@
+{# this file exists as a backup in case the user has deleted their `app/views/layouts/main.html` template #}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block meta %}
+  <!-- could not find layouts/main.html in prototype, using backup default template -->
+  {{ super() }}
+
+{% endblock %}
+
+{% block header %}
+
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+
+  <div class="x-govuk-masthead x-govuk-masthead--large">
+    <div class="govuk-width-container">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+          <h1 class="x-govuk-masthead__title">
+            Prototype scenarios
+          </h1>
+          <div class="x-govuk-masthead__description">
+            A record of how your service has developed over&nbsp;time.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

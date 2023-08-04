@@ -1,0 +1,386 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+									
+									<form class="form" action="directDebitDay" method="post">
+
+									
+									<h1 class="govuk-heading-xl">
+	   	<span class="govuk-caption-xl">Changes to your payment plan</span>Summary</h1>
+		   
+		   
+		   
+		   
+		   
+		   
+		   <div class="flexibleBanner">
+			   
+			   
+			   <ul class="govuk-list">
+			   
+ 
+					   
+
+																			   
+						   <li>
+							<h3>Direct Debit amount</h3>
+						   <b>
+							   
+							   
+						{% if data['amountChange']=='yesAmountChange'%}
+						  
+						&pound;{{ data['change-amount'] }}
+						
+						
+						{% else %}
+	   
+						  
+						  
+						{% if data['paymentChoices']=='12Month'%}
+						
+						&pound;180.00
+			
+						{% elif data['paymentChoices']=='24Month'%}
+						
+						&pound;90.00										
+						
+						{% elif data['paymentChoices']=='36Month'%}
+						
+						&pound;60.00
+						
+						{% elif data['paymentChoices']=='48Month'%}
+						
+						&pound;45.00
+						
+						{% elif data['paymentChoices']=='72Month'%}
+						
+						&pound;30.00
+						
+
+						
+						{% else %}
+	
+						&pound;{{ data['payment-amount2'] }}
+						
+						{% endif %}  
+						  
+						  
+						   
+						{% endif %}	   
+							   
+							   
+							   
+						   
+					
+						   
+						   </b>
+						   </li>
+						   
+						   <li>
+							   <h3>Direct Debit payment day</h3>
+							  <b>
+								  
+								  
+							{% if data['payDaychange']=='YesPayDaychange'%}
+							  
+							Day {{ data['paymentDayUpdate'] }} of each month
+							
+							
+							{% else %}
+		   
+							   Day {{ data['paymentDay'] }} of each month
+							   
+							{% endif %}
+							  
+							  </b>
+							  </li>
+						   
+						   
+					
+			   </ul>
+			   
+		   
+			   
+			   </div> 
+			   
+			   
+			   
+			
+			   
+		   
+		   
+		   
+		   				
+		<!--   <div class="govuk-warning-text">
+<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+<strong class="govuk-warning-text__text">
+<span class="govuk-warning-text__assistive">Warning</span>
+As your next payment is due soon, changes to your Direct Debit plan will not take effect until next month
+</strong>
+</div> -->
+
+		   
+									
+									
+									
+									<h2 class="govuk-heading-m mt40">How this effects your plan</h2>
+																	
+																	
+									<table class="govuk-table summary-table mb40">
+										 
+										 <caption class="visually-hidden">Payment day summary</caption>
+											
+									
+											  <tbody class="govuk-table__body">
+											  
+											
+												 <tr class="govuk-table__row">
+												  <th scope="row" class="govuk-table__header">Next payment</th>
+												  <td class="govuk-table__cell" colspan="2">
+												  
+												  {% if data['amountChange']=='yesAmountChange'%}
+													
+												  &pound;{{ data['change-amount'] }}
+												  
+												  
+												  {% else %}
+								 
+													
+													
+												  {% if data['paymentChoices']=='12Month'%}
+												  
+												  &pound;180.00
+									  
+												  {% elif data['paymentChoices']=='24Month'%}
+												  
+												  &pound;90.00										
+												  
+												  {% elif data['paymentChoices']=='36Month'%}
+												  
+												  &pound;60.00
+												  
+												  {% elif data['paymentChoices']=='48Month'%}
+												  
+												  &pound;45.00
+												  
+												  {% elif data['paymentChoices']=='72Month'%}
+												  
+												  &pound;30.00
+							
+												  {% else %}
+							  
+												  &pound;{{ data['payment-amount2'] }}
+												  
+												  {% endif %}  
+													
+													
+													 
+												  {% endif %} on
+												  
+												  {% if data['payDaychange']=='YesPayDaychange'%}
+													
+												  {{ data['paymentDayUpdate'] }}
+												  
+												  
+												  {% else %}
+								 
+												{{ data['paymentDay'] }}
+													 
+												  {% endif %} 
+												  
+												  November 2021
+									
+												  
+												  </td>
+												  
+										
+												 </tr>
+												 
+												 
+											{% if data['lowplan']=='Yeslowplan'%}
+		
+												 	 
+												 <tr class="govuk-table__row">
+													   <th scope="row" class="govuk-table__header">Payment plan type</th>
+													   <td class="govuk-table__cell" colspan="2">Low payment plan
+													   </td>
+													
+													  </tr>
+				
+													  <tr class="govuk-table__row">
+													   <th scope="row" class="govuk-table__header">Proposed plan review date</th>
+													   <td class="govuk-table__cell" colspan="2"> {% if data['payDaychange']=='YesPayDaychange'%}
+															   
+															 {{ data['paymentDayUpdate'] }}
+															 
+															 
+															 {% else %}
+											
+														   {{ data['paymentDay'] }}
+																
+															 {% endif %}  August 2022
+														   <span class="textNumber">If you are unable to increase the amount you pay over the next 12 months we will contact you to discuss your financial situation.</span>
+													   </td>
+													   
+											 
+													  </tr>
+												  
+												  {% else %}
+									  
+												
+													  
+												   {% endif %} 
+												
+							
+												
+												
+												<!-- <tr class="govuk-table__row">
+												  <th scope="row" class="govuk-table__header">Following month's payment</th>
+												  <td class="govuk-table__cell" colspan="2">
+												  
+									
+												
+												&pound;{{ data['change-amount'] }} on 6 August 2021
+									
+																								  
+												  
+												  </td>
+												  
+																			 
+												 
+												</tr> -->
+												
+												
+												{% if data['BankChange']=='yesBankChange'%}
+												
+												<tr class="govuk-table__row">
+													  <th scope="row" class="govuk-table__header">New account details</th>
+													  <td class="govuk-table__cell dtList">
+													  	<dl>
+																<dt>Account name</dt>
+																<dd>{{ data['accountName'] }}</dd>
+																<dt>Sort code</dt>
+																<dd>{{ data['sortCode'] }}</dd>
+																<dt>Account number</dt>
+																<dd>{{ data['accountNumber'] }}</dd>
+															</dl>
+												
+													  </td>
+													  
+													  <td class="govuk-table__cell changeDetails"><a href="directDebitDetailsEdit">Change</a></td>
+							
+												</tr>
+												
+												
+												{% else %}
+												{% endif %}
+												
+												
+											  </tbody>
+											</table>
+											
+											
+										<!--	<details class="govuk-details mt20" data-module="govuk-details">
+												  <summary class="govuk-details__summary">
+													<span class="govuk-details__summary-text">
+													I cannot make my next payment
+													</span>
+												  </summary>
+												  <div class="govuk-details__text">
+												  <p>If you cannot make your next payment, you should contact your bank to discuss the options available to you.</p>
+										
+												  </div>
+												</details>-->
+										
+										
+									
+										
+										
+										
+										<div class="ddGuarantee">
+											<h3 class="govuk-heading-s">The Direct Debit Guarantee</h3>
+											
+											<ul class="govuk-list govuk-list--bullet">
+												<li>This Guarantee is offered by all banks and building societies that accept instructions to pay Direct Debits.
+</li>
+												<li>If there are any changes to the amount, date or frequency of your Direct Debit DWP will notify you 14 working
+days in advance of your account being debited or as otherwise agreed. If you request DWP to collect a payment,
+confirmation of the amount and date will be given to you at the time of request</li>
+
+												<li>If an error is made in the payment of your Direct Debit, by DWP or your bank or building society,
+you are entitled to a full and immediate refund of the amount paid from your bank or building society.
+&ndash; If you receive a refund you are not entitled to, you must pay it back when DWP asks you to.</li>
+
+												<li>You can cancel a Direct Debit at any time by simply contacting your bank or building society.
+Written confirmation may be required. Please also notify us.</li>
+					
+
+
+											</ul>
+										</div>
+										
+										
+										
+										
+										<h2 class="govuk-heading-m">Declaration</h2>
+
+		<p>By continuing, you confirm that you will:</p>
+
+		<ul class="govuk-list govuk-list--bullet mb30">
+			<li>pay the agreed monthly amount</li>
+			<li>let us know immediately if you’re struggling to keep up with payments</li>
+		</ul>
+										
+	
+
+		<div class="govuk-warning-text">
+		  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+		  <strong class="govuk-warning-text__text">
+		    <span class="govuk-warning-text__assistive">Warning</span>
+		    If you do not keep up with your payments, we will ask your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.
+		  </strong>
+		</div>
+
+
+			<p><a href="directFinishChange" class="govuk-button">Continue</a></p>		
+			
+			
+			
+				
+									
+		    </form>
+
+							
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

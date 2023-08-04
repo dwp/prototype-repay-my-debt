@@ -1,0 +1,379 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+	
+	  <div class="clear-bar stripped-border">
+			   <div class="identifier">
+				   
+				   <h1 class="govuk-heading-l">
+				   <span class="govuk-caption-l">Account home</span>
+				   Ashley Chamberlain</h1>
+			   
+			   </div>
+			   <div class="govuk-inset-text">
+			 Total amount owed: <span class="total-amount">
+			 
+			&pound;800.00
+							 
+									 
+									 </span>
+			 
+
+			 
+			</div>
+			   
+		   
+	   </div> 
+
+
+	  <div class="govuk-grid-row">
+	  
+	  
+	  
+	  
+	  
+	   <div class="govuk-grid-column-one-half">
+
+		   
+		
+				 
+				 <div class="scenario-panel">
+					  <h2 class="govuk-heading-s">Your payments</h2>
+ 
+					  <div class="scenario-inner-panel">
+						  
+						  
+						 <div class="warning-message complete-alert">
+							 <h3 class="govuk-heading-s">Previous payment</h3>
+						  
+						  <p>&pound;55.00 was taken from your benefits on 21 October 2022.</p></div>
+			
+					   
+					  <!-- <table class="govuk-table">
+
+							 <tbody class="govuk-table__body">
+							 
+							 
+							 
+							 
+							 
+							  <tr class="govuk-table__row">
+								 <th scope="row" class="govuk-table__header">Previous payment taken</th>
+								 <td class="govuk-table__cell">
+								 21 September 2022										
+								 </td>
+							  </tr>
+
+							   
+							  <tr class="govuk-table__row">
+								 <th scope="row" class="govuk-table__header">Previous payment amount</th>
+								 <td class="govuk-table__cell">
+									 
+									 
+									  
+							   &pound;60.00
+									 
+									 
+								 </td>
+							   </tr> 
+							   
+				
+
+							  
+							 </tbody>
+						   </table> -->
+						   
+						   
+						   <p class="mt30">If your payments stay at &pound;55.00, you will clear the total amount owed in February 2024.</p>
+   
+						   
+						   <span class="mt30"><a href="debtBreakdownFull" class="secondary-invert">View details of what you owe</a></span>
+		
+
+					  
+					  </div>
+				  </div>
+		 
+		</div>
+		
+		
+	  <div class="govuk-grid-column-one-half">
+	  
+			
+	
+			<div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Summary</h2>
+					
+					 
+					 <div class="scenario-inner-panel">
+
+					 
+					<!--<div class="warning-message info-alert">
+									 
+									 <p>Another deduction from your benefits will take place in October 2022.</p>
+								 </div>-->
+						 
+								 
+							 <table class="govuk-table">
+
+							  <tbody class="govuk-table__body">
+							  
+							  
+							  
+							  
+							  
+							
+							   
+							  <tr class="govuk-table__row">
+									 <th scope="row" class="govuk-table__header">Original amount owed</th>
+									 <td class="govuk-table__cell">
+									 
+									 &pound;1200.00										
+									 </td>
+								  </tr>
+
+								
+							   <tr class="govuk-table__row">
+								  <th scope="row" class="govuk-table__header">Total amount repaid</th>
+								  <td class="govuk-table__cell">
+									  
+									  
+									   
+								&pound;400.00
+									  
+									  
+								  </td>
+								</tr>
+								
+								<tr class="govuk-table__row">
+									  <th scope="row" class="govuk-table__header">Total amount still owed</th>
+									  <td class="govuk-table__cell">
+										  
+										  
+										   
+									&pound;800.00
+										  
+										  
+									  </td>
+									</tr>
+								
+								<!--<tr class="govuk-table__row">
+									  <th scope="row" class="govuk-table__header thSubText">Expected final deduction</th>
+									  <td class="govuk-table__cell">
+										  
+										  
+										   
+									September 2023
+										  
+										  
+									  </td>
+									</tr>-->
+	   
+							  </tbody>
+							</table>
+							
+							
+							<!--<p>Your expected last deduction date will be later if the total amount you owe changes.</p>-->
+							
+							
+							<span class=""><a href="startAdditionalOnBen" class="secondary-invert">Make an additional payment</a></span>
+					 <span><a href="paymentHistoryDeductions" class="secondary-invert">View your payment history</a></span>
+					
+	
+				 
+		</div>
+			</div>
+			
+			
+			
+	
+
+		
+	  </div>
+
+		
+	  </div>
+
+		
+		
+		
+		<div class="govuk-grid-row">
+		
+			
+			
+			<div class="govuk-grid-column-one-half">
+
+			<div class="scenario-panel">
+				  <h2 class="govuk-heading-s">Payment review</h2>
+
+				  <div class="scenario-inner-panel">
+				
+				 {% if data['deductionChange']=='DyesChange'%} 
+				 
+				 
+				 
+			
+				 
+				 
+				 <div class="flexibleBanner dashboardTarget">
+					 
+					 
+					 <ul class="govuk-list">
+	 
+						 
+						 <li>
+							 <h3>Agreed monthly payment</h3>
+							 <b>&pound;{{ data['newDeductedAmount'] }}</b>
+						 </li>
+						 
+						 <li>
+							 <h3>Next review due by</h3>
+							 <b>30 November 2023</b>
+						 </li>
+
+			 
+					 </ul>
+					 
+				 
+					 
+					 </div>
+				 
+				 
+				 
+				 
+				 <!--<table class="govuk-table">
+
+					 <tbody class="govuk-table__body">
+					 
+					 
+					 
+					 
+					 
+					  <tr class="govuk-table__row">
+						 <th scope="row" class="govuk-table__header">Previous review date</th>
+						 <td class="govuk-table__cell">
+						 15 November 2022										
+						 </td>
+					  </tr>
+
+					   
+					  <tr class="govuk-table__row">
+						 <th scope="row" class="govuk-table__header">Agreed monthly payment</th>
+						 <td class="govuk-table__cell">
+							 
+							 
+							  
+					   &pound;30.00
+							 
+							 
+						 </td>
+					   </tr>
+					   
+					   <tr class="govuk-table__row">
+							<th scope="row" class="govuk-table__header">Next review date</th>
+							<td class="govuk-table__cell">
+							November 2023										
+							</td>
+						 </tr>
+					   
+		
+
+					  
+					 </tbody>
+				   </table> -->
+				   
+
+				   
+				   <p>You can do your next review earlier if your financial situation changes.</p>
+				 
+				 
+				 <span><a href="returnReviewStep1" class="secondary-invert">Payment review</a></span>
+				 
+				 {% else %}
+
+					  <p>If you need to reduce your payments, a review will help us understand how much you can afford to be taken from your benefits.</p>
+				
+					
+					 <span><a href="OnBenReviewStart" class="secondary-invert">Payment review</a></span>
+					 
+					 {% endif %}
+				   
+				 
+				  </div>
+			  </div>
+
+
+
+
+		</div>
+
+
+
+
+
+
+
+		<div class="govuk-grid-column-one-half">
+
+			<div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Help and support</h2>
+
+					 <div class="scenario-inner-panel">
+					  <p>You can get help and support if you're struggling with your payments.</p>
+
+
+			{% if data['deductionChange']=='DyesChange'%} 
+
+				<span class="mb110">
+				{% else %}
+					 <span class="mt40">
+					 {% endif %}
+					 <a href="helpSupportDeduction" class="secondary-invert">Get help and support</a></span> 
+					 
+					 </div>
+				 </div>
+
+
+
+
+		</div>
+
+		
+		
+	  </div>
+	  
+	 
+	  
+			
+	</div>
+</div>
+
+
+
+
+                  
+
+
+{% endblock %}
+
+
+

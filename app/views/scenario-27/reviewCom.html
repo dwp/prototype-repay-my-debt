@@ -1,0 +1,79 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+        <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+		<!--<div class="list-display">
+
+						<p>Dear Ashley, your last Direct Debit on {% if data['payDaychange']=='YesPayDaychange'%}
+								
+							  {{ data['paymentDayUpdate'] }}
+							  
+							  
+							  {% else %}
+			 
+							{{ data['paymentDay'] }}
+								 
+							  {% endif %} September 2021 was unsuccessful &ndash; we will try to take this payment again on 30 September 2021.</p>
+	
+			
+			<p>Make sure you have enough money in your account to avoid any possible bank charges.</p>
+			
+            <p>Regards, DFC Debt Management</p>
+
+		</div> -->
+		
+		
+		
+		<div class="list-display">
+
+		<p>Dear Ashley, your payment plan review date is on 10 November 2022.</p>
+		<p>You will need details of your income and expenditure over the past 12 months so we can see how much you can afford.</p>
+		<p>Regards, DWP Debt Management</p>
+		
+		</div>
+		
+		<!--<div class="list-display">
+		<p>Dear Ashley, your last Direct Debit was unsuccessful &ndash; we will try to take another payment on 30 September 2021.</p>
+		<p>Make sure you have enough money in your account to avoid any possible bank charges.</p>
+		<p>Regards, DWP Debt Management</p>
+		</div>-->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

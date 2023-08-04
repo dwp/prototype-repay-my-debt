@@ -1,0 +1,182 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+
+									{% if data['payment-options']=='full-amount'%}
+									<h1 class="govuk-heading-xl">Pay the full amount</h1>
+								
+								
+									  {% include "includes/amountOwed.html" %} 
+								
+									
+								   
+										<form class="form" action="#" method="post">
+
+										<p>Make sure you have enough money in your account to cover this payment.</p>
+
+										<p><a href="fullFinish" class="govuk-button">
+										  Continue
+										</a></p>
+										</form>
+
+										<!--// Full amount end -->
+
+
+
+
+
+
+									{% elif data['payment-options']=='flexible-amount'%}
+
+		<div class="attention-card">
+
+			<h1 class="govuk-heading-l mb30">How a flexible payment plan works</h1>
+			
+			<p class="title">This is not a Direct Debit &ndash; you must sign in each month and make at least one payment.</p>
+
+
+			<ul class="govuk-list">
+			
+			<li>Set a target amount to aim for each month</li>	
+				<li class="two">You will need to make a payment today &ndash; this will start your plan</li>
+
+				<li class="three">Sign up for helpful payment reminders</li>
+			</ul>
+			
+
+			<p><a href="flexSuggestedTarget2" class="attention-invert mt30">Continue</a></p>
+
+		</div>
+
+									<!--// Flexible amount end -->
+
+
+
+
+
+									{% elif data['payment-options']=='fixed-plan'%}
+
+	   
+									
+											<h1 class="govuk-heading-xl">Set up a Direct Debit</h1>
+								
+								
+									<!--  {% include "includes/amountOwed.html" %} -->
+									  
+									  
+									  
+											
+					
+
+										 <p class="mt30">If you want to set up a Direct Debit online:
+										 </p>
+										 
+										 <ul class="govuk-list govuk-list--bullet">
+										 	<li>you must be an account holder and be able to authorise Direct Debits with <br>your bank or building society</li>
+											<li>you will need your bank or building society account details</li>
+										 </ul>
+										  
+										  
+
+										  
+										  
+										  
+										  
+				<details class="govuk-details mt30" data-module="govuk-details">
+		  <summary class="govuk-details__summary">
+		    <span class="govuk-details__summary-text">
+		    I cannot set up a Direct Debit online
+		    </span>
+		  </summary>
+		  <div class="govuk-details__text">
+		 <p>If you have a joint account and you and your partner both need to authorise <br>Direct Debits, you can set up a Direct Debit by downloading and completing <br>a Direct Debit mandate:</p>
+
+		<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+ Direct Debit mandate
+</button>
+		  
+		  
+		  <p>You need to post the Direct Debit mandate to:</p>
+
+		  <p>Debt Accounting &amp; Finance<br>
+		  	 Warbreck House<br>
+		  	 Blackpool<br>
+		  	 FY2 0YE<br>
+		  	 United Kingdom</p>		
+		  	 
+		  	 
+		  	 
+		  	<!-- <p>Alternatively, you must contact Debt Management to discuss the options available to you.</p>
+
+
+					   			
+
+
+					   					<h2 class="govuk-heading-s">Debt Management</h2>
+									  <ul class="govuk-list">
+									  <li>Telephone: 0800 916 0647</li>
+									  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+									</ul>
+									<p class="govuk-body">
+									  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+									</p>  	 -->
+
+
+		  </div>
+		</details>
+		
+		
+		
+		
+		
+											
+
+<p><a href="directOwner" class="govuk-button">
+										  Continue
+										</a></p>
+						
+						
+	
+
+
+									{% else %}
+
+									<h1 class="govuk-heading-l">Oops! you didn't select a payment option</h1>
+
+									<p>Don't worry, you can go back and try again.</p>
+
+
+									{% endif %}
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

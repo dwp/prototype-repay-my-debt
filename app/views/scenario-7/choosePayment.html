@@ -1,0 +1,81 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    
+     
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Harvey Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;630.00</span></p>
+
+	   </div> -->
+	   
+	   <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	   
+	   <h1 class="govuk-heading-l">Payment options </h1>
+	   
+	    <div class="govuk-inset-text">
+		 Total amount owed: <span class="total-amount">&pound;630.00</span>
+		 </div>
+	   
+	      
+      <div class="govuk-grid-row">
+      
+        <div class="govuk-grid-column-two-thirds">
+    
+			
+			<form class="form" action="/scenario-4/index" method="post">
+			<div class="govuk-form-group">
+			  <fieldset class="govuk-fieldset">
+			    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+			      <h1 class="govuk-fieldset__heading">
+			        Choose a payment option: 
+			      </h1>
+			    </legend>
+			    <div class="govuk-radios">
+			      <div class="govuk-radios__item">
+			        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+			        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+			          Pay the full amount
+			        </label>
+			      </div>
+			      <div class="govuk-radios__item">
+			        <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+			        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+			          Setup a payment plan
+			        </label>
+			      </div>
+			      <div class="govuk-radios__item">
+			        <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+			        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+			          I am unable to pay
+			        </label>
+			      </div>
+			    </div>
+			  </fieldset>
+			</div>
+			
+			<button class="govuk-button" data-module="govuk-button">
+			  Save and continue
+			</button>
+			</form>
+			
+				 
+        </div>
+     
+      </div>
+      
+                  
+    </div>
+</div>
+
+{% endblock %}

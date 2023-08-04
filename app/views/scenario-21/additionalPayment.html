@@ -1,0 +1,218 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+		
+		
+		
+									
+
+
+		<h1 class="govuk-heading-xl">Make an additional payment</h1>
+		
+
+				   				    
+				   				    
+				   				     <div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+
+												
+												
+
+												
+												
+												
+												<li>
+													<h3>Total amount left to pay</h3>
+													<b>
+													
+													{% if data['how-much2']=='6Month'%}
+										    
+										    &pound;1666.00
+								
+											{% elif data['how-much2']=='12Month'%}
+											
+											&pound;1833.00
+											
+											{% elif data['how-much2']=='18Month'%}
+											
+											&pound;1888.00
+											
+											
+											{% elif data['how-much2']=='24Month'%}
+											
+											&pound;1916.00
+											
+											
+											{% elif data['how-much2']=='36Month'%}
+											
+											&pound;1944.00
+											
+											{% elif data['how-much2']=='twentyFive'%}
+											
+											&pound;1975.00
+
+											
+											{% else %}
+											
+											&pound;1990.00
+											
+											{% endif %}
+													
+													</b>
+												</li>
+												
+												<li>
+													<h3>Payments remaining</h3>
+													
+
+											
+											<b>
+											
+											 {% if data['how-much2']=='6Month'%}
+										    
+										   5
+								
+											{% elif data['how-much2']=='12Month'%}
+											
+											11
+											
+											{% elif data['how-much2']=='18Month'%}
+											
+											17
+											
+											
+											{% elif data['how-much2']=='24Month'%}
+											
+											23
+											
+											{% elif data['how-much2']=='36Month'%}
+											
+											35
+											
+											{% elif data['how-much2']=='twentyFive'%}
+											
+											79
+
+											
+											{% else %}
+											
+											199
+											
+											{% endif %}
+													
+											</b>
+													
+												</li>
+												
+									<li>
+													<h3>Expected final payment</h3>
+													<b>
+													
+												{% if data['how-much2']=='6Month'%}
+										    
+										    {{ data['paymentDay'] }} August 2021
+								
+											{% elif data['how-much2']=='12Month'%}
+											
+											{{ data['paymentDay'] }} March 2022
+											
+											{% elif data['how-much2']=='18Month'%}
+											
+											{{ data['paymentDay'] }} August 2022
+											
+											
+											{% elif data['how-much2']=='24Month'%}
+											
+											{{ data['paymentDay'] }} March 2023
+											
+											{% elif data['how-much2']=='36Month'%}
+											
+											{{ data['paymentDay'] }} March 2024
+											
+											{% elif data['how-much2']=='twentyFive'%}
+											
+											{{ data['paymentDay'] }} December 2027
+
+											
+											{% else %}
+											
+											{{ data['paymentDay'] }} November 2037
+											
+											{% endif %}													
+													
+													</b>
+												</li> 
+												
+												
+											</ul>
+											
+											</div>
+											
+
+
+										<form class="form" action="additionalSummary" method="post">
+
+
+											<div class="govuk-form-group">
+										          <fieldset class="govuk-fieldset" aria-describedby="pay-hint">
+											          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+												      <h2 class="govuk-fieldset__heading">
+												        How much do you want to pay?
+												      </h2>
+												    </legend>
+												    
+												 <div id="pay-hint" class="govuk-hint mb20">
+												  This payment will reduce the duration of your debt &ndash; it will not reduce your regular monthly payments but may affect your final payment
+												    </div>
+
+
+											         <div id="example-question" class="form-group inline">
+											            <span class="c-form-input-denote govuk-body">£</span>
+											            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="payment-amount">
+											          </div>
+
+										          </fieldset>
+									        </div>
+
+
+											<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form>
+
+
+
+
+						
+
+
+    </div>
+</div>
+
+{% endblock %}

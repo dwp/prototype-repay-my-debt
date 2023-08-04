@@ -1,0 +1,47 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+    <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+    
+    
+    <span class="govuk-caption-xl">Lab session &ndash; 12 March 2020</span>
+      <h1 class="govuk-heading-xl">
+        Prototype scenarios
+       </h1>{{releaseVersion | log }}
+       
+       
+     
+		 
+		 
+		 
+		<div class="scenario-panel">
+			 <h2 class="govuk-heading-s">Scenario 1</h2>
+			 
+			 <div class="scenario-inner-panel">
+			  <h3 class="govuk-heading-s">Ashley Chamberlain</h3>
+			 
+			 
+			 <div class="govuk-inset-text">
+				 Total amount owed: <span class="total-amount">&pound;120.00</span>
+				 </div>
+			 
+             <p><a href="scenario-11/index" class="secondary-invert">Start scenario</a></p> 
+             <p><a href="scenario-11/dashboard">Dashboard return journey</a></p>
+			 </div>
+		 </div>	
+
+
+      
+    </div>
+</div>
+
+{% endblock %}

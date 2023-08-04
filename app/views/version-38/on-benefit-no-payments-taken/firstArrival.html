@@ -1,0 +1,93 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+
+	   
+	   <div class="govuk-grid-row">
+      
+         <div class="govuk-grid-column-three-quarters">
+	   
+	  <span class="back-link"> <a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	  
+
+			
+			<form class="form" action="signGuard" method="post">
+				
+				
+		
+
+			
+			<div class="govuk-form-group">
+				  <fieldset class="govuk-fieldset">
+				    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+				      <h1 class="govuk-heading-xl">
+Have you used this service before?
+				      </h1>
+				    </legend>
+					
+					
+					<div id="pay-hint" class="govuk-hint mb20">
+						This is not the Government Gateway that you may have used for other services.
+							</div>
+			
+				
+					
+					<div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+						
+						  <div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="yesArrival" name="arrival" type="radio" value="yesArrival">
+							<label class="govuk-label govuk-radios__label" for="yesArrival">
+							  Yes
+							</label>
+						  </div>
+					
+						  <div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="noArrival" name="arrival" type="radio" value="noArrival">
+							<label class="govuk-label govuk-radios__label" for="noArrival">
+							  No
+							</label>
+						  </div>
+						  
+					
+					
+					
+					
+					</div>
+					
+					
+					
+					
+				   
+				 
+				  </fieldset>
+				</div>
+			
+			<button class="govuk-button" data-module="govuk-button">
+			  Continue
+			</button>
+			</form>
+			
+
+                  
+    </div>
+</div>
+
+{% endblock %}
+
+
+

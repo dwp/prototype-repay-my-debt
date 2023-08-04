@@ -1,0 +1,173 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+									<span class="govuk-caption-xl">Ashley Chamberlain</span>
+									<h1 class="govuk-heading-xl mb30">
+										Flexible payment plan</h1>
+
+
+
+
+										<div class="flexibleBanner">
+
+
+											<ul class="govuk-list">
+
+												<li>
+													<h3>Total amount owed</h3>
+													<b>&pound;580.00</b>
+												</li>
+												<li>
+													<h3>Monthly payment target</h3>
+
+														{% if data['how-much3']=='FlexoneHundredPound'%}
+
+													    <b>&pound;100.00</b>
+
+
+														{% elif data['how-much3']=='FlexfiftyPound'%}
+
+														<b>&pound;50.00</b>
+
+
+
+														{% elif data['how-much3']=='FlextwentyFivePound'%}
+
+														<b>&pound;25.00</b>
+
+
+														{% else %}
+
+														
+														<b>&pound;30.00</b>
+													
+
+														{% endif %}
+
+												</li>
+
+												<li>
+													<h3>Plan start date</h3>
+													<b>1 November 2020</b>
+												</li>
+											</ul>
+
+											</div>
+
+
+
+											<p>Your flexible payment plan will start on 1 November 2020.</p>
+
+
+
+											<!--<h2 class="govuk-heading-m">Recent payments</h2>
+											<p>The total amount owed may not be correct – it takes 2 to 5 working days from your last payment date to update your account.</p>
+
+
+											 <details class="govuk-details mt20" data-module="govuk-details">
+				  <summary class="govuk-details__summary">
+				    <span class="govuk-details__summary-text">
+				     View payment history
+				    </span>
+				  </summary>
+				  <div class="govuk-details__text">
+
+				    	 <table class="govuk-table summary-pay">
+
+
+							  <thead class="govuk-table__head">
+							    <tr class="govuk-table__row">
+
+							      <th class="govuk-table__header" scope="col">Date of payment</th>
+
+							      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+
+							        <th class="govuk-table__header govuk-table__header--numeric" scope="col">Balance</th>
+
+
+							    </tr>
+							  </thead>
+
+							  <tbody class="govuk-table__body">
+
+							    <tr class="govuk-table__row">
+
+
+							      <td class="govuk-table__cell">20 October 2020</td>
+
+
+							      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;20.00</td>
+
+							      <td class="govuk-table__cell govuk-table__cell--numeric">580.00</td>
+
+
+							    </tr>
+
+
+
+							     <tr class="govuk-table__row">
+
+
+							      <td class="govuk-table__header govuk-table__cell">Opening balance</td>
+
+
+							     <td class="govuk-table__cell govuk-table__cell--numeric">&ndash;</td>
+
+							      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;600.00</td>
+
+
+							    </tr>
+
+
+
+							  </tbody>
+							</table>
+
+				  </div>
+				</details>-->
+
+
+
+
+											<h2 class="govuk-heading-m">Make a payment now</h2>
+
+											<p>You can make a payment now to reduce your debt before your plan starts.</p>
+
+											<p><a href="paymentToday2" class="govuk-button mb0">Make a payment</a></p>
+
+
+
+
+										<!--// Struggling to pay end -->
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,292 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+	
+
+
+	   
+	   <div class="govuk-grid-row">
+	  
+		 <div class="govuk-grid-column-three-quarters">
+	   
+	  <span class="back-link"> <a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	  
+
+			
+	{% if data['actionFinance']=='actionFinanceIncrease'%}		
+	
+	<h1 class="govuk-heading-xl">
+		
+		<span class="govuk-caption-xl">Payment plan review
+		
+		</span> Increase your payments</h1>
+
+
+
+
+
+	
+		<div class="flexibleBanner">
+		
+		
+		<ul class="govuk-list">
+			<li>
+				<h3>Current monthly amount</h3>
+				<b>&pound;30.00</b>
+			</li>
+			
+			
+			
+		</ul>
+		
+		</div>
+		
+		
+		
+		
+
+	<form class="form" action="improvedSummary" method="post">
+
+
+		<div class="govuk-form-group">
+			  <fieldset class="govuk-fieldset">
+				  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+				  <h1 class="govuk-fieldset__heading">
+					How much do you want to pay?
+				  </h1>
+				</legend>
+				
+	
+
+				  
+				  <div class="govuk-input__wrapper">
+					  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+					  <input class="govuk-input govuk-input--width-10" id="newImprovedAmount" name="newImprovedAmount" type="text" spellcheck="false">
+					</div>
+				  
+				  
+
+			  </fieldset>
+		</div>
+		
+
+
+<button class="govuk-button" data-module="govuk-button">
+Continue
+</button>
+</form>
+
+{% elif data['actionFinance']=='actionFinanceKeep'%}
+
+
+
+	{% if data['changedFinance']=='changedFinanceYes'%}
+
+		{% if data['financeSitu']=='financeSituImprove'%}
+		
+		
+		<form class="form" action="improveKeep" method="post">
+			
+		<div class="govuk-form-group">
+			  <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="more-detail">
+				  <span class="govuk-caption-xl">Payment plan review</span>
+				  Why are you unable to increase your payments?
+				</label>
+			  </h1>
+			  <div id="more-detail-hint" class="govuk-hint">
+				There may have been a change in your personal circumstances, for example, you may have made some home improvements or had another baby.
+			  </div>
+			  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+			</div>
+		
+		
+		<button class="govuk-button" data-module="govuk-button">
+			Continue
+			</button>
+		</form>
+		
+		{% else %}
+		
+		<h1 class="govuk-heading-xl">
+			<span class="govuk-caption-xl">Payment plan review</span>
+			Keep your payments the same</h1>
+		
+			
+		 <div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+		
+												
+												<li>
+													<h3>Payment amount</h3>
+													<b>										    
+											&pound;30.00
+											
+											</b>
+												</li>
+							
+												
+												
+												<li>
+													<h3>Proposed plan review date</h3>
+													<b>
+													July 2024
+													
+													
+													</b>
+												</li>
+		
+												
+											</ul>
+											
+											</div>
+											
+									
+											
+											<p>Your payments will stay the same and you will have another review in 12 months.</p>
+											
+											<p>We will send you a letter with details of when your review will take place and instructions to sign in to your account. You will then have 4 weeks to do your review.</p>
+			
+							<div class="govuk-inset-text">If your financial situation changes, you can change your payments at anytime by signing in and managing your plan.</div>
+		
+				<p><a href="reviewPlanSummary" class="govuk-button">Continue</a></p>
+
+
+		{% endif %}	
+		
+		
+		{% elif data['changedFinance']=='changedFinanceNo'%}	
+		
+		<h1 class="govuk-heading-xl">
+			<span class="govuk-caption-xl">Payment plan review</span>
+			Keep your payments the same</h1>
+		
+			
+		 <div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+		
+												
+												<li>
+													<h3>Payment amount</h3>
+													<b>										    
+											&pound;30.00
+											
+											</b>
+												</li>
+							
+												
+												
+												<li>
+													<h3>Proposed plan review date</h3>
+													<b>
+													July 2024
+													
+													
+													</b>
+												</li>
+		
+												
+											</ul>
+											
+											</div>
+											
+									
+											
+											<p>Your payments will stay the same and you will have another review in 12 months.</p>
+											
+											<p>We will send you a letter with details of when your review will take place and instructions to sign in to your account. You will then have 4 weeks to do your review.</p>
+			
+							<div class="govuk-inset-text">If your financial situation changes, you can change your payments at anytime by signing in and managing your plan.</div>
+		
+				<p><a href="reviewPlanSummary" class="govuk-button">Continue</a></p>	
+		
+		
+		{% endif %}	
+
+
+
+
+			
+		{% else %}		
+		
+		
+		
+		
+		
+		
+		{% if data['changedFinance']=='changedFinanceYes'%}
+
+		{% if data['financeSitu']=='financeSituWorse'%}
+	
+			<h1 class="govuk-heading-xl mb30">
+				<span class="govuk-caption-xl">Payment plan review</span>
+				Lower your payments</h1>
+				
+	
+				<p>As your financial situation is worse, you can lower your payments. However, this means it will take longer to clear the amount you owe.</p>
+				
+			
+
+				
+				<div class="govuk-inset-text">If your financial situation changes, you can change your payments at anytime by signing in and managing your plan.</div>
+				
+				
+				<p><a href="lowerPlanAmount" class="govuk-button">Continue</a></p>
+		
+		{% endif %}	
+		
+
+{% elif data['changedFinance']=='changedFinanceNo'%}
+
+
+			<h1 class="govuk-heading-xl mb30"><span class="govuk-caption-xl">Payment plan review</span>
+			You cannot lower your payments online</h1>
+			
+			
+			<p>If you want to lower your payments, you must contact Debt Management to discuss the options available to you.</p>
+			
+			
+			   <h2 class="govuk-heading-m">Debt Management</h2>
+			<ul class="govuk-list">
+				<li>Telephone: 0800 5871322</li>
+				<li>Monday to Friday, 9am to 5pm</li>
+			  </ul>
+			  <p class="govuk-body">
+				<a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+			  </p>
+			
+			
+			
+			<!--	<div class="govuk-inset-text">	<h2 class="govuk-heading-m">Worried about how much you can afford?</h2>
+			
+						<p>You can take our affordability test and we can help you understand how much you can afford based on your financial situation.</p>
+			
+			<p><a href="fullPayment3" class="secondary-invert">Take the affordability checker</a></p></div>-->
+			
+
+
+{% endif %}	
+		
+
+				
+		{% endif %}		
+
+					
+				  
+	</div>
+</div>
+
+{% endblock %}
+
+
+

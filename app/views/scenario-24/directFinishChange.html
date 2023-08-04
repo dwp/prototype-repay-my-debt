@@ -1,0 +1,173 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+	   
+	   <div class="govuk-grid-row">
+      
+        <div class="govuk-grid-column-three-quarters">
+	   
+	   
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+	   
+	   
+	   
+	   <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Your Direct Debit plan has been changed
+          </h1>
+		  <!--	<div class="govuk-panel__body">
+				  This will take 2 to 5 working days to update your account
+				</div> -->
+
+        </div>
+
+        
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+        
+        
+        <p>You will be sent confirmation of this change by post within three working days or no later than ten working days.</p>
+
+	  
+        
+        
+   <!--     <h2 class="govuk-heading-m">Plan summary</h2>
+	   
+	  <table class="govuk-table mb40">
+										  <caption class="govuk-table__caption"><span class="visually-hidden">Payment summary</span></caption>
+								
+										  <tbody class="govuk-table__body">
+										  
+										
+											<tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">New Direct Debit amount</th>
+										      <td class="govuk-table__cell" colspan="2">
+										      
+										       &pound;{{ data['change-amount'] }}
+										      
+										      </td>
+										      
+									
+											 </tr>
+										    
+										    
+											<tr class="govuk-table__row">
+												  <th scope="row" class="govuk-table__header">Next payment</th>
+												  <td class="govuk-table__cell" colspan="2">
+												  
+												   {% if data['paymentChoices']=='12Month'%}
+												   
+												   &pound;125.00
+									   
+												   {% elif data['paymentChoices']=='24Month'%}
+												   
+												   &pound;63.00										
+												   
+												   {% elif data['paymentChoices']=='36Month'%}
+												   
+												   &pound;42.00
+												   
+												   {% elif data['paymentChoices']=='48Month'%}
+												   
+												   &pound;31.50
+												   
+												   {% elif data['paymentChoices']=='72Month'%}
+												   
+												   &pound;21.00
+												   
+												   {% elif data['paymentChoices']=='25Month'%}
+												   
+												   &pound;15.00
+	   
+												   
+												   {% else %}
+							   
+												   
+												   
+												   {% endif %} on 6 July 2021
+									
+												  
+												  </td>
+												  
+										
+												 </tr>
+												  
+												
+							
+						
+							
+	
+								
+								
+								
+										  </tbody>
+										</table> -->
+										
+										
+									<!--	<p>Your payments will show on your bank statement as <b>CEN REC GROUP DD</b>.</p> -->
+										
+										
+										
+										
+										
+									
+			
+			
+			
+			<form class="form" action="OneddPlanUpdated" method="post">
+  <fieldset class="visually-hidden">
+    <legend>Hidden field</legend>
+
+    <div>
+        <input id="yesChange" name="amountChange" type="radio" value="yesChange" checked="checked">
+        <label for="yesChange">Yes</label>
+      </div>
+      
+      <div>
+        <input id="noChange" name="amountChange" type="radio" value="noChange">
+        <label for="noChange">No</label>
+      </div>
+      
+      </fieldset>
+      
+      <button class="govuk-button mt20 mb20" data-module="govuk-button">Finish</button>
+   
+      
+      
+	 </form>								
+				
+			
+			
+		
+
+        
+
+       <!-- <p class="govuk-body">
+          <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+        </p> -->
+	   
+	   			
+
+                  
+    </div>
+</div>
+
+{% endblock %}
+
+
+

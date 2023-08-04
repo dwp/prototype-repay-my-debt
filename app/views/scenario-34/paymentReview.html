@@ -1,0 +1,82 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+			   <h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+			   <p>What you owe:
+					   <span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+		<div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+
+			
+
+			  <h1 class="govuk-heading-xl">
+				  <span class="govuk-caption-xl">Payment review</span>
+			 Reduced payments
+			  </h1>
+			  
+			<p>The amount we take from your benefits will be reduced to &pound;{{ data['newDeductedAmount'] }}.</p>  
+			  
+			  
+			  
+			  <div class="flexibleBanner">
+  
+				  <ul class="govuk-list">
+  
+				  <li>
+						  <h3>Agreed monthly payment</h3>
+						  <b>										    
+			   &pound;{{ data['newDeductedAmount'] }}
+				  
+				  </b>
+					  </li>
+  
+				  </ul>
+				  
+				  </div>	
+	
+				
+
+
+<p>If your payments stay at &pound;{{ data['newDeductedAmount'] }}, you will clear the total amount owed in January 2025.</p>
+
+
+   
+   
+   <div class="govuk-warning-text mt40">
+		 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+		 <strong class="govuk-warning-text__text">
+		   <span class="govuk-warning-text__assistive">Warning</span>
+		   This is only reducing the amount we take from your benefits &ndash; you should check your Universal Credit statement for details about other money owed.
+		   
+		   <!--  This is only reducing the amount we take from your benefits in relation to previous claims &ndash; you should check your Universal Credit statement for details about other money owed from current claims. -->
+		 </strong>
+	   </div>	
+		
+			
+		<p class="mt30"><a href="deductionReview" class="govuk-button">
+			Continue
+		  </a></p>
+
+
+	</div>
+</div>
+
+{% endblock %}

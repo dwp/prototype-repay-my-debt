@@ -1,0 +1,189 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+		
+{% if data['paymentOptions']=='ddFixedChoice'%}
+		
+		
+		<h1 class="govuk-heading-xl"><span class="govuk-caption-xl">
+      
+     {% if data['paymentChoices']=='lowPayments'%}
+      
+      Step 4 of 5
+      
+      {% else %}
+      
+      Step 3 of 4
+      
+      {% endif %}
+    
+    </span>Direct Debit payments</h1>
+  
+  
+    <!--  {% include "includes/amountOwed.html" %} -->
+      
+      
+      
+        
+
+
+       <p class="mt30">If you want to set up a Direct Debit online:
+       </p>
+       
+       <ul class="govuk-list govuk-list--bullet">
+         <li>you must be an account holder and be able to authorise Direct Debits with <br>your bank or building society</li>
+        <li>you will need your bank or building society account details</li>
+        <li>you will also need your sort code and account number if you have a building society account</li>
+       </ul>
+        
+
+        
+        
+        
+        
+<details class="govuk-details mt30" data-module="govuk-details">
+<summary class="govuk-details__summary">
+<span class="govuk-details__summary-text">
+I cannot set up a Direct Debit online
+</span>
+</summary>
+<div class="govuk-details__text">
+<p>If you have a joint account and you and your partner both need to authorise <br>Direct Debits, you can set up a Direct Debit by downloading and completing <br>a Direct Debit mandate:</p>
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+Direct Debit mandate
+</button>
+
+
+<p>You need to post the Direct Debit mandate to:</p>
+
+<p>Debt Accounting &amp; Finance<br>
+Warbreck House<br>
+Blackpool<br>
+FY2 0YE<br>
+United Kingdom</p>		
+
+
+
+<!-- <p>Alternatively, you must contact Debt Management to discuss the options available to you.</p>
+
+
+     
+
+
+         <h2 class="govuk-heading-s">Debt Management</h2>
+      <ul class="govuk-list">
+      <li>Telephone: 0800 916 0647</li>
+      <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+    </ul>
+    <p class="govuk-body">
+      <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+    </p>  	 -->
+
+
+</div>
+</details>
+
+
+<div class="govuk-inset-text mt0">
+   Once your plan is setup, you can sign in to manage your plan, change payments, pay additional amounts or get help and support.
+         </div>
+
+
+        
+
+<p><a href="directOwner" class="govuk-button">
+        Continue
+      </a></p>
+     
+     {% else %}
+
+   <form class="form" action="#" method="post">
+
+   <h1 class="govuk-heading-xl">
+     <span class="govuk-caption-xl"> 
+       
+     {% if data['paymentChoices']=='lowPayments'%}
+     
+     Step 4 of 5
+     
+     {% else %}
+     
+     Step 3 of 4
+     
+     {% endif %}
+     
+   </span> Flexible payments</h1>
+ 
+
+<p>You need to make a payment today to start your plan so have your card ready &ndash; credit card payments will incur extra charges, debit card payments will not.</p>
+
+
+
+  <h2 class="govuk-heading-m">How flexible payments work</h2>
+  
+ 
+ <ul class="govuk-list govuk-list--bullet">
+   <li>Your chosen payment amount will become your monthly target</li>
+   <li>You must sign in to your account each month and make payments</li>
+   <li>You can make multiple payments in a month towards your target</li>
+   <li>When you pay is up to you but you must meet your monthly target</li>
+   </ul>
+  
+<div class="govuk-inset-text">
+  <p>If your financial situation changes and you're struggling to keep up with your payments, you can change them at anytime by signing in and managing your plan.
+
+  </p>
+</div>
+
+
+
+<!--<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    
+    If you do not make any payments at all, we will ask your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.
+  </strong>
+</div>-->
+
+     <p><a href="targetNoPayment" class="govuk-button">
+       Continue
+     </a></p>
+     </form>
+
+
+     {% endif %}
+
+								
+									
+	
+
+    </div>
+</div>
+
+{% endblock %}

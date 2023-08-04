@@ -1,0 +1,423 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+   <div class="govuk-grid-column-three-quarters">
+    
+     
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+	   <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	   
+	   <h1 class="govuk-heading-xl">Payment history</h1>
+	   
+	   
+	   
+	   
+	 <!-- <div class="number-display">
+	   	
+	   	<ul class="govuk-list">
+	   	
+	   		
+	   		<li>Total repaid
+	   			<span>£150.00</span>
+	   		</li>
+	   		<li class="blueUpdate">Left to pay
+	   			<span>£950.00</span>
+	   		</li>
+	   	</ul>
+	   	
+	   </div> -->
+	   
+	   
+	   <div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+
+												
+												<!--<li>
+													<h3>Current payment amount</h3>
+													<b>{% if data['how-much2']=='6Month'%}
+										    
+										    &pound;334.00
+								
+											{% elif data['how-much2']=='12Month'%}
+											
+											&pound;167.00
+											
+											{% elif data['how-much2']=='18Month'%}
+											
+											&pound;112.00
+											
+											
+											{% elif data['how-much2']=='24Month'%}
+											
+											&pound;84.00
+											
+											{% elif data['how-much2']=='36Month'%}
+											
+											&pound;56.00
+											
+											{% elif data['how-much2']=='twentyFive'%}
+											
+											&pound;25.00
+
+											
+											{% else %}
+											
+											&pound;10.00
+											
+											{% endif %}</b>
+												</li>-->
+												
+												<li>
+													<h3>Payments made</h3>
+													
+
+											
+											<b>
+											
+											
+											 {% if data['paymentChoices']=='6Month'%}
+										    
+										   1 of 6
+								
+											{% elif data['paymentChoices']=='12Month'%}
+											
+											1 of 12
+											
+											{% elif data['paymentChoices']=='24Month'%}
+											
+											1 of 24
+											
+											
+											{% elif data['paymentChoices']=='36Month'%}
+											
+											1 of 36
+											
+											{% elif data['paymentChoices']=='48Month'%}
+											
+											1 of 48
+											
+											{% elif data['paymentChoices']=='72Month'%}
+											
+											1 of 72
+
+											
+											{% else %}
+											
+											1
+											
+											{% endif %}
+													
+											</b>
+													
+												</li>
+												
+												
+												<li>
+													<h3>Total amount repaid</h3>
+													<b>
+													
+													 {% if data['paymentChoices']=='6Month'%}
+										    
+										    &pound;1000.00
+								
+											{% elif data['paymentChoices']=='12Month'%}
+											
+											&pound;500.00										
+											
+											{% elif data['paymentChoices']=='24Month'%}
+											
+											&pound;250.00
+											
+											{% elif data['paymentChoices']=='36Month'%}
+											
+											&pound;168.00
+											
+											{% elif data['paymentChoices']=='48Month'%}
+											
+											&pound;125.00
+											
+											{% elif data['paymentChoices']=='72Month'%}
+											
+											&pound;84.00
+
+											
+											{% else %}
+						
+											&pound;{{ data['affordable-amount'] }}
+											
+											{% endif %}
+													
+													</b>
+												</li>
+												
+												
+												
+												<li>
+													<h3>Total amount left to pay</h3>
+													<b>
+													
+													{% if data['paymentChoices']=='6Month'%}
+										    
+										    &pound;5000.00
+								
+											{% elif data['paymentChoices']=='12Month'%}
+											
+											&pound;5500.00
+											
+											{% elif data['paymentChoices']=='24Month'%}
+											
+											&pound;5750.00
+											
+											
+											{% elif data['paymentChoices']=='36Month'%}
+											
+											&pound;5832.00
+											
+											
+											{% elif data['paymentChoices']=='48Month'%}
+											
+											&pound;5875.00
+											
+											{% elif data['paymentChoices']=='72Month'%}
+											
+											&pound;5916.00
+
+											
+											{% else %}
+											
+											&pound;5980.00
+											
+											{% endif %}
+													
+													</b>
+												</li>
+												
+											<!--	<li>
+													<h3>Date debt cleared</h3>
+													<b>
+													
+												{% if data['how-much2']=='oneHundredPound'%}
+										    
+										    {{ data['paymentDay'] }} August 2021
+								
+											{% elif data['how-much2']=='fiftyPound'%}
+											
+											{{ data['paymentDay'] }} March 2022
+											
+											{% elif data['how-much2']=='thirtyThree'%}
+											
+											{{ data['paymentDay'] }} August 2022
+											
+											
+											{% elif data['how-much2']=='twentyFivePound'%}
+											
+											{{ data['paymentDay'] }} March 2023
+
+											
+											{% else %}
+											
+											{{ data['paymentDay'] }} March 2024
+											
+											{% endif %}													
+													
+													</b>
+												</li> -->
+												
+												
+											</ul>
+											
+											</div>
+	   
+	   
+	   
+    
+				
+
+  
+  <h2 class="govuk-heading-m mt20">All payments</h2>
+  
+  
+	
+	 <table class="govuk-table summary-pay">
+		  
+		  
+							  <thead class="govuk-table__head">
+							    <tr class="govuk-table__row">
+							    
+							      <th class="govuk-table__header" scope="col">Date of payment</th>
+							
+							      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+							      
+							      <!--  <th class="govuk-table__header govuk-table__header--numeric" scope="col">Balance</th> -->
+							      
+							    
+							    </tr>
+							  </thead>
+							  
+							  <tbody class="govuk-table__body">
+							  
+							  
+							  	<tr class="govuk-table__row">
+							    
+							      
+							      <td class="govuk-table__cell">{{ data['paymentDay'] }} May 2021</td>
+							
+							
+							      <td class="govuk-table__cell govuk-table__cell--numeric">
+								      
+								      
+								      
+								    {% if data['paymentChoices']=='6Month'%}
+										    
+										    &pound;1000.00
+								
+											{% elif data['paymentChoices']=='12Month'%}
+											
+											&pound;500.00										
+											
+											{% elif data['paymentChoices']=='24Month'%}
+											
+											&pound;250.00
+											
+											{% elif data['paymentChoices']=='36Month'%}
+											
+											&pound;168.00
+											
+											{% elif data['paymentChoices']=='48Month'%}
+											
+											&pound;125.00
+											
+											{% elif data['paymentChoices']=='72Month'%}
+											
+											&pound;84.00
+
+											
+											{% else %}
+											&pound;{{ data['affordable-amount'] }}
+											
+											
+											{% endif %}
+								      
+								      
+								      
+								      
+							      </td>
+							      
+							     <!-- <td class="govuk-table__cell govuk-table__cell--numeric">550.00</td> -->
+							      
+							    
+							    </tr>
+							    
+							    
+							 <!--   <tr class="govuk-table__row">
+							    
+							      
+							      <td class="govuk-table__cell">{{ data['paymentDay'] }} February 2021</td>
+							
+							
+							      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;50.00</td>
+							      
+							      <td class="govuk-table__cell govuk-table__cell--numeric">350.00</td>
+							      
+							    
+							    </tr>
+							    
+							    <tr class="govuk-table__row">
+							    
+							      
+							      <td class="govuk-table__cell">{{ data['paymentDay'] }} January 2021</td>
+							
+							
+							      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;50.00</td>
+							      
+							      <td class="govuk-table__cell govuk-table__cell--numeric">400.00</td>
+							      
+							    
+							    </tr>
+							    
+							    
+							    <tr class="govuk-table__row">
+							    
+							      
+							      <td class="govuk-table__cell">{{ data['paymentDay'] }} December 2020</td>
+							
+							
+							      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;50.00</td>
+							      
+							      <td class="govuk-table__cell govuk-table__cell--numeric">450.00</td>
+							      
+							    
+							    </tr>
+							    
+							    <tr class="govuk-table__row">
+							    
+							      
+							      <td class="govuk-table__cell">{{ data['paymentDay'] }} November 2020</td>
+							
+							
+							      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;50.00</td>
+							      
+							      <td class="govuk-table__cell govuk-table__cell--numeric">500.00</td>
+							      
+							    
+							    </tr>
+							  
+							  
+							    
+							    <tr class="govuk-table__row">
+							    
+							      
+							      <td class="govuk-table__cell">{{ data['paymentDay'] }} October 2020</td>
+							
+							
+							      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;50.00</td>
+							      
+							      <td class="govuk-table__cell govuk-table__cell--numeric">550.00</td>
+							      
+							    
+							    </tr>
+							    
+							    
+							  
+							    
+							     <tr class="govuk-table__row">
+							    
+							      
+							      <td class="govuk-table__header govuk-table__cell">Opening balance</td>
+							
+							
+							     <td class="govuk-table__cell govuk-table__cell--numeric">&ndash;</td>
+							      
+							      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;600.00</td>
+							      
+							    
+							    </tr> -->
+							
+							    
+							        
+							  </tbody>
+							</table>
+	
+	
+
+                  
+    </div>
+</div>
+
+{% endblock %}

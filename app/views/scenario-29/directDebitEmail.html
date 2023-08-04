@@ -1,0 +1,105 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+		
+	<!--	<div class="flexibleBanner">
+
+
+											<ul class="govuk-list">
+												<li>
+													<h3>Total amount owed</h3>
+													<b>&pound;600.00</b>
+												</li>
+												<li>
+													<h3>Direct Debit amount</h3>
+
+
+														<b>&pound;25.00</b>
+
+
+
+												</li>
+												
+												<li><h3>Number of payments</h3>
+													<b>24</b>
+												</li>
+												
+											</ul>
+
+											</div> -->
+		
+		
+		
+		
+		 <form class="form" action="directDebitMain" method="post">
+
+		    
+		     <fieldset class="govuk-fieldset" role="group">
+				    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+				      <h1 class="govuk-fieldset__heading">
+				       <span class="govuk-caption-xl">Set up a Direct Debit</span>
+					  Confirmation
+				      </h1>
+				    </legend>
+				    
+				  <div class="govuk-inset-text mt10">You’ll be sent an email with confirmation of this agreement before the first payment is taken from your account</div>
+				    
+				        <div class="govuk-form-group">
+				          <label class="govuk-label govuk-label--m" for="paymentDay">
+				            Enter your email address
+				          </label>
+				          <span id="security-hint" class="govuk-hint mt5">We’ll send your Direct Debit details and mandate reference number to this address</span>
+				          <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text">
+				   </div>
+
+				  </fieldset>
+		    
+
+		    
+		    
+		    
+		    <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		    
+		 </form>
+
+								
+									
+									
+								
+
+
+									
+									
+									
+
+
+    </div>
+</div>
+
+{% endblock %}

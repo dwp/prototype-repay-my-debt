@@ -1,0 +1,245 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Summary - Affordability
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<!-- <div class="clear-bar">
+<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+<p>What you owe:
+<span>&pound;120.00</span></p>
+
+</div> -->
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+        <span class="govuk-caption-xl">Affordability
+        </span>Summary </h1>
+
+
+        <h2 class="govuk-heading-m">Repayment details</h2>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Monthly payment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £{{ data['newDeductedAmount-setupDone'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="onBenReview-2">
+                Change<span class="govuk-visually-hidden"> Agreed monthly payment</span>
+              </a>
+            </dd>
+          </div>
+
+
+
+        </dl>
+
+        <!-- <h3 class="govuk-heading-s">Expected last repayment date</h3>
+        <p>If your agreed amount stays the same, you will clear your Debt in December 2025.</p> -->
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+        <h2 class="govuk-heading-m">Reminder details</h2>
+
+        <dl class="govuk-summary-list">
+          {% if data['confirm-details-change'] =='no'%}
+
+
+
+          <div class="govuk-summary-list__row">
+
+
+            <dt class="govuk-summary-list__key">
+              Mobile number
+            </dt>
+
+            <dd class="govuk-summary-list__value">
+
+              <p class="govuk-body">******0000   </p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="change-mobile-number">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+
+
+          </div>
+          {% elif data['reminder-notification-payment-setup-done-yes-no']=='no' %}
+          <div class="govuk-summary-list__row">
+
+            <dt class="govuk-summary-list__key">
+              <p class="govuk-body">No reminder chosen</p>
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="notification-reminder-yes-no">
+                Change<span class="govuk-visually-hidden"> notification reminder</span>
+              </a>
+            </dd>
+
+          </div>
+          {% elif data['reminder-notification-payment-setup-done']=='no-email' %}
+          <div class="govuk-summary-list__row">
+
+            <dt class="govuk-summary-list__key">
+              <p class="govuk-body">No reminder chosen</p>
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="change-mobile-number">
+                Change<span class="govuk-visually-hidden"> notification reminder</span>
+              </a>
+            </dd>
+
+          </div>
+          {% elif data['reminder-notification-payment-setup-done'] =='yes-email'%}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              <p class="govuk-body">{{ data ['email-setupDone'] }} </p>
+            </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="reviewContact-email">
+                  Change<span class="govuk-visually-hidden"> contact details</span>
+                </a>
+              </dd>
+            </div>
+
+            {% elif data['reminder-notification-payment-setup-done'] =='yes-mobile'%}
+
+
+
+            <div class="govuk-summary-list__row">
+
+
+              <dt class="govuk-summary-list__key">
+                Mobile number
+              </dt>
+
+              <dd class="govuk-summary-list__value">
+
+                <p class="govuk-body">******0000   </p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="change-mobile-number">
+                  Change<span class="govuk-visually-hidden"> contact details</span>
+                </a>
+              </dd>
+
+
+            </div>
+            {% elif data['reminder-notification-payment-setup-done'] =='yes-email-mobile'%}
+            <div class="govuk-summary-list__row">
+
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+
+                <p class="govuk-body">{{ data ['email-setupDone'] }} </p>
+              </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="reviewContact-confirm">
+                  Change<span class="govuk-visually-hidden"> contact details</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+
+              <dt class="govuk-summary-list__key">
+                Mobile number
+              </dt>
+              <dd class="govuk-summary-list__value">
+
+                <p class="govuk-body">******0000 </p>
+              </dd>
+
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="change-mobile-number">
+                  Change<span class="govuk-visually-hidden"> contact details</span>
+                </a>
+              </dd> -->
+            </div>
+
+
+            {% endif %}
+
+
+
+            </dl>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+</div>
+<div class="govuk-grid-column-three-quarters">
+  <form class="form" action="directDebitDay" method="post">
+
+
+
+
+
+
+
+<h2 class="govuk-heading-m">Declaration</h2>
+
+<p>By continuing, you confirm that you will keep up with your payments and let us know immediately if your financial situation changes.</p>
+
+
+
+
+
+
+
+<p><a href="deductionFinish" class="govuk-button">Agree and confirm</a></p>
+
+
+
+
+
+</form>
+
+
+
+
+
+
+</div>
+</div>
+
+{% endblock %}

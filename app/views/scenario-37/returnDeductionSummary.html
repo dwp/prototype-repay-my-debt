@@ -1,0 +1,194 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+									
+									<form class="form" action="directDebitDay" method="post">
+
+									
+									<h1 class="govuk-heading-xl">
+	   	<span class="govuk-caption-xl">Payment review</span>Summary</h1>
+		   
+		   
+		   
+		   
+		   
+		   
+		   <div class="flexibleBanner">
+			   
+			   
+			   <ul class="govuk-list">
+			   
+ 
+					   
+
+																			   
+						   <li>
+							<h3>Agreed monthly payment</h3>
+						   <b>
+							   
+					&pound;{{ data['newDeductedAmount'] }}
+					
+						   
+						   </b>
+						   </li>
+						   
+						   <li>
+							   <h3>Next review date</h3>
+							  <b>
+								  
+								  
+							November 2024
+							  
+							  </b>
+							  </li>
+						   
+						   
+					
+			   </ul>
+			   
+		   
+			   
+			   </div> 
+			   
+			   
+
+			   
+			   
+			   
+
+		   
+									
+									
+									
+									<h2 class="govuk-heading-m mt40">How this will affect your payments</h2>
+																	
+																	
+									<table class="govuk-table summary-table mb40">
+										 
+										 <caption class="visually-hidden">Payment day summary</caption>
+											
+									
+											  <tbody class="govuk-table__body">
+											  
+											
+												 <tr class="govuk-table__row">
+												  <th scope="row" class="govuk-table__header">Next payment</th>
+												  <td class="govuk-table__cell" colspan="2">
+												  
+												The amount we take from your benefits will remain at &pound;{{ data['newDeductedAmount'] }}.
+												  
+												  </td>
+												  
+										
+												 </tr>
+												 
+												 
+												<tr class="govuk-table__row">
+													  <th scope="row" class="govuk-table__header">Expected last payment</th>
+													  <td class="govuk-table__cell" colspan="2">
+														  If your payments stay at &pound;{{ data['newDeductedAmount'] }}, you will clear the total amount owed in January 2025
+													  </td>
+												</tr>
+									
+												
+											  </tbody>
+											</table>
+											
+											
+											
+											
+											<h2 class="govuk-heading-m mt40">Communications</h2>
+						 
+											  
+											  
+															  
+											  <table class="govuk-table summary-table mb40">
+												   
+												   <caption class="visually-hidden">Payment day summary</caption>
+													  
+											  
+														<tbody class="govuk-table__body">
+												
+												<tr class="govuk-table__row">
+													<th scope="row" class="govuk-table__header">Review reminder</th>
+													<td class="govuk-table__cell">
+													
+												   {% if data['how-contacted']=='yesReminder'%}
+											
+									   
+												  Mobile number <span class="textNumber">{{ data['contact-by-text'] }}</span>
+												   
+												
+													 {% else %}
+													
+													 
+													You have chosen not to sign up for a review reminder.
+											
+											 
+													 {% endif %}
+													
+													</td>
+													
+													<td class="govuk-table__cell"><a href="#">Change</a></td>
+										  
+												   </tr>
+									
+												
+											  </tbody>
+											</table>
+											
+
+										
+										
+										<h2 class="govuk-heading-m">Declaration</h2>
+
+		<p>By continuing, you confirm that you will keep up with your payment reviews and let us know immediately if your financial situation changes.</p>
+
+										
+										
+	
+
+	
+
+			<p><a href="returnDeductionFinish" class="govuk-button">Continue</a></p>		
+			
+			
+			
+				
+									
+		    </form>
+
+							
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

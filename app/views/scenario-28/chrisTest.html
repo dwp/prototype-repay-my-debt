@@ -1,0 +1,197 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+			{% if data['paymentChoices']=='lowPayments'%}
+			
+			
+			<div class="govuk-grid-row">
+		
+				<div class="govuk-grid-column-full">
+
+				<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+			
+			<div class="attention-card">
+
+			<h1 class="govuk-heading-l mb40">How a more affordable plan works</h1>
+			
+			
+			<ul class="govuk-list">
+			
+			
+			
+			<li>
+				<h2>Start your plan by entering an amount you can afford to pay each month </h2>
+				<p>If your financial situation improves, you should sign in to your account and manage your plan to increase your payments or pay additional amounts.</p>
+			</li>	
+			
+			
+			<li class="two">
+				<h2>We may review your plan after 12 months</h2>
+				<p>If you have been unable to increase your payment plan, we will contact you to review your situation and understand how much you can afford.</p>
+				
+			</li>
+				
+				<li class="three">
+					<h2>Sign up for notifications</h2>
+					<p>You can receive reminders that you can manage your plan when your situation changes, take action if there are any problems with payments and be notified of any review dates.</p>
+				</li>
+
+			</ul>
+			
+
+			<p><a href="lowPayChoice" class="attention-invert mt30">Continue</a></p>
+
+		</div>
+		
+		
+				</div>
+			</div>
+		
+		
+		
+		{% elif data['paymentChoices']=='customAmount'%}
+		
+		
+		<div class="govuk-grid-row">
+	
+			<div class="govuk-grid-column-three-quarters">
+
+			<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	
+		
+		<h1 class="govuk-heading-xl">
+			   <span class="govuk-caption-xl">Step 2 of 4</span>
+				  Enter a different amount </h1>								 
+					
+	
+							
+					<div class="govuk-inset-text">
+					
+
+					<p>Based on what you owe, the minimum amount is &pound;60.00.</p>
+					
+						 </div>
+		
+											
+																	
+						<form class="form" action="customSummary" method="post">
+
+
+							<div class="govuk-form-group">
+								 <fieldset class="govuk-fieldset">
+									<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+									  <h1 class="govuk-fieldset__heading">
+									
+										How much do you want to pay?
+									  </h1>
+									</legend>
+									
+				
+
+
+									 <div id="example-question" class="form-group inline">
+										<span class="c-form-input-denote govuk-body">£</span>
+										<input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="custom-amount">
+									  </div>
+
+								  </fieldset>
+							</div>
+																			
+																	
+								
+					<button class="govuk-button" data-module="govuk-button">
+					  Continue
+					</button>
+					</form>
+				
+			</div>
+		</div>
+										     		
+
+	{% else %}
+									
+
+	<div class="govuk-grid-row">
+
+		<div class="govuk-grid-column-three-quarters">
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+			
+			<form class="form" action="paymentGuard" method="post">
+									
+												
+												<div class="govuk-form-group">
+													  <fieldset class="govuk-fieldset">
+														<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb20">
+														  <h1 class="govuk-fieldset__heading">
+														  <span class="govuk-caption-xl">Step 2 of 4</span>
+															How do you want to make your monthly payments?
+														  </h1>
+														</legend>
+														
+	
+	
+	<div class="govuk-radios">
+		
+		
+		<div class="govuk-radios__item">
+			<input class="govuk-radios__input" id="ddFixedChoice" name="paymentOptions" type="radio" aria-describedby="ddFixedChoice-hint" value="ddFixedChoice">
+			<label class="govuk-label govuk-radios__label" for="ddFixedChoice">
+			<b>Direct Debit payments</b>
+			</label>
+			<div id="ddFixedChoice-hint" class="govuk-hint govuk-radios__hint">
+			A fixed payment each month on a day that suits you
+			</div>
+		  </div> 
+		
+	  <div class="govuk-radios__item">
+		<input class="govuk-radios__input" id="flexyPayChoice" name="paymentOptions" type="radio" value="flexyPayChoice" aria-describedby="flexyPayChoice-hint">
+		<label class="govuk-label govuk-radios__label" for="flexyPayChoice">
+		  <b>Flexible payments</b>
+		</label>
+		<div id="flexyPayChoice-hint" class="govuk-hint govuk-radios__hint">
+		You must sign in each month and make payments &ndash; you can make multiple payments in a month to meet your payment amount
+		</div>
+	  </div>
+														
+	   
+										</div>												      
+														  
+		
+													  </fieldset>
+													</div>
+												
+												
+												<button class="govuk-button" data-module="govuk-button">
+												  Continue
+												</button>
+												</form>
+											
+											
+											
+											</div>
+											
+											</div>	
+													
+				
+										
+										
+										
+								{% endif %}		
+	
+										
+											
+	
+							
+						
+
+									
+{% endblock %}

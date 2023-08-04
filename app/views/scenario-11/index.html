@@ -1,0 +1,82 @@
+
+{% extends "layout-2.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+	   
+	   <div class="govuk-grid-row">
+      
+        <div class="govuk-grid-column-two-thirds">
+	   
+	   
+	<span class="govuk-caption-xl">Ashley Chamberlain</span>
+	   <h1 class="govuk-heading-xl">What do you want to do? </h1>
+	   
+	    <div class="govuk-inset-text">
+		 Total amount owed: <span class="total-amount">&pound;120.00</span>
+		 </div>
+	   
+	      
+      
+			
+			
+			<form class="form" action="choice" method="post">
+
+			
+			<div class="govuk-form-group">
+				  <fieldset class="govuk-fieldset">
+				    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+				      <h1 class="govuk-heading-m">
+				        Choose an option:
+				      </h1>
+				    </legend>
+				   
+				    <div class="govuk-radios">
+				    
+				    <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="want-pay" name="choose-what" type="radio" value="want-pay">
+				        <label class="govuk-label govuk-radios__label" for="want-pay">
+				          I want to see my payment options
+				        </label>
+				       
+				      </div>
+				      <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="want-help" name="choose-what" type="radio" value="want-help">
+				        <label class="govuk-label govuk-radios__label" for="want-help">
+				         I need help and support
+				        </label>
+				        
+				      </div>
+				      
+				    </div>
+				  </fieldset>
+				</div>
+			
+			
+			<button class="govuk-button" data-module="govuk-button">
+			  Continue
+			</button>
+			</form>
+			
+
+                  
+    </div>
+</div>
+
+{% endblock %}
+
+
+

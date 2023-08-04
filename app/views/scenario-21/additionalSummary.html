@@ -1,0 +1,307 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+
+
+		<h1 class="govuk-heading-xl">Additional payment summary</h1>
+		
+		
+		<div class="govuk-inset-text">
+ Payment today: <span class="total-amount">&pound;50.00</span>
+ </div>
+		
+		
+				
+		
+		<p>This payment will reduce the duration of your debt &ndash; it will not reduce your regular monthly payments but may affect your final payment.</p>
+
+
+
+		<h2 class="govuk-heading-m">How this will affect your plan</h2>
+		
+		
+		
+		
+		
+		 <div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+											
+											
+											
+
+												
+												
+
+												
+												
+												
+												<li>
+													<h3>Total amount left to pay</h3>
+													<b>
+													
+													
+											{% if data['how-much2']=='6Month'%}
+										    
+										    &pound;1616.00
+								
+											{% elif data['how-much2']=='12Month'%}
+											
+											&pound;1783.00
+											
+											{% elif data['how-much2']=='18Month'%}
+											
+											&pound;1838.00
+											
+											
+											{% elif data['how-much2']=='24Month'%}
+											
+											&pound;1866.00
+											
+											
+											{% elif data['how-much2']=='36Month'%}
+											
+											&pound;1894.00
+											
+											{% elif data['how-much2']=='twentyFive'%}
+											
+											&pound;1925.00
+
+											
+											{% else %}
+											
+											&pound;1940.00
+											
+											{% endif %}
+											
+											
+													
+													</b>
+												</li>
+												
+												<li>
+													<h3>Payments remaining</h3>
+													
+
+											
+											<b>
+											
+											  {% if data['how-much2']=='6Month'%}
+										    
+										   5
+								
+											{% elif data['how-much2']=='12Month'%}
+											
+											11
+											
+											{% elif data['how-much2']=='18Month'%}
+											
+											17
+											
+											
+											{% elif data['how-much2']=='24Month'%}
+											
+											23
+											
+											{% elif data['how-much2']=='36Month'%}
+											
+											34
+											
+											{% elif data['how-much2']=='twentyFive'%}
+											
+											77
+
+											
+											{% else %}
+											
+											194
+											
+											{% endif %}
+													
+											</b>
+													
+												</li>
+												
+									<li>
+													<h3>Expected final payment</h3>
+													<b>
+													
+													
+													 {% if data['how-much2']=='6Month'%}
+										    
+										    {{ data['paymentDay'] }} August 2021
+								
+											{% elif data['how-much2']=='12Month'%}
+											
+											{{ data['paymentDay'] }} March 2022
+											
+											{% elif data['how-much2']=='18Month'%}
+											
+											{{ data['paymentDay'] }} August 2022
+											
+											
+											{% elif data['how-much2']=='24Month'%}
+											
+											{{ data['paymentDay'] }} March 2023
+											
+											{% elif data['how-much2']=='36Month'%}
+											
+											{{ data['paymentDay'] }} February 2024
+											
+											{% elif data['how-much2']=='twentyFive'%}
+											
+											{{ data['paymentDay'] }} October 2027
+
+											
+											{% else %}
+											
+											{{ data['paymentDay'] }} July 2037
+											
+											{% endif %}
+													
+																							
+													
+													</b>
+												</li> 
+												
+												
+											</ul>
+											
+											</div>
+		
+	
+
+
+		<!--	 <table class="govuk-table mb40">
+									 
+									 <caption class="visually-hidden">Plan summary</caption>
+										
+								
+										  <tbody class="govuk-table__body">
+										  
+										
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Payment today</th>
+										      <td class="govuk-table__cell">&pound;50.00
+										      </td>
+										      
+									
+											 </tr>
+											 
+											 
+											 
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Total amount left to pay</th>
+										      <td class="govuk-table__cell">&pound;1940.00
+										      </td>
+										      
+									
+											 </tr>
+											 
+											 
+											 
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Remaining payments</th>
+										      <td class="govuk-table__cell">194
+										      </td>
+										      
+									
+											 </tr>
+											 
+											 
+								
+										    
+								
+										 										    
+										    
+										     <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Expected final payment</th>
+										      <td class="govuk-table__cell dtList">
+										      
+												  	12 February 2036
+										      </td>
+										      
+										    
+							
+										     
+										    </tr>
+
+										    
+										    
+										    
+
+								
+										  </tbody>
+										</table> -->
+										
+										
+										{% if data['how-much2']=='6Month'%}
+										
+										<p>Your final payment will be reduced to &pound;280.00.</p>
+											
+											
+											{% elif data['how-much2']=='12Month'%}
+											<p>Your final payment will be reduced to &pound;113.00.</p>
+											
+											
+											
+											{% elif data['how-much2']=='24Month'%}
+											<p>Your final payment will be reduced to &pound;18.00.</p>
+											
+											
+											{% elif data['how-much2']=='36Month'%}
+											
+											<p>Your final payment will be increased to &pound;46.00.</p>
+											
+											
+											{% elif data['how-much2']=='twentyFive'%}
+											
+											<p>Your final payment will remain the same at &pound;25.00.</p>
+											
+											
+											{% else %}
+											
+											<p>Your final payment will remain the same at &pound;10.00.</p>
+											
+											
+											
+											{% endif %}
+										
+										
+										
+										
+										
+																				
+										
+										<p><a href="additionalFinish" class="govuk-button">Continue</a></p>		
+						
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,165 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+		
+		
+		
+
+									
+									
+									 <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Your flexible payment plan<br>is now setup
+          </h1>
+          <div class="govuk-panel__body">
+            You must sign in each month and make at least one payment
+          </div>
+        </div>
+
+        <!--<p class="govuk-body">We have sent you a confirmation email.</p>-->
+
+	   <table class="govuk-table summary-table mb40">
+		  <caption class="govuk-table__caption"><span class="govuk-heading-m">Summary</span></caption>
+
+		  <tbody class="govuk-table__body">
+
+
+		  <tr class="govuk-table__row">
+		      <th scope="row" class="govuk-table__header">Start date</th>
+		      <td class="govuk-table__cell">
+			      
+
+			
+			1 November 2020
+
+			      
+		      </td>
+		    </tr>
+
+
+			 <tr class="govuk-table__row">
+		      <th scope="row" class="govuk-table__header">Monthly payment target</th>
+		      <td class="govuk-table__cell">
+			      
+			      {% if data['how-much3']=='FlexoneHundredPound'%}
+													    
+													    &pound;100.00
+													    
+											
+														{% elif data['how-much3']=='FlexfiftyPound'%}
+														
+														&pound;50.00
+														
+														
+														
+														{% elif data['how-much3']=='FlextwentyFivePound'%}
+														
+														&pound;25.00
+																	
+														
+														{% else %}
+														
+														&pound;30.00
+													
+														
+														{% endif %}
+			      
+		      </td>
+
+		    </tr>
+		    
+		    <tr class="govuk-table__row">
+		    <th scope="row" class="govuk-table__header">Payment reminders</th>
+			<td class="govuk-table__cell">
+			
+			{% if data['how-contacted']=='yesReminder'%}
+			
+			
+			
+			
+				Yes
+			    
+			    
+			    
+	
+				{% elif data['how-contacted']=='noReminder'%}
+				
+				No
+				
+				
+				{% else %}
+				
+				
+				
+				{% endif %}
+			
+			</td>
+		    </tr>
+		    
+
+
+
+		  </tbody>
+		</table>
+		
+		  <h2 class="govuk-heading-m">What happens next</h2>
+		  
+
+
+               		{% if data['how-contacted']=='yesReminder'%}
+
+				<p>We will text you at the start of the month to let you know your plan is active and a payment is due.</p>
+
+				{% else %}
+				{% endif %}
+				
+				
+         <p>You can still make payments to reduce your debt before your plan starts.</p>
+         
+         
+         <!-- 	<h2 class="govuk-heading-m">Before your plan starts</h2>
+				
+         <p>You can make a payment now before your plan starts. This will reduce your debt but will be separate to your payment target.</p>
+
+
+-->
+
+
+		
+		<p class="mb0"><a href="paymentToday" class="govuk-button">Make a payment now</a></p>
+		<p><a href="../index">Finish and sign out</a></p>
+									
+									
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

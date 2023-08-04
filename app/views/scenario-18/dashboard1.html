@@ -1,0 +1,270 @@
+
+{% extends "layout-4.html" %}
+
+
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="clear-bar stripped-border">
+	   		<div class="identifier">
+	   			<span class="govuk-caption-l">Account home</span>
+	   			<h3 class="govuk-heading-l">Ashley Chamberlain</h3>
+
+	   		</div>
+	   		<div class="govuk-inset-text">
+			 Total amount owed: <span class="total-amount">&pound;570.00</span>
+			</div>
+
+
+	   </div>
+
+
+<!--<div class="warning-message complete-alert">
+							 <h5 class="govuk-heading-s">Payment status</h5>
+							 	<p>A payment has been made. It will take up to 24 hours to update your account.</p>
+							 </div> -->
+
+
+
+							<!--<div class="warning-message">
+								 <h5 class="govuk-heading-s">You didn't make a payment last month</h5>
+								 	<p>If you do not keep up with your payments, we may ask your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.</p>
+								 </div>-->
+
+
+      <div class="govuk-grid-row">
+
+
+<div class="flex-container">
+
+
+       <div class="govuk-grid-column-one-half">
+
+		    <div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Flexible payment plan</h2>
+
+					 <div class="scenario-inner-panel">
+	 	
+						 	<p class="activeMonth">Active month: <b>November 2020</b> <span>11 days remaining</span></p>
+
+					 
+					 
+											<div class="flexibleBanner dashboardTarget">
+											
+											
+											<ul class="govuk-list">
+							
+												
+												<li>
+													<h3>Monthly target</h3>
+
+														{% if data['how-much3']=='FlexoneHundredPound'%}
+													    
+													    <b>&pound;100.00</b>
+													    
+											
+														{% elif data['how-much3']=='FlexfiftyPound'%}
+														
+														<b>&pound;50.00</b>
+														
+														
+														
+														{% elif data['how-much3']=='FlextwentyFivePound'%}
+														
+														<b>&pound;25.00</b>
+																	
+														
+														{% else %}
+														
+														<b>&pound;30.00</b>
+													
+														
+														{% endif %}
+								
+												</li>
+												
+												<li>
+													<h3>Paid this month</h3>
+													<b>&pound;{{ data['payment-amount'] }}</b>
+												</li>
+												
+											<!--	<li>
+													<h3>Left to pay</h3>
+													<b>&pound;20.00</b>
+												</li> -->
+								
+									
+											</ul>
+											
+										
+											
+											</div>
+											
+											<p class="statement">You will not be penalised if you do not meet your target this month.</p> 
+											
+											
+					
+
+					<span><a href="flexibleStart" class="secondary-invert">Make a flexible payment</a></span>
+
+					 </div>
+				 </div>
+
+        </div>
+
+
+      <div class="govuk-grid-column-one-half">
+
+		    <div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Payment history</h2>
+
+
+					 <div class="scenario-inner-panel">
+
+						 
+						  <h4 class="govuk-heading-s">Last payment</h4>
+						 
+								
+								 	<p>A payment of &pound;30 was made on 12 November 2020.</p>
+								 
+					 	
+					 			
+					 		<table class="govuk-table mbextender">
+
+							  <tbody class="govuk-table__body">
+
+					
+							   <tr class="govuk-table__row">
+							      <th scope="row" class="govuk-table__header">Total payments made</th>
+							      <td class="govuk-table__cell">1</td>
+							   </tr>
+							    <tr class="govuk-table__row">
+							      <th scope="row" class="govuk-table__header">Total amount repaid</th>
+							      <td class="govuk-table__cell">&pound;{{ data['payment-amount'] }}</td>
+							    </tr>
+
+
+							  </tbody>
+							</table>
+													
+	
+		             <span><a href="paymentHistory" class="secondary-invert">View my payment history</a></span>
+	
+				 
+        </div>
+		    </div>
+
+
+      </div>
+      
+      
+</div>
+
+
+      </div>
+
+
+
+
+        <div class="govuk-grid-row">
+
+         <!--<div class="govuk-grid-column-one-half">
+
+		    <div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Total amount remaining</h2>
+
+					 <div class="scenario-inner-panel">
+
+					 		 <div class="govuk-grid-row">
+
+						 		 <div class="govuk-grid-column-one-half">
+
+						 		 	 <h3 class="govuk-heading-m">&pound;120.00</h3>
+
+						 		 </div>
+
+						 		 <div class="govuk-grid-column-one-half">
+
+						 		 	 <h3 class="govuk-heading-s right-align"><span>Debt end date:</span>21 March 2021</h3>
+
+						 		 </div>
+
+					 		 </div>
+
+
+		             <span><a href="#" class="secondary-invert">Make an additional payment</a></span>
+					 </div>
+				 </div>
+
+        </div> -->
+
+         <div class="govuk-grid-column-one-half">
+
+		    <div class="scenario-panel">
+					 <h2 class="govuk-heading-s">What you owe</h2>
+
+					 <div class="scenario-inner-panel">
+					  <p>Details of the debts you owe to DWP.</p>
+
+
+		             <span><a href="debtBreakdown" class="secondary-invert dash-spacer">View details of what I owe</a></span>
+					 </div>
+				 </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="govuk-grid-column-one-half">
+
+		    <div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Help and support</h2>
+
+					 <div class="scenario-inner-panel">
+					  <p>Get help if you're struggling to pay and find<br>out what to do next.</p>
+
+		             <span><a href="helpSupport3" class="secondary-invert">Get help and support</a></span> 
+					 </div>
+				 </div>
+
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,101 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		<h1 class="govuk-heading-xl">
+			<span class="govuk-caption-xl">Payment plan review</span>
+			Lower your payments</h1>
+			
+
+											
+<div class="flexibleBanner">
+	
+	
+	<ul class="govuk-list">
+
+		
+		<li>
+			<h3>Payment amount</h3>
+			<b>										    
+	&pound;{{ data['newLowerAmount'] }} 
+	
+	</b>
+		</li>
+
+<li>
+	<h3>Expected final payment</h3>
+	<b>										    
+	March 2040
+
+</b>
+</li>
+		
+		
+		<li>
+			<h3>Payment plan review</h3>
+			<b>
+			August 2024
+			
+			
+			</b>
+		</li>
+
+		
+	</ul>
+	
+	</div>			
+	
+	
+	
+	
+	
+	<p>As you have lowered your payments, your expected final payment date will be later. You will remain on the affordable plan and you will still need a plan review.</p>		
+	
+	
+	<p>This means your plan will now work in the following way:</p>
+	
+	  <ul class="govuk-list govuk-list--bullet">
+		<li>your payments will be lower each month and you will remain on the affordable payment plan</li>
+		<li>you will have another review in 12 months</li>
+		<li>we will send you a letter with details of when your review will take place and instructions to sign in to your account, you will then have 4 weeks to do your review</li>
+	  </ul>
+			
+	
+	
+				
+				
+		<div class="govuk-inset-text">
+			 Your pension may be affected if you still owe money when you retire.
+			 </div>
+				
+				<p><a href="lowerPlanSummary" class="govuk-button">Continue</a></p>
+				
+									
+										
+
+    </div>
+</div>
+
+{% endblock %}

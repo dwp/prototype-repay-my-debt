@@ -1,0 +1,183 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+	   <h1 class="govuk-heading-xl">
+	   	<span class="govuk-caption-xl">Flexible payment plan</span>Summary</h1>
+	   	
+
+
+	   	 
+	   	 
+	   	 <div class="flexibleBanner">
+	   	<h2 class="govuk-heading-m">Your plan will start today</h2>
+	   <p>Your flexible payment plan will be reviewed often &ndash; you can pay low amounts during difficult times but if the total amount you pay each month is regularly too low, we may contact you.</p>
+	   
+	   	</div>
+
+
+	   	
+	   	
+	   	
+
+
+	   <table class="govuk-table summary-table mb40">
+		  <caption class="govuk-table__caption"><span class="visually-hidden">Payment summary</span></caption>
+
+		  <tbody class="govuk-table__body">
+		  
+		  
+		  
+		   {% if data['how-much3']=='noAfford'%}
+
+		   {% else %}
+		   
+		   
+		   <tr class="govuk-table__row">
+		      <th scope="row" class="govuk-table__header">Monthly target</th>
+		      <td class="govuk-table__cell">
+
+			      	{% if data['how-much3']=='flex334'%}
+													    
+													    &pound;334.00
+													    
+											
+														{% elif data['how-much3']=='flex167'%}
+														
+														&pound;167.00
+														
+														
+														
+														{% elif data['how-much3']=='flex112'%}
+														
+														&pound;112.00
+														
+														{% elif data['how-much3']=='flex84'%}
+														
+														&pound;84.00
+																	
+														
+														{% else %}
+														
+														&pound;56.00
+													
+														
+														{% endif %}
+
+		      </td>
+		      <td class="govuk-table__cell"><a href="flexSuggestedTarget2">Change</a></td>
+		    </tr>
+
+		   
+		   
+		   
+		   {% endif %}
+
+													 			  		    
+		    
+		    <tr class="govuk-table__row">
+		      <th scope="row" class="govuk-table__header">Payment today</th>
+		      <td class="govuk-table__cell">
+		     &pound;{{ data['payment-amount'] }}
+		      </td>
+		      <td class="govuk-table__cell"><a href="flexPayNow2">Change</a></td>
+		    </tr>
+		     
+
+
+		<tr class="govuk-table__row">
+		    <th scope="row" class="govuk-table__header">Payment reminders</th>
+			<td class="govuk-table__cell">
+
+			{% if data['how-contacted']=='yesReminder'%}
+
+
+
+
+				{% if data['citizenChoice']=='email'%}
+			   		Email address<span class="textNumber">{{ data['contact-by-email'] }}</span>
+			    {% elif data['citizenChoice']=='textMessage'%}
+			     	Text message<span class="textNumber">{{ data['contact-by-text'] }}</span>
+			    {% else %}
+			    {% endif %}
+
+
+
+
+				{% elif data['how-contacted']=='noReminder'%}
+
+				No
+
+
+				{% else %}
+
+
+
+				{% endif %}
+
+			</td>
+			<td class="govuk-table__cell"><a href="paymentRemindersFirst">Change</a></td>
+		    </tr>
+
+
+
+		  </tbody>
+		</table>
+
+
+
+
+
+
+
+
+		<h2 class="govuk-heading-m">Declaration</h2>
+
+		<p>By continuing, you confirm that you will:</p>
+
+		<ul class="govuk-list govuk-list--bullet mb30">
+      <li>sign in each month and make at least one payment</li>
+			<li>let us know immediately if you’re struggling to keep up with payments</li>
+		</ul>
+
+
+		<div class="govuk-warning-text">
+		  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+		  <strong class="govuk-warning-text__text">
+		    <span class="govuk-warning-text__assistive">Warning</span>
+		    
+		    If you do not make any payments at all, we will ask your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.
+		  </strong>
+		</div>
+
+
+			<p><a href="flexyFinishPath" class="govuk-button">Continue to pay</a></p>
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

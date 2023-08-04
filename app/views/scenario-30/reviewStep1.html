@@ -1,0 +1,183 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+			
+			<span class="back-link"> <a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+									<span class="govuk-caption-xl">Payment plan review</span>
+									<h1 class="govuk-heading-xl mb30">
+										Your payments</h1>
+										
+									
+									
+								<p>Payment period: {{ data['paymentDay'] }} July 2022 &ndash; 15 July 2023</p>
+										
+										<div class="flexibleBanner">
+
+
+											<ul class="govuk-list">
+				
+												<li>
+													<h3>Total amount repaid</h3>
+
+
+														<b>&pound;490.00</b>
+
+
+
+												</li>
+												
+							
+												
+												
+												<li>
+													<h3>Total amount left to pay</h3>
+
+
+														<b>&pound;3800.00</b>
+
+
+
+												</li>
+												
+												
+												<li>
+													<h3>Expected final payment</h3>
+
+
+														<b>March 2034</b>
+
+
+
+												</li>
+											</ul>
+											
+											
+											
+											</div>
+
+
+
+
+<table class="govuk-table mb30">
+	 
+	 <caption class="govuk-heading-m alignCaption">Direct Debit payment plan</caption>
+	 
+
+			  
+		
+
+		  <tbody class="govuk-table__body">
+
+
+			<!-- <tr class="govuk-table__row">
+				   <th scope="row" class="govuk-table__header">Date period</th>
+	 
+					 
+					 <td class="govuk-table__cell"> 4 July 2022 &ndash; 12 July 2023</td>
+		   
+				   
+				  </tr> -->
+				  
+				  
+				  <tr class="govuk-table__row">
+						<th scope="row" class="govuk-table__header">Direct Debit monthly amount</th>
+		  
+						  
+						  <td class="govuk-table__cell">&pound;30.00</td>
+				
+						
+					   </tr>
+			 
+			 
+			 <tr class="govuk-table__row">
+			  <th scope="row" class="govuk-table__header">Payments made</th>
+
+				
+				<td class="govuk-table__cell">12 of 12</td>
+	  
+			  
+			 </tr>
+			 
+			 <tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Total amount repaid</th>
+					
+					
+					
+					<td class="govuk-table__cell">&pound;360.00</td>
+	  
+	  
+				   </tr>
+				   
+		  </tbody>
+</table>
+			 
+			 
+		<table class="govuk-table mb40">
+			 
+			 <caption class="govuk-heading-m alignCaption">Additional payments</caption>
+			 
+			 
+			 
+			 <tr class="govuk-table__row">
+			  <th scope="row" class="govuk-table__header">Payments made</th>
+			  
+			  
+			  
+			  <td class="govuk-table__cell">4</td>
+
+
+			 </tr>
+			 
+			 <tr class="govuk-table__row">
+				   <th scope="row" class="govuk-table__header">Total amount repaid</th>
+				   
+				   
+				   
+				   <td class="govuk-table__cell">&pound;130.00</td>
+	 
+	 
+				  </tr>
+				  
+
+			 
+			 
+		  </tbody>
+		  
+</table>
+
+<h2 class="govuk-heading-m">Summary</h2>
+<p>You have met your Direct Debit amount of £30.00 each month and have made 4 additional payments totalling £130.00.</p>
+<p>Your average monthly payments for July 2022 &ndash; July 2023 have been £40.00. If you continue paying these amounts, your expected final payment will be 2 months earlier.</p>
+
+
+<p class="mt40"><a href="reviewStep2" class="govuk-button">Continue</a></p>
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

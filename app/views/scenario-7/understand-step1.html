@@ -1,0 +1,119 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    
+     
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Harvey Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;630.00</span></p>
+
+	   </div> -->
+	   
+	   <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	   
+	   
+	   <span class="govuk-caption-l">Debt 1 of 2</span>
+	   <h1 class="govuk-heading-l">Universal credit</h1>
+	   
+
+      <div class="govuk-grid-row">
+      
+        <div class="govuk-grid-column-two-thirds">
+        
+        	
+        	<table class="govuk-table">
+			  <caption class="govuk-table__caption"><span class="visually-hidden">Details of debt</span></caption>
+			  <thead class="govuk-table__head">
+
+			  <tbody class="govuk-table__body">
+			    <tr class="govuk-table__row">
+			      <th scope="row" class="govuk-table__header">Amount owed</th>
+			      <td class="govuk-table__cell">£109.80</td>
+			    </tr>
+			    <tr class="govuk-table__row">
+			      <th scope="row" class="govuk-table__header">Reason</th>
+			      <td class="govuk-table__cell">Advance payment</td>
+			    </tr>
+			    <tr class="govuk-table__row">
+			      <th scope="row" class="govuk-table__header">Date debt started</th>
+			      <td class="govuk-table__cell">26 June 2019</td>
+			    </tr>
+			  </tbody>
+			</table>
+			
+			<hr class="govuk-section-break govuk-section-break--l">
+			
+			<h3 class="govuk-heading-s">Further details</h3>
+			<p>When you claimed Universal Credit, we gave you an advance so that you had some money to live on while you waited for your first payment. When you took this advance, we told you that you would have to pay it back. You cannot appeal this decision.</p>
+        	
+        	
+                
+        <form class="inner-question" action="understand-step2" method="POST" >
+        
+        
+        <div class="govuk-form-group">
+		  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+		    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+			      <h1 class="govuk-fieldset__heading">
+			        Do you understand why you owe this money? 
+			      </h1>
+			    </legend>
+
+		    <div class="govuk-radios govuk-radios--inline">
+		      <div class="govuk-radios__item">
+		        <input class="govuk-radios__input" id="changed-name" name="understand1" type="radio" value="understand-yes-1">
+		        <label class="govuk-label govuk-radios__label" for="changed-name">
+		          Yes
+		        </label>
+		      </div>
+		      <div class="govuk-radios__item">
+		        <input class="govuk-radios__input" id="changed-name-2" name="understand1" type="radio" value="understand-no-1">
+		        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+		          No
+		        </label>
+		      </div>
+		    </div>
+		  </fieldset>
+		</div>
+        
+        
+       <hr class="govuk-section-break govuk-section-break--l"> 
+
+			
+			
+			<button class="govuk-button" data-module="govuk-button">
+			 Next
+			</button>
+			
+			
+        </form>
+			
+        </div>
+        
+        
+        
+        
+             
+        
+      </div>
+      
+      
+            
+          
+     
+      
+            
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,326 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+   <div class="govuk-grid-column-three-quarters">
+    
+     
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+	   <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	   
+	   <h1 class="govuk-heading-xl">Payment history</h1>
+	   
+	   
+	   
+	   
+	   {% if data['paymentChoices']=='lowPayments'%}
+	   
+	   
+	   
+	   <div class="flexibleBanner">
+		   
+		   
+		   <ul class="govuk-list">
+
+
+			   
+			   <li>
+				   <h3>Payments made</h3>
+				   
+
+		   
+		   <b>
+		   
+		   1
+				   
+		   </b>
+				   
+			   </li>
+			   
+			   
+			   <li>
+				   <h3>Total amount repaid</h3>
+				   <b>
+
+
+		   &pound;30.00
+		   													
+				   </b>
+			   </li>
+
+
+			   
+		   </ul>
+		   
+		   </div>
+
+
+
+
+
+
+
+<h2 class="govuk-heading-m mt20">All payments</h2>
+
+
+
+<table class="govuk-table summary-pay">
+
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+
+ <th class="govuk-table__header" scope="col">Date of payment</th>
+
+ <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+ 
+ <!--  <th class="govuk-table__header govuk-table__header--numeric" scope="col">Balance</th> -->
+ 
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+
+ <tr class="govuk-table__row">
+
+ 
+ <td class="govuk-table__cell">{{ data['paymentDay'] }} November 2021</td>
+
+
+ <td class="govuk-table__cell govuk-table__cell--numeric">
+	 
+	 
+	 
+
+&pound;30.00
+
+	 
+	 
+ </td>
+ 
+
+ 
+
+</tr>
+
+
+
+   
+</tbody>
+</table>
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   {% else %}
+	   
+
+	   
+	   <div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+
+
+												
+												<li>
+													<h3>Payments made</h3>
+													
+
+											
+											<b>
+											
+											1
+													
+											</b>
+													
+												</li>
+												
+												
+												<li>
+													<h3>Total amount repaid</h3>
+													<b>
+													
+														       
+							    {% if data['paymentChoices']=='12Month'%}
+										    
+										    &pound;360.00
+								
+											{% elif data['paymentChoices']=='24Month'%}
+											
+											&pound;180.00										
+											
+											{% elif data['paymentChoices']=='36Month'%}
+											
+											&pound;120.00
+											
+											{% elif data['paymentChoices']=='48Month'%}
+											
+											&pound;90.00
+											
+											{% elif data['paymentChoices']=='72Month'%}
+											
+											&pound;60.00
+						
+
+											
+											{% else %}
+						
+											&pound;100.00
+											
+											{% endif %}													
+													</b>
+												</li>
+												
+												
+												
+												<li>
+													<h3>Total amount left to pay</h3>
+													<b>
+													
+												{% if data['paymentChoices']=='12Month'%} 
+												
+												&pound;3960.00
+									
+												{% elif data['paymentChoices']=='24Month'%}
+												
+												&pound;4140.00										
+												
+												{% elif data['paymentChoices']=='36Month'%}
+												
+												&pound;4200.00
+												
+												{% elif data['paymentChoices']=='48Month'%}
+												
+												&pound;4230.00
+												
+												{% elif data['paymentChoices']=='72Month'%}
+												
+												&pound;4248.00
+	
+	
+												
+												{% else %}
+												
+												&pound;4220.00
+							
+												
+												
+												{% endif %}
+													
+													</b>
+												</li>
+												
+
+												
+											</ul>
+											
+											</div>
+	   
+	   
+	   
+    
+				
+
+  
+  <h2 class="govuk-heading-m mt20">All payments</h2>
+  
+  
+	
+	 <table class="govuk-table summary-pay">
+		  
+		  
+							  <thead class="govuk-table__head">
+							    <tr class="govuk-table__row">
+							    
+							      <th class="govuk-table__header" scope="col">Date of payment</th>
+							
+							      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+							      
+							      <!--  <th class="govuk-table__header govuk-table__header--numeric" scope="col">Balance</th> -->
+							      
+							    
+							    </tr>
+							  </thead>
+							  
+							  <tbody class="govuk-table__body">
+							  
+							  
+							  	<tr class="govuk-table__row">
+							    
+							      
+							      <td class="govuk-table__cell">{{ data['paymentDay'] }} November 2021</td>
+							
+							
+							      <td class="govuk-table__cell govuk-table__cell--numeric">
+								      
+								      
+								      
+								{% if data['paymentChoices']=='12Month'%}
+								
+								&pound;360.00
+					
+								{% elif data['paymentChoices']=='24Month'%}
+								
+								&pound;180.00										
+								
+								{% elif data['paymentChoices']=='36Month'%}
+								
+								&pound;120.00
+								
+								{% elif data['paymentChoices']=='48Month'%}
+								
+								&pound;90.00
+								
+								{% elif data['paymentChoices']=='72Month'%}
+								
+								&pound;60.00
+
+								
+								{% else %}
+						
+							&pound;100.00
+								
+								{% endif %}
+								      
+								      
+								      
+							      </td>
+							      
+
+							      
+							    
+							    </tr>
+							    
+
+							    
+							        
+							  </tbody>
+							</table>
+	
+	
+	{% endif %}	
+
+                  
+    </div>
+</div>
+
+{% endblock %}

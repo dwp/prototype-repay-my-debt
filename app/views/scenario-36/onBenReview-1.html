@@ -1,0 +1,124 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  Payment review - Why do your payments need to be reduced?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+
+								<form class="form" action="onBenReview-2" method="post">
+
+									<div class="govuk-form-group">
+										  <fieldset class="govuk-fieldset" aria-describedby="worse-hint">
+											<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+											  <h1 class="govuk-fieldset__heading">
+												<span class="govuk-caption-xl">Payment review</span>
+												Why do your payments need to be reduced?
+											  </h1>
+											</legend>
+											<div id="worse-hint" class="govuk-hint">
+											  Select all options that are relevant to you.
+											</div>
+
+											<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+											  <div class="govuk-checkboxes__item">
+												<input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+												<label class="govuk-label govuk-checkboxes__label" for="contact">
+												 My loan or credit card payments have increased
+												</label>
+											  </div>
+											 <!-- <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+												<div class="govuk-form-group">
+													  <label class="govuk-label" for="more-detail">
+														Provide more detail
+													  </label>
+													  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+													</div>
+											  </div>-->
+
+											  <div class="govuk-checkboxes__item">
+												<input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
+												<label class="govuk-label govuk-checkboxes__label" for="contact-2">
+												I have lost my job or have reduced my hours
+												</label>
+											  </div>
+											  <!--<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-2">
+												<div class="govuk-form-group">
+													  <label class="govuk-label" for="more-detail">
+														Provide more detail
+													  </label>
+													  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+													</div>
+											  </div>-->
+
+											  <div class="govuk-checkboxes__item">
+												<input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
+												<label class="govuk-label govuk-checkboxes__label" for="contact-3">
+												  My living costs have increased
+												</label>
+											  </div>
+											  <!--<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-3">
+												<div class="govuk-form-group">
+													  <label class="govuk-label" for="more-detail">
+														Provide more detail
+													  </label>
+													  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+													</div>
+											  </div>-->
+
+
+
+
+											<!--  <div class="other-reason-open govuk-body">Or</div> -->
+
+											  <div class="govuk-checkboxes__item">
+												  <input class="govuk-checkboxes__input" id="contact-4" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-4">
+												  <label class="govuk-label govuk-checkboxes__label" for="contact-4">
+													Other
+												  </label>
+												</div>
+												<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-4">
+												  <div class="govuk-form-group">
+														<label class="govuk-label" for="more-detail">
+														 Provide more detail &ndash; this information will be used to help you during your next payment review
+														</label>
+														<textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+													  </div>
+												</div>
+
+
+
+											</div>
+
+
+
+
+										  </fieldset>
+										</div>
+
+										<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+								</form>
+
+    </div>
+</div>
+
+{% endblock %}

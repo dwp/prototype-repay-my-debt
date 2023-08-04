@@ -1,0 +1,166 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+		
+		{% if data['how-much2']=='other-amount'%}
+		
+		
+			<h1 class="govuk-heading-xl mb30">The amount you have entered is low</h1>
+
+
+					   			<p>Contact Debt Management to discuss the options available to you.</p>
+
+
+					   					<h2 class="govuk-heading-m">Debt Management</h2>
+									  <ul class="govuk-list">
+									  <li>Telephone: 0800 916 0647</li>
+									  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+									</ul>
+									<p class="govuk-body">
+									  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+									</p>		
+		
+									{% else %}
+									
+		
+		
+
+
+		<h1 class="govuk-heading-xl">
+			<span class="govuk-caption-xl">Set up a Direct Debit</span>
+			Enter your account details</h1>
+		
+		<div class="flexibleBanner">
+		
+		
+											{% if data['how-much2']=='oneHundredPound'%}
+										    
+										    <ul class="govuk-list">
+												<li><h3>Total amount owed</h3><b>&pound;600.00</b></li>
+												<li><h3>Direct Debit amount</h3><b>&pound;100.00</b></li>
+												<li><h3>Number of payments</h3><b>6</b></li>	
+											</ul>
+								
+											{% elif data['how-much2']=='fiftyPound'%}
+											
+											<ul class="govuk-list">
+												<li><h3>Total amount owed</h3><b>&pound;600.00</b></li>
+												<li><h3>Direct Debit amount</h3><b>&pound;50.00</b></li>
+												<li><h3>Number of payments</h3><b>12</b></li>	
+											</ul>
+											
+											
+											{% elif data['how-much2']=='twentyFivePound'%}
+											
+											<ul class="govuk-list">
+												<li><h3>Total amount owed</h3><b>&pound;600.00</b></li>
+												<li><h3>Direct Debit amount</h3><b>&pound;25.00</b></li>
+												<li><h3>Number of payments</h3><b>24</b></li>	
+											</ul>
+
+											
+											{% else %}
+											
+											<p>Custom amount entered</p>
+											
+											{% endif %}
+		
+		
+		
+		
+		
+
+
+											
+
+									</div>
+		
+		
+		
+		
+		 <form class="form" action="directDebitDay" method="post">
+
+		    <fieldset class="govuk-fieldset">
+			    <legend class="visually-hidden">
+					Enter Account details
+				</legend>
+	
+		    <div class="govuk-form-group">
+			  <label class="govuk-label" for="accountName">
+			    Account name
+			  </label>
+
+			  <input class="govuk-input govuk-input--width-30" id="accountName" name="accountName" type="text">
+
+			</div>
+		
+			
+			<div class="govuk-form-group">
+			  <label class="govuk-label" for="accountNumber">
+			    Account number
+			  </label>
+
+			  <input class="govuk-input govuk-input--width-10" id="accountNumber" name="accountNumber" type="text">
+
+			</div>
+			
+			<div class="govuk-form-group">
+			  <label class="govuk-label" for="sortCode">
+			    Sort code
+			  </label>
+
+			  <input class="govuk-input govuk-input--width-10" id="sortCode" name="sortCode" type="text">
+
+			</div>
+			
+			
+		    </fieldset>
+		    
+
+		    
+		    
+		    
+		    <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		    
+		 </form>
+
+								
+									
+									
+						{% endif %}		
+
+
+									
+									
+									
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,370 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+{% if data['amountChange']=='yesAmountChange'%}
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+
+
+
+
+<h1 class="govuk-heading-xl">
+		<span class="govuk-caption-xl">Step 1 of 3</span>
+		
+		What this means for your plan</h1>
+		
+						
+		
+		
+		<table class="govuk-table mb40">
+									 
+									 <caption class="visually-hidden">How this will affect your plan</caption>
+									 
+									 
+									 <thead>
+									 	<tr>
+									 	
+									 		 <th scope="row" class="govuk-table__header">&nbsp;</th>
+									 		  <th scope="row" class="govuk-table__header">Current payment plan</th>
+									 		   <th scope="row" class="govuk-table__header updatedPlanHeading">New payment plan</th>
+									 	</tr>
+									 </thead>
+									 		 
+										
+								
+										  <tbody class="govuk-table__body">
+										  
+										  
+										  <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Direct Debit amount</th>
+										      <td class="govuk-table__cell">
+											      
+											   {% if data['paymentChoices']=='12Month'%}
+										    
+										    &pound;180.00
+								
+											{% elif data['paymentChoices']=='24Month'%}
+											
+											&pound;90.00										
+											
+											{% elif data['paymentChoices']=='36Month'%}
+											
+											&pound;60.00
+											
+											{% elif data['paymentChoices']=='48Month'%}
+											
+											&pound;45.00
+											
+											{% elif data['paymentChoices']=='72Month'%}
+											
+											&pound;30.00
+					
+											
+											{% else %}
+						
+											
+											&pound;15.00
+											{% endif %}
+											      
+											      
+										      </td>
+										    <td class="govuk-table__cell updatedPlanStatus">&pound;{{ data['change-amount'] }}</td>
+										  </tr>
+
+										  
+										
+											
+
+											 
+											 
+											 
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Payments remaining</th>
+										      
+										       {% if data['paymentChoices']=='12Month'%}
+										    
+											    <td class="govuk-table__cell">11</td>
+												<td class="govuk-table__cell updatedPlanStatus">29</td>
+									
+												{% elif data['paymentChoices']=='24Month'%}
+												
+												<td class="govuk-table__cell">23</td>
+												<td class="govuk-table__cell updatedPlanStatus">29</td>										
+												
+												{% elif data['paymentChoices']=='36Month'%}
+												
+												<td class="govuk-table__cell">35</td>
+												<td class="govuk-table__cell updatedPlanStatus">29</td>
+								
+												
+												{% elif data['paymentChoices']=='48Month'%}
+												
+												<td class="govuk-table__cell">47</td>
+												<td class="govuk-table__cell updatedPlanStatus">29</td>
+							
+												
+												{% elif data['paymentChoices']=='72Month'%}
+												
+												<td class="govuk-table__cell">71</td>
+												<td class="govuk-table__cell updatedPlanStatus">29</td>
+												
+												
+												{% elif data['paymentChoices']=='25Month'%}
+												
+												<td class="govuk-table__cell">99</td>
+												<td class="govuk-table__cell updatedPlanStatus">29</td>
+	
+	
+												{% endif %}
+										      
+										      
+										      
+										      
+										      
+											 </tr>
+											 
+											 
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Expected final payment</th>
+										      
+										      
+										      {% if data['paymentChoices']=='12Month'%}
+										       
+										      <td class="govuk-table__cell">October 2022</td>
+										      <td class="govuk-table__cell updatedPlanStatus">December 2023</td>
+										      
+										      {% elif data['paymentChoices']=='24Month'%}
+										      <td class="govuk-table__cell">October 2023</td>
+										      <td class="govuk-table__cell updatedPlanStatus">December 2023</td>
+										      
+										      {% elif data['paymentChoices']=='36Month'%}
+										      <td class="govuk-table__cell">October 2024</td>
+										      <td class="govuk-table__cell updatedPlanStatus">December 2023</td>
+										      
+										      {% elif data['paymentChoices']=='48Month'%}
+										      <td class="govuk-table__cell">October 2025</td>
+										      <td class="govuk-table__cell updatedPlanStatus">December 2023</td>
+										      
+										      {% elif data['paymentChoices']=='72Month'%}
+										      <td class="govuk-table__cell">October 2027</td>
+										      <td class="govuk-table__cell updatedPlanStatus">December 2023</td>
+										      
+									
+										      
+										      {% endif %}
+										      
+											 </tr>
+											 
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Final payment amount</th>
+										      
+										      
+										      {% if data['paymentChoices']=='12Month'%}
+										      
+										      <td class="govuk-table__cell">&pound;125.00</td>
+										      <td class="govuk-table__cell updatedPlanStatus">&pound;30.00</td>
+										      
+										      {% elif data['paymentChoices']=='24Month'%}
+										      
+										      <td class="govuk-table__cell">&pound;51.00</td>
+										      <td class="govuk-table__cell updatedPlanStatus">&pound;30.00</td>
+										      
+										      {% elif data['paymentChoices']=='36Month'%}
+										      
+										      <td class="govuk-table__cell">&pound;30.00</td>
+										      <td class="govuk-table__cell updatedPlanStatus">&pound;30.00</td>
+										      
+										      {% elif data['paymentChoices']=='48Month'%}
+										      
+										      <td class="govuk-table__cell">&pound;19.50</td>
+										      <td class="govuk-table__cell updatedPlanStatus">&pound;30.00</td>
+										      
+										      {% elif data['paymentChoices']=='72Month'%}
+										      
+										      <td class="govuk-table__cell">&pound;9.00</td>
+										      <td class="govuk-table__cell updatedPlanStatus">&pound;30.00</td>
+										      
+										      {% elif data['paymentChoices']=='25Month'%}
+										      
+										      <td class="govuk-table__cell">&pound;15.00</td>
+										      <td class="govuk-table__cell updatedPlanStatus">&pound;30.00</td>
+										      
+										      
+										      {% endif %}
+											 </tr>
+											 
+											 
+										  </tbody>
+										  
+		</table>
+		
+		
+	
+		
+		
+		
+		
+		
+										
+										
+										
+										
+																				
+										
+										<p><a href="OnedirectDebitDay" class="govuk-button mb0">Continue</a></p>	
+										 <p class="mt0"><a href="ddPlan">Cancel</a></p>	
+						
+						
+						
+						
+						
+						
+						
+						
+
+
+    </div>
+</div>
+
+
+
+{% else %}
+
+<div class="govuk-grid-row">
+
+	<div class="govuk-grid-column-three-quarters">
+
+
+	<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	
+	
+
+
+
+
+									<form class="form" action="OneddChangeBank" method="post">
+										
+										
+										
+					<div class="govuk-form-group">
+						  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+							<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+							  <h1 class="govuk-fieldset__heading">
+								<span class="govuk-caption-xl">Step 2 of 3</span>
+								Do you want to change your Direct Debit payment day?
+							  </h1>
+							</legend>
+							
+							
+							<div class="govuk-inset-text mt0">
+								   
+								   
+								  <!--  <p>If your chosen day is not present in a particular month, your payment will be taken on the last working day.</p> -->
+												<p>You cannot set up a Direct Debit between the 29th and 31st of the month.</p>
+															<p>If your chosen day falls on a weekend or bank holiday, your payment will be taken on the next working day.</p>
+								   
+													   </div> 
+							
+							
+
+							<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+							  <div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+								<label class="govuk-label govuk-radios__label" for="contact">
+								  Yes
+								</label>
+							  </div>
+							  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+								  
+								  
+								<div class="govuk-form-group">
+									  <fieldset class="govuk-fieldset" aria-describedby="pay-hint">
+										  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+										  <h2 class="govuk-fieldset__heading">
+						
+										   Enter a new payment day
+										  </h2>
+										</legend>
+										
+							
+
+								<span id="passport-issued-hint" class="govuk-hint">
+									  For example, enter 02 for the second day of the month
+									</span>
+								   
+										<div class="govuk-form-group">
+										  <label class="visually-hidden" for="paymentDay">
+											Payment day
+										  </label>
+										  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="paymentDay" name="paymentDay" type="text" pattern="[0-9]*" inputmode="numeric">
+										</div>
+
+									  </fieldset>
+								</div>
+						
+							  </div>
+							  <div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+								<label class="govuk-label govuk-radios__label" for="contact-2">
+								  No
+								</label>
+							  </div>
+							  
+							  
+							</div>
+						
+						  </fieldset>
+						</div>					
+										
+										
+										
+										
+										
+										
+										
+										
+
+
+									
+
+
+										<button class="govuk-button" data-module="govuk-button">
+										  Continue
+										</button>
+										</form>
+
+
+
+
+					
+
+
+</div>
+</div>
+
+{% endif %}
+
+
+
+
+
+{% endblock %}

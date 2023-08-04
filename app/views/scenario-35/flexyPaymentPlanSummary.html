@@ -1,0 +1,244 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+									
+									<form class="form" action="flexyDirectFinish" method="post">
+										
+								
+								<h1 class="govuk-heading-xl">
+									   <span class="govuk-caption-xl">Changes to your payment plan</span>Summary</h1>		
+										
+								
+																	
+									 <table class="govuk-table mb40">
+									 
+									 <caption class="visually-hidden">Plan summary</caption>
+										
+								
+										  <tbody class="govuk-table__body">
+										  
+										
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Total amount owed</th>
+										      <td class="govuk-table__cell" colspan="2">&pound;1440.00
+										      </td>
+										      
+									
+											 </tr>
+											 
+											 
+											 <tr class="govuk-table__row">
+												   <th scope="row" class="govuk-table__header">Payment breakdown</th>
+												   <td class="govuk-table__cell">
+													   
+													   
+												 {% if data['flexyAmountChange']=='flexyAmountChangeYes'%}
+			 
+												 <p class="mb0">24 monthly payments of &pound;60.00</p>
+	 
+												 {% else %}
+												 
+												<p class="mb0">48 monthly payments of &pound;30.00</p>
+												 
+												 {% endif %}
+													   
+													   
+												   </td>
+												   
+												   <td class="govuk-table__cell changeDetails"><a href="directAmountEdit">Change</a></td>
+				 
+													   
+												 </tr>
+						
+										 
+										 <tr class="govuk-table__row">
+											   <th scope="row" class="govuk-table__header">Payment type</th>
+											   <td class="govuk-table__cell">Direct Debit
+											   </td>
+											   <td class="govuk-table__cell changeDetails"><a href="directAmountEdit">Change</a></td>
+									 
+											  </tr>
+										 
+			
+										     <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Account details</th>
+										      <td class="govuk-table__cell dtList">
+										      <dl>
+										      	<dt>Account name</dt>
+										      	<dd>{{ data['accountName'] }}</dd>
+										      	<dt>Sort code</dt>
+										      	<dd>{{ data['sortCode'] }}</dd>
+										      	<dt>Account number</dt>
+										      	<dd>{{ data['accountNumber'] }}</dd>
+										      </dl>
+										      
+										      </td>
+										      <td class="govuk-table__cell changeDetails"><a href="directDebitDetailsEdit">Change</a></td>
+											 </tr>
+											 
+											 
+											
+
+								
+										  </tbody>
+										</table>
+										
+					
+										
+							
+										<h2 class="govuk-heading-m mt40">How this effects your payments</h2>
+																		
+																		
+										<table class="govuk-table summary-table mb40">
+											 
+											 <caption class="visually-hidden">Payment day summary</caption>
+												
+										
+												  <tbody class="govuk-table__body">
+												  
+												
+													 <tr class="govuk-table__row">
+													  <th scope="row" class="govuk-table__header">Next payment</th>
+													  <td class="govuk-table__cell" colspan="2">
+			
+													  {% if data['flexyAmountChange']=='flexyAmountChangeYes'%}
+													  
+													  &pound;60.00
+										  
+													  
+								
+													  {% else %}
+								  
+							  							&pound;30.00
+														 {% endif %}
+														 
+														 on 20 April 2022
+													  
+													  </td>
+													  
+											
+													 </tr>
+													 
+													 
+													<tr class="govuk-table__row">
+														  <th scope="row" class="govuk-table__header">Expected last payment</th>
+														  <td class="govuk-table__cell" colspan="2">
+															  
+															  
+															  {% if data['flexyAmountChange']=='flexyAmountChangeYes'%}
+																
+																&pound;60.00
+											
+																{% else %}
+											
+																	&pound;30.00
+																   {% endif %}
+															  
+															   on 20 April 2024
+														  </td>
+													</tr>
+						
+													
+												  </tbody>
+												</table>
+										
+										
+										
+										
+										
+									{% if data['paymentOptions']=='ddFixedChoice'%}	
+										
+										<div class="ddGuarantee">
+											<h3 class="govuk-heading-s">The Direct Debit Guarantee</h3>
+											
+											<ul class="govuk-list govuk-list--bullet">
+												<li>This Guarantee is offered by all banks and building societies that accept instructions to pay Direct Debits.
+</li>
+												<li>If there are any changes to the amount, date or frequency of your Direct Debit DWP will notify you 14 working
+days in advance of your account being debited or as otherwise agreed. If you request DWP to collect a payment,
+confirmation of the amount and date will be given to you at the time of request</li>
+
+												<li>If an error is made in the payment of your Direct Debit, by DWP or your bank or building society,
+you are entitled to a full and immediate refund of the amount paid from your bank or building society.
+– If you receive a refund you are not entitled to, you must pay it back when DWP asks you to.</li>
+
+												<li>You can cancel a Direct Debit at any time by simply contacting your bank or building society.
+Written confirmation may be required. Please also notify us.</li>
+					
+
+
+											</ul>
+										</div>
+										{% else %}
+										{% endif %}
+										
+										
+										
+										<h2 class="govuk-heading-m">Declaration</h2>
+
+		<p>By continuing, you confirm that you will:</p>
+
+		<ul class="govuk-list govuk-list--bullet mb30">
+			<li>pay the agreed monthly amount</li>
+			<li>let us know immediately if you’re struggling to keep up with payments</li>
+		</ul>
+										
+	
+
+		<div class="govuk-warning-text">
+		  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+		  <strong class="govuk-warning-text__text">
+		    <span class="govuk-warning-text__assistive">Warning</span>
+		    If you do not keep up with your payments, we will ask your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.
+		  </strong>
+		</div>
+		
+		
+		
+
+
+			<button class="govuk-button" data-module="govuk-button">
+				  Continue
+				</button>
+			
+			
+			
+									
+									
+		    </form>
+
+
+							
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

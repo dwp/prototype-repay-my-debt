@@ -1,0 +1,88 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+
+	   
+	   <div class="govuk-grid-row">
+      
+         <div class="govuk-grid-column-three-quarters">
+	   
+	  <span class="back-link"> <a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	  
+
+			
+			<form class="form" action="indexGuard" method="post">
+				
+				
+		
+
+			
+			<div class="govuk-form-group">
+				  <fieldset class="govuk-fieldset">
+				    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+				      <h1 class="govuk-heading-xl">
+						  <span class="govuk-caption-xl">Ashley Chamberlain</span>
+
+				       Do you want to continue using your security code to sign in?
+				      </h1>
+				    </legend>
+				   
+				    <div class="govuk-radios">
+				    
+				    <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="codeContinue" name="signOptions" type="radio" value="codeContinue">
+				        <label class="govuk-label--s govuk-radios__label" for="codeContinue">
+				        Yes &ndash; I want to continue using my security code
+				        </label>
+						<span class="govuk-hint govuk-radios__hint">
+							It is important to make a note of this as you will need it each time you sign in
+							</span>
+				       
+				      </div>
+				      
+				      
+				       <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="regContinue" name="signOptions" type="radio" value="regContinue">
+				        <label class="govuk-label--s govuk-radios__label" for="regContinue">
+				        No &ndash; I want to register an account to set an email address and password
+				        </label>
+						<span class="govuk-hint govuk-radios__hint">
+							 You will need to verify your identity which can take up to 30 minutes
+							</span>
+				       
+				      </div>
+
+				      
+				    </div>
+				  </fieldset>
+				</div>
+			
+			<button class="govuk-button" data-module="govuk-button">
+			  Continue
+			</button>
+			</form>
+			
+
+                  
+    </div>
+</div>
+
+{% endblock %}
+
+
+

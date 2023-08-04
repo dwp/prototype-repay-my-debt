@@ -1,0 +1,102 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+		
+		<form class="form" action="paymentGuard" method="post">
+								
+											
+											<div class="govuk-form-group">
+												  <fieldset class="govuk-fieldset">
+												    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb20">
+												      <h1 class="govuk-fieldset__heading">
+												      <span class="govuk-caption-xl">Step 3 of 5</span>
+												        How do you want to make your monthly payments?
+												      </h1>
+												    </legend>
+												    
+												<!-- <div class="govuk-inset-text mt0">
+						Once your plan is setup, you can sign in to manage your plan, change payments, pay additional amounts or get help and support.
+								    </div> -->
+									
+									
+									
+
+
+
+<div class="govuk-radios">
+	
+	
+	<div class="govuk-radios__item">
+		<input class="govuk-radios__input" id="ddFixedChoice" name="paymentOptions" type="radio" aria-describedby="ddFixedChoice-hint" value="ddFixedChoice">
+		<label class="govuk-label govuk-radios__label" for="ddFixedChoice">
+		<b>Direct Debit payments</b>
+		</label>
+		<div id="ddFixedChoice-hint" class="govuk-hint govuk-radios__hint">
+		A fixed payment each month on a day that suits you
+		</div>
+	  </div> 
+	
+  <div class="govuk-radios__item">
+	<input class="govuk-radios__input" id="flexyPayChoice" name="paymentOptions" type="radio" value="flexyPayChoice" aria-describedby="flexyPayChoice-hint">
+	<label class="govuk-label govuk-radios__label" for="flexyPayChoice">
+	  <b>Flexible payments</b>
+	</label>
+	<div id="flexyPayChoice-hint" class="govuk-hint govuk-radios__hint">
+	You must sign in each month and make payments &ndash; you can make multiple payments in a month to meet your payment amount
+	</div>
+  </div>
+												    
+								   
+									</div>												      
+												      
+	
+												  </fieldset>
+												</div>
+												
+												
+												
+												
+											
+											
+											<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form>
+										
+										
+										
+										
+									<!--// Fixed amount end -->	
+									
+									
+								
+									
+										
+
+    </div>
+</div>
+
+{% endblock %}

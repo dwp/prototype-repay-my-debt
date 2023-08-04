@@ -1,0 +1,154 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+	   <h1 class="govuk-heading-xl">Payment summary</h1>
+
+
+	   <table class="govuk-table summary-table mb40">
+		  <caption class="govuk-table__caption"><span class="visually-hidden">Payment summary</span></caption>
+
+		  <tbody class="govuk-table__body">
+
+
+		  <tr class="govuk-table__row">
+		      <th scope="row" class="govuk-table__header">Payment type</th>
+		      <td class="govuk-table__cell">Flexible amount</td>
+		      <td class="govuk-table__cell">&nbsp;</td>
+		    </tr>
+		    
+		    
+		    
+		    
+		    
+
+		  <tr class="govuk-table__row">
+		      <th scope="row" class="govuk-table__header">Payment amount</th>
+		      <td class="govuk-table__cell">
+			      
+			      
+			{% if data['how-much']=='thirty'%}
+		    
+		    &pound;30
+
+			{% elif data['how-much']=='other-amount'%}
+			
+			&pound;{{ data['payment-amount'] }}
+			
+			
+			{% else %}
+			
+			
+			
+			{% endif %}
+			      
+			      
+		      </td>
+		      <td class="govuk-table__cell"><a href="flexibleStart">Change</a></td>
+		    </tr>
+
+		    
+		    
+		<tr class="govuk-table__row">
+		    <th scope="row" class="govuk-table__header">Payment reminder</th>
+			<td class="govuk-table__cell">
+			
+			{% if data['how-contacted']=='yesReminder'%}
+			
+			
+			
+			
+				{% if data['citizenChoice']=='email'%}  
+			   		Email address<span class="textNumber">{{ data['contact-by-email'] }}</span>
+			    {% elif data['citizenChoice']=='textMessage'%}
+			     	Text message<span class="textNumber">{{ data['contact-by-text'] }}</span>
+			    {% else %}
+			    {% endif %}
+			    
+			    
+			    
+	
+				{% elif data['how-contacted']=='noReminder'%}
+				
+				No
+				
+				
+				{% else %}
+				
+				
+				
+				{% endif %}
+			
+			</td>
+			<td class="govuk-table__cell"><a href="paymentReminders">Change</a></td>
+		    </tr>
+
+
+
+		  </tbody>
+		</table>
+
+			{% if data['how-much']=='other-amount'%}
+			
+			<div class="govuk-inset-text">This payment is lower than the suggested amount &ndash; try to make more payments this month if you can.</div>
+			
+			
+			{% else %}
+			
+			
+			
+			{% endif %}
+		
+		
+
+
+
+		<h2 class="govuk-heading-m">Declaration</h2>
+
+		<p>By continuing, you confirm that:</p>
+
+		<ul class="govuk-list govuk-list--bullet mb30">
+      <li>you will make at least one payment each month &ndash; this does not have to be the same amount</li>
+			<li>you will let us know immediately if your financial situation changes</li>
+		</ul>
+
+
+		<div class="govuk-warning-text">
+		  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+		  <strong class="govuk-warning-text__text">
+		    <span class="govuk-warning-text__assistive">Warning</span>
+		    If you do not keep up with your payments, we may ask your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.
+		  </strong>
+		</div>
+
+
+			<p><a href="flexibleFinish" class="govuk-button">Continue to pay</a></p>
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,121 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  Your details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+			   <h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+			   <p>What you owe:
+					   <span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+		<div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+        <span class="govuk-caption-xl">Affordability</span>
+        Your details
+      </h1>
+      <div class="flexible-banner-float-none">
+        <ul class="govuk-list">
+          <li>
+            <h3>We will send you a reminder 30 days before:</h3>
+            <span id="new-debts-amount"><b>31 December 2024</b></span>
+          </li>
+
+        </ul>
+      </div>
+
+
+
+<form class="form" action="deductionSummary" method="post">
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+
+
+
+
+      <div class="govuk-form-group">
+  <label class="govuk-label" for="telephone-number">
+    Mobile number
+  </label>
+  <div id="event-name-hint" class="govuk-hint">
+  For example, 07700900000
+</div>
+  <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number-setupDone" type="tel" autocomplete="tel" value="{{data['telephone-number-setupDone']}}">
+</div>
+
+
+<!--
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="email-address" name="contact" type="checkbox" value="email-reminder" data-aria-controls="conditional-contact-email">
+          <label class="govuk-label govuk-checkboxes__label" for="email-address">
+           Send reminder notification on my email address
+          </label>
+        </div>
+        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-email">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="more-detail">
+             Enter your email address
+            </label>
+            <div id="event-name-hint" class="govuk-hint">
+            For example, sarah.phillips@example.com
+          </div>
+            <input class="govuk-input " govuk-!-width-full" id="full" name="email-address" type="text">
+            </div>
+        </div>
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="by-text" name="contact" type="checkbox" value="mobile-text-message" data-aria-controls="conditional-contact-text">
+          <label class="govuk-label govuk-checkboxes__label" for="by-text">
+          Send an text reminder notification on my mobile number
+          </label>
+        </div>
+        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-text">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="more-detail">
+              UK mobile number
+            </label>
+            <div id="event-name-hint" class="govuk-hint">
+            For example, 07700900000
+          </div>
+            <input class="govuk-input govuk-!-width-one-half" id="one-half" name="mobile-number" type="text">
+            </div>
+        </div>
+
+
+      </div> -->
+    </fieldset>
+  </div>
+
+
+		<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+	 </form>
+
+
+
+	</div>
+</div>
+
+{% endblock %}

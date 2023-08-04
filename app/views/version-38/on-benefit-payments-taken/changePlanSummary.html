@@ -1,0 +1,161 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+			
+			
+			
+			{% if data['NewPaymentChoices']=='NewSuggested'%}
+			
+			
+			
+			<h1 class="govuk-heading-xl">
+				<span class="govuk-caption-xl">Step 1 of 3</span>
+				What this means for your plan</h1>
+			
+			
+	   <div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+
+												
+												<li>
+													<h3>Payment amount</h3>
+													<b>										    
+											&pound;40.00
+											
+											</b>
+												</li>
+												
+												<li>
+													<h3>Monthly payments</h3>
+													
+													<b>70</b>
+											
+											
+											
+											
+																								
+													
+													
+												</li>
+												
+												
+												
+												
+												<li>
+													<h3>Expected last payment</h3>
+													<b>
+													September 2027
+													
+													
+													</b>
+												</li>
+
+												
+											</ul>
+											
+											</div>
+											
+											
+											<p>Your plan is now within 72 monthly payments so a review will no longer be needed.</p>
+				
+				
+				<p>If your financial situation changes and you're struggling to keep up with your payments, you can change them at anytime by signing in and managing your plan.</p>
+				
+				
+				{% else %}
+				
+				
+				
+				
+				<!--<div class="flexibleBanner">
+					
+					
+					<ul class="govuk-list">
+
+						
+						<li>
+							<h3>Payment amount</h3>
+							<b>										    
+					&pound;35.00
+					
+					</b>
+						</li>
+						
+						
+						
+						
+						<li>
+							<h3>Proposed plan review date</h3>
+							<b>
+							{{ data['paymentDay'] }} October 2022
+							
+							
+							</b>
+						</li>
+
+						
+					</ul>
+					
+					</div>-->
+					
+					
+					
+					<h1 class="govuk-heading-xl">
+						<span class="govuk-caption-xl">Step 1 of 3</span>
+						You cannot lower your payments online as you are already on an affordable payment plan</h1>
+						
+						
+						<p>If you need to lower your payments, contact Debt Management to discuss the options available to you.</p>
+				
+					
+					<h2 class="govuk-heading-m">Debt Management</h2>
+					  <ul class="govuk-list">
+							<li>Telephone: 0800 5871322</li>
+							<li>Monday to Friday, 9am to 5pm</li>
+						  </ul>
+						  <p class="govuk-body mb30">
+							<a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+						  </p>
+				
+				
+				
+				
+				{% endif %}
+				
+
+				
+				<p><a href="OnedirectDebitDay" class="govuk-button">Continue</a></p>
+				
+									
+										
+
+    </div>
+</div>
+
+{% endblock %}

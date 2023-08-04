@@ -1,0 +1,80 @@
+
+{% extends "layout-2.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+	   
+	   <div class="govuk-grid-row">
+      
+        <div class="govuk-grid-column-two-thirds">
+	   
+	   
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+	   <h1 class="govuk-heading-xl">Pay a flexible amount</h1>
+	   
+	    <div class="govuk-inset-text">
+		 Total amount owed: <span class="total-amount">&pound;120.00</span>
+		 </div>
+	   
+	   
+	   
+	   <p class="govuk-body">
+		 You can pay whatever amount you want, but you will need to make a minimum of one payment each month.
+		 </p>
+	      
+      
+			
+			
+			<form class="form" action="paymentDetail" method="post">
+
+			
+			<div class="govuk-form-group">
+		          <fieldset class="govuk-fieldset">
+			          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+				      <h1 class="govuk-fieldset__heading">
+				        How much do you want to pay?
+				      </h1>
+				    </legend>
+					
+					<span id="changed-name-hint" class="govuk-hint">
+      You will need your card details. Make sure you have enough money in your bank account to cover this payment.
+    </span>
+			
+			
+			          <div id="example-question" class="form-group inline">
+			            <span class="c-form-input-denote govuk-body">£</span>
+			            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="text" name="repayment-amount">
+			          </div>
+		
+		          </fieldset>
+	        </div>
+			
+			
+			<button class="govuk-button" data-module="govuk-button">
+			  Continue
+			</button>
+			</form>
+			
+
+                  
+    </div>
+</div>
+
+{% endblock %}
+
+
+

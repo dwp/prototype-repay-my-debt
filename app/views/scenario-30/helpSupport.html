@@ -1,0 +1,217 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+
+									{% if data['help-choice']=='help-struggling'%}
+									
+									
+									
+									<div class="attention-card ">
+
+			<h1 class="govuk-heading-l mb40">An affordable payment plan may work for you</h1>
+			
+			
+		<ul class="govuk-list">
+			
+			
+			
+			<li>
+				<h2>Start your plan by entering an amount you can afford to pay each month </h2>
+				<p>If your financial situation improves, you should increase your payment plan or pay additional amounts.</p>
+			</li>	
+			
+			
+			<li class="two">
+				<h2>We may review your plan after 12 months</h2>
+				<p>If you have been unable to increase your payment plan, we will contact you to review your situation and see how much you can afford.</p>
+				
+			</li>
+				
+				<li class="three">
+					<h2>Sign up for notifications</h2>
+					<p>You can receive reminders that you can manage your plan when your situation changes, take action if there are any problems with payments and be notified of any review dates.</p>
+				</li>
+
+			</ul>
+			
+
+			<p><a href="lowPayChoice" class="attention-invert mt30">Continue</a></p>
+			
+			<p><a href="helpEnd" class="notforme">This option is not for me</a></p>
+
+		</div>
+									
+									
+									
+									
+							<!--		<div class="attention-card">
+
+			<h1 class="govuk-heading-l mb30">A flexible payment plan may work for you</h1>
+			
+			<p class="title">This is not a Direct Debit &ndash; you must sign in each month and make at least one payment.</p>
+
+
+	
+			<ul class="govuk-list">
+			
+			<li>Set a target amount to aim for each month to help clear your debt</li>	
+				<li class="two">You will need to make a payment today &ndash; this will start your plan</li>
+
+				<li class="three">Sign up for helpful payment reminders</li>
+				
+				<li class="four">Your flexible payment plan will be reviewed often &ndash; if the total amount you pay each month is regularly too low, we may contact you.</li>
+			</ul>
+
+			
+
+			<p><a href="flexSuggestedTarget2" class="attention-invert mt30">Continue</a></p>
+			<p><a href="helpEnd" class="notforme">This option is not for me</a></p>
+
+		</div> -->
+									
+									
+
+
+
+
+									{% elif data['help-choice']=='help-understanding'%}
+
+									<h1 class="govuk-heading-xl mb30">I do not understand my debt</h1>
+
+
+
+					   					<div class="list-display">
+
+
+
+									        	<h2 class="govuk-heading-m">Universal Credit</h2>
+
+
+									        	<table class="govuk-table">
+												  <caption class="govuk-table__caption"><span class="visually-hidden">Details of debt</span></caption>
+												  <thead class="govuk-table__head">
+
+												  <tbody class="govuk-table__body">
+
+												  <tr class="govuk-table__row">
+												      <th scope="row" class="govuk-table__header">Amount owed</th>
+												      <td class="govuk-table__cell">&pound;600.00</td>
+												    </tr>
+
+												     <tr class="govuk-table__row">
+												      <th scope="row" class="govuk-table__header">Debt type</th>
+												      <td class="govuk-table__cell">Advance payment</td>
+												    </tr>
+
+												  <tr class="govuk-table__row">
+												      <th scope="row" class="govuk-table__header">Date debt started</th>
+												      <td class="govuk-table__cell">10 October 2019</td>
+												    </tr>
+
+
+												  </tbody>
+												</table>
+
+												<p>If you have any questions, contact Universal Credit directly:</p>
+
+
+												<ul class="govuk-list">
+												  <li>Telephone: 0800 328 5644</li>
+												    <li>Textphone: 0800 328 1344</li>
+												    <li>Monday to Friday, 8am to 6pm (closed on bank holidays)</li>
+												</ul>
+
+											<p class="govuk-body">
+											  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+											</p>
+
+
+											</div>
+
+
+										<p><a href="index" class="govuk-button">Finish</a></p>
+
+									<!--// Flexible amount end -->
+
+
+
+
+
+									{% elif data['help-choice']=='help-advice'%}
+									  
+									  
+									  <h1 class="govuk-heading-xl mb30">I have no money and need <br>further advice</h1>
+
+
+					   			<p>If you are unable to pay, you must contact Debt Management to discuss the <br>options available to you.</p>
+
+
+					   					<h2 class="govuk-heading-m">Debt Management</h2>
+									  <ul class="govuk-list">
+											<li>Telephone: 0800 5871322</li>
+											<li>Monday to Friday, 9am to 5pm</li>
+										  </ul>
+										  <p class="govuk-body">
+											<a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+										  </p>
+									  
+									  
+
+					   				<h2 class="govuk-heading-m">Further advice</h2>
+										  
+										  <p>In the meantime get:</p>
+   
+   
+										 <ul class="govuk-list govuk-list--bullet">
+												 <li>help dealing with money problems from <a href="https://www.citizensadvice.org.uk/">Citizens Advice (opens in new tab)</a> </li>
+												 <li>expert debt advice from <a href="https://www.stepchange.org/">StepChange Debt Charity (opens in new tab)</a></li>
+												 <li>advice to improve your finances from <a href="https://www.moneyadviceservice.org.uk">Money Advice Service (opens in new tab)</a></li>
+										 </ul>
+
+
+										<p><a href="index" class="govuk-button">Finish</a></p>
+
+									<!--// Fixed amount end -->
+
+
+									{% else %}
+
+									<h1 class="govuk-heading-l">Oops! you didn't select a help option</h1>
+
+									<p>Don't worry, you can go back and try again.</p>
+
+
+									{% endif %}
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

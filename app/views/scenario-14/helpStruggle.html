@@ -1,0 +1,98 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+
+									{% if data['help-struggle']=='help-unable'%}
+
+									<h1 class="govuk-heading-xl mb30">I am unable to pay</h1>
+
+
+					   			<div class="govuk-inset-text">If you are unable to pay, contact Debt Management to discuss the options available to you</div>
+
+
+					   					<h2 class="govuk-heading-m">Debt Management</h2>
+									  <ul class="govuk-list">
+									    <li>Telephone: 0800 916 0647</li>
+									    <li>Monday to Friday, 10am to 4pm</li>
+									  </ul>
+
+
+
+										<p><a href="index" class="govuk-button">Finish</a></p>
+
+
+
+										<!--// Struggling to pay end -->
+
+
+
+
+
+									{% elif data['help-struggle']=='help-payments'%}
+
+
+										<div class="attention-card">
+
+
+											<h1 class="govuk-heading-l mb50">Flexible payments may work for you</h1>
+
+											<ol class="govuk-list">
+
+												<li>Pay what you can afford each month, this is not a fixed plan</li>
+				<li class="two">You must sign in each month and make at least one payment</li>
+				<li class="three">Try to make the suggested payment amount if you can as this will clear your debt quicker &ndash; this could be spread over multiple payments within the month</li>
+				
+				<!--<li class="three">This is not a fixed plan and your payments can change</li>-->
+				<li class="four">Sign up for helpful payment reminders via text or email</li>
+				<!--<li class="five">If you do not keep up with your payments, we will ask your employer to make deductions from your pay or ask a debt collection agency to collect this money for us</li>-->
+												</ol>
+
+											<p><a href="flexibleStart" class="attention-invert">Continue</a></p>
+											<p><a href="helpEnd" class="notforme">This option is not for me</a></p>
+
+										</div>
+
+									<!--// flexible suggestion amount end -->
+
+
+									{% else %}
+
+									<h1 class="govuk-heading-l">Oops! you didn't select a help option</h1>
+
+									<p>Don't worry, you can go back and try again.</p>
+
+
+									{% endif %}
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

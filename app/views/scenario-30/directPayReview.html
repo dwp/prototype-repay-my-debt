@@ -1,0 +1,107 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+
+		
+		<h1 class="govuk-heading-xl">
+			<span class="govuk-caption-xl">Step 2 of 4</span>
+			Payment plan summary</h1>
+			
+			
+			
+			
+			
+			
+	   <div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+
+												
+												<li>
+													<h3>Payment amount</h3>
+													<b>										    
+										  &pound;{{ data['payment-amount2'] }}
+										    
+										    </b>
+												</li>
+												
+												<li>
+													<h3>Number of monthly payments</h3>
+													
+													<b>100</b>
+											
+											
+											
+											
+																								
+													
+													
+												</li>
+												
+												
+												
+												
+											<!--	<li>
+													<h3>Expected last payment</h3>
+													<b>
+													May 2029
+													
+													
+													</b>
+												</li> -->
+
+												
+											</ul>
+											
+											</div>
+				
+				
+				<p>If you increase the amount you pay, it will clear your debt quicker.</p>
+				
+				<p>Due to the expected duration of your debt, we will review your situation in 12 months.</p>
+				
+				
+				
+				
+				<p><a href="directDebitDetailsTemp" class="govuk-button">Continue</a></p>
+				
+										    
+										     		
+		
+			
+
+
+									
+									
+									
+
+
+    </div>
+</div>
+
+{% endblock %}

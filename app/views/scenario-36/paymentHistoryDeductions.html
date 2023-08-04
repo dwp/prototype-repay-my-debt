@@ -1,0 +1,250 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  Payment history
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+   <div class="govuk-grid-column-three-quarters">
+
+
+
+
+	   <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Payment history</h1>
+
+
+     <div class="flexible-banner-float-none">
+       <ul class="govuk-list">
+         <li>
+           <h3>Payments taken</h3>
+           <span id="new-debts-amount"><b>27</b></span>
+         </li>
+         <li>
+           <h3>Total amount repaid</h3>
+           <span class="total-amount" id="new-total-owed"><b>£630.00</b></span>
+         </li>
+         <li>
+           <h3>Total amount left to pay</h3>
+           <span class="total-amount" id="new-total-owed"><b>£1,670.00</b></span>
+         </li>
+       </ul>
+     </div>
+
+
+
+
+
+
+
+
+<h2 class="govuk-heading-m mt40">All payments</h2>
+
+
+
+<table class="govuk-table summary-pay">
+
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+
+ <th class="govuk-table__header" scope="col">Payment date</th>
+
+ <th class="govuk-table__header" scope="col">Payment type</th>
+
+ <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+
+ <!--  <th class="govuk-table__header govuk-table__header--numeric" scope="col">Balance</th> -->
+
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+
+
+  <tr class="govuk-table__row">
+     <td class="govuk-table__cell">18 April 2023</td>
+     <td class="govuk-table__cell">Deduction from benefit</td>
+     <td class="govuk-table__cell govuk-table__cell--numeric">&pound;40.00</td>
+   </tr>
+   <tr class="govuk-table__row">
+      <td class="govuk-table__cell">18 March 2023</td>
+      <td class="govuk-table__cell">Deduction from benefit</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;40.00</td>
+    </tr>
+    <tr class="govuk-table__row">
+       <td class="govuk-table__cell">18 February 2023</td>
+       <td class="govuk-table__cell">Deduction from benefit</td>
+       <td class="govuk-table__cell govuk-table__cell--numeric">&pound;40.00</td>
+     </tr>
+     <tr class="govuk-table__row">
+        <td class="govuk-table__cell">18 January 2023</td>
+        <td class="govuk-table__cell">Deduction from benefit</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&pound;40.00</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+         <td class="govuk-table__cell">18 December 2022</td>
+         <td class="govuk-table__cell">Deduction from benefit</td>
+         <td class="govuk-table__cell govuk-table__cell--numeric">&pound;40.00</td>
+       </tr>
+	<tr class="govuk-table__row">
+		 <td class="govuk-table__cell">18 November 2022</td>
+		 <td class="govuk-table__cell">Deduction from benefit</td>
+     <td class="govuk-table__cell govuk-table__cell--numeric">&pound;40.00</td>
+	 </tr>
+   <tr class="govuk-table__row">
+ 		 <td class="govuk-table__cell">18 October 2022</td>
+ 		 <td class="govuk-table__cell">Deduction from benefit</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;40.00</td>
+ 	 </tr>
+   <tr class="govuk-table__row">
+ 		 <td class="govuk-table__cell">18 September 2022</td>
+ 		 <td class="govuk-table__cell">Deduction from benefit</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;40.00</td>
+ 	 </tr>
+   <tr class="govuk-table__row">
+      <td class="govuk-table__cell">18 August 2022</td>
+      <td class="govuk-table__cell">Deduction from benefit</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;40.00</td>
+    </tr>
+   <tr class="govuk-table__row">
+      <td class="govuk-table__cell">18 July 2022</td>
+      <td class="govuk-table__cell">Deduction from benefit</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;40.00</td>
+    </tr>
+
+		<tr class="govuk-table__row">
+			 <td class="govuk-table__cell">18 June 2022</td>
+			 <td class="govuk-table__cell">Deduction from benefit</td>
+       <td class="govuk-table__cell govuk-table__cell--numeric">&pound;40.00</td>
+		 </tr>
+
+		 <tr class="govuk-table__row">
+			  <td class="govuk-table__cell">18 May 2022</td>
+			  <td class="govuk-table__cell">Deduction from benefit</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&pound;40.00</td>
+		  </tr>
+
+		  <tr class="govuk-table__row">
+				<td class="govuk-table__cell">08 April 2022</td>
+				<td class="govuk-table__cell">Deduction from benefit</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+			</tr>
+
+			<tr class="govuk-table__row">
+				  <td class="govuk-table__cell">08 March 2022</td>
+				  <td class="govuk-table__cell">Deduction from benefit</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+			  </tr>
+
+			  <tr class="govuk-table__row">
+					<td class="govuk-table__cell">08 February 2022</td>
+					<td class="govuk-table__cell">Deduction from benefit</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+				</tr>
+
+			  <tr class="govuk-table__row">
+					<td class="govuk-table__cell">08 January 2022</td>
+					<td class="govuk-table__cell">Deduction from benefit</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+				</tr>
+
+				<tr class="govuk-table__row">
+					  <td class="govuk-table__cell">08 December 2021</td>
+					  <td class="govuk-table__cell">Deduction from benefit</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+				  </tr>
+
+
+				  <tr class="govuk-table__row">
+						<td class="govuk-table__cell">08 November 2021</td>
+						<td class="govuk-table__cell">Deduction from benefit</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+					</tr>
+
+					<tr class="govuk-table__row">
+						<td class="govuk-table__cell">08 October 2021</td>
+						<td class="govuk-table__cell">Deduction from benefit</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+					</tr>
+
+					<tr class="govuk-table__row">
+						<td class="govuk-table__cell">08 September 2021</td>
+						<td class="govuk-table__cell">Deduction from benefit</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+					</tr>
+          <tr class="govuk-table__row">
+             <td class="govuk-table__cell">08 August 2021</td>
+             <td class="govuk-table__cell">Deduction from benefit</td>
+             <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+           </tr>
+          <tr class="govuk-table__row">
+             <td class="govuk-table__cell">08 July 2021</td>
+             <td class="govuk-table__cell">Deduction from benefit</td>
+             <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+           </tr>
+
+           <tr class="govuk-table__row">
+              <td class="govuk-table__cell">08 June 2021</td>
+              <td class="govuk-table__cell">Deduction from benefit</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+               <td class="govuk-table__cell">08 May 2021</td>
+               <td class="govuk-table__cell">Deduction from benefit</td>
+               <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+             </tr>
+
+             <tr class="govuk-table__row">
+               <td class="govuk-table__cell">08 April 2021</td>
+               <td class="govuk-table__cell">Deduction from benefit</td>
+               <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+             </tr>
+
+             <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">08 March 2021</td>
+                 <td class="govuk-table__cell">Deduction from benefit</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+               </tr>
+
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">08 February 2021</td>
+                 <td class="govuk-table__cell">Deduction from benefit</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+               </tr>
+
+
+
+
+
+
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

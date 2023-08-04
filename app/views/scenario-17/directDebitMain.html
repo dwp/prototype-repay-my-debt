@@ -1,0 +1,229 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+
+									{% if data['how-much2']=='other-amount'%}
+									<h1 class="govuk-heading-xl">Payment amount is low</h1>
+								
+
+									  <p>We would like to talk to you to discuss your situation and what you can afford.</p>
+
+
+					   				<h2 class="govuk-heading-m">Debt Management</h2>
+		
+									  
+									  <ul class="govuk-list">
+											  <li>Telephone: 0800 916 0647</li>
+											  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+											</ul>
+											<p class="govuk-body">
+											  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+											</p>
+									  
+									  
+									 
+			</div>
+
+
+									  
+									
+			
+
+										<!--// Full amount end -->
+
+
+
+
+
+
+									{% else %}
+									
+									<form class="form" action="directDebitDay" method="post">
+
+									<h1 class="govuk-heading-xl">Direct Debit summary</h1>
+
+								
+									
+									 <table class="govuk-table summary-table mb40">
+										  <caption class="govuk-table__caption"><span class="visually-hidden">Payment summary</span></caption>
+								
+										  <tbody class="govuk-table__body">
+										  
+										
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Total amount owed</th>
+										      <td class="govuk-table__cell">&pound;600.00
+										      </td>
+											 </tr>
+										      
+										    
+										    
+								
+										  <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Payment breakdown</th>
+										      <td class="govuk-table__cell">
+											      
+											      
+											{% if data['how-much2']=='oneHundredPound'%}
+										    
+										    6 payments of &pound;100
+								
+											{% elif data['how-much2']=='fiftyPound'%}
+											
+											12 payments of &pound;50
+											
+											
+											{% elif data['how-much2']=='twentyFivePound'%}
+											
+											24 payments of &pound;25
+
+											
+											{% else %}
+											
+											No amount entered
+											
+											{% endif %}
+											      
+											      
+										      </td>
+										      
+										    </tr>
+										    
+										    
+										     <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">First payment date</th>
+										      <td class="govuk-table__cell">
+											      
+											      
+											{{ data['paymentDay'] }} October 2020
+											      
+											      
+										      </td>
+										     
+										    </tr>
+										    
+										    
+										  										    
+										    <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Expected final payment date</th>
+										      <td class="govuk-table__cell">
+											      
+											      
+											{% if data['how-much2']=='oneHundredPound'%}
+										    
+										    {{ data['paymentDay'] }} March 2021
+								
+											{% elif data['how-much2']=='fiftyPound'%}
+											
+											{{ data['paymentDay'] }} October 2021
+											
+											
+											{% elif data['how-much2']=='twentyFivePound'%}
+											
+											{{ data['paymentDay'] }} October 2022
+
+											
+											{% else %}
+											
+											No amount entered
+											
+											{% endif %}
+											      
+											      
+										      </td>
+										      
+										    </tr>
+
+								
+	
+								
+								
+								
+										  </tbody>
+										</table>
+										
+										
+										
+		<!--<div class="flexibleBanner">
+		
+		<p id="email-hint">You’ll be sent an email with confirmation of this agreement before the first payment is taken from your account</p>
+
+		    <fieldset class="govuk-fieldset" aria-describedby="email-hint">
+			   <legend class="visually-hidden">Email address
+				    </legend>
+	
+		    <div class="govuk-form-group mb10">
+			  <label class="govuk-label govuk-label--s" for="emailAddy" aria-describedby="email-hint">
+			    Enter your email address
+			  </label>
+
+			  <input class="govuk-input govuk-input--width-20" id="emailAddy" name="emailAddy" type="text">
+
+			</div>
+										
+		    </fieldset> </div> -->
+										
+								
+													
+													
+													
+													
+													
+						<!--				<h2 class="govuk-heading-m">Declaration</h2>
+
+		<p>By continuing, you confirm that you will:</p>
+
+		<ul class="govuk-list govuk-list--bullet mb30">
+			<li>pay the agreed monthly amount</li>
+			<li>let us know immediately if you’re struggling to keep up with payments</li>
+		</ul> -->
+
+
+		<div class="govuk-warning-text">
+		  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+		  <strong class="govuk-warning-text__text">
+		    <span class="govuk-warning-text__assistive">Warning</span>
+		    If you do not keep up with your payments, we will ask your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.
+		  </strong>
+		</div>
+
+
+			<p><a href="directFinish" class="govuk-button">Confirm</a></p>							
+									
+		    </form>
+
+
+									{% endif %}
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

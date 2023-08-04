@@ -1,0 +1,58 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+        <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+		
+		<p><b>From:</b> GOV.UK Pay {gov.uk.pay@notifications.service.gov.uk}<br>
+		<b>Sent:</b> 29 March 2022, 15:23<br>
+		<b>To:</b> Ashley Chamberlain {ashley.chamberlain@gmail.com}<br>
+		<b>Subject:</b> Your payment to DWP Debt Management</p>
+				
+				<hr>
+		
+		
+		
+		<h1 class="govuk-heading-xl mt30">Your payment of &pound;{{ data['ba-amount'] }} to Repay and manage benefit money you owe was successful</h1>
+		
+		
+		
+		
+		
+		<p>Payment for: Your payment to DWP Debt Management<br>
+		Reference: AZ000006D<br>
+		Date of payment: 29 March 2022</p>
+		<p>
+		This email address is not monitored. If you have any questions about your payment, contact the service you made the payment to directly.</p>
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,236 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		{% if data['lowAmountChange']=='lowAmountChangeYes'%}
+		
+		
+		
+
+<form class="form" action="changePlanSummary" method="post">
+	
+	
+	
+	<div class="govuk-form-group">
+		  <fieldset class="govuk-fieldset">
+			<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb20">
+			  <h1 class="govuk-fieldset__heading">
+			  <span class="govuk-caption-xl">Step 1 of 3</span>
+				Choose a new Direct Debit monthly amount
+			  </h1>
+			</legend>
+			
+
+
+			
+			 <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+			<div class="govuk-radios">
+			
+			
+	<!--	    <div class="govuk-radios__item">
+				<input class="govuk-radios__input" id="6Month" name="paymentChoices" type="radio" value="6Month">
+				<label class="govuk-label govuk-radios__label" for="6Month">
+				  <b>&pound;360.00</b> &ndash; 6 monthly payments
+				</label>
+				
+			  </div>			-->
+
+			  
+			   <div class="govuk-radios__item">
+				<input class="govuk-radios__input" id="NewSuggested" name="NewPaymentChoices" type="radio" value="NewSuggested" aria-describedby="suggested-hint">
+				<label class="govuk-label govuk-radios__label" for="NewSuggested">
+				  <b>&pound;40.00</b> &ndash; 70 monthly payments
+				</label>
+				<div id="comm2-hint" class="govuk-hint govuk-checkboxes__hint">
+					  This is the suggested amount to move you off the affordable payment plan
+					 </div>
+				
+			  </div>
+
+			  
+			  
+
+		  <div class="govuk-radios__divider">or</div>
+			  
+			 
+<div class="govuk-radios__item">
+<input class="govuk-radios__input" id="NewDifferent" name="NewPaymentChoices" type="radio" value="NewDifferent" data-aria-controls="conditional-contact">
+<label class="govuk-label govuk-radios__label govuk-label--s" for="NewDifferent">
+ Pay a different amount
+</label>
+
+</div>
+
+<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+	  
+	  
+	<div class="govuk-form-group">
+		  <fieldset class="govuk-fieldset" aria-describedby="pay-hint">
+			  <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+			  
+			   Enter the amount
+			
+			</legend>
+			
+		 <!--  <div id="pay-hint" class="govuk-hint mb20">
+		  You can make multiple payments in a month to meet your target
+			</div> -->
+
+
+			 <div id="example-question" class="form-group inline">
+				<span class="c-form-input-denote govuk-body">£</span>
+				<input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="change-amount">
+			  </div>
+
+		  </fieldset>
+	</div>
+
+  </div>
+
+
+
+
+
+</div>												      
+			  
+			  
+			  
+			</div>
+		  </fieldset>
+		</div>
+	
+	
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+</form>
+
+
+{% else %}
+
+
+<form class="form" action="OneddChangeBank" method="post">
+						
+						
+						
+	<div class="govuk-form-group">
+		  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+			<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+			  <h1 class="govuk-fieldset__heading">
+				<span class="govuk-caption-xl">Step 2 of 3</span>
+				Do you want to change your Direct Debit payment day?
+			  </h1>
+			</legend>
+			
+			
+			<div class="govuk-inset-text mt0">
+				   
+				   
+				  <!--  <p>If your chosen day is not present in a particular month, your payment will be taken on the last working day.</p> -->
+								<p>You cannot set up a Direct Debit between the 29th and 31st of the month.</p>
+											<p>If your chosen day falls on a weekend or bank holiday, your payment will be taken on the next working day.</p>
+				   
+									   </div> 
+			
+			
+
+			<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+			  <div class="govuk-radios__item">
+				<input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+				<label class="govuk-label govuk-radios__label" for="contact">
+				  Yes
+				</label>
+			  </div>
+			  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+				  
+				  
+				<div class="govuk-form-group">
+					  <fieldset class="govuk-fieldset" aria-describedby="pay-hint">
+						  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						  <h2 class="govuk-fieldset__heading">
+		
+						   Enter a new payment day
+						  </h2>
+						</legend>
+						
+			
+
+				<span id="passport-issued-hint" class="govuk-hint">
+					  For example, enter 02 for the second day of the month
+					</span>
+				   
+						<div class="govuk-form-group">
+						  <label class="visually-hidden" for="paymentDay">
+							Payment day
+						  </label>
+						  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="paymentDay" name="paymentDay" type="text" pattern="[0-9]*" inputmode="numeric">
+						</div>
+
+					  </fieldset>
+				</div>
+		
+			  </div>
+			  <div class="govuk-radios__item">
+				<input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+				<label class="govuk-label govuk-radios__label" for="contact-2">
+				  No
+				</label>
+			  </div>
+			  
+			  
+			</div>
+		
+		  </fieldset>
+		</div>					
+						
+						
+						
+						
+						
+						
+						
+						
+
+
+					
+
+
+						<button class="govuk-button" data-module="govuk-button">
+						  Continue
+						</button>
+						</form>
+
+
+
+{% endif %}
+
+						
+
+
+    </div>
+</div>
+
+{% endblock %}

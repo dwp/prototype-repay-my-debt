@@ -1,0 +1,144 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    
+     
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+	   <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	   
+	   <h1 class="govuk-heading-xl">Payment history</h1>
+	   
+	   
+	   
+	   
+	 <!-- <div class="number-display">
+	   	
+	   	<ul class="govuk-list">
+	   	
+	   		
+	   		<li>Total repaid
+	   			<span>£150.00</span>
+	   		</li>
+	   		<li class="blueUpdate">Left to pay
+	   			<span>£950.00</span>
+	   		</li>
+	   	</ul>
+	   	
+	   </div> -->
+	   
+
+
+	   
+	   
+	   
+	   <div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+												
+
+												
+												<li>
+													<h3>Total payments made</h3>
+
+														
+														<b>1</b>
+
+												</li> 
+												
+		
+												
+												<li>
+													<h3>Total amount repaid</h3>
+													<b>&pound;{{ data['payment-amount'] }}</b>
+												</li>
+												
+												<li>
+													<h3>Total amount left to pay</h3>
+													<b>&pound;1900.00</b>
+												</li>
+												
+							
+											</ul>
+											
+											</div> 
+	   
+
+  
+  <h2 class="govuk-heading-m mt20">Last payment</h2>
+  
+  <p>A payment of &pound;100 was made on 12 February 2021.</p>
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+	
+	 <table class="govuk-table summary-pay">
+
+	 <caption class="govuk-table__caption govuk-heading-m mb20">All payments</caption>
+		  
+		  
+							  <thead class="govuk-table__head">
+							    <tr class="govuk-table__row">
+							    
+							      <th class="govuk-table__header" scope="col">Payment date</th>
+							      
+						
+							
+							      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+							      
+							       							    
+							    </tr>
+							  </thead>
+							  
+							  <tbody class="govuk-table__body">
+							    
+							    <tr class="govuk-table__row">
+							    
+							      
+							      <td class="govuk-table__cell">12 February 2021</td>
+							      
+				
+							
+							
+							      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;{{ data['payment-amount'] }}</td>
+ 
+							    
+							    </tr>
+							    
+							    
+							  
+							    
+							    
+							        
+							  </tbody>
+							</table>
+	
+	
+                  
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,140 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+		
+		
+		
+									
+
+
+		<h1 class="govuk-heading-xl">Make a flexible payment</h1>
+
+
+
+
+											<div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+												<li>
+													<h3>Total amount owed</h3>
+													<b>&pound;1900.00</b>
+												</li>
+												<li>
+													{% if data['targetAmountsChoice']=='6MonthTarget'%}
+													    
+													     <h3>Monthly target</h3>
+													    <b>&pound;334.00</b>
+													    
+											
+														{% elif data['targetAmountsChoice']=='12MonthTarget'%}
+														
+														 <h3>Monthly target</h3>
+														<b>&pound;166.00</b>
+														
+														
+														
+														{% elif data['targetAmountsChoice']=='24MonthTarget'%}
+														
+														 <h3>Monthly target</h3>
+														<b>&pound;84.00</b>
+														
+														{% elif data['targetAmountsChoice']=='36MonthTarget'%}
+														
+														 <h3>Monthly target</h3>
+														<b>&pound;56.00</b>
+														
+														{% elif data['targetAmountsChoice']=='twentyFiveTarget'%}
+														
+														 <h3>Monthly target</h3>
+														<b>&pound;25.00</b>
+																	
+														
+														{% else %}
+														
+														 <h3>Monthly target</h3>
+														<b>&pound;{{ data['payment-amount-target'] }}</b>
+													
+														
+														{% endif %}
+								
+												</li>
+												<li>
+													<h3>Paid this month</h3>
+													<b>&pound;{{ data['payment-amount'] }}</b>
+												</li>
+												
+												
+											</ul>
+											
+											</div>
+											
+											
+											
+											
+
+
+										<form class="form" action="paymentDetail" method="post">
+
+
+											<div class="govuk-form-group">
+										          <fieldset class="govuk-fieldset" aria-describedby="pay-hint">
+											          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+												      <h1 class="govuk-fieldset__heading">
+												        How much do you want to pay?
+												      </h1>
+												    </legend>
+												    
+												   <div id="pay-hint" class="govuk-hint mb20">
+												  You can make multiple payments in a month to meet your target
+												    </div>
+
+
+											         <div id="example-question" class="form-group inline">
+											            <span class="c-form-input-denote govuk-body">£</span>
+											            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="payment-amount">
+											          </div>
+
+										          </fieldset>
+									        </div>
+
+
+											<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form>
+
+
+
+
+						
+
+
+    </div>
+</div>
+
+{% endblock %}

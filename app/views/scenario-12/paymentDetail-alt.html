@@ -1,0 +1,113 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+	   
+	   <div class="govuk-grid-row">
+      
+        <div class="govuk-grid-column-two-thirds">
+	   
+	   
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+	   <h1 class="govuk-heading-xl">Payment summary</h1>
+	   
+	   
+	   <table class="govuk-table summary-table mb40">
+		  <caption class="govuk-table__caption"><span class="visually-hidden">Payment summary</span></caption>
+
+		  <tbody class="govuk-table__body">
+		  
+		  
+		  <tr class="govuk-table__row">
+		      <th scope="row" class="govuk-table__header">Payment type</th>
+		      <td class="govuk-table__cell">Flexible amount</td>
+		    </tr>
+		  
+		  <tr class="govuk-table__row">
+		      <th scope="row" class="govuk-table__header">Payment amount</th>
+		      <td class="govuk-table__cell">			      
+			      
+			      
+						
+				
+		{% if data['how-much']=='five'%}
+		
+				&pound;5	
+				
+				
+		{% elif data['how-much']=='ten'%}
+		
+				&pound;10	
+				
+		{% elif data['how-much']=='twenty'%}
+		
+				&pound;20	
+				
+		{% elif data['how-much']=='thirty'%}
+		
+				&pound;30					
+		
+		{% else %}
+		
+				&pound;{{ data['payment-amount'] }}
+		
+		{% endif %}
+			      
+			      
+		      </td>
+		    </tr>
+
+
+		  </tbody>
+		</table>
+		
+		
+		
+		
+		
+		
+		<h2 class="govuk-heading-m">Declaration</h2>
+		
+		<p>By continuing, you confirm that:</p>
+		
+		<ul class="govuk-list govuk-list--bullet mb30">
+			<li>you will make at least one payment each month &ndash; this does not have to be the same amount</li>
+			<li>you will let us know immediately if your financial situation changes</li>
+		</ul>
+		
+		
+		<div class="govuk-warning-text">
+		  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+		  <strong class="govuk-warning-text__text">
+		    <span class="govuk-warning-text__assistive">Warning</span>
+		    If you do not keep up with your payments, we may ask your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.
+		  </strong>
+		</div>
+			
+			
+			<p><a href="flexibleFinish" class="govuk-button">Continue to pay</a></p>
+		
+		
+
+		                  
+    </div>
+</div>
+
+{% endblock %}
+
+
+

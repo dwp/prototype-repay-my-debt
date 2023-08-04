@@ -1,0 +1,126 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+How much can you afford to repay each month?
+
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+
+
+
+
+
+								<form class="form" action="/v-38/amount-too-low-payment-setup-done" method="post">
+
+
+									<div class="govuk-form-group">
+										  <fieldset class="govuk-fieldset">
+											  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+											  <h1 class="govuk-fieldset__heading">
+                          <span class="govuk-caption-xl">Manage your repayments</span>
+												How much can you afford to repay each month?
+											  </h1>
+											</legend>
+
+                      <div id="authentication-code-hint" class="govuk-inset-text">
+                          Your current monthly repayment amount is £40.00
+                        </div>
+
+
+											  <div class="govuk-input__wrapper">
+												  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+												  <input class="govuk-input govuk-input--width-10" id="newDeductedAmount" name="newDeductedAmount-setupDone" type="number" step="0.01" spellcheck="false" value="{{data['newDeductedAmount-setupDone']}}">
+												</div>
+
+
+
+										  </fieldset>
+									</div>
+
+
+                  <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+             I need help understanding how much will be taken from my Universal Credit payment
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p>Normally the most that can be taken to repay money you owe is 25% of your Universal Credit Standard Allowance.</p><p>You can <a href="https://www.gov.uk/guidance/find-out-about-money-taken-off-your-universal-credit-payment#how-much-will-be-taken-off-your-universal-credit-payment" class="govuk-link" rel="noreferrer noopener" target="_blank">find out about money taken off your Universal Credit payment (opens in new tab).</a></p>
+            <!--          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+                      <h1 class="govuk-heading-m">Example of standard allowances and monthly repayments  </h1>
+
+                      <p>This example does not include:</p>
+                      <ul>
+                        <li>any extra amounts that apply to you</li>
+                        <li>any money taken off your payment for Universal Credit advances</li>
+
+                      </ul>
+
+                      <table class="govuk-table">
+
+                        <thead class="govuk-table__head">
+                          <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-third">How much you'll get</th>
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Monthly standard allowance</th>
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Monthly repayment </th>
+                          </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">If you’re single and under 25	</td>
+                            <td class="govuk-table__cell">£292.11</td>
+                            <td class="govuk-table__cell">up to £73.03</td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">If you’re single and 25 or over</td>
+                            <td class="govuk-table__cell">£368.74</td>
+                            <td class="govuk-table__cell">up to £92.19</td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">If you live with your partner and you’re both under 25</td>
+                            <td class="govuk-table__cell">£458.51 (for you both)</td>
+                            <td class="govuk-table__cell">up to £114.63</td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">If you live with your partner and either of you are 25 or over	</td>
+                            <td class="govuk-table__cell">£578.82 (for you both)</td>
+                            <td class="govuk-table__cell">up to £144.70</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>-->
+                  </details>
+							<button class="govuk-button" data-module="govuk-button">
+							Continue
+							</button>
+							</form>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,100 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    
+     
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+	   <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	   
+	   <h1 class="govuk-heading-xl">Payment options </h1>
+	   
+	    <div class="govuk-inset-text">
+		 Total amount owed: <span class="total-amount">&pound;120.00</span>
+		 </div>
+	   
+	      
+      <div class="govuk-grid-row">
+      
+        <div class="govuk-grid-column-two-thirds">
+    
+			
+			<form class="form" action="fullPayment" method="post">
+			<div class="govuk-form-group">
+			  <fieldset class="govuk-fieldset">
+			    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+			      <h1 class="govuk-fieldset__heading">
+			        Choose a payment option: 
+			      </h1>
+			    </legend>
+			      
+			      
+			      
+			      <div class="govuk-radios">
+			      <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="full-amount" name="payment-options" type="radio" value="full-amount" aria-describedby="full-amount-hint">
+				        <label class="govuk-label govuk-radios__label govuk-label--s" for="full-amount">
+				         Pay the full amount
+				        </label>
+				        <span id="full-amount-hint" class="govuk-hint govuk-radios__hint">
+				          A one off payment will be taken from your account
+				        </span>
+				      </div>
+				      <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="flexible-amount" name="payment-options" type="radio" value="flexible-amount" aria-describedby="flexible-amount-item-hint">
+				        <label class="govuk-label govuk-radios__label govuk-label--s" for="flexible-amount">
+				         Pay a flexible amount
+				        </label>
+				        <span id="flexible-amount-hint" class="govuk-hint govuk-radios__hint">
+				          Pay what you can afford, you will need to make a minimum of one payment each month
+				        </span>
+				      </div>
+				      <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="fixed-plan" name="payment-options" type="radio" value="fixed-plan" aria-describedby="fixed-plan-hint">
+				        <label class="govuk-label govuk-radios__label govuk-label--s" for="fixed-plan">
+				          Set up a fixed payment plan
+				        </label>
+				        <span id="fixed-plan-hint" class="govuk-hint govuk-radios__hint">
+				          You will need to set up a Direct Debit payment
+				        </span>
+				      </div>
+				    </div>
+			      
+
+			  </fieldset>
+			</div>
+			
+			<button class="govuk-button" data-module="govuk-button">
+			  Continue
+			</button>
+			</form>
+			
+				 
+        </div>
+     
+      </div>
+      
+                  
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+

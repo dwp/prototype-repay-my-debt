@@ -1,0 +1,92 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		   <form class="form" action="targetFlow2" method="post">
+
+		       
+												    
+												    
+												    
+												    
+					<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <span class="govuk-caption-xl">Step 1 of 3</span>
+			   	 Do you want to set a payment target?</h1>
+    </legend>
+    
+    
+     <div class="govuk-inset-text mt0">
+
+			<p>Payment targets help you clear your debt in a timeframe that works for you &ndash; you can make multiple payments in a month to meet your target.
+</p>
+							
+												    </div> 
+
+
+
+
+<div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="targetYes2" name="targetChoice2" type="radio" value="target-yes2" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="targetYes">
+          Yes
+        </label>
+      </div>
+            <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="targetNo2" name="targetChoice2" type="radio" value="target-no2" data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-radios__label" for="targetNo">
+          No
+        </label>
+      </div>
+</div>
+
+
+
+  </fieldset>
+</div>							    
+	    
+							
+																							
+											<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form>
+				
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

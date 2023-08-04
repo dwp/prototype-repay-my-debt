@@ -1,0 +1,287 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+
+									{% if data['how-much2']=='other-amount'%}
+									<h1 class="govuk-heading-xl">Payment amount is low</h1>
+								
+
+									  <p>We would like to talk to you to discuss your situation and what you can afford.</p>
+
+
+					   				<h2 class="govuk-heading-m">Debt Management</h2>
+		
+									  
+									  <ul class="govuk-list">
+											  <li>Telephone: 0800 916 0647</li>
+											  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+											</ul>
+											<p class="govuk-body">
+											  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+											</p>
+									  
+									  
+									 
+			</div>
+
+
+									  
+									
+			
+
+										<!--// Full amount end -->
+
+
+
+
+
+
+									{% else %}
+									
+									<form class="form" action="directDebitDay" method="post">
+
+									
+									<h1 class="govuk-heading-xl">
+	   	<span class="govuk-caption-xl">Direct Debit</span>Summary</h1>
+									
+									
+									
+									
+																	
+									 <table class="govuk-table summary-table mb40">
+										  <caption class="govuk-table__caption mb20 govuk-heading-m">Payment plan</caption>
+								
+										  <tbody class="govuk-table__body">
+										  
+										
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Total amount owed</th>
+										      <td class="govuk-table__cell">&pound;600.00
+										      </td>
+										      
+									
+											 </tr>
+										      
+										    
+										    
+								
+										  <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Payment breakdown</th>
+										      <td class="govuk-table__cell">
+											      
+											      
+											{% if data['how-much2']=='oneHundredPound'%}
+										    
+										    6 payments of &pound;100
+								
+											{% elif data['how-much2']=='fiftyPound'%}
+											
+											12 payments of &pound;50
+											
+											{% elif data['how-much2']=='thirtyThree'%}
+											
+											18 payments of &pound;33.50
+											
+											
+											{% elif data['how-much2']=='twentyFivePound'%}
+											
+											24 payments of &pound;25
+
+											
+											{% else %}
+											
+											No amount entered
+											
+											{% endif %}
+											      
+											      
+										      </td>
+			
+										      	
+										    </tr>
+										    
+										    
+										     <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">First payment date</th>
+										      <td class="govuk-table__cell">
+											      
+											      
+											{{ data['paymentDay'] }} January 2021
+											      
+											      
+										      </td>
+										      
+							
+										     
+										    </tr>
+										    
+										    
+										  										    
+										    <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Expected final payment date</th>
+										      <td class="govuk-table__cell">
+											      
+											      
+											{% if data['how-much2']=='oneHundredPound'%}
+										    
+										    {{ data['paymentDay'] }} June 2021
+								
+											{% elif data['how-much2']=='fiftyPound'%}
+											
+											{{ data['paymentDay'] }} January 2022
+											
+											{% elif data['how-much2']=='thirtyThree'%}
+											
+											{{ data['paymentDay'] }} June 2022
+											
+											
+											{% elif data['how-much2']=='twentyFivePound'%}
+											
+											{{ data['paymentDay'] }} January 2023
+
+											
+											{% else %}
+											
+											No amount entered
+											
+											{% endif %}
+											      
+											      
+										      </td>
+										      
+										    
+										      
+										    </tr>
+
+								
+										  </tbody>
+										</table>
+										
+										
+										
+										<table class="govuk-table summary-table mb40">
+										  <caption class="govuk-table__caption mb20 govuk-heading-m">Account details</caption>
+								
+										  <tbody class="govuk-table__body">
+										  
+										
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Name on account</th>
+										      <td class="govuk-table__cell">{{ data['accountName'] }}</td>
+											 </tr>
+											 
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Sort code</th>
+										      <td class="govuk-table__cell">{{ data['sortCode'] }}</td>
+											 </tr>
+											 
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Account number</th>
+										      <td class="govuk-table__cell">{{ data['accountNumber'] }}</td>
+
+											 </tr>
+											 
+											  <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Building society roll number</th>
+										      <td class="govuk-table__cell">{{ data['rollNumber'] }}</td>
+
+											 </tr>
+										      
+										      
+										    
+										    
+										     
+										      										    
+								
+										 										    
+										  </tbody>
+										  
+										</table>
+										
+										
+										
+										
+										<div class="ddGuarantee">
+											<h3 class="govuk-heading-s">The Direct Debit Guarantee</h3>
+											
+											<ul class="govuk-list govuk-list--bullet">
+												<li>This Guarantee is offered by all banks and building societies that accept instructions to pay Direct Debits.
+</li>
+												<li>If there are any changes to the amount, date or frequency of your Direct Debit DWP will notify you 14 working
+days in advance of your account being debited or as otherwise agreed. If you request DWP to collect a payment,
+confirmation of the amount and date will be given to you at the time of request</li>
+
+												<li>If an error is made in the payment of your Direct Debit, by DWP or your bank or building society,
+you are entitled to a full and immediate refund of the amount paid from your bank or building society.
+&ndash; If you receive a refund you are not entitled to, you must pay it back when DWP asks you to.</li>
+
+												<li>You can cancel a Direct Debit at any time by simply contacting your bank or building society.
+Written confirmation may be required. Please also notify us.</li>
+					
+
+
+											</ul>
+										</div>
+										
+										
+										
+										
+										<h2 class="govuk-heading-m">Declaration</h2>
+
+		<p>By continuing, you confirm that you will:</p>
+
+		<ul class="govuk-list govuk-list--bullet mb30">
+			<li>pay the agreed monthly amount</li>
+			<li>let us know immediately if you’re struggling to keep up with payments</li>
+		</ul>
+										
+	
+
+		<div class="govuk-warning-text">
+		  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+		  <strong class="govuk-warning-text__text">
+		    <span class="govuk-warning-text__assistive">Warning</span>
+		    If you do not keep up with your payments, we will ask your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.
+		  </strong>
+		</div>
+
+
+			<p><a href="directFinish" class="govuk-button">Continue</a></p>							
+									
+		    </form>
+
+
+									{% endif %}
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

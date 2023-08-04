@@ -1,0 +1,88 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+			   <h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+			   <p>What you owe:
+					   <span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+		<div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+
+			
+
+			  <h1 class="govuk-heading-xl">
+				  <span class="govuk-caption-xl">Step 3 of 5</span>
+			  Payment plan review
+			  </h1>
+			
+			<div class="flexibleBanner">
+
+				<ul class="govuk-list">
+
+					<li>
+						<h3>Payment amount</h3>
+						<b>										    
+			   &pound;30.00
+				
+				</b>
+					</li>
+
+					<li>
+						<h3>Proposed plan review date</h3>
+						<b>
+					{{ data['paymentDay'] }} October 2022
+						
+						
+						</b>
+					</li>
+
+					
+				</ul>
+				
+				</div>	
+			
+			
+			<h2 class="govuk-heading-m">How the review works</h2>
+			
+			<p>We will send you a letter with details of when your review will take place and instructions to sign in to your account.</p>
+			
+			<p>The review is online &ndash; we will ask you questions about your financial situation to see how much you can afford based on your income and expenditure over the past 12 months.</p>
+			
+			<p>A new payment plan will be setup and we will let you know if a further review will be needed.</p>
+
+
+			
+			
+			
+			
+			<div class="govuk-inset-text">
+		<!--<p>Once your plan is set up, you can sign in to choose a higher payment plan or pay additional amounts.</p>-->
+			<p>If you are able to increase your plan, a review may not be needed.</p>	
+			</div>
+			
+		<p><a href="directDebitDetailsTemp" class="govuk-button">
+			Continue
+		  </a></p>
+
+
+	</div>
+</div>
+
+{% endblock %}

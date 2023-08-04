@@ -1,0 +1,110 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+		
+		<!--<div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+	
+												
+													
+
+																										    
+													    <li>
+													     <h3>Payment day</h3>
+													    <b>Day {{ data['paymentDay'] }} of each month												    
+													    </b>
+													    </li>
+													    
+
+											
+				
+									
+											</ul>
+											
+										
+											
+											</div> -->
+		
+
+		
+		
+
+			 <form class="form" action="directDebitChangeSummary" method="post">
+			
+			
+			
+			<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+      <span class="govuk-caption-xl">Change Direct Debit amount</span>
+        Do you want to change the day your Direct Debit payment is taken?
+      </h2>
+    </legend>
+
+   <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="daychange-yes" name="daychange" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="bankchange-yes">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="daychange-no" name="daychange" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="bankchange-no">
+          No
+        </label>
+      </div>
+    </div>
+
+
+  </fieldset>
+</div>
+			
+			
+			
+			 <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+			
+			
+			
+			 </form>
+			
+		
+		
+
+
+									
+									
+									
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,129 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+
+		
+		
+
+
+		<h1 class="govuk-heading-xl">
+			<span class="govuk-caption-xl">
+				
+				{% if data['paymentChoices']=='lowPayments'%}
+				 
+				 Step 4 of 5
+				 
+				 {% else %}
+				 
+				 Step 3 of 4
+				 
+				 {% endif %}
+				
+			</span>
+			Bank or building society <br>account details</h1>
+		
+		
+		
+		
+		 <form class="form" action="lowContactChoice" method="post">
+
+		    <fieldset class="govuk-fieldset">
+			    <legend class="visually-hidden">
+					Enter Account details
+				</legend>
+	
+		    <div class="govuk-form-group">
+			  <label class="govuk-label" for="accountName">
+			    Name on the account
+			  </label>
+
+			  <input class="govuk-input govuk-input--width-30" id="accountName" name="accountName" type="text">
+
+			</div>
+			
+			
+			<div class="govuk-form-group">
+			  <label class="govuk-label" for="sortCode">
+			    Sort code
+			  </label>
+			  <div id="sort-code-hint" class="govuk-hint">
+			    Must be 6 digits long
+			  </div>
+
+			  <input class="govuk-input govuk-input--width-10" id="sortCode" name="sortCode" type="text" aria-describedby="sort-code-hint">
+
+			</div>
+		
+			
+			<div class="govuk-form-group">
+			  <label class="govuk-label" for="accountNumber">
+			    Account number
+			  </label>
+			  
+			  <div id="account-number-hint" class="govuk-hint">
+			    Must be between 6 and 8 digits long
+			  </div>
+
+			  <input class="govuk-input govuk-input--width-10" id="accountNumber" name="accountNumber" type="text" aria-describedby="account-number-hint">
+
+			</div>
+			
+			<!--<div class="govuk-form-group">
+  <label class="govuk-label" for="rollNumber">
+    Building society roll number (if you have one)
+  </label>
+  <div id="roll-number-hint" class="govuk-hint">
+    You can find it on your card, statement or passbook
+  </div>
+  <input class="govuk-input govuk-input--width-10" id="rollNumber" name="rollNumber" type="text" spellcheck="false" aria-describedby="roll-number-hint">
+</div>-->
+			
+			
+			
+			
+		    </fieldset>
+		    
+
+		    
+		    
+		    
+		    <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		    
+		 </form>
+
+								
+					
+
+									
+									
+									
+
+
+    </div>
+</div>
+
+{% endblock %}

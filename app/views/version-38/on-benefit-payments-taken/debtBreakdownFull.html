@@ -1,0 +1,380 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Details of what you owe
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+									<h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Details of what you owe</h1>
+
+                  <!-- <div class="govuk-inset-text">
+         			 Total amount owed: <span class="total-amount">
+         			&pound;1139.10
+
+         									 </span>
+
+
+         			</div>-->
+
+              {% if data['deductionChange']=='DyesChange-setupDone'%}
+              <div class="govuk-inset-text">
+                Total amount left to pay: <span class="total-amount">
+                  &pound;1,670.00
+
+                </span>
+
+
+              </div>
+
+
+              <div class="flexible-banner-float-none">
+                <ul class="govuk-list">
+                  <li>
+                    <h3>New payment</h3>
+                    <span id="total-amount"><b>£{{ data['newDeductedAmount-setupDone'] }}</span>
+                  </li>
+                </ul>
+
+                <p>Your account will be updated within the next 7 days.
+              </p>
+              </div>
+{% else %}
+              <div class="govuk-inset-text">
+                Total amount left to pay: <span class="total-amount">
+                  &pound;1,670.00
+
+                </span>
+
+
+              </div>
+
+                  <div class="flexible-banner-float-none">
+                    <ul class="govuk-list">
+                      <li>
+                        <h3>Previous payment</h3>
+                        <span id="new-debts-amount"><b>£40.00</b></span>
+                      </li>
+                      <!-- <li>
+                        <h3>Amount paid towards what you owe</h3>
+                        <span class="total-amount" id="new-total-owed"><b>£10.00</b></span>
+                      </li>
+                      <li>
+                        <h3>Amount paid towards Universal credit (joint)</h3>
+                        <span class="total-amount" id="new-total-owed"><b>£10.00</b></span>
+                      </li> -->
+                    </ul>
+                  </div>
+
+
+{% endif %}
+
+
+ <div class="govuk-accordion mb50" data-module="govuk-accordion" id="accordion-with-summary-sections">
+
+
+
+
+	 <!-- <div class="govuk-accordion__section ">
+		  <div class="govuk-accordion__section-header">
+			<h2 class="govuk-accordion__section-heading">
+			  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+				Universal Credit
+			  </span>
+			 </h2>
+
+
+
+		<div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+			 Overpayments
+			</div>
+
+		  </div>
+		  <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+
+
+
+		  <div class="flexible-banner">
+
+
+
+
+
+				 <table class="govuk-table">
+
+			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+
+
+
+					<tbody class="govuk-table__body">
+
+
+					<tr class="govuk-table__row">
+						 <th scope="row" class="govuk-table__header">Award period ended</th>
+						  <td class="govuk-table__cell"> May 2022</td>
+						</tr>
+
+					   <!-- <tr class="govuk-table__row">
+						   <th scope="row" class="govuk-table__header">Original amount owed</th>
+							<td class="govuk-table__cell">&pound;1,300.00</td>
+						  </tr>
+
+					 <tr class="govuk-table__row">
+						 <th scope="row" class="govuk-table__header">Your current repayment amount</th>
+						  <td class="govuk-table__cell">
+
+
+
+							   &pound;30.00
+
+
+
+							  </td>
+						</tr>
+
+						<!-- <tr class="govuk-table__row">
+							 <th scope="row" class="govuk-table__header">Your partner's current payment amount</th>
+							  <td class="govuk-table__cell">
+
+
+
+								   &pound;20.00
+
+
+
+								  </td>
+							</tr>
+
+
+							 <tr class="govuk-table__row">
+								  <th scope="row" class="govuk-table__header">Total amount repaid</th>
+								   <td class="govuk-table__cell">&pound;360.00</td>
+								 </tr>
+
+						 <tr class="govuk-table__row">
+							  <th scope="row" class="govuk-table__header">Total amount left to pay</th>
+							   <td class="govuk-table__cell">&pound;940.00</td>
+							 </tr>
+
+
+
+					</tbody>
+
+		  </table>
+
+
+		  <!-- <h4 class="govuk-heading-s">How a joint repayment works</h4>
+		  <p>The money you owe as part of this joint repayment is shared with your partner so you're both responsible for the repayments.</p>
+		  <p>The total amount of this joint repayment will be shown on your account and also your partner's. Therefore, any payments made will be reflected on both accounts.</p>
+
+		  <h4 class="govuk-heading-s">Final payment date</h4>
+
+
+			<p>If your current repayment amount stays at £30.00, you will both clear this Advance payment in
+         <script>
+          var  num1 = 940.00;
+          var num2 =  30;
+          var x = Math.floor(num1 / num2); //or whatever offset
+          var CurrentDate = new Date();
+          console.log("Current date:", CurrentDate);
+          CurrentDate.setMonth(CurrentDate.getMonth() + x);
+           document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
+        </script>.
+      </p>
+
+
+
+
+
+		  </div>
+
+	 <p>If your circumstances have changed and you're no longer with your partner or you have any other questions, you need to contact Universal Credit.</p>
+
+
+	 <ul class="govuk-list">
+	   <li>Telephone: 0800 328 5644</li>
+		<li>Textphone: 0800 328 1344</li>
+    <li>Welsh language: 0800 328 1744</li>
+
+
+		 <li>Monday to Friday, 8am to 6pm (except public holidays)</li>
+	 </ul>
+
+ <p class="govuk-body">
+   <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+ </p>
+
+		  </div>
+		</div> -->
+
+
+
+
+
+	<div class="govuk-accordion__section ">
+		  <div class="govuk-accordion__section-header">
+			<h2 class="govuk-accordion__section-heading">
+			  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+				HMRC
+			  </span>
+			 </h2>
+
+
+
+		<div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
+			Tax Credits overpayment
+			</div>
+
+		  </div>
+		  <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2">
+
+
+
+		  <div class="flexible-banner">
+
+
+
+
+
+				 <table class="govuk-table">
+
+			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+
+
+
+					<tbody class="govuk-table__body">
+
+
+					<tr class="govuk-table__row">
+						 <th scope="row" class="govuk-table__header">Award period ended</th>
+						  <td class="govuk-table__cell"> January 2021</td>
+						</tr>
+
+					   <!-- <tr class="govuk-table__row">
+						   <th scope="row" class="govuk-table__header">Original amount owed</th>
+							<td class="govuk-table__cell">&pound;1,000.00</td>
+						  </tr> -->
+
+					 <tr class="govuk-table__row">
+						 <th scope="row" class="govuk-table__header">Your current repayment amount</th>
+						  <td class="govuk-table__cell">
+
+
+
+							   &pound;40.00
+
+
+
+							  </td>
+						</tr>
+
+
+
+
+							 <tr class="govuk-table__row">
+								  <th scope="row" class="govuk-table__header">Total amount repaid</th>
+								   <td class="govuk-table__cell">&pound;630.00</td>
+								 </tr>
+
+						 <tr class="govuk-table__row">
+							  <th scope="row" class="govuk-table__header">Total amount left to pay</th>
+							   <td class="govuk-table__cell">&pound;1,670.00</td>
+							 </tr>
+
+
+
+					</tbody>
+
+		  </table>
+
+
+
+		  <h4 class="govuk-heading-s">Final payment date</h4>
+
+
+			<p>If your current repayment amount stays at £40.00 you will clear this Tax Credits overpayment in
+
+        <script>
+         var  num1 = 1670.00;
+         var num2 =  40;
+         var x = Math.floor(num1 / num2); //or whatever offset
+         var CurrentDate = new Date();
+         console.log("Current date:", CurrentDate);
+         CurrentDate.setMonth(CurrentDate.getMonth() + x);
+          document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
+       </script>.
+      </p>
+
+
+
+
+
+		  </div>
+
+	 <p>If you have any questions, you need to contact HMRC.</p>
+
+
+	 <ul class="govuk-list">
+	   <li>Telephone: 0345 300 3900</li>
+     <li>Welsh language: 0300 200 1900</li>
+
+
+      <li>Monday to Friday, 8am to 4pm (except public holidays)</li>
+	 </ul>
+
+ <p class="govuk-body">
+   <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+ </p>
+
+		  </div>
+		</div>
+
+
+
+
+
+
+
+
+
+</div>
+ <!-- // Accordian end -->
+
+
+  		  <h4 class="govuk-heading-m">Other money you owe</h4>
+       <h4 class="govuk-heading-s">Universal Credit</h4>
+
+
+ <p>The total amount owed may not include some Universal Credit advances taken out in your current claim. For more information, refer to your Universal Credit statement.</p><p>
+
+ If you have any Universal Credit joint debts, they will be included in the total amount but will not show in the details of what you owe. This is because these debts are not currently supported on the service.</p>
+
+
+
+    </div>
+</div>
+
+{% endblock %}

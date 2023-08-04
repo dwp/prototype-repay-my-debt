@@ -1,0 +1,151 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+		
+		{% if data['paymentChoices']=='lowPayments'%}
+
+
+		<!--<h1 class="govuk-heading-xl">
+			<span class="govuk-caption-xl">Step 2 of 4</span>
+			How a low monthly payment <br>plan works</h1>
+			<p><a href="lowPayChoice" class="govuk-button">Continue</a></p> -->
+			
+			
+			<div class="attention-card ">
+
+			<h1 class="govuk-heading-l mb40">How a lower payment plan works</h1>
+			
+			
+			<ul class="govuk-list">
+			
+			
+			
+			<li>
+				<h2>Start your plan by entering an amount you can afford to pay each month </h2>
+				<p>If your financial situation improves, you should increase your payment plan or pay additional amounts.</p>
+			</li>	
+				
+				<li class="two">
+					<h2>Sign up for helpful payment reminders</h2>
+					<p>We will send you a reminder each month to see if you are able to increase your payment plan or pay additional amounts.</p>
+				</li>
+
+				<li class="three">
+					<h2>We may review your plan after 12 months</h2>
+					<p>If you have been unable to increase your payment plan, we will contact you to review your situation and see how much you can afford.</p>
+				</li>
+			</ul>
+			
+
+			<p><a href="lowPayChoice" class="attention-invert mt30">Continue</a></p>
+
+		</div>
+				
+										    
+										     		
+		
+		
+									{% else %}
+									
+		
+		
+
+
+			<form class="form" action="lowDebitDay" method="post">
+			<div class="govuk-form-group">
+			   <fieldset class="govuk-fieldset">
+			    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+			      <h1 class="govuk-fieldset__heading">
+			      	<span class="govuk-caption-xl">Step 3 of 4</span>
+			        How do you want to make<br> your payments?
+			      </h1>
+			    </legend>
+
+
+
+			      <div class="govuk-radios">
+			      <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="full-amount" name="payment-options" type="radio" value="full-amount" aria-describedby="full-amount-hint">
+				        <label class="govuk-label govuk-radios__label govuk-label--s" for="full-amount">
+				        Set up a Direct Debit plan
+				        </label>
+				        <span id="full-amount-hint" class="govuk-hint govuk-radios__hint">
+				          Make fixed monthly payments on a day which suits you
+				        </span>
+				      </div>
+				      
+				      
+				      <!-- <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="fixed-plan" name="payment-options" type="radio" value="fixed-plan" aria-describedby="fixed-plan-hint">
+				        <label class="govuk-label govuk-radios__label govuk-label--s" for="fixed-plan">
+				          Set up a Direct Debit payment plan
+				        </label>
+				        <span id="fixed-plan-hint" class="govuk-hint govuk-radios__hint">
+				         Choose a payment plan with fixed monthly payments
+				        </span>
+				      </div> -->
+				     
+				      <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="flexible-amount" name="payment-options" type="radio" value="flexible-amount" aria-describedby="flexible-amount-item-hint">
+				        <label class="govuk-label govuk-radios__label govuk-label--s" for="flexible-amount">
+				         Make flexible payments
+				        </label>
+				        <span id="flexible-amount-hint" class="govuk-hint govuk-radios__hint">
+				        Sign in each month and make manual payments when it suits you
+				        </span>
+				      </div>
+				      
+				      
+				      
+				     
+				     
+				    </div>
+
+
+			  </fieldset>
+			</div>
+
+			<button class="govuk-button" data-module="govuk-button">
+			  Continue
+			</button>
+			</form>
+
+								
+									
+									
+						{% endif %}		
+
+
+									
+									
+									
+
+
+    </div>
+</div>
+
+{% endblock %}

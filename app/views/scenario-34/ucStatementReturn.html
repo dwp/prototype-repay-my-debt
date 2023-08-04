@@ -1,0 +1,94 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+
+        <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+<h1 class="govuk-heading-l">
+	<span class="govuk-caption-l">21 November 2022</span>
+	What we take off (deductions)</h1>
+
+
+
+<table class="govuk-table mt40">
+	  
+	  <caption class="visually-hidden">Overpayment detail</caption>
+	  
+	  
+
+		 
+ 
+		   <tbody class="govuk-table__body">
+		   
+		   
+		   <tr class="govuk-table__row">
+				<th scope="row" class="govuk-table__header">Advance Payments
+			
+					<span class="thFake">We take &pound;88.90 off your payment to pay back your advances</span>
+				</th>
+				 <td class="govuk-table__cell">&ndash; &pound;88.90</td>	 
+			   </tr>
+			  
+			  <tr class="govuk-table__row">
+				  <th scope="row" class="govuk-table__header">Debts and loans repayments
+				
+					  <span class="thFake">DWP benefits recovery</span>
+					  <!--<p class="ucGreyStatement">To find out more, go to the GOV.UK website and search for repay and manage benefit money.</p>-->
+			
+				  </th>
+				   <td class="govuk-table__cell">&ndash; &pound;30.00</td>	 
+				 </tr>
+			  
+		<!--	<tr class="govuk-table__row">
+				<th scope="row" class="govuk-table__header">Other money you owe
+					
+					<span class="thFake">Fines</span>
+				</th>
+				 <td class="govuk-table__cell">&ndash; &pound;18.90</td>	 
+			   </tr> -->
+
+					
+					<tr class="govuk-table__row ucGrey">
+						 <th scope="row" class="govuk-table__header">Total deductions</th>
+						  <td class="govuk-table__cell">&ndash; &pound;118.90</td>	 
+						</tr>
+					
+				<tr class="govuk-table__row ucBlue">
+					 <th scope="row" class="govuk-table__header">Your total payment for this month is</th>
+					  <td class="govuk-table__cell">&pound;1403.10</td>	 
+					</tr>
+
+					
+						
+		   </tbody>
+		   
+ </table>
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

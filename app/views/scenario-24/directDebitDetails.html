@@ -1,0 +1,324 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+		
+		{% if data['paymentChoices']=='25Month'%}
+		
+		
+		
+		<h1 class="govuk-heading-xl">
+			<span class="govuk-caption-xl">Step 2 of 4</span>
+			Payment plan summary</h1>
+			
+			
+			
+			
+			
+			
+	   <div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+											
+											
+											
+											<li>
+													<h3>Plan type</h3>
+													
+													<b>Low payment plan</b>
+
+												</li>
+
+												
+												<li>
+													<h3>Payment amount</h3>
+													<b>										    
+										   &pound;15.00
+										    
+										    </b>
+												</li>
+												
+												
+												
+												
+												
+												
+												<li>
+													<h3>Plan review date</h3>
+													<b>
+												June 2022
+													
+													
+													</b>
+												</li>
+
+												
+											</ul>
+											
+											</div>
+											
+				
+				
+				<p>This is acceptable to start your plan but will be treated as a low payment option as it is over 72 months.</p>
+				
+				 <p>If your financial situation improves, you should increase your payment plan or pay additional amounts.</p>
+				 
+				 
+				
+				<p>If you have been unable to increase your payment plan, we will contact you after 12 months to review your financial situation and see how much you can afford.</p>
+				
+				
+				
+				
+				<p><a href="directDebitDetailsTemp" class="govuk-button">Continue</a></p>
+		
+		
+		
+		
+		{% elif data['paymentChoices']=='other-amount'%}
+		
+		
+		
+		<h1 class="govuk-heading-xl">
+			<span class="govuk-caption-xl">Step 2 of 4</span>
+			Payment plan summary</h1>
+			
+			
+			
+			
+			
+			
+	   <div class="flexibleBanner">
+											
+											
+											<ul class="govuk-list">
+
+												
+												<li>
+													<h3>Payment amount</h3>
+													<b>										    
+										   &pound;{{ data['payment-amount2'] }}
+										    
+										    </b>
+												</li>
+												
+												<li>
+													<h3>Number of payments</h3>
+													
+													<b>120</b>
+
+												</li>
+												
+												
+												
+												
+												<li>
+													<h3>Plan review date</h3>
+													<b>
+												June 2022
+													
+													
+													</b>
+												</li>
+
+												
+											</ul>
+											
+											</div>
+											
+				
+				
+				<p>This is acceptable to start your plan but will be treated as a low payment option as it is over 72 months.</p>
+				
+				 <p>If your financial situation improves, you should increase your payment plan or pay additional amounts.</p>
+				 
+				 
+				
+				<p>If you have been unable to increase your payment plan, we will contact you after 12 months to review your financial situation and see how much you can afford.</p>
+
+				
+				
+				
+				
+				<p><a href="directDebitDetailsTemp" class="govuk-button">Continue</a></p>
+				
+										    
+										     		
+		
+		
+									{% else %}
+									
+		
+		
+
+
+		<h1 class="govuk-heading-xl">
+			<span class="govuk-caption-xl">Step 3 of 4</span>
+			Bank or building society <br>account details</h1>
+		 
+	<!--	<div class="flexibleBanner">
+		
+		
+											{% if data['how-much2']=='oneHundredPound'%}
+										    
+										    <ul class="govuk-list">
+												<li><h3>Total amount owed</h3><b>&pound;2000.00</b></li>
+												<li><h3>Direct Debit amount</h3><b>&pound;334.00</b></li>
+												<li><h3>Number of payments</h3><b>6</b></li>	
+											</ul>
+								
+											{% elif data['how-much2']=='fiftyPound'%}
+											
+											<ul class="govuk-list">
+												<li><h3>Total amount owed</h3><b>&pound;2000.00</b></li>
+												<li><h3>Direct Debit amount</h3><b>&pound;167.00</b></li>
+												<li><h3>Number of payments</h3><b>12</b></li>	
+											</ul>
+											
+											{% elif data['how-much2']=='thirtyThree'%}
+											
+											<ul class="govuk-list">
+												<li><h3>Total amount owed</h3><b>&pound;2000.00</b></li>
+												<li><h3>Direct Debit amount</h3><b>&pound;112.00</b></li>
+												<li><h3>Number of payments</h3><b>18</b></li>	
+											</ul>
+											
+											
+											{% elif data['how-much2']=='twentyFivePound'%}
+											
+											<ul class="govuk-list">
+												<li><h3>Total amount owed</h3><b>&pound;2000.00</b></li>
+												<li><h3>Direct Debit amount</h3><b>&pound;84.00</b></li>
+												<li><h3>Number of payments</h3><b>24</b></li>	
+											</ul>
+
+											
+											{% else %}
+											
+											<ul class="govuk-list">
+												<li><h3>Total amount owed</h3><b>&pound;2000.00</b></li>
+												<li><h3>Direct Debit amount</h3><b>&pound;56.00</b></li>
+												<li><h3>Number of payments</h3><b>36</b></li>	
+											</ul>
+											
+											{% endif %}
+		
+		
+		
+		
+		
+
+
+											
+
+									</div> -->
+		
+		
+		
+		
+		 <form class="form" action="directDebitDay" method="post">
+
+		    <fieldset class="govuk-fieldset">
+			    <legend class="visually-hidden">
+					Enter Account details
+				</legend>
+	
+		    <div class="govuk-form-group">
+			  <label class="govuk-label" for="accountName">
+			    Name on the account
+			  </label>
+
+			  <input class="govuk-input govuk-input--width-30" id="accountName" name="accountName" type="text">
+
+			</div>
+			
+			
+			<div class="govuk-form-group">
+			  <label class="govuk-label" for="sortCode">
+			    Sort code
+			  </label>
+			  <div id="sort-code-hint" class="govuk-hint">
+			    Must be 6 digits long
+			  </div>
+
+			  <input class="govuk-input govuk-input--width-10" id="sortCode" name="sortCode" type="text" aria-describedby="sort-code-hint">
+
+			</div>
+		
+			
+			<div class="govuk-form-group">
+			  <label class="govuk-label" for="accountNumber">
+			    Account number
+			  </label>
+			  
+			  <div id="account-number-hint" class="govuk-hint">
+			    Must be between 6 and 8 digits long
+			  </div>
+
+			  <input class="govuk-input govuk-input--width-10" id="accountNumber" name="accountNumber" type="text" aria-describedby="account-number-hint">
+
+			</div>
+			
+			<!--<div class="govuk-form-group">
+  <label class="govuk-label" for="rollNumber">
+    Building society roll number (if you have one)
+  </label>
+  <div id="roll-number-hint" class="govuk-hint">
+    You can find it on your card, statement or passbook
+  </div>
+  <input class="govuk-input govuk-input--width-10" id="rollNumber" name="rollNumber" type="text" spellcheck="false" aria-describedby="roll-number-hint">
+</div>-->
+			
+			
+			
+			
+		    </fieldset>
+		    
+
+		    
+		    
+		    
+		    <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		    
+		 </form>
+
+								
+									
+									
+						{% endif %}		
+
+
+									
+									
+									
+
+
+    </div>
+</div>
+
+{% endblock %}

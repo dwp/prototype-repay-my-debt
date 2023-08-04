@@ -1,0 +1,103 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+	   <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+								
+									<h1 class="govuk-heading-xl">
+										<span class="govuk-caption-xl">Universal Credit Budgeting Advance</span>
+										Pay the full amount</h1>
+								
+								
+									  {% include "includes/baOwed.html" %} 
+								
+									
+								   
+										<form class="form" action="#" method="post">
+
+									<h2 class="govuk-heading-m">Before you pay</h2>
+									
+									<p>Make sure you have enough money in your account to cover this payment.</p>
+
+									<p>Credit card payments will incur extra charges, debit card payments will not.</p>
+									
+									<details class="govuk-details mt20" data-module="govuk-details">
+										  <summary class="govuk-details__summary">
+											<span class="govuk-details__summary-text">
+											Can I get another Budgeting Advance?
+											</span>
+										  </summary>
+										  <div class="govuk-details__text">
+										  <p>You can get another Budgeting Advance if you have:</p>
+								
+								
+										<ul class="govuk-list govuk-list--bullet">
+										  <li>been getting Universal Credit, income-related Employment and Support Allowance, Income and Support, income-related Jobseeker's Allowance or State Pension Credit for 6 months or more, unless you need the money to help you start a new job or keep an existing job</li>
+										  <li>earned less than £2,600 (£3,600 jointly for couples) in the past 6 months</li>
+										  <li>paid off any previous Budgeting Advances</li>
+										</ul>
+										<p>If you're not sure about any of this information, you should contact Universal Credit or refer to your journal.</p>
+										
+										<ul class="govuk-list">
+											  <li>Telephone: 0800 012 1331</li>
+											   <!-- <li>Textphone: 0800 328 1344</li>-->
+												<li>Monday to Friday, 10am to 4pm (excluding public holidays)</li>
+											</ul>
+										
+										<p class="govuk-body">
+										  <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+										</p>
+								
+								
+								
+										  </div>
+										</details>
+	
+										<p><a href="govPay" class="govuk-button">
+										  Continue to pay
+										</a></p>
+										</form>
+
+										<!--// Full amount end -->
+										
+										
+										
+										
+										
+										
+									
+
+
+
+
+
+									
+ 
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,134 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+		
+		<form class="form" action="chrisTest" method="post">
+								
+											
+											<div class="govuk-form-group">
+												  <fieldset class="govuk-fieldset">
+												    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb20">
+												      <h1 class="govuk-fieldset__heading">
+												      <span class="govuk-caption-xl">Step 1 of 4</span>
+												        Choose a payment plan
+												      </h1>
+												    </legend>
+												
+
+
+												    
+												     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+												    <div class="govuk-radios">
+							
+
+												      
+												       <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="12Month" name="paymentChoices" type="radio" value="12Month">
+												        <label class="govuk-label govuk-radios__label" for="12Month">
+												          <b>&pound;360.00</b> &ndash; 12 monthly payments
+												        </label>
+												        
+												      </div>
+												     
+												      
+												      
+												       <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="24Month" name="paymentChoices" type="radio" value="24Month">
+												        <label class="govuk-label govuk-radios__label" for="24Month">
+												          <b>&pound;180.00</b> &ndash; 24 monthly payments
+												        </label>
+												        
+												      </div>
+												      
+												      
+												     
+												      
+												      
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="36Month" name="paymentChoices" type="radio" value="36Month">
+												        <label class="govuk-label govuk-radios__label" for="36Month">
+												          <b>&pound;120.00</b> &ndash; 36 monthly payments
+												        </label>
+												        
+												      </div>
+												      
+												      
+												       <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="48Month" name="paymentChoices" type="radio" value="48Month">
+												        <label class="govuk-label govuk-radios__label" for="48Month">
+												          <b>&pound;90.00</b> &ndash; 48 monthly payments
+												        </label>
+												        
+												      </div>
+												      
+												       <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="72Month" name="paymentChoices" type="radio" value="72Month">
+												        <label class="govuk-label govuk-radios__label" for="72Month">
+												          <b>&pound;60.00</b> &ndash; 72 monthly payments
+												        </label>
+												        
+												      </div>
+		
+													<div class="govuk-radios__item">
+															<input class="govuk-radios__input" id="customAmount" name="paymentChoices" type="radio" value="customAmount">
+															<label class="govuk-label govuk-radios__label" for="customAmount">
+															<b>Enter a different amount within 72 monthly payments</b>
+															</label>
+															
+														  </div> 
+												      
+												      
+									
+												  <div class="govuk-radios__divider">or</div>
+												      
+												     
+								      <div class="govuk-radios__item">
+								        <input class="govuk-radios__input" id="lowPayments" name="paymentChoices" type="radio" value="lowPayments">
+								        <label class="govuk-label govuk-radios__label govuk-label--s" for="lowPayments">
+								         I need a more affordable plan
+								        </label>
+									
+								      </div>
+								   
+									</div>												      
+												      
+												      
+												      
+												    </div>
+												  </fieldset>
+												</div>
+											
+											
+											<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form>
+										
+				
+									
+									
+								
+									
+										
+
+    </div>
+</div>
+
+{% endblock %}

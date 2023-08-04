@@ -1,0 +1,649 @@
+// global styles for <a> and <p> tags
+.back-link {
+	.govuk-back-link {
+		margin: 0 0 30px 0;
+	}
+}
+
+.scenario-panel {
+	margin: 20px 0;
+	border: 1px solid govuk-colour("mid-grey");
+	
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 40px;
+	}
+	h2 {
+		background: govuk-colour("light-grey");
+		padding: .8em 1em;
+		margin: 0;
+		
+	}
+	.scenario-inner-panel {
+		padding: 1.2em 1.2em 1.6em 1.2em;
+		p {
+			margin: 0 0 20px 0;
+		}
+		h3 {
+		margin: 0 0 20px 0;
+			span {
+				display: block;
+				font-size: 19px;
+				font-weight: normal;
+			}
+			&.right-align {
+				border-left: 1px solid #000;
+				padding-left: 1em;
+			}
+			&.status-paid {
+				border-left: 2px solid govuk-colour("blue");
+				padding: .4em .6em;
+				background: rgba(govuk-colour("blue"), 0.05);
+				margin-bottom: 26px;
+			}
+			&.status-declined {
+				border-left: 2px solid $govuk-error-colour;
+				padding: .4em .6em;
+				background: rgba(govuk-colour("red"), 0.05);
+				margin-bottom: 24px;
+			}
+		}
+		
+		.govuk-inset-text {
+			margin: 0 0 14px 0;
+		}
+		
+		.warning-message {
+			margin-bottom: 20px!important;
+		}
+
+		
+	}
+	
+	.why-overview {
+		margin-bottom: 10px;
+		h4 {
+			border-bottom: 1px solid #000;
+			padding-bottom: 15px;
+			margin: 0;
+			span {
+				font-weight: normal;
+				font-size: 19px;
+				color: govuk-colour("dark-grey");
+				display: block;
+				margin-bottom: 5px;
+			}
+		}
+	}
+	
+	button {
+		margin: 0;
+	}
+}
+
+
+.info-message {
+				border-left: 3px solid govuk-colour("blue");
+				background: rgba(govuk-colour("blue"), 0.05);
+				padding: .8em 1em .8em .8em;
+				margin-bottom: 20px;
+				display: inline-block;
+				p {
+					margin: 0;
+				}
+				h5 {
+					margin: 0 0 10px 0;
+				}
+			}
+		.warning-message {
+				border-left: 5px solid govuk-colour("red");
+				background: rgba(govuk-colour("red"), 0.05);
+				padding: 1em 3em 1em 1em;
+				margin-bottom: 30px;
+				clear: both;
+				
+				p {
+					margin: 0!important;
+				}
+				h5 {
+					margin: 0 0 10px 0;
+				}
+				&.info-alert {
+					border-left: 5px solid govuk-colour("blue");
+					background: rgba(govuk-colour("blue"), 0.05);
+					position: relative;
+						.counter {
+							font-family: "GDS Transport", Arial, sans-serif;
+							position: absolute;
+							top: .8em;
+							right: 1em;
+							color: #fff;
+							line-height: 1.2em;
+							background: govuk-colour("blue");
+							padding: .5em;
+							border-radius: .2em .2em .2em;
+							font-size: 16px;
+							text-align: center;
+							b {
+								font-size: 20px;
+								display: block;
+							}
+						}
+					}
+				&.complete-alert {
+				border-left: 5px solid govuk-colour("green");
+				background: rgba(govuk-colour("green"), 0.05);
+				}
+				&.info-group {
+					border-left: 5px solid govuk-colour("mid-grey");
+					background: #fff;
+
+					}
+			}
+			
+			.list-display {
+				padding: 1.8em;
+				background: govuk-colour("light-grey");
+				margin-bottom: 20px;
+			}
+
+
+
+.secondary-invert {
+	margin-top: 10px;
+	display: inline-block;
+	padding: 0;
+	border: 2px solid govuk-colour("green");
+	background: #fff;
+	font-size: 19px;
+	color: govuk-colour("green")!important;
+	padding: 7px 14px;
+	text-decoration: none;
+	&:hover {
+		background: rgba(govuk-colour("green"), 0.05);
+	}
+	&.help-support-cta {
+		margin-top: 45px;
+	}
+	&.dash-pay {
+		margin-top: 13px;
+	}
+	&.dash-paid {
+		margin-top: 31px;
+	}
+}
+
+.attention-invert {
+	margin-top: 10px;
+	display: inline-block;
+	padding: 0;
+	border: 1px solid #000;
+	border-bottom: 3px solid #000;
+	background: #fff;
+	font-size: 19px;
+	color: #000!important;
+	padding: 7px 14px;
+	text-decoration: none;
+	&:hover {
+		background: govuk-colour("mid-grey");
+	}
+}
+
+
+.clear-bar {
+		overflow: hidden;
+		border-bottom: 1px solid #000;
+		padding: 0 2em 1em 0;               
+		margin-bottom: 2em;
+		&.clear-bar-inner {
+			margin-top: -30px;
+		}
+		&.stripped-border {
+			border-bottom: 0;
+			padding-bottom: 0;
+			margin-top: -16px;
+			
+		}
+		h2 {
+			float: left; 
+			width: 60%;
+			margin: 0;
+			padding-top: 5px;
+			span {
+				display: block;
+				font-weight: normal;
+				font-size: 24px;
+				color: govuk-colour("dark-grey");
+				margin-top: 5px;
+			}
+		}
+		.identifier {
+			float: left;
+			width: 60%;
+			margin: 0;
+			padding: 0;
+
+			h3 {
+				display: block;
+				margin: 0;
+				padding: 0 0 0 0;
+				span {
+					display: block;
+					font-weight: normal;
+					font-size: 24px;
+					color: govuk-colour("dark-grey");
+					margin-top: 5px;
+				}
+			}
+			.govuk-caption-l {
+				padding-top: 5px;
+			}
+			ul {
+				margin: 5px 0 0 0;
+				overflow: hidden;
+				li {
+					float: left;
+					width: auto;
+					color: govuk-colour("dark-grey");
+					margin-left: 2em;
+					&:first-child {
+						margin: 0;
+					}
+					span {
+						display: block;
+						font-weight: bold;
+						color: govuk-colour("black");
+					}
+				}
+			}
+		}
+		p {
+			float: right;
+			width: auto;
+			margin: 10px 0 0 0;
+			border-left: 1px solid #000;
+			padding-left: 1em;
+			font-size: 22px;
+			
+			span {
+				display: block;
+				font-weight: bold;
+				font-size: 26px;
+			}
+		}
+		.govuk-inset-text {
+			float: right;
+			width: auto;
+			clear: none;
+			margin: 0;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			color: govuk-colour("dark-grey");
+		}
+		
+		.warning {
+			background: rgba(govuk-colour("red"), 0.05);
+			border-left: 2px solid $govuk-error-colour;
+			padding: .7em;
+			clear: both;
+			margin-top: 1em;
+			display: inline-block;
+		}
+		&.blue-bar {
+			background: govuk-colour("blue");
+			padding: .5em 2em 1em 1em;
+			border: 0;
+			h2, {
+				color: #fff;
+				span {
+					color: #fff;
+				}
+			}
+			p {
+				border-color: #fff;
+				color: #fff;
+			}
+		}
+	}
+
+
+
+.key-details-bar {
+	color: #fff;
+	padding: 1em;
+	background: govuk-colour("blue");
+	margin-bottom: 2em;
+	overflow: hidden;
+	&.split {
+		padding: 1em 1.5em;
+	}
+	
+	h2 {
+		margin: 0;
+		padding: 5px 0 0 0;
+		color: #fff;
+		line-height: 1.1em;
+		float: left;
+		width: auto;
+		max-width: 34%;
+	}
+	
+	h3 {
+		margin: 0;
+		padding: 5px 0 0 0;
+		color: #fff;
+		line-height: 1.1em;
+		display: block;
+	}
+	
+	ul {
+		margin: 0 0 0 1.5em;
+		float: right;
+		width: auto;
+		li {
+			display: inline-block;
+			width: auto;
+			color: #fff;
+			border-left: 1px solid #fff;
+			padding: 5px 1em 5px 1em;
+
+			span {
+				display: block;
+				font-weight: bold;
+				font-size: 22px;
+
+			}
+		}
+	}
+	
+	ol {
+		margin: .8em 0 0 0;
+		&.govlist-float {
+			text-align: right;
+			float: right;
+			width: auto;
+			margin-top: -40px;
+		}
+		li {
+			display: inline-block;
+			color: #fff;
+			border-left: 1px solid #fff;
+			padding: 0 1.2em;
+			&:first-child {
+				border: 0;
+				padding-left: 0;
+			}
+			span {
+				display: block;
+				font-weight: bold;
+				font-size: 22px;
+				&.date {
+					font-size: 19px;
+				}
+			}
+		}
+	}
+}
+
+
+.govuk-button {
+	margin-top: 10px!important;
+}
+
+
+.visually-hidden {
+	position: absolute;
+	left: -9999px;
+	font-size: 0;
+}
+
+.govuk-inset-text {
+	b {
+		display: block;
+	}
+	span {
+		font-weight: bold;
+		display: block;
+		font-size:28px;
+		color: #0b0c0c;
+	}
+
+}
+
+.inner-question {
+	border-top: 1px solid govuk-colour("mid-grey");
+	padding-top: 30px;
+	margin-top: 30px;
+}
+
+.button-placement {
+	margin: 0!important;
+	.govuk-button {
+		margin: 0;
+	}
+}
+
+
+.form-border {
+	border-top: 1px solid #000;
+	padding-top: 30px;
+}
+
+.govuk-heading-xl {
+	margin-bottom: 0;
+}
+
+
+.customer-name {
+	margin: 0 0 10px 0;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.c-form-input-denote {
+	position: absolute;
+	margin: 2px 0 0 2px;
+	padding: 8.5px 10px;
+	background-color: #dee0e2;
+	line-height: 1;
+}
+.c-form-input-denote__input {
+	padding-left: 39px;
+	&:focus {
+		border: 0;
+		padding-left: 41px;
+	}
+}
+
+.summary-table {
+	margin-top: 30px;
+}
+
+
+.page-break {
+	border-top: 1px solid #000;
+	padding-top: 30px;
+	margin-top: 30px;
+}
+
+
+.summary-pay {
+	margin-top: 30px;
+}
+
+
+.govuk-panel__body {
+	font-size: 22px;
+}
+
+.govuk-panel--confirmation {
+	margin-bottom: 30px;
+}
+
+
+
+.attention-card {
+	background: govuk-colour("blue");
+	padding: 3em 10em 3em 3em;
+	color: #fff;
+	.govuk-list {
+		color: #fff;
+	}
+	h1 {
+		color: #fff;
+	}
+
+
+	li {
+		font-size: 22px;
+		font-weight: bold;
+		margin-bottom: 40px;
+		padding-top: 10px;
+		padding-left: 75px;
+		position: relative;
+		&:before {
+			content: "1";
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-size: 20px;
+			color: #000;
+			background: #fff;
+			border-radius: 100px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			width: 48px;
+			text-align: center;
+			border: 1px solid #000;
+		}
+		&.two {
+			&:before {
+				content: "2";
+			}
+		}
+		&.three {
+			&:before {
+				content: "3";
+			}
+		}
+		&.four {
+			&:before {
+				content: "4";
+			}
+		}
+		&.five {
+			&:before {
+				content: "5";
+			}
+		}
+	}
+	.notforme {
+		color: #fff;
+
+		&:hover {
+			color: govuk-colour("mid-grey");
+		}
+	}
+}
+
+
+
+.number-display {
+margin: 30px 0 50px 0;
+	li {
+		display: inline-block;
+		width: 24%;
+		margin: 0 -4px 0 1%;
+		padding: 1.5em 0;
+		background:  govuk-colour("light-grey");
+		text-align: center;
+		font-size: 22px;
+
+
+		span {
+			display: block;
+			font-size: 38px;
+			font-weight: bold;
+	
+			margin-top: 10px;
+		}
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 900px) {
+  .attention-card {
+	  padding: 2em;
+	  li {
+		font-size: 19px;
+		}
+  }
+  .clear-bar {
+  	.govuk-inset-text {
+	  	float: none;
+	  	margin-top: 20px;
+  	}
+  	.identifier {
+	  	float: none;
+	  	width: 100%;
+  	}
+	  
+  }
+  
+  .secondary-invert {
+
+	&.dash-paid {
+		margin-top: 0;
+	}
+  }
+  
+  
+  .number-display {
+	  li {
+		  display: block;
+		  width: auto;
+		  margin: 0 0 10px 0;
+		  padding: 1em 0;
+		  span {
+			  font-size: 24px;
+		  }
+	  }
+  }
+  
+  .counter {
+			position: relative!important;
+			top: auto!important;
+			right: auto!important;
+			padding: .5em!important;
+			display: inline-block!important;
+			margin-top: 10px;
+			b {
+				display: inline!important;
+				font-size: 17px!important;
+				margin-right: 3px!important;
+			}
+		}
+  
+  
+  
+  
+}
+
+
+

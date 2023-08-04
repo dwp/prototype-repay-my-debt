@@ -1,0 +1,89 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+			
+									
+										<form class="form" action="lowPlanDetailsAdded" method="post">
+
+
+											<div class="govuk-form-group">
+										         <fieldset class="govuk-fieldset">
+												    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb20">
+												      <h1 class="govuk-fieldset__heading">
+												      <span class="govuk-caption-xl">Step 1 of 5</span>
+												        How much can you afford to <br>pay each month?
+												      </h1>
+												    </legend>
+												    
+												 <!--  <div id="pay-hint" class="govuk-hint mb20">
+												 The minimum amount to set up a plan online is &pound;5.00
+												    </div> -->
+
+
+											         <div id="example-question" class="form-group inline">
+											            <span class="c-form-input-denote govuk-body">£</span>
+											            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="affordable-amount">
+											          </div>
+
+										          </fieldset>
+									        </div>
+									        
+									      <!--   <details class="govuk-details mt20" data-module="govuk-details">
+		  <summary class="govuk-details__summary">
+		    <span class="govuk-details__summary-text">
+		     I cannot afford to set up a plan online
+		    </span>
+		  </summary>
+		  <div class="govuk-details__text">
+		    <p>If you are unable to pay a minimum of &pound;5.00, you must contact Debt Management to discuss the options available to you.</p>
+
+
+					   					<h2 class="govuk-heading-m">Debt Management</h2>
+									  <ul class="govuk-list">
+										  <li>Telephone: 0800 916 0647</li>
+										  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+										</ul>
+										<p class="govuk-body">
+										  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+										</p>
+
+		  </div>
+		</details> -->
+									        
+
+
+											<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form>
+									
+									
+									
+										
+
+    </div>
+</div>
+
+{% endblock %}

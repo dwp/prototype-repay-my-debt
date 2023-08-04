@@ -1,0 +1,90 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+
+  <div class="govuk-grid-row">
+	<div class="govuk-grid-column-three-quarters">
+
+
+
+	   <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+										
+										
+									<form class="form" action="inGuard" method="post">
+										
+										
+								
+						
+									
+								<div class="govuk-form-group">
+									  <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+										<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+										  <h1 class="govuk-fieldset__heading">
+											Sign in
+										  </h1>
+										</legend>
+								
+										<div class="govuk-radios">
+										  <div class="govuk-radios__item">
+											<input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+											<label class="govuk-label govuk-radios__label" for="sign-in">
+											  <b>Sign in with your registered account details</b>
+											</label>
+											<div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+											  You’ll have an email and password if you’ve registered an account with the Repay my Debt service before.
+											</div>
+										  </div>
+										  <div class="govuk-radios__item">
+											<input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+											<label class="govuk-label govuk-radios__label" for="sign-in-2">
+											<b>Sign in with security code and date of birth</b>
+											</label>
+											<div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+											 This is on the letter we sent you, it contains only numbers and it can be up to 11 digits.
+											</div>
+										  </div>
+										  
+										  <div class="govuk-radios__divider">or</div>
+										  
+										  
+										  <div class="govuk-radios__item">
+											  <input class="govuk-radios__input" id="sign-in-3" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-3-item-hint">
+											  <label class="govuk-label govuk-radios__label" for="sign-in-3">
+											  <b>Register an account</b>
+											  </label>
+											  <div id="sign-in-3-item-hint" class="govuk-hint govuk-radios__hint">
+											 You will need to verify your identity which can take up to 30 minutes
+											  </div>
+											</div>
+										  
+										  
+										</div>
+									
+									  </fieldset>
+									</div>
+									
+									<button class="govuk-button" data-module="govuk-button">
+									  Continue
+									</button>
+									</form>
+									
+
+									
+									
+			
+							
+
+	</div>
+</div>
+
+{% endblock %}

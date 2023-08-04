@@ -1,0 +1,204 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+
+	   
+	   <div class="govuk-grid-row">
+      
+         <div class="govuk-grid-column-three-quarters">
+         
+         
+         <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	   
+
+
+				      <h1 class="govuk-heading-xl">Your payment plan</h1>
+				      
+				      
+				      
+				     
+	   	
+	   	
+	   	
+	   	
+	   		 <table class="govuk-table summary-table mb40">
+									 
+									 <caption class="visually-hidden">Current payment plan details</caption>
+										
+								
+										  <tbody class="govuk-table__body">
+										  
+										  
+										   <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Payment plan type</th>
+										      <td class="govuk-table__cell" colspan="2">
+										      
+										      Flexible payment plan
+										      
+										      
+										      </td>
+										      
+									
+											 </tr>
+
+											 
+											 
+											 
+											 {% if data['targetChoice2']=='target-no2'%}
+											 
+											 
+											 
+											 
+						<tr class="govuk-table__row">
+		      <th scope="row" class="govuk-table__header">Monthly target</th>
+		      <td class="govuk-table__cell">
+
+			     Not set
+
+		      </td>
+		      
+		      <td class="govuk-table__cell changeDetails"><a href="#">Change</a></td>
+		
+		    </tr>
+					 
+											 
+											 
+
+		   {% else %}
+		   
+		   
+		   <tr class="govuk-table__row">
+		      <th scope="row" class="govuk-table__header">Monthly target</th>
+		      <td class="govuk-table__cell">
+
+			     {% if data['targetAmountsChoice']=='6MonthTarget'%}
+													    
+													    &pound;1000.00
+													    
+											
+														{% elif data['targetAmountsChoice']=='12MonthTarget'%}
+														
+														&pound;500.00
+														
+														
+														
+														{% elif data['targetAmountsChoice']=='24MonthTarget'%}
+														
+														&pound;250.00
+														
+														{% elif data['targetAmountsChoice']=='36MonthTarget'%}
+														
+														&pound;167.00
+														
+														{% elif data['targetAmountsChoice']=='48MonthTarget'%}
+														
+														&pound;125.00
+														
+														{% elif data['targetAmountsChoice']=='72MonthTarget'%}
+														
+														&pound;84.00
+		
+														{% endif %}
+
+		      </td>
+		      
+		      <td class="govuk-table__cell changeDetails"><a href="#">Change</a></td>
+		
+		    </tr>
+
+		   
+		   
+		   
+		   {% endif %}	
+										    
+<tr class="govuk-table__row">
+		    <th scope="row" class="govuk-table__header">Payment reminders</th>
+			<td class="govuk-table__cell" colspan="2">
+
+			{% if data['how-contacted']=='yesReminder'%}
+
+
+
+
+				{% if data['citizenChoice']=='email'%}
+			   		Email address<span class="textNumber">{{ data['contact-by-email'] }}</span>
+			    {% elif data['citizenChoice']=='textMessage'%}
+			     	Text message<span class="textNumber">{{ data['contact-by-text'] }}</span>
+			    {% else %}
+			    {% endif %}
+
+
+
+
+				{% elif data['how-contacted']=='noReminder'%}
+
+				No
+
+
+				{% else %}
+
+
+
+				{% endif %}
+
+			</td>
+			
+			 
+		    </tr>
+		    
+		      
+										    										    
+										  
+
+								
+										  </tbody>
+										</table>
+								
+										
+										<p><a href="DDStart" class="secondary-invert">Switch to a Direct Debit payment plan</a></p>
+						
+										
+										
+										
+										 <div class="govuk-inset-text">
+										 
+										 <p>If you're struggling to pay, you can temporarily reduce your payments but regular low payments mean we may contact you to discuss your situation.</p>
+										<p>To make changes to your payment reminders, contact Debt Management.</p>
+										
+										
+					   					<h2 class="govuk-heading-s">Debt Management</h2>
+									  <ul class="govuk-list">
+									  <li>Telephone: 0800 916 0647</li>
+									  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+									</ul>
+									<p class="govuk-body">
+									  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+									</p>	
+									
+										</div>
+	   	
+	   	
+				   
+                  
+    </div>
+</div>
+
+{% endblock %}
+
+
+

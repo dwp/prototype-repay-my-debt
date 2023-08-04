@@ -1,0 +1,90 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+        
+        
+        <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+									<span class="govuk-caption-xl">Ashley Chamberlain</span>
+									<h1 class="govuk-heading-xl mb30">
+										Direct Debit payment plans <br>are now available</h1>
+
+											
+											
+		<p>You can now setup a Direct Debit by choosing a plan with fixed monthly payments.</p>
+<div class="govuk-inset-text">Once your plan is setup, you can sign in to manage your plan to track payments, pay additional amounts or get help and support.</div>
+
+
+
+<form class="form" action="SwitchPortal" method="post">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        Do you want to switch to a Direct Debit plan now? 
+      </h2>
+    </legend>
+	    	    
+
+				    
+				    
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="yesSwitch" name="planSwitch" type="radio" value="yesSwitch">
+        <label class="govuk-label govuk-radios__label" for="yesSwitch">
+          Yes
+        </label>
+      </div>
+     
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="noSwitch" name="planSwitch" type="radio" value="noSwitch" data-aria-controls="noSwitchReveal">
+        <label class="govuk-label govuk-radios__label" for="noSwitch">
+          No
+        </label>
+      </div>
+      
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="noSwitchReveal">
+      <p>You will still be able to switch to a Direct Debit payment plan in the future by signing in to your account and managing your plan.</p>
+      </div>
+      
+      
+      <button class="govuk-button mt20" data-module="govuk-button">
+											  Continue
+											</button>
+
+  </fieldset>
+</div>
+
+
+
+											
+											
+</form>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,255 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+
+	   
+	   <div class="govuk-grid-row">
+      
+         <div class="govuk-grid-column-three-quarters">
+	   
+	  <span class="back-link"> <a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	  
+{% if data['inSign']=='inSecurity'%}
+
+
+
+<h1 class="govuk-heading-xl">Sign in</h1>
+
+
+   <form class="form" action="index" method="post">
+
+	<fieldset class="govuk-fieldset">
+	<legend class="visually-hidden">Sign in details</legend>
+
+	<div class="govuk-form-group">
+	  <label class="govuk-label--m" for="width-20" aria-describedby="security-hint">
+		Enter your security code
+	  </label>
+	  <span id="security-hint" class="govuk-hint mt5">
+
+The code is in the letter we sent you or in your Universal Credit journal &ndash; it contains only numbers and it can be up to 11 digits
+
+		</span>
+	  <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text">
+
+	  <details class="govuk-details mt20" data-module="govuk-details">
+	  <summary class="govuk-details__summary">
+		<span class="govuk-details__summary-text">
+		 I have problems with my code
+		</span>
+	  </summary>
+	  <div class="govuk-details__text">
+		<p>If you're struggling to enter your code, or you've lost or forgotten it, contact us.</p>
+		
+		<h2 class="govuk-heading-s">If you live in Great Britain:</h2>
+	<ul class="govuk-list">
+		  <li>Telephone: 0800 5871322</li>
+		  <li>Monday to Friday, 9am to 5pm</li>
+		</ul>
+		<p class="govuk-body">
+		  <a class="govuk-link" href="#">Find out about call charges</a>
+		</p>
+		
+		<h2 class="govuk-heading-s">If you live in Northern Ireland:</h2>
+		<ul class="govuk-list">
+			  <li>Telephone: 0800 5871322</li>
+			  <li>Monday to Friday, 9am to 5pm</li>
+			</ul>
+			<p class="govuk-body">
+			  <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+			</p>
+			
+			<p>If you're paying off a Budgeting Advance, you will need the code in your Universal Credit journal. If you're having any problems, you need to contact your Universal Credit case manager.</p>
+	  </div>
+	</details>
+	</div>
+
+	<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+  <h1 class="govuk-fieldset__heading">
+	Enter your date of birth
+  </h1>
+</legend>
+<span id="passport-issued-hint" class="govuk-hint">
+  For example, 02 11 2007
+</span>
+<div class="govuk-date-input" id="passport-issued">
+  <div class="govuk-date-input__item">
+	<div class="govuk-form-group">
+	  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+		Day
+	  </label>
+	  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+	</div>
+  </div>
+  <div class="govuk-date-input__item">
+	<div class="govuk-form-group">
+	  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+		Month
+	  </label>
+	  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+	</div>
+  </div>
+  <div class="govuk-date-input__item">
+	<div class="govuk-form-group">
+	  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+		Year
+	  </label>
+	  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+	</div>
+  </div>
+</div>
+</fieldset>
+</div>
+
+
+	</fieldset>
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+Sign in
+</button>
+
+
+
+	</form>
+
+
+{% elif data['inSign']=='inRegister'%}
+
+
+
+<h1 class="govuk-heading-xl">Sign in</h1>
+
+<form class="form" action="index" method="post">
+
+	<fieldset class="govuk-fieldset">
+	<legend class="visually-hidden">Sign in details</legend>
+
+	<div class="govuk-form-group">
+	  <label class="govuk-label" for="emailAddress"">
+		Email address
+	  </label>
+
+	  <input class="govuk-input govuk-input--width-30" id="emailAddress" name="emailAddress" type="text">
+
+	  
+	</div>
+
+
+<div class="govuk-form-group">
+<label class="govuk-label" for="password">
+  Password
+</label>
+
+<input class="govuk-input govuk-input--width-30" id="password" name="password" type="text">
+
+
+</div>
+
+
+
+	</fieldset>
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+Sign in
+</button>
+
+
+</form>
+
+
+<p><a href="indexGuard">Register now</a> if you have not used this service before.</p>
+
+<h2 class="govuk-heading-m"">Problems signing in?</h2>
+
+<ul class="govuk-list">
+<li>
+  <a href="#t" class="govuk-link">I forgot my password</a>
+</li>
+<li>
+  <a href="#" class="govuk-link">I cannot access the email I use to sign in</a>
+</li>
+</ul>
+
+
+
+
+{% else %}
+
+
+
+
+<h1 class="govuk-heading-xl">Register</h1>
+
+<p>Register so you can securely sign in whenever you use this service.</p>
+
+<h2 class="govuk-heading-m">Before you start</h2>
+
+<p>You will need:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+	<li>an email address</li>
+	<li>a mobile phone</li>
+
+  </ul>
+
+<p>You will also need information from 2 sources so we can check we are dealing with the right person. These are:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>a UK passport</li>
+<li>payslips or P60M</li>
+<li>information about tax credits, if you claim them</li>
+<li>details of your credit record</li>
+</ul>
+
+
+<h3 class="govuk-heading-m">What happens next</h3>
+
+<p>Your information will be checked against our records. This also helps protect you from fraud.</p>
+
+<p>We will send security codes to your email and mobile phone to check that they belong to you.</p>
+
+<p>Whenever you sign in we will send a new security code to your mobile phone.</p>
+
+<p>You will also need to create a password.</p>
+
+<p><a href="https://dth-prototype.herokuapp.com/auth/dev-ready/register/email-address?service-name=Manage my benefit debt" class="govuk-button">Continue</a></p>
+
+
+
+
+
+{% endif %}
+			
+		
+
+                  
+    </div>
+</div>
+
+{% endblock %}
+
+
+

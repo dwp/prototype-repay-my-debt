@@ -1,0 +1,404 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+
+
+{% if data['signOptions']=='codeContinue'%}
+
+
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+	
+	  <div class="clear-bar stripped-border">
+			   <div class="identifier">
+				   
+				   <h1 class="govuk-heading-l">
+				   <span class="govuk-caption-l">Account home</span>
+				   Ashley Chamberlain</h1>
+			   
+			   </div>
+			   <div class="govuk-inset-text">
+			 Total amount owed: <span class="total-amount">
+			 
+			&pound;750.00
+							 
+									 
+									 </span>
+			 
+
+			 
+			</div>
+			   
+		   
+	   </div> 
+
+
+	  <div class="govuk-grid-row">
+	  
+	  
+	  
+	  
+	  
+	   <div class="govuk-grid-column-one-half">
+
+		   
+		
+				 
+				 <div class="scenario-panel">
+					  <h2 class="govuk-heading-s">Last benefit deduction</h2>
+ 
+					  <div class="scenario-inner-panel">
+			
+					   
+					   <table class="govuk-table">
+
+							 <tbody class="govuk-table__body">
+							 
+							 
+							 
+							 
+							 
+							  <tr class="govuk-table__row">
+								 <th scope="row" class="govuk-table__header">Date taken</th>
+								 <td class="govuk-table__cell">
+								 15 September 2022										
+								 </td>
+							  </tr>
+
+							   
+							  <tr class="govuk-table__row">
+								 <th scope="row" class="govuk-table__header">Deduction amount</th>
+								 <td class="govuk-table__cell">
+									 
+									 
+									  
+							   &pound;60.00
+									 
+									 
+								 </td>
+							   </tr>
+							   
+				
+
+							  
+							 </tbody>
+						   </table>
+						   
+						   
+						   
+						   <details class="govuk-details mt20" data-module="govuk-details">
+								 <summary class="govuk-details__summary">
+								   <span class="govuk-details__summary-text">
+								   Breakdown of deduction
+								   </span>
+								 </summary>
+								 <div class="govuk-details__text">
+								 <ul class="govuk-list govuk-list--bullet break-list">
+									  <li>Benefit overpayment: &pound;20.00</li>
+									  <li>Benefit overpayment: &pound;40.00</li>
+									  
+									  </ul>  
+					   
+								 </div>
+							   </details>
+							   
+							   
+							   <div class="govuk-inset-text mb40">
+								  <!-- <p>If the amount being deducted is too much, an affordability review will help us understand how much you can afford.</p>-->
+								   <p>If you think we're deducting too much, a review will help us understand how much you can afford.</p>
+								 
+								 
+								  <p class="mb0"><a href="#" class="secondary-invert">Affordability review</a></p>
+			   </div>
+ 
+ 
+					  
+					  </div>
+				  </div>
+		 
+		</div>
+		
+		
+	  <div class="govuk-grid-column-one-half">
+	  
+			
+	
+			<div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Summary</h2>
+					
+					 
+					 <div class="scenario-inner-panel">
+
+					 
+					<!--<div class="warning-message info-alert">
+									 
+									 <p>Another deduction from your benefits will take place in October 2022.</p>
+								 </div>-->
+						 
+								 
+							 <table class="govuk-table">
+
+							  <tbody class="govuk-table__body">
+							  
+							  
+							  
+							  
+							  
+							   <tr class="govuk-table__row">
+								  <th scope="row" class="govuk-table__header">Deductions taken</th>
+								  <td class="govuk-table__cell">
+								  
+								  
+								 7										
+								  </td>
+							   </tr>
+							   
+							  <tr class="govuk-table__row">
+									 <th scope="row" class="govuk-table__header">Additional payments made</th>
+									 <td class="govuk-table__cell">
+									 
+									 
+									2										
+									 </td>
+								  </tr>
+
+								
+							   <tr class="govuk-table__row">
+								  <th scope="row" class="govuk-table__header">Total amount repaid</th>
+								  <td class="govuk-table__cell">
+									  
+									  
+									   
+								&pound;500.00
+									  
+									  
+								  </td>
+								</tr>
+								
+								<tr class="govuk-table__row">
+									  <th scope="row" class="govuk-table__header thSubText">Expected last deduction based on current amount owed</th>
+									  <td class="govuk-table__cell">
+										  
+										  
+										   
+									October 2023
+										  
+										  
+									  </td>
+									</tr>
+	   
+							  </tbody>
+							</table>
+							
+							
+							<!--<p>Your expected last deduction date will be later if the total amount you owe changes.</p>-->
+							
+							
+							<span><a href="startAdditionalOnBen" class="secondary-invert">Make an additional payment</a></span>
+					 <span><a href="paymentHistoryDeductions" class="secondary-invert">View your payment history</a></span>
+					
+	
+				 
+		</div>
+			</div>
+			
+			
+			
+	
+
+		
+	  </div>
+
+		
+	  </div>
+
+		
+		
+		
+		<div class="govuk-grid-row">
+		
+			
+			
+			<div class="govuk-grid-column-one-half">
+
+			<div class="scenario-panel">
+				  <h2 class="govuk-heading-s">What you owe</h2>
+
+				  <div class="scenario-inner-panel">
+				   <p>Details of the money you owe to DWP.</p>
+				   
+				  <!-- <table class="govuk-table">
+
+						 <tbody class="govuk-table__body">
+						 
+						 
+						 
+						 
+						 
+						  <tr class="govuk-table__row">
+							 <th scope="row" class="govuk-table__header">Universal Credit</th>
+							 <td class="govuk-table__cell">
+							 
+							 
+							&pound;300.00										
+							 </td>
+						  </tr>
+
+						   
+						  <tr class="govuk-table__row">
+							 <th scope="row" class="govuk-table__header">Universal Credit</th>
+							 <td class="govuk-table__cell">
+								 
+								 
+								  
+						   &pound;450.00
+								 
+								 
+							 </td>
+						   </tr>
+						   
+						   <tr class="govuk-table__row">
+								<th scope="row" class="govuk-table__header">Total amount owed</th>
+								<td class="govuk-table__cell">
+									
+									
+									 
+							  &pound;750.00
+									
+									
+								</td>
+							  </tr>
+						   
+
+
+						   
+						   
+
+						  
+						 </tbody>
+					   </table>-->
+
+
+				  <span><a href="debtBreakdownFull" class="secondary-invert dash-spacer">View details of what you owe</a></span>
+				  </div>
+			  </div>
+
+
+
+
+		</div>
+
+
+
+
+
+
+
+		<div class="govuk-grid-column-one-half">
+
+			<div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Help and support</h2>
+
+					 <div class="scenario-inner-panel">
+					  <p>You can get help and support with your finances.</p>
+
+					 <span><a href="helpSupportDeduction" class="secondary-invert dash-spacer">Get help and support</a></span> 
+					 </div>
+				 </div>
+
+
+
+
+		</div>
+
+		
+		
+	  </div>
+	  
+	 
+	  
+			
+	</div>
+</div>
+
+
+{% else %}
+
+
+<div class="govuk-grid-row">
+  
+	 <div class="govuk-grid-column-three-quarters">
+   
+  <span class="back-link"> <a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+  
+
+
+<h1 class="govuk-heading-xl">Register</h1>
+
+<p>Register so you can securely sign in whenever you use this service.</p>
+
+<h2 class="govuk-heading-m">Before you start</h2>
+
+<p>You will need:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+	<li>an email address</li>
+	<li>a mobile phone</li>
+
+  </ul>
+
+<p>You will also need information from 2 sources so we can check we are dealing with the right person. These are:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>a UK passport</li>
+<li>payslips or P60M</li>
+<li>information about tax credits, if you claim them</li>
+<li>details of your credit record</li>
+</ul>
+
+
+<h3 class="govuk-heading-m">What happens next</h3>
+
+<p>Your information will be checked against our records. This also helps protect you from fraud.</p>
+
+<p>We will send security codes to your email and mobile phone to check that they belong to you.</p>
+
+<p>Whenever you sign in we will send a new security code to your mobile phone.</p>
+
+<p>You will also need to create a password.</p>
+
+<!--<p><a href="https://dth-prototype.herokuapp.com/auth/dev-ready/register/email-address?service-name=Manage my benefit debt" class="govuk-button">Continue</a></p>-->
+<p><a href="#" class="govuk-button">Continue</a></p>
+
+</div>
+</div>
+
+
+
+{% endif %}
+			
+		
+
+                  
+
+
+{% endblock %}
+
+
+

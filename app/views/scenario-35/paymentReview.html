@@ -1,0 +1,77 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+			   <h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+			   <p>What you owe:
+					   <span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+		<div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+
+			
+
+			  <h1 class="govuk-heading-xl">
+				  <span class="govuk-caption-xl">Payment review</span>
+			 Your monthly payments will be reduced
+			  </h1>
+			  
+			
+			  
+			  
+			  <div class="flexibleBanner">
+  
+				  <ul class="govuk-list">
+  
+				  <li>
+						  <h3>Agreed monthly payment</h3>
+						  <b>										    
+			   &pound;{{ data['newDeductedAmount'] }}
+				  
+				  </b>
+					  </li>
+  
+				  </ul>
+				  
+				  </div>	
+				  
+				  <p>If you have a payment due in the next 5 working days, any changes will not take effect until next month.</p>
+
+   
+  <!-- <div class="govuk-warning-text mt40">
+		 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+		 <strong class="govuk-warning-text__text">
+		   <span class="govuk-warning-text__assistive">Warning</span>
+	
+	
+		   
+		   This will only reduce the amount we take from your Universal Credit payment in relation to previous claims.
+		 </strong>
+	   </div>	-->
+		<!--<p>If you need to manage other money you owe you should check your Universal Credit statement for a full breakdown of deductions being taken from your benefits.</p>-->
+			
+		<p class="mt30"><a href="deductionSummaryAmount" class="govuk-button">
+			Continue
+		  </a></p>
+
+
+	</div>
+</div>
+
+{% endblock %}

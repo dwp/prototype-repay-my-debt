@@ -1,0 +1,151 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+	   
+	   <div class="govuk-grid-row">
+      
+        <div class="govuk-grid-column-two-thirds">
+	   
+	   
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+		
+
+									
+
+									<h1 class="govuk-heading-xl">Pay a flexible amount</h1>
+	   
+									    <div class="govuk-inset-text">
+										 Total amount owed: <span class="total-amount">&pound;120.00</span>
+										 </div>
+   
+   	
+											<form class="form" action="paymentDetail-alt" method="post">
+								
+											
+											<div class="govuk-form-group">
+												  <fieldset class="govuk-fieldset">
+												    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+												      <h1 class="govuk-fieldset__heading">
+												        How much do you want to pay?
+												      </h1>
+												    </legend>
+												    
+												    <span id="changed-name-hint" class="govuk-hint">
+								     Make sure you have enough money in your bank account to cover this payment.
+								    </span>
+
+												    
+												     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+												    <div class="govuk-radios">
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="fivepound" name="how-much" type="radio" value="five">
+												        <label class="govuk-label govuk-radios__label" for="fivepound">
+												          &pound;5.00
+												        </label>
+												      </div>
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="tenpound" name="how-much" type="radio" value="ten">
+												        <label class="govuk-label govuk-radios__label" for="tenpound">
+												          &pound;10.00												        </label>
+												      </div>
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="twentypound" name="how-much" type="radio" value="twenty">
+												        <label class="govuk-label govuk-radios__label" for="twentypound">
+												          &pound;20.00
+												        </label>
+												      </div>
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="thirtypound" name="how-much" type="radio" value="thirty">
+												        <label class="govuk-label govuk-radios__label" for="thirtypound">
+												          &pound;30.00
+												        </label>
+												      </div>
+												      <div class="govuk-radios__divider">or</div>
+												      
+												      
+												     
+								      <div class="govuk-radios__item">
+								        <input class="govuk-radios__input" id="otherAmount" name="how-much" type="radio" value="other-amount" data-aria-controls="conditional-how-much">
+								        <label class="govuk-label govuk-radios__label" for="otherAmount">
+								          Pay a different amount
+								        </label>
+								      </div>
+								      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-much">
+								       
+								       
+								       
+								       
+								       
+								       <fieldset class="govuk-fieldset">
+											          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+												      <h1 class="govuk-fieldset__heading">
+												        Enter the amount you want to pay
+												      </h1>
+												    </legend>
+													
+													
+											          <div id="example-question" class="form-group inline">
+											            <span class="c-form-input-denote govuk-body">£</span>
+											            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="payment-amount">
+											          </div>
+										
+										          </fieldset>
+								       
+								       
+								       
+								       
+								       								
+								      </div>
+									</div>												      
+												      
+												      
+												      
+												    </div>
+												  </fieldset>
+												</div>
+											
+											
+											<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form>
+									
+									<!--// Flexible amount end -->
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+
+                  
+    </div>
+</div>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,136 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+
+									{% if data['payment-options']=='full-amount'%}
+									<h1 class="govuk-heading-xl">Pay the full amount</h1>
+								
+								
+									  {% include "includes/amountOwed2.html" %} 
+								
+									
+								   
+										<form class="form" action="#" method="post">
+
+										<p>Make sure you have enough money in your account to cover this payment.</p>
+	
+							<p>Credit card payments will incur extra charges, debit card payments will not.</p>
+	
+										<p><a href="fullFinish" class="govuk-button">
+										  Continue
+										</a></p>
+										</form>
+
+										<!--// Full amount end -->
+
+
+
+
+
+
+								
+									{% else %}
+
+	   
+									
+											<h1 class="govuk-heading-xl">Set up a payment plan</h1>
+							
+					
+<p>Set up a payment plan based on how much you can afford and choose to pay in a way that suits you &ndash; either by Direct Debit or flexible payments.</p>
+
+						
+										 <div class="govuk-inset-text mt0">
+											 Once your plan is setup, you can sign in to manage your plan, change payments, pay additional amounts or get help and support.
+														 </div>
+														 
+														 
+														 
+														 
+										<!-- <p class="mt30">If you want to set up a payment plan online:
+												</p>
+												
+												<ul class="govuk-list govuk-list--bullet">
+												  <li>you must be an account holder and be able to authorise Direct Debits with <br>your bank or building society</li>
+												 <li>you will need your bank or building society account details</li>
+												 <li>you will also need your sort code and account number if you have a building society account</li>
+												</ul>
+												 
+							
+				<details class="govuk-details mt30" data-module="govuk-details">
+		  <summary class="govuk-details__summary">
+		    <span class="govuk-details__summary-text">
+		    I cannot set up a payment plan online
+		    </span>
+		  </summary>
+		  <div class="govuk-details__text">
+
+	 <p>You must contact Debt Management to discuss the options available to you.</p>
+
+
+					   					<h2 class="govuk-heading-s">Debt Management</h2>
+									  <ul class="govuk-list">
+									  <li>Telephone: 0800 916 0647</li>
+									  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+									</ul>
+									<p class="govuk-body">
+									  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+									</p>  	
+
+
+		  </div>
+		</details>
+	-->
+		
+		
+												  
+		  
+		 <!--  <div class="govuk-inset-text">
+<p>Once your plan is setup, you can sign in to manage your plan to track payments, <br>pay additional amounts or get help and support.</p>
+
+	</div>  -->
+
+		
+		
+											
+
+<p><a href="directLowAmount" class="govuk-button">
+										  Continue
+										</a></p>
+						
+			
+
+
+									{% endif %}
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,150 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    
+     
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+	   <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	   
+	   <h1 class="govuk-heading-xl">Payment history</h1>
+	   
+	   
+	   
+	   
+	  <div class="number-display">
+	   	
+	   	<ul class="govuk-list">
+	   		<li>Payments made
+	   			<span>6</span>
+	   		</li>
+	   		
+	   		<li>Total repaid
+	   			<span>£150.00</span>
+	   		</li>
+	   		<li class="blueUpdate">Left to pay
+	   			<span>£30.00</span>
+	   		</li>
+	   	</ul>
+	   	
+	   </div>
+	   
+	   
+    
+				
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  
+  <h2 class="govuk-heading-m">All payments</h2>
+  
+  
+	 <table class="govuk-table summary-pay">
+  
+  
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+    
+      <th class="govuk-table__header" scope="col">Date of payment</th>
+
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+    
+    </tr>
+  </thead>
+  
+  <tbody class="govuk-table__body">
+    
+    <tr class="govuk-table__row">
+    
+      
+      <td class="govuk-table__cell">13 July 2020</td>
+
+
+      <td class="govuk-table__cell govuk-table__cell--numeric">
+	      
+	      {% if data['how-much']=='thirty'%}
+		    
+		    &pound;30
+
+			{% elif data['how-much']=='other-amount'%}
+			
+			&pound;{{ data['payment-amount'] }}
+			
+			
+			{% else %}
+			
+			
+			
+			{% endif %}
+	      
+      </td>
+      
+    
+    </tr>
+    
+     <tr class="govuk-table__row">  
+      
+      <td class="govuk-table__cell">26 June 2020</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;30</td>
+         
+    </tr>
+    
+    <tr class="govuk-table__row">  
+      
+      <td class="govuk-table__cell">26 May 2020</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;30</td>
+         
+    </tr>
+    
+    <tr class="govuk-table__row">  
+      
+      <td class="govuk-table__cell">20 April 2020</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10</td>
+         
+    </tr>
+    
+    <tr class="govuk-table__row">  
+      
+      <td class="govuk-table__cell">7 April 2020</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;20</td>
+         
+    </tr>
+    
+    <tr class="govuk-table__row">  
+      
+      <td class="govuk-table__cell">2 March 2020</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;30</td>
+         
+    </tr>
+
+    
+        
+  </tbody>
+</table>
+  </div>
+</div>			
+
+
+                  
+    </div>
+</div>
+
+{% endblock %}

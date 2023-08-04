@@ -1,0 +1,126 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+
+									{% if data['payment-options']=='full-amount'%}
+									<h1 class="govuk-heading-xl">Pay the full amount</h1>
+								
+								
+									  {% include "includes/amountOwed.html" %}
+								
+									
+								   
+										<form class="form" action="#" method="post">
+
+										<p>Make sure you have enough money in your account to cover this payment.</p>
+
+										<a href="fullFinish" class="govuk-button">
+										  Continue to pay
+										</a>
+										</form>
+
+										<!--// Full amount end -->
+
+
+
+
+
+
+									{% elif data['payment-options']=='flexible-amount'%}
+
+		<div class="attention-card-list">
+
+			<h1 class="govuk-heading-l mb30">How a flexible payment plan works</h1>
+
+			<ul class="govuk-list govuk-list--bullet">
+				<li>This is not a fixed plan &ndash; you must sign in each month and make at least one payment</li>
+				<li class="two">Choose a monthly payment target which works for you &ndash; you can make multiple payments in a month to meet your target</li>
+				<li class="three">You can pay less than your monthly target during difficult times but regular low payments mean we may contact you to discuss your situation</li>
+				
+				<!--<li class="three">This is not a fixed plan and your payments can change</li>-->
+				<li class="four">Sign up for helpful payment reminders</li>
+				<!--<li class="five">If you do not keep up with your payments, we will ask your employer to make deductions from your pay or ask a debt collection agency to collect this money for us</li>-->
+			</ul>
+
+			<p><a href="flexSuggestedTarget" class="attention-invert">Continue</a></p>
+
+		</div>
+
+									<!--// Flexible amount end -->
+
+
+
+
+
+									{% elif data['payment-options']=='fixed-plan'%}
+
+	   
+									
+										<h1 class="govuk-heading-xl">Set up a Direct Debit</h1>
+										
+										
+										{% include "includes/amountOwed.html" %}
+										
+										
+										
+										<p>To set up a Direct Debit payment, contact Debt Management.
+<br>You will need your bank account details.</p>
+										
+										
+					   					<h2 class="govuk-heading-m">Debt Management</h2>
+									  <ul class="govuk-list">
+										  <li>Telephone: 0800 916 0647</li>
+										  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+										</ul>
+										<p class="govuk-body">
+										  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+										</p>
+										
+										
+										
+										
+										
+									<!--// Fixed amount end -->
+
+
+									{% else %}
+
+									<h1 class="govuk-heading-l">Oops! you didn't select a payment option</h1>
+
+									<p>Don't worry, you can go back and try again.</p>
+
+
+									{% endif %}
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

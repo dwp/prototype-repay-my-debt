@@ -1,0 +1,383 @@
+
+{% extends "layout-4.html" %}
+
+
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    
+      <div class="clear-bar stripped-border">
+	   		<div class="identifier">
+	   			
+	   			<h1 class="govuk-heading-l">
+	   			<span class="govuk-caption-l">Account home</span>
+	   			Ashley Chamberlain</h1>
+	   		
+	   		</div>
+	   		<div class="govuk-inset-text">
+			 Total amount owed: <span class="total-amount">
+			 
+			 
+			 {% if data['paymentChoices']=='12Month'%}
+										    
+										    &pound;1375.00
+								
+											{% elif data['paymentChoices']=='24Month'%}
+											
+											&pound;1437.00										
+											
+											{% elif data['paymentChoices']=='36Month'%}
+											
+											&pound;1458.00
+											
+											{% elif data['paymentChoices']=='48Month'%}
+											
+											&pound;1468.50
+											
+											{% elif data['paymentChoices']=='72Month'%}
+											
+											&pound;1479.00
+											
+											{% elif data['paymentChoices']=='25Month'%}
+											
+											&pound;1485.00
+
+											
+											{% else %}
+											
+											&pound;1500.00
+						
+											
+											
+											{% endif %}
+			 
+			 							
+											
+											
+							
+			 						
+			 						</span>
+			 
+
+			 
+			</div>
+	   		
+	   	
+	   </div> 
+	   
+	   
+<!--<div class="warning-message complete-alert">
+							 <h5 class="govuk-heading-s">Payment status</h5>
+							 	<p>A payment has been made. It will take up to 24 hours to update your account.</p>
+							 </div> -->
+							 
+							 
+							 
+							<!--<div class="warning-message">
+								 <h5 class="govuk-heading-s">You didn't make a payment last month</h5>
+								 	<p>If you do not keep up with your payments, we may ask your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.</p>
+								 </div>-->
+
+
+      <div class="govuk-grid-row">
+      
+      
+      
+      
+      
+       <div class="govuk-grid-column-one-half">
+       
+       
+       
+       
+       
+            	
+       	
+       	<div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Direct Debit low payment plan</h2>
+					 
+					 <div class="scenario-inner-panel">
+					 
+						 	<table class="govuk-table mb22">
+
+							  <tbody class="govuk-table__body">
+							    <tr class="govuk-table__row">
+							      <th scope="row" class="govuk-table__header">Monthly payment</th>
+							      <td class="govuk-table__cell">
+								      
+								    
+										  
+										&pound;{{ data['change-amount'] }}
+										
+										
+									
+								      
+							      </td>
+							    </tr>
+							   
+							    <tr class="govuk-table__row">
+							      <th scope="row" class="govuk-table__header">Next payment date</th>
+							      <td class="govuk-table__cell">{% if data['payDaychange']=='YesPayDaychange'%}
+										
+									  {{ data['paymentDayUpdate'] }}
+									  
+									  
+									  {% else %}
+					 
+									{{ data['paymentDay'] }}
+										 
+									  {% endif %} August 2021</td>
+							    </tr>
+							  </tbody>
+							</table>	
+							
+						<p class="statement mb20">Make sure you have enough money in your account to cover your next payment.</p>
+						
+									   					 
+							   					 
+	
+					<span><a href="#" class="secondary-invert mt50">View or manage your payment plan</a></span>
+					
+					<span><a href="#" class="secondary-invert">Make an additional payment</a></span>	
+					
+		           		             
+					 </div>
+				 </div>	
+       	
+       	
+       	
+
+	         
+       
+       
+    
+		     
+				 
+        </div>
+        
+        
+      <div class="govuk-grid-column-one-half">
+      
+            
+    
+		    <div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Plan summary</h2>
+					
+					 
+					 <div class="scenario-inner-panel">
+
+					 
+					 <div class="warning-message complete-alert">
+								
+								 	<p>A payment of  {% if data['paymentChoices']=='12Month'%}
+										    
+										    &pound;125.00
+								
+											{% elif data['paymentChoices']=='24Month'%}
+											
+											&pound;63.00										
+											
+											{% elif data['paymentChoices']=='36Month'%}
+											
+											&pound;42.00
+											
+											{% elif data['paymentChoices']=='48Month'%}
+											
+											&pound;31.50
+											
+											{% elif data['paymentChoices']=='72Month'%}
+											
+											&pound;21.00
+											
+											{% elif data['paymentChoices']=='25Month'%}
+											
+											&pound;15.00
+
+											
+											{% else %}
+									
+											
+											
+											{% endif %} was taken from your account on {{ data['paymentDay'] }} July 2021</p>
+								 </div>
+					 	
+					 			
+					 		<table class="govuk-table">
+
+							  <tbody class="govuk-table__body">
+							  
+							  
+							  
+							   <tr class="govuk-table__row">
+							      <th scope="row" class="govuk-table__header">Payments made</th>
+							      <td class="govuk-table__cell">
+							      
+							      
+							     1											
+							      </td>
+							   </tr>
+
+							    
+							   <tr class="govuk-table__row">
+							      <th scope="row" class="govuk-table__header">Total amount repaid</th>
+							      <td class="govuk-table__cell">
+								      
+								      
+								       
+							    {% if data['paymentChoices']=='12Month'%}
+										    
+										    &pound;125.00
+								
+											{% elif data['paymentChoices']=='24Month'%}
+											
+											&pound;63.00										
+											
+											{% elif data['paymentChoices']=='36Month'%}
+											
+											&pound;42.00
+											
+											{% elif data['paymentChoices']=='48Month'%}
+											
+											&pound;31.50
+											
+											{% elif data['paymentChoices']=='72Month'%}
+											
+											&pound;21.00
+											
+											{% elif data['paymentChoices']=='25Month'%}
+											
+											&pound;15.00
+
+											
+											{% else %}
+						
+											
+											
+											{% endif %}
+								      
+								      
+							      </td>
+							    </tr>
+							    
+							    
+							    
+							    <tr class="govuk-table__row">
+							      <th scope="row" class="govuk-table__header">Proposed plan review date</th>
+							      <td class="govuk-table__cell">
+								      
+								  
+										    
+										    {% if data['payDaychange']=='YesPayDaychange'%}
+												
+											  {{ data['paymentDayUpdate'] }}
+											  
+											  
+											  {% else %}
+							 
+											{{ data['paymentDay'] }}
+												 
+											  {% endif %} August 2022
+								
+										
+							      </td>
+							    </tr>
+							   
+
+							    
+							    
+
+							   
+							  </tbody>
+							</table>
+							
+																
+	
+		             <span><a href="#" class="secondary-invert mt30">View your payment history</a></span>
+	
+				 
+        </div>
+		    </div>
+		    
+		    
+		    
+	
+
+        
+      </div>
+
+        
+      </div>
+
+        
+        
+        
+        <div class="govuk-grid-row">
+        
+			
+			
+			<div class="govuk-grid-column-one-half">
+
+		    <div class="scenario-panel">
+					 <h2 class="govuk-heading-s">What you owe</h2>
+
+					 <div class="scenario-inner-panel">
+					  <p>Details of the debts you owe to DFC.</p>
+
+
+		             <span><a href="#" class="secondary-invert dash-spacer">View details of what you owe</a></span>
+					 </div>
+				 </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="govuk-grid-column-one-half">
+
+		    <div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Help and support</h2>
+
+					 <div class="scenario-inner-panel">
+					  <p>Get help if you're struggling to pay and find<br>out what to do next.</p>
+
+		             <span><a href="helpSupportDDplan" class="secondary-invert">Get help and support</a></span> 
+					 </div>
+				 </div>
+
+
+
+
+        </div>
+
+        
+        
+      </div>
+      
+     
+      
+            
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,198 @@
+
+{% extends "layout-3.html" %}
+
+
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    
+      <div class="clear-bar stripped-border">
+	   		<div class="identifier">
+	   		<span class="govuk-caption-l">Account home</span>
+	   			<h3 class="govuk-heading-l">Ashley Chamberlain <!--<a href="#" class="signOut">sign out</a>--></h3>
+	   		</div>
+	   		<div class="govuk-inset-text">
+			 Total amount owed: <span class="total-amount">&pound;120.00</span>
+			</div>
+	   		
+	   	
+	   </div> 
+	   
+	   
+	 <!--  <div class="warning-message complete-alert">
+							 <h5 class="govuk-heading-s">Your payment was successful</h5>
+							 	<p>This may take up to 24 hours to show on your account.</p>
+							 </div>
+							 
+							 
+							 
+							<div class="warning-message">
+								 <h5 class="govuk-heading-s">You didn't make a payment last month</h5>
+								 	<p>If you do not keep up with your payments, we may ask your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.</p>
+								 </div>-->
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+
+
+      <div class="govuk-grid-row">
+      
+      
+      
+      
+      
+        <div class="govuk-grid-column-one-half">
+    
+		    <div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Make a payment</h2>
+					 
+					 <div class="scenario-inner-panel">
+					 
+						 	<div class="warning-message info-alert">
+								
+								 	<p>A minimum payment of <b>&pound;30</b> is due to cover:<br><b>July 2020</b></p>
+								 	
+								 	<span class="counter"><b>31</b>days</span>
+								 	
+								 </div>
+								 
+								 <p class="statement">This could be spread over multiple payments within the month</p>
+							   					 
+	
+		            <span><a href="choice-setup" class="secondary-invert">Choose a payment option</a></span>		             
+					 </div>
+				 </div>	 
+				 
+        </div>
+        
+        
+        
+        <div class="govuk-grid-column-one-half">
+    
+		    <div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Last payment</h2>
+					
+					 
+					 <div class="scenario-inner-panel">
+			
+					 	
+					 			
+					 		<table class="govuk-table">
+
+							  <tbody class="govuk-table__body">
+							    <tr class="govuk-table__row">
+							      <th scope="row" class="govuk-table__header">Amount</th>
+							      <td class="govuk-table__cell">£{{ data['payment-amount'] }}</td>
+							    </tr>
+							    <tr class="govuk-table__row">
+							      <th scope="row" class="govuk-table__header">Date</th>
+							      <td class="govuk-table__cell">12 March 2020</td>
+							    </tr>
+							   <tr class="govuk-table__row">
+							      <th scope="row" class="govuk-table__header">Type</th>
+							      <td class="govuk-table__cell">Flexible payment</td>
+							    </tr>
+
+							   
+							  </tbody>
+							</table>
+							
+																
+	
+		             <span><a href="paymentHistory" class="secondary-invert dash-pay">View your full payment history</a></span>
+	
+				 
+        </div>
+		    </div>
+
+        
+      </div>
+      </div>
+      
+      
+            
+ 
+        
+        
+        
+        <div class="govuk-grid-row">
+        
+         <!--<div class="govuk-grid-column-one-half">
+    
+		    <div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Total amount remaining</h2>
+					 
+					 <div class="scenario-inner-panel">
+					 	
+					 		 <div class="govuk-grid-row">
+      
+						 		 <div class="govuk-grid-column-one-half">
+						 		 	
+						 		 	 <h3 class="govuk-heading-m">&pound;120.00</h3>
+						 		 	 
+						 		 </div>
+						 		 
+						 		 <div class="govuk-grid-column-one-half">
+						 		 	
+						 		 	 <h3 class="govuk-heading-s right-align"><span>Debt end date:</span>21 March 2021</h3>
+						 		 	 
+						 		 </div>
+						 		 
+					 		 </div>
+					 
+	
+		             <span><a href="#" class="secondary-invert">Make an additional payment</a></span>	        	 	          
+					 </div>
+				 </div>	 
+				 
+        </div> -->
+        
+        
+        
+        
+        
+        <div class="govuk-grid-column-one-half">
+    
+		    <div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Help and support</h2>
+					 
+					 <div class="scenario-inner-panel">
+					  <p>Get help if you're struggling to pay and find<br>out what to do next.</p>
+					 
+		             <span><a href="helpSupport2" class="secondary-invert">Get help and support</a></span> 
+					 </div>
+				 </div>	 
+				 
+				
+				 
+        </div>
+
+        
+        
+      </div>
+      
+     
+      
+            
+    </div>
+</div>
+
+{% endblock %}

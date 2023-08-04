@@ -1,0 +1,210 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+		
+		{% if data['targetChoice2']=='target-yes2'%}
+		
+		
+		
+		
+		
+		
+		<form class="form" action="targetPayment2" method="post">
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+											
+											<div class="govuk-form-group">
+												  <fieldset class="govuk-fieldset">
+												    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+												      <h1 class="govuk-fieldset__heading">
+												      <span class="govuk-caption-xl">Step 1 of 3</span>
+												        Choose a payment target
+												      </h1>
+												    </legend>
+								
+								
+								<div class="govuk-inset-text mt0">
+			
+								
+							<!--	<p>You will not be penalised if you do not meet your target.</p>-->
+									<p>Regular low payments which increase the length of your debt to over 72 months will become a low payment option &ndash; we will contact you to discuss further if this happens</p>
+									
+											
+																			</div> 
+								
+								
+								
+												    
+												     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+												    <div class="govuk-radios">
+												    
+												    
+
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="12Month" name="targetAmountsChoice" type="radio" value="12MonthTarget">
+												        <label class="govuk-label govuk-radios__label" for="12Month">
+												          <b>&pound;125.00</b> &ndash; meeting this target will clear your debt in 12 months
+												        </label>
+												        
+												      </div>
+
+												      
+												       <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="24Month" name="targetAmountsChoice" type="radio" value="24MonthTarget">
+												        <label class="govuk-label govuk-radios__label" for="24Month">
+												          <b>&pound;63.00</b> &ndash; meeting this target will clear your debt in 24 months
+												        </label>
+												        
+												      </div>
+												     
+												      
+												      
+												       <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="36Month" name="targetAmountsChoice" type="radio" value="36MonthTarget">
+												        <label class="govuk-label govuk-radios__label" for="36Month">
+												          <b>&pound;42.50</b> &ndash; meeting this target will clear your debt in 36 months
+												        </label>
+												        
+												      </div>
+												      
+												      
+												     
+												      
+												      
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="48Month" name="targetAmountsChoice" type="radio" value="48MonthTarget">
+												        <label class="govuk-label govuk-radios__label" for="48Month">
+												          <b>&pound;31.50</b> &ndash; meeting this target will clear your debt in 48 months
+												        </label>
+												        
+												      </div>
+												      
+												       <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="72Month" name="targetAmountsChoice" type="radio" value="72MonthTarget">
+												        <label class="govuk-label govuk-radios__label" for="72Month">
+												          <b>&pound;21.00</b> &ndash; meeting this target will clear your debt in 72 months
+												        </label>
+												        
+												      </div>
+												      
+												      
+												      
+												      
+												      
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="100Month" name="targetAmountsChoice" type="radio" value="100MonthTarget">
+												        <label class="govuk-label govuk-radios__label" for="100Month">
+												          <b>&pound;15.00</b> &ndash; meeting this target will clear your debt in 100 months<br>(low payment option)
+												        </label>
+												        
+												      </div>
+												      
+												   <div class="govuk-radios__divider">or</div>
+									          
+      
+      
+		<div class="govuk-radios__item">
+			<input class="govuk-radios__input" id="noAffordTarget" name="targetAmountsChoice" type="radio" value="noAffordTarget">
+			<label class="govuk-label govuk-radios__label govuk-label--s" for="noAffordTarget">
+			<!--Set your own payment target-->Start your plan without a payment target
+			</label>
+		
+		  </div>
+		<!--<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-much">
+
+		   <fieldset class="govuk-fieldset">
+						  <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+						  <h1 class="govuk-fieldset__heading">
+							Enter the amount
+						  </h1>
+						</legend>
+						
+						
+						  <div id="example-question" class="form-group inline">
+							<span class="c-form-input-denote govuk-body">£</span>
+							<input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="payment-amount-target">
+						  </div>
+			
+					  </fieldset>
+						   
+		  </div>-->
+									 
+												  </fieldset>
+												</div>
+											
+											
+											<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form>
+		
+		
+		
+		
+		
+		
+		
+		
+
+			
+	  									{% else %}
+									
+		
+		
+
+
+		<h1 class="govuk-heading-xl"><span class="govuk-caption-xl">Step 1 of 3</span> Starting your plan without a payment target</h1>
+
+
+									<p>Regular low payments which increase the length of your debt to over 72 months will become a low payment option &ndash; we will contact you to discuss further if this happens</p></p>
+								
+								
+								<p><a href="targetNoPayment.html" class="govuk-button">Continue</a></p>
+
+								
+									
+									
+						{% endif %}		
+
+
+									
+									
+									
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,129 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+									   									   
+
+
+										 
+										
+										<form class="form" action="flexPayNow2" method="post">
+								
+											
+											<div class="govuk-form-group">
+												  <fieldset class="govuk-fieldset">
+												    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb30">
+												      <h1 class="govuk-fieldset__heading">
+												      <span class="govuk-caption-xl">Step 1 of 3</span>
+												        <!--Choose a monthly target that works for you-->
+												        Choose a target to help<br>clear your debt
+												      </h1>
+												    </legend>
+												    
+												 <div class="flexibleBanner">
+												 
+										<p class="mt10">These targets are guides showing when you could be debt free.</p>
+													
+												    </div> 
+			
+
+												    
+
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="oneHundredPound" name="how-much3" type="radio" value="FlexoneHundredPound">
+												        <label class="govuk-label govuk-radios__label" for="oneHundredPound">
+												          <b>6 months</b> &ndash; you will need to pay &pound;100.00 each month to clear your debt
+												        </label>
+												        
+												      </div>
+												      
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="fiftypound" name="how-much3" type="radio" value="FlexfiftyPound">
+												        <label class="govuk-label govuk-radios__label" for="fiftypound">
+												          <b>12 months</b> &ndash; you will need to pay &pound;50.00 each month to clear your debt
+												        </label>
+												        
+												      </div>
+												      
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="twentyFivePound" name="how-much3" type="radio" value="FlextwentyFivePound">
+												        <label class="govuk-label govuk-radios__label" for="twentyFivePound">
+												           <b>18 months</b> &ndash; you will need to pay &pound;35.00 each month to clear your debt
+												        </label>
+												        
+												      </div>
+												      
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="twentyFivePound" name="how-much3" type="radio" value="FlextwentyFivePound">
+												        <label class="govuk-label govuk-radios__label" for="twentyFivePound">
+												           <b>24 months</b> &ndash; you will need to pay &pound;25.00 each month to clear your debt
+												        </label>
+												        
+												      </div>
+		
+												      
+												      
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="noAfford" name="how-much3" type="radio" value="noAfford">
+												        <label class="govuk-label govuk-radios__label" for="noAfford">
+												         I do not want to set a timeframe
+												        </label>
+								
+												        
+												      </div>
+									
+												      
+												      
+												     
+								     
+									</div>												      
+												      
+												      
+												      
+												    </div>
+												  </fieldset>
+												</div>
+											
+											
+											<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form>
+				
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

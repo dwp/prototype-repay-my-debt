@@ -1,0 +1,84 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Affordability
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+
+	<div class="govuk-grid-row">
+
+		 <div class="govuk-grid-column-three-quarters">
+
+
+			<h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+        <span class="govuk-caption-xl">Affordability</span>
+
+				Tell us how much you can afford</h1>
+
+				<p>We will ask you questions to understand more about your financial situation &ndash; update will then be needed every 12 months.</p>
+
+
+        <!-- <h3 class="govuk-heading-m">How this change affects your Universal Credit payment</h3> -->
+
+        <h3 class="govuk-body">You can use this:</h3>
+        <ul class="govuk-list govuk-list--bullet">
+        <li>to let us know the amount you want us take from your benefit payment towards your Debts and loans repayments'</li>
+        <li>set reminder for next financial situation update</li>
+      </ul>
+
+
+
+        <p>We will factor in the amount you can afford into the first payment calcuations.
+        <p>If you have a payment due in the next 5 working days, any changes will not take effect until next month.</p>
+
+
+
+                <h3 class="govuk-heading-m">Before you start </h3>
+
+                <p>Your affordable amount will be used only for 'Debt and loans repayments'. </p>
+
+                <p>For more information and a full breakdown of payments from your Universal Credit payment, you can check your Universal Credit statement.</p>
+                <!-- <div class="govuk-warning-text">
+                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                  <strong class="govuk-warning-text__text">
+                    <span class="govuk-warning-text__assistive">Warning</span>
+                    You may owe other money which is currently being taken from your Universal Credit payment.
+                      </strong>
+                    </div> -->
+              
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+
+
+        <a href="onBenReview-2" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+  Tell us how much you can afford
+  <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+  </svg></a>
+
+
+    		 </div>
+    	</div>
+
+
+
+
+
+
+{% endblock %}

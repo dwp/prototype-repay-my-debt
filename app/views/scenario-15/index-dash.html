@@ -1,0 +1,74 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+    
+    <div class="clear-bar stripped-border">
+	   		<div class="identifier">
+	   			<span class="govuk-caption-l">Account home</span>
+	   			<h3 class="govuk-heading-l">Ashley Chamberlain</h3>
+	   		</div>
+	   		<div class="govuk-inset-text">
+			 Total amount owed <span class="total-amount">&pound;120.00</span>
+			</div>
+	   		
+	   	
+	   </div> 
+	      
+      <div class="govuk-grid-row">
+      
+        <div class="govuk-grid-column-one-half">
+	 
+				 <div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Payment options</h2>
+					 
+					 <div class="scenario-inner-panel">
+					 <ul class="govuk-list govuk-list--bullet">
+					 	<li>Pay the full amount</li>
+					 	<li>Pay a flexible amount</li>
+					 	<li>Set up a fixed payment plan</li>
+
+					 </ul>
+					 
+		             <span><a href="choosePayment" class="secondary-invert">Choose a payment option</a></span>
+		             <!--<button class="govuk-button" data-module="govuk-button">Choose a payment option</button>-->
+					 </div>
+				 </div>	
+				 
+        </div>
+        
+        <div class="govuk-grid-column-one-half">
+    
+		    <div class="scenario-panel">
+					 <h2 class="govuk-heading-s">Help and support</h2>
+					 
+					 <div class="scenario-inner-panel">
+					  <p>Get help if you're struggling to pay and find<br>out what to do next.</p>
+
+					 
+		             <span><a href="helpSupport2" class="secondary-invert help-support-cta">Get help and support</a></span> 
+					 </div>
+				 </div>	 
+				 
+        </div>
+        
+      </div>
+      
+      
+      
+        
+     
+      
+            
+    </div>
+</div>
+
+{% endblock %}

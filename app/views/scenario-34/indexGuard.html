@@ -1,0 +1,147 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+
+
+{% if data['signOptions']=='codeContinue'%}
+
+
+<div class="govuk-grid-row">
+
+	<div class="govuk-grid-column-three-quarters">
+
+
+	<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+								
+								<h1 class="govuk-heading-xl">
+	   <span class="govuk-caption-xl">Ashley Chamberlain</span>Important information about the money you owe</h1>
+	   
+	<!--   <div class="flexibleBanner">
+
+			 <ul class="govuk-list">
+
+
+				 
+				 <li>
+					  <h3>Amount we currently take from your benefits:</h3>
+					  <b>										    
+		   &pound;55.00
+			  
+			  </b>
+				  </li>
+
+			 </ul>
+			 
+			 </div> -->
+	   
+
+	   
+	   
+	   <p>This service is about managing the money you owe in relation to DWP benefits recovery &ndash; you may owe other money which is being taken from your benefits which you cannot repay or manage here.
+			
+			<!--This service is about managing the money you owe to DWP in relation to previous claims – you may owe other money from current claims which is being taken from your benefits that cannot be repaid or managed here.-->
+		</p>	
+		
+		<div class="govuk-inset-text">For details about any other money you owe, you should check your Universal Credit statement.</div>
+			 
+		
+		
+		<!--   <p>This service is about managing the money you owe in relation to DWP benefits recovery</p>
+
+
+		 <p>You may owe other money which is being taken from your benefits which you cannot repay or manage here - for more details about this, you should check your Universal Credit statement.</p>
+	-->
+		
+		
+			   
+		   <p class="mt30"><a href="indexAccountHome" class="govuk-button">
+			   Continue to account home
+			 </a></p>
+   
+	   	
+	
+			
+	</div>
+</div>
+
+
+{% else %}
+
+
+<div class="govuk-grid-row">
+  
+	 <div class="govuk-grid-column-three-quarters">
+   
+  <span class="back-link"> <a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+  
+
+
+<h1 class="govuk-heading-xl">Register</h1>
+
+<p>Register so you can securely sign in whenever you use this service.</p>
+
+<h2 class="govuk-heading-m">Before you start</h2>
+
+<p>You will need:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+	<li>an email address</li>
+	<li>a mobile phone</li>
+
+  </ul>
+
+<p>You will also need information from 2 sources so we can check we are dealing with the right person. These are:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>a UK passport</li>
+<li>payslips or P60M</li>
+<li>information about tax credits, if you claim them</li>
+<li>details of your credit record</li>
+</ul>
+
+
+<h3 class="govuk-heading-m">What happens next</h3>
+
+<p>Your information will be checked against our records. This also helps protect you from fraud.</p>
+
+<p>We will send security codes to your email and mobile phone to check that they belong to you.</p>
+
+<p>Whenever you sign in we will send a new security code to your mobile phone.</p>
+
+<p>You will also need to create a password.</p>
+
+<!--<p><a href="https://dth-prototype.herokuapp.com/auth/dev-ready/register/email-address?service-name=Manage my benefit debt" class="govuk-button">Continue</a></p>-->
+<p><a href="#" class="govuk-button">Continue</a></p>
+
+</div>
+</div>
+
+
+
+{% endif %}
+			
+		
+
+                  
+
+
+{% endblock %}
+
+
+
