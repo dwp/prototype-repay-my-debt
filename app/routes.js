@@ -276,3 +276,213 @@ router.post('/v-38/reminder-notification-payment-setup-done-continue-without-rem
   }
 
 })
+
+//version-39 forms
+
+router.post('/v-39/amount-too-low', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var amountLow = req.session.data['newDeductedAmount']
+
+  // Check whether the variable matches a condition
+  if (amountLow <= 4){
+    // Send user to next page
+    res.redirect('/version-39/on-benefit-no-payments-taken/amount-too-low')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/version-39/on-benefit-no-payments-taken/OnBenReview-3a')
+  }
+
+})
+
+router.post('/v-39/amount-too-low-payment-setup-done', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var amountLow = req.session.data['newDeductedAmount-setupDone']
+
+  // Check whether the variable matches a condition
+  if (amountLow <= 4){
+    // Send user to next page
+    res.redirect('/version-39/on-benefit-payments-taken/amount-too-low')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/version-39/on-benefit-payments-taken/OnBenReview-3')
+  }
+
+})
+
+router.post('/sign-in-options', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['sign-in']
+
+  // Check whether the variable matches a condition
+  if (option == 'secuity-code'){
+    // Send user to next page
+    res.redirect('/version-39/on-benefit-payments-taken/inGuard')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/version-39/on-benefit-payments-taken/register-new-account')
+  }
+
+})
+
+
+///on-benefit-no-payments-taken/how-do-want-access
+
+router.post('/on-benefit-no-payments-taken/how-do-want-access', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['access-option']
+
+  // Check whether the variable matches a condition
+  if (option == 'security-code'){
+    // Send user to next page
+    res.redirect('/version-39/on-benefit-no-payments-taken/inGuard')
+  } else if (option == 'repay-account') {
+    // Send user to ineligible page
+    res.redirect('/version-39/on-benefit-no-payments-taken/sign-in-oidv')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/version-39/on-benefit-no-payments-taken/register-new-account')
+ }
+})
+
+///on-benefit-no-payments-taken/how-do-want-access
+
+router.post('/on-benefit-payments-taken/how-do-want-access', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['access-option-for-taken']
+
+  // Check whether the variable matches a condition
+  if (option == 'security-code'){
+    // Send user to next page
+    res.redirect('/version-39/on-benefit-payments-taken/inGuard')
+  } else if (option == 'repay-account') {
+    // Send user to ineligible page
+    res.redirect('/version-39/on-benefit-payments-taken/sign-in-oidv')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/version-39/on-benefit-payments-taken/register-new-account')
+ }
+})
+
+//on-benefit-no-payments-taken/security-code
+router.post('/on-benefit-no-payments-taken/security-code', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['security-code']
+
+  // Check whether the variable matches a condition
+  if (option == 'yes'){
+    // Send user to next page
+    res.redirect('/version-39/on-benefit-no-payments-taken/inGuard')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/version-39/on-benefit-no-payments-taken/are-you-registered')
+  }
+
+})
+
+//on-benefit-no-payments-taken/is-registered
+router.post('/on-benefit-no-payments-taken/is-registered', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['is-registered']
+
+  // Check whether the variable matches a condition
+  if (option == 'yes'){
+    // Send user to next page
+    res.redirect('/version-39/on-benefit-no-payments-taken/sign-in-oidv')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/version-39/on-benefit-no-payments-taken/register-new-account')
+  }
+
+})
+
+//on-benefit-payments-taken/security-code
+router.post('/on-benefit-payments-taken/security-code', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['security-code']
+
+  // Check whether the variable matches a condition
+  if (option == 'yes'){
+    // Send user to next page
+    res.redirect('/version-39/on-benefit-payments-taken/inGuard')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/version-39/on-benefit-payments-taken/are-you-registered')
+  }
+
+})
+
+//on-benefit-payments-taken/is-registered
+router.post('/on-benefit-payments-taken/is-registered', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['is-registered']
+
+  // Check whether the variable matches a condition
+  if (option == 'yes'){
+    // Send user to next page
+    res.redirect('/version-39/on-benefit-payments-taken/sign-in-oidv')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/version-39/on-benefit-payments-taken/register-new-account')
+  }
+
+})
+
+//on-benefit-no-payments-taken/keep-using-code
+router.post('/on-benefit-no-payments-taken/keep-using-code', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['keep-using-code']
+
+  // Check whether the variable matches a condition
+  if (option == 'yes'){
+    // Send user to next page
+    res.redirect('/version-39/on-benefit-no-payments-taken/indexGuard')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/version-39/on-benefit-no-payments-taken/register-new-account')
+  }
+
+})
+
+//on-benefit-no-payments-taken/keep-using-code
+router.post('/on-benefit-payments-taken/keep-using-code', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['keep-using-code']
+
+  // Check whether the variable matches a condition
+  if (option == 'yes'){
+    // Send user to next page
+    res.redirect('/version-39/on-benefit-payments-taken/indexGuard')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/version-39/on-benefit-payments-taken/register-new-account')
+  }
+
+})
+
+router.post('/version-40/sign-in-options', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['sign-in-new']
+
+  // Check whether the variable matches a condition
+  if (option == 'sign-in-oidv'){
+    // Send user to next page
+    res.redirect('/version-40/on-benefit-no-payments-taken/sign-in-oidv')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/version-40/on-benefit-no-payments-taken/inGuard')
+  }
+
+})

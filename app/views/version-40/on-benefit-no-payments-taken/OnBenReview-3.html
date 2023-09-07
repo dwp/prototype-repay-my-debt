@@ -1,0 +1,228 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+How will this effect your debt repayment
+
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+{% block content %}
+
+
+
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+
+
+
+
+<h1 class="govuk-heading-xl">
+		<span class="govuk-caption-xl">Affordablity</span>
+
+		What this will mean for your repayments?</h1>
+
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+    <div class="flexible-banner-float-none">
+      <ul class="govuk-list">
+        <li>
+          <h3>Total money left to pay</h3>
+          <span id="new-debts-amount"><b>£1,670.00</b></span>
+        </li>
+        <!-- <li>
+          <h3>Amount paid towards what you owe</h3>
+          <span class="total-amount" id="new-total-owed"><b>£10.00</b></span>
+        </li>
+        <li>
+          <h3>Amount paid towards Universal credit (joint)</h3>
+          <span class="total-amount" id="new-total-owed"><b>£10.00</b></span>
+        </li> -->
+      </ul>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+		<table class="govuk-table mb40">
+
+									
+
+									 <thead>
+									 	<tr>
+
+									 		 <th scope="row" class="govuk-table__header" style="width:80%;">&nbsp;</th>
+									 		  <!-- <th scope="row" class="govuk-table__header">Current payment </th> -->
+									 		   <th scope="row" class="govuk-table__header updatedPlanHeading">New payment</th>
+									 	</tr>
+									 </thead>
+
+
+
+										  <tbody class="govuk-table__body">
+
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Payment towards 'Debt and loan repayment' each month
+                              <div id="sign-in-hint" class="govuk-hint">
+                                Payments taken by DWP Debt managment towards 'Debt and loan repayment'.
+                              </div>
+                            </th>
+
+                          <td class="govuk-table__cell updatedPlanStatus">&pound;{{ data['newDeductedAmount'] }}</td>
+                        </tr>
+
+										  <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Universal Credit payment each month
+                            <div id="sign-in-hint" class="govuk-hint">
+                              Universal Credit take up to £20.00 off your payment to pay back any current advances.
+
+
+                            </div>
+
+
+										   <!--   <td class="govuk-table__cell">  &pound;0.00
+
+											   {% if data['paymentChoices']=='12Month'%}
+
+
+
+											{% elif data['paymentChoices']=='24Month'%}
+
+											&pound;63.00
+
+											{% elif data['paymentChoices']=='36Month'%}
+
+											&pound;42.00
+
+											{% elif data['paymentChoices']=='48Month'%}
+
+											&pound;31.50
+
+											{% elif data['paymentChoices']=='72Month'%}
+
+											&pound;21.00
+
+											{% elif data['paymentChoices']=='25Month'%}
+
+											&pound;15.00
+
+
+											{% else %}
+
+
+
+											{% endif %}
+
+
+										      </td>-->
+										    <td class="govuk-table__cell updatedPlanStatus">&pound;20.00</td>
+										  </tr>
+
+
+
+
+
+
+                      <tr class="govuk-table__row">
+                         <th scope="row" class="govuk-table__header">Total payment
+                           <div id="sign-in-hint" class="govuk-hint">
+                             Your Universal payment for each month.
+                           </div></th>
+
+
+
+
+                         <td class="govuk-table__cell"> <script>
+                           function intToFloat(num) { return num.toFixed(2); }
+
+                           var  num1 = 20.00;
+
+                           var num2 = {{ data['newDeductedAmount'] }};
+
+                           var  sum = num1+ num2;
+                            document.write("£" + sum);
+                         </script>
+
+                        </td>
+
+
+
+
+
+                      </tr>
+
+
+
+
+
+
+
+
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Expected final payment date
+                            <div id="sign-in-hint" class="govuk-hint">
+                              Date on which you will complate all your 'Debt and loan repayments'
+                            </div>
+                          </th>
+                          <td class="govuk-table__cell updatedPlanStatus">6 May 2043</td>
+<!--
+										      {% if data['paymentChoices']=='12Month'%}
+
+
+
+										      {% elif data['paymentChoices']=='24Month'%}
+										      <td class="govuk-table__cell">{{ data['paymentDay'] }} June 2023</td>
+										      <td class="govuk-table__cell updatedPlanStatus">{{ data['paymentDay'] }} December 2023</td>
+
+										      {% elif data['paymentChoices']=='36Month'%}
+										      <td class="govuk-table__cell">{{ data['paymentDay'] }} June 2024</td>
+										      <td class="govuk-table__cell updatedPlanStatus">{{ data['paymentDay'] }} December 2023</td>
+
+										      {% elif data['paymentChoices']=='48Month'%}
+										      <td class="govuk-table__cell">{{ data['paymentDay'] }} June 2025</td>
+										      <td class="govuk-table__cell updatedPlanStatus">{{ data['paymentDay'] }} December 2023</td>
+
+										      {% elif data['paymentChoices']=='72Month'%}
+										      <td class="govuk-table__cell">{{ data['paymentDay'] }} June 2027</td>
+										      <td class="govuk-table__cell updatedPlanStatus">{{ data['paymentDay'] }} December 2023</td>
+
+										      {% elif data['paymentChoices']=='25Month'%}
+										      <td class="govuk-table__cell">{{ data['paymentDay'] }} December 2028</td>
+										      <td class="govuk-table__cell updatedPlanStatus">{{ data['paymentDay'] }} December 2023</td>
+
+
+
+										      {% endif %} -->
+
+											 </tr>
+
+
+
+										  </tbody>
+
+		</table>
+
+
+
+
+
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+
+										<p><a href="deductionReview" class="govuk-button mb0">Continue</a></p>
+
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Have you changed your mobile number?
+
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+			   <h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+			   <p>What you owe:
+					   <span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+		<div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+        <span class="govuk-caption-xl">Manage your repayments
+</span>
+        Have you changed your mobile number?
+      </h1>
+      <!-- <div class="flexible-banner-float-none">
+        <ul class="govuk-list">
+          <li>
+            <h3>We will send you a reminder 30 days before:</h3>
+            <span id="new-debts-amount"><b>31 December 2024</b></span>
+          </li>
+
+        </ul>
+      </div> -->
+
+
+      <div class="govuk-inset-text">
+    <label class="govuk-heading-m" for="telephone-number">
+    Mobile number
+    </label>
+    <p>*******000</p>
+
+    </div>
+<form class="form" action="/confirm-mobile-number" method="post">
+
+
+  <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+
+  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="confirm-details-change" name="confirm-details-change" type="radio" value="yes">
+      <label class="govuk-label govuk-radios__label" for="changed-name">
+        Yes
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="confirm-details-change-2" name="confirm-details-change" type="radio" value="no">
+      <label class="govuk-label govuk-radios__label" for="changed-name-2">
+        No
+      </label>
+    </div>
+  </div>
+  </fieldset>
+  </div>
+
+
+
+		<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+	 </form>
+
+
+
+	</div>
+</div>
+
+{% endblock %}

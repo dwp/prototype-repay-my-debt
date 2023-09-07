@@ -1,0 +1,97 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Contact us to change your mobile number
+
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+			   <h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+			   <p>What you owe:
+					   <span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+		<div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+        <span class="govuk-caption-xl">Affordability</span>
+        Contact us to change your mobile number
+      </h1>
+      <!-- <div class="govuk-inset-text">
+      <label class="govuk-heading-m" for="telephone-number">
+      Mobile number
+      </label>
+      <p>*******000</p>
+
+
+
+    </div> -->
+    <p>If you need to change your mobile number, you need to contact DWP Debt Management.</p>
+
+    <h2 class="govuk-heading-m ">Debt Management</h2>
+   <ul class="govuk-list">
+    <li>Telephone: 0800 916 0647</li>
+    <li>Monday to Friday, 8am to 7:30pm (except public holidays)</li>
+   </ul>
+   <p class="govuk-body">
+    <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+   </p>
+
+   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<form class="form" action="/reminder-notification" method="post">
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Would you like to receive a reminder by email instead?
+        </h1>
+      </legend>
+
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changed-name" name="reminder-notification" type="radio" value="yes-email">
+          <label class="govuk-label govuk-radios__label" for="changed-name">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changed-name-2" name="reminder-notification-yes-no" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="changed-name-2">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+
+
+	 </form>
+
+
+
+	</div>
+</div>
+
+{% endblock %}

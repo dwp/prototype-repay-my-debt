@@ -1,0 +1,359 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+	   
+	   <div class="govuk-grid-row">
+      
+        <div class="govuk-grid-column-three-quarters">
+	   
+	   
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+	   
+	   
+	   
+	   <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Your Direct Debit plan is setup
+          </h1>
+
+	
+	   			<div class="govuk-panel__body">Your flexible payment plan has now ended</div>
+
+
+        </div>
+
+        <!--<p class="govuk-body">We have sent you a confirmation email.</p>-->
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+        
+        
+        <p>You will be sent confirmation of this agreement within three working days or no later than ten working days before the first payment collection.</p>
+
+	   <div class="govuk-inset-text">Once your plan is setup, you can sign in to make changes to your plan, pay additional amounts or get help and support.</div>
+	   
+
+        	
+
+        
+        
+        <h2 class="govuk-heading-m">Plan summary</h2>
+        
+        
+        
+         	{% if data['paymentChoices']=='lowPayments'%}
+	   	
+
+	   	
+	   											
+																	
+									 <table class="govuk-table summary-table mb40">
+									 
+									 <caption class="visually-hidden">Plan details</caption>
+										
+								
+										  <tbody class="govuk-table__body">
+										  
+										
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Total amount owed</th>
+										      <td class="govuk-table__cell" colspan="2">&pound;6,000.00
+										      </td>
+										      
+									
+											 </tr>
+											 
+											 
+											 
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Payment plan type</th>
+										      <td class="govuk-table__cell" colspan="2">Lower payment plan
+										      </td>
+										      
+									
+											 </tr>
+											 
+											 
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Monthly amount</th>
+										      <td class="govuk-table__cell" colspan="2">&pound;{{ data['affordable-amount'] }}
+										      </td>
+										      
+									
+											 </tr>
+											 
+											 
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">First payment date</th>
+										      <td class="govuk-table__cell" colspan="2">{{ data['paymentDay'] }} May 2021
+										      </td>
+										      
+									
+											 </tr>
+											 
+											 
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Proposed plan review date</th>
+										      <td class="govuk-table__cell" colspan="2">{{ data['paymentDay'] }} May 2022
+										      	<span class="textNumber">If you are unable to increase the amount you pay over the next 12 months we will contact you to discuss your financial situation.</span>
+										      </td>
+										      
+									
+											 </tr>
+
+										    
+										    
+
+								
+										  </tbody>
+										</table>
+										
+										
+										
+											   	
+	   	
+			   	
+			    {% else %}
+			    
+			    	
+			    	
+			    
+			    
+			    
+			    								
+									 <table class="govuk-table mb40">
+									 
+									 <caption class="visually-hidden">Plan details</caption>
+										
+								
+										  <tbody class="govuk-table__body">
+										  
+										
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Total amount owed</th>
+										      <td class="govuk-table__cell" colspan="2">&pound;6,000.00
+										      </td>
+										      
+									
+											 </tr>
+										      
+										    
+										    
+								
+										  <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Payment breakdown</th>
+										      <td class="govuk-table__cell">
+											      
+											      
+											{% if data['paymentChoices']=='6Month'%}
+										    
+										  6 payments of &pound;1,000.00
+								
+											{% elif data['paymentChoices']=='12Month'%}
+											
+											12 payments of &pound;500.00
+											
+											
+											{% elif data['paymentChoices']=='24Month'%}
+											
+											24 payments of &pound;250.00
+
+											
+											{% elif data['paymentChoices']=='36Month'%}
+
+											
+											
+											<ul class="govuk-list govuk-list--bullet mb0">
+										  		<li>35 payments of &pound;168.00</li>
+										  		<li><span class="payDivide">1 final payment of &pound;120.00</span></li>
+											</ul>
+											
+											
+											{% elif data['paymentChoices']=='48Month'%}
+
+											
+											
+											48 payments of &pound;125.00
+											
+											
+											{% elif data['paymentChoices']=='72Month'%}
+
+											
+											
+											<ul class="govuk-list govuk-list--bullet mb0">
+										  		<li>71 payments of &pound;84.00</li>
+										  		<li><span class="payDivide">1 final payment of &pound;36.00</span></li>
+											</ul>
+											
+											
+										
+											
+											
+											{% else %}
+											
+											Low payment plan
+											
+											{% endif %}
+											      
+											      
+										      </td>
+										      
+			
+										      	
+										    </tr>
+										    
+										    
+										     <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Payment dates</th>
+										      <td class="govuk-table__cell dtList">
+										      
+										      
+										      <dl>
+										      	<dt>First payment:</dt>
+										      	<dd>{{ data['paymentDay'] }} May 2021</dd>
+										      	<dt>Expected final payment:</dt>
+										      	<dd>
+										      	
+										      	{% if data['paymentChoices']=='6Month'%}
+										    
+										    {{ data['paymentDay'] }} October 2021
+								
+											{% elif data['paymentChoices']=='12Month'%}
+											
+											{{ data['paymentDay'] }} May 2022
+											
+											{% elif data['paymentChoices']=='24Month'%}
+											
+											{{ data['paymentDay'] }} May 2023
+											
+											
+											{% elif data['paymentChoices']=='36Month'%}
+											
+											{{ data['paymentDay'] }} May 2024
+											
+											{% elif data['paymentChoices']=='48Month'%}
+											
+											{{ data['paymentDay'] }} May 2025
+											
+											{% elif data['paymentChoices']=='72Month'%}
+											
+											{{ data['paymentDay'] }} May 2027
+
+											
+											{% else %}
+											
+																						
+											{% endif %}
+										      	
+										      	</dd>
+										      </dl>
+											      
+			      
+											      
+										      </td>
+	
+							
+										     
+										    </tr>
+
+
+								
+										  </tbody>
+										</table>
+			    
+			    
+			    
+			    
+			    {% endif %}
+        
+        										
+										<p>Your payments will show on your bank statement as <b>CEN REC GROUP DD</b>.</p>
+										
+										
+										
+										
+										
+										
+										<details class="govuk-details mt30" data-module="govuk-details">
+		  <summary class="govuk-details__summary">
+		    <span class="govuk-details__summary-text">
+		    Further Direct Debit details
+		    </span>
+		  </summary>
+		  <div class="govuk-details__text">
+
+		  
+		  <p>Service user number: 941315</p>
+
+		  	 
+		  	 
+		  <p>If you have any problems or questions about your Direct Debit plan, contact Debt Management: </p>
+		  
+		  
+		  <h2 class="govuk-heading-s">Debt Management</h2>
+
+		  	
+		  	
+		  	  <p>Debt Accounting &amp; Finance<br>
+		  	 Warbreck House<br>
+		  	 Blackpool<br>
+		  	 FY2 0YE<br>
+		  	 United Kingdom</p>		
+		  	 
+
+					   			
+
+
+					   					
+									  <ul class="govuk-list">
+									  <li>Telephone: 0800 916 0647</li>
+									  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+									</ul>
+									<p class="govuk-body">
+									  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+									</p> 
+
+
+		  </div>
+		</details>
+										
+										
+										
+										
+										
+		
+		
+										<p><a href="#">What did you think of this service? (opens in new tab)</a></p>
+		
+		<p><a href="../index" class="govuk-button">Finish and sign out</a></p>
+
+        
+
+       <!-- <p class="govuk-body">
+          <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+        </p> -->
+	   
+	   			
+
+                  
+    </div>
+</div>
+
+{% endblock %}
+
+
+

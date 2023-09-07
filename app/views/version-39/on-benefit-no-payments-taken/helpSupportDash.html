@@ -1,0 +1,100 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+
+									{% if data['help-choice']=='help-strugglingDash'%}
+
+
+							<h1 class="govuk-heading-xl mb30">Help and support</h1>
+									
+	   					
+					   			<p>If you cannot pay, contact Debt Management to discuss the options available to you</p>
+					   					
+					   					
+					   					<h2 class="govuk-heading-m">Debt Management</h2>
+							
+									  
+									  <ul class="govuk-list">
+										  <li>Telephone: 0800 916 0647</li>
+										  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+										</ul>
+										<p class="govuk-body">
+										  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+										</p>
+									  
+									  
+										
+										<p><a href="dashboard1" class="govuk-button">Finish</a></p>	
+
+
+
+										<!--// Struggling to pay end -->
+
+
+
+
+
+
+
+									{% elif data['help-choice']=='help-adviceDash'%}
+
+									  <h1 class="govuk-heading-xl mb30">I need further advice</h1>
+	
+					   				
+					   				<p>You can get:</p>
+
+
+									  <ul class="govuk-list govuk-list--bullet">
+									          <li>help dealing with money problems from <a href="https://www.citizensadvice.org.uk/">Citizens Advice (opens in new tab)</a> </li>
+									          <li>expert debt advice from <a href="https://www.stepchange.org/">StepChange Debt Charity (opens in new tab)</a></li>
+									          <li>advice to improve your finances from <a href="https://www.moneyadviceservice.org.uk">Money Advice Service (opens in new tab)</a></li>
+									  </ul>
+									  
+	
+
+										<p><a href="dashboard1" class="govuk-button">Finish</a></p>
+
+									<!--// Fixed amount end -->
+
+
+									{% else %}
+
+									<h1 class="govuk-heading-l">Oops! you didn't select a help option</h1>
+
+									<p>Don't worry, you can go back and try again.</p>
+
+
+									{% endif %}
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

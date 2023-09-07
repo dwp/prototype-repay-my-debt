@@ -1,0 +1,107 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+	   <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	   
+	   
+	   
+	   <h1 class="govuk-heading-xl">
+			  <span class="govuk-caption-xl">Ashley Chamberlain</span>
+				 Your last Direct Debit was unsuccessful</h1>
+	   
+	   
+	   
+<div class="flexibleBanner">
+<p class="mb0">We will try to take another payment on 20 November 2021.</p></div>
+			 
+
+	
+									
+							<form class="form" action="XLddPlan2" method="post">
+										
+										
+								
+						
+									
+								<div class="govuk-form-group">
+									  <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+										<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+										  <h2 class="govuk-fieldset__heading">
+											What do you want to do?
+										  </h2>
+										</legend>
+								
+				
+								
+								
+										<div class="govuk-radios">
+											
+											
+											<div class="govuk-radios__item">
+												<input class="govuk-radios__input" id="inSecurity" name="inSign" type="radio" aria-describedby="sign-in-2-item-hint" value="inSecurity">
+												<label class="govuk-label govuk-radios__label" for="inSecurity">
+												I want to make a payment today
+												</label>
+												<div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+													This will clear your missed payment for November
+													</div>
+											  </div> 
+											
+										  <div class="govuk-radios__item">
+											<input class="govuk-radios__input" id="inRegister" name="inSign" type="radio" value="inRegister" aria-describedby="sign-in-item-hint">
+											<label class="govuk-label govuk-radios__label" for="inRegister">
+											  I want to manage my plan
+											</label>
+											<div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+											You can change your Direct Debit amount or payment date
+												</div>
+										  </div>
+										  
+									 
+										  
+										  <div class="govuk-radios__divider">or</div>
+							
+										  <div class="govuk-radios__item">
+											  <input class="govuk-radios__input" id="sign-in-3" name="inSign" type="radio" value="govuk-verify" aria-describedby="sign-in-3-item-hint">
+											  <label class="govuk-label govuk-radios__label" for="sign-in-3">
+											 I want to continue to my account
+											  </label>
+
+											</div>
+										  
+										  
+										</div>
+									
+									  </fieldset>
+									</div>
+									
+									<button class="govuk-button" data-module="govuk-button">
+									  Continue
+									</button>
+									</form>		
+			
+			
+								
+									
+		
+ 
+
+
+    </div>
+</div>
+
+{% endblock %}

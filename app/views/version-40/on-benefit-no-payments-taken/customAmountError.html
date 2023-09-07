@@ -1,0 +1,125 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+		<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+			  <h2 class="govuk-error-summary__title" id="error-summary-title">
+				There is a problem
+			  </h2>
+			  <div class="govuk-error-summary__body">
+				<ul class="govuk-list govuk-error-summary__list">
+				  <li>
+					<a href="#thisError">The minimum amount you need to enter is £30.00</a>
+				  </li>
+				</ul>
+				
+				<p class="mt20">If you cannot afford this you should consider a more <a href="#">affordable payment plan</a>.</p>
+			  </div>
+			</div>
+		
+		
+		
+		<h1 class="govuk-heading-xl">
+			   <span class="govuk-caption-xl">Step 2 of 5</span>
+				  Enter a different amount </h1>								 
+					
+	
+							
+					<div class="govuk-inset-text">
+					
+						
+					<p>The amount you enter needs to keep your debt within 72 months &ndash; based on what you owe, the minimum amount is £30.00</p>
+					
+					<p>We will then show you a breakdown of when you will be debt free.</p>
+					
+						 </div>
+		
+											
+																	
+						<form class="form" action="customSummary" method="post">
+
+
+							<div class="govuk-form-group govuk-form-group--error">
+								 <fieldset class="govuk-fieldset">
+									<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+									  <h1 class="govuk-fieldset__heading">
+									
+										How much do you want to pay?
+									  </h1>
+									</legend>
+									
+									<span id="thisError" class="govuk-error-message">
+										<span class="govuk-visually-hidden">Error:</span> The minimum amount you need to enter is £30.00
+									  </span>
+
+
+									 <div id="example-question" class="form-group inline">
+										<span class="c-form-input-denote govuk-body">£</span>
+										<input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="custom-amount">
+									  </div>
+
+								  </fieldset>
+							</div>
+																			
+																		  <!--   <details class="govuk-details mt20" data-module="govuk-details">
+										  <summary class="govuk-details__summary">
+											<span class="govuk-details__summary-text">
+											 I cannot afford to set up a plan online
+											</span>
+										  </summary>
+										  <div class="govuk-details__text">
+											<p>If you are unable to pay a minimum of &pound;5.00, you must contact Debt Management to discuss the options available to you.</p>
+								
+								
+																		   <h2 class="govuk-heading-m">Debt Management</h2>
+																	  <ul class="govuk-list">
+																		  <li>Telephone: 0800 916 0647</li>
+																		  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+																		</ul>
+																		<p class="govuk-body">
+																		  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+																		</p>
+								
+										  </div>
+										</details> -->
+																			
+								
+								
+																			<button class="govuk-button" data-module="govuk-button">
+																			  Continue
+																			</button>
+																			</form>
+																	
+													
+									
+									
+									
+
+
+    </div>
+</div>
+
+{% endblock %}

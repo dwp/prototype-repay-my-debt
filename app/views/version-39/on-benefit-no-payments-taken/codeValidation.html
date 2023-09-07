@@ -1,0 +1,156 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+       <span class="back-link"> <a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+       
+       
+       
+       
+       <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+			  <h2 class="govuk-error-summary__title" id="error-summary-title">
+			    There is a problem
+			  </h2>
+			  <div class="govuk-error-summary__body">
+			    <ul class="govuk-list govuk-error-summary__list">
+			      <li>
+			        <a href="#code-error">Your security code is incorrect</a>
+			      </li>
+			      <li>
+			        <a href="#passport-issued-error">Your date of birth must be in the past</a>
+			      </li>
+			 
+			    </ul>
+			  </div>
+			</div>
+       
+       
+
+	   <h1 class="govuk-heading-xl">Sign in</h1>
+
+
+	   <form class="form" action="index" method="post">
+
+	    <fieldset class="govuk-fieldset">
+	    <legend></legend>
+
+	    <div class="govuk-form-group govuk-form-group--error">
+		  <label class="govuk-label--m" for="width-20" aria-describedby="security-hint">
+		    Enter your security code
+		  </label>
+		  <span id="code-error" class="govuk-error-message mt10">
+		    <span class="govuk-visually-hidden">Error:</span> Your security code is incorrect
+		  </span>
+		  <span id="security-hint" class="govuk-hint mt5">
+		    This code contains only numbers and it can be up to 11 digits
+		    </span>
+		  <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text">
+
+		  <details class="govuk-details mt20" data-module="govuk-details">
+		  <summary class="govuk-details__summary">
+		    <span class="govuk-details__summary-text">
+		     I do not have my code
+		    </span>
+		  </summary>
+		  <div class="govuk-details__text">
+		    If you have lost or forgotten your code, contact us.
+        <br>
+        <br>
+        <p>Telephone: 0800 916 0647<br>
+        Textphone: 0800 916 0651<br>
+        Monday to Friday 8am to 8pm<br>
+        Saturday 9am to 4pm</p>
+		  </div>
+		</details>
+		</div>
+		
+		
+		
+		
+		<div class="govuk-form-group govuk-form-group--error">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-error">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+       Enter your date of birth
+      </h1>
+    </legend>
+    <span id="passport-issued-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Your date of birth must be in the past
+    </span>
+    <span id="passport-issued-hint" class="govuk-hint">
+      For example, 12 11 2007
+    </span>
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" value="5" pattern="[0-9]*" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" value="12" pattern="[0-9]*" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="passport-issued-year" name="passport-issued-year" type="text" value="2030" pattern="[0-9]*" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+		
+		
+		
+		
+
+
+	    </fieldset>
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Sign in
+</button>
+
+
+
+	    </form>
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}
