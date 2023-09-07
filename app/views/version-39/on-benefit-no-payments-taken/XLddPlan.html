@@ -1,0 +1,293 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+
+	   
+	   <div class="govuk-grid-row">
+      
+         <div class="govuk-grid-column-three-quarters">
+         
+         
+         <span class="back-link"><a href="dashboardDebitLow" class="govuk-back-link">Back to account home</a></span>
+	   
+	   
+	   <h1 class="govuk-heading-xl mb50">Your plan</h1>
+
+
+					  
+					  <div class="govuk-tabs" data-module="govuk-tabs">
+					
+							<ul class="govuk-tabs__list">
+							  <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+								<a class="govuk-tabs__tab" href="#past-day">
+								  Payments
+								</a>
+							  </li>
+							  <li class="govuk-tabs__list-item">
+								<a class="govuk-tabs__tab" href="#past-week">
+								  Updates
+								</a>
+							  </li>
+							  
+							</ul>
+							<div class="govuk-tabs__panel" id="past-day">
+								
+								<h2 class="govuk-heading-l">Payments</h2>
+								
+								
+								
+{% if data['amountChange']=='yesChange'%}
+	   
+<div class="flexibleBanner">
+	  <p class="mb0">Your payment plan has been updated</p>
+</div>
+	 
+	 {% else %}
+
+  
+		
+	 {% endif %} 
+   
+
+								
+								
+							  <table class="govuk-table summary-table mb40">
+								   
+								   <caption class="visually-hidden">Current payment plan details</caption>
+									  
+							  
+										<tbody class="govuk-table__body">
+										
+									  
+										  
+										<!--   <tr class="govuk-table__row">
+											<th scope="row" class="govuk-table__header">Payment plan type</th>
+											<td class="govuk-table__cell" colspan="2">
+											
+											
+											Direct Debit
+											</td>
+											
+										   </tr> -->
+										   
+										   
+										   
+											<tr class="govuk-table__row">
+											<th scope="row" class="govuk-table__header">Direct Debit amount</th>
+											<td class="govuk-table__cell">
+												
+										  {% if data['paymentChoices']=='12Month'%}
+										  
+										  &pound;360.00
+							  
+										  {% elif data['paymentChoices']=='24Month'%}
+										  
+										  &pound;180.00										
+										  
+										  {% elif data['paymentChoices']=='36Month'%}
+										  
+										  &pound;120.00
+										  
+										  {% elif data['paymentChoices']=='48Month'%}
+										  
+										  &pound;90.00
+										  
+										  {% elif data['paymentChoices']=='72Month'%}
+										  
+										  &pound;60.00
+						
+										  {% else %}
+										   
+										  &pound;30.00
+										  
+										  {% endif %}
+												
+												
+											</td>
+											
+											
+										 
+									   
+		  
+												
+										  </tr>
+											
+										  
+										  
+							  
+									   
+										  
+										  
+										   <tr class="govuk-table__row">
+											<th scope="row" class="govuk-table__header">Direct Debit payment day</th>
+											<td class="govuk-table__cell dtList">
+	  
+												
+												
+												
+												
+											  Day {% if data['payDaychange']=='YesPayDaychange'%}
+													
+												  {{ data['paymentDayUpdate'] }}
+												  
+												  
+												  {% else %}
+								 
+												{{ data['paymentDay'] }}
+													 
+												  {% endif %} of each month
+												
+												
+											</td>
+											
+										
+						  
+										   
+										  </tr>
+										  
+										  
+									
+										  
+
+
+										  
+										  
+										  <tr class="govuk-table__row">
+											<th scope="row" class="govuk-table__header">Account details</th>
+											<td class="govuk-table__cell dtList">
+											<dl>
+												<dt>Account name</dt>
+												<dd>{{ data['accountName'] }}</dd>
+												<dt>Sort code</dt>
+												<dd>{{ data['sortCode'] }}</dd>
+												<dt>Account number</dt>
+												<dd>{{ data['accountNumber'] }}</dd>
+											</dl>
+											
+											</td>
+					  
+										   
+										   </tr>
+										  
+
+							  
+										</tbody>
+									  </table>
+				  
+		 
+		 <p><a href="startChange" class="secondary-invert">Manage payments</a></p>
+						  
+							</div>
+							
+							
+							<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+							
+								
+								<h2 class="govuk-heading-l">Updates</h2>
+								
+								
+								
+								 
+								{% if data['commsSign']=='commsYes'%}
+								
+		
+				<p>You will only receive updates about unsuccessful payments.</p>
+						 
+										  
+						  
+						  
+	<table class="govuk-table summary-table mb40">
+		<caption class="govuk-heading-s leftCap">Contact method</caption>
+<tbody class="govuk-table__body">
+
+
+
+
+<tr class="govuk-table__row">
+   <th scope="row" class="govuk-table__header">Email</th>
+   <td class="govuk-table__cell">
+
+	   {{ data['commsEmailAddress'] }}
+
+   </td>
+   
+   
+   </tr>
+   
+   <tr class="govuk-table__row">
+		 <th scope="row" class="govuk-table__header">Text message</th>
+		 <td class="govuk-table__cell">
+  
+			 {{ data['commsTextNumber'] }}
+  
+		 </td>
+		 
+		 
+		 </tr>
+ 
+
+						
+																	
+					</tbody>
+				  </table>
+				  
+				  
+				<!--  <p><a href="#" class="govuk-button">Manage communications</a></p>	 -->
+				
+				
+				<div class="govuk-inset-text">
+					<p>If you want to opt out of receiving updates or need to change your number, you need to contact Debt Management.</p>
+					
+					
+					   <h2 class="govuk-heading-s">Debt Management</h2>
+				  <ul class="govuk-list">
+				  <li>Telephone: 0800 916 0647</li>
+				  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+				</ul>
+				<p class="govuk-body">
+				  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+				</p>	
+				
+					</div> 
+				
+				
+				  
+				  
+				  {% else %}
+				  
+				
+					<p class="mt40">You can sign up to receive updates via text or email about unsuccessful payments.</p>
+					
+			
+					
+					
+				<p><a href="manageComms.html" class="secondary-invert">Sign up for payment updates</a></p>	
+					
+  
+				  {% endif %}
+				  
+						  
+						
+                  
+    </div>
+</div>
+
+{% endblock %}
+
+
+

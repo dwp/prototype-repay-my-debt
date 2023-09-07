@@ -1,0 +1,177 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  Repay and manage benefit money you owe
+{% endblock %}
+
+{% block content %}
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+
+
+
+
+
+
+        <div class="govuk-panel govuk-panel--confirmation">
+             <h1 class="govuk-panel__title">
+              Repayment amount updated
+             </h1>
+             <div class="govuk-panel__body govuk-!-font-size-36">
+               Your repayments will be no more than<br><strong>£{{ data['newDeductedAmount-setupDone'] }}</strong>
+             </div>
+
+
+           </div>
+
+
+        <!-- <p>Your monthly repayment amount has been updated based on how much you can afford. </p> -->
+
+        <!-- <h2 class="govuk-heading-m">Tell us your financial situation</h2>
+
+
+        <p>Tell us  <a href="financial-situation-update"> your current financial situation.</a>  </p>
+        <p>We will use this information to understand your financial situation better. This information will help us improve our processess & services.</p>
+ -->
+
+
+
+        <p>If you already have a payment due in the next 7 days, your Universal Credit account may not show the updated amount until next month.
+
+</p>
+
+
+   <!--     <h2 class="govuk-heading-m">Plan summary</h2>
+
+	  <table class="govuk-table mb40">
+										  <caption class="govuk-table__caption"><span class="visually-hidden">Payment summary</span></caption>
+
+										  <tbody class="govuk-table__body">
+
+
+											<tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">New Direct Debit amount</th>
+										      <td class="govuk-table__cell" colspan="2">
+
+										       &pound;{{ data['change-amount'] }}
+
+										      </td>
+
+
+											 </tr>
+
+
+											<tr class="govuk-table__row">
+												  <th scope="row" class="govuk-table__header">Next payment</th>
+												  <td class="govuk-table__cell" colspan="2">
+
+												   {% if data['paymentChoices']=='12Month'%}
+
+												   &pound;125.00
+
+												   {% elif data['paymentChoices']=='24Month'%}
+
+												   &pound;63.00
+
+												   {% elif data['paymentChoices']=='36Month'%}
+
+												   &pound;42.00
+
+												   {% elif data['paymentChoices']=='48Month'%}
+
+												   &pound;31.50
+
+												   {% elif data['paymentChoices']=='72Month'%}
+
+												   &pound;21.00
+
+												   {% elif data['paymentChoices']=='25Month'%}
+
+												   &pound;15.00
+
+
+												   {% else %}
+
+
+
+												   {% endif %} on 6 July 2021
+
+
+												  </td>
+
+
+												 </tr>
+
+
+
+
+
+
+
+
+
+										  </tbody>
+										</table> -->
+
+
+									<!--	<p>Your payments will show on your bank statement as <b>CEN REC GROUP DD</b>.</p> -->
+
+
+
+
+	<form class="form" action="signOut" method="post">
+		  <fieldset class="visually-hidden">
+			<legend>Hidden field</legend>
+
+			<div>
+				<input id="yesChange" name="deductionChange" type="radio" value="DyesChange-setupDone" checked="checked">
+				<label for="yesChange">Yes</label>
+			  </div>
+
+			  <div>
+				<input id="noChange" name="deductionChange" type="radio" value="DnoChange">
+				<label for="noChange">No</label>
+			  </div>
+
+			  </fieldset>
+
+			  <button class="govuk-button mt20 mb20" data-module="govuk-button">Finish and sign out</button>
+
+
+
+			 </form>
+
+
+
+
+<!--<p><a href="indexGuard" class="govuk-button">Finish</a></p>-->
+
+
+
+
+
+       <!-- <p class="govuk-body">
+          <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+        </p> -->
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

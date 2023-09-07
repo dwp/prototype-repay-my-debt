@@ -1,0 +1,177 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+									<span class="govuk-caption-xl">Ashley Chamberlain</span>
+									<h1 class="govuk-heading-xl mb30">
+									You now have 30 days left to do your payment review</h1>
+
+
+<p class="">It is important to do your review otherwise you payments will go back up.</p>	
+											
+
+										<div class="flexibleBanner">
+
+
+											<ul class="govuk-list">
+	
+												<li>
+													<h3>Your review must be completed by:</h3>
+
+
+														<b>30 November 2023</b>
+
+
+
+												</li>
+											</ul>
+											
+											
+											
+											
+											</div>
+											
+						
+								
+										<!--<p>We will ask you questions to understand how much you can afford and see if your payments need to change.</p>-->
+										
+										
+										
+									<form class="form" action="reviewPortal" method="post">
+											
+											
+									
+							
+										
+										<div class="govuk-form-group">
+											  <fieldset class="govuk-fieldset">
+												<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+												  <h1 class="govuk-heading-m">
+												
+												   What do you want to do?
+												  </h1>
+												</legend>
+											   
+												<div class="govuk-radios">
+												
+												<div class="govuk-radios__item">
+													<input class="govuk-radios__input" id="reviewYes" name="reviewChoice" type="radio" value="reviewYes">
+													<label class="govuk-label--s govuk-radios__label" for="reviewYes">
+													I want to do my review
+													</label>
+													<span class="govuk-hint govuk-radios__hint">
+														This will take approximately 5 minutes to complete.
+														</span>
+												   
+												  </div>
+												  
+												  
+												  
+											<!--	  <div class="govuk-radios__item">
+														<input class="govuk-radios__input" id="reviewClear" name="reviewChoice" type="radio" value="reviewClear">
+														<label class="govuk-label--s govuk-radios__label" for="reviewClear">
+														I want to clear the amount I owe
+														</label>
+														<span class="govuk-hint govuk-radios__hint">
+														   A payment will be taken which will clear the amount you owe and a review will no longer be needed.
+															</span>
+													   
+													  </div>-->
+												  
+							
+												  
+												  <div class="govuk-radios__item">
+													  <input class="govuk-radios__input" id="reviewNo" name="reviewChoice" type="radio" value="reviewNo">
+													  <label class="govuk-label--s govuk-radios__label" for="reviewNo">
+													  I want to continue to my account home
+													  </label>
+													  <span class="govuk-hint govuk-radios__hint">
+														  View your account and do your review at a later date.
+														  </span>
+													 
+													</div>
+							
+												  
+												</div>
+											  </fieldset>
+											</div>
+										
+										<button class="govuk-button" data-module="govuk-button">
+										  Continue
+										</button>
+										</form>
+										
+								<!--		<form class="form" action="reviewPortal" method="post">
+										
+										
+										
+										
+										<div class="govuk-form-group mt30">
+											  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+												<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+												  <h1 class="govuk-fieldset__heading">
+													Do you want to do your review now?
+												  </h1>
+												</legend>
+								
+											
+												<div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+												  <div class="govuk-radios__item">
+													<input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+													<label class="govuk-label govuk-radios__label" for="changed-name">
+													  Yes
+													</label>
+												  </div>
+												  <div class="govuk-radios__item">
+													<input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+													<label class="govuk-label govuk-radios__label" for="changed-name-2">
+													  No
+													</label>
+												  </div>
+												</div>
+											
+											
+											<button class="govuk-button mt20" data-module="govuk-button">Continue</button>
+											
+											  </fieldset>
+											</div>
+											
+
+											</form> -->
+
+							
+
+
+
+										<!--// Struggling to pay end -->
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

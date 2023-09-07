@@ -1,0 +1,112 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		   <form class="form" action="targetFlow" method="post">
+
+		       
+												    
+												    
+												    
+												    
+					<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <span class="govuk-caption-xl">Step 1 of 3</span>
+			   	 Do you want to set a target amount to aim for each month</h1>
+    </legend>
+    
+    
+     <div class="govuk-inset-text mt0">
+												
+											<p>Targets are guides showing when you could be debt free &ndash; how much you pay towards your target each month is up to you.</p>
+											<p> You can make multiple payments in a month to meet your target.</p>
+											<p>Paying less than a target each month is acceptable but paying regular low amounts means that we will contact you to discuss your situation.</p> 
+												
+							
+												    </div> 
+
+
+
+
+
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="targetYes" name="targetChoice" type="radio" value="target-yes" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="targetYes">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        
+        <fieldset class="govuk-fieldset">
+											          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+												      <h1 class="govuk-fieldset__heading">
+												        Enter the amount you want to aim for each month
+												      </h1>
+												    </legend>
+			
+													
+											          <div id="example-question" class="form-group inline">
+											            <span class="c-form-input-denote govuk-body">£</span>
+											            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="payment-amount-target">
+											          </div>
+										
+										          </fieldset>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="targetNo" name="targetChoice" type="radio" value="target-no" data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-radios__label" for="targetNo">
+          No
+        </label>
+      </div>
+            
+    </div>
+
+  </fieldset>
+</div>							    
+	    
+							
+																							
+											<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form>
+				
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

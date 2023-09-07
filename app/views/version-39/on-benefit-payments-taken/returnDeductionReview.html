@@ -1,0 +1,105 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+			   <h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+			   <p>What you owe:
+					   <span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+		<div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+
+			
+
+			  <h1 class="govuk-heading-xl">
+				  <span class="govuk-caption-xl">Payment review</span>
+			  Further reviews
+			  </h1>
+			  
+			  
+			  <p>You will need to do another payment review within the next 12 months.</p>
+			
+			<div class="flexibleBanner">
+
+				<ul class="govuk-list">
+
+			<!--	<li>
+						<h3>New payment amount</h3>
+						<b>										    
+			 &pound;{{ data['newDeductedAmount'] }}
+				
+				</b>
+					</li> -->
+
+					<li>
+						<h3>Next review due by:</h3>
+						<b>
+					November 2024
+						
+						
+						</b>
+					</li>
+
+					
+				</ul>
+				
+				</div>	
+				
+				
+		
+				<div class="govuk-warning-text mt40">
+					  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+					  <strong class="govuk-warning-text__text">
+						<span class="govuk-warning-text__assistive">Warning</span>
+						If you do not complete your next review, your payments will go back up.
+					  </strong>
+					</div>										
+			
+				
+				
+				<!--<p>How the review works:</p>
+			
+				  <ul class="govuk-list govuk-list--bullet">
+					 <li>we will send you a letter with details of when your review will take place and instructions to sign in to your account</li>
+					<li>you will then have 4 weeks to do your review</li>
+					<li>during the review we will ask you questions to understand if your situation has changed and see how much you can afford</li>
+					
+					
+				  </ul>-->
+				
+				
+				
+			
+
+			
+		<!--<div class="govuk-inset-text">
+	If you're struggling with your payments, you can sign in to your account and do a review at any time.
+			</div>-->
+
+			
+			
+		<p class="mt30"><a href="returnDeductionSummary" class="govuk-button">
+			Continue
+		  </a></p>
+
+
+	</div>
+</div>
+
+{% endblock %}

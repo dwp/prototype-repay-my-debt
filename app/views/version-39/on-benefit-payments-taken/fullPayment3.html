@@ -1,0 +1,136 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+
+	   <div class="govuk-grid-row">
+   
+		   <div class="govuk-grid-column-three-quarters">
+
+
+
+
+									{% if data['payment-options']=='full-amount'%}
+									
+									
+								
+								
+								
+										<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+									
+									
+									
+									<h1 class="govuk-heading-xl">Pay the full amount</h1>
+								
+								
+									  {% include "includes/amountOwed2.html" %} 
+								
+									
+								   
+										<form class="form" action="#" method="post">
+
+										<p>Make sure you have enough money in your account to cover this payment.</p>
+	
+							<p>Credit card payments will incur extra charges, debit card payments will not.</p>
+	
+										<p><a href="fullFinish" class="govuk-button">
+										  Continue to pay
+										</a></p>
+										</form>
+										
+
+
+										<!--// Full amount end -->
+
+
+
+{% elif data['payment-options']=='no-plan'%}
+
+
+
+	<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+<h1 class="govuk-heading-xl">
+	Make a single payment</h1>
+ 
+<p>You can make a single payment at anytime to reduce the amount you owe without setting up a plan.</p>
+
+
+
+
+<div class="govuk-warning-text">
+	<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+	<strong class="govuk-warning-text__text">
+	<span class="govuk-warning-text__assistive">Warning</span>
+	You will need to remember to sign in and make a payment each month.
+	</strong>
+	</div>
+	
+
+
+
+<div class="govuk-inset-text">You can still set up a payment plan at a later date.</div>
+
+
+
+	 <p><a href="oneOffPay" class="govuk-button">
+	   Continue
+	 </a></p>
+
+
+
+
+
+
+								
+									{% else %}
+
+
+
+
+	<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+											<h1 class="govuk-heading-xl">Set up a payment plan</h1>
+							
+					
+<!--<p>Set up a payment plan based on how much you can afford and choose to pay in a way that suits you &ndash; either by Direct Debit or flexible payments.</p>-->
+
+<!--<p>If you set up a plan, you can:</p>
+<ul class="govuk-list govuk-list--bullet">
+	   <li>manage your plan by changing your payments</li>
+	   <li>pay additional amounts</li>
+	   <li>get help and support</li>
+	   </ul>-->
+
+						
+										 <p>Once your plan is setup, you can sign in to view or manage your plan, pay additional amounts or get help and support.
+														 </p>
+														 
+													
+										
+
+<p><a href="directLowAmount" class="govuk-button">
+										  Continue
+										</a></p>
+						
+
+	 
+
+
+									{% endif %}
+
+
+</div>
+</div>
+
+
+
+{% endblock %}

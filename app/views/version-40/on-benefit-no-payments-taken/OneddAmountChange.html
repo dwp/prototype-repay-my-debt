@@ -1,0 +1,169 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+{% if data['paymentChoices']=='lowPayments'%}
+
+
+<form class="form" action="changePlanOutcome" method="post">
+
+
+
+<div class="govuk-form-group">
+	  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+		<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+		  <h1 class="govuk-fieldset__heading">
+			<span class="govuk-caption-xl">Step 1 of 3</span>
+			Do you want to change your Direct Debit monthly amount?
+		  </h1>
+		</legend>
+
+		<div class="govuk-radios govuk-radios--inline">
+		  <div class="govuk-radios__item">
+			<input class="govuk-radios__input" id="lowAmountChangeYes" name="lowAmountChange" type="radio" value="lowAmountChangeYes">
+			<label class="govuk-label govuk-radios__label" for="lowAmountChangeYes">
+			  Yes
+			</label>
+		  </div>
+		  <div class="govuk-radios__item">
+			<input class="govuk-radios__input" id="lowAmountChangeNo" name="lowAmountChange" type="radio" value="lowAmountChangeNo">
+			<label class="govuk-label govuk-radios__label" for="lowAmountChangeNo">
+			  No
+			</label>
+		  </div>
+		</div>
+	
+	  </fieldset>
+	</div>
+
+
+
+
+	
+	
+	
+	
+	<button class="govuk-button" data-module="govuk-button">
+	  Continue
+	</button>
+	</form>
+
+
+
+
+
+
+
+
+
+{% else %}
+
+										<form class="form" action="OneddChangeSummary" method="post">
+											
+											
+											
+						<div class="govuk-form-group">
+							  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+								<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+								  <h1 class="govuk-fieldset__heading">
+									<span class="govuk-caption-xl">Step 1 of 3</span>
+									Do you want to change your Direct Debit monthly amount?
+								  </h1>
+								</legend>
+
+								<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+								  <div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="yesAmountChange" name="amountChange" type="radio" value="yesAmountChange" data-aria-controls="conditional-contact">
+									<label class="govuk-label govuk-radios__label" for="yesAmountChange">
+									  Yes
+									</label>
+								  </div>
+								  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+									  
+									  
+									<div class="govuk-form-group">
+										  <fieldset class="govuk-fieldset" aria-describedby="pay-hint">
+											  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+											  <h2 class="govuk-fieldset__heading">
+							
+											   Enter a new monthly amount 
+											  </h2>
+											</legend>
+											
+										 <!--  <div id="pay-hint" class="govuk-hint mb20">
+										  You can make multiple payments in a month to meet your target
+											</div> -->
+
+
+											 <div id="example-question" class="form-group inline">
+												<span class="c-form-input-denote govuk-body">£</span>
+												<input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="change-amount">
+											  </div>
+
+										  </fieldset>
+									</div>
+							
+								  </div>
+								  <div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="noAmountChange" name="amountChange" type="radio" value="noAmountChange">
+									<label class="govuk-label govuk-radios__label" for="noAmountChange">
+									  No
+									</label>
+								  </div>
+								  
+								  
+								</div>
+							
+							  </fieldset>
+							</div>					
+											
+											
+											
+											
+											
+											
+											
+											
+
+
+										
+
+
+											<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form>
+
+{% endif %}
+
+
+						
+
+
+    </div>
+</div>
+
+{% endblock %}

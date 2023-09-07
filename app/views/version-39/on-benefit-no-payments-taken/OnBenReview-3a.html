@@ -1,0 +1,181 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+What this will mean for your repayments
+
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+{% block content %}
+
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+
+
+<h1 class="govuk-heading-xl">
+  <span class="govuk-caption-xl">Manage your repayments</span>
+
+		What this will mean for your repayments </h1>
+
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+    <div class="flexible-banner-playback">
+      <ul class="govuk-list">
+
+
+        <li>
+          <h3>Monthly repayment:</h3>
+          <span id="new-debts-amount"><b>&pound;{{ data['newDeductedAmount'] }}</b></span>
+          <p><a href="onBenReview-2">Change</a></p>
+        </li>
+
+      </ul>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+    <table class="govuk-table">
+
+
+  <caption class="govuk-table__caption govuk-table__caption--m govuk-!-padding-bottom-4">DWP repayments
+</caption>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total amount left to pay
+
+      </th>
+      <td class="govuk-table__cell govuk-table__cell">&pound;1,300</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Monthly repayment
+        <!-- <div id="sign-in-hint" class="govuk-hint">
+ These appear under Debts and loans repayments on your Universal Credit statement.
+        </div></th> -->
+
+      <td class="govuk-table__cell govuk-table__cell">&pound;{{ data['newDeductedAmount'] }}</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Estimated repayments remaining
+        </th>
+
+      <td class="govuk-table__cell govuk-table__cell"><script>
+        function divide(num) { return num.toFixed(2); }
+
+        var  num1 = 1300.00;
+
+        var num2 = {{ data['newDeductedAmount'] }};
+
+        var  result = Math.floor(num1 / num2);
+         document.write(result);
+      </script></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Expected final repayment date
+        <!-- <div id="sign-in-hint" class="govuk-hint">
+          This date may change based on when your next payment is taken
+        </div> -->
+      </th>
+
+      <td class="govuk-table__cell govuk-table__cell">
+        <script>
+          var  num1 = 1300.00;
+          var num2 = {{ data['newDeductedAmount'] }};
+          var x = Math.floor(num1 / num2); //or whatever offset
+          var CurrentDate = new Date();
+          console.log("Current date:", CurrentDate);
+          CurrentDate.setMonth(CurrentDate.getMonth() + x);
+           document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+        </script>
+      </td>
+    </tr>
+
+
+  </tbody>
+</table>
+<div class="govuk-body">
+No more than &pound;{{ data['newDeductedAmount'] }} will be taken to repay: <br>
+<ul>
+  <li>  benefit overpayments and budgeting loans </li>
+  <li>  recoverable hardship payments  </li>
+</ul>
+</div>
+
+<!-- <div class="govuk-inset-text">
+
+
+<p>Find out more about <a href="https://www.gov.uk/guidance/find-out-about-money-taken-off-your-universal-credit-payment" target="_blank" class="gouvk-link">money taken off your Universal Credit payment (opens in new tab)</a>.</p>
+</div> -->
+<!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"> -->
+<!--
+<div class="govuk-grid-row ">
+
+   <div class="govuk-grid-column-full">
+     <h2 class="govuk-heading-m govuk-!-padding-bottom-4">Universal Credit advance repayments
+     </h2>
+<!-- <table class="govuk-table">
+
+
+
+
+<tbody class="govuk-table__body">
+
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header" style="width:75%;" >Your Universal Credit repayment
+
+    </th>
+    <td class="govuk-table__cell govuk-table__cell">&pound;20.00</td>
+  </tr>
+
+
+
+</tbody>
+</table>
+<div class="flexible-banner-grey">
+  <ul class="govuk-list">
+    <li>
+      <h3>Your Universal Credit repayment:
+</h3>
+      <span id="new-debts-amount"><b>
+      &pound;20.00
+        </b></span>
+    </li>
+
+  </ul>
+
+</div>
+<p>Universal Credit take up to £20.00 off your payment to repay any current advances. If you have any questions about this, you'll need to contact Universal Credit.</p>
+
+  <p>
+  </p>
+
+
+</div>
+</div> -->
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+    <div class="govuk-button-group">
+										<a href="deductionReview" class="govuk-button mb0">Continue</a>
+
+                    </div>
+
+
+    </div>
+</div>
+
+
+{% endblock %}

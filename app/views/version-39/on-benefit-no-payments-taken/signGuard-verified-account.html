@@ -1,0 +1,96 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+Sign in to your Repay and manage benefit money you owe account
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+
+
+    <!-- <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span> -->
+
+    <div class="flexible-banner-float-none govuk-body">
+      You'll need to have a text message or letter from DWP or a message in your Universal Credit journal inviting you to use this service.
+    </div>
+    <form class="form" action="/on-benefit-no-payments-taken/how-do-want-access" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Sign in to your Repay and manage benefit money you owe account
+
+            </h1>
+          </legend>
+
+
+<br>
+
+
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="inSecurity" name="access-option" type="radio" aria-describedby="sign-in-2-item-hint" value="security-code">
+              <label class="govuk-label govuk-radios__label" for="inSecurity">
+                <b>Sign in with a security code </b>
+              </label>
+              <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+You can sign in using a security code if you have one.
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="inRegister" name="access-option" type="radio" value="repay-account" aria-describedby="sign-in-item-hint">
+              <label class="govuk-label govuk-radios__label" for="inRegister">
+                <b>Sign in with your verified account</b>
+              </label>
+              <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                You can sign in with the details you used when you created your verified account.
+
+              </div>
+            </div>
+
+
+
+
+
+          </fieldset>
+          <br>
+          <!-- <div class="govuk-inset-text">
+            <p class="govuk-heading-m">Repay and manage benefit money you owe account </p>
+            <p>To protect you from fraud, you need to setup a verified account so that you can sign in securely each time you visit.</p>
+            <p>You can <a href="register-new-account">register for a verified account </a>  if you do not have one.</p>
+
+          </div> -->
+          <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What is a verified account?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>To protect you from fraud, you need to setup a verified account so that you can sign in securely each time you visit.</p>
+
+
+<p>You can <a href="register-new-account">register for a verified account </a>  if you do not have one.</p>
+
+  </div>
+</details>
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  {% endblock %}

@@ -1,0 +1,72 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+
+
+	   <h1 class="govuk-heading-xl">Make a payment</h1>
+		
+		
+					<div class="govuk-inset-text">
+ Total amount owed: <span class="total-amount">&pound;580.00</span>
+ </div>
+
+
+									<form class="form" action="paymentDetail-alt" method="post">
+
+
+											<div class="govuk-form-group">
+										          <fieldset class="govuk-fieldset">
+											          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+												      <h1 class="govuk-fieldset__heading">
+												        How much do you want to pay?
+												      </h1>
+												    </legend>
+												    
+												 <!--  aria-describedby="pay-hint" <div id="pay-hint" class="govuk-hint mb20">
+												   The minimum payment amount is £5.00
+												   </div> -->
+
+
+											         <div id="example-question" class="form-group inline">
+											            <span class="c-form-input-denote govuk-body">£</span>
+											            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="payment-amount">
+											          </div>
+
+										          </fieldset>
+									        </div>
+
+
+											<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form>
+
+    </div>
+</div>
+
+{% endblock %}

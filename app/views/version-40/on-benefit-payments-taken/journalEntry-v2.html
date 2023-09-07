@@ -1,0 +1,115 @@
+
+{% extends "layout-2.html" %}
+
+{% block pageTitle %}
+Journal entries - Universal Credit
+{% endblock %}
+
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+
+
+
+
+
+    <div class="govuk-grid-row uc-layout">
+      <div class="govuk-grid-column-one-third" style="background-color: #f2f2f2;">
+        <p>Home</p>
+      </div>
+      <div class="govuk-grid-column-one-third" style="background-color: #f2f2f2;">
+        <p>To-do</p>
+      </div>
+      <div class="govuk-grid-column-one-third" style="background-color: #1d70b8;">
+        <p class="active">Journal</p>
+      </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+    <h2 class="govuk-heading-xl govuk-!-margin-bottom-5">Journal </h2>
+
+    <p>Use your journal to:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>add details about your work search</li>
+      <li>leave messagvbes for Universal Credit</li>
+      <li>view your Universal Credit account history</li>
+    </ul>
+
+    <p>If your message needs a reply, we'll respond during office hours <br> (Monday to Friday, 8am to 6pm).</p>
+
+    <p class="mb20"><a href="#" class="govuk-button mb10">Add a journal entry</a></p>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-5">Journal entries</h2>
+
+
+      <table class="govuk-table ">
+
+           <caption class="visually-hidden">Plan summary</caption>
+
+           <thead class="govuk-table__head">
+             <tr class="govuk-table__row">
+             <th scope="col" class="govuk-table__header" style="width:25%;">Date and time</th>
+             <th scope="col" class="govuk-table__header" style="width:60%;">Message</th>
+             <th scope="col" class="govuk-table__header">Added by</th>
+
+             </tr>
+           </thead>
+
+
+            <tbody class="govuk-table__body">
+
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">01 April 2023 at 10:00am</td>
+                <td class="govuk-table__cell">
+                  <p>Hi Ashley Chamberlain, </p><p>As you are repaying money to DWP, you can use the new Repay and manage benefit money your owe service. </p>
+
+                	<p>Go to <strong>https://www.gov.uk/repay-manage-benefit-owed </strong> or go to the GOV.UK website and search for repay and manage benefit money then sign in to your account using security code <strong>3005487625</strong>, along with your <strong>date of birth. </strong></p>
+                  <p>Read the attached letter for more details
+                  <a href="/public/downloads/Repay-and-manager-benefit-invitation-letter.pdf" target="_blank">Repay-and-manager-benefit-invitation-letter.pdf</a> (opens in new tab)</p></td>
+                <td class="govuk-table__cell"">Bob Sellock</td>
+
+                 </tr>
+
+
+                 <tr class="govuk-table__row">
+                   <td class="govuk-table__cell">07 January 2023 at 11:20am</td>
+                   <td class="govuk-table__cell"><a href="#">Advance payment approved</a></td>
+                   <td class="govuk-table__cell"">Bob Sellock</td>
+
+                  </tr>
+
+
+            </tbody>
+
+      </table>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

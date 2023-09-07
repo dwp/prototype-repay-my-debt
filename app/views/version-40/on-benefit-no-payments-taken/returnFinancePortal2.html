@@ -1,0 +1,187 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+	
+
+
+	   
+	   <div class="govuk-grid-row">
+	  
+		 <div class="govuk-grid-column-three-quarters">
+	   
+	  <span class="back-link"> <a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+	  
+
+			
+	{% if data['financeSitu']=='financeSituImprove'%}		
+	
+	<form class="form" action="returnImprovedPortal" method="post">
+			
+		<div class="govuk-form-group">
+			  <fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+				  <h1 class="govuk-fieldset__heading">
+					  <span class="govuk-caption-xl">Payment review</span>
+					What do you want to do?
+				  </h1>
+				</legend>
+				<div class="govuk-radios" data-module="govuk-radios">
+				  <div class="govuk-radios__item">
+					<input class="govuk-radios__input" id="actionFinanceIncrease" name="actionFinance" type="radio" value="actionFinanceIncrease">
+					<label class="govuk-label govuk-radios__label" for="actionFinanceIncrease">
+					  Increase my payments
+					</label>
+				  </div>
+				  <div class="govuk-radios__item">
+					<input class="govuk-radios__input" id="actionFinanceKeep" name="actionFinance" type="radio" value="actionFinanceKeep">
+					<label class="govuk-label govuk-radios__label" for="actionFinanceKeep">
+					 Keep my payments the same
+					</label>
+				  </div>
+				  <!--<div class="govuk-radios__item">
+					  <input class="govuk-radios__input" id="actionFinancelower" name="actionFinance" type="radio" value="actionFinancelower">
+					  <label class="govuk-label govuk-radios__label" for="actionFinanceLower">
+					   Lower my payment plan
+					  </label>
+					</div>-->
+		
+				</div>
+			
+			  </fieldset>
+			</div>
+			
+			<button class="govuk-button" data-module="govuk-button">
+				  Continue
+				</button>
+	</form>	
+			
+		{% else %}		
+		
+		<form class="form" action="returnReviewOutcome" method="post">
+				
+			<div class="govuk-form-group">
+				  <fieldset class="govuk-fieldset" aria-describedby="worse-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+					  <h1 class="govuk-fieldset__heading">
+						<span class="govuk-caption-xl">Payment review</span>
+						Why is your financial situation worse?
+					  </h1>
+					</legend>
+					<div id="worse-hint" class="govuk-hint">
+					  Select all options that are relevant to you.
+					</div>
+					
+					<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+						
+					  <div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+						<label class="govuk-label govuk-checkboxes__label" for="contact">
+						 Increased loan or credit card payments
+						</label>
+					  </div>
+					  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+						<div class="govuk-form-group">
+							  <label class="govuk-label" for="more-detail">
+								Can you provide more detail?
+							  </label>
+							  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+							</div>
+					  </div>
+					  
+					  <div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
+						<label class="govuk-label govuk-checkboxes__label" for="contact-2">
+						 Loss of employment or reduced working hours
+						</label>
+					  </div>
+					  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-2">
+						<div class="govuk-form-group">
+							  <label class="govuk-label" for="more-detail">
+								Can you provide more detail?
+							  </label>
+							  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+							</div>
+					  </div>
+					  
+					  <div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
+						<label class="govuk-label govuk-checkboxes__label" for="contact-3">
+						  Increase in living costs
+						</label>
+					  </div>
+					  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-3">
+						<div class="govuk-form-group">
+							  <label class="govuk-label" for="more-detail">
+								Can you provide more detail?
+							  </label>
+							  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+							</div>
+					  </div>
+					  
+					  <div class="other-reason-open govuk-body">Or</div>
+					  
+					  <div class="govuk-checkboxes__item">
+						  <input class="govuk-checkboxes__input" id="contact-4" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-4">
+						  <label class="govuk-label govuk-checkboxes__label" for="contact-4">
+							Other
+						  </label> 
+						</div>
+						<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-4">
+						  <div class="govuk-form-group">
+								<label class="govuk-label" for="more-detail">
+								  Provide more details
+								</label>
+								<textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+							  </div>
+						</div>
+						
+						
+					  
+					</div>
+					
+					
+					
+				
+				  </fieldset>
+				</div>
+				
+				<button class="govuk-button" data-module="govuk-button">
+					  Continue
+					</button>
+		</form>	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				
+		{% endif %}		
+					
+				  
+	</div>
+</div>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,150 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+
+
+	   <form class="form" action="directDebitDetailsTemp" method="post">
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+
+
+
+			<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+      	<span class="govuk-caption-xl">Step 2 of 5</span>
+        Would you like to sign up for helpful reminders?
+      </h1>
+    </legend>
+   <!-- <span id="how-contacted-conditional-hint" class="govuk-hint">
+				      We will contact you each month to let you know a payment is due
+				    </span> -->
+				    
+	
+	<div class="govuk-inset-text mt0 mb20">
+
+								<p>We will send you a message each month to remind you that you can increase your payment plan or pay additional amounts.</p>
+								
+				   
+				   				    </div> 		
+				   				    
+				   				    	<!--<div class="govuk-inset-text mt0 mb20">
+				   				    If you have not made a payment by the middle of the month or by the end of the month, you will receive a message to remind you.
+				   				    	</div>-->
+				   				    	    
+				    
+				    
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="yesReminder" data-aria-controls="conditional-how-contacted-conditional">
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
+
+
+		  	<fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        How would you like to be contacted?
+      </h1>
+    </legend>
+
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="citizenship-conditional" name="citizenChoice" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional">
+        <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional">
+          Email
+        </label>
+      </div>
+      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-email">
+            Email address
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
+        </div>
+
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="citizenChoice" type="checkbox" value="textMessage" data-aria-controls="conditional-citizenship-conditional-3">
+        <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
+          Text message
+        </label>
+      </div>
+      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-3">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-text">
+            UK mobile phone number
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="contact-by-text" name="contact-by-text" type="tel">
+        </div>
+
+      </div>
+    </div>
+  </fieldset>
+
+
+      </div>
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="noReminder" data-aria-controls="conditional-how-contacted-conditional-2">
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+          No
+        </label>
+      </div>
+
+  </fieldset>
+</div>
+
+
+
+
+
+
+
+
+			<button class="govuk-button" data-module="govuk-button">
+			  Continue
+			</button>
+			</form>
+			
+	
+			
+
+    </div>
+</div>
+
+{% endblock %}

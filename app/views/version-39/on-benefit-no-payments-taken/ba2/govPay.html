@@ -1,0 +1,228 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+	   <span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+					<h1 class="govuk-heading-xl">
+						Enter card details</h1>
+					
+					
+					<div class="govuk-inset-text">
+						<h2 class="govuk-heading-m">
+							Payment summary</h2>
+							<p>Your payment to DWP Debt Management</p>
+						 <p>Total amount: <span class="total-amount">&pound;{{ data['ba-amount'] }}</span>
+						 </div>
+					
+					
+					 <form class="form" action="finish" method="post">
+			
+						<fieldset class="govuk-fieldset">
+							<legend class="visually-hidden">
+								Enter card details
+							</legend>
+				
+						<div class="govuk-form-group">
+						  <label class="govuk-label govuk-label--s" for="accountName">
+							Card number
+						  </label>
+						  <div id="card-number-hint" class="govuk-hint">
+							  
+							  
+							  <details class="govuk-details mt0 mb0" data-module="govuk-details">
+									<summary class="govuk-details__summary">
+									  <span class="govuk-details__summary-text">
+									 Accepted credit and debit card types
+									  </span>
+									</summary>
+									<div class="govuk-details__text">
+									
+								  <ul class="govuk-list govuk-list--bullet">
+									<li>American express</li>
+									<li>Visa</li>
+									<li>Mastercard</li>
+								  </ul>
+
+						  
+									</div>
+								  </details>
+							  
+							</div>
+			
+						  <input class="govuk-input govuk-input--width-30" id="accountName" name="accountName" type="text">
+			
+						</div>
+						
+						
+						
+						
+						<div class="govuk-form-group">
+							  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+								<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+								  <h2 class="govuk-fieldset__heading">
+									Expiry date
+								  </h2>
+								</legend>
+								<div id="passport-issued-hint" class="govuk-hint">
+								  For example, 10/24
+								</div>
+								<div class="govuk-date-input" id="passport-issued">
+
+								  <div class="govuk-date-input__item">
+									<div class="govuk-form-group">
+									  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+										Month
+									  </label>
+									  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+									</div>
+								  </div>
+								  <div class="govuk-date-input__item">
+									<div class="govuk-form-group">
+									  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+										Year
+									  </label>
+									  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+									</div>
+								  </div>
+								</div>
+							
+							  </fieldset>
+							</div>
+						
+						
+						
+						
+						
+						<div class="govuk-form-group">
+							  <label class="govuk-label govuk-label--s" for="cardName">
+								Name on card
+							  </label>
+
+				
+							  <input class="govuk-input govuk-input--width-30" id="cardName" name="cardName" type="text">
+				
+							</div>
+							
+							
+							
+							<div class="govuk-form-group">
+								  <label class="govuk-label govuk-label--s" for="paymentDay">
+									Card security code
+								  </label>
+								  <div id="card-security-hint" class="govuk-hint">
+									  The last 3 digits on the back of the card
+								  </div>
+								  <input class="govuk-input govuk-date-input__input govuk-input--width-3" id="paymentDay" name="paymentDay" type="text" pattern="[0-9]*" inputmode="numeric">
+								</div>
+
+						
+						</fieldset>
+						
+						
+						<hr> 
+						
+						
+						<fieldset class="govuk-fieldset mt40">
+							  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+								<h1 class="govuk-fieldset__heading">
+								  Billing address
+								</h1>
+							  </legend>
+							  
+							  <p class="govuk-hint mb30">This is the address associated with the card</p>
+							  
+							  <div class="govuk-form-group">
+								  <label class="govuk-label" for="country">
+									Country or territory
+								  </label>
+								  <input class="govuk-input govuk-!-width-two-thirds" id="country" name="country" type="text" autocomplete="address-level2">
+								</div>
+							
+							  <div class="govuk-form-group">
+								<label class="govuk-label" for="address-line-1">
+								  Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+								</label>
+								<input class="govuk-input govuk-input--width-30" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+							  </div>
+							
+							  <div class="govuk-form-group">
+								<label class="govuk-label" for="address-line-2">
+								  <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+								</label>
+								<input class="govuk-input govuk-input--width-30" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
+							  </div>
+							
+							  <div class="govuk-form-group">
+								<label class="govuk-label" for="address-town">
+								  Town or city
+								</label>
+								<input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
+							  </div>
+							
+							  <div class="govuk-form-group">
+								<label class="govuk-label" for="address-postcode">
+								  Postcode
+								</label>
+								<input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+							  </div>
+							
+							</fieldset>
+							
+							
+							
+							<hr> 
+							
+							
+							<fieldset class="govuk-fieldset mt40">
+								  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+									<h1 class="govuk-fieldset__heading">
+									  Contact details
+									</h1>
+								  </legend>
+								  
+								  <p class="govuk-hint mb30">We'll send your payment confirmation here</p>
+								  
+								  <div class="govuk-form-group">
+									  <label class="govuk-label" for="email">
+										Email
+									  </label>
+									  <input class="govuk-input govuk-!-width-two-thirds" id="email" name="email" type="text">
+									</div>
+
+								
+								</fieldset>
+						
+						
+						
+						<button class="govuk-button" data-module="govuk-button">Continue</button>
+			
+						
+					 </form>
+
+
+    </div>
+</div>
+
+{% endblock %}
