@@ -42,7 +42,7 @@ Account home
 
     </div>
 
-    
+
 
     <!--<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
       data-module="govuk-notification-banner">
@@ -373,6 +373,34 @@ Account home
 
 
 
+      <div class="govuk-grid-column-one-half">
+
+        <div class="scenario-panel">
+          <h2 class="govuk-heading-s">Messages</h2>
+
+          <div class="scenario-inner-panel">
+            <p>Click the button below to view all of your messages.</p>
+
+
+            {% if data['deductionChange']=='DyesChange'%}
+
+            <span class="mb110">
+              {% else %}
+              <span>
+                {% endif %}
+                <a href="indexAccountHome-onoff-inbox" class="secondary-invert">Inbox</a></span>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+
+
     </div>
 
 
@@ -382,11 +410,11 @@ Account home
 </div>
 
 
-<h4 class="govuk-heading-m">Messages</h4>
+<!--<h4 class="govuk-heading-m">Messages</h4>
 
-<!-- <h4 class="govuk-heading-s">Universal Credit</h4> -->
+<h4 class="govuk-heading-s">Universal Credit</h4>
 
-<p>Click<a href="indexAccountHome-mock-up-messagepage-on"> here</a> to read your messages.</p>
+<p>Click<a href="indexAccountHome-mock-up-messagepage-on"> here</a> to read your messages.</p>-->
 
 
 
