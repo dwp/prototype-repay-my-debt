@@ -48,13 +48,13 @@ Account home
       data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Important information
+          You have a new message
         </h2>
       </div>
       <div class="govuk-notification-banner__content">
         <p class="govuk-notification-banner__heading">
-          You have a new message. Click
-          <a class="govuk-notification-banner__link" href="indexAccountHome-onoff-message">here</a> to read it.
+          Your repayments are changing.
+          <a class="govuk-notification-banner__link" href="indexAccountHome-onoff-message-off-to-on">View message</a>.
         </p>
       </div>
     </div>
@@ -73,30 +73,11 @@ Account home
           <div class="scenario-inner-panel">
 
 
+            <p>As you have made a new claim, we will be deducting money from your benefits.</p>
 
-            {% if data['setupDone']=='returning user'%}
-
-            <div class="govuk-inset-text">
-
-              <p>Ha ha ha...No payments have been taken yet. You do not need to set up a payment plan.</p>
-
-
-            </div>
-
-            {% else %}
-
-
-            <div class="govuk-inset-text">
-
-              <p>Your repayments have not started yet. These will be deducted automatically from your Universal
-                Credit.
-              </p>
-
-
-            </div>
-            {% endif %}
-
-
+            <br>
+            <br>
+            <br>
 
             <!--<p>As you are in a joint claim with your partner, the deductions from your benefits will be used to repay any money you both owe.</p> -->
 
@@ -376,10 +357,10 @@ Account home
       <div class="govuk-grid-column-one-half">
 
         <div class="scenario-panel">
-          <h2 class="govuk-heading-s">Messages</h2>
+          <h2 class="govuk-heading-s">Your messages</h2>
 
           <div class="scenario-inner-panel">
-            <p>Click the button below to view all of your messages.</p>
+            <p>You can view deatils of all your messages.</p>
 
 
             {% if data['deductionChange']=='DyesChange'%}
@@ -388,7 +369,7 @@ Account home
               {% else %}
               <span>
                 {% endif %}
-                <a href="indexAccountHome-onoff-inbox" class="secondary-invert">Inbox</a></span>
+                <a href="indexAccountHome-onoff-inbox-off-to-on" class="secondary-invert">View your messages</a></span>
               <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 
           </div>

@@ -1,0 +1,45 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Account home
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">
+  <!--<span class="govuk-caption-l">Important Information</span>-->
+  Changes to your payments
+</h1>
+
+
+<p>As you have made a new claim, we will be deducting money from your benefits to repay the money you owe.</p>
+
+<p>Your Direct Debit will be cancelled and we will be sending you a letter with details of your repayments.</p>
+
+<p>You can <a href="">view details of what you owe</a> or you can <a href="">tell us how much you can afford</a> .</p>
+
+<!--<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          I have read the message.
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>-->
+
+
+
+<a class="govuk-button" href="indexAccountHome-onoff-inbox-off-to-on">Back to messages</a>
+
+{% endblock %}
