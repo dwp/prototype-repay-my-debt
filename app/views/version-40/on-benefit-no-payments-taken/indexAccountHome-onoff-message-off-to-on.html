@@ -13,19 +13,24 @@ href: "javascript:window.history.back()"
 
 {% block content %}
 
-<h1 class="govuk-heading-l">
-  <!--<span class="govuk-caption-l">Important Information</span>-->
-  Changes to your payments
-</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">
+      <!--<span class="govuk-caption-l">Important Information</span>-->
+      Changes to your payments
+    </h1>
 
 
-<p>As you have made a new claim, we will be deducting money from your benefits to repay the money you owe.</p>
+    <p>As you have made a new claim, we will be deducting money from your benefits to repay the money you owe.</p>
 
-<p>Your Direct Debit will be cancelled and we will be sending you a letter with details of your repayments.</p>
+    <h2 class="govuk-heading-m">What happens next</h2>
 
-<p>You can <a href="">view details of what you owe</a> or you can <a href="">tell us how much you can afford</a> .</p>
+    <p>Your Direct Debit will be cancelled and we will be sending you a letter with details of your repayments.</p>
 
-<!--<div class="govuk-form-group">
+    <p>In the meantime, you can <a href="">view details of what you owe</a> or <a href="">tell us how much you can afford</a>.</p>
+
+    <!--<div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
@@ -38,8 +43,11 @@ href: "javascript:window.history.back()"
   </fieldset>
 </div>-->
 
+    <br>
 
+    <a class="govuk-button" href="indexAccountHome-onoff-inbox-off-to-on">Back to messages</a>
 
-<a class="govuk-button" href="indexAccountHome-onoff-inbox-off-to-on">Back to messages</a>
+  </div>
+</div>
 
 {% endblock %}

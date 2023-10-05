@@ -13,35 +13,41 @@ href: "javascript:window.history.back()"
 
 {% block content %}
 
-<h1 class="govuk-heading-l">
-  <!--<span class="govuk-caption-l">Important Information</span>-->
-  You now need to a set up a repayment plan
-</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
+        <h1 class="govuk-heading-l">
+          <!--<span class="govuk-caption-l">Important Information</span>-->
+          You now need to a set up a repayment plan
+        </h1>
 
-<p>If you do not set up a repayment plan before 28 October 2023, DWP will contact your employer to make deductions from
-  your pay.</p>
+        <p>Although you can pay the full amount, we understand it may not be possible to pay it in one go, so you can:
+        </p>
 
-<p>We understand it may not be possible to pay the amount you owe in one go so you can set up a <a href="">Direct
-    Debit</a> or
-  <a href=""> flexible payment plan</a>.
-</p>
+        <ul class="govuk-list govuk-list--bullet">
 
-<!--<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-        <label class="govuk-label govuk-checkboxes__label" for="waste">
-          I have read the message.
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>-->
+          <li>set up a Direct Debit plan</li>
+
+          <li>set up a flexible payment plan</li>
+
+        </ul>
 
 
 
-<a class="govuk-button" href="indexAccountHome-onoff-inbox-on-to-off-reminder">Back to messages</a>
+        <div class="govuk-inset-text">
+          If you do not <a href="">set up a repayment plan</a> before 26 November 2023, DWP will contact your employer
+          to
+          make deductions from
+          your pay.
+        </div>
+
+
+
+
+        <a class="govuk-button" href="indexAccountHome-onoff-inbox-on-to-off-reminder">Back to messages</a>
+
+
+  </div>
+</div>
 
 {% endblock %}
