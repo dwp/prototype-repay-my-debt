@@ -13,33 +13,35 @@ href: "javascript:window.history.back()"
 
 {% block content %}
 
-<h1 class="govuk-heading-l">
-  <!--<span class="govuk-caption-l">Important Information</span>-->
-  Your repayments are changing
-</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">
+      <!--<span class="govuk-caption-l">Important Information</span>-->
+      Your repayments are changing
+    </h1>
 
 
-<p>As your claim has ended, we will no longer be deducting money from your benefits.</p>
+    <p>As your claim has ended, we will no longer be deducting money from your benefits.</p>
 
-<p>We will be sending you a letter with details of how to setup a payment plan.</p>
+    <h2 class="govuk-heading-m">What happens next</h2>
 
-<p>You can either wait for the letter or <a href="">setup a payment plan</a> now.</p>
+    <p>We will be sending you a letter with details of how to setup a payment plan.</p>
 
-<!--<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-        <label class="govuk-label govuk-checkboxes__label" for="waste">
-          I have read the message.
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>-->
+
+    <p>You can either:</p>
+
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>wait for the letter for next steps</li>
+      <li><a href="#">setup a payment plan</li>
+    </ul>
 
 
 
-<a class="govuk-button" href="indexAccountHome-onoff-inbox-on-to-off">Back to messages</a>
+    <a class="govuk-button" href="indexAccountHome-onoff-inbox-on-to-off">Back to messages</a>
+
+  </div>
+</div>
 
 {% endblock %}

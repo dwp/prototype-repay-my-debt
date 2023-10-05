@@ -13,41 +13,48 @@ href: "javascript:window.history.back()"
 
 {% block content %}
 
-<h1 class="govuk-heading-l">
-  <!--<span class="govuk-caption-l">Important Information</span>-->
-  Messages
-</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">
+      <!--<span class="govuk-caption-l">Important Information</span>-->
+      Messages
+    </h1>
 
 
-<table class="govuk-table">
-  <!--<caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>-->
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Date</th>
-      <th scope="col" class="govuk-table__header">Message</th>
-      <th scope="col" class="govuk-table__header">Status</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">02 October 2023</td>
-      <td class="govuk-table__cell"><a href="indexAccountHome-onoff-message-on-to-off">Your repayments are changing</a></td>
-      <td class="govuk-table__cell">Read</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">15 August 2023</td>
-      <td class="govuk-table__cell"><a href="">This is an old message.</a></td>
-      <td class="govuk-table__cell">Read</td>
-    </tr>
-    <!--<tr class="govuk-table__row">
+    <table class="govuk-table">
+      <!--<caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>-->
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">Message</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">17 October 2023</td>
+          <td class="govuk-table__cell"><a href="indexAccountHome-onoff-message-on-to-off">Your repayments are
+              changing</a></td>
+          <td class="govuk-table__cell">Read</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">15 August 2023</td>
+          <td class="govuk-table__cell"><a href="">This is an old message.</a></td>
+          <td class="govuk-table__cell">Read</td>
+        </tr>
+        <!--<tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Total estimated pay</th>
       <td class="govuk-table__cell">£4,282.20</td>
     </tr>-->
-  </tbody>
-</table>
+      </tbody>
+    </table>
 
 
 
-<a href="indexAccountHome-onoff-mvp-no-banner-on-to-off" class="govuk-button">Home</a>
+    <a href="indexAccountHome-onoff-mvp-no-banner-on-to-off" class="govuk-button">Home</a>
+
+  </div>
+</div>
 
 {% endblock %}
