@@ -44,16 +44,28 @@ Account home
 
 
 
-    <div class="govuk-inset-text">
-      <p class="govuk-notification-banner__heading">
-        There are changes to your repayments.</p>
-      <p>As your claim has ended, we will no longer be deducting money from your benefits.</p>
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h1 class="govuk-heading-l">
+          <!--<span class="govuk-caption-l">Important Information</span>-->
+          Your repayments are changing
+        </h1>
+        <p>As you have made a new claim:</p>
+        <ol class="govuk-list govuk-list--bullet">
 
-      <p>We will be sending you a letter with details of how to setup a payment plan.</p>
+          <li>your Direct Debit has been cancelled</li>
+          <li>we will be deducting money automatically from your Universal Credit to repay the money you owe</li>
+          <li>you do not need to set up a repayment plan</li>
+          </ol>
+        <a href="indexAccountHome-onoff-mvp-on-to-off-alt3-dismissed" class="govuk-button">Dismiss</a>
 
-      <p>You can either wait for the letter or <a href="">setup a payment plan</a> now.</p>
-
-      <a href="" class="govuk-button">Dismiss</a>
+      </div>
     </div>
 
 
@@ -94,9 +106,12 @@ Account home
           <div class="scenario-inner-panel">
 
 
-            <p>As your claim has ended, we will no longer be deducting money from your benefits.</p>
+            <p>As you have made a new claim, we will be deducting money automatically from your Universal Credit.</p>
 
-            <p>You can <a href="">setup a payment plan</a>.</p>
+
+
+            <p>You do not need to set up a payment plan.
+</p>
 
             <!--<p>As you are in a joint claim with your partner, the deductions from your benefits will be used to repay any money you both owe.</p> -->
 
