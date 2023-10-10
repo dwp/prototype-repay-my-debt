@@ -1,0 +1,1100 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Details of what you owe
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+									<h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Details of what you owe</h1>
+
+                  <!-- <div class="govuk-inset-text">
+         			 Total amount owed: <span class="total-amount">
+         			&pound;1139.10
+
+         									 </span>
+
+
+         			</div>-->
+
+              {% if data['deductionChange']=='DyesChange-setupDone'%}
+              <div class="govuk-inset-text">
+                Total amount left to pay: <span class="total-amount">
+                  &pound;1,518.00
+
+                </span>
+
+
+              </div>
+
+
+              <div class="flexible-banner-float-none">
+                <ul class="govuk-list">
+                  <li>
+                    <h3>New payment</h3>
+                    <span id="total-amount"><b>£{{ data['newDeductedAmount-setupDone'] }}</span>
+                  </li>
+                </ul>
+
+                <p>Your account will be updated within the next 7 days.
+              </p>
+              </div>
+{% else %}
+              <div class="govuk-inset-text">
+                Total amount left to pay: <span class="total-amount">
+                  &pound;1,518.00
+
+                </span>
+
+
+              </div>
+
+                  <!-- <div class="flexible-banner-float-none">
+                    <ul class="govuk-list">
+                      <li>
+                        <h3>Previous payment</h3>
+                        <span id="new-debts-amount"><b>£40.00</b></span>
+                      </li>
+                      <!-- <li>
+                        <h3>Amount paid towards what you owe</h3>
+                        <span class="total-amount" id="new-total-owed"><b>£10.00</b></span>
+                      </li>
+                      <li>
+                        <h3>Amount paid towards Universal credit (joint)</h3>
+                        <span class="total-amount" id="new-total-owed"><b>£10.00</b></span>
+                      </li>
+                    </ul>
+                  </div> -->
+
+
+{% endif %}
+
+
+ <div class="govuk-accordion mb50" data-module="govuk-accordion" id="accordion-with-summary-sections">
+
+
+
+
+
+
+
+
+
+	<div class="govuk-accordion__section ">
+		  <div class="govuk-accordion__section-header">
+			<h2 class="govuk-accordion__section-heading">
+			  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+				Universal Credit
+			  </span>
+			 </h2>
+
+
+
+		<div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
+			Overpayment
+			</div>
+
+		  </div>
+		  <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2">
+
+
+
+		  <div class="flexible-banner-float-none">
+
+
+
+
+
+				 <table class="govuk-table">
+
+			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+
+
+
+					<tbody class="govuk-table__body">
+
+
+					<tr class="govuk-table__row">
+						 <th scope="row" class="govuk-table__header">Overpayment period</th>
+						  <td class="govuk-table__cell"> 	01 November 2021 to 30 November 2021</td>
+						</tr>
+<!--
+					   <tr class="govuk-table__row">
+						   <th scope="row" class="govuk-table__header">Original amount owed</th>
+							<td class="govuk-table__cell">&pound;800.00</td>
+						  </tr> -->
+
+					 <!-- <tr class="govuk-table__row">
+						 <th scope="row" class="govuk-table__header">Your current repayment amount</th>
+						  <td class="govuk-table__cell">
+
+
+
+							   &pound;10.00
+
+
+
+							  </td>
+						</tr> -->
+
+
+
+
+							 <tr class="govuk-table__row">
+								  <th scope="row" class="govuk-table__header">Total amount repaid</th>
+								   <td class="govuk-table__cell">&pound;630.00</td>
+								 </tr>
+
+						 <tr class="govuk-table__row">
+							  <th scope="row" class="govuk-table__header">Total amount left to pay</th>
+							   <td class="govuk-table__cell">&pound;170.00</td>
+							 </tr>
+
+
+
+					</tbody>
+
+		  </table>
+
+
+
+		  <!-- <h4 class="govuk-heading-s">Final payment date</h4>
+
+
+			<p>If your current repayment amount stays at £10.00 you will clear this Tax Credits overpayment in
+
+        <script>
+         var  num1 = 170.00;
+         var num2 =  10;
+         var x = Math.floor(num1 / num2); //or whatever offset
+         var CurrentDate = new Date();
+         console.log("Current date:", CurrentDate);
+         CurrentDate.setMonth(CurrentDate.getMonth() + x);
+          document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
+       </script>.
+      </p> -->
+
+
+      <h4 class="govuk-heading-s">Overpayment Reason</h4>
+<p>
+You were overpaid because you earned too much from employment, either full time or part time.</p>
+<p>You were sent a letter about your overpayment on 30 November 2021.</p>
+
+
+		  </div>
+
+	 <p>You can check your Universal Credit journal if you have access to it for more details, or contact Universal Credit:</p>
+
+
+	 <ul class="govuk-list">
+	   <li>Telephone: 0800 012 1331</li>
+     <li>Textphone: 0800 012 1441 (for deaf or hard of hearing users and customers with speech difficulties)</li>
+
+
+      <li>Monday to Friday, 10am to 4pm (closed on bank holidays)</li>
+	 </ul>
+
+ <p class="govuk-body">
+   <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+ </p>
+
+		  </div>
+		</div>
+
+
+    <div class="govuk-accordion__section ">
+  		  <div class="govuk-accordion__section-header">
+  			<h2 class="govuk-accordion__section-heading">
+  			  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+  				HMRC
+  			  </span>
+  			 </h2>
+
+
+
+  		<div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
+  			Tax Credits overpayments
+  			</div>
+
+  		  </div>
+  		  <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2">
+
+
+
+  		  <div class="flexible-banner-float-none">
+
+
+
+
+
+  				 <table class="govuk-table">
+
+  			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+
+
+
+  					<tbody class="govuk-table__body">
+
+
+  					<tr class="govuk-table__row">
+  						 <th scope="row" class="govuk-table__header">Award period</th>
+  						  <td class="govuk-table__cell">31 December 2020</td>
+  						</tr>
+
+  					   <!-- <tr class="govuk-table__row">
+  						   <th scope="row" class="govuk-table__header">Original amount owed</th>
+  							<td class="govuk-table__cell">&pound;1,000.00</td>
+  						  </tr> -->
+<!--
+  					 <tr class="govuk-table__row">
+  						 <th scope="row" class="govuk-table__header">Your current repayment amount</th>
+  						  <td class="govuk-table__cell">
+
+
+
+  							   &pound;25.00
+
+
+
+  							  </td>
+  						</tr> -->
+
+
+
+
+  							 <tr class="govuk-table__row">
+  								  <th scope="row" class="govuk-table__header">Total amount repaid</th>
+  								   <td class="govuk-table__cell">&pound;140.00</td>
+  								 </tr>
+
+  						 <tr class="govuk-table__row">
+  							  <th scope="row" class="govuk-table__header">Total amount left to pay</th>
+  							   <td class="govuk-table__cell">&pound;860.00</td>
+  							 </tr>
+
+
+
+  					</tbody>
+
+  		  </table>
+
+<!--
+
+  		  <h4 class="govuk-heading-s">Final payment date</h4>
+
+
+  			<p>If your current repayment amount stays at £25.00 you will clear this Tax Credits overpayment in
+
+          <script>
+           var  num1 = 870.00;
+           var num2 =  25;
+           var x = Math.floor(num1 / num2); //or whatever offset
+           var CurrentDate = new Date();
+           console.log("Current date:", CurrentDate);
+           CurrentDate.setMonth(CurrentDate.getMonth() + x);
+            document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
+         </script>.
+        </p> -->
+
+<!--
+        <h4 class="govuk-heading-s">Overpayment Reason</h4>
+  <p>You were overpaid because you went abroad for more than 28 days.</p>
+  <p>You were sent a letter about your overpayment on 01 January 2022.</p> -->
+
+
+  		  </div>
+
+  	 <p>If you have any questions, you should contact HMRC:</p>
+
+
+  	 <ul class="govuk-list">
+  	   <li>Telephone: 0345 300 3900</li>
+
+        <li>Monday to Friday, 8am to 8pm (closed on bank holidays)</li>
+        <li>Saturday, 8am to 4pm</li>
+  	 </ul>
+
+   <p class="govuk-body">
+     <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+   </p>
+
+  		  </div>
+  		</div>
+
+
+<!-- Overpayments -->
+      <div class="govuk-accordion__section ">
+    		  <div class="govuk-accordion__section-header">
+    			<h2 class="govuk-accordion__section-heading">
+    			  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+    				Social fund
+    			  </span>
+    			 </h2>
+
+
+
+
+
+    		  </div>
+    		  <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2">
+
+
+
+    		  <div class="flexible-banner-float-none">
+
+    				 <table class="govuk-table">
+
+    			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+    					<tbody class="govuk-table__body">
+
+
+    					<tr class="govuk-table__row">
+    						 <th scope="row" class="govuk-table__header">Overpayment period</th>
+    						  <td class="govuk-table__cell">01 March 2022 to 31 March 2022</td>
+    						</tr>
+
+
+
+    							 <tr class="govuk-table__row">
+    								  <th scope="row" class="govuk-table__header">Original amount to repay</th>
+    								   <td class="govuk-table__cell">&pound;159.10
+</td>
+    								 </tr>
+                     <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Current amount to repay</th>
+                         <td class="govuk-table__cell">&pound;109.00
+   </td>
+                       </tr>
+
+
+
+
+    					</tbody>
+
+    		  </table>
+
+          <h4 class="govuk-heading-s">Overpayment Reason</h4>
+    <p>
+    You were overpaid because you earned too much from employment, either full time or part time.</p><p> You were sent a letter about your overpayment on 21 November 2021.</p>
+
+
+    		  </div>
+
+
+              		  <div class="flexible-banner-float-none">
+
+              				 <table class="govuk-table">
+
+              			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+              					<tbody class="govuk-table__body">
+
+
+              					<tr class="govuk-table__row">
+              						 <th scope="row" class="govuk-table__header">Overpayment period</th>
+              						  <td class="govuk-table__cell">01 January 2022 to 01 Febuary 2022</td>
+              						</tr>
+
+
+
+              							 <tr class="govuk-table__row">
+              								  <th scope="row" class="govuk-table__header">Original amount to repay</th>
+              								   <td class="govuk-table__cell">&pound;80.00
+          </td>
+              								 </tr>
+                               <tr class="govuk-table__row">
+                                  <th scope="row" class="govuk-table__header">Current amount to repay</th>
+                                   <td class="govuk-table__cell">&pound;8.00
+             </td>
+                                 </tr>
+
+
+
+
+              					</tbody>
+
+              		  </table>
+
+
+
+              		  </div>
+                    <div class="flexible-banner-float-none">
+
+              				 <table class="govuk-table">
+
+              			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+              					<tbody class="govuk-table__body">
+
+
+              					<tr class="govuk-table__row">
+              						 <th scope="row" class="govuk-table__header">Overpayment period</th>
+              						  <td class="govuk-table__cell">21 December 2021 to 21 January 2022</td>
+              						</tr>
+
+
+
+              							 <tr class="govuk-table__row">
+              								  <th scope="row" class="govuk-table__header">Original amount to repay</th>
+              								   <td class="govuk-table__cell">&pound;132.00
+          </td>
+              								 </tr>
+                               <tr class="govuk-table__row">
+                                  <th scope="row" class="govuk-table__header">Current amount to repay</th>
+                                   <td class="govuk-table__cell">&pound;100.00
+             </td>
+                                 </tr>
+
+
+
+
+              					</tbody>
+
+              		  </table>
+
+
+
+              		  </div>
+
+                        		  <div class="flexible-banner-float-none">
+
+                        				 <table class="govuk-table">
+
+                        			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+                        					<tbody class="govuk-table__body">
+
+
+                        					<tr class="govuk-table__row">
+                        						 <th scope="row" class="govuk-table__header">Overpayment period</th>
+                        						  <td class="govuk-table__cell">12 Febuary 2021 to 12 March 2021</td>
+                        						</tr>
+
+
+
+                        							 <tr class="govuk-table__row">
+                        								  <th scope="row" class="govuk-table__header">Original amount to repay</th>
+                        								   <td class="govuk-table__cell">&pound;39.10
+                    </td>
+                        								 </tr>
+                                         <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">Current amount to repay</th>
+                                             <td class="govuk-table__cell">&pound;9.00
+                       </td>
+                                           </tr>
+
+
+
+
+                        					</tbody>
+
+                        		  </table>
+
+                              <h4 class="govuk-heading-s">Overpayment Reason</h4>
+                        <p>
+                        You were overpaid because you were not entitled to EASD (Extra Amount for Severe Disability).</p><p> You were sent a letter about your overpayment on 12 April 2021.</p>
+
+
+                        		  </div>
+
+                                  		  <div class="flexible-banner-float-none">
+
+                                  				 <table class="govuk-table">
+
+                                  			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+                                  					<tbody class="govuk-table__body">
+
+
+                                  					<tr class="govuk-table__row">
+                                  						 <th scope="row" class="govuk-table__header">Overpayment period</th>
+                                  						  <td class="govuk-table__cell">11 March 2021 to 21 April 2021</td>
+                                  						</tr>
+
+
+
+                                  							 <tr class="govuk-table__row">
+                                  								  <th scope="row" class="govuk-table__header">Original amount to repay</th>
+                                  								   <td class="govuk-table__cell">&pound;100.00
+                              </td>
+                                  								 </tr>
+                                                   <tr class="govuk-table__row">
+                                                      <th scope="row" class="govuk-table__header">Current amount to repay</th>
+                                                       <td class="govuk-table__cell">&pound;10.00
+                                 </td>
+                                                     </tr>
+
+
+
+
+                                  					</tbody>
+
+                                  		  </table>
+
+                                  		  </div>
+
+
+
+
+</div>
+ <!-- // Accordian end -->
+ <!-- Advances -->
+ <div class="govuk-accordion__section ">
+     <div class="govuk-accordion__section-header">
+     <h2 class="govuk-accordion__section-heading">
+       <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+        Short term advance
+       </span>
+      </h2>
+
+
+
+
+
+     </div>
+     <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2">
+
+
+
+     <div class="flexible-banner-float-none">
+
+        <table class="govuk-table">
+
+        <caption class="visually-hidden">Advance detail</caption>
+
+
+         <tbody class="govuk-table__body">
+
+
+         <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Advance date</th>
+             <td class="govuk-table__cell"> 31 March 2022</td>
+           </tr>
+
+
+
+              <tr class="govuk-table__row">
+                 <th scope="row" class="govuk-table__header">Original amount to repay</th>
+                  <td class="govuk-table__cell">&pound;100.00
+</td>
+                </tr>
+                <tr class="govuk-table__row">
+                   <th scope="row" class="govuk-table__header">Current amount to repay</th>
+                    <td class="govuk-table__cell">&pound;100.00
+</td>
+                  </tr>
+
+
+
+
+         </tbody>
+
+     </table>
+
+
+
+     </div>
+
+
+
+
+
+</div>
+<!-- // Accordian end -->
+
+</div>
+
+
+<!-- Industrial -->
+<div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+       Industrial
+      </span>
+     </h2>
+
+
+
+
+
+    </div>
+    <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2">
+
+
+
+    <div class="flexible-banner-float-none">
+
+       <table class="govuk-table">
+
+       <caption class="visually-hidden">Overpayment detail</caption>
+
+
+        <tbody class="govuk-table__body">
+
+
+        <tr class="govuk-table__row">
+           <th scope="row" class="govuk-table__header">Overpayment period</th>
+            <td class="govuk-table__cell"> 31 March 2022 to 30 April 2022</td>
+          </tr>
+
+
+
+             <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Original amount to repay</th>
+                 <td class="govuk-table__cell">&pound;180.00
+</td>
+               </tr>
+               <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Current amount to repay</th>
+                   <td class="govuk-table__cell">&pound;100.00
+</td>
+                 </tr>
+
+
+
+
+        </tbody>
+
+    </table>
+
+
+
+    </div>
+
+
+                            		  <div class="flexible-banner-float-none">
+
+                            				 <table class="govuk-table">
+
+                            			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+                            					<tbody class="govuk-table__body">
+
+
+                            					<tr class="govuk-table__row">
+                            						 <th scope="row" class="govuk-table__header">Overpayment period</th>
+                            						  <td class="govuk-table__cell">12 Febuary 2021 to 12 March 2021</td>
+                            						</tr>
+
+
+
+                            							 <tr class="govuk-table__row">
+                            								  <th scope="row" class="govuk-table__header">Original amount to repay</th>
+                            								   <td class="govuk-table__cell">&pound;39.10
+                        </td>
+                            								 </tr>
+                                             <tr class="govuk-table__row">
+                                                <th scope="row" class="govuk-table__header">Current amount to repay</th>
+                                                 <td class="govuk-table__cell">&pound;9.00
+                           </td>
+                                               </tr>
+
+
+
+
+                            					</tbody>
+
+                            		  </table>
+
+                                  <h4 class="govuk-heading-s">Overpayment Reason</h4>
+                            <p>
+                            You were overpaid because you were not entitled to EASD (Extra Amount for Severe Disability).</p><p> You were sent a letter about your overpayment on 12 April 2021.</p>
+
+
+                            		  </div>
+
+                                      		  <div class="flexible-banner-float-none">
+
+                                      				 <table class="govuk-table">
+
+                                      			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+                                      					<tbody class="govuk-table__body">
+
+
+                                      					<tr class="govuk-table__row">
+                                      						 <th scope="row" class="govuk-table__header">Overpayment period</th>
+                                      						  <td class="govuk-table__cell">11 March 2021 to 21 April 2021</td>
+                                      						</tr>
+
+
+
+                                      							 <tr class="govuk-table__row">
+                                      								  <th scope="row" class="govuk-table__header">Original amount to repay</th>
+                                      								   <td class="govuk-table__cell">&pound;100.00
+                                  </td>
+                                      								 </tr>
+                                                       <tr class="govuk-table__row">
+                                                          <th scope="row" class="govuk-table__header">Current amount to repay</th>
+                                                           <td class="govuk-table__cell">&pound;10.00
+                                     </td>
+                                                         </tr>
+
+
+
+
+                                      					</tbody>
+
+                                      		  </table>
+
+                                      		  </div>
+                                            <div class="flexible-banner-float-none">
+
+                                               <table class="govuk-table">
+
+                                               <caption class="visually-hidden">Overpayment detail</caption>
+
+
+                                                <tbody class="govuk-table__body">
+
+
+                                                <tr class="govuk-table__row">
+                                                   <th scope="row" class="govuk-table__header">Overpayment period</th>
+                                                    <td class="govuk-table__cell">11 March 2021 to 21 April 2021</td>
+                                                  </tr>
+
+
+
+                                                     <tr class="govuk-table__row">
+                                                        <th scope="row" class="govuk-table__header">Original amount to repay</th>
+                                                         <td class="govuk-table__cell">&pound;100.00
+                                  </td>
+                                                       </tr>
+                                                       <tr class="govuk-table__row">
+                                                          <th scope="row" class="govuk-table__header">Current amount to repay</th>
+                                                           <td class="govuk-table__cell">&pound;10.00
+                                     </td>
+                                                         </tr>
+
+
+
+
+                                                </tbody>
+
+                                            </table>
+
+                                            </div>
+
+
+
+
+</div>
+<!-- // Accordian end -->
+
+</div>
+
+
+<!-- Civil Penalty -->
+<div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+       Civil penalty
+      </span>
+     </h2>
+
+
+
+
+
+    </div>
+    <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2">
+
+
+
+    <div class="flexible-banner-float-none">
+
+       <table class="govuk-table">
+
+       <caption class="visually-hidden">Overpayment detail</caption>
+
+
+        <tbody class="govuk-table__body">
+
+
+        <tr class="govuk-table__row">
+           <th scope="row" class="govuk-table__header">Overpayment period</th>
+            <td class="govuk-table__cell"> 31 March 2022 to 30 April 2022</td>
+          </tr>
+
+
+
+             <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Original amount to repay</th>
+                 <td class="govuk-table__cell">&pound;180.00
+</td>
+               </tr>
+               <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Current amount to repay</th>
+                   <td class="govuk-table__cell">&pound;100.00
+</td>
+                 </tr>
+
+
+
+
+        </tbody>
+
+    </table>
+    <h4 class="govuk-heading-s">Overpayment Reason</h4>
+    <p>
+    You were overpaid because you did not tell us you were living with your partner.</p><p> You were sent a letter about your overpayment on 12 May 2022.</p>
+
+
+
+    </div>
+
+
+
+
+
+</div>
+<!-- // Accordian end -->
+
+
+<!-- Overpayment -->
+<div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+       Overpayments
+      </span>
+     </h2>
+
+
+
+
+
+    </div>
+    <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2">
+
+
+
+          <div class="flexible-banner-float-none">
+
+             <table class="govuk-table">
+
+             <caption class="visually-hidden">Overpayment detail</caption>
+
+
+              <tbody class="govuk-table__body">
+
+
+              <tr class="govuk-table__row">
+                 <th scope="row" class="govuk-table__header">Overpayment period</th>
+                  <td class="govuk-table__cell"> 31 March 2022 to 30 April 2022</td>
+                </tr>
+
+
+
+                   <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Original amount to repay</th>
+                       <td class="govuk-table__cell">&pound;180.00
+      </td>
+                     </tr>
+                     <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Current amount to repay</th>
+                         <td class="govuk-table__cell">&pound;100.00
+      </td>
+                       </tr>
+
+
+
+
+              </tbody>
+
+          </table>
+
+
+
+          </div>
+
+
+                                  		  <div class="flexible-banner-float-none">
+
+                                  				 <table class="govuk-table">
+
+                                  			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+                                  					<tbody class="govuk-table__body">
+
+
+                                  					<tr class="govuk-table__row">
+                                  						 <th scope="row" class="govuk-table__header">Overpayment period</th>
+                                  						  <td class="govuk-table__cell">12 Febuary 2021 to 12 March 2021</td>
+                                  						</tr>
+
+
+
+                                  							 <tr class="govuk-table__row">
+                                  								  <th scope="row" class="govuk-table__header">Original amount to repay</th>
+                                  								   <td class="govuk-table__cell">&pound;39.10
+                              </td>
+                                  								 </tr>
+                                                   <tr class="govuk-table__row">
+                                                      <th scope="row" class="govuk-table__header">Current amount to repay</th>
+                                                       <td class="govuk-table__cell">&pound;9.00
+                                 </td>
+                                                     </tr>
+
+
+
+
+                                  					</tbody>
+
+                                  		  </table>
+
+                                        <h4 class="govuk-heading-s">Overpayment Reason</h4>
+                                  <p>
+                                  You were overpaid because you were not entitled to EASD (Extra Amount for Severe Disability).</p><p> You were sent a letter about your overpayment on 12 April 2021.</p>
+
+
+                                  		  </div>
+
+                                            		  <div class="flexible-banner-float-none">
+
+                                            				 <table class="govuk-table">
+
+                                            			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+                                            					<tbody class="govuk-table__body">
+
+
+                                            					<tr class="govuk-table__row">
+                                            						 <th scope="row" class="govuk-table__header">Overpayment period</th>
+                                            						  <td class="govuk-table__cell">11 March 2021 to 21 April 2021</td>
+                                            						</tr>
+
+
+
+                                            							 <tr class="govuk-table__row">
+                                            								  <th scope="row" class="govuk-table__header">Original amount to repay</th>
+                                            								   <td class="govuk-table__cell">&pound;100.00
+                                        </td>
+                                            								 </tr>
+                                                             <tr class="govuk-table__row">
+                                                                <th scope="row" class="govuk-table__header">Current amount to repay</th>
+                                                                 <td class="govuk-table__cell">&pound;10.00
+                                           </td>
+                                                               </tr>
+
+
+
+
+                                            					</tbody>
+
+                                            		  </table>
+
+                                            		  </div>
+                                                  <div class="flexible-banner-float-none">
+
+                                                     <table class="govuk-table">
+
+                                                     <caption class="visually-hidden">Overpayment detail</caption>
+
+
+                                                      <tbody class="govuk-table__body">
+
+
+                                                      <tr class="govuk-table__row">
+                                                         <th scope="row" class="govuk-table__header">Overpayment period</th>
+                                                          <td class="govuk-table__cell">11 March 2021 to 21 April 2021</td>
+                                                        </tr>
+
+
+
+                                                           <tr class="govuk-table__row">
+                                                              <th scope="row" class="govuk-table__header">Original amount to repay</th>
+                                                               <td class="govuk-table__cell">&pound;100.00
+                                        </td>
+                                                             </tr>
+                                                             <tr class="govuk-table__row">
+                                                                <th scope="row" class="govuk-table__header">Current amount to repay</th>
+                                                                 <td class="govuk-table__cell">&pound;10.00
+                                           </td>
+                                                               </tr>
+
+
+
+
+                                                      </tbody>
+
+                                                  </table>
+
+                                                  </div>
+
+
+
+
+
+</div>
+<!-- // Accordian end -->
+
+</div>
+</div>
+
+
+
+
+
+    </div>
+
+
+
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+       <h4 class="govuk-heading-m">Universal Credit repayments</h4>
+       <!-- <h4 class="govuk-heading-s">Universal Credit</h4> -->
+
+
+       <p>If you have any other deductions from your Universal Credit payment, they cannot be managed on this service. For example, any repayments for an advance taken out during your current claim.  </p>
+       <p>
+
+
+         <!-- If you owe money to Universal Credit as part of a joint claim, it will be included in the total amount but will not show in the details of what you owe as that cannot be managed on this service. -->
+
+
+       </p>
+       <p>For more information, refer to your Universal Credit statement.</p>
+
+       <p class="mt30"><a href="indexAccountHome" class="govuk-button">
+         Go to account home
+       </a></p>
+
+{% endblock %}
