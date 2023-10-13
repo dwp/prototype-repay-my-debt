@@ -1,0 +1,53 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+You now need to a set up a payment plan
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          <!--<span class="govuk-caption-l">Important Information</span>-->
+          You now need to a set up a payment plan
+        </h1>
+
+        <p>Although you can pay the full amount, we understand it may not be possible to pay it in one go, so you can:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+
+          <li>set up a Direct Debit plan</li>
+
+          <li>set up a flexible payment plan</li>
+
+        </ul>
+
+
+
+        <div class="govuk-inset-text">
+          If you do not <a href="">set up a payment plan</a> before 26 November 2023, DWP will contact your employer
+          to
+          make deductions from
+          your pay.
+        </div>
+
+
+
+
+        <a class="govuk-button" href="Messages">View all messages</a>
+
+
+  </div>
+</div>
+
+{% endblock %}
