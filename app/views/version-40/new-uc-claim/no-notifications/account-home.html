@@ -1,0 +1,343 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Account home
+{% endblock %}
+
+{% block content %}
+
+
+
+<!-- <div class="clear-bar">
+<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+<p>What you owe:
+<span>&pound;120.00</span></p>
+
+</div> -->
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="clear-bar stripped-border">
+      <div class="identifier">
+
+        <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Account home</span>
+          Ashley Chamberlain
+        </h1>
+
+      </div>
+      <div class="govuk-inset-text" style="float:right;">
+        Total amount left to pay: <span class="total-amount">
+          &pound;800.00
+
+        </span>
+
+
+
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-one-half">
+
+
+
+
+        <div class="scenario-panel">
+          <h2 class="govuk-heading-s">Your repayments</h2>
+
+          <div class="scenario-inner-panel">
+
+
+            <p>As you have made a new claim, we will be deducting money automatically from your Universal Credit.</p>
+
+
+
+            <p>You do not need to set up a payment plan.</p>
+
+
+            <span><a href="details-of-what-you-owe" style="margin-bottom:30px;" class="secondary-invert">View details of
+                what
+                you owe</a></span>
+
+
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="govuk-grid-column-one-half">
+
+
+
+        <div class="scenario-panel">
+          <h2 class="govuk-heading-s">Summary</h2>
+
+
+          <div class="scenario-inner-panel">
+
+
+            <!--<div class="warning-message info-alert">
+
+              <p>Another deduction from your benefits will take place in October 2022.</p>
+            </div>-->
+
+
+            <table class="govuk-table">
+
+              <tbody class="govuk-table__body">
+
+
+
+
+
+
+
+                <!-- <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Original amount owed</th>
+                <td class="govuk-table__cell">
+
+                &pound;2,300.00
+              </td>
+            </tr> -->
+
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Total amount repaid</th>
+                  <td class="govuk-table__cell">
+
+
+
+                    &pound;570.00
+
+
+                  </td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Total amount left to pay</th>
+                  <td class="govuk-table__cell">
+
+
+
+                    &pound;800.00
+
+
+                  </td>
+                </tr>
+
+                <!--<tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header thSubText">Expected final deduction</th>
+            <td class="govuk-table__cell">
+
+
+
+            September 2023
+
+
+          </td>
+        </tr>-->
+
+              </tbody>
+            </table>
+
+
+            <!--<p>Your expected last deduction date will be later if the total amount you owe changes.</p>-->
+
+
+            <!--<span class=""><a href="startAdditionalOnBen" class="secondary-invert">Make an additional payment</a></span>-->
+            <span style="margin-top: 67px;"><a style="margin-bottom:25px;" href="payment-history"
+                class="secondary-invert">View your payment history</a></span>
+
+
+
+          </div>
+        </div>
+
+
+
+
+
+
+      </div>
+
+
+    </div>
+
+
+
+
+    <div class="govuk-grid-row">
+
+
+
+      <div class="govuk-grid-column-one-half">
+
+        <div class="scenario-panel">
+          <h2 class="govuk-heading-s">Manage your repayments</h2>
+
+          <div class="scenario-inner-panel">
+            <hr class="govuk-section-break govuk-section-break--s govuk-section-break--hidden">
+
+            {% if data['deductionChange']=='DyesChange'%}
+
+
+
+            <div class="flexible-banner-float-none">
+              <ul class="govuk-list">
+                <li>
+                  <h3>Monthly repayment:
+                    <span id="new-debts-amount"><b>£{{ data['newDeductedAmount'] }}</b></span>
+                  </h3>
+                </li>
+
+              </ul>
+              <ul class="govuk-list">
+
+                <li>
+                  <h3>Check your repayments by:
+
+                    <span class="total-amount" id="new-total-owed"><b>
+                        <script>
+                          var x = 12; //or whatever offset
+                          var CurrentDate = new Date();
+                          console.log("Current date:", CurrentDate);
+                          CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                          document.write(CurrentDate.toGMTString().split(' ').slice(1, 4).join(' '));
+                        </script>
+                      </b></span>
+                  </h3>
+                </li>
+
+              </ul>
+            </div>
+
+
+
+
+
+
+
+            <p>You can change your repayments based on how much you can afford.</p>
+
+
+            <span><a href="notTesting" class="secondary-invert">Tell us how much you can afford</a></span>
+            <br>
+
+            {% else %}
+
+            <p>As you will be repaying money to DWP, you'll be able to manage your future repayments based on how much
+              you can afford.
+
+
+            </p>
+
+
+            <span><a style="margin-bottom:15px;" href="/version-40/manage-your-repayments/how-much-can-you-afford-to-repay-each-month" class="secondary-invert">Tell us how much you
+                can
+                afford</a></span>
+
+            {% endif %}
+
+          </div>
+
+        </div>
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <div class="govuk-grid-column-one-half">
+
+        <div class="scenario-panel">
+          <h2 class="govuk-heading-s">Help and support</h2>
+
+          <div class="scenario-inner-panel">
+            <p>You can get help and support if you're struggling with your repayments.</p>
+
+
+            {% if data['deductionChange']=='DyesChange'%}
+
+            <span class="mb110">
+              {% else %}
+              <span>
+                {% endif %}
+                <a href="/version-40/help-and-support" class="secondary-invert">Get help and support</a></span>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+
+
+      <div class="govuk-grid-column-one-half">
+
+        <div class="scenario-panel">
+          <h2 class="govuk-heading-s">Your messages</h2>
+
+          <div class="scenario-inner-panel">
+            <p>You can view details of all your messages.</p>
+
+
+            {% if data['deductionChange']=='DyesChange'%}
+
+            <span class="mb110">
+              {% else %}
+              <span>
+                {% endif %}
+                <a href="messages" class="secondary-invert">View your messages</a></span>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+  </div>
+</div>
+
+
+<!--<h4 class="govuk-heading-m">Messages</h4>
+
+<h4 class="govuk-heading-s">Universal Credit</h4>
+
+<p>Click<a href="indexAccountHome-onoff-inbox"> here</a> to read your messages.</p>>-->
+
+
+
+{% endblock %}

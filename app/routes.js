@@ -486,3 +486,40 @@ router.post('/version-40/sign-in-options', function (req, res) {
   }
 
 })
+
+
+
+//Mange you repayments routes
+
+router.post('/manage-your-repayments/amount-low', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var amountLow = req.session.data['new-affordable-amount']
+
+  // Check whether the variable matches a condition
+  if (amountLow <= 4){
+    // Send user to next page
+    res.redirect('/version-40/manage-your-repayments/amount-too-low')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/version-40/manage-your-repayments/what-this-will-mean-for-your-repayments')
+  }
+
+})
+
+router.post('/version-40/sign-in', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['sign-in-new']
+
+  // Check whether the variable matches a condition
+  if (option == 'sign-in-oidv'){
+    // Send user to next page
+    res.redirect('/version-40/sign-in-oidv')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/version-40/sign-in-using-security-code')
+  }
+
+})
