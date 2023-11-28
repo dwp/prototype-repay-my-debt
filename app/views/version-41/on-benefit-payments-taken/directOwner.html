@@ -1,0 +1,94 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+		
+		
+
+		
+		
+		 <form class="form" action="directDebitDay" method="post">
+
+
+		    
+		    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+      <span class="govuk-caption-xl">
+        
+        
+        {% if data['paymentChoices']=='lowPayments'%}
+         
+         Step 4 of 5
+         
+         {% else %}
+         
+         Step 3 of 4
+         
+         {% endif %}
+        
+      </span>
+    
+        
+        Are you an account holder and the only person needed to authorise Direct Debits with your bank or building society?
+      </h1>
+    </legend>
+   <!-- <div id="changed-name-hint" class="govuk-hint">
+      Only the main account holder can authorise payments
+    </div> -->
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="yesDD" name="authoriseDD" type="radio" value="yesDD">
+        <label class="govuk-label govuk-radios__label" for="yesDD">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="noDD" name="authoriseDD" type="radio" value="noDD">
+        <label class="govuk-label govuk-radios__label" for="noDD">
+          No
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+  
+  </div>
+  
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		    
+		    
+		 </form>
+
+								
+									
+	
+
+    </div>
+</div>
+
+{% endblock %}

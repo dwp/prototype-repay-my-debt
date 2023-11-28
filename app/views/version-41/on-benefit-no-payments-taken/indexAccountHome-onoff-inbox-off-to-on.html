@@ -1,0 +1,72 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Account home
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">
+      <!--<span class="govuk-caption-l">Important Information</span>-->
+      Messages
+    </h1>
+
+
+    <table class="govuk-table">
+      <!--<caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>-->
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">Message</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">15 April 2024</td>
+          <td class="govuk-table__cell"><a href="indexAccountHome-onoff-message-off-to-on">Changes to your payments</a>
+          </td>
+          <td class="govuk-table__cell">Read</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">12 November 2023</td>
+          <td class="govuk-table__cell"><a href="">You now need to a set up a repayment plan</a>
+          </td>
+          <td class="govuk-table__cell">Read</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">17 October 2023</td>
+          <td class="govuk-table__cell"><a href="">Your repayments are changing</a>
+          </td>
+          <td class="govuk-table__cell">Read</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">15 August 2023</td>
+          <td class="govuk-table__cell"><a href="">This is an old message.</a></td>
+          <td class="govuk-table__cell">Read</td>
+        </tr>
+        <!--<tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total estimated pay</th>
+      <td class="govuk-table__cell">£4,282.20</td>
+    </tr>-->
+      </tbody>
+    </table>
+
+
+
+    <a href="indexAccountHome-onoff-mvp-no-banner-off-to-on" class="govuk-button">Home</a>
+
+  </div>
+</div>
+
+{% endblock %}

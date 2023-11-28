@@ -1,0 +1,58 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Your repayments are changing
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      <!--<span class="govuk-caption-l">Important Information</span>-->
+      Your repayments are changing
+    </h1><br>
+    <p>As you have made a new claim:</p>
+    <ol class="govuk-list govuk-list--bullet">
+
+      <li>your Direct Debit has been cancelled</li>
+      <li>we will be deducting money automatically from your Universal Credit to repay the money you owe</li>
+      <li>you do not need to set up a repayment plan</li>
+      </ol>
+    <!-- <p>As you have made a new claim, we will be deducting money automatically from your Universal Credit to repay the money you owe.</p> -->
+
+    <!-- <h2 class="govuk-heading-m">What happens next</h2> -->
+    <!-- <p>We have sent you a letter with details of repayments.</p> -->
+
+    <p> </p>
+
+
+    <!--<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          I have read the message.
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>-->
+
+    <br>
+
+    <a class="govuk-button" href="no-notifications/messages">View all messages</a>
+
+  </div>
+</div>
+
+{% endblock %}

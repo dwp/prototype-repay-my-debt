@@ -1,0 +1,145 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+    
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+	   
+
+	   
+	   <div class="govuk-grid-row">
+      
+         <div class="govuk-grid-column-three-quarters">
+         
+         
+         <span class="back-link"><a href="dashboardDebitLowDay" class="govuk-back-link">Back to dashboard</a></span>
+	   
+
+
+				      <h1 class="govuk-heading-xl">Your payment plan</h1>
+				      
+				      
+				      
+	   
+
+	   	 	   	  
+	   	 <!-- <div class="flexibleBanner">
+		   	 	 <p class="mb0">Your Direct Debit payment day change is pending &ndash; it will take 2 to 5 days to update your account.</p>
+		   	 	   	  </div>	 -->
+	   	  
+	
+		 
+	   
+	  	   
+	   	
+		
+	   	
+	   	
+	   		 <table class="govuk-table summary-table mb40">
+									 
+									 <caption class="visually-hidden">Current payment plan details</caption>
+										
+								
+										  <tbody class="govuk-table__body">
+										  
+										
+											
+											 <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Payment plan type</th>
+										      <td class="govuk-table__cell" colspan="2">
+										      
+										      
+										      Direct Debit {% if data['paymentChoices']=='lowPayments'%}lower payment{% else %}{% endif %}
+										      </td>
+										      
+											 </tr>
+											 
+											 
+											 
+											  <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Direct Debit amount</th>
+										      <td class="govuk-table__cell">
+											      
+											&pound;{{ data['change-amount'] }}
+											      
+											      
+										      </td>
+										      
+										      
+										       <td class="govuk-table__cell"><a href="ddAmountChange">Change</a></td>
+										 
+			
+										      	
+										    </tr>
+										      
+										    
+										    
+								
+										 
+										    
+										    
+										     <tr class="govuk-table__row">
+										      <th scope="row" class="govuk-table__header">Direct Debit payment day</th>
+										      <td class="govuk-table__cell dtList">
+		
+										      	Day 6 of each month
+											      
+										      </td>
+										      
+										      
+										      <td class="govuk-table__cell">
+										      	<span class="pill">CHANGE PENDING</span></td>
+										  
+							
+										     
+										    </tr>
+										    
+	
+
+								
+										  </tbody>
+										</table>
+			
+										
+										
+										
+										
+										
+	   	
+	   	<p><a href="#" class="secondary-invert">Switch to a flexible payment plan</a></p>
+	   	
+	   	
+	  		<div class="govuk-inset-text">
+										<p>If you need to make changes to your bank details, you need to contact Debt Management.</p>
+										
+										
+					   					<h2 class="govuk-heading-s">Debt Management</h2>
+									  <ul class="govuk-list">
+									  <li>Telephone: 0800 916 0647</li>
+									  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+									</ul>
+									<p class="govuk-body">
+									  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+									</p>	
+									
+										</div> 
+				   
+                  
+    </div>
+</div>
+
+{% endblock %}
+
+
+

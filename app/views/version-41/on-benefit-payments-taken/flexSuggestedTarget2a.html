@@ -1,0 +1,168 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+									   									   
+
+
+										 
+										
+										<form class="form" action="flexPayNow2" method="post">
+								
+											
+											<div class="govuk-form-group">
+												  <fieldset class="govuk-fieldset">
+												    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb30">
+												      <h1 class="govuk-fieldset__heading">
+												      <span class="govuk-caption-xl">Step 1 of 3</span>
+												        <!--Choose a monthly target that works for you-->
+												        Set a target amount <br>to aim for each month
+												      </h1>
+												    </legend>
+												    
+												 <div class="flexibleBanner">
+												<!--<p class="mt10">These targets are guides showing when you could be debt free &ndash; how much you pay towards your target each month is up to you.</p>
+												
+												<p>You can pay less than your target during difficult times but regular low payments mean we may contact you to discuss your situation.</p> -->
+												
+												
+												
+												
+											<p class="mt10">Meeting a target each month is not essential &ndash; they are guides showing when you could be debt free.</p>
+<p>Paying less than a target each month is acceptable but paying regular low amounts means that we will contact you to discuss your situation.</p> 
+												
+												
+												
+									<!--	<p class="mt10">How much you pay towards your target each month is up to you.</p>
+										<p>You can pay less during difficult times but regular low payments mean we may contact you to discuss your situation.</p> -->
+										
+												    </div> 
+			
+												    
+							
+												    <div class="govuk-radios">
+												    
+												  <!--  <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="suggestedAmount" name="how-much3" type="radio" value="suggestedAmount">
+												        <label class="govuk-label govuk-radios__label" for="suggestedAmount">
+												          <b>&pound;75.00</b> &ndash; this is what you were paying on Universal Credit and if you meet this target you will clear your debt in 8 months
+												        </label>
+												        
+												      </div> -->
+	  
+												  
+												    
+
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="flex334" name="how-much3" type="radio" value="flex334">
+												        <label class="govuk-label govuk-radios__label" for="flex334">
+												          <b>&pound;334.00</b> &ndash; if you meet this target you will clear your debt in 6 months
+												        </label>
+												        
+												      </div>
+												      
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="flex167" name="how-much3" type="radio" value="flex167">
+												        <label class="govuk-label govuk-radios__label" for="flex167">
+												          <b>&pound;167.00</b> &ndash; if you meet this target you will clear your debt in 12 months
+												        </label>
+												        
+												      </div>
+												      
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="flex112" name="how-much3" type="radio" value="flex112">
+												        <label class="govuk-label govuk-radios__label" for="flex112">
+												          <b>&pound;112.00</b> &ndash; if you meet this target you will clear your debt in 18 months
+												        </label>
+												        
+												      </div>
+												      
+												      
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="flex84" name="how-much3" type="radio" value="flex84">
+												        <label class="govuk-label govuk-radios__label" for="flex84">
+												          <b>&pound;84.00</b> &ndash; if you meet this target you will clear your debt in 24 months
+												        </label>
+												        
+												      </div>
+												      
+												      
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="flex56" name="how-much3" type="radio" value="flex56">
+												        <label class="govuk-label govuk-radios__label" for="flex56">
+												          <b>&pound;56.00</b> &ndash; if you meet this target you will clear your debt in 36 months
+												        </label>
+												        
+												      </div>
+												      
+												      
+												      <div class="govuk-radios__divider">or</div>
+
+												      
+												      
+												      
+												   <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+												      <div class="govuk-radios__item">
+												        <input class="govuk-radios__input" id="notarget" name="how-much3" type="radio" value="noAfford" data-aria-controls="conditional-target" value="flexZero">
+												        <label class="govuk-label govuk-radios__label" for="notarget">
+												          <b>I do not want to set a target</b>
+												        </label>
+												      </div>
+												      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-target">
+												        
+												        <p class="radioSpacer">You do not need to set a target but if you regularly pay low amounts, we will contact you to discuss your situation.</p>
+												
+												      </div>
+												      
+												      
+												      
+
+												      
+												      
+								
+												  </fieldset>
+												</div>
+											
+											
+											<button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form>
+				
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}
