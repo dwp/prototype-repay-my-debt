@@ -523,3 +523,35 @@ router.post('/version-40/sign-in', function (req, res) {
   }
 
 })
+
+
+router.post('/version-40/on-benefit-no-payments-taken/signGuard-update-nobanner', function (req, res) {
+
+  var option = req.session.data['new-signin']
+
+  if (option == 'sign-in-oidv'){
+    res.redirect('/version-40/sign-in-oidv')
+
+  } else {
+    res.redirect('/version-40/sign-in-using-security-code')
+  }
+
+})
+
+
+router.post('../version-41/sign-in', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['../version-41/sign-in-new']
+
+  // Check whether the variable matches a condition
+  if (option == 'sign-in-oidv'){
+    // Send user to next page
+    res.redirect('/version-40/sign-in-oidv')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/version-40/sign-in-using-security-code')
+  }
+
+})

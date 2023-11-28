@@ -1,0 +1,102 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Your next affordability check
+
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<!-- <div class="clear-bar">
+<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+<p>What you owe:
+<span>&pound;120.00</span></p>
+
+</div> -->
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+
+
+
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+      <span class="govuk-caption-xl">Manage your repayments</span>
+
+
+      You will be asked to check your repayments again next year
+    </h1>
+
+
+    <div class="flexible-banner-float-none">
+      <ul class="govuk-list">
+        <li>
+          <h3>You will need to do this by:</h3>
+          <span id="new-debts-amount"><b>
+            <script>
+              var x = 12; //or whatever offset
+              var CurrentDate = new Date();
+              console.log("Current date:", CurrentDate);
+              CurrentDate.setMonth(CurrentDate.getMonth() + x);
+              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+            </script>
+          </b></span>
+        </li>
+
+      </ul>
+    </div>
+
+
+
+
+
+    <p></p>
+    <p>     Your repayments will go up if you do not check them by the due date.
+    </p>
+
+
+
+        <p class="govuk-heading-m ">How the repayment check works</p>
+    <p>The check works in the following way:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>we'll send you a notification before your check is due with further details </li>
+          <li>as part of the check, we'll ask you to tell us how much you can afford to repay</li>
+          <li>you can check your repayments using this service or by calling us</li>
+        </ul>
+
+
+
+
+    <!-- <p class="govuk-heading-m ">Struggling to pay?</p>
+
+
+    <div class="govuk-body">
+      If you're struggling with your payments, you can sign in to your account and tell us how much you can afford at any time.
+    </div> -->
+  
+
+    <form class="form" action="would-you-like-to-receive-a-text-message-reminder-about-your-next-check" method="post">
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

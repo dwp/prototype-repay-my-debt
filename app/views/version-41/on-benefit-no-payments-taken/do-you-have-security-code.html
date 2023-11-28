@@ -1,0 +1,70 @@
+{% extends "layout-3" %}
+
+{% block pageTitle %}
+Have you received a security code from DWP for this service?
+
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="flexible-banner-float-none govuk-body">
+        You'll need to have a letter or SMS from DWP or a message in your Universal Credit journal inviting to use this service.
+      </div>
+      <h1 class="govuk-heading-xl">
+        Have you received a security code from DWP for this service?
+      </h1><br>
+<p class="govuk-hint">
+  This is the code sent to you by letter inviting you to use the service, or in a message in your Universal Credit journal.
+
+
+</p>
+      <form class="form" action="/on-benefit-no-payments-taken/security-code" method="post">
+<br>
+        <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+
+
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sign-in" name="security-code" type="radio" value="yes" aria-describedby="sign-in-item-hint">
+          <label class="govuk-label govuk-radios__label" for="sign-in">
+            Yes, I have a security code from DWP
+          </label>
+          <!-- <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+            You can find this on the letter we sent you or in the message in your journal.
+
+
+          </div> -->
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sign-in-2" name="security-code" type="radio" value="no aria-describedby="sign-in-2-item-hint">
+          <label class="govuk-label govuk-radios__label" for="sign-in-2">
+            No, I do not have a security code
+          </label>
+          <!-- <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+            You will have to register to access this service if you have not used it before.
+          </div> -->
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

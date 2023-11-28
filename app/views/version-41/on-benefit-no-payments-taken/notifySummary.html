@@ -1,0 +1,77 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+
+
+
+									
+									
+		   
+		   
+
+			  {% if data['notifyChoice']=='notifyStop'%} 
+			  
+			  
+			  <h1 class="govuk-heading-xl">
+					<span class="govuk-caption-xl">Manage notifications</span>Stop receiving notifications</h1>
+			   
+			   <p>If you decide you no longer want to receive notifications, you may miss important messages about unsuccessful payments.</p>
+
+
+			   
+			   <p><a href="XLddPlan2#past-week" class="govuk-button">Stop receiving notifications</a></p>
+			   
+			   {% else %}
+			   
+			   
+			   <h1 class="govuk-heading-xl">
+					  <span class="govuk-caption-xl">Manage notifications</span>Change mobile number</h1>
+		
+		
+					<p>If you want to change your number, you need to contact Debt Management.</p>
+					
+					
+					   <h2 class="govuk-heading-s">Debt Management</h2>
+				  <ul class="govuk-list">
+				  <li>Telephone: 0800 916 0647</li>
+				  <li> Monday to Friday, 10am to 4pm (except public holidays)</li>
+				</ul>
+				<p class="govuk-body">
+				  <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+				</p>	
+				
+				
+					
+					
+					<p><a href="dashboardDebitLow" class="govuk-button">Account home</a></p>	
+							
+			    {% endif %}
+
+
+
+    </div>
+</div>
+
+{% endblock %}

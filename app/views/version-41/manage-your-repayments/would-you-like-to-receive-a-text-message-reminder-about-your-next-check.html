@@ -1,0 +1,107 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Have you changed your mobile number?
+
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+			   <h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+			   <p>What you owe:
+					   <span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+		<div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+        <span class="govuk-caption-xl">Manage your repayments
+</span>
+Would you like to receive a text message reminder about your next check?
+      </h1>
+      <div class="flexible-banner-float-none">
+        <ul class="govuk-list">
+          <li>
+            <h3>We will send you a reminder 30 days before:</h3>
+            <span id="new-debts-amount"><b>
+              <span id="new-debts-amount"><b>  <script>
+                  var x = 12; //or whatever offset
+                  var CurrentDate = new Date();
+                  console.log("Current date:", CurrentDate);
+                  CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                   document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                </script>
+            </b></span>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="govuk-inset-text">
+    <label class="govuk-heading-m" for="telephone-number">
+    Mobile number
+    </label>
+    <p>*******000</p>
+    <p>If you need to change your mobile number, you need to contact DWP Debt Management.</p>
+
+    <h2 class="govuk-heading-m ">Debt Management</h2>
+    <ul class="govuk-list">
+    <li>Telephone: 0800 916 0647</li>
+    <li>Textphone: 0800 916 0651</li>
+    <li>Monday to Friday, 8am to 7:30pm (except public holidays)</li>
+    </ul>
+    <p class="govuk-body">
+    <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+    </p>
+    </div>
+<form class="form" action="financial-situation" method="post">
+
+
+  <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+
+  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="confirm-details-change" name="reminder-notification-payment-setup-done-yes-no" type="radio" value="yes" {{checked('reminder-notification-payment-setup-done-yes-no','yes')}}>
+      <label class="govuk-label govuk-radios__label" for="changed-name">
+        Yes
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="confirm-details-change-2" name="reminder-notification-payment-setup-done-yes-no" type="radio" value="no" {{checked('reminder-notification-payment-setup-done-yes-no','no')}}>
+      <label class="govuk-label govuk-radios__label" for="changed-name-2">
+        No
+      </label>
+    </div>
+  </div>
+  </fieldset>
+  </div>
+
+
+
+		<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+	 </form>
+
+
+
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Account home
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Important Information</span>
+      Changes to your repayments
+    </h1>
+
+
+    <p>As your claim has ended, we will no longer be deducting money from your benefits.</p>
+
+    <p>We will be sending you a letter with details of how to setup a payment plan.</p>
+
+    <p>You can either wait for the letter or <a href="">setup a payment plan</a> now.</p>
+
+    <br>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              I have read the message.
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+
+    <a class="govuk-button" href="indexAccountHome-onoff-mvp-on-to-off-alt-no-banner">Back to account</a>
+
+  </div>
+</div>
+
+{% endblock %}

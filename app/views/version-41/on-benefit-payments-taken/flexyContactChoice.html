@@ -1,0 +1,136 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+    
+    
+    
+    <h1 class="govuk-heading-xl">
+
+      Sign up for helpful notifications</h1>
+      
+      
+      
+      <div class="govuk-inset-text">
+        <p>We will send you notifications via text or email &ndash; you can opt out or change your contact preferences by signing in to your account and managing your plan at any time.</p>
+         </div>
+		
+
+
+	   <form class="form" action="flexyContactDetails" method="post">
+       
+       
+       
+     <div class="govuk-form-group">
+       <fieldset class="govuk-fieldset" aria-describedby="choice-hint">
+         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+           <h1 class="govuk-fieldset__heading">
+         Choose the notifications you would like to receive
+           </h1>
+         </legend>
+         <div id="choice-hint" class="govuk-hint">
+           Select all that apply.
+         </div>
+         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        
+        
+        
+        
+           <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="comm2" name="commChoice" type="checkbox" value="comm2" aria-describedby="comm2-hint">
+             <label class="govuk-label govuk-checkboxes__label" for="comm2">
+              Plan management
+             </label>
+             <div id="comm2-hint" class="govuk-hint govuk-checkboxes__hint">
+              A monthly reminder to sign in and manage your plan
+             </div>          
+           </div>
+          
+          {% if data['paymentOptions']=='flexyPayChoice'%} 
+           <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="comm2a" name="commChoice" type="checkbox" value="comm2" aria-describedby="comm2-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="comm2a">
+              Payment reminders
+              </label>
+              <div id="comm2a-hint" class="govuk-hint govuk-checkboxes__hint">
+               If you have not made a payment by the middle of the month, you will receive a message to remind you
+              </div>          
+            </div>
+            {% else %}
+           {% endif %}
+           
+           
+           
+           
+           {% if data['paymentOptions']=='ddFixedChoice'%} 
+           <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="comm3" name="commChoice" type="checkbox" value="comm3" aria-describedby="comm3-hint">
+             <label class="govuk-label govuk-checkboxes__label" for="comm3">
+              Problems with any payments
+             </label>
+             <div id="comm3-hint" class="govuk-hint govuk-checkboxes__hint">
+               We will send you alerts to sign in and view your options if there are any problems with your payments
+              </div>
+           </div>
+           {% else %}
+           {% endif %}
+           
+           
+           {% if data['paymentChoices']=='lowPayments'%}
+           <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="comm1" name="commChoice" type="checkbox" value="comm1" aria-describedby="comm1-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="comm1">
+               Review date
+              </label>
+              <div id="comm1-hint" class="govuk-hint govuk-checkboxes__hint">
+              If you have not already done your review, we will send you a reminder within one week
+              </div>
+            </div>
+            {% else %}
+            {% endif %}
+           
+           <div class="govuk-radios__divider">or</div>
+           
+           
+           <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="comm4" name="commChoice" type="checkbox" value="comm4">
+              <label class="govuk-label govuk-checkboxes__label" for="comm4">
+                I do not want to receive any notifications
+       
+      
+              </label>
+            </div>
+         </div>
+     
+       </fieldset>
+     </div>  
+       
+ 
+      
+      
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      
+			</form>
+			
+	
+			
+
+    </div>
+</div>
+
+{% endblock %}

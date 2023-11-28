@@ -1,0 +1,118 @@
+
+{% extends "layout-4.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+		<span class="back-link"><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></span>
+		
+
+
+	   <form class="form" action="lowTextDetails" method="post">
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+
+
+
+			<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+      	<span class="govuk-caption-xl">Step 2 of 5</span>
+       How would you like to be contacted about your review?
+      </h1>
+    </legend>
+   <!-- <span id="how-contacted-conditional-hint" class="govuk-hint">
+				      We will contact you each month to let you know a payment is due
+				    </span> -->
+				    
+	
+	<div class="govuk-inset-text mt0 mb20">
+
+								<p>We will contact you a week before your review date to let you know when it will take place.</p>
+								
+				   
+				   				    </div> 		
+
+
+<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+    
+    
+    
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reviewEmail" name="reviewChoice" type="checkbox" value="reviewEmail" data-aria-controls="conditional-citizenship-conditional">
+        <label class="govuk-label govuk-checkboxes__label" for="reviewEmail">
+          Email
+        </label>
+      </div>
+      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contactReviewEmail">
+            Email address
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="contactReviewEmail" name="contact-by-email" type="email" spellcheck="false">
+        </div>
+
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reviewText" name="reviewChoice" type="checkbox" value="reviewText" data-aria-controls="conditional-citizenship-conditional-3">
+        <label class="govuk-label govuk-checkboxes__label" for="reviewText">
+          Text message
+        </label>
+      </div>
+      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-3">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contactReviewText">
+            UK mobile phone number
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="contactReviewText" name="contact-by-text" type="tel">
+        </div>
+      </div>
+      
+</div>
+      
+      
+    
+
+      </fieldset>
+      </div>
+      
+      
+      
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      
+			</form>
+			
+	
+			
+
+    </div>
+</div>
+
+{% endblock %}
