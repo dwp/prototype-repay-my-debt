@@ -539,19 +539,22 @@ router.post('/version-40/on-benefit-no-payments-taken/signGuard-update-nobanner'
 })
 
 
-router.post('../version-41/sign-in', function (req, res) {
+router.post('/version-41/sign-in-choice', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'
-  var option = req.session.data['../version-41/sign-in-new']
+  var option = req.session.data['sign-in-choice']
 
   // Check whether the variable matches a condition
   if (option == 'sign-in-oidv'){
     // Send user to next page
-    res.redirect('/version-40/sign-in-oidv')
+    res.redirect('/version-41/sign-in-oidv')
 
-  } else {
+  } else if (option == 'security-code') {
     // Send user to ineligible page
-    res.redirect('/version-40/sign-in-using-security-code')
-  }
+    res.redirect('/version-41/sign-in-security-code')
+  }  else {
+      // Send user to ineligible page
+      res.redirect('/version-41/register-new-account')
+    }
 
 })
