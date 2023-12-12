@@ -17,7 +17,7 @@ Sign in to your Repay and manage benefit money you owe account
 
 
 
-		<form class="form" action="/version-40/sign-in" method="post">
+		<form class="form" action="/version-41/sign-in-choice" method="post">
 
 
 
@@ -35,8 +35,8 @@ Sign in to your Repay and manage benefit money you owe account
 					<div class="govuk-radios">
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="inRegister" name="sign-in-new" type="radio"
-								value="sign-in-oidv" aria-describedby="sign-in-item-hint">
+							<input class="govuk-radios__input" id="inRegister" name="sign-in-choice" type="radio"
+								aria-describedby="sign-in-item-hint" value="sign-in-oidv" >
 							<label class="govuk-label govuk-radios__label" for="inRegister">
 								<b>
 
@@ -49,7 +49,7 @@ Sign in to your Repay and manage benefit money you owe account
 							</div>
 						</div>
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="inSecurity" name="sign-in-new" type="radio"
+							<input class="govuk-radios__input" id="inSecurity" name="sign-in-choice" type="radio"
 								aria-describedby="sign-in-2-item-hint" value="security-code">
 							<label class="govuk-label govuk-radios__label" for="inSecurity">
 								<b>
@@ -65,7 +65,7 @@ Sign in to your Repay and manage benefit money you owe account
 						<div class="govuk-radios__divider">or</div>
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="sign-in-3" name="inSign" type="radio"
+							<input class="govuk-radios__input" id="register-account" name="sign-in-choice" type="radio"
 								value="govuk-verify" aria-describedby="sign-in-3-item-hint">
 							<label class="govuk-label govuk-radios__label" for="sign-in-3">
 								<b>Register a new account</b>
@@ -81,12 +81,13 @@ Sign in to your Repay and manage benefit money you owe account
 			</div>
 
 
-		</form>
 
 
 
-		<a href="sign-in-security-code" class="govuk-button">Continue</a>
-
+			<button class="govuk-button" data-module="govuk-button">
+				Continue
+			</button>
+	</form>
 
 
 

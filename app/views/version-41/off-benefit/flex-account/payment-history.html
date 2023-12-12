@@ -1,0 +1,165 @@
+
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+  Payment history
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+   <div class="govuk-grid-column-three-quarters">
+
+
+
+
+	   <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Payment history</h1>
+
+
+     <div class="flexible-banner-float-none">
+       <ul class="govuk-list">
+         <li>
+           <h3>Payments taken</h3>
+           <span id="new-debts-amount"><b>5</b></span>
+         </li>
+         <li>
+           <h3>Total amount repaid</h3>
+           <span class="total-amount" id="new-total-owed"><b>£50.00</b></span>
+         </li>
+         <li>
+           <h3>Total amount left to pay</h3>
+           <span class="total-amount" id="new-total-owed"><b>£500.00</b></span>
+         </li>
+       </ul>
+     </div>
+
+
+
+
+     <div id="green-banner" class="alert-green">
+       <h2 class="govuk-heading-m">You have 2 pending payments</h2>
+             <p> Pending payments can take 2-5 working days to clear and show in the balance.</p>
+             <table class="govuk-table summary-pay">
+
+
+             <thead class="govuk-table__head">
+             <tr class="govuk-table__row">
+
+              <th class="govuk-table__header" scope="col">Payment date</th>
+
+              <th class="govuk-table__header" scope="col">Payment type</th>
+
+              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+
+
+             </tr>
+             </thead>
+
+             <tbody class="govuk-table__body">
+
+
+
+                <tr class="govuk-table__row">
+                   <td class="govuk-table__cell">01 December 2023</td>
+                   <td class="govuk-table__cell">Card payment</td>
+                   <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+                 </tr>
+                 <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">03 December 2023</td>
+                    <td class="govuk-table__cell">Card payment</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">&pound;5.00</td>
+                  </tr>
+
+
+
+
+
+
+             </tbody>
+             </table>
+           </div>
+
+
+
+<h2 class="govuk-heading-m mt40">All payments</h2>
+
+
+
+<table class="govuk-table summary-pay">
+
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+
+ <th class="govuk-table__header" scope="col">Payment date</th>
+
+ <th class="govuk-table__header" scope="col">Payment type</th>
+
+ <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+
+ <!--  <th class="govuk-table__header govuk-table__header--numeric" scope="col">Balance</th> -->
+
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+
+
+
+   <tr class="govuk-table__row">
+      <td class="govuk-table__cell">01 November 2023</td>
+      <td class="govuk-table__cell">Card payment</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+    </tr>
+    <tr class="govuk-table__row">
+       <td class="govuk-table__cell">01 October 2023</td>
+       <td class="govuk-table__cell">Card payment</td>
+       <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+     </tr>
+     <tr class="govuk-table__row">
+        <td class="govuk-table__cell">21 September 2023</td>
+        <td class="govuk-table__cell">Card payment</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+      </tr>
+      <tr class="govuk-table__row">
+         <td class="govuk-table__cell">11 August 2023</td>
+         <td class="govuk-table__cell">Card payment</td>
+         <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+       </tr>
+       <tr class="govuk-table__row">
+          <td class="govuk-table__cell">01 July 2023</td>
+          <td class="govuk-table__cell">Card payment</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+        </tr>
+
+
+
+
+
+
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}
