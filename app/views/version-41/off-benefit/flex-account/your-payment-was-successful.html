@@ -43,15 +43,29 @@ Your payment was successful
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Expected final date</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell" id="date">
 
-              <script>
+              <!-- <script>
                 var CurrentDate = new Date();
-                console.log("Current date:", CurrentDate);
-                CurrentDate.setMonth(CurrentDate.getMonth() + 10);
+
                  document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
 
-               </script><br>(if monthly target is met each month)
+               </script><br> -->
+
+               <script>
+const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+const d = new Date();
+let month = months[d.getMonth()];
+
+document.getElementById("date").innerHTML = month + " 2024" ;
+
+
+
+</script><br>
+
+
+(if monthly target is met each month)
              </td>
           </tr>
         </tbody>
