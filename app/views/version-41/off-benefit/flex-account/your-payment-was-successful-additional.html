@@ -34,15 +34,32 @@ Your payment was successful
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Payment date</th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell" id="date">
 
-              <script>
-                var CurrentDate = new Date();
-                console.log("Current date:", CurrentDate);
-                CurrentDate.setMonth(CurrentDate.getMonth());
-                 document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
 
-               </script>
+
+               <script>
+          const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+          const d = new Date();
+          let month = months[d.getMonth()];
+          let date = d.getDate();
+          d.setMonth(d.getMonth() + 10);
+
+          document.getElementById("date").innerHTML = date	+ " " + month + " " + d.getFullYear() ;
+
+
+
+          </script>
+
+          <script>
+
+            var x =10; //or whatever offset
+            var CurrentDate = new Date();
+            console.log("Current date:", CurrentDate);
+            CurrentDate.setMonth(CurrentDate.getMonth() + x);
+            document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+          </script>
              </td>
           </tr>
         </tbody>
