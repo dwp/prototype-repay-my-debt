@@ -44,22 +44,13 @@ Your payment was successful
           const d = new Date();
           let month = months[d.getMonth()];
           let date = d.getDate();
-          d.setMonth(d.getMonth() + 10);
-
           document.getElementById("date").innerHTML = date	+ " " + month + " " + d.getFullYear() ;
 
 
 
           </script>
 
-          <script>
 
-            var x =10; //or whatever offset
-            var CurrentDate = new Date();
-            console.log("Current date:", CurrentDate);
-            CurrentDate.setMonth(CurrentDate.getMonth() + x);
-            document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
-          </script>
              </td>
           </tr>
         </tbody>
