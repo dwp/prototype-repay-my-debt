@@ -13,9 +13,15 @@
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-l">David Jones</span>
-        Your payment is being processed
+        Your payment has been received
       </h1>
+
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+      <p>
+        It will take 2 to 5 working days for your payment to clear and update your balance.
+      </p>
+
+
 
       <form class="form" action="/version-41/sign-out" method="post">
         <div id="green-banner" class="alert-green">
@@ -24,6 +30,8 @@
                 <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                  <th class="govuk-table__header" scope="col">Payment date</th>
+                 <th class="govuk-table__header" scope="col">Payment type</th>
+
                  <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
                 </tr>
                 </thead>
@@ -34,6 +42,8 @@
 
                    <tr class="govuk-table__row">
                       <td class="govuk-table__cell">01 December 2023</td>
+                      <td class="govuk-table__cell">Card payment</td>
+
                       <td class="govuk-table__cell govuk-table__cell--numeric">&pound;500.00</td>
                     </tr>
 
@@ -46,12 +56,9 @@
                 </tbody>
                 </table>
               </div>
-              <p>
-                It will take 2 to 5 working days for your payment to clear and update your balance.
-              </p>
-<p>You can then sign back in to your account to view confirmation.</p>
+
         {{ govukButton({
-          text: "Finish and sign out"
+          text: "Sign out"
         }) }}
 
       </form>
