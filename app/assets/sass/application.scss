@@ -976,3 +976,29 @@ color:#1d70b8;
 
 
 }
+
+
+
+//toggle classes
+
+.dwp-language-toggle {
+    font-family: Arial,sans-serif;
+    font-size: 1rem;
+}
+
+.dwp-language-toggle__list {
+    margin-top: 1em;
+    text-align: right;
+}
+.dwp-language-toggle__list-item {
+    display: inline-block;
+}
+
+.dwp-language-toggle__list-item:first-child:after {
+    content: "";
+    display: inline-block;
+    border-right: 1px solid #0b0c0c;
+    position: relative;
+    top: 0.1875em;
+    height: 1em;
+}
