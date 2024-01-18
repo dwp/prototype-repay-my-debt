@@ -11,7 +11,7 @@ Your payment was successful
     <div class="govuk-grid-column-three-quarters">
 
       {{ govukPanel({
-        titleText: "Your payment was successful",
+        titleText: "Your flexible payment plan is now setup",
         html: "You will receive a payment confirmation email "
       }) }}
 
@@ -23,13 +23,14 @@ Your payment was successful
 
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Plan type</th>
+            <td class="govuk-table__cell">Flexible payments</td>
+          </tr>
+          <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Total amount owed</th>
             <td class="govuk-table__cell">£109.80</td>
           </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Payment type</th>
-            <td class="govuk-table__cell">Card payment</td>
-          </tr>
+
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Monthly target</th>
             <td class="govuk-table__cell">£10.00 for 10 months</td>
@@ -85,7 +86,7 @@ document.getElementById("date").innerHTML = month + " 2024" ;
 
       <a href="/version-41/off-benefit/flex-account/account-home-one-setup.html" >
         <button type="submit" class="govuk-button" data-module="govuk-button">
-      Go to account home
+      Finish and sign out
     </button>
   </a>
 
