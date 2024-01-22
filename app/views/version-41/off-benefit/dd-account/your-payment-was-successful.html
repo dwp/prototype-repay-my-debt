@@ -1,0 +1,72 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Your payment was successful
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {{ govukPanel({
+        titleText: "Your direct debit payment plan is now setup",
+        html: "You will receive a payment confirmation email "
+      }) }}
+
+      <p>
+    It will take 2 to 5 working days for your payment to clear.      </p>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Plan summary</caption>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Plan type</th>
+            <td class="govuk-table__cell">Direct debit</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Total amount owed</th>
+            <td class="govuk-table__cell">£109.80</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Payment breakdown</th>
+            <td class="govuk-table__cell">
+<ul class="govuk-list govuk-list--bullet">
+  <li>10 payments of £10.00</li>
+  <li>1 finalpayment of 9.80</li>
+</ul></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Payment dates</th>
+            <td class="govuk-table__cell"><strong>First payment:</strong><br>01 February 2024 <br><br>
+            <strong>Expected final payment:</strong><br>01 September 2024</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+
+
+
+      <p>
+    Your payments will show on your bank statement as <strong>CEN REC GROUP DD.</strong>     </p>
+      <p>
+        <a href="#">
+          What did you think of this service? (opens in new tab)
+        </a>
+      </p>
+
+      <a href="/version-41/off-benefit/flex-account/account-home-one-setup.html" >
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+      Finish and sign out
+    </button>
+  </a>
+
+    </div>
+  </div>
+
+{% endblock %}
