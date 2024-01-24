@@ -24,16 +24,20 @@ Your payment was successful
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Plan type</th>
-            <td class="govuk-table__cell">Affordable payments</td>
+            <td class="govuk-table__cell">Affordable payment plan</td>
           </tr>
+
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Total amount owed</th>
             <td class="govuk-table__cell">£109.80</td>
           </tr>
-
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Payment type</th>
+            <td class="govuk-table__cell">Flexible payments</td>
+          </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Monthly target</th>
-            <td class="govuk-table__cell">£10.00 for 10 months</td>
+            <td class="govuk-table__cell">£10.00</td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Payment today</th>
@@ -44,7 +48,7 @@ Your payment was successful
             <td class="govuk-table__cell">DWP Debt Management</td>
           </tr>
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Expected final date</th>
+            <th scope="row" class="govuk-table__header">Proposed plan review date</th>
             <td class="govuk-table__cell" id="date">
 
               <!-- <script>
@@ -60,14 +64,13 @@ const months = ["January","February","March","April","May","June","July","August
 const d = new Date();
 let month = months[d.getMonth()];
 
-document.getElementById("date").innerHTML = month + " 2024" ;
+document.getElementById("date").innerHTML = month + " 2025" ;
 
 
 
 </script><br>
 
 
-(if monthly target is met each month)
              </td>
           </tr>
         </tbody>
