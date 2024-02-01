@@ -1,0 +1,478 @@
+
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Details of what you owe
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to account home",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+									<h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Details of what you owe</h1>
+
+                  <!-- <div class="govuk-inset-text">
+         			 Total amount owed: <span class="total-amount">
+         			&pound;1139.10
+
+         									 </span>
+
+
+         			</div>-->
+
+
+
+
+              <div class="govuk-inset-text">
+                Total amount left to pay: <span class="total-amount">
+                  &pound;750.00
+
+                </span>
+
+
+
+              </div>
+
+ <div class="govuk-accordion mb50" data-module="govuk-accordion" id="accordion-with-summary-sections">
+
+
+          <div class="govuk-accordion__section ">
+        		  <div class="govuk-accordion__section-header">
+        			<h2 class="govuk-accordion__section-heading">
+        			  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+        				Universal Credit
+        			  </span>
+        			 </h2>
+
+
+
+        		<div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
+        			Advance payment (joint)
+        			</div>
+
+        		  </div>
+        		  <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2">
+
+
+
+        		  <div class="flexible-banner govuk-grid-column-full">
+
+
+
+
+
+        				 <table class="govuk-table">
+
+        			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+
+
+
+        					<tbody class="govuk-table__body">
+
+
+        					<tr class="govuk-table__row">
+        						 <th scope="row" class="govuk-table__header">Date of advance</th>
+        						  <td class="govuk-table__cell">01 June 2023</td>
+        						</tr>
+
+        					   <tr class="govuk-table__row">
+        						   <th scope="row" class="govuk-table__header">Original amount owed</th>
+        							<td class="govuk-table__cell">&pound;1,000.00</td>
+        						  </tr>
+
+        					 <tr class="govuk-table__row">
+        						 <th scope="row" class="govuk-table__header">Current amount owed</th>
+        						  <td class="govuk-table__cell">
+
+
+
+        							   &pound;350.00
+
+
+
+        							  </td>
+        						</tr>
+
+
+                    <!-- <tr class="govuk-table__row">
+                       <th scope="row" class="govuk-table__header">Original amount owed</th>
+                        <td class="govuk-table__cell">&pound;800.00</td>
+                      </tr>
+
+        							 <tr class="govuk-table__row">
+        								  <th scope="row" class="govuk-table__header">Total amount repaid</th>
+        								   <td class="govuk-table__cell">&pound;220.00</td>
+        								 </tr>
+
+        						 <tr class="govuk-table__row">
+        							  <th scope="row" class="govuk-table__header">Total amount left to pay</th>
+        							   <td class="govuk-table__cell">&pound;580.00</td>
+        							 </tr> -->
+
+
+
+        					</tbody>
+
+        		  </table>
+
+
+
+              <h4 class="govuk-heading-s">How a joint repayment works
+              </h4>
+              <p>
+              The money you owe as part of this joint repayment is shared with your partner so you're both responsible for the repayments.
+              </p><p>
+              The total amount of this joint repayment will be shown on your account and also your partner's. </p>
+
+
+
+        		  </div>
+
+       <p>If you have any questions, you should contact Universal Credit directly:</p>
+        	 <ul class="govuk-list">
+        	   <li>Telephone: 0800 328 5644</li>
+            <li>Textphone: 0800 328 1344</li>
+             <li>Welsh language: 0800 328 1744</li>
+
+
+              <li>Monday to Friday, 8am to 6pm (closed on public holidays)</li>
+        	 </ul>
+
+         <p class="govuk-body">
+           <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+         </p>
+
+        		  </div>
+        		</div>
+
+
+ 	<div class="govuk-accordion__section ">
+ 		  <div class="govuk-accordion__section-header">
+ 			<h2 class="govuk-accordion__section-heading">
+ 			  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+ 				Universal Credit
+ 			  </span>
+ 			 </h2>
+
+
+
+ 		<div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
+ 			Overpayment (joint)
+ 			</div>
+
+ 		  </div>
+ 		  <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2">
+
+
+
+ 		  <div class="flexible-banner-float-none">
+
+
+
+
+
+ 				 <table class="govuk-table">
+
+ 			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+
+
+
+ 					<tbody class="govuk-table__body">
+
+
+ 					<tr class="govuk-table__row">
+ 						 <th scope="row" class="govuk-table__header">Overpayment period</th>
+ 						  <td class="govuk-table__cell"> 	05 June 2023 to 30 July 2023</td>
+ 						</tr>
+
+            <tr class="govuk-table__row">
+               <th scope="row" class="govuk-table__header">Original amount owed</th>
+                <td class="govuk-table__cell">&pound;630.00</td>
+              </tr>
+ 							 <tr class="govuk-table__row">
+ 								  <th scope="row" class="govuk-table__header">Current amount repaid</th>
+ 								   <td class="govuk-table__cell">&pound;200.00</td>
+ 								 </tr>
+
+
+
+
+ 					</tbody>
+
+ 		  </table>
+
+
+
+
+       <h4 class="govuk-heading-s">Overpayment reason</h4>
+      <p>
+      You were overpaid because you or your partner earned too much from employment, either full time or part time.</p>
+      <p>You were sent a letter about your overpayment on 02 January 2024.</p>
+       <h4 class="govuk-heading-s">How a joint repayment works
+</h4>
+ <p>
+   The money you owe as part of this joint repayment is shared with your partner so you're both responsible for the repayments.
+</p><p>
+  The total amount of this joint repayment will be shown on your account and also your partner's. </p>
+
+ 		  </div>
+
+ 	 <p>You can check your Universal Credit journal if you have access to it for more details, or contact Universal Credit:</p>
+
+
+ 	 <ul class="govuk-list">
+ 	   <li>Telephone: 0800 012 1331</li>
+      <li>Textphone: 0800 012 1441 (for deaf or hard of hearing users and customers with speech difficulties)</li>
+
+
+       <li>Monday to Friday, 10am to 4pm (closed on bank holidays)</li>
+ 	 </ul>
+
+  <p class="govuk-body">
+    <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+  </p>
+
+ 		  </div>
+ 		</div>
+
+
+
+
+
+
+	<div class="govuk-accordion__section ">
+		  <div class="govuk-accordion__section-header">
+			<h2 class="govuk-accordion__section-heading">
+			  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+				Universal Credit
+			  </span>
+			 </h2>
+
+
+
+		<div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
+			Recoverable Hardship Payment (split) - This was a previous joint amount
+			</div>
+
+		  </div>
+		  <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2">
+
+
+
+		  <div class="flexible-banner govuk-grid-column-full">
+
+
+
+
+
+				 <table class="govuk-table">
+
+			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+
+
+
+					<tbody class="govuk-table__body">
+
+
+					<tr class="govuk-table__row">
+						 <th scope="row" class="govuk-table__header">Date of advance</th>
+						  <td class="govuk-table__cell">19 March 2019</td>
+						</tr>
+
+
+
+					 <tr class="govuk-table__row">
+						 <th scope="row" class="govuk-table__header">Current amount owed</th>
+						  <td class="govuk-table__cell">
+
+
+
+							   &pound;250.00
+
+							  </td>
+						</tr>
+
+					</tbody>
+
+		  </table>
+
+
+
+
+
+		  </div>
+<p>If you have any questions, you should contact Universal Credit directly:
+
+</p>
+
+	 <ul class="govuk-list">
+	   <li>Telephone: 0345 300 3900</li>
+     <li>Welsh language: 0300 200 1900</li>
+
+
+      <li>Monday to Friday, 8am to 4pm (except public holidays)</li>
+	 </ul>
+
+ <p class="govuk-body">
+   <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+ </p>
+
+		  </div>
+		</div>
+
+
+        </div>
+        <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2">
+
+
+
+        <div class="flexible-banner govuk-grid-column-full">
+
+
+
+
+
+           <table class="govuk-table">
+
+           <caption class="visually-hidden">Overpayment detail</caption>
+
+
+
+
+
+            <tbody class="govuk-table__body">
+
+
+            <tr class="govuk-table__row">
+               <th scope="row" class="govuk-table__header">Overpayment period</th>
+                <td class="govuk-table__cell"> 10 January 2019 to 10 December 2019
+</td>
+              </tr>
+
+               <tr class="govuk-table__row">
+                 <th scope="row" class="govuk-table__header">Original amount owed</th>
+                <td class="govuk-table__cell">&pound;100.00</td>
+                </tr>
+
+
+
+              <tr class="govuk-table__row">
+                 <th scope="row" class="govuk-table__header">Current amount owed</th>
+                  <td class="govuk-table__cell">&pound;20.00</td>
+                </tr>
+
+
+
+
+
+            </tbody>
+
+        </table>
+
+
+
+
+
+
+        </div>
+        <div class="flexible-banner govuk-grid-column-full">
+
+
+
+
+
+           <table class="govuk-table">
+
+           <caption class="visually-hidden">Overpayment detail</caption>
+
+
+
+
+
+            <tbody class="govuk-table__body">
+
+
+            <tr class="govuk-table__row">
+               <th scope="row" class="govuk-table__header">Overpayment period</th>
+                <td class="govuk-table__cell"> 12 January 2018 to 12 December 2018
+</td>
+              </tr>
+
+               <tr class="govuk-table__row">
+                 <th scope="row" class="govuk-table__header">Original amount owed</th>
+                <td class="govuk-table__cell">&pound;1,000.00</td>
+                </tr>
+
+
+
+
+              <tr class="govuk-table__row">
+                 <th scope="row" class="govuk-table__header">Current amount owed</th>
+                  <td class="govuk-table__cell">&pound;100.00</td>
+                </tr>
+
+
+
+
+
+            </tbody>
+
+        </table>
+
+
+
+
+        </div>
+
+        <p>If you have any questions, you should contact DM Service Centre directly:
+
+
+
+   </p>
+         	 <ul class="govuk-list">
+         	   <li>Telephone: 0800 587 1322</li>
+               <li>Textphone: 0800 587 2986 (for deaf or hard of hearing users and customers with speech difficulties)</li>
+
+
+               <li>Monday to Friday, 9am to 4pm (closed on public holidays)</li>
+         	 </ul>
+
+        </div>
+      </div>
+
+
+
+
+
+
+</div>
+ <!-- // Accordian end -->
+
+
+
+    </div>
+</div>
+
+{% endblock %}

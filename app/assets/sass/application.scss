@@ -12,7 +12,8 @@
 @import "versions/margins";
 
 // for header
-
+.alert-red {border-left: 5px solid #d4351c;
+    background: rgba(212,53,28,.05);padding: 1em 3em 0.2em 1em;}
 .x-govuk-masthead {
   padding-bottom: 25px;
   padding-top: 0;
@@ -977,7 +978,9 @@ color:#1d70b8;
 
 }
 
-
+.govuk-phase-banner__content__tag {
+  text-transform: capitalize;
+}
 
 //toggle classes
 
