@@ -84,41 +84,28 @@ Account home
 
   							  <div class="flexible-banner-float-none">
 
-<p>A payment is due for: <br><strong>
-February 2024
-</strong></p>
-  							  <ul class="govuk-list">
+<p style="margin-bottom:0px;">A payment is due for: <br>
+
+  <strong id="date">
+  <script>
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+  const d = new Date();
+  let month = months[d.getMonth()];
+
+  document.getElementById("date").innerHTML = month + " " + d.getFullYear() ;
 
 
 
+  </script>
+</strong>
+</p>
 
-
-
-  								  <li>
-
-  										   <h3>Monthly target</h3>
-  										  <b>&pound;20.00</b>
-
-
-
-  								  </li>
-
-  								  <li>
-  									  <h3>Paid this month</h3>
-  									  <b>&pound;10.00</b>
-  								  </li>
-
-
-
-
-  							  </ul>
 
 
 
   							  </div>
 
-
-<br>
 <p>You need to make a payment to avoid further action.</p>
 
 
