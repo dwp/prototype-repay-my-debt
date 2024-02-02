@@ -66,13 +66,19 @@ Account home
 
   					   <div class="scenario-inner-panel">
 
-  					  <p class="activeMonth">Active month: <b>
-                <script>
+  					  <p class="activeMonth">Active month:&nbsp;<b id="date">
 
-                  var CurrentDate = new Date();
-                  console.log("Current date:", CurrentDate);
-                   document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
-                </script></b> <!--<span>11 days remaining</span>--></p>
+                <script>
+           const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+           const d = new Date();
+           let month = months[d.getMonth()];
+
+           document.getElementById("date").innerHTML = month + " " + d.getFullYear() ;
+
+
+
+           </script></b> <!--<span>11 days remaining</span>--></p>
 
 
 
@@ -150,7 +156,7 @@ Account home
 
 
 
-  			  <div class="scenario-panel">
+  			  <div class="scenario-panel" style="height:455px;">
   					   <h2 class="govuk-heading-s">Summary</h2>
 
 
