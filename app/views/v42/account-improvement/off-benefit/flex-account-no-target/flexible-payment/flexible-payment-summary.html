@@ -28,8 +28,19 @@
           <dt class="govuk-summary-list__key">
             Payment today
           </dt>
-          <dd class="govuk-summary-list__value payment-today">
-            £{{ data['flexible-amount'] }}
+          <dd class="govuk-summary-list__value payment-today" id="amount">
+
+
+            <script type="text/javascript">
+
+
+                var z = {{ data['flexible-amount'] }};
+
+                document.getElementById("amount").innerHTML = "£"+ (z).toFixed(2);
+
+            </script>
+
+
           </dd>
 
             <dd class="govuk-summary-list__actions">

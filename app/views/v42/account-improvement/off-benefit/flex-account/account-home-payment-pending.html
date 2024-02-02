@@ -102,15 +102,19 @@ Account home
 
 
   								  </li>
-                    <script type="text/javascript">
-                      function intToFloat(num, decPlaces) { return num.toFixed(decPlaces); }
 
-                    </script>
   								  <li>
   									  <h3>Paid this month</h3>
-  									  <b>
+  									  <b id="demo">
+                        <script type="text/javascript">
 
-                        £ {{ data['flexible-amount'] }}</b>
+                            var y = 10;
+                            var z = {{ data['flexible-amount'] }};
+                            var x = y + z;
+                            document.getElementById("demo").innerHTML = "£"+ (x).toFixed(2);
+
+                        </script>
+                        </b>
   								  </li>
 
   							  <!--<li>
