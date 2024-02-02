@@ -61,59 +61,33 @@ Account home
   		 <div class="govuk-grid-column-one-half">
 
 
-  			 <div class="scenario-panel">
+  			 <div class="scenario-panel" style="height:445px;">
   					   <h2 class="govuk-heading-s">Flexible payment plan</h2>
 
   					   <div class="scenario-inner-panel">
-
-  					  <p class="activeMonth">Active month: <b>
-                <script>
-
-                  var CurrentDate = new Date();
-                  console.log("Current date:", CurrentDate);
-                   document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
-                </script></b> <!--<span>11 days remaining</span>--></p>
 
 
 
 
 
   							  <div class="flexible-banner-float-none alert-green ">
+                    <p style="margin-bottom:0px;">You have made a payment for: <br>
 
+                      <strong id="date">
+                      <script>
+                      const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
-  							  <ul class="govuk-list">
+                      const d = new Date();
+                      let month = months[d.getMonth()];
 
-
-
-
-
-
-  								  <li>
-
-  										   <h3>Monthly target</h3>
-  										  <b>&pound;20.00</b>
+                      document.getElementById("date").innerHTML = month + " " + d.getFullYear() ;
 
 
 
-  								  </li>
-                    <script type="text/javascript">
-                      function intToFloat(num, decPlaces) { return num.toFixed(decPlaces); }
+                      </script>
+                    </strong>
+                    </p>
 
-                    </script>
-  								  <li>
-  									  <h3>Paid this month</h3>
-  									  <b>
-
-                        £ {{ data['flexible-amount'] }}</b>
-  								  </li>
-
-  							  <!--<li>
-  									  <h3>Left to pay</h3>
-  									  <b>&pound;67.00</b>
-  								  </li>-->
-
-
-  							  </ul>
 
 
 
@@ -121,7 +95,7 @@ Account home
 
 
 
-<p>You will not be penalised if you do not meet your target this month.</p>
+<p>You can still make more payments this month.</p>
 
 
 <span><a href="flexible-payment/pay-flexible-amount" class="secondary-invert">Make a flexible payment</a></span>
@@ -240,7 +214,7 @@ Account home
 
   			  <div class="govuk-grid-column-one-half">
 
-  			  <div class="scenario-panel">
+  			  <div class="scenario-panel" style="height:223px;">
   					   <h2 class="govuk-heading-s">What you owe</h2>
 
   					   <div class="scenario-inner-panel">

@@ -487,7 +487,23 @@ router.post('/version-40/sign-in-options', function (req, res) {
 
 })
 
+//Mange you repayments routes
 
+router.post('/v42/manage-your-repayments/amount-low', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var amountLow = req.session.data['new-affordable-amount']
+
+  // Check whether the variable matches a condition
+  if (amountLow <= 4){
+    // Send user to next page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/amount-too-low')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/what-this-will-mean-for-your-repayments')
+  }
+
+})
 
 //Mange you repayments routes
 
@@ -525,6 +541,9 @@ router.post('/version-40/sign-in', function (req, res) {
 })
 
 
+
+
+
 router.post('/version-40/on-benefit-no-payments-taken/signGuard-update-nobanner', function (req, res) {
 
   var option = req.session.data['new-signin']
@@ -537,6 +556,48 @@ router.post('/version-40/on-benefit-no-payments-taken/signGuard-update-nobanner'
   }
 
 })
+
+
+router.post('/v42/account-improvement/on-benefit/sign-in-choice', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['sign-in-choice']
+
+  // Check whether the variable matches a condition
+  if (option == 'sign-in-oidv'){
+    // Send user to next page
+    res.redirect('/v42/account-improvement/on-benefit/sign-in-oidv')
+
+  } else if (option == 'security-code') {
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/sign-in-security-code')
+  }  else {
+      // Send user to ineligible page
+      res.redirect('/v42/account-improvement/on-benefit/register-new-account')
+    }
+
+})
+
+router.post('/v42/account-improvement/off-benefit/flex-account/sign-in-choice', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['sign-in-choice']
+
+  // Check whether the variable matches a condition
+  if (option == 'sign-in-oidv'){
+    // Send user to next page
+    res.redirect('/v42/account-improvement/off-benefit/flex-account/sign-in-oidv')
+
+  } else if (option == 'security-code') {
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/off-benefit/flex-account/sign-in-security-code')
+  }  else {
+      // Send user to ineligible page
+      res.redirect('/v42/account-improvement/off-benefit/flex-account/register-new-account')
+    }
+
+})
+
 
 
 router.post('/version-41/sign-in-choice', function (req, res) {
