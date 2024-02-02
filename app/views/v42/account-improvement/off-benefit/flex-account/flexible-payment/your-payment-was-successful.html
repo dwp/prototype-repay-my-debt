@@ -26,7 +26,19 @@ Your payment was successful
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Amount</th>
-            <td class="govuk-table__cell">£{{ data['flexible-amount'] }}</td>
+            <td class="govuk-table__cell" id="amount">
+              <script type="text/javascript">
+
+
+                  var z = {{ data['flexible-amount'] }};
+
+                  document.getElementById("amount").innerHTML = "£"+ (z).toFixed(2);
+
+              </script>
+
+
+
+              </td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Payment to</th>
