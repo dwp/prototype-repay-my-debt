@@ -32,7 +32,7 @@ Account home
       </div>
       <div class="govuk-inset-text" style="float:right;">
         Total amount left to pay: <span class="total-amount">
-          &pound;600.00
+          &pound;750.00
 
         </span>
 
@@ -54,7 +54,7 @@ Account home
         <h2 class="govuk-heading-l">
           Planned service maintenance
         </h2>
-        <p>Due to maintenance, you will not be able to make any card payments from 11:45pm on Saturday until 3:45pm on Sunday 17 February.</p>
+        <p>Due to maintenance, you will not be able to make any card payments from 11:45pm on Saturday 16 February until 3:45pm on Sunday 17 February.</p>
       </div>
     </div>
 
@@ -70,31 +70,76 @@ Account home
 
 
 
-  		 <div class="govuk-grid-column-one-half" >
+  		 <div class="govuk-grid-column-one-half">
 
 
-  			 <div class="scenario-panel" >
-  					   <h2 class="govuk-heading-s">Your repayments</h2>
+  			 <div class="scenario-panel">
+  					   <h2 class="govuk-heading-s">Flexible payment plan</h2>
 
-  					   <div class="scenario-inner-panel" >
+  					   <div class="scenario-inner-panel">
+
+  					  <p class="activeMonth">Active month: <b id="date">
+
+                <script>
+           const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+           const d = new Date();
+           let month = months[d.getMonth()];
+
+           document.getElementById("date").innerHTML = month + " " + d.getFullYear() ;
 
 
-                 <div id="green-banner"  class="alert-green">
-              <p style="margin-bottom:0px;"> <strong>Previous payment</strong><br>
-                         £20.00 on 01 February 2024.</p>
-                       </div>
+
+           </script>
+
+
+              <!-- <div id="red-banner" class="payment-info alert-red">
+                      <p>You did not make a payment for:<br><strong>January 2024</strong></p>
+                    </div>-->
+
+<!-- Blue banner -->
+
+  							  <div class="flexible-banner-float-none alert-green">
+
+
+  							  <ul class="govuk-list">
 
 
 
 
 
-<p>If your monthly repayments stay at £40.00, you will clear the total amount owed in 01 Jul 2027.
+
+  								  <li>
+
+  										   <h3>Monthly target</h3>
+  										  <b>&pound;15.00</b>
+
+
+
+  								  </li>
+
+  								  <li>
+  									  <h3>Paid this month</h3>
+  									  <b>&pound;10.00</b>
+  								  </li>
+
+
+
+
+  							  </ul>
+
+
+
+  							  </div>
+
+<p>You will not be penalised if you do not meet your target this month.
 
 </p>
 
 
-  					  <span><a href="details-of-what-you-owe" class="secondary-invert">View details of what you owe</a></span>
+  					  <span style="font-weight:normal;"><a href="flexible-payment/pay-flexible-amount" class="secondary-invert">Make a flexible payment</a></span>
 
+  					  <span style="font-weight:normal;"><a href="#" class="secondary-invert">Switch to Direct Debit payment plan</a></span>
 
 
 
@@ -118,14 +163,17 @@ Account home
 
 
 
-  			  <div class="scenario-panel" style="height:360px;">
+  			  <div class="scenario-panel" style="height:454px;">
   					   <h2 class="govuk-heading-s">Summary</h2>
 
 
   					   <div class="scenario-inner-panel">
 
-
-
+<!--
+                 <div id="green-banner" class="alert-green">
+<p> <strong>You have 1 payment pending</strong></p>
+                         <p>Payments can take 2 to 5 working days to clear and update your balance.</p>
+                       </div> -->
 
 
   							   <table class="govuk-table">
@@ -138,7 +186,7 @@ Account home
   									<td class="govuk-table__cell">
 
 
-  								   17
+  								   35
   									</td>
   								 </tr>
 
@@ -149,7 +197,7 @@ Account home
 
 
 
-  								  &pound;330.00
+  								  &pound;250.00
 
 
   									</td>
@@ -180,7 +228,7 @@ Account home
 
 
 
-  					   <span><a href="payment-history" class="secondary-invert mt10">View your payment history</a></span>
+  					   <span style="font-weight:normal;"><a href="payment-history" class="secondary-invert mt10">View your payment history</a></span>
 
 
   		  </div>
@@ -205,17 +253,15 @@ Account home
 
   			  <div class="govuk-grid-column-one-half">
 
-  			  <div class="scenario-panel">
-  					   <h2 class="govuk-heading-s">Manage your repayments
-</h2>
+  			  <div class="scenario-panel" style="height:222px;">
+  					   <h2 class="govuk-heading-s">What you owe</h2>
 
   					   <div class="scenario-inner-panel">
-  						<p>As you are repaying money to DWP, you can manage your repayments based on how much you can afford.
+  						<p>Details of the money you owe.</p>
 
-</p>
+<br>
 
-
-  					   <span><a href="/v42/account-improvement/on-benefit/manage-your-repayments/how-much-can-you-afford-to-repay-each-month.html" class="secondary-invert dash-spacer">Tell us how much you can afford</a></span>
+  					   <span style="font-weight:normal;"><a href="details-of-what-you-owe" class="secondary-invert dash-spacer">View details of what you owe</a></span>
   					   </div>
   				   </div>
 
@@ -232,13 +278,13 @@ Account home
 
   		  <div class="govuk-grid-column-one-half">
 
-  			  <div class="scenario-panel" style="height:245px;">
+  			  <div class="scenario-panel">
   					   <h2 class="govuk-heading-s">Help and support</h2>
 
   					   <div class="scenario-inner-panel">
   						<p>Get help if you're struggling to pay and find<br>out what to do next.</p>
-<br>
-  					   <span><a href="help-and-support" class="secondary-invert">Get help and support</a></span>
+
+  					   <span style="font-weight:normal;"><a href="help-and-support" class="secondary-invert">Get help and support</a></span>
   					   </div>
   				   </div>
 
