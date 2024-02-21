@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "account-home"
+    href: "account-home-payment-pending"
   }) }}
 {% endblock %}
 
@@ -43,6 +43,72 @@
 
 
 
+               <div id="green-banner" class="alert-green">
+                 <h2 class="govuk-heading-m">You have 1 payment pending</h2>
+                       <p> Payments can take 2 to 5 working days to clear and update your balance.</p>
+                       <table class="govuk-table summary-pay">
+
+
+                       <thead class="govuk-table__head">
+                       <tr class="govuk-table__row">
+
+                        <th class="govuk-table__header" scope="col">Payment date</th>
+
+                        <th class="govuk-table__header" scope="col">Payment type</th>
+
+                        <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+
+
+                       </tr>
+                       </thead>
+
+                       <tbody class="govuk-table__body">
+
+
+
+                          <tr class="govuk-table__row">
+                             <td class="govuk-table__cell" id="date">
+
+                                              <script>
+                                         const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                                         const d = new Date();
+                                         let month = months[d.getMonth()];
+                                         let date = d.getDate();
+                                         document.getElementById("date").innerHTML = date	+ " " + month + " " + d.getFullYear() ;
+
+
+
+                                         </script>
+                      </td>
+                             <td class="govuk-table__cell">Card payment</td>
+
+                             <td class="govuk-table__cell govuk-table__cell--numeric" id="amount">
+                               <script type="text/javascript">
+
+
+                                   var z = {{ data['flexible-amount'] }};
+
+                                   document.getElementById("amount").innerHTML = "£"+ (z).toFixed(2);
+
+                               </script>
+
+
+
+
+                              </td>
+                           </tr>
+
+
+
+
+
+
+
+                       </tbody>
+                       </table>
+                     </div>
+
 
 
 
@@ -70,30 +136,28 @@
 
 <tbody class="govuk-table__body">
   <tr class="govuk-table__row">
-     <td class="govuk-table__cell">01 February 2024</td>
+     <td class="govuk-table__cell">1 February 2024</td>
      <td class="govuk-table__cell">Card payment</td>
-     <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+     <td class="govuk-table__cell govuk-table__cell--numeric">&pound;15.00</td>
    </tr>
   <tr class="govuk-table__row">
-     <td class="govuk-table__cell">03 January 2024</td>
-     <td class="govuk-table__cell">Card payment <strong class="govuk-tag govuk-tag--blue">
-          by partner
-        </strong></td>
-     <td class="govuk-table__cell govuk-table__cell--numeric">&pound;25.00</td>
+     <td class="govuk-table__cell">1 January 2024</td>
+     <td class="govuk-table__cell">Card payment</td>
+     <td class="govuk-table__cell govuk-table__cell--numeric">&pound;15.00</td>
    </tr>
    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">01 December 2023</td>
+      <td class="govuk-table__cell">1 December 2023</td>
       <td class="govuk-table__cell">Card payment</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">&pound;15.00</td>
     </tr>
 
    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">01 November 2023</td>
+      <td class="govuk-table__cell">1 November 2023</td>
       <td class="govuk-table__cell">Card payment</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">&pound;15.00</td>
     </tr>
     <tr class="govuk-table__row">
-       <td class="govuk-table__cell">01 October 2023</td>
+       <td class="govuk-table__cell">1 October 2023</td>
        <td class="govuk-table__cell">Card payment</td>
        <td class="govuk-table__cell govuk-table__cell--numeric">&pound;15.00</td>
      </tr>
@@ -118,7 +182,7 @@
            <td class="govuk-table__cell govuk-table__cell--numeric">&pound;15.00</td>
          </tr>
          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">01 April 2023</td>
+            <td class="govuk-table__cell">1 April 2023</td>
             <td class="govuk-table__cell">Card payment</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">&pound;15.00</td>
           </tr>
@@ -135,22 +199,22 @@
 <nav class="govuk-pagination" role="navigation" aria-label="Pagination">
   <ul class="govuk-pagination__list">
     <li class="govuk-pagination__item govuk-pagination__item--current">
-      <a class="govuk-link govuk-pagination__link" href="payment-history" aria-label="Page 1" aria-current="page">
+      <a class="govuk-link govuk-pagination__link" href="payment-history-pending" aria-label="Page 1" aria-current="page">
         1
       </a>
     </li>
     <li class="govuk-pagination__item ">
-      <a class="govuk-link govuk-pagination__link" href="payment-history-p2" aria-label="Page 2">
+      <a class="govuk-link govuk-pagination__link" href="payment-history-pending-p2" aria-label="Page 2">
         2
       </a>
     </li>
     <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link" href="payment-history-p3" aria-label="Page 3">
+      <a class="govuk-link govuk-pagination__link" href="payment-history-pending-p3" aria-label="Page 3">
         3
       </a>
     </li>
     <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link" href="payment-history-p4" aria-label="Page 4">
+      <a class="govuk-link govuk-pagination__link" href="payment-history-pending-p4" aria-label="Page 4">
         4
       </a>
     </li>
