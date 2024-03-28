@@ -44,7 +44,22 @@ Account home
     </div>
 
 
+    <div  class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content"  >
+        <h2 class="govuk-heading-l" style="max-width: none;">
+          Planned service maintenance
 
+        </h2>
+        <p style="max-width: none;">Due to maintenance, you will not be able to make any card payments from 11:45pm on Saturday 17 February until 3:45pm on Sunday 18 February.</p>
+
+
+      </div>
+    </div>
 
     <div class="govuk-grid-row">
   	  <div class="govuk-grid-column-full">
@@ -64,7 +79,7 @@ Account home
   			 <div class="scenario-panel">
   					   <h2 class="govuk-heading-s">Payment plan details</h2>
 
-  					   <div class="scenario-inner-panel" style="height:315px;">
+  					   <div class="scenario-inner-panel">
 
 
 
@@ -84,15 +99,15 @@ Account home
                      <td class="govuk-table__cell">
 
 
-                      	Flexible payments
+                      	Direct Debit
                      </td>
                     </tr>
   								 <tr class="govuk-table__row">
-  									<th scope="row" class="govuk-table__header">Monthly target</th>
+  									<th scope="row" class="govuk-table__header">Payment breakdown</th>
   									<td class="govuk-table__cell">
 
 
-                      £10.00 for 10 months
+                      £10.00
   									</td>
   								 </tr>
 
@@ -101,21 +116,22 @@ Account home
                     <td class="govuk-table__cell" id="date">
 
 
-                      <script>
-                 const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-
-                 const d = new Date();
-                 let month = months[d.getMonth()];
-
-                 document.getElementById("date").innerHTML = month + " " + d.getFullYear() ;
-
-
-
-                 </script>
+                01 April 2024
 
                     </td>
                    </tr>
+  								 <tr class="govuk-table__row">
+  									<th scope="row" class="govuk-table__header">Expected final payment</th>
+  									<td class="govuk-table__cell">
 
+
+
+                      01 December 2024 <br>
+
+
+
+  									</td>
+  								  </tr>
 
   								</tbody>
   							  </table>
@@ -153,13 +169,13 @@ Account home
 
   							  </div> -->
 
-<!-- <p class="govuk-inset-text">You will not be penalised if you do not meet your target this month.
+<p class="govuk-inset-text">Make sure you have enough money in your account to cover your next payment.
 
-</p> -->
+</p>
 
 
 
-  					  <span style="font-weight:normal;"><a href="#" class="secondary-invert">Switch to Direct Debit payment plan</a></span>
+  					  <span style="font-weight:normal;"><a href="#" class="secondary-invert">View or manage your plan</a></span>
 
 
 
@@ -183,7 +199,7 @@ Account home
 
 
 
-  			  <div class="scenario-panel" style="height:414px;">
+  			  <div class="scenario-panel" style="height:454px;">
   					   <h2 class="govuk-heading-s">Payment summary</h2>
 
 
@@ -202,7 +218,7 @@ Account home
 
 
   								 <tr class="govuk-table__row">
-  									<th scope="row" class="govuk-table__header">Total payments</th>
+  									<th scope="row" class="govuk-table__header">Payments made</th>
   									<td class="govuk-table__cell">
 
 
@@ -246,7 +262,7 @@ Account home
   								</tbody>
   							  </table>
 
-                  <span style="font-weight:normal;"><a href="#" class="secondary-invert">Make a flexible payment</a></span>
+                  <span style="font-weight:normal;"><a href="#" class="secondary-invert">Make an additional payment</a></span>
 
 
   					   <span style="font-weight:normal;"><a href="#" class="secondary-invert mt10">View your payment history</a></span>
