@@ -1,0 +1,64 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  Enter income
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">Manage your repayments</span>
+
+        Enter your other monthly income
+      </h1>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+      <form class="form" action="income-list" method="post">
+        <p class="govuk-heading-s">What counts as income</p>
+
+        <ul class="govuk-list govuk-list--bullet" wiid="N143">
+        <li>Any money from overseas</li>
+          <li>rental income</li>
+          <li>child maintenance</li>
+
+
+          </ul>
+
+
+        <div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="other-income">
+      How much did you recieve?
+    </label>
+  </h1>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-5" id="other-income" name="other-income" type="text" spellcheck="false" value="{{ data['other-income'] }}">
+  </div>
+</div>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

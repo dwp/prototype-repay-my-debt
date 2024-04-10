@@ -19,8 +19,9 @@ Example usage:
 
 module.exports = {
   'email-address': 'sarah.phillips@example.com',
- 'mobile-number': '07700 900457'
- 'confirm-details-change': 'yes'
+ 'mobile-number': '07700 900457',
+ 'confirm-details-change': 'yes',
+ 'left-over-income':'100'
 
   // Insert values here
 

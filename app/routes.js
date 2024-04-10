@@ -619,3 +619,128 @@ router.post('/version-41/sign-in-choice', function (req, res) {
     }
 
 })
+
+// New for Version 42 - Income and Expenses
+
+router.post('/income-expenses/income-type', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['income-type']
+
+  // Check whether the variable matches a condition
+  if (option == 'monthly-income'){
+    // Send user to next page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/income-details-monthly.html')
+
+  } else if (option == 'benefits') {
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/income-details-benefits.html')
+  }  else  if (option == 'pension'){
+      // Send user to ineligible page
+      res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/pension.html')
+    }
+    else {
+        // Send user to ineligible page
+        res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/income-details-other-income.html')
+      }
+
+})
+
+
+router.post('/income-expenses/expense-type', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['expense-type']
+
+  // Check whether the variable matches a condition
+  if (option == 'housing'){
+    // Send user to next page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-housing.html')
+
+  } else if (option == 'utilities') {
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-utilities.html')
+  }  else  if (option == 'other-repayments'){
+      // Send user to ineligible page
+      res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-other-repayments.html')
+    }
+    else  if (option == 'pension-contributions'){
+        // Send user to ineligible page
+        res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-pension-contributions.html')
+      }
+      else  if (option == 'travel'){
+          // Send user to ineligible page
+          res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-travel.html')
+        }
+        else  if (option == 'childcare-costs'){
+            // Send user to ineligible page
+            res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-childcare-costs.html')
+          }
+          else  if (option == 'personal-costs'){
+              // Send user to ineligible page
+              res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-personal-costs.html')
+            }
+            else  if (option == 'groceries'){
+                // Send user to ineligible page
+                res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-groceries.html')
+              }
+              else  if (option == 'leisure'){
+                  // Send user to ineligible page
+                  res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-leisure.html')
+                }
+    else {
+        // Send user to ineligible page
+        res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-insurance.html')
+      }
+
+})
+
+router.post('/expense-list/yes-no', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['add-another-expense']
+
+  // Check whether the variable matches a condition
+  if (option == 'Yes'){
+    // Send user to next page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/choose-expense-type.html')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/income-expenses.html')
+  }
+
+})
+
+router.post('/income-list/yes-no', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['add-another-income']
+
+  // Check whether the variable matches a condition
+  if (option == 'Yes'){
+    // Send user to next page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/choose-income-type.html')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/income-expenses.html')
+  }
+
+})
+
+router.post('/income-expense/amount-low', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var amountLow = req.session.data['new-affordable-amount']
+
+  // Check whether the variable matches a condition
+  if (amountLow <= 4){
+    // Send user to next page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/amount-too-low')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/income-expenses')
+  }
+
+})

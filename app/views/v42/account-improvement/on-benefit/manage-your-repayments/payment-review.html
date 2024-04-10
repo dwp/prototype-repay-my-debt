@@ -1,0 +1,58 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Payment review
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+
+	<div class="govuk-grid-row">
+
+		 <div class="govuk-grid-column-three-quarters">
+
+
+			<h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+        <span class="govuk-caption-xl">Manage your repayments</span>
+
+				Payment review</h1>
+
+
+
+
+				<p>This review is about reducing the amount we take from your benefit payment.</p>
+
+
+
+
+
+				<p>We will ask you questions to understand more about your financial situation &ndash; further reviews will then be needed every 12 months.</p>
+
+
+
+
+				<p><a href="financial-situation" class="govuk-button">Start payment review</a></p>
+
+		 </div>
+	</div>
+
+
+
+
+
+
+{% endblock %}

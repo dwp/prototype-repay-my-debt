@@ -1,0 +1,104 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  Choose income type
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">Manage your repayments
+        </span>Choose income type
+      </h1>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+      <form class="form" action="/income-expenses/expense-type" method="post">
+
+        <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="monthlyIncome" name="expense-type" type="radio" value="housing">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+            Housing
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="monthlyIncome-2" name="expense-type" type="radio" value="utilities">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+            Utilities
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="monthlyIncome-3" name="expense-type" type="radio" value="other-repayments">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+            Other repayments
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="monthlyIncome-4" name="expense-type" type="radio" value="pension-contributions">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+            Pension contributions
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="monthlyIncome-4" name="expense-type" type="radio" value="travel">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+            Travel
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="monthlyIncome-4" name="expense-type" type="radio" value="childcare-costs">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+            Childcare costs
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="monthlyIncome-4" name="expense-type" type="radio" value="insurance">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+            Insurance
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="monthlyIncome-4" name="expense-type" type="radio" value="groceries">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+            Groceries
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="monthlyIncome-4" name="expense-type" type="radio" value="leisure">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+            Leisure
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="monthlyIncome-4" name="expense-type" type="radio" value="personal-costs">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+            Personal costs
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+        {{ govukButton({
+
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
