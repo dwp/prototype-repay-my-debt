@@ -1,0 +1,130 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  How this change affects your future Universal Credit payments
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+			   <h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+			   <p>What you owe:
+					   <span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+		<div class="govuk-grid-column-three-quarters">
+
+
+
+
+			  <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+				  <span class="govuk-caption-xl">Manage your repayments</span>
+			How this change affects your Universal Credit payment
+			  </h1>
+
+
+
+
+
+
+			  <table class="govuk-table mb40">
+
+				   <caption class="visually-hidden">Summary</caption>
+
+
+
+						<tbody class="govuk-table__body">
+
+
+						<tr class="govuk-table__row">
+							<th scope="row" class="govuk-table__header">Amount we will deduct each month
+
+
+								<p class="mt10 mb10" style="padding-right: 40px;">Payments taken by DWP appear under ‘Debts and loans repayments’ on your Universal Credit statement.
+
+</p>
+
+
+
+							</th>
+							<td class="govuk-table__cell">
+
+
+
+						  &pound;30.00
+
+
+
+							</td>
+
+						</tr>
+
+
+
+
+
+
+
+
+						   <tr class="govuk-table__row">
+							<th scope="row" class="govuk-table__header">Amount Universal Credit deduct each month
+
+								<p class="mt10 mb10" style="padding-right: 40px;">Universal Credit take up to £20.00 off your payment to pay back any current advances. If you need to manage this amount, you will need to contact Universal Credit directly.
+
+</p>
+							</th>
+
+							  <td class="govuk-table__cell">&pound;20.00
+
+
+							  </td>
+
+
+						   </tr>
+
+
+
+						</tbody>
+
+</table>
+
+
+
+<div class="govuk-inset-text">
+	   <h3 class="govuk-heading-m">Other money you owe</h3>
+   <p>You may owe other money which is currently being taken from your Universal Credit payment – you should check your Universal Credit statement for a full breakdown.
+
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+		<p class="mt30"><a href="you-will-be-asked-to-review-your-repayments-again-next-year" class="govuk-button">
+			Continue
+		  </a></p>
+
+
+	</div>
+</div>
+
+{% endblock %}

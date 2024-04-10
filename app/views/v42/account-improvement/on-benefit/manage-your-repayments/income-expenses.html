@@ -1,0 +1,85 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Manage your repayments
+
+      <h1 class="govuk-heading-xl">Add  your income and spending</h1>
+      <br>
+      <h2 class="govuk-heading-m">Income</h2>
+
+      {% set completedStatus = {
+        text: "Not added",
+        href: "choose-income-type"
+
+      } %}
+
+      {% set incompleteStatus = {
+        tag: {
+          text: "Added",
+          classes: "govuk-tag--blue"
+        }
+
+
+      } %}
+
+
+      {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
+      {{ govukTaskList({
+        idPrefix: "first-section",
+        items: [
+          {
+            title: {
+              text: "Add income"
+            },
+            href: ("choose-income-type"),
+            status: completedStatus
+          }
+        ]
+      }) }}
+
+
+
+      <p id="result">Total income:
+
+
+
+
+
+
+        </p>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">Spending</h2>
+
+      {{ govukTaskList({
+        idPrefix: "second-section",
+        items: [
+          {
+            title: {
+              text: "Add your expenses"
+            },
+            href: "choose-expense-type",
+            status: completedStatus
+          }
+        ]
+      }) }}
+
+      <div class="govuk-!-margin-top-5">
+        {{ govukButton({ text: "Continue ", href: "left-over-income" }) }}
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

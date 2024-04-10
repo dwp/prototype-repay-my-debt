@@ -1,0 +1,129 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  Choose income type
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">Manage your repayments
+        </span>How much can you afford to repay each month?
+      </h1>
+      <br>
+      <p>Based on your left over income, you can choose a payment plan.</p>
+
+      <form class="form" action="what-this-will-mean-for-your-repayments" >
+
+        <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="monthlyIncome" name="income-type" type="radio" value="monthly-income">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+            £ {{ data['left-over-income']}}
+          </label>
+        </div>
+
+        <div class="govuk-radios__divider">or</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="monthlyIncome-2" name="income-type" type="radio" value="benefits">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+            £ <script>
+
+  var numOne = {{ data['left-over-income']}};
+  var numTwo = 10;
+  var sum = numOne+numTwo;
+
+  document.write( sum);
+
+</script>
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="monthlyIncome-3" name="income-type" type="radio" value="pension">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+            £ <script>
+
+  var numOne = {{ data['left-over-income']}};
+  var numTwo = 15;
+  var sum = numOne+numTwo;
+
+  document.write( sum);
+
+</script>
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="monthlyIncome-3" name="income-type" type="radio" value="pension">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+            £ <script>
+
+  var numOne = {{ data['left-over-income']}};
+  var numTwo = 20;
+  var sum = numOne+numTwo;
+
+  document.write(sum);
+
+</script>
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="monthlyIncome-4" name="income-type" type="radio" value="other-income">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+            Pay more each month
+          </label>
+        </div>
+      </div>
+    </fieldset>
+
+
+  </div>
+  <hr class="govuk-section-break govuk-section-break--s govuk-section-break--hidden">
+
+  <details class="govuk-details">
+<summary class="govuk-details__summary">
+  <span class="govuk-details__summary-text">
+    I cannot afford to make these payments
+  </span>
+</summary>
+<div class="govuk-details__text">
+If you cannot afford to make any of these payments, you need to contact Debt Management to discuss the options available to you.
+<p>
+  <strong> <br>
+Debt Management
+</strong></p>
+<p>
+</p><ul class="govuk-list">
+<li>Telephone: 0800 916 0647</li>
+<li>Textphone: 0800 916 0651 (for deaf or hard of hearing users and customers with speech difficulties)</li>
+<li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
+</ul>
+
+<p><a href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers" target="_blank">Find out about call charges</a></p>
+
+<p></p>
+</div>
+</details>
+        {{ govukButton({
+
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
