@@ -32,7 +32,7 @@ Account home
       </div>
       <div class="govuk-inset-text" style="float:right;">
         Total amount left to pay: <span class="total-amount">
-          &pound;600.00
+          &pound;2980.00
 
         </span>
 
@@ -205,7 +205,7 @@ Account home
                    <ul class="govuk-list">
                      <li>
                        <h3>Monthly repayment:
-                         <span id="new-debts-amount"><b></b></span></h3>
+                         <span id="new-debts-amount"><b>£ {{ data ['new-payable-amount']}}</b></span></h3>
                        </li>
 
                      </ul>
@@ -218,7 +218,7 @@ Account home
                               var CurrentDate = new Date();
                               console.log("Current date:", CurrentDate);
                               CurrentDate.setMonth(CurrentDate.getMonth() + x);
-                               document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
+                               document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
                             </script></b></span></h3>
                          </li>
 
@@ -228,7 +228,7 @@ Account home
 
 
 
-  					   <span><a href="/v42/account-improvement/on-benefit/manage-your-repayments/how-much-can-you-afford-to-repay-each-month.html" class="secondary-invert dash-spacer">Tell us how much you can afford</a></span>
+  					   <span><a href="/v42/account-improvement/on-benefit/manage-your-repayments/payment-review.html" class="secondary-invert dash-spacer">Tell us how much you can afford</a></span>
   					   </div>
   				   </div>
 

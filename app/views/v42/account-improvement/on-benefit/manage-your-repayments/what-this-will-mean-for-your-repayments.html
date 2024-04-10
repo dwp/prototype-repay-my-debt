@@ -40,7 +40,7 @@ What this will mean for your repayments
 
             <li>
               <h3>Monthly repayment:</h3>
-              <span id="new-debts-amount"><b>&pound;{{ data['new-affordable-amount'] }}</b></span>
+              <span id="new-debts-amount"><b>&pound;{{ data['new-payable-amount'] }}</b></span>
               <p><a href="how-much-can-you-afford-to-repay-each-month">change</a></p>
             </li>
 
@@ -68,28 +68,28 @@ What this will mean for your repayments
       <th scope="row" class="govuk-table__header">Total amount left to pay
 
       </th>
-      <td class="govuk-table__cell govuk-table__cell">&pound;980</td>
-      <td class="govuk-table__cell govuk-table__cell">&pound;980</td>
+      <td class="govuk-table__cell govuk-table__cell">&pound;2980.00</td>
+      <td class="govuk-table__cell govuk-table__cell">&pound;2980.00</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Monthly repayment
         <!-- <div id="sign-in-hint" class="govuk-hint">
     These appear under Debts and loans repayments on your Universal Credit statement.
         </div></th> -->
-        <td class="govuk-table__cell govuk-table__cell">&pound;40</td>
+        <td class="govuk-table__cell govuk-table__cell">&pound;20</td>
 
-      <td class="govuk-table__cell govuk-table__cell">&pound;{{ data['new-affordable-amount'] }}</td>
+      <td class="govuk-table__cell govuk-table__cell">&pound;{{ data['new-payable-amount'] }}</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Estimated repayments remaining
         </th>
-        <td class="govuk-table__cell govuk-table__cell">26</td>
+        <td class="govuk-table__cell govuk-table__cell">149</td>
       <td class="govuk-table__cell govuk-table__cell"><script>
         function divide(num) { return num.toFixed(2); }
 
-        var  num1 = 980.00;
+        var  num1 = 2980.00;
 
-        var num2 = {{ data['new-affordable-amount'] }};
+        var num2 = {{ data['new-payable-amount'] }};
 
         var  result = Math.floor(num1 / num2);
          document.write(result);
@@ -103,7 +103,7 @@ What this will mean for your repayments
       </th>
         <td class="govuk-table__cell govuk-table__cell">
           <script>
-            var  num1 = 980.00;
+            var  num1 = 2980.00;
             var num2 = 40;
             var x = Math.floor(num1 / num2); //or whatever offset
             var CurrentDate = new Date();
@@ -116,8 +116,8 @@ What this will mean for your repayments
 
       <td class="govuk-table__cell govuk-table__cell">
         <script>
-          var  num1 = 980.00;
-          var num2 = {{ data['new-affordable-amount'] }};
+          var  num1 = 2980.00;
+          var num2 = {{ data['new-payable-amount'] }};
           var x = Math.floor(num1 / num2); //or whatever offset
           var CurrentDate = new Date();
           console.log("Current date:", CurrentDate);
@@ -133,13 +133,6 @@ What this will mean for your repayments
     </table>
 
 
-    <div class="govuk-body">
-    No more than  &pound;{{ data['new-affordable-amount'] }} will be taken to repay: <br>
-    <ul>
-      <li>  benefit overpayments and budgeting loans </li>
-      <li>  recoverable hardship payments  </li>
-    </ul>
-    </div>
 
 
 
