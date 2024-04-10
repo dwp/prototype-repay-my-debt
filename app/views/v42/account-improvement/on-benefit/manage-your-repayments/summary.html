@@ -42,11 +42,18 @@
         <ul class="govuk-list">
           <li>
             <h3>Agreed monthly payment</h3>
-            <span id="new-debts-amount"><b>£{{ data['newDeductedAmount'] }}</b></span>
+            <span id="new-debts-amount"><b>£{{ data['new-payable-amount'] }}</b></span>
           </li>
           <li>
             <h3>Next review due by</h3>
-            <span class="total-amount" id="new-total-owed"><b>December 2023</b></span>
+            <span class="total-amount" id="new-total-owed"><b><span id="new-debts-amount"><b>  <script>
+                var x = 12; //or whatever offset
+                var CurrentDate = new Date();
+                console.log("Current date:", CurrentDate);
+                CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                 document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+              </script>
+          </b></span></b></span>
           </li>
 
         </ul>
@@ -85,7 +92,15 @@
 												<tr class="govuk-table__row">
 													  <th scope="row" class="govuk-table__header">Expected last payment</th>
 													  <td class="govuk-table__cell">
-														  If your payments stay at &pound;{{ data['newDeductedAmount'] }}, you will clear the total amount owed in December 2027.This date may change based on when your next payment is taken.
+														  If your payments stay at &pound;{{ data['new-payable-amount'] }}, you will clear the total amount owed in   <script>
+                                  var  num1 = 2980.00;
+                                  var num2 = {{ data['new-payable-amount'] }};
+                                  var x = Math.floor(num1 / num2); //or whatever offset
+                                  var CurrentDate = new Date();
+                                  console.log("Current date:", CurrentDate);
+                                  CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                                  document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                                </script>.This date may change based on when your next payment is taken.
 													  </td>
 												</tr>
 

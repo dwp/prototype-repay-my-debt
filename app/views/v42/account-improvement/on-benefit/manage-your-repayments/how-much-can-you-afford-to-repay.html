@@ -23,14 +23,14 @@
       <br>
       <p>Based on your left over income, you can choose a payment plan.</p>
 
-      <form class="form" action="what-this-will-mean-for-your-repayments" >
+      <form class="form" action="/income-expenses/how-much-you-can-afford-choices" method="post">
 
         <div class="govuk-form-group">
     <fieldset class="govuk-fieldset">
 
       <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="monthlyIncome" name="income-type" type="radio" value="monthly-income">
+          <input class="govuk-radios__input" id="monthlyIncome" name="new-payable-amount" type="radio" value="100">
           <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
             £ {{ data['left-over-income']}}
           </label>
@@ -38,7 +38,7 @@
 
         <div class="govuk-radios__divider">or</div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="monthlyIncome-2" name="income-type" type="radio" value="benefits">
+          <input class="govuk-radios__input" id="monthlyIncome-2" name="new-payable-amount" type="radio" value="110">
           <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
             £ <script>
 
@@ -52,7 +52,7 @@
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="monthlyIncome-3" name="income-type" type="radio" value="pension">
+          <input class="govuk-radios__input" id="monthlyIncome-3" name="new-payable-amount" type="radio" value="115">
           <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
             £ <script>
 
@@ -66,7 +66,7 @@
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="monthlyIncome-3" name="income-type" type="radio" value="pension">
+          <input class="govuk-radios__input" id="monthlyIncome-3" name="new-payable-amount" type="radio" value="120">
           <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
             £ <script>
 
@@ -80,7 +80,7 @@
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="monthlyIncome-4" name="income-type" type="radio" value="other-income">
+          <input class="govuk-radios__input" id="monthlyIncome-4" name="new-payable-amount" type="radio" value="other-amount">
           <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
             Pay more each month
           </label>

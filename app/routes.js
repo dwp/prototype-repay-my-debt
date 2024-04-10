@@ -637,7 +637,7 @@ router.post('/income-expenses/income-type', function (req, res) {
     res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/income-details-benefits.html')
   }  else  if (option == 'pension'){
       // Send user to ineligible page
-      res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/pension.html')
+      res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/income-details-pension.html')
     }
     else {
         // Send user to ineligible page
@@ -741,6 +741,24 @@ router.post('/income-expense/amount-low', function (req, res) {
   } else {
     // Send user to ineligible page
     res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/income-expenses')
+  }
+
+})
+
+
+
+router.post('/income-expenses/how-much-you-can-afford-choices', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var payableAmount = req.session.data['new-payable-amount']
+
+  // Check whether the variable matches a condition
+  if (payableAmount == 'other-amount'){
+    // Send user to next page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/how-much-can-you-afford-to-repay-each-month-new-payable-new-payable')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/what-this-will-mean-for-your-repayments.html')
   }
 
 })
