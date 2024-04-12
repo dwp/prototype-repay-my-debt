@@ -43,6 +43,12 @@ Tell us your current financial situation
     </div>
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="contact-2" name="financial-situation-details-payments-taken-5" type="checkbox" value="yes" data-aria-controls="conditional-contact-2" {{ checked('financial-situation-details-payments-taken-5','yes') }}>
+        <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+          I want to reduce the amount I owe quicker
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="contact" name="financial-situation-details-payments-taken-1" type="checkbox" value="yes" data-aria-controls="conditional-contact" {{ checked('financial-situation-details-payments-taken-1','yes') }}>
         <label class="govuk-label govuk-checkboxes__label" for="contact">
           My loan or credit card payments have increased
@@ -61,6 +67,7 @@ Tell us your current financial situation
           My living costs have increased
         </label>
       </div>
+
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="contact-3" name="financial-situation-details-payments-taken-4" type="checkbox" value="yes" data-aria-controls="conditional-contact-3" {{ checked('financial-situation-details-payments-taken-4','yes') }}>
         <label class="govuk-label govuk-checkboxes__label" for="contact-3">

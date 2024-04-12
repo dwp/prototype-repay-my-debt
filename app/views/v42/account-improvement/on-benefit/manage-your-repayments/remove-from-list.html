@@ -155,11 +155,15 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        <span class="govuk-caption-xl">Manage your repayments</span>
+        <span class="govuk-caption-xl">Income and spending</span>
 
-        Are you sure you want to remove other income of  £{{ data['other-income'] }}?
+        Are you sure you want to remove any other monthly income?
       </h1>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+      <br><br>
+      <div id="flexible-banner-float-none"  class="flexible-banner-float-none">
+      <p style="margin-bottom:0px;"> <strong>Entered amount</strong><br>
+              £{{ data['other-income'] }}</p>
+            </div>
 
       <form class="form" action="/path/of/next/page" method="post">
 

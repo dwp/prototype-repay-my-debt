@@ -33,19 +33,18 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        <span class="govuk-caption-xl">Manage your repayments</span>
+        <span class="govuk-caption-xl">Income </span>
 
         Your income
       </h1>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
-      <h1 class="govuk-heading-l">You have added 4 income types</h1>
+<br>      <h1 class="govuk-heading-l"><span class="govuk-body">Total income<br></span>£110</h1>
 <div class="govuk-form-group">
 
   <dl class="govuk-summary-list">
 
   <div class="govuk-summary-list__row " id="monthly-income-row" >
     <dt class="govuk-summary-list__key">
-      Monthly Income
+      Monthly income after tax
     </dt>
     <dd class="govuk-summary-list__value">
       £ {{ data['income-monthly'] }}
@@ -152,7 +151,7 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Pension
+      Pensions
     </dt>
     <dd class="govuk-summary-list__value">
       £ {{ data['pension'] }}
@@ -203,7 +202,7 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Other
+      Other monthly income
     </dt>
     <dd class="govuk-summary-list__value">
       £ {{ data['other-income'] }}
@@ -258,7 +257,7 @@
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--m">
-        Do you need to add another income source?
+        Do you need to add another income type?
       </legend>
 
       <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
