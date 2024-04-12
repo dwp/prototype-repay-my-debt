@@ -19,9 +19,9 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        <span class="govuk-caption-xl">Manage your repayments</span>
+        <span class="govuk-caption-xl">Income and spending</span>
 
-        Check your answers
+        Check your income and spending
       </h1>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 
@@ -32,7 +32,7 @@
 
   <div class="govuk-summary-list__row " id="monthly-income-row" >
     <dt class="govuk-summary-list__key">
-      Monthly Income
+      Monthly Income after tax
     </dt>
     <dd class="govuk-summary-list__value">
       £ {{ data['income-monthly'] }}
@@ -139,7 +139,7 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Pension
+      Pensions
     </dt>
     <dd class="govuk-summary-list__value">
       £ {{ data['pension'] }}
@@ -190,7 +190,7 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Other
+      Other monthly income
     </dt>
     <dd class="govuk-summary-list__value">
       £ {{ data['other-income'] }}
@@ -242,7 +242,7 @@
 
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
-      <h1 class="govuk-heading-m">Expenses</h1>
+      <h1 class="govuk-heading-m">Spending</h1>
 <div class="govuk-form-group">
 
   <dl class="govuk-summary-list">
@@ -508,7 +508,7 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Childcare costs
+      Childcare
     </dt>
     <dd class="govuk-summary-list__value">
       £ {{ data['childcare-costs'] }}
@@ -755,23 +755,22 @@
 </div>
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
-<p class="govuk-heading-l">Balance <br>
-<span class="govuk-heading-xl"> £ {{ data['left-over-income'] }}
+<p class="govuk-heading-s">Total left over income<br>
+<span class="govuk-heading-l"> £ {{ data['left-over-income'] }}
 
-  <script>
+  <!-- <script>
 
   var numOne = {{ data['income-monthly'] }};
   var numTwo = {{ data['benefits'] }};
   var numThree = {{ data['pension'] }};
   var numFour = {{ data['other-income'] }};
-  var numTwo = 10;
-  var sum = 20;
+  var sum = numOne+numTwo+numThree+numFour;
 
 
 
   document.write(sum);
 
-  </script>
+  </script> -->
 
 </span>
 </p>
