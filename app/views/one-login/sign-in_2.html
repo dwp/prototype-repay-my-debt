@@ -1,0 +1,64 @@
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+Sign in to your Repay and manage benefit money you owe account
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-three-quarters">
+
+		<form class="form" action="/version-41/sign-in-choice" method="post">
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+						<h1 class="govuk-fieldset__heading">
+							Sign in with GOV.UK One Login
+						</h1>
+					</legend>
+<br>
+<p>You can sign in to your Repay and manage benefit money you owe account using a GOV.UK One Login. </p>
+
+<p>If you do not already have a GOV.UK One Login, you can create one.</p>
+
+<p>The GOV.UK One Login allows you to securely access this and other government services that also use GOV.UK One Login.</p>
+
+<h2 class="govuk-heading-m mt30">If you do not already have a GOV.UK One Login</h2>
+<p>You will need to prove your identity when you create your GOV.UK One Login. This will help keep your information safe.</p>
+
+<p>You will need:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+
+<li>a valid photo ID, such as your passport or driving licence</li>
+<li>your current home address (you will need to provide your previous address if you have moved within the last 3 months)</li>
+</ul>
+
+<h2 class="govuk-heading-m mt30">If you already have a GOV.UK One Login</h2>
+
+<p>Sign in using the GOV.UK One Login details you have previously set up.</p>
+
+
+
+				</fieldset>
+			</div>
+
+
+
+
+
+			<button class="govuk-button" data-module="govuk-button">
+				Continue to GOV.UK One Login
+			</button>
+	</form>
+
+
+
+
+
+	</div>
+</div>
+
+{% endblock %}
