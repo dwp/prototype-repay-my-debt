@@ -11,14 +11,19 @@
 }) }}
 {% endblock %}
 
+
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-xl">Manage your repayments
 
-      <h1 class="govuk-heading-xl">Income and spending</h1>
+      <h1 class="govuk-heading-xl">Income and expenditure</h1>
       <br>
-      <h2 class="govuk-heading-m">Income</h2>
+      <h2 class="govuk-heading-l">Your income <br>
+      <span class="govuk-body"><a class="govuk-link" href="choose-income-type" >
+        Add income
+      </a></span></h2>
 
       {% set completedStatus = {
         text: "Not added",
@@ -36,46 +41,89 @@
       } %}
 
 
-      {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
-      {{ govukTaskList({
-        idPrefix: "first-section",
-        items: [
-          {
-            title: {
-              text: "Add income"
-            },
-            href: ("choose-income-type"),
-            status: completedStatus
-          }
-        ]
-      }) }}
+      <p>  </p>
+
+
+      <p class="govuk-heading-m"><span class="govuk-body">Total monthly income:<br></span>
+      £<script>
+
+        var numOne = {{ data['income-monthly'] }};
+        var numTwo = {{ data['benefits'] }};
+        var numThree = {{ data['pension'] }};
+        var numFour = {{ data['other-income'] }};
+        var sum = 0;
+        var sum = numOne+numTwo+numThree+numFour;
 
 
 
-      <p id="result">Total income:
+        document.write(sum);
 
-
+        </script>
 
 
 
 
         </p>
 
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">Spending</h2>
+<!--
+        {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
+        {{ govukTaskList({
+          idPrefix: "first-section",
+          items: [
+            {
+              title: {
+                text: "Add income"
+              },
+              href: ("choose-income-type"),
+              status: completedStatus
+            }
+          ]
+        }) }} -->
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-      {{ govukTaskList({
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-5">Your expenditure <br>
+        <span class="govuk-body"> <a class="govuk-link" href="choose-expense-type" >
+        Add expenditure
+      </a></span></h2>
+
+      <!-- {{ govukTaskList({
         idPrefix: "second-section",
         items: [
           {
             title: {
-              text: "Add  spending"
+              text: "Add expenditure"
             },
             href: "choose-expense-type",
             status: completedStatus
           }
         ]
-      }) }}
+      }) }} -->
 
+
+
+      <h1 class="govuk-heading-m"><span class="govuk-body">Total monthly expenditure:<br></span>
+      £<script>
+expenditure();
+       // var numOne = {{ data['housing'] }};
+       // var numTwo = {{ data['utilities'] }};
+       // var numThree = {{ data['travel'] }};
+       // var numFour = {{ data['pension-contributions'] }};
+       // var numFive = {{ data['groceries'] }};
+       // var numSix = {{ data['childcare-costs'] }};
+       // var numSeven = {{ data['personal-costs'] }};
+       // var numEight = {{ data['communications'] }};
+       // var numNine = {{ data['other-repayments'] }};
+       //
+       //
+       //
+       // var sum = numOne+numTwo+numThree+numFour+numFive+numSix+numSeven+numEight+numNine;
+       //
+       //
+       //
+       // document.write(sum);
+
+       </script>
       <div class="govuk-!-margin-top-5">
         {{ govukButton({ text: "Continue ", href: "left-over-income" }) }}
       </div>

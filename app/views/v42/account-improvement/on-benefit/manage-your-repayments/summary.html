@@ -42,7 +42,7 @@
         <ul class="govuk-list">
           <li>
             <h3>Agreed monthly payment</h3>
-            <span id="new-debts-amount"><b>£{{ data['new-payable-amount'] }}</b></span>
+            <span id="new-debts-amount"><b>£{{ data['final-affordable-amount'] }}</b></span>
           </li>
           <li>
             <h3>Next review due by</h3>
@@ -94,7 +94,7 @@
 													  <td class="govuk-table__cell">
 														  If your payments stay at &pound;{{ data['new-payable-amount'] }}, you will clear the total amount owed in   <script>
                                   var  num1 = 2980.00;
-                                  var num2 = {{ data['new-payable-amount'] }};
+                                  var num2 = {{ data['final-affordable-amount'] }};
                                   var x = Math.floor(num1 / num2); //or whatever offset
                                   var CurrentDate = new Date();
                                   console.log("Current date:", CurrentDate);
