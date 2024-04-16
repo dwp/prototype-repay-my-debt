@@ -40,8 +40,8 @@ What this will mean for your repayments
 
             <li>
               <h3>Monthly repayment:</h3>
-              <span id="new-debts-amount"><b>&pound;{{ data['new-payable-amount'] }}</b></span>
-              <p><a href="how-much-can-you-afford-to-repay-each-month">change</a></p>
+              <span id="new-debts-amount"><b>&pound;{{ data['final-affordable-amount'] }}</b></span>
+              <p><a href="how-much-can-you-afford-to-repay">change</a></p>
             </li>
 
           </ul>
@@ -78,7 +78,7 @@ What this will mean for your repayments
         </div></th> -->
         <td class="govuk-table__cell govuk-table__cell">&pound;20</td>
 
-      <td class="govuk-table__cell govuk-table__cell">&pound;{{ data['new-payable-amount'] }}</td>
+      <td class="govuk-table__cell govuk-table__cell">&pound;{{ data['final-affordable-amount'] }}</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Estimated repayments remaining
@@ -89,7 +89,7 @@ What this will mean for your repayments
 
         var  num1 = 2980.00;
 
-        var num2 = {{ data['new-payable-amount'] }};
+        var num2 = {{ data['final-affordable-amount'] }};
 
         var  result = Math.floor(num1 / num2);
          document.write(result);
@@ -117,7 +117,7 @@ What this will mean for your repayments
       <td class="govuk-table__cell govuk-table__cell">
         <script>
           var  num1 = 2980.00;
-          var num2 = {{ data['new-payable-amount'] }};
+          var num2 = {{ data['final-affordable-amount'] }};
           var x = Math.floor(num1 / num2); //or whatever offset
           var CurrentDate = new Date();
           console.log("Current date:", CurrentDate);

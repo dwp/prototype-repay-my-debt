@@ -18,92 +18,34 @@
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-xl">Manage your repayments
-        </span>How much do you want to repay each month?
+        </span>How much do you now feel you can repay each month?
       </h1>
-      <br>
-      <p>Based on your left over income, you can choose a payment.</p>
+
+
+ <div class="govuk-inset-text">
+<p>You felt you could repay <strong>£{{ data['new-affordable-amount']}}</strong>.</p>
+ <p>Based on what you have now told us, you have a monthly disposable income of <strong>£{{ data['left-over-income'] }}</strong>. </p>
+</div>
+
 
       <form class="form" action="/income-expenses/how-much-you-can-afford-choices" method="post">
 
         <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset">
-      <div class="govuk-radios" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="monthlyIncome" name="new-payable-amount" type="radio" value="100">
-          <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-            £ {{ data['new-affordable-amount']}} 
-          </label>
-        </div>
 
-        <div class="govuk-radios__divider">or</div>
 
-      <div class="govuk-radios" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="monthlyIncome" name="new-payable-amount" type="radio" value="100">
-          <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-            £ {{ data['left-over-income']}}
-          </label>
-        </div>
 
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="monthlyIncome-2" name="new-payable-amount" type="radio" value="110">
-          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-            £ <script>
-
-  var numOne = {{ data['left-over-income']}};
-  var numTwo = 10;
-  var sum = numOne-numTwo;
-
-  document.write( sum);
-
-</script>
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="monthlyIncome-3" name="new-payable-amount" type="radio" value="115">
-          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
-            £ <script>
-
-  var numOne = {{ data['left-over-income']}};
-  var numTwo = 15;
-  var sum = numOne-numTwo;
-
-  document.write( sum);
-
-</script>
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="monthlyIncome-3" name="new-payable-amount" type="radio" value="120">
-          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
-            £ <script>
-
-  var numOne = {{ data['left-over-income']}};
-  var numTwo = 20;
-  var sum = numOne-numTwo;
-
-  document.write(sum);
-
-</script>
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="monthlyIncome-4" name="new-payable-amount" type="radio" value="other-amount">
-          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
-            Pay more each month
-          </label>
-        </div>
-      </div>
-    </fieldset>
-
+    <div class="govuk-input__wrapper">
+      <div class="govuk-input__prefix" aria-hidden="true">£</div>
+      <input class="govuk-input govuk-input--width-10" id="newDeductedAmount" name="final-affordable-amount" type="number" step="0.01" spellcheck="false" value="{{data['final-affordable-amount']}}">
+    </div>
 
   </div>
   <hr class="govuk-section-break govuk-section-break--s govuk-section-break--hidden">
-
+<!--
   <details class="govuk-details">
 <summary class="govuk-details__summary">
   <span class="govuk-details__summary-text">
-    I cannot afford to make these payments
+    I cannot afford to make any payments
   </span>
 </summary>
 <div class="govuk-details__text">
@@ -123,7 +65,7 @@ Debt Management
 
 <p></p>
 </div>
-</details>
+</details> -->
         {{ govukButton({
 
           text: "Continue"
