@@ -1,11 +1,11 @@
 {% extends "layout-3.html" %}
 
 {% block pageTitle %}
-  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
+{{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
 }) }}
@@ -14,120 +14,807 @@
 
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">Manage your repayments
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">Manage your repayments
 
       <h1 class="govuk-heading-xl">Income and expenditure</h1>
       <br>
-      <h2 class="govuk-heading-l">Your income <br>
-      <span class="govuk-body"><a class="govuk-link" href="choose-income-type" >
-        Add income
-      </a></span></h2>
+      <p>Add your monthly income and expenditure to calculate an affordable repayment amount.
 
-      {% set completedStatus = {
-        text: "Not added",
-        href: "choose-income-type"
+</p>
+      <h2 class="govuk-heading-l">Income <br>
+        <span class="govuk-body"><a class="govuk-link" href="choose-income-type" >
+          Add income
+        </a></span></h2>
 
-      } %}
+        {% set completedStatus = {
+          text: "Not added",
+          href: "choose-income-type"
 
-      {% set incompleteStatus = {
-        tag: {
-          text: "Added",
-          classes: "govuk-tag--blue"
-        }
+        } %}
 
-
-      } %}
-
-
-      <p>  </p>
+        {% set incompleteStatus = {
+          tag: {
+            text: "Added",
+            classes: "govuk-tag--blue"
+          }
 
 
-      <p class="govuk-heading-m"><span class="govuk-body">Total monthly income:<br></span>
-      £<script>
+        } %}
 
-        var numOne = {{ data['income-monthly'] }};
-        var numTwo = {{ data['benefits'] }};
-        var numThree = {{ data['pension'] }};
-        var numFour = {{ data['other-income'] }};
-        var sum = 0;
-        var sum = numOne+numTwo+numThree+numFour;
+        <dl class="govuk-summary-list">
+
+          {% if data['income-monthly'] > 0 %}
+
+        <div class="govuk-summary-list__row " id="monthly-income-row" >
+          <dt class="govuk-summary-list__key">
+             Income from earnings
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['income-monthly']|currency }}
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="income-details-monthly">Change<span class="govuk-visually-hidden"> monthly income</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+
+        <!-- Button logic -->
+                <form class="form" action="remove-from-list" method="post">
+          <fieldset class="visually-hidden">
+          <legend>Hidden field</legend>
+
+          <div>
+            <input id="yesChange" name="type-of-input" type="radio" value="monthly-income" checked="checked">
+            <label for="yesChange">Yes</label>
+            </div>
+
+            <div>
+            <input id="noChange" name="type-of-input" type="radio" value="monthly-income">
+            <label for="noChange">No</label>
+            </div>
+
+            </fieldset>
+
+            <button style=" background: none!important;
+        border: none;
+        padding: 0!important;
+        /*optional*/
+        font-family: GDS Transport, arial, sans-serif;
+        font-size:19px;
+        /*input has OS specific font-family*/
+        color: #069;
+        text-decoration: underline;
+        cursor: pointer;">Remove</button>
 
 
 
-        document.write(sum);
+           </form>
+           <!-- End of button logic -->
 
-        </script>
 
+              </li>
+            </ul>
+          </dd>
+        </div>
+        {% endif %}
+
+        {% if data['benefits'] > 0 %}
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Benefit payments
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{ data['benefits']|currency }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="income-details-benefits">Change<span class="govuk-visually-hidden"> contact details</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <!-- Button logic -->
+                          <form class="form" action="remove-from-list" method="post">
+                    <fieldset class="visually-hidden">
+                    <legend>Hidden field</legend>
+
+                    <div>
+                      <input id="yesChange" name="type-of-input" type="radio" value="benefits" checked="checked">
+                      <label for="yesChange">Yes</label>
+                      </div>
+
+                      <div>
+                      <input id="noChange" name="type-of-input" type="radio" value="benefits">
+                      <label for="noChange">No</label>
+                      </div>
+
+                      </fieldset>
+
+                      <button style=" background: none!important;
+                  border: none;
+                  padding: 0!important;
+                  /*optional*/
+                  font-family: GDS Transport, arial, sans-serif;
+                  font-size:19px;
+                  /*input has OS specific font-family*/
+                  color: #069;
+                  text-decoration: underline;
+                  cursor: pointer;">Remove</button>
+
+
+
+                     </form>
+                     <!-- End of button logic -->
+                   </li>
+            </ul>
+          </dd>
+        </div>
+
+        {% endif %}
+
+        {% if data['pension'] > 0 %}
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Pension income
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['pension']|currency }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="income-details-pension">Change<span class="govuk-visually-hidden"> contact details</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <!-- Button logic -->
+                          <form class="form" action="remove-from-list" method="post">
+                    <fieldset class="visually-hidden">
+                    <legend>Hidden field</legend>
+
+                    <div>
+                      <input id="yesChange" name="type-of-input" type="radio" value="pension" checked="checked">
+                      <label for="yesChange">Yes</label>
+                      </div>
+
+                      <div>
+                      <input id="noChange" name="type-of-input" type="radio" value="pension">
+                      <label for="noChange">No</label>
+                      </div>
+
+                      </fieldset>
+
+                      <button style=" background: none!important;
+                  border: none;
+                  padding: 0!important;
+                  /*optional*/
+                  font-family: GDS Transport, arial, sans-serif;
+                  font-size:19px;
+                  /*input has OS specific font-family*/
+                  color: #069;
+                  text-decoration: underline;
+                  cursor: pointer;">Remove</button>
+
+
+
+                     </form>
+                     <!-- End of button logic -->
+              </li>
+            </ul>
+          </dd>
+        </div>
+        {% endif %}
+
+        {% if data['other-incom'] > 0 %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other income
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['other-income']|currency }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="income-details-other-income">Change<span class="govuk-visually-hidden"> contact details</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <!-- Button logic -->
+                          <form class="form" action="remove-from-list" method="post">
+                    <fieldset class="visually-hidden">
+                    <legend>Hidden field</legend>
+
+                    <div>
+                      <input id="yesChange" name="type-of-input" type="radio" value="other" checked="checked">
+                      <label for="yesChange">Yes</label>
+                      </div>
+
+                      <div>
+                      <input id="noChange" name="type-of-input" type="radio" value="other">
+                      <label for="noChange">No</label>
+                      </div>
+
+                      </fieldset>
+
+                      <button style=" background: none!important;
+                  border: none;
+                  padding: 0!important;
+                  /*optional*/
+                  font-family: GDS Transport, arial, sans-serif;
+                  font-size:19px;
+                  /*input has OS specific font-family*/
+                  color: #069;
+                  text-decoration: underline;
+                  cursor: pointer;">Remove</button>
+
+
+
+                     </form>
+                     <!-- End of button logic -->        </li>
+            </ul>
+          </dd>
+        </div>
+        {% endif %}
+
+        </dl>
+
+        <p class="govuk-heading-m"><span class="govuk-body">Total monthly income:<br></span>
+          {% set totalIncome = data['income-monthly']|float + data['benefits']|float + data['pension']|float + data['other-income']|float %}
+          {{ totalIncome|currency }}
 
 
 
         </p>
 
-<!--
-        {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
-        {{ govukTaskList({
-          idPrefix: "first-section",
-          items: [
-            {
-              title: {
-                text: "Add income"
-              },
-              href: ("choose-income-type"),
-              status: completedStatus
-            }
-          ]
-        }) }} -->
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
-      <h2 class="govuk-heading-l govuk-!-margin-top-5">Your expenditure <br>
-        <span class="govuk-body"> <a class="govuk-link" href="choose-expense-type" >
-        Add expenditure
-      </a></span></h2>
+  <h2 class="govuk-heading-l govuk-!-margin-top-5">Expenditure <br>
+    <span class="govuk-body"> <a class="govuk-link" href="choose-expense-type" >
+      Add expenditure
+    </a></span></h2>
 
-      <!-- {{ govukTaskList({
-        idPrefix: "second-section",
-        items: [
-          {
-            title: {
-              text: "Add expenditure"
-            },
-            href: "choose-expense-type",
-            status: completedStatus
-          }
-        ]
-      }) }} -->
+    <!-- {{ govukTaskList({
+    idPrefix: "second-section",
+    items: [
+    {
+    title: {
+    text: "Add expenditure"
+  },
+  href: "choose-expense-type",
+  status: completedStatus
+}
+]
+}) }} -->
 
+<dl class="govuk-summary-list">
+  {% if data['housing'] > 0 %}
 
+<div class="govuk-summary-list__row " id="monthly-income-row" >
+  <dt class="govuk-summary-list__key" style="width:500px;">
+    Housing
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['housing']|currency }}
+  </dd>
 
-      <h1 class="govuk-heading-m"><span class="govuk-body">Total monthly expenditure:<br></span>
-      £<script>
-expenditure();
-       // var numOne = {{ data['housing'] }};
-       // var numTwo = {{ data['utilities'] }};
-       // var numThree = {{ data['travel'] }};
-       // var numFour = {{ data['pension-contributions'] }};
-       // var numFive = {{ data['groceries'] }};
-       // var numSix = {{ data['childcare-costs'] }};
-       // var numSeven = {{ data['personal-costs'] }};
-       // var numEight = {{ data['communications'] }};
-       // var numNine = {{ data['other-repayments'] }};
-       //
-       //
-       //
-       // var sum = numOne+numTwo+numThree+numFour+numFive+numSix+numSeven+numEight+numNine;
-       //
-       //
-       //
-       // document.write(sum);
+  <dd class="govuk-summary-list__actions">
+    <ul class="govuk-summary-list__actions-list">
+      <li class="govuk-summary-list__actions-list-item">
+        <a class="govuk-link" href="expense-details-housing">Change<span class="govuk-visually-hidden"> monthly income</span></a>
+      </li>
+      <li class="govuk-summary-list__actions-list-item">
 
-       </script>
-      <div class="govuk-!-margin-top-5">
-        {{ govukButton({ text: "Continue ", href: "left-over-income" }) }}
-      </div>
+<!-- Button logic -->
+        <form class="form" action="remove-from-list" method="post">
+  <fieldset class="visually-hidden">
+  <legend>Hidden field</legend>
 
+  <div>
+    <input id="yesChange" name="type-of-input" type="radio" value="housing" checked="checked">
+    <label for="yesChange">Yes</label>
     </div>
+
+    <div>
+    <input id="noChange" name="type-of-input" type="radio" value="housing">
+    <label for="noChange">No</label>
+    </div>
+
+    </fieldset>
+
+    <button style=" background: none!important;
+border: none;
+padding: 0!important;
+/*optional*/
+font-family: GDS Transport, arial, sans-serif;
+font-size:19px;
+/*input has OS specific font-family*/
+color: #069;
+text-decoration: underline;
+cursor: pointer;">Remove</button>
+
+
+
+   </form>
+   <!-- End of button logic -->
+
+
+      </li>
+    </ul>
+  </dd>
+</div>
+
+{% endif %}
+
+{% if data['utilities'] > 0 %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key" style="width:500px;">
+    Utilities
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['utilities']|currency }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <ul class="govuk-summary-list__actions-list">
+      <li class="govuk-summary-list__actions-list-item">
+        <a class="govuk-link" href="expense-details-utilities">Change<span class="govuk-visually-hidden"> contact details</span></a>
+      </li>
+      <li class="govuk-summary-list__actions-list-item">
+        <!-- Button logic -->
+                  <form class="form" action="remove-from-list" method="post">
+            <fieldset class="visually-hidden">
+            <legend>Hidden field</legend>
+
+            <div>
+              <input id="yesChange" name="type-of-input" type="radio" value="utilities" checked="checked">
+              <label for="yesChange">Yes</label>
+              </div>
+
+              <div>
+              <input id="noChange" name="type-of-input" type="radio" value="utilities">
+              <label for="noChange">No</label>
+              </div>
+
+              </fieldset>
+
+              <button style=" background: none!important;
+          border: none;
+          padding: 0!important;
+          /*optional*/
+          font-family: GDS Transport, arial, sans-serif;
+          font-size:19px;
+          /*input has OS specific font-family*/
+          color: #069;
+          text-decoration: underline;
+          cursor: pointer;">Remove</button>
+
+
+
+             </form>
+             <!-- End of button logic -->
+           </li>
+    </ul>
+  </dd>
+</div>
+
+{% endif %}
+
+{% if data['travel'] > 0 %}
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key" style="width:500px;">
+    Transport and travel
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['travel']|currency }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <ul class="govuk-summary-list__actions-list">
+      <li class="govuk-summary-list__actions-list-item">
+        <a class="govuk-link" href="expense-details-travel">Change<span class="govuk-visually-hidden"> contact details</span></a>
+      </li>
+      <li class="govuk-summary-list__actions-list-item">
+        <!-- Button logic -->
+                  <form class="form" action="remove-from-list" method="post">
+            <fieldset class="visually-hidden">
+            <legend>Hidden field</legend>
+
+            <div>
+              <input id="yesChange" name="type-of-input" type="radio" value="travel" checked="checked">
+              <label for="yesChange">Yes</label>
+              </div>
+
+              <div>
+              <input id="noChange" name="type-of-input" type="radio" value="travel">
+              <label for="noChange">No</label>
+              </div>
+
+              </fieldset>
+
+              <button style=" background: none!important;
+          border: none;
+          padding: 0!important;
+          /*optional*/
+          font-family: GDS Transport, arial, sans-serif;
+          font-size:19px;
+          /*input has OS specific font-family*/
+          color: #069;
+          text-decoration: underline;
+          cursor: pointer;">Remove</button>
+
+
+
+             </form>
+             <!-- End of button logic -->        </li>
+    </ul>
+  </dd>
+</div>
+
+{% endif %}
+
+{% if data['pension-contributions'] > 0 %}
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key" style="width:500px;">
+    Private pensions and insurance
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['pension-contributions']|currency }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <ul class="govuk-summary-list__actions-list">
+      <li class="govuk-summary-list__actions-list-item">
+        <a class="govuk-link" href="expense-details-pension-contributions">Change<span class="govuk-visually-hidden"> contact details</span></a>
+      </li>
+      <li class="govuk-summary-list__actions-list-item">
+        <!-- Button logic -->
+                  <form class="form" action="remove-from-list" method="post">
+            <fieldset class="visually-hidden">
+            <legend>Hidden field</legend>
+
+            <div>
+              <input id="yesChange" name="type-of-input" type="radio" value="pension-contributions" checked="checked">
+              <label for="yesChange">Yes</label>
+              </div>
+
+              <div>
+              <input id="noChange" name="type-of-input" type="radio" value="pension-contributions">
+              <label for="noChange">No</label>
+              </div>
+
+              </fieldset>
+
+              <button style=" background: none!important;
+          border: none;
+          padding: 0!important;
+          /*optional*/
+          font-family: GDS Transport, arial, sans-serif;
+          font-size:19px;
+          /*input has OS specific font-family*/
+          color: #069;
+          text-decoration: underline;
+          cursor: pointer;">Remove</button>
+
+
+
+             </form>
+             <!-- End of button logic -->        </li>
+    </ul>
+  </dd>
+</div>
+
+
+{% endif %}
+
+{% if data['groceries'] > 0 %}
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key" style="width:500px;">
+    Food and housekeeping
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['groceries']|currency }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <ul class="govuk-summary-list__actions-list">
+      <li class="govuk-summary-list__actions-list-item">
+        <a class="govuk-link" href="expense-details-groceries">Change<span class="govuk-visually-hidden"> contact details</span></a>
+      </li>
+      <li class="govuk-summary-list__actions-list-item">
+        <!-- Button logic -->
+                  <form class="form" action="remove-from-list" method="post">
+            <fieldset class="visually-hidden">
+            <legend>Hidden field</legend>
+
+            <div>
+              <input id="yesChange" name="type-of-input" type="radio" value="groceries" checked="checked">
+              <label for="yesChange">Yes</label>
+              </div>
+
+              <div>
+              <input id="noChange" name="type-of-input" type="radio" value="groce">
+              <label for="noChange">No</label>
+              </div>
+
+              </fieldset>
+
+              <button style=" background: none!important;
+          border: none;
+          padding: 0!important;
+          /*optional*/
+          font-family: GDS Transport, arial, sans-serif;
+          font-size:19px;
+          /*input has OS specific font-family*/
+          color: #069;
+          text-decoration: underline;
+          cursor: pointer;">Remove</button>
+
+
+
+             </form>
+             <!-- End of button logic -->        </li>
+    </ul>
+  </dd>
+</div>
+
+
+{% endif %}
+
+{% if data['childcare-costs'] > 0 %}
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key" style="width:500px;">
+    Dependents
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['childcare-costs']|currency }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <ul class="govuk-summary-list__actions-list">
+      <li class="govuk-summary-list__actions-list-item">
+        <a class="govuk-link" href="expense-details-childcare-costs">Change<span class="govuk-visually-hidden"> contact details</span></a>
+      </li>
+      <li class="govuk-summary-list__actions-list-item">
+        <!-- Button logic -->
+                  <form class="form" action="remove-from-list" method="post">
+            <fieldset class="visually-hidden">
+            <legend>Hidden field</legend>
+
+            <div>
+              <input id="yesChange" name="type-of-input" type="radio" value="childcare-costs" checked="checked">
+              <label for="yesChange">Yes</label>
+              </div>
+
+              <div>
+              <input id="noChange" name="type-of-input" type="radio" value="childcare-costs">
+              <label for="noChange">No</label>
+              </div>
+
+              </fieldset>
+
+              <button style=" background: none!important;
+          border: none;
+          padding: 0!important;
+          /*optional*/
+          font-family: GDS Transport, arial, sans-serif;
+          font-size:19px;
+          /*input has OS specific font-family*/
+          color: #069;
+          text-decoration: underline;
+          cursor: pointer;">Remove</button>
+
+
+
+             </form>
+             <!-- End of button logic -->        </li>
+    </ul>
+  </dd>
+</div>
+
+{% endif %}
+
+{% if data['personal-costs'] > 0 %}
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key" style="width:500px;">
+    Debt repayments
+  </dt>
+  <dd class="govuk-summary-list__value" >
+    {{ data['personal-costs']|currency }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <ul class="govuk-summary-list__actions-list">
+      <li class="govuk-summary-list__actions-list-item">
+        <a class="govuk-link" href="expense-details-personal-costs">Change<span class="govuk-visually-hidden"> contact details</span></a>
+      </li>
+      <li class="govuk-summary-list__actions-list-item">
+        <!-- Button logic -->
+                  <form class="form" action="remove-from-list" method="post">
+            <fieldset class="visually-hidden">
+            <legend>Hidden field</legend>
+
+            <div>
+              <input id="yesChange" name="type-of-input" type="radio" value="personal-costs" checked="checked">
+              <label for="yesChange">Yes</label>
+              </div>
+
+              <div>
+              <input id="noChange" name="type-of-input" type="radio" value="personal-costs">
+              <label for="noChange">No</label>
+              </div>
+
+              </fieldset>
+
+              <button style=" background: none!important;
+          border: none;
+          padding: 0!important;
+          /*optional*/
+          font-family: GDS Transport, arial, sans-serif;
+          font-size:19px;
+          /*input has OS specific font-family*/
+          color: #069;
+          text-decoration: underline;
+          cursor: pointer;">Remove</button>
+
+
+
+             </form>
+             <!-- End of button logic -->        </li>
+    </ul>
+  </dd>
+</div>
+
+{% endif %}
+
+{% if data['communications'] > 0 %}
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key" style="width:500px;">
+    Communications
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['communications']|currency }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <ul class="govuk-summary-list__actions-list">
+      <li class="govuk-summary-list__actions-list-item">
+        <a class="govuk-link" href="expense-details-insurance">Change<span class="govuk-visually-hidden"> contact details</span></a>
+      </li>
+      <li class="govuk-summary-list__actions-list-item">
+        <!-- Button logic -->
+                  <form class="form" action="remove-from-list" method="post">
+            <fieldset class="visually-hidden">
+            <legend>Hidden field</legend>
+
+            <div>
+              <input id="yesChange" name="type-of-input" type="radio" value="leisure" checked="checked">
+              <label for="yesChange">Yes</label>
+              </div>
+
+              <div>
+              <input id="noChange" name="type-of-input" type="radio" value="leisure">
+              <label for="noChange">No</label>
+              </div>
+
+              </fieldset>
+
+              <button style=" background: none!important;
+          border: none;
+          padding: 0!important;
+          /*optional*/
+          font-family: GDS Transport, arial, sans-serif;
+          font-size:19px;
+          /*input has OS specific font-family*/
+          color: #069;
+          text-decoration: underline;
+          cursor: pointer;">Remove</button>
+
+
+
+             </form>
+             <!-- End of button logic -->        </li>
+    </ul>
+  </dd>
+</div>
+
+
+{% endif %}
+
+{% if data['other-repayments'] > 0 %}
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key" style="width:500px;">
+    Other expenditure
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['other-repayments']|currency }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <ul class="govuk-summary-list__actions-list">
+      <li class="govuk-summary-list__actions-list-item">
+        <a class="govuk-link" href="expense-details-other-repayments">Change<span class="govuk-visually-hidden"> contact details</span></a>
+      </li>
+      <li class="govuk-summary-list__actions-list-item">
+        <!-- Button logic -->
+                  <form class="form" action="remove-from-list" method="post">
+            <fieldset class="visually-hidden">
+            <legend>Hidden field</legend>
+
+            <div>
+              <input id="yesChange" name="type-of-input" type="radio" value="other-repayments" checked="checked">
+              <label for="yesChange">Yes</label>
+              </div>
+
+              <div>
+              <input id="noChange" name="type-of-input" type="radio" value="other-repayments">
+              <label for="noChange">No</label>
+              </div>
+
+              </fieldset>
+
+              <button style=" background: none!important;
+          border: none;
+          padding: 0!important;
+          /*optional*/
+          font-family: GDS Transport, arial, sans-serif;
+          font-size:19px;
+          /*input has OS specific font-family*/
+          color: #069;
+          text-decoration: underline;
+          cursor: pointer;">Remove</button>
+
+
+
+             </form>
+             <!-- End of button logic -->
+      </li>
+    </ul>
+  </dd>
+</div>
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+<p class="govuk-heading-m"><span class="govuk-body">Total monthly expenditure:<br></span>
+
+
+  {% set totalExpenditure = data['housing']|float + data['utilities']|float + data['travel']|float + data['pension-contributions']|float + data['groceries']|float + data['childcare-costs']|float  + data['personal-costs']|float  +  data['communications']|float + data['other-repayments']|float %}
+  {{ totalExpenditure|currency}}
+
+
+  {% set leftOverIncome = totalIncome-totalExpenditure %}
+
+</p>
+  <div class="govuk-!-margin-top-5">
+    {{ govukButton({ text: "Continue ", href: "left-over-income" }) }}
   </div>
+
+</div>
+</div>
 {% endblock %}

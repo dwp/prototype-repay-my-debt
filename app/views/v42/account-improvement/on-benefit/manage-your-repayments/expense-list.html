@@ -23,17 +23,21 @@
 
         Your monthly expenditure
       </h1>
-      <br>      <h1 class="govuk-heading-l"><span class="govuk-body">Total<br></span>£110</h1>
+      <br>      <h1 class="govuk-heading-l"><span class="govuk-body">Total<br></span>
+        {% set totalExpenditure = data['housing']|float + data['utilities']|float + data['travel']|float + data['pension-contributions']|float + data['groceries']|float + data['childcare-costs']|float  + data['personal-costs']|float  +  data['communications']|float + data['other-repayments']|float %}
+        {{ totalExpenditure|currency}}
+      </h1>
 <div class="govuk-form-group">
 
   <dl class="govuk-summary-list">
+    {% if data['housing'] > 0 %}
 
   <div class="govuk-summary-list__row " id="monthly-income-row" >
     <dt class="govuk-summary-list__key" style="width:500px;">
       Housing
     </dt>
     <dd class="govuk-summary-list__value">
-      £ {{ data['housing'] }}
+      {{ data['housing']|currency }}
     </dd>
 
     <dd class="govuk-summary-list__actions">
@@ -43,7 +47,7 @@
         </li>
         <li class="govuk-summary-list__actions-list-item">
 
-<!-- Button logic -->
+  <!-- Button logic -->
           <form class="form" action="remove-from-list" method="post">
     <fieldset class="visually-hidden">
     <legend>Hidden field</legend>
@@ -82,13 +86,15 @@
     </dd>
   </div>
 
+  {% endif %}
 
+  {% if data['utilities'] > 0 %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="width:500px;">
       Utilities
     </dt>
     <dd class="govuk-summary-list__value">
-      £ {{ data['utilities'] }}
+      {{ data['utilities']|currency }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <ul class="govuk-summary-list__actions-list">
@@ -133,12 +139,17 @@
     </dd>
   </div>
 
+  {% endif %}
+
+  {% if data['travel'] > 0 %}
+
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="width:500px;">
       Transport and travel
     </dt>
     <dd class="govuk-summary-list__value">
-      £ {{ data['travel'] }}
+      {{ data['travel']|currency }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <ul class="govuk-summary-list__actions-list">
@@ -181,12 +192,18 @@
       </ul>
     </dd>
   </div>
+
+  {% endif %}
+
+  {% if data['pension-contributions'] > 0 %}
+
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="width:500px;">
       Private pensions and insurance
     </dt>
     <dd class="govuk-summary-list__value">
-      £ {{ data['pension-contributions'] }}
+      {{ data['pension-contributions']|currency }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <ul class="govuk-summary-list__actions-list">
@@ -231,12 +248,16 @@
   </div>
 
 
+  {% endif %}
+
+  {% if data['groceries'] > 0 %}
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="width:500px;">
       Food and housekeeping
     </dt>
     <dd class="govuk-summary-list__value">
-      £ {{ data['groceries'] }}
+      {{ data['groceries']|currency }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <ul class="govuk-summary-list__actions-list">
@@ -280,12 +301,18 @@
     </dd>
   </div>
 
+
+  {% endif %}
+
+  {% if data['childcare-costs'] > 0 %}
+
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="width:500px;">
       Dependents
     </dt>
     <dd class="govuk-summary-list__value">
-      £ {{ data['childcare-costs'] }}
+      {{ data['childcare-costs']|currency }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <ul class="govuk-summary-list__actions-list">
@@ -329,14 +356,17 @@
     </dd>
   </div>
 
+  {% endif %}
+
+  {% if data['personal-costs'] > 0 %}
 
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="width:500px;">
-      Dedt repayments
+      Debt repayments
     </dt>
     <dd class="govuk-summary-list__value" >
-      £ {{ data['personal-costs'] }}
+      {{ data['personal-costs']|currency }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <ul class="govuk-summary-list__actions-list">
@@ -380,13 +410,16 @@
     </dd>
   </div>
 
+  {% endif %}
+
+  {% if data['communications'] > 0 %}
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="width:500px;">
       Communications
     </dt>
     <dd class="govuk-summary-list__value">
-      £ {{ data['communications'] }}
+      {{ data['communications']|currency }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <ul class="govuk-summary-list__actions-list">
@@ -430,12 +463,17 @@
     </dd>
   </div>
 
+
+  {% endif %}
+
+  {% if data['other-repayments'] > 0 %}
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="width:500px;">
       Other expenditure
     </dt>
     <dd class="govuk-summary-list__value">
-      £ {{ data['other-repayments'] }}
+      {{ data['other-repayments']|currency }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <ul class="govuk-summary-list__actions-list">
@@ -480,6 +518,7 @@
     </dd>
   </div>
 
+  {% endif %}
 
 
 
@@ -494,7 +533,9 @@
 
 
 
-</dl>
+
+  </dl>
+
 
 </div>
 
@@ -504,7 +545,7 @@
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--m">
-        Do you need to add another expenditure type?
+        Do you need to add any other expenditure?
       </legend>
 
       <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
