@@ -42,7 +42,7 @@
         <ul class="govuk-list">
           <li>
             <h3>Agreed monthly payment</h3>
-            <span id="new-debts-amount"><b>£{{ data['final-affordable-amount'] }}</b></span>
+            <span id="new-debts-amount"><b>{{ data['final-affordable-amount']|currency }}</b></span>
           </li>
           <li>
             <h3>Next review due by</h3>
@@ -157,7 +157,7 @@
 
 										<h2 class="govuk-heading-m">Declaration</h2>
 
-		<p>By continuing, you confirm that you will keep up with your payment reviews and let us know immediately if your financial situation changes.</p>
+		<p>By continuing, you confirm that you will keep up with reviewing your payments and let us know immediately if your financial situation changes.</p>
 
 
 

@@ -23,8 +23,8 @@
 
 
  <div class="govuk-inset-text">
-<p>You felt you could repay <strong>£{{ data['new-affordable-amount']}}</strong>.</p>
- <p>Based on what you have now told us, you have a monthly disposable income of <strong>£{{ data['left-over-income'] }}</strong>. </p>
+<p>You felt you could repay <strong>{{ data['new-affordable-amount']|currency }}</strong>.</p>
+ <p>Based on what you have now told us, you have a monthly disposable income of <strong>{{ data['leftOutBalance']|currency }}</strong>. </p>
 </div>
 
 
