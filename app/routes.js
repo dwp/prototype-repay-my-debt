@@ -564,9 +564,9 @@ router.post('/v42/account-improvement/on-benefit/sign-in-choice', function (req,
   var option = req.session.data['sign-in-choice']
 
   // Check whether the variable matches a condition
-  if (option == 'sign-in-oidv'){
+  if (option == 'sign-in-one-login'){
     // Send user to next page
-    res.redirect('/v42/account-improvement/on-benefit/sign-in-oidv')
+    res.redirect('/v42/account-improvement/on-benefit/sign-in-one-login')
 
   } else if (option == 'security-code') {
     // Send user to ineligible page
