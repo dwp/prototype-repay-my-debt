@@ -23,6 +23,7 @@
 
         Check your monthly income and expenditure
       </h1>
+
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 
       <h1 class="govuk-heading-l">Income</h1>
@@ -253,7 +254,7 @@
         </dl>
       </div>
 
-      <h1 class="govuk-heading-m"><span class="govuk-body">Total monthly income<br></span>
+      <h1 class="govuk-heading-m"><span class="govuk-body">Total monthly income:<br></span>
         {% set totalIncome = data['income-monthly']|float + data['benefits']|float + data['pension']|float + data['other-income']|float %}
 
         {{ totalIncome|currency }}
@@ -785,7 +786,7 @@
 
       </div>
 
-      <h1 class="govuk-heading-m"><span class="govuk-body">Total monthly expenditure<br></span>
+      <h1 class="govuk-heading-m"><span class="govuk-body">Total monthly expenditure:<br></span>
         {% set totalExpenditure = data['housing']|float + data['utilities']|float + data['travel']|float + data['pension-contributions']|float + data['groceries']|float + data['childcare-costs']|float  + data['personal-costs']|float  +  data['communications']|float + data['other-repayments']|float %}
         {{ totalExpenditure|currency}}
 
