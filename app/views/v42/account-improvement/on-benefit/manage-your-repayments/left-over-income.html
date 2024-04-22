@@ -32,12 +32,14 @@
 
         <dl class="govuk-summary-list">
 
+          {% if data['income-monthly'] > 0 %}
+
         <div class="govuk-summary-list__row " id="monthly-income-row" >
           <dt class="govuk-summary-list__key">
              Income from earnings
           </dt>
           <dd class="govuk-summary-list__value">
-            £ {{ data['income-monthly'] }}
+            {{ data['income-monthly']|currency }}
           </dd>
 
           <dd class="govuk-summary-list__actions">
@@ -47,7 +49,7 @@
               </li>
               <li class="govuk-summary-list__actions-list-item">
 
-      <!-- Button logic -->
+        <!-- Button logic -->
                 <form class="form" action="remove-from-list" method="post">
           <fieldset class="visually-hidden">
           <legend>Hidden field</legend>
@@ -85,6 +87,9 @@
             </ul>
           </dd>
         </div>
+        {% endif %}
+
+        {% if data['benefits'] > 0 %}
 
 
         <div class="govuk-summary-list__row">
@@ -92,7 +97,7 @@
             Benefit payments
           </dt>
           <dd class="govuk-summary-list__value">
-            £ {{ data['benefits'] }}
+          {{ data['benefits']|currency }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
@@ -137,6 +142,9 @@
           </dd>
         </div>
 
+        {% endif %}
+
+        {% if data['pension'] > 0 %}
 
 
         <div class="govuk-summary-list__row">
@@ -144,7 +152,7 @@
             Pension income
           </dt>
           <dd class="govuk-summary-list__value">
-            £ {{ data['pension'] }}
+            {{ data['pension']|currency }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
@@ -188,14 +196,16 @@
             </ul>
           </dd>
         </div>
+        {% endif %}
 
+        {% if data['other-income'] > 0 %}
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Other income
           </dt>
           <dd class="govuk-summary-list__value">
-            £ {{ data['other-income'] }}
+            {{ data['other-income']|currency }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
@@ -238,42 +248,41 @@
             </ul>
           </dd>
         </div>
-      </dl>
+        {% endif %}
 
+        </dl>
       </div>
 
       <h1 class="govuk-heading-m"><span class="govuk-body">Total monthly income<br></span>
-     £<script>
+        {% set totalIncome = data['income-monthly']|float + data['benefits']|float + data['pension']|float + data['other-income']|float %}
 
-       var numoOne = {{ data['income-monthly'] }};
-       var numoTwo = {{ data['benefits'] }};
-       var numoThree = {{ data['pension'] }};
-       var numoFour = {{ data['other-income'] }};
-       var income = numoOne+numoTwo+numoThree+numoFour;
-
-
-
-       document.write(income);
-
-       </script>
+        {{ totalIncome|currency }}
 
 
 
 
        </h1>
+
+
+
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
       <h1 class="govuk-heading-l">Expenditure</h1>
 
       <div class="govuk-form-group">
 
+
         <dl class="govuk-summary-list">
+          {% if data['housing'] > 0 %}
 
         <div class="govuk-summary-list__row " id="monthly-income-row" >
           <dt class="govuk-summary-list__key" style="width:500px;">
             Housing
           </dt>
           <dd class="govuk-summary-list__value">
-            £ {{ data['housing'] }}
+            {{ data['housing']|currency }}
           </dd>
 
           <dd class="govuk-summary-list__actions">
@@ -283,7 +292,7 @@
               </li>
               <li class="govuk-summary-list__actions-list-item">
 
-      <!-- Button logic -->
+        <!-- Button logic -->
                 <form class="form" action="remove-from-list" method="post">
           <fieldset class="visually-hidden">
           <legend>Hidden field</legend>
@@ -322,13 +331,15 @@
           </dd>
         </div>
 
+        {% endif %}
 
+        {% if data['utilities'] > 0 %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="width:500px;">
             Utilities
           </dt>
           <dd class="govuk-summary-list__value">
-            £ {{ data['utilities'] }}
+            {{ data['utilities']|currency }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
@@ -373,12 +384,17 @@
           </dd>
         </div>
 
+        {% endif %}
+
+        {% if data['travel'] > 0 %}
+
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="width:500px;">
             Transport and travel
           </dt>
           <dd class="govuk-summary-list__value">
-            £ {{ data['travel'] }}
+            {{ data['travel']|currency }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
@@ -421,12 +437,18 @@
             </ul>
           </dd>
         </div>
+
+        {% endif %}
+
+        {% if data['pension-contributions'] > 0 %}
+
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="width:500px;">
             Private pensions and insurance
           </dt>
           <dd class="govuk-summary-list__value">
-            £ {{ data['pension-contributions'] }}
+            {{ data['pension-contributions']|currency }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
@@ -471,12 +493,16 @@
         </div>
 
 
+        {% endif %}
+
+        {% if data['groceries'] > 0 %}
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="width:500px;">
             Food and housekeeping
           </dt>
           <dd class="govuk-summary-list__value">
-            £ {{ data['groceries'] }}
+            {{ data['groceries']|currency }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
@@ -520,12 +546,18 @@
           </dd>
         </div>
 
+
+        {% endif %}
+
+        {% if data['childcare-costs'] > 0 %}
+
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="width:500px;">
             Dependents
           </dt>
           <dd class="govuk-summary-list__value">
-            £ {{ data['childcare-costs'] }}
+            {{ data['childcare-costs']|currency }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
@@ -569,14 +601,17 @@
           </dd>
         </div>
 
+        {% endif %}
+
+        {% if data['personal-costs'] > 0 %}
 
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="width:500px;">
-            Dedt repayments
+            Debt repayments
           </dt>
           <dd class="govuk-summary-list__value" >
-            £ {{ data['personal-costs'] }}
+            {{ data['personal-costs']|currency }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
@@ -620,13 +655,16 @@
           </dd>
         </div>
 
+        {% endif %}
+
+        {% if data['communications'] > 0 %}
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="width:500px;">
             Communications
           </dt>
           <dd class="govuk-summary-list__value">
-            £ {{ data['communications'] }}
+            {{ data['communications']|currency }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
@@ -670,12 +708,17 @@
           </dd>
         </div>
 
+
+        {% endif %}
+
+        {% if data['other-repayments'] > 0 %}
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="width:500px;">
             Other expenditure
           </dt>
           <dd class="govuk-summary-list__value">
-            £ {{ data['other-repayments'] }}
+            {{ data['other-repayments']|currency }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
@@ -720,6 +763,7 @@
           </dd>
         </div>
 
+        {% endif %}
 
 
 
@@ -734,32 +778,16 @@
 
 
 
-      </dl>
+
+        </dl>
+
+
 
       </div>
 
       <h1 class="govuk-heading-m"><span class="govuk-body">Total monthly expenditure<br></span>
-      £<script>
-
-       var numOne = {{ data['housing'] }};
-       var numTwo = {{ data['utilities'] }};
-       var numThree = {{ data['travel'] }};
-       var numFour = {{ data['pension-contributions'] }};
-       var numFive = {{ data['groceries'] }};
-       var numSix = {{ data['childcare-costs'] }};
-       var numSeven = {{ data['personal-costs'] }};
-       var numEight = {{ data['communications'] }};
-       var numNine = {{ data['other-repayments'] }};
-
-
-
-       var sum = numOne+numTwo+numThree+numFour+numFive+numSix+numSeven+numEight+numNine;
-
-
-
-       document.write(sum);
-
-       </script>
+        {% set totalExpenditure = data['housing']|float + data['utilities']|float + data['travel']|float + data['pension-contributions']|float + data['groceries']|float + data['childcare-costs']|float  + data['personal-costs']|float  +  data['communications']|float + data['other-repayments']|float %}
+        {{ totalExpenditure|currency}}
 
 
 
@@ -771,37 +799,9 @@
        <input type="hidden" id="left-over-income" name="left-over-income"  />
 
 <p class="govuk-heading-l">Your monthly disposable income is
-<span class="govuk-heading-l"> £
-  <script>
-
-   var numOne = {{ data['housing'] }};
-   var numTwo = {{ data['utilities'] }};
-   var numThree = {{ data['travel'] }};
-   var numFour = {{ data['pension-contributions'] }};
-   var numFive = {{ data['groceries'] }};
-   var numSix = {{ data['childcare-costs'] }};
-   var numSeven = {{ data['personal-costs'] }};
-   var numEight = {{ data['communications'] }};
-   var numNine = {{ data['other-repayments'] }};
-
-
-   var numoOne = {{ data['income-monthly'] }};
-   var numoTwo = {{ data['benefits'] }};
-   var numoThree = {{ data['pension'] }};
-   var numoFour = {{ data['other-income'] }};
-
-
-   var income = numoOne+numoTwo+numoThree+numoFour;
-   var expenditure = numOne+numTwo+numThree+numFour+numFive+numSix+numSeven+numEight+numNine;
-   var balance = 0;
-
-   var balance = income-expenditure;
-   document.getElementById('left-over-income').value = balance;
-   document.write(balance);
-
-   </script>
-
-
+<span class="govuk-heading-l"> {% set balance = totalIncome-totalExpenditure %}
+{{ balance|currency}}
+<input type="hidden" id="left-out-balance" name="leftOutBalance" value="{{ balance }}">
 
 </span>
 </p>

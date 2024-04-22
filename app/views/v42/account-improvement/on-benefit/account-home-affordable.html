@@ -68,7 +68,7 @@ Account home
 
 
                  <div id="green-banner" class="alert-green">
-              <p style="margin-bottom:0px;"> <strong>Previous payment</strong><br>£20.00 on 1 February 2024.</p>
+              <p style="margin-bottom:0px;"> <strong>Previous payment</strong><br>£65.00 on 1 February 2024.</p>
                        </div>
 
 
@@ -205,7 +205,7 @@ Account home
                    <ul class="govuk-list">
                      <li>
                        <h3>Monthly repayment:
-                         <span id="new-debts-amount"><b>£ {{ data ['final-affordable-amount']}}</b></span></h3>
+                         <span id="new-debts-amount"><b>{{ data['final-affordable-amount']|currency }}</b></span></h3>
                        </li>
 
                      </ul>
