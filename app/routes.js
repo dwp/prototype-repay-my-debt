@@ -762,3 +762,38 @@ router.post('/income-expenses/how-much-you-can-afford-choices', function (req, r
   }
 
 })
+
+
+//// ONE LOGIN ROUTES ////
+
+router.post('/one-login/sign-in', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var signin = req.session.data['signin']
+
+  // Check whether the variable matches a condition
+  if (signin == 'onelogin'){
+    // Send user to next page
+    res.redirect('/one-login/ol_transition')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/one-login/sign-in-security-code')
+  }
+
+})
+
+router.post('/one-login/signinchoice', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var choice = req.session.data['choice']
+
+  // Check whether the variable matches a condition
+  if (choice == 'code'){
+    // Send user to next page
+    res.redirect('/one-login/account-home')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/one-login/ol_transition')
+  }
+
+})

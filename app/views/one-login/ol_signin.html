@@ -17,7 +17,7 @@ Sign in to your Repay and manage benefit money you owe account
 
 
 
-		<form class="form" action="/version-41/sign-in-choice" method="post">
+		<form class="form" action="sign-in" method="post">
 
 
 			<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
@@ -51,11 +51,11 @@ Sign in to your Repay and manage benefit money you owe account
 					  </div>
 
 					<br>
-					<div class="govuk-radios">
+					<div class="govuk-radios" data-module="govuk-radios">
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="inRegister" name="sign-in-choice" type="radio"
-								aria-describedby="sign-in-item-hint" value="sign-in-oidv" >
+							<input class="govuk-radios__input" id="inRegister" name="signin" type="radio"
+								aria-describedby="sign-in-item-hint" value="onelogin" >
 							<label class="govuk-label govuk-radios__label" for="inRegister">
 								<b>
 
@@ -67,25 +67,11 @@ Sign in to your Repay and manage benefit money you owe account
 
 							</div>
 						</div>
-						<!-- <div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="inSecurity" name="sign-in-choice" type="radio"
-								aria-describedby="sign-in-2-item-hint" value="security-code">
-							<label class="govuk-label govuk-radios__label" for="inSecurity">
-								<b>
 
-									Sign in with the security code on the invitation letter</b>
-							</label>
-							<div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
-
-								You can sign in using a security code if you have one. </div>
-						</div> -->
-
-
-						<!-- <div class="govuk-radios__divider">or</div> -->
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="register-account" name="sign-in-choice" type="radio"
-								value="govuk-verify" aria-describedby="sign-in-3-item-hint">
+							<input class="govuk-radios__input" id="register-account" name="signin" type="radio"
+								value="code" aria-describedby="sign-in-3-item-hint">
 							<label class="govuk-label govuk-radios__label" for="sign-in-3">
 								<b>Sign in with the security code on the invitation letter</b>
 							</label>
