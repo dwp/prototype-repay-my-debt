@@ -17,9 +17,7 @@ Do you want to continue using your security code to sign in?
 
 
 
-		<form class="form"
-			action="account-home.html"
-			method="post">
+		<form class="form" action="signinchoice" method="post">
 
 
 
@@ -38,8 +36,8 @@ Do you want to continue using your security code to sign in?
 					<div class="govuk-radios">
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="codeContinue" name="keep-using-code" type="radio"
-								value="yes">
+							<input class="govuk-radios__input" id="codeContinue" name="choice" type="radio"
+								value="code">
 							<label class="govuk-label--s govuk-radios__label govuk-body" for="codeContinue">
 								Yes - I want to continue using my security code
 							</label>
@@ -51,8 +49,8 @@ Do you want to continue using your security code to sign in?
 
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="regContinue" name="keep-using-code" type="radio"
-								value="no">
+							<input class="govuk-radios__input" id="regContinue" name="choice" type="radio"
+								value="onelogin">
 							<label class="govuk-label--s govuk-radios__label govuk-body" for="regContinue">
 								No - I want to sign in using GOV.UK One Login
 							</label>
@@ -67,7 +65,9 @@ Do you want to continue using your security code to sign in?
 
 
 
-				<a href="account-home" class="govuk-button">Continue</a>
+				<button type="submit" class="govuk-button" data-module="govuk-button">
+					Continue
+				  </button>
 
 			</div>
 

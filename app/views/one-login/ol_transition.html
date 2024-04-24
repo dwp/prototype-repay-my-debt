@@ -4,20 +4,23 @@
 Sign in with GOV.UK One Login
 {% endblock %}
 
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-three-quarters">
 
-		<form class="form" action="/version-41/sign-in-choice" method="post">
+		<form class="form" action="ol_startpage" method="post">
 
-			<div class="govuk-form-group">
-				<fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
-					<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-						<h1 class="govuk-fieldset__heading">
+						<h1 class="govuk-heading-xl">
 							Sign in with GOV.UK One Login
 						</h1>
-					</legend>
 <br>
 <p>You need to sign in with your GOV.UK One Login. If you don't have a GOV.UK One Login, you'll need to create one.</p>
 
@@ -36,12 +39,6 @@ Sign in with GOV.UK One Login
 <h2 class="govuk-heading-m mt30">If you already have a GOV.UK One Login</h2>
 
 <p>Sign into GOV.UK One Login with the details you've previously set up.</p>
-
-
-
-				</fieldset>
-			</div>
-
 
 
 
