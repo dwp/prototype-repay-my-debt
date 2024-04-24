@@ -345,7 +345,7 @@ router.post('/on-benefit-no-payments-taken/how-do-want-access', function (req, r
   } else {
     // Send user to ineligible page
     res.redirect('/version-39/on-benefit-no-payments-taken/register-new-account')
- }
+  }
 })
 
 ///on-benefit-no-payments-taken/how-do-want-access
@@ -365,7 +365,7 @@ router.post('/on-benefit-payments-taken/how-do-want-access', function (req, res)
   } else {
     // Send user to ineligible page
     res.redirect('/version-39/on-benefit-payments-taken/register-new-account')
- }
+  }
 })
 
 //on-benefit-no-payments-taken/security-code
@@ -572,9 +572,9 @@ router.post('/v42/account-improvement/on-benefit/sign-in-choice', function (req,
     // Send user to ineligible page
     res.redirect('/v42/account-improvement/on-benefit/sign-in-security-code')
   }  else {
-      // Send user to ineligible page
-      res.redirect('/v42/account-improvement/on-benefit/register-new-account')
-    }
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/register-new-account')
+  }
 
 })
 
@@ -592,9 +592,9 @@ router.post('/v42/account-improvement/off-benefit/flex-account/sign-in-choice', 
     // Send user to ineligible page
     res.redirect('/v42/account-improvement/off-benefit/flex-account/sign-in-security-code')
   }  else {
-      // Send user to ineligible page
-      res.redirect('/v42/account-improvement/off-benefit/flex-account/register-new-account')
-    }
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/off-benefit/flex-account/register-new-account')
+  }
 
 })
 
@@ -614,9 +614,9 @@ router.post('/version-41/sign-in-choice', function (req, res) {
     // Send user to ineligible page
     res.redirect('/version-41/sign-in-security-code')
   }  else {
-      // Send user to ineligible page
-      res.redirect('/version-41/register-new-account')
-    }
+    // Send user to ineligible page
+    res.redirect('/version-41/register-new-account')
+  }
 
 })
 
@@ -636,13 +636,13 @@ router.post('/income-expenses/income-type', function (req, res) {
     // Send user to ineligible page
     res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/income-details-benefits.html')
   }  else  if (option == 'pension'){
-      // Send user to ineligible page
-      res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/income-details-pension.html')
-    }
-    else {
-        // Send user to ineligible page
-        res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/income-details-other-income.html')
-      }
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/income-details-pension.html')
+  }
+  else {
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/income-details-other-income.html')
+  }
 
 })
 
@@ -661,37 +661,37 @@ router.post('/income-expenses/expense-type', function (req, res) {
     // Send user to ineligible page
     res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-utilities.html')
   }  else  if (option == 'other-repayments'){
-      // Send user to ineligible page
-      res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-other-repayments.html')
-    }
-    else  if (option == 'pension-contributions'){
-        // Send user to ineligible page
-        res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-pension-contributions.html')
-      }
-      else  if (option == 'travel'){
-          // Send user to ineligible page
-          res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-travel.html')
-        }
-        else  if (option == 'childcare-costs'){
-            // Send user to ineligible page
-            res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-childcare-costs.html')
-          }
-          else  if (option == 'personal-costs'){
-              // Send user to ineligible page
-              res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-personal-costs.html')
-            }
-            else  if (option == 'groceries'){
-                // Send user to ineligible page
-                res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-groceries.html')
-              }
-              else  if (option == 'leisure'){
-                  // Send user to ineligible page
-                  res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-leisure.html')
-                }
-    else {
-        // Send user to ineligible page
-        res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-insurance.html')
-      }
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-other-repayments.html')
+  }
+  else  if (option == 'pension-contributions'){
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-pension-contributions.html')
+  }
+  else  if (option == 'travel'){
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-travel.html')
+  }
+  else  if (option == 'childcare-costs'){
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-childcare-costs.html')
+  }
+  else  if (option == 'personal-costs'){
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-personal-costs.html')
+  }
+  else  if (option == 'groceries'){
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-groceries.html')
+  }
+  else  if (option == 'leisure'){
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-leisure.html')
+  }
+  else {
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/expense-details-insurance.html')
+  }
 
 })
 
@@ -750,15 +750,29 @@ router.post('/income-expense/amount-low', function (req, res) {
 router.post('/income-expenses/how-much-you-can-afford-choices', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'
-  var payableAmount = req.session.data['new-payable-amount']
+  var payableAmount = req.session.data['final-affordable-amount']
+  var initialAmount = req.session.data['new-affordable-amount']
 
-  // Check whether the variable matches a condition
-  if (payableAmount == 'other-amount'){
-    // Send user to next page
-    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/how-much-can-you-afford-to-repay-each-month-new-payable-new-payable')
+  var selectedChoice = req.session.data['selected-amount-choice']
+
+
+  if (selectedChoice == 'inital-amount') {
+    if (initialAmount < 5){
+      res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/amount-too-low')
+    } else {
+      res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/what-this-will-mean-for-your-repayments.html')
+    }
+
+  } else { if (payableAmount < 5){
+    res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/amount-too-low')
   } else {
-    // Send user to ineligible page
     res.redirect('/v42/account-improvement/on-benefit/manage-your-repayments/what-this-will-mean-for-your-repayments.html')
   }
+
+
+}
+
+
+
 
 })

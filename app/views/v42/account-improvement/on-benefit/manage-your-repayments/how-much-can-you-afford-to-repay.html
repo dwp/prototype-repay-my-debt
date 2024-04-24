@@ -23,14 +23,13 @@
 
 
  <div class="govuk-inset-text">
-<p>You felt you could repay <strong>{{ data['new-affordable-amount']|currency }}</strong>.</p>
+<!-- <p>You felt you could repay <strong>{{ data['new-affordable-amount']|currency }}</strong>.</p> -->
  <p>Based on what you have now told us, you have a monthly disposable income of <strong>{{ data['leftOutBalance']|currency }}</strong>. </p>
 </div>
 
 
-      <form class="form" action="/income-expenses/how-much-you-can-afford-choices" method="post">
 
-        <div class="govuk-form-group">
+        <!-- <div class="govuk-form-group">
 
 
 
@@ -39,9 +38,53 @@
       <input class="govuk-input govuk-input--width-10" id="newDeductedAmount" name="final-affordable-amount" type="number" step="0.01" spellcheck="false" value="{{data['final-affordable-amount']}}">
     </div>
 
-  </div>
+  </div> -->
+
+  <form class="form" action="/income-expenses/how-much-you-can-afford-choices" method="post" >
+
+
+  <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="final-affordable-amount" name="selected-amount-choice" type="radio" value="inital-amount" {{ checked('selected-amount-choice','inital-amount') }}>
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+          {{ data['new-affordable-amount']|currency }}
+          {% set finalAmount=data['new-affordable-amount']|float %}
+
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="final-affordable-amount" name="selected-amount-choice" type="radio" value="new-amount" data-aria-controls="conditional-pay-another" {{ checked('selected-amount-choice','new-amount') }}>
+        <label class="govuk-label govuk-radios__label" for="pay-another-amount">
+          Pay another amount
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-pay-another">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-email">
+            Enter amount
+          </label>
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-10" id="final-affordable-amount" name="final-affordable-amount" type="number" step="0.01" spellcheck="false" value="{{data['final-affordable-amount']}}">
+            {% set finalAmount = data['final-affordable-amount']|float %}
+
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </fieldset>
+</div>
+
   <hr class="govuk-section-break govuk-section-break--s govuk-section-break--hidden">
-<!--
+  <!-- {% if data['left-over-income']|float < 0.00 %}
+
   <details class="govuk-details">
 <summary class="govuk-details__summary">
   <span class="govuk-details__summary-text">
@@ -65,13 +108,15 @@ Debt Management
 
 <p></p>
 </div>
-</details> -->
-        {{ govukButton({
+</details>
+{% endif %} -->
 
-          text: "Continue"
-        }) }}
 
-      </form>
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+Continue
+
+</form>
 
     </div>
   </div>
