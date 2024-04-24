@@ -31,7 +31,7 @@
              <h1 class="govuk-panel__title">
               You have successfully updated your repayments
              </h1>
-            
+
 
 
            </div>
@@ -53,7 +53,15 @@
 
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">New repayment amount</th>
-              <td class="govuk-table__cell">{{ data['final-affordable-amount'] | currency }}
+              <td class="govuk-table__cell">      {% if data['selected-amount-choice'] == 'inital-amount' %}
+                    {{ data['new-affordable-amount']|currency }}
+
+                    {% else %}
+
+
+                  {{ data['final-affordable-amount']|currency }}
+
+                  {% endif %}
   </td>
             </tr>
             <tr class="govuk-table__row">
@@ -62,7 +70,7 @@
 
 {% if data['reminder-notification-payment-setup-done-yes-no']=='yes' %}
 
-              Mobile number <span class="textNumber">{{ data['contact-by-text'] }}</span>
+              Mobile number <br><span class="textNumber">*******000</span>
 
 
                {% else %}

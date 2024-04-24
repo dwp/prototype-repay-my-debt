@@ -79,6 +79,7 @@
 
 {% endblock %}
 
-{% block pageScripts %}
+{% block scripts %}
+  {{ super() }}
   <script src="/public/javascripts/calculations.js"></script>
 {% endblock %}

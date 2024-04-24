@@ -63,10 +63,15 @@
 							</th>
 							<td class="govuk-table__cell">
 
+                {% if data['selected-amount-choice'] == 'inital-amount' %}
+                {{ data['new-affordable-amount']|currency }}
+
+                {% else %}
 
 
 						  {{ data['final-affordable-amount']|currency }}
 
+              {% endif %}
 
 
 							</td>

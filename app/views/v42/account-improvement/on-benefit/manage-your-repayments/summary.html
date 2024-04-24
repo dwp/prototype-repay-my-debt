@@ -35,44 +35,77 @@
 									<h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
 	   	<span class="govuk-caption-xl">Manage your repayments</span>Summary</h1>
 
+      <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          New monthly repayments
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['selected-amount-choice'] == 'inital-amount' %}
+          {{ data['new-affordable-amount']|currency }}
+
+          {% else %}
 
 
+        {{ data['final-affordable-amount']|currency }}
 
-      <div class="flexible-banner-float-none">
-        <ul class="govuk-list">
-          <li>
-            <h3>New monthly repayment:</h3>
-            <span id="new-debts-amount"><b>{{ data['final-affordable-amount']|currency }}</b></span>
-            <a href="how-much-can-you-afford-to-repay">change</a>
+        {% endif %}
 
-          </li>
-          <li>
-            <h3>Review repayments by:</h3>
-            <span class="total-amount" id="new-total-owed"><b><span id="new-debts-amount"><b>  <script>
-                var x = 12; //or whatever offset
-                var CurrentDate = new Date();
-                console.log("Current date:", CurrentDate);
-                CurrentDate.setMonth(CurrentDate.getMonth() + x);
-                 document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
-              </script>
-          </b></span></b></span>
-          <br>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="how-much-can-you-afford-to-repay">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Review reminder
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['reminder-notification-payment-setup-done-yes-no']=='yes' %}
 
-          </li>
+                                Mobile number <br><span class="textNumber">*******000</span>
 
-        </ul>
+
+                                 {% else %}
+
+
+                                You have chosen not to sign up for a review reminder.
+
+
+                                 {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="would-you-like-to-receive-a-text-message-reminder-about-your-next-check.html">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
       </div>
 
 
+    </dl>
+
+
+<!--
+      <p class="govuk-inset-text">
+        You have to review your repayments by <strong>
+
+          <script>
+            var x = 12; //or whatever offset
+            var CurrentDate = new Date();
+            console.log("Current date:", CurrentDate);
+            CurrentDate.setMonth(CurrentDate.getMonth() + x);
+             document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+          </script>
+</strong>
+      </p> -->
 
 
 
-			   <h2 class="govuk-heading-m govuk-!-margin-bottom-4">How this will affect your repayments</h2>
 
 
 
 
-									<table class="govuk-table summary-table govuk-!-margin-bottom-9">
+
+
+									<!-- <table class="govuk-table summary-table govuk-!-margin-bottom-9">
 
 										 <caption class="visually-hidden">Payment day summary</caption>
 
@@ -84,7 +117,6 @@
 												  <td class="govuk-table__cell">
 
                             If you have a Universal Credit payment due in the next 7 days, the repayment amount of {{ data['final-affordable-amount'] | currency }} will not show in your statement until next month.
-												 <!-- &pound;30.00 will be taken in November 2022-->
 
 												  </td>
 
@@ -112,7 +144,6 @@
 											  </tbody></table>
 
 
-
 											  <h2 class="govuk-heading-m govuk-!-margin-bottom-4">Communications</h2>
 
 
@@ -129,7 +160,7 @@
 													<th scope="row" class="govuk-table__header">Review reminder</th>
 													<td class="govuk-table__cell">
 
-{% if data['reminder-notification-payment-setup-done-yes-no']=='yes' %}
+    {% if data['reminder-notification-payment-setup-done-yes-no']=='yes' %}
 
 												  Mobile number <span class="textNumber">{{ data['contact-by-text'] }}</span>
 
@@ -152,15 +183,34 @@
 											  </tbody>
 											</table>
 
+                    -->
 
-
+<p class="govuk-inset-text">If you have a payment due in the next 7 working days, your Universal Credit account may not show the new amount until next month.</p>
 
 
 
 
 										<h2 class="govuk-heading-m">Declaration</h2>
 
-		<p>By continuing, you confirm that you will keep up with reviewing your repayments and let us know immediately if your financial situation changes.</p>
+		<p>By continuing, you confirm that you
+      <ul class="govuk-list govuk-list--bullet">
+        <li> will review you repayments by
+
+          <script>
+            var x = 12; //or whatever offset
+            var CurrentDate = new Date();
+            console.log("Current date:", CurrentDate);
+            CurrentDate.setMonth(CurrentDate.getMonth() + x);
+             document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+          </script>.
+      </li>
+        <li> will keep up with reviewing your repayments and let us know immediately if your financial situation changes.</li>
+
+      </ul>
+
+
+
+      </p>
 
 
 
