@@ -25,55 +25,40 @@
       </h1>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total monthly income
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% set totalIncome = data['income-monthly']|float + data['benefits']|float + data['pension']|float + data['other-income']|float %}
 
-      <h1 class="govuk-heading-l">Income</h1>
+            {{ totalIncome|currency }}          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="income-expense">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total monthly expenditure
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% set totalExpenditure = data['housing']|float + data['utilities']|float + data['travel']|float + data['pension-contributions']|float + data['groceries']|float + data['childcare-costs']|float  + data['personal-costs']|float  +  data['communications']|float + data['other-repayments']|float %}
+            {{ totalExpenditure|currency}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="income-expense">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
 
+      </dl>
 
-      <div class="govuk-form-group">
-
-      </div>
-
-      <h1 class="govuk-heading-m"><span class="govuk-body">Total monthly income:<br></span>
-        {% set totalIncome = data['income-monthly']|float + data['benefits']|float + data['pension']|float + data['other-income']|float %}
-
-        {{ totalIncome|currency }}
-
-
-
-
-       </h1>
-<p class="govuk-link">Change</p>
-
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-
-
-      <h1 class="govuk-heading-l">Expenditure</h1>
-
-      <div class="govuk-form-group">
-
-
-
-
-      </div>
-
-      <h1 class="govuk-heading-m"><span class="govuk-body">Total monthly expenditure:<br></span>
-        {% set totalExpenditure = data['housing']|float + data['utilities']|float + data['travel']|float + data['pension-contributions']|float + data['groceries']|float + data['childcare-costs']|float  + data['personal-costs']|float  +  data['communications']|float + data['other-repayments']|float %}
-        {{ totalExpenditure|currency}}
-
-
-
-
-       </h1>
-       <p class="govuk-link">Change</p>
 
        <form action="how-much-can-you-afford-to-repay">
 
-       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
        <input type="hidden" id="left-over-income" name="left-over-income"  />
 
-<p class="govuk-heading-s">Your monthly disposable income is
+<p >Your monthly disposable income is
 <span class="govuk-heading-l"> {% set balance = totalIncome-totalExpenditure %}
 {{ balance|currency}}
 <input type="hidden" id="left-out-balance" name="leftOutBalance" value="{{ balance }}">

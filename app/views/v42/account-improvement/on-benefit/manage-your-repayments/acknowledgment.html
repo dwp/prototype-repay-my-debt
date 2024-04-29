@@ -47,7 +47,7 @@
           <tbody class="govuk-table__body">
 
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Total amount left to pay</th>
+              <th scope="row" class="govuk-table__header">Total amount left to repay</th>
               <td class="govuk-table__cell">£2980.00</td>
             </tr>
 
@@ -65,19 +65,18 @@
   </td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Review reminder</th>
+              <th scope="row" class="govuk-table__header">Notification</th>
               <td class="govuk-table__cell">
 
 {% if data['reminder-notification-payment-setup-done-yes-no']=='yes' %}
 
-              Mobile number <br><span class="textNumber">*******000</span>
+              Text message <br><span class="textNumber">*******000</span>
 
 
                {% else %}
 
 
-              You have chosen not to sign up for a review reminder.
-
+No
 
                {% endif %}
 
@@ -190,6 +189,7 @@
 
 
 
+                  <p class="govuk-inset-text">If you have a Universal Credit payment due in the next 7 working days, your Universal Credit account may not show the new amount until next month.</p>
 
 
 
