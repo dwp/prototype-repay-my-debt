@@ -1,0 +1,225 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Income details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- Error section -->
+
+          <div class="govuk-error-summary" data-module="govuk-error-summary" id="errorDiv" style="display:none;">
+            <div role="alert">
+              <h2 class="govuk-error-summary__title">
+                There is a problem
+              </h2>
+              <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                  <li>
+                    <a href="#">Enter your income</a>
+                  </li>
+                  <li>
+                    <a href="#">Enter your expenditure</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+    <!-- Error Section End -->
+
+
+
+    <span class="govuk-caption-xl">Manage your repayments
+
+
+
+      <h1 class="govuk-heading-xl">Income</h1>
+      <br>
+      <p>Add your monthly income.
+
+</p>
+
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        How would you like to be contacted?
+      </h1>
+    </legend>
+    <div id="contact-hint" class="govuk-hint">
+      Select all options that are relevant to you.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-checkboxes__label" for="contact">
+          Earnings after tax
+          <br>
+          <span  class="govuk-hint">
+
+            For example, State Pension, work pension.
+
+          </span>
+        </label>
+
+      </div>
+      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-email">
+            Email address
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+        </div>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+          Phone
+        </label>
+      </div>
+      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-2">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-phone">
+            Phone number
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contactByPhone" type="tel" autocomplete="tel">
+        </div>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
+        <label class="govuk-label govuk-checkboxes__label" for="contact-3">
+          Text message
+        </label>
+      </div>
+      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-3">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-text">
+            Mobile phone number
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contactByText" type="tel" autocomplete="tel">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+
+
+      <!-- <h2 id="income-heading" class="govuk-heading-l " style="padding-top:0px;">Income <br>
+        <p id="income-error" class="govuk-error-message" style="display:none; margin-bottom:0px; padding-bottom:0px;">
+              <span class="govuk-visually-hidden">Error:</span> Enter your income
+            </p>
+
+            <span class="govuk-body"><a class="govuk-link" href="choose-income-type" >
+          Add income
+        </a></span></h2> -->
+
+        {% set completedStatus = {
+          text: "Not added",
+          href: "choose-income-type"
+
+        } %}
+
+        {% set incompleteStatus = {
+          tag: {
+            text: "Added",
+            classes: "govuk-tag--blue"
+          }
+
+
+        } %}
+
+        <div class="govuk-form-group">
+
+
+
+
+    <br>
+
+          <label class="govuk-label" for="authentication-code">
+      Benefit payments
+    </label>
+    <div id="authentication-code-hint" class="govuk-hint">
+      For example, Child Benefit, Universal Credit, Tax Credits.
+
+    </div>
+    <div class="govuk-input__wrapper">
+      <div class="govuk-input__prefix" aria-hidden="true">£</div>
+      <input class="govuk-input govuk-input--width-5" id="benefits" name="benefits" type="text" spellcheck="false" value="{{ data['benefits'] }}">
+    </div>
+<br>
+
+      <label class="govuk-label" for="authentication-code">
+  Pension
+</label>
+<div id="authentication-code-hint" class="govuk-hint">
+  For example, State Pension, work pension.
+
+
+</div>
+<div class="govuk-input__wrapper">
+  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+  <input class="govuk-input govuk-input--width-5" id="pension" name="pension" type="text" spellcheck="false" value="{{ data['pension'] }}">
+</div>
+
+<br>
+
+
+      <label class="govuk-label" for="authentication-code">
+  Other income
+</label>
+<div id="authentication-code-hint" class="govuk-hint">
+  For example, State Pension, work pension.
+
+
+</div>
+<div class="govuk-input__wrapper">
+  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+  <input class="govuk-input govuk-input--width-5" id="other-income" name="other-income" type="text" spellcheck="false" value="{{ data['other-income'] }}">
+</div>
+
+
+        </div>
+
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+
+  <p style="display:none;" class="govuk-heading-m" ><span class="govuk-body">Total monthly income:<br></span>
+    {% set totalIncome = data['income-monthly']|float + data['benefits']|float + data['pension']|float + data['other-income']|float %}
+    {{ totalIncome|currency }}
+
+
+
+  </p>
+
+
+
+  <div class="govuk-!-margin-top-5">
+    {{ govukButton({ text: "Continue ", href: "spending" }) }}
+  </div>
+
+</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/application.js"></script>
+{% endblock %}
