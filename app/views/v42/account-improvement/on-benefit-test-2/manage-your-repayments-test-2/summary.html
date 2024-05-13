@@ -1,0 +1,258 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  Payment review - Summary
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+	   		<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+	   		<p>What you owe:
+	   				<span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+									<form class="form" action="directDebitDay" method="post">
+
+
+									<h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+	   	<span class="govuk-caption-xl">Manage your repayments</span>Summary</h1>
+
+      <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          New monthly repayment
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+
+        {{ data['final-affordable-amount-v2']|currency }}
+
+
+
+        </dd>
+
+
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="how-much-can-you-afford-to-repay">Change</a>
+        </dd>
+
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Notifications
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['reminder-notification-payment-setup-done-yes-no']=='yes' %}
+
+                                <b>Text message</b> <br><span class="textNumber">{{ data['contactByMobile'] }}</span>
+
+
+                                 {% else %}
+
+
+                                No
+
+
+                                 {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="would-you-like-to-receive-a-text-message-reminder-about-your-next-check.html">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
+      </div>
+
+
+
+
+    </dl>
+    <div class="govuk-table__row">
+      <p><strong>Expected final repayment</strong><br>
+If your repayments stay at {{ data['final-affordable-amount-v2']|currency }}, you will clear the total amount in
+
+
+<script>
+  var  num1 = 2980.00;
+  var num2 = {{ data['final-affordable-amount-v2'] }};
+  var x = Math.floor(num1 / num2); //or whatever offset
+  var CurrentDate = new Date();
+  console.log("Current date:", CurrentDate);
+  CurrentDate.setMonth(CurrentDate.getMonth() + x);
+  document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+</script>.
+
+
+      </p>
+    </div>
+
+
+<!--
+      <p class="govuk-inset-text">
+        You have to review your repayments by <strong>
+
+          <script>
+            var x = 12; //or whatever offset
+            var CurrentDate = new Date();
+            console.log("Current date:", CurrentDate);
+            CurrentDate.setMonth(CurrentDate.getMonth() + x);
+             document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+          </script>
+</strong>
+      </p> -->
+
+
+
+
+
+
+
+
+
+									<!-- <table class="govuk-table summary-table govuk-!-margin-bottom-9">
+
+										 <caption class="visually-hidden">Payment day summary</caption>
+
+
+											  <tbody class="govuk-table__body">
+
+												 <tr class="govuk-table__row">
+												  <th scope="row" class="govuk-table__header">Next repayment</th>
+												  <td class="govuk-table__cell">
+
+                            If you have a Universal Credit payment due in the next 7 days, the repayment amount of {{ data['final-affordable-amount'] | currency }} will not show in your statement until next month.
+
+												  </td>
+
+
+												 </tr>
+
+
+												<tr class="govuk-table__row">
+													  <th scope="row" class="govuk-table__header">Expected final repayment</th>
+													  <td class="govuk-table__cell">
+														  If your repayments stay at {{ data['final-affordable-amount'] | currency }}, you will clear the total amount owed in   <script>
+                                  var  num1 = 2980.00;
+                                  var num2 = {{ data['final-affordable-amount'] }};
+                                  var x = Math.floor(num1 / num2); //or whatever offset
+                                  var CurrentDate = new Date();
+                                  console.log("Current date:", CurrentDate);
+                                  CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                                  document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                                </script>.
+													  </td>
+												</tr>
+
+
+
+											  </tbody></table>
+
+
+											  <h2 class="govuk-heading-m govuk-!-margin-bottom-4">Communications</h2>
+
+
+
+
+											  <table class="govuk-table summary-table govuk-!-margin-bottom-9">
+
+												   <caption class="visually-hidden">Payment day summary</caption>
+
+
+														<tbody class="govuk-table__body">
+
+												<tr class="govuk-table__row">
+													<th scope="row" class="govuk-table__header">Review reminder</th>
+													<td class="govuk-table__cell">
+
+    {% if data['reminder-notification-payment-setup-done-yes-no']=='yes' %}
+
+												  Mobile number <span class="textNumber">{{ data['contact-by-text'] }}</span>
+
+
+													 {% else %}
+
+
+													You have chosen not to sign up for a review reminder.
+
+
+													 {% endif %}
+
+													</td>
+
+													<td class="govuk-table__cell"><a href="reviewContact">Change</a></td>
+
+												   </tr>
+
+
+											  </tbody>
+											</table>
+
+                    -->
+
+
+
+<!--
+
+										<h2 class="govuk-heading-m">Declaration</h2>
+
+		<p>By continuing, you confirm that you
+      <ul class="govuk-list govuk-list--bullet">
+        <li> will review you repayments by
+
+          <script>
+            var x = 12; //or whatever offset
+            var CurrentDate = new Date();
+            console.log("Current date:", CurrentDate);
+            CurrentDate.setMonth(CurrentDate.getMonth() + x);
+             document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+          </script>.
+      </li>
+        <li> will keep up with reviewing your repayments and let us know immediately if your financial situation changes.</li>
+
+      </ul>
+
+
+
+      </p>
+ -->
+
+
+
+
+
+
+			<p><a href="acknowledgment" class="govuk-button">Continue</a></p>
+
+
+
+
+
+		    </form>
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}
