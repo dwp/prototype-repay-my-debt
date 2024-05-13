@@ -38,8 +38,29 @@ module.exports = {
   'childcare-costs':'0.00',
   'personal-costs':'0.00',
   'communications':'0.00',
-  'other-repayments':'0.00'
+  'other-repayments':'0.00',
+
+
+
+
 
   // Insert values here
+
+
+  'income-other':'0',
+  'income-universal-credit':'0',
+  'income-take-home':'0',
+
+  'spending-other':'0',
+  'spending-caring':'0',
+  'spending-groceries':'0',
+  'spending-travel':'0',
+  'spending-utilities':'0',
+  'spending-housing':'0'
+
+
+
+
+
 
 }

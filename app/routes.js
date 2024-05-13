@@ -578,6 +578,26 @@ router.post('/v42/account-improvement/on-benefit/sign-in-choice', function (req,
 
 })
 
+router.post('/v42/account-improvement/on-benefit-test-2/sign-in-choice', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var option = req.session.data['sign-in-choice']
+
+  // Check whether the variable matches a condition
+  if (option == 'sign-in-one-login'){
+    // Send user to next page
+    res.redirect('/v42/account-improvement/on-benefit-test-2/sign-in-one-login')
+
+  } else if (option == 'security-code') {
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit-test-2/sign-in-security-code')
+  }  else {
+    // Send user to ineligible page
+    res.redirect('/v42/account-improvement/on-benefit-test-2/register-new-account')
+  }
+
+})
+
 router.post('/v42/account-improvement/off-benefit/flex-account/sign-in-choice', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'
@@ -778,6 +798,39 @@ router.post('/income-expenses/how-much-you-can-afford-choices', function (req, r
 })
 
 
+
+router.post('/income-expenses-v2/how-much-you-can-afford-choices', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var payableAmount = req.session.data['final-affordable-amount-v2']
+
+
+  if (payableAmount < 5){
+    res.redirect('/v42/account-improvement/on-benefit-test-2/manage-your-repayments-test-2/amount-too-low')
+  } else {
+    res.redirect('/v42/account-improvement/on-benefit-test-2/manage-your-repayments-test-2/what-this-will-mean-for-your-repayments.html')
+  }
+
+})
+
+
+
+router.post('/income-expenses-v2/how-much-you-can-afford-choices-negative', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var payableAmount = req.session.data['final-affordable-amount-v2']
+
+
+  if (payableAmount < 5){
+    res.redirect('/v42/account-improvement/on-benefit-test-2/manage-your-repayments-test-2/amount-too-low')
+  } else {
+    res.redirect('/v42/account-improvement/on-benefit-test-2/manage-your-repayments-test-2/what-this-will-mean-for-your-repayments-negative.html')
+  }
+
+})
+
+
+
 //// ONE LOGIN ROUTES ////
 
 router.post('/one-login/sign-in', function (req, res) {
@@ -809,5 +862,5 @@ router.post('/one-login/signinchoice', function (req, res) {
     // Send user to ineligible page
     res.redirect('/one-login/ol_transition')
   }
-  
+
 })

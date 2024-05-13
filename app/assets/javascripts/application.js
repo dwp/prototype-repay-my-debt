@@ -76,6 +76,26 @@ function showErrorIncome() {
  element.classList.add("govuk-form-group--error");
 }
 
+
+function showErrorIncomev2() {
+ var x = document.getElementById("errorDivIncome");
+ if (x.style.display === "none") {
+  x.style.display = "block";
+} else {
+ x.style.display = "none";
+ }
+
+ var y = document.getElementById("income-error");
+ if (y.style.display === "none") {
+  y.style.display = "block";
+} else {
+ y.style.display = "none";
+ }
+
+ var element = document.getElementById("income-heading");
+ element.classList.add("govuk-form-group--error");
+}
+
 function showErrorExpenses() {
  var x = document.getElementById("errorDivExpenses");
  if (x.style.display === "none") {

@@ -64,19 +64,18 @@ Account home
   			 <div class="scenario-panel" >
   					   <h2 class="govuk-heading-s">Your repayments</h2>
 
-  					   <div class="scenario-inner-panel" >
+  					   <div class="scenario-inner-panel">
 
 
-                 <div id="green-banner"  class="alert-green">
-              <p style="margin-bottom:0px;"> <strong>Previous repayment</strong><br>
-                         £65.00 on 6 April 2024.</p>
+                 <div id="green-banner" class="alert-green">
+              <p style="margin-bottom:0px;"> <strong>Previous repayment</strong><br>£65.00 on 6 April 2024.</p>
                        </div>
 
 
 
 
 
-<p>If your monthly repayments stay at £65.00, you will clear the total amount owed on 6 Jan 2028.
+                       <p>If your monthly repayments stay at £65.00, you will clear the total amount owed on 6 Jan 2028.
 
 </p>
 
@@ -106,7 +105,7 @@ Account home
 
 
 
-  			  <div class="scenario-panel" style="height:323px;">
+  			  <div class="scenario-panel" style="height:360px;">
   					   <h2 class="govuk-heading-s">Payment summary</h2>
 
 
@@ -131,17 +130,17 @@ Account home
   								 </tr> -->
 
 
-  								 <tr class="govuk-table__row">
-  									<th scope="row" class="govuk-table__header">Total amount left to repay</th>
-  									<td class="govuk-table__cell">
+                   <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Total amount left to repay</th>
+                    <td class="govuk-table__cell">
 
 
 
-  								  &pound;2980.00
+                    &pound;2980.00
 
 
-  									</td>
-  								  </tr>
+                    </td>
+                    </tr>
 
 
 
@@ -197,13 +196,39 @@ Account home
   					   <h2 class="govuk-heading-s">Manage your repayments
 </h2>
 
+
   					   <div class="scenario-inner-panel">
-  						<p>As you are repaying money to DWP, you can get help understanding how much you can afford if you are struggling with your repayments.
-
-</p>
 
 
-  					   <span><a href="/v42/account-improvement/on-benefit/manage-your-repayments/payment-review.html" class="secondary-invert dash-spacer">Understand how much you can afford</a></span>
+
+                 <div class="flexible-banner-float-none">
+                   <ul class="govuk-list">
+                     <li>
+                       <h3>Monthly repayment:
+                         <span id="new-debts-amount"><b>{{ data['final-affordable-amount-v2']|currency }}</b></span></h3>
+                       </li>
+
+                     </ul>
+                     <!-- <ul class="govuk-list">
+
+                       <li>
+                         <h3>Review your repayments by:
+                           <span class="total-amount" id="new-total-owed"><b><script>
+                              var x = 12; //or whatever offset
+                              var CurrentDate = new Date();
+                              console.log("Current date:", CurrentDate);
+                              CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                               document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                            </script></b></span></h3>
+                         </li>
+
+                       </ul> -->
+                     </div>
+                     <p>As you are repaying money to DWP, you can get help understanding how much you can afford if you are struggling with your repayments.
+<br><br>
+
+
+<span><a href="/v42/account-improvement/on-benefit-test-2/manage-your-repayments-test-2/financial-situation.html" class="secondary-invert dash-spacer">Manage your repayments</a></span>
   					   </div>
   				   </div>
 
@@ -220,12 +245,13 @@ Account home
 
   		  <div class="govuk-grid-column-one-half">
 
-  			  <div class="scenario-panel" style="height:245px;">
+  			  <div class="scenario-panel" style="height:415px;">
   					   <h2 class="govuk-heading-s">Help and support</h2>
 
   					   <div class="scenario-inner-panel">
-  						<p>Get help if you are struggling to repay anything at all and find out what to do next.</p>
-<br>
+                 <p>Get help if you are struggling to repay anything at all and find out what to do next.</p>
+
+
   					   <span><a href="help-and-support" class="secondary-invert">Get help and support</a></span>
   					   </div>
   				   </div>
