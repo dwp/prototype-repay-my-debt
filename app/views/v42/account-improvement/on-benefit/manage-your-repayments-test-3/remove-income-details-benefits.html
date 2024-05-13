@@ -1,0 +1,69 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  Enter income
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">Income</span>
+
+        Are you sure you want to remove monthly benefit payments?
+      </h1>
+      <br>
+      <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden"> -->
+      <form class="form" id="remove-form" action="income-list">
+
+        <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+
+
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="removeBenefits" name="removeBenefits" type="radio" value="0">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="removeBenefits-no" name="removeBenefits" type="radio" value="{{ data['benefits'] }}">
+        <label class="govuk-label govuk-radios__label" for="changedName-2">
+          No
+        </label>
+      </div>
+      </div>
+      </fieldset>
+      </div>
+
+
+
+
+      <button type="submit" class="govuk-button" id="remove-yes" data-module="govuk-button" href="income-list?&benefit={{ data['removeBenefits'] }}">
+        Save and continue
+      </button>
+
+
+
+      </form>
+
+
+    </div>
+  </div>
+
+
+
+
+{% endblock %}
