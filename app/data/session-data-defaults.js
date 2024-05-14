@@ -50,12 +50,14 @@ module.exports = {
   'income-other':'0',
   'income-universal-credit':'0',
   'income-take-home':'0',
+  'income-pension':'0',
 
   'spending-other':'0',
   'spending-caring':'0',
   'spending-groceries':'0',
   'spending-travel':'0',
   'spending-utilities':'0',
+  'spending-phone':'0',
   'spending-housing':'0'
 
 

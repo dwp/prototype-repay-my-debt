@@ -21,38 +21,39 @@
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-xl">Income and spending</span>
 
-        Your total income and spending
+        Your recent monthly total  amount left over
       </h1>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
+      <p class="govuk-heading-m">Income and spending </p>
 
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Total monthly income
+          <dt class="govuk-summary-list__key" style="width:50% !important;">
+            Total income
           </dt>
-          <dd class="govuk-summary-list__value">
-            {% set totalIncome = data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
+          <dd class="govuk-summary-list__value" style="width:30%; !important">
+            {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
             {{ totalIncome|currency }}
                    </dd>
-          <dd class="govuk-summary-list__actions">
+          <dd class="govuk-summary-list__actions" style="width:20%; !important">
             <a class="govuk-link" href="income-changed">Change<span class="govuk-visually-hidden"> name</span></a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Total monthly spending
+          <dt class="govuk-summary-list__key" style="width:50%; !important">
+            Total spending
           </dt>
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__value" style="width:30%; !important">
 
 
-            {% set totalspending = data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
+            {% set totalspending = data['spending-phone']|float + data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
             {{ totalspending|currency}}
 
 
 
            </dd>
-          <dd class="govuk-summary-list__actions">
+          <dd class="govuk-summary-list__actions" style="width:20%; !important">
             <a class="govuk-link" href="spending-changed">Change<span class="govuk-visually-hidden"> date of birth</span></a>
           </dd>
         </div>
@@ -64,14 +65,41 @@
 
        <input type="hidden" id="left-over-income" name="left-over-income"  />
 
-<p >Amount left over
-<span class="govuk-heading-l"> {% set balance = totalIncome-totalspending %}
+<p >Amount left over after spending
+<span class="govuk-heading-m"> {% set balance = totalIncome-totalspending %}
 {{ balance|currency}}
 
-<input type="hidden" id="left-out-balance" name="leftOutBalance-v2" value="{{ balance }}">
+
 
 </span>
 </p>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<p class="govuk-heading-m">Total amount left over </p>
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Amount left over after spending
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ balance|currency}}
+             </dd>
+
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Current monthly repayment  
+    </dt>
+    <dd class="govuk-summary-list__value">
+      £65.00
+             </dd>
+
+  </div>
+  <br>
+  <p >Total amount left over
+  <span class="govuk-heading-l"> {% set balance = balance+65 %}
+  {{ balance|currency}}
+</dl>
+
 
 {% if balance > 0 %}
 
@@ -97,7 +125,7 @@
 
 
 
-</form>
+
 
 
 
