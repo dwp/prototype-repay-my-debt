@@ -35,10 +35,14 @@
 
 			  <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
           <span class="govuk-caption-xl">Manage your repayments</span>
-          Contact us to discuss your options
+          How much do you think you can afford to repay each month?
 
 			  </h1>
-        <p>Based on what you have now told us, you do not have any money left over each month so you need to contact us for help.</p>
+        <form class="form" action="/income-expenses-v2/how-much-you-can-afford-choices-negative" method="post" >
+
+        <div class="govuk-inset-text">
+
+        <p>Based on what you have now told us, you may not have any money left over each month. Contact us if you need help managing your repayments.</p>
 
 
 <h2 class="govuk-heading-m ">Debt Management</h2>
@@ -53,9 +57,17 @@
 <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
 </p>
 
-<p>You can continue if you feel you can still repay an affordable amount.</p>
-      <p><a href="enter-affordable-amount" class="govuk-button mb0">Continue </a></p>
-
+</div>
+<p class="govuk-heading-s">Enter affordable amount</p>
+<div class="govuk-input__wrapper">
+  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+  <input class="govuk-input govuk-input--width-10" id="newDeductedAmount" name="final-affordable-amount-v2" type="number" step="0.01" spellcheck="false" value="{{data['final-affordable-amount-v2']}}">
+</div>
+<br>
+<button type="submit" class="govuk-button" data-module="govuk-button">
+Continue
+</button>
+</form>
 	</div>
 </div>
 

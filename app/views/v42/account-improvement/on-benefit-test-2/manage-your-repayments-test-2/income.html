@@ -82,7 +82,7 @@ Income details
       Take home pay
     </label>
     <div id="authentication-code-hint" class="govuk-hint">
-      Earnings after tax, National Insurance and pensions.
+      Earnings after tax, National Insurance.
     </div>
     <div class="govuk-input__wrapper">
       <div class="govuk-input__prefix" aria-hidden="true">£</div>
@@ -92,7 +92,20 @@ Income details
 
 
     <br>
+    <label class="govuk-label govuk-!-font-weight-bold" >
+    Pensions
+    </label>
+    <div id="authentication-code-hint" class="govuk-hint">
+    For example, toatal earnings after tax from state pension, War pensions.
+    </div>
+    <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-5" id="income-pension" name="income-pension" type="text" spellcheck="false" value="0.00">
+    </div>
 
+
+
+    <br>
 
 
 
@@ -100,7 +113,9 @@ Income details
       <label class="govuk-label govuk-!-font-weight-bold">
   Other income
 </label>
-
+<div id="authentication-code-hint" class="govuk-hint">
+  For example, total income from other benefits like Child Benefit, Disability Living Allowance, Personal Independence Payment.
+</div>
 <div class="govuk-input__wrapper">
   <div class="govuk-input__prefix" aria-hidden="true">£</div>
   <input class="govuk-input govuk-input--width-5" id="income-other" name="income-other" type="text" spellcheck="false" value="0.00">
@@ -115,7 +130,7 @@ Income details
 
 
   <p style="display:none;" class="govuk-heading-m" ><span class="govuk-body">Total monthly income:<br></span>
-    {% set totalIncome = data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
+    {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
 {{ totalIncome|currency }}
 
 
