@@ -1,13 +1,13 @@
 {% extends "layout-3.html" %}
 
 {% block pageTitle %}
-  Choose income type
+  How much do you now feel you can repay each month?
 {% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "left-over-income"
+  href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 
@@ -22,10 +22,13 @@
       </h1>
 
       <form class="form" action="/income-expenses-v2/how-much-you-can-afford-choices" method="post" >
-
+        {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
+        {% set totalspending = data['spending-debt']|float + data['spending-phone']|float + data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
+        {% set balance = totalIncome-totalspending %}
+        {% set balance = balance+65.00 %}
  <div class="govuk-inset-text">
- <p>Based on what you have now told us, your amount left over is: <br>
-    <strong>{{ data['leftOutBalance-v2']|currency }}</strong>  </p>
+ <p>Based on what you have now told us and your current repayment rate, your amount left over is
+    <strong>{{ balance|currency }}</strong>  </p>
 </div>
 
 
