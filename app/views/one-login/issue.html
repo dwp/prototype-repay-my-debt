@@ -8,22 +8,29 @@ Repay and manage benefit money you owe
 {% block content %}
 
 
-
-
-
-
-<div class="govuk-grid-row">
-
-  <nav class="dwp-language-toggle" aria-label="change language">
-    <ul class="dwp-language-toggle__list">
-      <li lang="en" id="li-en" class="dwp-language-toggle__list-item">English</li>
-      <li lang="cy" id="li-cy" class="dwp-language-toggle__list-item"><span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span><a href="?lng=cy" class="govuk-link">Cymraeg</a></li>
-    </ul>
+<!-- welsh toggle start-->
+<nav class="dwp-language-toggle" aria-label="Language toggle" style="margin-top: -40px; float:right;">
+  <ul class="dwp-language-toggle__list">
+  <li class="dwp-language-toggle__list-item" aria-current="true">
+    English
+  </li>
+  <li class="dwp-language-toggle__list-item">
+    <a href="#"
+      hreflang="cy"
+      lang="cy"
+      rel="alternate"
+      class="govuk-link"
+      aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+  </li>
+  </ul>
   </nav>
+<!-- welsh toggle end -->
+
+  <div class="govuk-grid-row">
   
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Sorry, we could not sign you in with GOV.UK One Login</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7 govuk-!-margin-top-9">Sorry, we could not sign you in with GOV.UK One Login</h1>
 
     <!-- <p>This is because some of your details do not match our records. -->
 
