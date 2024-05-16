@@ -36,7 +36,7 @@
  The amount you have left over </h1>
  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 
-<!--
+
        <dl class="govuk-summary-list">
          <div class="govuk-summary-list__row">
            <dt class="govuk-summary-list__key" style="width:50% !important;">
@@ -68,14 +68,14 @@
          </div>
 
 
-       </dl> -->
+       </dl>
        {% set balance = totalIncome-totalspending %}
 
 
-
+<br>
        {% if balance > 0 %}
-       <!-- <p class="govuk-!-font-size-24" style="padding:0px; margin:0px;">        At a repayment rate of £65.00 you would have {{ balance|currency}}  left over.
-      </p> -->
+       <p class="govuk-!-font-size-27 " >        Based on your current repayment rate of £65.00 you would have {{ balance|currency}}  left over.
+      </p>
 
       <!-- <p>Based on what you told us:</p>
       <ul wiid="N1248" class="govuk-list govuk-list--bullet">
@@ -85,8 +85,8 @@
       </ul> -->
        {% else %}
 
-       <!-- <p class="govuk-!-font-size-24" style="padding:0px; margin:0px;">        At a repayment rate of £65.00 you do not have any money {{ nagativebalance|currency}} (minus) left over.
-       </p> -->
+       <p class="govuk-!-font-size-27 " >       Based on your current repayment rate of £65.00 you do not have any money {{ balance|currency}} (minus) left over.
+       </p>
        <!-- <p>Based on what you told us:</p>
        <ul wiid="N1248" class="govuk-list govuk-list--bullet">
          <li wiid="N1261">at a repayment rate of £65.00, you would not have any money left over. </li>
@@ -109,10 +109,9 @@
 
 
 
-
+<!--
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
-      <!-- <p class="govuk-heading-m">Based on what you told us</p> -->
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -158,7 +157,7 @@
 
 
 </span>
-</p>
+</p> -->
  <!-- <p class="govuk-heading-m">Total amount left over </p>
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
@@ -186,6 +185,8 @@
 </dl>
 
 <p> -->
+
+<br>
 {% if balance > 0 %}
 
 
