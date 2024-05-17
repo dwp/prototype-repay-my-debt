@@ -26,10 +26,10 @@
         {% set totalspending = data['spending-debt']|float + data['spending-phone']|float + data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
         {% set balance = totalIncome-totalspending %}
         {% set balance = balance+65.00 %}
- <div class="govuk-inset-text">
+ <!-- <div class="govuk-inset-text">
  <p>Based on what you have now told us and your current repayment rate, your amount left over is
     <strong>{{ balance|currency }}</strong>  </p>
-</div>
+</div> -->
 
 <br><br>
 

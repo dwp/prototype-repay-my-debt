@@ -16,7 +16,7 @@
 
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-two-thirds">
       {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
       {% set totalspending = data['spending-debt']|float + data['spending-phone']|float + data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
       {% set balance = totalIncome-totalspending %}
@@ -85,7 +85,7 @@
       </ul> -->
        {% else %}
 
-       <p class="govuk-!-font-size-27 " >       Based on your current repayment rate of £65.00 you do not have any money {{ balance|currency}} (minus) left over.
+       <p class="govuk-!-font-size-27 " >       Based on your current repayment rate of £65.00 you have {{ balance|currency}} (minus) left over.
        </p>
        <!-- <p>Based on what you told us:</p>
        <ul wiid="N1248" class="govuk-list govuk-list--bullet">
