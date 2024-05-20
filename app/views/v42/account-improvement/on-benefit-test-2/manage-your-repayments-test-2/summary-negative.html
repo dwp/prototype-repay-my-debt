@@ -53,7 +53,7 @@
 
 
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="enter-affordable-amount">Change</a>
+          <a class="govuk-link" href="negative-income">Change</a>
         </dd>
 
 
@@ -91,7 +91,7 @@ If your repayments stay at {{ data['final-affordable-amount-v2']|currency }}, yo
 
 
 <script>
-  var  num1 = 2980.00;
+  var  num1 = 2915.00;
   var num2 = {{ data['final-affordable-amount-v2'] }};
   var x = Math.floor(num1 / num2); //or whatever offset
   var CurrentDate = new Date();
