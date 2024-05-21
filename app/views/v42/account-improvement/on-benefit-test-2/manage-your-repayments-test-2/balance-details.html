@@ -34,7 +34,7 @@
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-xl">Manage your repayments</span>
- The amount you have left over </h1>
+ Your income and spending summary </h1>
  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 
 
@@ -72,7 +72,7 @@
 
 
        {% if balance > 0 %}
-       <p class="govuk-!-font-size-24" style="padding:0px; margin:0px;">        Including your current repayment rate of £65.00 you would have {{ balance|currency}}  left over.
+       <p class="govuk-!-font-size-24" style="padding:0px; margin:0px;">        Including your current repayment rate of £65.00, you have {{ balance|currency}} left over.
       </p>
  {% set newBalance = 0 %}
       <!-- <p>Based on what you told us:</p>
@@ -83,7 +83,7 @@
       </ul> -->
        {% else %}
        {% set newBalance = totalspending-totalIncome %}
-       <p class="govuk-!-font-size-24" style="padding:0px; margin:0px;">     Including your current repayment rate of £65.00 your spending is {{ newBalance|currency}} more than your income.
+       <p class="govuk-!-font-size-24" style="padding:0px; margin:0px;">     Including your current repayment rate of £65.00, your spending is {{ newBalance|currency}} more than your income.
        </p>
        <!-- <p>Based on what you told us:</p>
        <ul wiid="N1248" class="govuk-list govuk-list--bullet">
