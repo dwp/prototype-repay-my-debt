@@ -19,17 +19,20 @@ What this will mean for your repayments
 
 
 	   <div class="govuk-grid-row">
+       <div class="govuk-grid-column-full">
 
-        <div class="govuk-grid-column-three-quarters">
+        <div class="govuk-grid-column-three-quarters" style="padding:0px;">
 
 
-
+          {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
+          {% set totalspending = data['spending-debt']|float + data['spending-phone']|float + data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
+          {% set balance = totalIncome-totalspending %}
+          {% set newBalance = totalspending-totalIncome %}
 
 <h1 class="govuk-heading-xl">
   <span class="govuk-caption-xl">Manage your repayments</span>
 
 		What this will mean for your repayments </h1>
-
 
 
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
@@ -49,6 +52,9 @@ What this will mean for your repayments
 
       </ul>
     </div>
+
+  </div>
+
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
     <table class="govuk-table">
 
@@ -146,6 +152,8 @@ What this will mean for your repayments
 
   </ul>
 </div>
+</div>
+
 <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden"> -->
 <table class="govuk-table">
 
@@ -222,6 +230,31 @@ These appear under Debts and loans repayments on your Universal Credit statement
       CurrentDate.setMonth(CurrentDate.getMonth() + x);
       document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
     </script>
+
+  </td>
+</tr>
+
+
+<!-- Comment from there if needed -->
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__header">Based on your monthly income and spending
+
+    <!-- <div id="sign-in-hint" class="govuk-hint">
+      This date may change based on when your next payment is taken
+    </div> -->
+  </th>
+    <td class="govuk-table__cell govuk-table__cell">
+      Your spending is {{ newBalance|currency}} more than your income each month.
+
+    </td>
+
+  <td class="govuk-table__cell govuk-table__cell">
+    {% set enteredAmount = data['final-affordable-amount-v2']  %}
+    {% set repaymentBalance = 65-enteredAmount  %}
+
+    {% set newBalance2 = newBalance - repaymentBalance %}
+
+    Your spending is {{ newBalance2|currency}} more than your income each month.
 
   </td>
 </tr>
