@@ -256,8 +256,9 @@ These appear under Debts and loans repayments on your Universal Credit statement
     {% set repaymentBalance = 65-enteredAmount  %}
 
     {% set newBalancePositive = balance + repaymentBalance %}
+
 {% if newBalancePositive > 0 %}
-    You have {{ newBalancePositive|currency}} left over each month..
+    You have {{ newBalancePositive|currency}} left over each month.
     {% else %}
     {% set repaymentBalance = enteredAmount-65  %}
     {% set balance = totalspending - totalIncome %}
