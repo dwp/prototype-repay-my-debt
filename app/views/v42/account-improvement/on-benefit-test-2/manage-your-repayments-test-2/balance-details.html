@@ -69,8 +69,10 @@
 
        </dl>
 
-
-
+{% if balance == 0 %}
+<p class="govuk-!-font-size-24" style="padding:0px; margin:0px;">        Including your current repayment rate of £65.00, your spending is the same as your income each month.
+</p>
+{% else %}
        {% if balance > 0 %}
        <p class="govuk-!-font-size-24" style="padding:0px; margin:0px;">        Including your current repayment rate of £65.00, you have {{ balance|currency}} left over each month.
       </p>
@@ -105,7 +107,7 @@
        </ul> -->
        {% endif %}
 
-
+ {% endif %}
 
 
 <!--
