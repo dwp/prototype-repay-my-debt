@@ -830,6 +830,65 @@ router.post('/income-expenses-v2/how-much-you-can-afford-choices-negative', func
 })
 
 
+router.post('/flow-v1/income-expenses-v2/how-much-you-can-afford-choices', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var payableAmount = req.session.data['final-affordable-amount-v2']
+
+
+  if (payableAmount < 5){
+    res.redirect('/v42/account-improvement/on-benefit-flow-v1/manage-your-repayments-test-2/amount-too-low')
+  } else {
+    res.redirect('/v42/account-improvement/on-benefit-flow-v1/manage-your-repayments-test-2/what-this-will-mean-for-your-repayments.html')
+  }
+
+})
+
+
+router.post('/flow-v1/income-expenses-v2/how-much-you-can-afford-choices-negative', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var payableAmount = req.session.data['final-affordable-amount-v2']
+
+
+  if (payableAmount < 5){
+    res.redirect('/v42/account-improvement/on-benefit-flow-v1/manage-your-repayments-test-2/amount-too-low')
+  } else {
+    res.redirect('/v42/account-improvement/on-benefit-flow-v1/manage-your-repayments-test-2/what-this-will-mean-for-your-repayments-negative.html')
+  }
+
+})
+
+
+router.post('/flow-v2/income-expenses-v2/how-much-you-can-afford-choices', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var payableAmount = req.session.data['final-affordable-amount-v2']
+
+
+  if (payableAmount < 5){
+    res.redirect('/v42/account-improvement/on-benefit-flow-v2/manage-your-repayments-test-2/amount-too-low')
+  } else {
+    res.redirect('/v42/account-improvement/on-benefit-flow-v2/manage-your-repayments-test-2/what-this-will-mean-for-your-repayments.html')
+  }
+
+})
+
+
+router.post('/flow-v2/income-expenses-v2/how-much-you-can-afford-choices-negative', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var payableAmount = req.session.data['final-affordable-amount-v2']
+
+
+  if (payableAmount < 5){
+    res.redirect('/v42/account-improvement/on-benefit-flow-v2/manage-your-repayments-test-2/amount-too-low')
+  } else {
+    res.redirect('/v42/account-improvement/on-benefit-flow-v2/manage-your-repayments-test-2/what-this-will-mean-for-your-repayments-negative.html')
+  }
+
+})
+
 
 //// ONE LOGIN ROUTES ////
 

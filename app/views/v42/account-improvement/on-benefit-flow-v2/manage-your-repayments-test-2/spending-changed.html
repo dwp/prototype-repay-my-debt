@@ -1,0 +1,244 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Spending details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- Error section -->
+
+          <div class="govuk-error-summary" data-module="govuk-error-summary" id="errorDiv" style="display:none;">
+            <div role="alert">
+              <h2 class="govuk-error-summary__title">
+                There is a problem
+              </h2>
+              <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                  <li>
+                    <a href="#">Enter your income</a>
+                  </li>
+                  <li>
+                    <a href="#">Enter your spending</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+    <!-- Error Section End -->
+
+
+
+    <span class="govuk-caption-xl">Manage your repayments
+
+
+
+      <h1 class="govuk-heading-xl">Enter your most recent monthly household spending</h1>
+
+      <br>
+    <p></p>
+      <!-- <h2 id="income-heading" class="govuk-heading-l " style="padding-top:0px;">Income <br>
+        <p id="income-error" class="govuk-error-message" style="display:none; margin-bottom:0px; padding-bottom:0px;">
+              <span class="govuk-visually-hidden">Error:</span> Enter your income
+            </p>
+
+            <span class="govuk-body"><a class="govuk-link" href="choose-income-type" >
+          Add income
+        </a></span></h2> -->
+
+        {% set completedStatus = {
+          text: "Not added",
+          href: "choose-income-type"
+
+        } %}
+
+        {% set incompleteStatus = {
+          tag: {
+            text: "Added",
+            classes: "govuk-tag--blue"
+          }
+
+
+        } %}
+
+        <div class="govuk-form-group">
+
+
+          <form action="balance-details">
+
+          <label class="govuk-label govuk-!-font-weight-bold">
+      Housing
+    </label>
+    <div id="authentication-code-hint" class="govuk-hint">
+      For example, mortgage, rent, council tax.
+
+    </div>
+    <div class="govuk-input__wrapper">
+      <div class="govuk-input__prefix" aria-hidden="true">£</div>
+      <input class="govuk-input govuk-input--width-5" id="spending-housing" name="spending-housing" type="text" spellcheck="false" value="{{ data['spending-housing'] or 0.00 }}">
+    </div>
+
+
+
+    <br>
+
+          <label class="govuk-label govuk-!-font-weight-bold">
+      Utilities
+    </label>
+    <div id="authentication-code-hint" class="govuk-hint">
+For example, gas, electric, water.
+    </div>
+    <div class="govuk-input__wrapper">
+      <div class="govuk-input__prefix" aria-hidden="true">£</div>
+      <input class="govuk-input govuk-input--width-5" id="spending-utilities" name="spending-utilities" type="text" spellcheck="false" value="{{ data['spending-utilities'] or 0.00 }}">
+    </div>
+<br>
+
+      <label class="govuk-label govuk-!-font-weight-bold" >
+  Travel and transport
+</label>
+<div id="authentication-code-hint" class="govuk-hint">
+For example, fuel, bus pass.
+
+</div>
+<div class="govuk-input__wrapper">
+  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+  <input class="govuk-input govuk-input--width-5" id="spending-travel" name="spending-travel" type="text" spellcheck="false" value="{{ data['spending-travel'] or 0.00 }}">
+</div>
+
+<br>
+
+
+      <label class="govuk-label govuk-!-font-weight-bold">
+Food and housekeeping
+</label>
+<div id="authentication-code-hint" class="govuk-hint">
+For example, groceries, household items.
+
+
+</div>
+<div class="govuk-input__wrapper">
+  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+  <input class="govuk-input govuk-input--width-5" id="spending-groceries" name="spending-groceries" type="text" spellcheck="false" value="{{ data['spending-groceries'] or 0.00 }}">
+</div>
+
+
+
+<br>
+
+<label class="govuk-label govuk-!-font-weight-bold" for="authentication-code">
+Dependents and caring
+</label>
+<div id="authentication-code-hint" class="govuk-hint">
+  For example, child support payments, care costs for family.
+
+
+</div>
+<div class="govuk-input__wrapper">
+<div class="govuk-input__prefix" aria-hidden="true">£</div>
+<input class="govuk-input govuk-input--width-5" id="spending-caring" name="spending-caring" type="text" spellcheck="false" value="{{ data['spending-caring'] or 0.00 }}" >
+</div>
+
+<br>
+
+
+<label class="govuk-label govuk-!-font-weight-bold" for="authentication-code">
+Communications
+</label>
+<div id="authentication-code-hint" class="govuk-hint">
+For example, mobile phone, internet.
+
+
+</div>
+<div class="govuk-input__wrapper">
+  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+  <input class="govuk-input govuk-input--width-5" id="spending-phone" name="spending-phone" type="text" spellcheck="false" value="{{ data['spending-phone'] or 0.00 }}">
+</div>
+
+<br>
+
+
+
+<label class="govuk-label govuk-!-font-weight-bold" for="authentication-code">
+Other debt repayments
+</label>
+<div id="authentication-code-hint" class="govuk-hint">
+For example, credit card, personal loan.
+
+</div>
+<div class="govuk-input__wrapper">
+  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+  <input class="govuk-input govuk-input--width-5" id="spending-debt" name="spending-debt" type="text" spellcheck="false" value="{{ data['spending-debt'] or 0.00 }}">
+</div>
+
+<br>
+
+<label class="govuk-label govuk-!-font-weight-bold" for="authentication-code">
+Other spending
+</label>
+<div id="authentication-code-hint" class="govuk-hint">
+For example, clothing, hairdressing.
+
+
+</div>
+<div class="govuk-input__wrapper">
+  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+  <input class="govuk-input govuk-input--width-5" id="spending-other" name="spending-other" type="text" spellcheck="false" value="{{ data['spending-other'] or 0.00 }}"">
+</div>
+
+<br>
+
+
+
+
+
+
+
+
+  <p class="govuk-heading-m" style="display:none;"><span class="govuk-body">Total monthly spending:<br></span>
+
+
+    <!-- {% set totalspending = data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
+    {{ totalspending|currency}}
+
+
+    {% set leftOverIncome = totalIncome-totalspending %} -->
+
+
+
+
+
+  </p>
+
+
+
+
+
+
+
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+  </form>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/application.js"></script>
+{% endblock %}

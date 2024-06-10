@@ -1,8 +1,7 @@
 {% extends "layout-3.html" %}
 
 {% block pageTitle %}
-Summary
-
+  The amount you have left over
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,23 +28,22 @@ Summary
       {% set balancewithEnteredAmount = balance + enteredAmount %}
 
       {% set nagativebalance = totalIncome-totalspending %}
+      {% set balance = totalIncome-totalspending %}
 
 
 
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-xl">Manage your repayments</span>
-        Summary
-</h1>
+ Your monthly income and spending summary </h1>
  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 
- <!-- <p class="govuk-heading-m">Your income and spending details </p> -->
+
        <dl class="govuk-summary-list">
          <div class="govuk-summary-list__row">
            <dt class="govuk-summary-list__key" style="width:50% !important;">
-             Your income
+             Total income
            </dt>
            <dd class="govuk-summary-list__value" style="width:30%; !important">
-             {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
              {{ totalIncome|currency }}
                     </dd>
            <dd class="govuk-summary-list__actions" style="width:20%; !important">
@@ -54,12 +52,11 @@ Summary
          </div>
          <div class="govuk-summary-list__row">
            <dt class="govuk-summary-list__key" style="width:50%; !important">
-               Your spending
+               Total spending
            </dt>
            <dd class="govuk-summary-list__value" style="width:30%; !important">
 
 
-             {% set totalspending = data['spending-phone']|float + data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
              {{ totalspending|currency}}
 
 
@@ -71,32 +68,34 @@ Summary
 
 
        </dl>
-       {% set balance = totalIncome-totalspending %}
 
-
-
+<!-- {% if balance == 0 %}
+<p class="govuk-!-font-size-24" style="padding:0px; margin:0px;">        Including your current repayment rate of £65.00, your spending is the same as your income each month.
+</p>
+{% else %}
        {% if balance > 0 %}
-       <p class="govuk-!-font-size-24" style="padding:0px; margin:0px;">        Based on your current repayment rate of £65.00 you would have {{ balance|currency}}  left over.
+       <p class="govuk-!-font-size-24" style="padding:0px; margin:0px;">        Including your current repayment rate of £65.00, you have {{ balance|currency}} left over each month.
       </p>
-
-      <p>Based on what you told us:</p>
+ {% set newBalance = 0 %} -->
+      <!-- <p>Based on what you told us:</p>
       <ul wiid="N1248" class="govuk-list govuk-list--bullet">
       <li wiid="N1261">at a repayment rate of £65.00, you would  {{ balance |currency }}  left over</li>
       <li wiid="N1261">If you changed your repayment rate to {{data['new-affordable-amount-v2']|currency}} you would have {{ 95 |currency}} left over.
 
-      </ul>
-       {% else %}
-
-       <p class="govuk-!-font-size-24" style="padding:0px; margin:0px;">       Based on your current repayment rate of £65.00 you spending is {{ balance|currency}} more than your income.
+      </ul> -->
+       <!-- {% else %}
+       {% set newBalance = totalspending-totalIncome %}
+       <p class="govuk-!-font-size-24" style="padding:0px; margin:0px;">     Including your current repayment rate of £65.00, your spending is {{ newBalance|currency}} more than your income each month.
        </p> -->
+
        <!-- <p>Based on what you told us:</p>
        <ul wiid="N1248" class="govuk-list govuk-list--bullet">
          <li wiid="N1261">at a repayment rate of £65.00, you would not have any money left over. </li>
        <li wiid="N1261">If you changed your repayment rate to {{data['new-affordable-amount-v2']|currency}} you would have {{ -5 |currency}} (minus) left over.
 
-       </ul>
+       </ul> -->
 
-<p><b>Option 2</b></p><br>
+<!-- <p><b>Option 2</b></p><br>
        <p>Based on what you told us:</p>
        <ul wiid="N1248" class="govuk-list govuk-list--bullet">
        <li wiid="N1261">at a repayment rate of £65.00, you would not have any money left over </li>
@@ -105,13 +104,13 @@ Summary
 
         </li>
 
-       </ul>
-       {% endif %}
+       </ul> -->
+       <!-- {% endif %}
+
+ {% endif %} -->
 
 
-
-
-
+<!--
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
 
@@ -159,16 +158,8 @@ Summary
 
 
 </span>
-</p>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
-
-<p class="govuk-heading-l">Amount you can afford each </p>
-
-<p> </p>
- <p >Including current monthly repayment of £65.00
- <span class="govuk-heading-l">
-{{ balance|currency}} </span>
-
+</p> -->
+ <!-- <p class="govuk-heading-m">Total amount left over </p>
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -189,15 +180,15 @@ Summary
 
   </div>
   <br>
-
+  <p >Total amount left over
+  <span class="govuk-heading-l"> {% set balance = balance+65 %}
+{{ balance|currency}}
 </dl>
-<p >Not including your current monthly repayment
-<span class="govuk-heading-l"> {% set balance = balance+65 %}
-{{ balance|currency}} </span>
-<p>
+
+<p> -->
 
 <br>
-{% if balance > 0 %}
+{% if balance >= 0 %}
 
 
 <form action="how-much-can-you-afford-to-repay.html">
