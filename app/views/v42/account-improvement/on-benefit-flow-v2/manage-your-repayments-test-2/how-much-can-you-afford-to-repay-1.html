@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "left-over-income"
+  href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 
@@ -21,18 +21,17 @@
         </span>How much do you now feel you can repay each month?
       </h1>
 
-      <form class="form" action="/income-expenses/how-much-you-can-afford-choices" method="post" >
 
  <div class="govuk-inset-text">
-<!-- <p>You felt you could repay <strong>{{ data['new-affordable-amount']|currency }}</strong>.</p> -->
- <p>Including your income, spending and current £65.00 repayment, you have <strong>{{ data['leftOutBalance']|currency }}</strong> left over each month. </p>
+<p>You felt you could repay <strong>{{ data['new-affordable-amount']|currency }}</strong>.</p>
+ <p>Based on what you have now told us, you have a monthly disposable income of <strong>{{ data['leftOutBalance']|currency }}</strong>. </p>
 </div>
 
 
 
         <div class="govuk-form-group">
 
-        <!-- <p class="govuk-heading-s">Enter an affordable amount </p> -->
+        <p class="govuk-heading-s">Enter amount you can repay </p>
 
 
     <div class="govuk-input__wrapper">
@@ -42,8 +41,9 @@
 
   </div>
 
+  <form class="form" action="/income-expenses/how-much-you-can-afford-choices" method="post" >
 
-<!--
+<!-- 
   <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
 
@@ -84,16 +84,16 @@
 </div> -->
 
   <hr class="govuk-section-break govuk-section-break--s govuk-section-break--hidden">
+  <!-- {% if data['left-over-income']|float < 0.00 %}
 
-
-  <!-- <details class="govuk-details">
+  <details class="govuk-details">
 <summary class="govuk-details__summary">
   <span class="govuk-details__summary-text">
-    I cannot afford to pay anything at all
+    I cannot afford to make any payments
   </span>
 </summary>
 <div class="govuk-details__text">
-If you cannot afford to pay anything at all, you need to contact Debt Management to discuss the options available to you.
+If you cannot afford to make any of these payments, you need to contact Debt Management to discuss the options available to you.
 <p>
   <strong> <br>
 Debt Management
@@ -109,8 +109,8 @@ Debt Management
 
 <p></p>
 </div>
-</details> -->
-
+</details>
+{% endif %} -->
 
 
 
