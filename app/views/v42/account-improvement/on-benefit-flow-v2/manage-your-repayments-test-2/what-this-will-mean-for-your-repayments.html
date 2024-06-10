@@ -16,12 +16,12 @@ What this will mean for your repayments
 
 
 
-
+{% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
+{% set totalspending = data['spending-debt']|float + data['spending-phone']|float + data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
+{% set balance = totalIncome-totalspending %}
 
 	   <div class="govuk-grid-row">
-       {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
-       {% set totalspending = data['spending-debt']|float + data['spending-phone']|float + data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
-       {% set balance = totalIncome-totalspending %}
+
        <div class="govuk-grid-column-full">
 
 
@@ -42,106 +42,7 @@ What this will mean for your repayments
 
 
 
-    {% if data['selected-amount-choice'] == 'inital-amount' %}
-    <div class="flexible-banner-playback">
-      <ul class="govuk-list">
 
-
-        <li>
-          <h3>New monthly repayment:</h3>
-          <span id="new-debts-amount"><b>{{ data['new-affordable-amount']|currency }}</b></span>
-          <p><a  href="how-much-can-you-afford-to-repay">Change</a></p>
-        </li>
-
-      </ul>
-    </div>
-
-    </div>
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-    <table class="govuk-table">
-
-
-    <caption class="govuk-table__caption govuk-table__caption--m ">DWP repayments
-</caption>
-    <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header"></th>
-          <th scope="col" class="govuk-table__header">Current</th>
-          <th scope="col" class="govuk-table__header">New</th>
-
-        </tr>
-      </thead>
-    <tbody class="govuk-table__body">
-
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Total amount left to pay
-
-      </th>
-      <td class="govuk-table__cell govuk-table__cell">&pound;2915.00</td>
-      <td class="govuk-table__cell govuk-table__cell">&pound;2915.00</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Monthly repayment
-        <!-- <div id="sign-in-hint" class="govuk-hint">
-    These appear under Debts and loans repayments on your Universal Credit statement.
-        </div></th> -->
-        <td class="govuk-table__cell govuk-table__cell">&pound;65.00</td>
-
-      <td class="govuk-table__cell govuk-table__cell">{{ data['new-affordable-amount']|currency }}</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Estimated repayments remaining
-        </th>
-        <td class="govuk-table__cell govuk-table__cell">46</td>
-      <td class="govuk-table__cell govuk-table__cell"><script>
-        function divide(num) { return num.toFixed(2); }
-
-        var  num1 = 2915.00;
-
-        var num2 = {{ data['new-affordable-amount'] }};
-
-        var  result = Math.floor(num1 / num2);
-         document.write(result);
-      </script></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Expected final repayment
-        <!-- <div id="sign-in-hint" class="govuk-hint">
-          This date may change based on when your next payment is taken
-        </div> -->
-      </th>
-        <td class="govuk-table__cell govuk-table__cell">
-          <script>
-            var  num1 = 2915.00;
-            var num2 = 65;
-            var x = Math.floor(num1 / num2); //or whatever offset
-            var CurrentDate = new Date();
-            console.log("Current date:", CurrentDate);
-            CurrentDate.setMonth(CurrentDate.getMonth() + x);
-             document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
-          </script>
-
-        </td>
-
-      <td class="govuk-table__cell govuk-table__cell">
-        <script>
-          var  num1 = 2915.00;
-          var num2 = {{ data['new-affordable-amount'] }};
-          var x = Math.floor(num1 / num2); //or whatever offset
-          var CurrentDate = new Date();
-          console.log("Current date:", CurrentDate);
-          CurrentDate.setMonth(CurrentDate.getMonth() + x);
-          document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
-        </script>
-
-      </td>
-    </tr>
-
-
-    </tbody>
-    </table>
-
-{% else %}
 <div class="flexible-banner-playback">
   <ul class="govuk-list">
 
@@ -258,39 +159,34 @@ These appear under Debts and loans repayments on your Universal Credit statement
 
 
     <td class="govuk-table__cell govuk-table__cell">
+      {% set IncludedBalance = balance+65 %}
+      {% if IncludedBalance >= 0 %}
 
-
-  {% if balance >= 0 %}
-
-      You have {{ balance|currency}} left over each month.
+      You have {{ IncludedBalance|currency}} left over each month.
 
       {% else %}
+      {% set IncludedBalance =  IncludedBalance * -1 %}
 
-      {% set balance = totalspending - totalIncome %}
+    Your spending is {{ IncludedBalance|currency}} more than your income each month.
+    {% endif %}
 
-      {% set newBalancePositive = balance - 65 %}
-
-      Your spending is {{ newBalancePositive|currency}} more than your income each month.
-      {% endif %}
     </td>
 
   <td class="govuk-table__cell govuk-table__cell">
 
     {% set enteredAmount = data['final-affordable-amount-v2']  %}
     {% set repaymentBalance = 65-enteredAmount  %}
+    {% set IncludedBalance = balance+65 %}
 
-    {% set newBalancePositive = enteredAmount-balance %}
+    {% set newBalance = balance + repaymentBalance %}
 
-{% if newBalancePositive >= 0 %}
+{% if newBalance <= IncludedBalance %}
 
-    You have {{ newBalancePositive|currency}} left over each month.
+    You have {{ newBalance|currency}} left over each month.
     {% else %}
-    {% set repaymentBalance = enteredAmount-65  %}
-    {% set balance = totalspending - totalIncome %}
+    {% set newBalance = newBalance * -1 %}
 
-    {% set newBalanceNegative = balance + repaymentBalance %}
-
-Your spending is {{ newBalancePositive|currency}} more than your income each month.
+Your spending is {{ newBalance|currency}} more than your income each month.
 {% endif %}
 
   </td>
@@ -299,7 +195,7 @@ Your spending is {{ newBalancePositive|currency}} more than your income each mon
 
 </tbody>
 </table>
-{% endif %}
+
 
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">

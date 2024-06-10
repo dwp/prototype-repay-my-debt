@@ -22,7 +22,7 @@
       </h1>
 
       <form class="form" action="/flow-v2/income-expenses-v2/how-much-you-can-afford-choices" method="post" >
-        {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
+        <!-- {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
         {% set totalspending = data['spending-debt']|float + data['spending-phone']|float + data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
         {% set balance = totalIncome-totalspending %}
         {% set balance = balance+65.00 %}
@@ -30,7 +30,7 @@
  <p>Including your income, spending and current £65.00 repayment, you have
     <strong>{{ balance|currency }}</strong> left over each month. </p>
 </div>
-
+-->
 <br><br>
 
 
