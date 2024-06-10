@@ -248,25 +248,22 @@ These appear under Debts and loans repayments on your Universal Credit statement
   </th>
     <td class="govuk-table__cell govuk-table__cell">
       {% set IncludedBalance = balance+65 %}
-      You have {{ IncludedBalance|currency}} left over each month.
+      You have {{ balance|currency}} left over each month.
     </td>
 
   <td class="govuk-table__cell govuk-table__cell">
     {% set enteredAmount = data['final-affordable-amount-v2']  %}
     {% set repaymentBalance = 65-enteredAmount  %}
+    {% set IncludedBalance = balance+65 %}
 
-    {% set newBalancePositive = balance + enteredAmount %}
+    {% set newBalance = balance + repaymentBalance %}
 
-{% if newBalancePositive > 0 %}
+{% if newBalance <= IncludedBalance %}
 
-    You have {{ newBalancePositive|currency}} left over each month.
+    You have {{ newBalance|currency}} left over each month.
     {% else %}
-    {% set repaymentBalance = enteredAmount-65  %}
-    {% set balance = totalspending - totalIncome %}
 
-    {% set newBalanceNegative = balance + repaymentBalance %}
-
-Your spending is {{ newBalanceNegative|currency}} more than your income each month.
+Your spending is {{ newBalance|currency}} more than your income each month.
 {% endif %}
 
   </td>
