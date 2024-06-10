@@ -2,7 +2,7 @@
 {% extends "layout-3.html" %}
 
 {% block pageTitle %}
-What this will mean for your repayments
+What this change will mean for you
 
 
 {% endblock %}
@@ -34,7 +34,7 @@ What this will mean for your repayments
 <h1 class="govuk-heading-xl">
   <span class="govuk-caption-xl">Manage your repayments</span>
 
-		What this will mean for your repayments </h1>
+  What this change will mean for you</h1>
 
 
 
@@ -176,8 +176,8 @@ What this will mean for your repayments
   <th scope="row" class="govuk-table__header">Total amount left to pay
 
   </th>
-  <td class="govuk-table__cell govuk-table__cell">&pound;2915.00</td>
-  <td class="govuk-table__cell govuk-table__cell">&pound;2915.00</td>
+  <td class="govuk-table__cell govuk-table__cell">&pound;2,915.00</td>
+  <td class="govuk-table__cell govuk-table__cell">&pound;2,915.00</td>
 </tr>
 <tr class="govuk-table__row">
   <th scope="row" class="govuk-table__header">Monthly repayment
@@ -240,7 +240,7 @@ These appear under Debts and loans repayments on your Universal Credit statement
 
 <!-- Comment from there if needed -->
 <tr class="govuk-table__row">
-  <th scope="row" class="govuk-table__header">Based on your monthly income and spending
+  <th scope="row" class="govuk-table__header">Amount left over after repayments
 
     <!-- <div id="sign-in-hint" class="govuk-hint">
       This date may change based on when your next payment is taken
@@ -248,7 +248,7 @@ These appear under Debts and loans repayments on your Universal Credit statement
   </th>
     <td class="govuk-table__cell govuk-table__cell">
       {% set IncludedBalance = balance+65 %}
-      You have {{ balance|currency}} left over each month.
+      {{ balance|currency}} a month
     </td>
 
   <td class="govuk-table__cell govuk-table__cell">
@@ -260,7 +260,7 @@ These appear under Debts and loans repayments on your Universal Credit statement
 
 {% if newBalance <= IncludedBalance %}
 
-    You have {{ newBalance|currency}} left over each month.
+    {{ newBalance|currency}} a month
     {% else %}
 
 Your spending is {{ newBalance|currency}} more than your income each month.

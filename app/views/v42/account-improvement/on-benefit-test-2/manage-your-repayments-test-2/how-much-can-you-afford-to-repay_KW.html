@@ -20,16 +20,18 @@
         <span class="govuk-caption-xl">Manage your repayments
         </span>How much do you now feel you can repay each month?
       </h1>
+<br><br>
+      <p>Including your income, spending and current £65.00 repayment, you have £100.00 left over each month. </p>
 
-      <form class="form" action="/flow-v1/income-expenses-v2/how-much-you-can-afford-choices" method="post" >
+      <form class="form" action="/income-expenses-v2/how-much-you-can-afford-choices" method="post" >
         {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
         {% set totalspending = data['spending-debt']|float + data['spending-phone']|float + data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
         {% set balance = totalIncome-totalspending %}
         {% set balance = balance+65.00 %}
- <div class="govuk-inset-text">
- <p>Based on the information you gave us, you have
-    <strong>{{ balance|currency }}</strong> available each month. </p>
-</div>
+ <!-- <div class="govuk-inset-text">
+ <p>Based on what you have now told us and your current repayment rate, your amount left over is
+    <strong>{{ balance|currency }}</strong>  </p>
+</div> -->
 
 <br><br>
 

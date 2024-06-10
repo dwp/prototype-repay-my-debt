@@ -2,7 +2,7 @@
 {% extends "layout-3.html" %}
 
 {% block pageTitle %}
-What this will mean for your repayments
+What this change will mean for you
 
 
 {% endblock %}
@@ -32,7 +32,7 @@ What this will mean for your repayments
 <h1 class="govuk-heading-xl">
   <span class="govuk-caption-xl">Manage your repayments</span>
 
-		What this will mean for your repayments </h1>
+  What this change will mean for you </h1>
 
 
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
@@ -174,8 +174,8 @@ What this will mean for your repayments
   <th scope="row" class="govuk-table__header">Total amount left to pay
 
   </th>
-  <td class="govuk-table__cell govuk-table__cell">&pound;2915.00</td>
-  <td class="govuk-table__cell govuk-table__cell">&pound;2915.00</td>
+  <td class="govuk-table__cell govuk-table__cell">&pound;2,915.00</td>
+  <td class="govuk-table__cell govuk-table__cell">&pound;2,915.00</td>
 </tr>
 <tr class="govuk-table__row">
   <th scope="row" class="govuk-table__header">Monthly repayment
@@ -237,14 +237,16 @@ These appear under Debts and loans repayments on your Universal Credit statement
 
 <!-- Comment from there if needed -->
 <tr class="govuk-table__row">
-  <th scope="row" class="govuk-table__header">Based on your monthly income and spending
+  <th scope="row" class="govuk-table__header">Amount left over repayments
 
     <!-- <div id="sign-in-hint" class="govuk-hint">
       This date may change based on when your next payment is taken
     </div> -->
   </th>
     <td class="govuk-table__cell govuk-table__cell">
-      Your spending is {{ newBalance|currency}} more than your income each month.
+      You do not have any money left over each month
+      
+      <!-- Your spending is {{ newBalance|currency}} more than your income each month -->
 
     </td>
 
@@ -257,14 +259,18 @@ These appear under Debts and loans repayments on your Universal Credit statement
     {% if newBalance2 > 0 %}
 
 
-    Your spending is {{ newBalance2|currency}} more than your income each month.
+    You do not have any money left over each month
+
+    <!-- Your spending is {{ newBalance2|currency}} more than your income each month -->
 
 
         {% else %}
 
         {% set newBalance2 = repaymentBalance - newBalance %}
 
-        Your have {{ newBalance2|currency}} left over each month.
+        {{ newBalance|currency}} a month
+
+        <!-- Your have {{ newBalance2|currency}} left over each month.-->
 
 
 
