@@ -210,7 +210,7 @@ These appear under Debts and loans repayments on your Universal Credit statement
 
 {% if newBalance <= IncludedBalance %}
 
-    {{ newBalance|currency}}
+{{ newBalance|currency}}
     {% else %}
 
 Your spending is {{ newBalance|currency}} more than your income each month.
