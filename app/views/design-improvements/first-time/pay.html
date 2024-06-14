@@ -1,0 +1,41 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+How much do you want to pay?
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<a href="#" class="govuk-back-link govuk-!-margin-bottom-6">Back</a>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">How much do you want to pay?</h1>
+
+      <form class="form" action="#" method="post" novalidate="">
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-visually-hidden" for="different-amount-how-much">
+    Enter the amount
+  </label>
+
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-10" id="different-amount-how-much" name="different-dd-amount" type="text" spellcheck="false" inputmode="decimal">
+  </div>
+</div>
+
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

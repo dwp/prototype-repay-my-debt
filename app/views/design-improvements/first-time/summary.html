@@ -1,0 +1,164 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Payment summary
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<a href="#" class="govuk-back-link govuk-!-margin-bottom-6">Back</a>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+      <span class="govuk-caption-xl">Payment plan</span> Summary
+    </h1>
+
+
+<dl class="govuk-summary-list">
+
+
+<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+  <dt class="govuk-summary-list__key">
+    Total amount owed
+  </dt>
+  <dd class="govuk-summary-list__value">
+    £4,460.37
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+  <dt class="govuk-summary-list__key">
+    Plan type
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Affordable payment plan
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Payment type
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Direct Debit
+  </dd>
+  <dd class="govuk-summary-list__actions">
+          <a class="govuk-link change-payment-type" href="#">Change<span class="govuk-visually-hidden"> payment type</span></a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Direct Debit amount
+  </dt>
+  <dd class="govuk-summary-list__value">
+    £6.00
+  </dd>
+  <dd class="govuk-summary-list__actions">
+          <a class="govuk-link change-payment-plan" href="#">Change<span class="govuk-visually-hidden"> payment plan</span></a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    First payment date
+  </dt>
+  <dd class="govuk-summary-list__value">
+    2 July 2024
+  </dd>
+  <dd class="govuk-summary-list__actions">
+          <a class="govuk-link change-payment-date" href="#">Change<span class="govuk-visually-hidden"> payment date</span></a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+  <dt class="govuk-summary-list__key">
+    Proposed plan review date
+  </dt>
+  <dd class="govuk-summary-list__value">
+    June 2025
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Account details
+  </dt>
+  <dd class="govuk-summary-list__value">
+    <dl>
+              <b>Account name</b>
+              <br>User
+              <br><b>Sort code</b>
+              <br>123456
+              <br><b>Account number</b>
+              <br>12345678
+            </dl>
+  </dd>
+  <dd class="govuk-summary-list__actions">
+          <a class="govuk-link change-account-holder-details" href="#">Change<span class="govuk-visually-hidden"> account holder details</span></a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Notifications
+  </dt>
+  <dd class="govuk-summary-list__value">
+    <strong>Text message</strong><br>07700900000
+  </dd>
+  
+  <dd class="govuk-summary-list__actions">
+          <a class="govuk-link change-payment-communications" href="#">Change<span class="govuk-visually-hidden"> payment communications</span></a>
+  </dd>
+</div>
+</dl>
+
+<div class="ddGuarantee">
+<h3 class="govuk-heading-s">The Direct Debit Guarantee</h3>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>This Guarantee is offered by all banks and building societies that accept instructions to pay Direct Debits.</li>
+
+  <li>If there are any changes to the amount, date or frequency of your Direct Debit DWP will notify you 10 working days in advance of your account being debited or as otherwise agreed. If you request DWP to collect a payment, confirmation of the amount and date will be given to you at the time of request.</li>
+
+  <li>If an error is made in the payment of your Direct Debit, by DWP or your bank or building society, you are entitled to a full and immediate refund of the amount paid from your bank or building society. – If you receive a refund you are not entitled to, you must pay it back when DWP asks you to.</li>
+
+  <li>You can cancel a Direct Debit at any time by simply contacting your bank or building society. Written confirmation may be required. Please also notify us.</li>
+</ul>
+</div>
+
+<h2 class="govuk-heading-m">Declaration</h2>
+
+<p>By continuing, you confirm that you will:</p>
+
+<ul class="govuk-list govuk-list--bullet mb30">
+<li>pay the agreed monthly amount</li>
+<li>let us know immediately if you're struggling to keep up with payments</li>
+</ul>
+
+<div class="govuk-warning-text">
+<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+<strong class="govuk-warning-text__text">
+  <span class="govuk-visually-hidden">Warning</span>
+  If you do not keep up with your payments, we will ask your employer to make deductions from your pay, take debt enforcement action through the courts or ask a debt collection agency to collect this money for us.
+</strong>
+</div>
+
+
+
+<form class="form" action="#" method="post" novalidate="">
+
+<button type="submit" name="affordablePlanSubmitButton" class="govuk-button" data-module="govuk-button">
+Continue
+</button>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
