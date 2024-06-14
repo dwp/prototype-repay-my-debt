@@ -1,0 +1,73 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Payment options
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<a href="what-do-you-want-to-do" class="govuk-back-link govuk-!-margin-bottom-6">Back</a>
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-three-quarters">	  
+  
+	  <h1 class="govuk-heading-xl">Payment options</h1>
+  
+	  <div class="govuk-inset-text">
+	Total amount owed: <br><span class="total-amount">£4,460.37</span>
+  </div>
+  
+  
+	  <form class="form" action="/payment/payment-options" method="post" novalidate="">
+		<input type="hidden" name="_csrf" value="#">
+  
+  
+  <div class="govuk-form-group">
+	<fieldset class="govuk-fieldset">
+	  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+		Select a payment option
+	  </legend>
+	
+	  <div class="govuk-radios" data-module="govuk-radios">
+		<div class="govuk-radios__item">
+		  <input class="govuk-radios__input" id="payment-options" name="selected-option" type="radio" value="pay-full-amount" aria-describedby="payment-options-item-hint">
+		  <label class="govuk-label govuk-radios__label" for="payment-options">
+			Pay the full amount
+		  </label>
+		  
+		  <div id="payment-options-item-hint" class="govuk-hint govuk-radios__hint">
+			A payment will be taken which will clear the amount you owe.
+		  </div>
+		  
+		</div>
+		
+		<div class="govuk-radios__item">
+		  <input class="govuk-radios__input" id="payment-options-2" name="selected-option" type="radio" value="/payment/payment-plan/setup" aria-describedby="payment-options-2-item-hint">
+		  <label class="govuk-label govuk-radios__label" for="payment-options-2">
+			Set up a payment plan
+		  </label>
+		  
+		  <div id="payment-options-2-item-hint" class="govuk-hint govuk-radios__hint">
+			Pay how much you can afford in a way that suits you - either by Direct Debit or flexible payments.
+		  </div>
+		  
+		</div>
+	  </div>
+	
+	</fieldset>
+  </div>
+  
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+	Continue
+  </button>
+  
+  
+	  </form>
+	</div>
+  </div>
+
+
+{% endblock %}

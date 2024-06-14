@@ -1,0 +1,117 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Your payment plan is setup
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    Your payment plan is setup
+  </h1>
+  
+  <div class="govuk-panel__body">
+    You will be sent confirmation of this agreement within 3 working days or no later than 10 working days before the first payment
+  </div>
+  
+</div>
+
+<!-- Table -->
+    <div class="page-description">
+      <table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Plan summary</caption>
+  <tbody class="govuk-table__body">
+
+  
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Plan type</th>
+      <td class="govuk-table__cell">Affordable Direct Debit</td>
+    </tr>
+  
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total amount owed</th>
+      <td class="govuk-table__cell">£4,460.37</td>
+    </tr>
+  
+    <tr class="govuk-table__row">      
+      <th scope="row" class="govuk-table__header">Payment type</th>
+      <td class="govuk-table__cell">Direct Debit</td>
+    </tr>
+  
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Direct Debit amount</th>
+      <td class="govuk-table__cell">£6.00</td>
+    </tr>
+  
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">First payment date</th>
+      <td class="govuk-table__cell">2 July 2024</td>
+    </tr>
+  
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Proposed plan review date</th>
+      <td class="govuk-table__cell">June 2025</td>
+    </tr>
+
+  </tbody>
+</table>
+<!-- end table -->
+
+      
+        <p>Your payments will show on your bank statement as <strong>CENT REC GROUP DD</strong>.</p>
+      
+
+      
+<!-- details link -->
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Further Direct Debit details
+    </span>
+  </summary>
+
+  <div class="govuk-details__text">
+          <p>Service user number: 941315 </p>
+          <p>If you have any problems or questions about your Direct Debit plan, contact Debt Management:</p>
+          <h2 class="govuk-heading-s">Debt Management</h2>
+        
+        
+<p>Debt Accounting &amp; Finance<br>
+Warbreck House<br>
+Blackpool<br>
+FY2 0YE<br>
+United Kingdom</p>
+        
+  <ul class="govuk-list">
+  <li>Telephone: 0800 916 0647</li>
+  <li>Textphone: 0800 916 0651</li>
+  <li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
+</ul>
+
+<p><a href="#" target="_blank">Find out about call charges</a></p>
+
+  </div>
+</details>
+<!-- end details link -->
+
+
+      <p><a id="feedback" href="#" target="_blank">What did you think of this service? (opens in new tab)</a></p>
+  
+
+<a href="/account-home" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+  Go to account home
+</a>
+
+     </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Direct Debit payments
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<a href="#" class="govuk-back-link govuk-!-margin-bottom-6">Back</a>
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-three-quarters">
+	  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Direct Debit payments</h1>
+
+	  <p>If you want to set up a Direct Debit online:</p>
+  
+	  <ul class="govuk-list govuk-list--bullet">
+		<li>you must be an account holder and be able to authorise Direct Debits with your bank or building society</li>
+		<li>you will need your bank or building society account details</li>
+		<li>you will also need your sort code and account number if you have a building society account</li>
+	  </ul>
+
+  <!-- details link -->
+	  <details class="govuk-details">
+	<summary class="govuk-details__summary">
+	  <span class="govuk-details__summary-text">
+		I cannot set up a Direct Debit online
+	  </span>
+	</summary>
+	<div class="govuk-details__text">
+	  If you have a joint account and you and your partner both need to authorise Direct Debits, you can set up a Direct Debit by contacting Debt Management:
+				<br>
+				<br>
+	  
+  <p><strong>
+	Debt Management
+  </strong></p>
+  
+	<ul class="govuk-list">
+	<li>Telephone: 0800 916 0647</li>
+	<li>Textphone: 0800 916 0651</li>
+	<li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
+  </ul>
+  
+  <p><a href="https://www.gov.uk/call-charges" target="_blank">Find out about call charges</a></p>
+  
+	</div>
+  </details>
+  <!-- end details -->
+  
+  
+	  <div id="canSignInToManagePlan" class="govuk-inset-text">
+	Once your plan is setup, you can sign in to manage your plan, change payments, pay additional amounts or get help and support.
+  </div>
+  
+  
+  <a href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+	Continue
+  </a>
+  
+  
+	</div>
+  </div>
+
+{% endblock %}
