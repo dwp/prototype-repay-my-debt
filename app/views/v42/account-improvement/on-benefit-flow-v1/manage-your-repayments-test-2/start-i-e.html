@@ -7,10 +7,10 @@ Payment review
 
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 
 
@@ -21,29 +21,24 @@ Payment review
 
 
 
-	<div class="govuk-grid-row">
+<div class="govuk-grid-row">
 
-		 <div class="govuk-grid-column-three-quarters">
-
-
-			<h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
-        <span class="govuk-caption-xl">Manage your repayments</span>
-
-        Understand how much you can afford to repay
-</h1>
-
-
-				<p> To help you understand how much you can afford to repay each month, you will need to enter your monthly household income and spending.
-
-</p>
-<p></p>
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl" wiid="N131">Manage your repayments</span>
+    <h1 class="govuk-heading-xl" style="margin-bottom:50px;">Understand how much you can afford to repay</h1>
 
 
 
-				<p><a href="income" class="govuk-button">Continue</a></p>
+    <p> To help you understand how much you can afford to repay each month, you will need to enter your monthly household income and spending.
 
-		 </div>
-	</div>
+    </p>
+
+
+
+    <p><a href="income" class="govuk-button">Continue</a></p>
+
+  </div>
+</div>
 
 
 
