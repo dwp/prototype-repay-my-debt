@@ -25,70 +25,62 @@ Tell us your current financial situation
     <form class="form" action="how-much-can-you-afford-to-repay-each-month" method="post">
 
       <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-label-wrapper">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <h1 class="govuk-fieldset__heading">
-            <span class="govuk-caption-xl">Manage your repayments
-            </span>
-            Why do you want to change your repayments?
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <span class="govuk-caption-xl" wiid="N131">Manage your repayments</span>
+          <h1 class="govuk-heading-xl" style="margin-bottom:50px;">Manage your repayments</h1>
 
-          </h1>
-        </legend>
-      </h1>
-    </legend>
-    <div id="contact-hint" class="govuk-hint">
-      Select all relevant options.
-    </div>
-    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-      <!-- <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="contact-2" name="financial-situation-details-payments-taken-5" type="checkbox" value="yes" data-aria-controls="conditional-contact-2" {{ checked('financial-situation-details-payments-taken-5','yes') }}>
-        <label class="govuk-label govuk-checkboxes__label" for="contact-2">
-          I want to reduce the amount I owe quicker
-        </label>
-      </div> -->
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="contact" name="financial-situation-details-payments-taken-1" type="checkbox" value="yes" data-aria-controls="conditional-contact" {{ checked('financial-situation-details-payments-taken-1','yes') }}>
-        <label class="govuk-label govuk-checkboxes__label" for="contact">
-          Loan or credit card payments have increased
-        </label>
-      </div>
 
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="contact-2" name="financial-situation-details-payments-taken-2" type="checkbox" value="yes" data-aria-controls="conditional-contact-2" {{ checked('financial-situation-details-payments-taken2','yes') }}>
-        <label class="govuk-label govuk-checkboxes__label" for="contact-2">
-          Loss of job or reduced working hours
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="contact-2" name="financial-situation-details-payments-taken-3" type="checkbox" value="yes" data-aria-controls="conditional-contact-2" {{ checked('financial-situation-details-payments-taken-3','yes') }}>
-        <label class="govuk-label govuk-checkboxes__label" for="contact-2">
-          Living costs have increased
-        </label>
-      </div>
+          <div id="contact-hint" class="govuk-hint">
+            Select all relevant options.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <!-- <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="contact-2" name="financial-situation-details-payments-taken-5" type="checkbox" value="yes" data-aria-controls="conditional-contact-2" {{ checked('financial-situation-details-payments-taken-5','yes') }}>
+            <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+            I want to reduce the amount I owe quicker
+          </label>
+        </div> -->
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="contact" name="financial-situation-details-payments-taken-1" type="checkbox" value="yes" data-aria-controls="conditional-contact" {{ checked('financial-situation-details-payments-taken-1','yes') }}>
+          <label class="govuk-label govuk-checkboxes__label" for="contact">
+            Loan or credit card payments have increased
+          </label>
+        </div>
 
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="contact-3" name="financial-situation-details-payments-taken-4" type="checkbox" value="yes" data-aria-controls="conditional-contact-3" {{ checked('financial-situation-details-payments-taken-4','yes') }}>
-        <label class="govuk-label govuk-checkboxes__label" for="contact-3">
-          Other
-        </label>
-      </div>
-      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-3">
-        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="450">
-    <div class="govuk-form-group">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="contact-2" name="financial-situation-details-payments-taken-2" type="checkbox" value="yes" data-aria-controls="conditional-contact-2" {{ checked('financial-situation-details-payments-taken2','yes') }}>
+          <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+            Loss of job or reduced working hours
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="contact-2" name="financial-situation-details-payments-taken-3" type="checkbox" value="yes" data-aria-controls="conditional-contact-2" {{ checked('financial-situation-details-payments-taken-3','yes') }}>
+          <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+            Living costs have increased
+          </label>
+        </div>
 
-    <div id="with-hint-hint" class="govuk-body" >
-    Provide more detail - this information will be used to help us during your next check and will be stored on your record    </div>
-    <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="financial-situation-details-payments-taken-4-text" rows="5" aria-describedby="with-hint-info with-hint-hint">{{ data ['financial-situation-details-payments-taken-4-text']}}</textarea>
-    </div>
-    <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
-    You can enter up to 450 characters
-    </div>
-    </div>
-      </div>
-    </div>
-    </fieldset>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="contact-3" name="financial-situation-details-payments-taken-4" type="checkbox" value="yes" data-aria-controls="conditional-contact-3" {{ checked('financial-situation-details-payments-taken-4','yes') }}>
+          <label class="govuk-label govuk-checkboxes__label" for="contact-3">
+            Other
+          </label>
+        </div>
+        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-3">
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="450">
+            <div class="govuk-form-group">
+
+              <div id="with-hint-hint" class="govuk-body" >
+                Provide more detail - this information will be used to help us during your next check and will be stored on your record    </div>
+                <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="financial-situation-details-payments-taken-4-text" rows="5" aria-describedby="with-hint-info with-hint-hint">{{ data ['financial-situation-details-payments-taken-4-text']}}</textarea>
+              </div>
+              <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+                You can enter up to 450 characters
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
     </div>
 
 
@@ -100,11 +92,11 @@ Tell us your current financial situation
 
 
 
-      <button class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
-    </form>
-  </div>
+    <button class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+  </form>
+</div>
 </div>
 
 
