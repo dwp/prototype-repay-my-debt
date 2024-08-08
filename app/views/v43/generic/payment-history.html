@@ -1,0 +1,167 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Payment history
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="dwp-language-toggle" aria-label="change language" wiid="N89">
+  <ul class="dwp-language-toggle__list" wiid="N91">
+    <li lang="en" id="li-en" class="dwp-language-toggle__list-item" wiid="N93">English </li>
+    <li lang="cy" id="li-cy" class="dwp-language-toggle__list-item" wiid="N96"><span class="govuk-visually-hidden" wiid="N97">Newid yr iaith ir Gymraeg</span><a href="?lng=cy" class="govuk-link" wiid="N99">Cymraeg</a></li>
+  </ul>
+</nav>
+{{ govukBackLink({
+  text: "Back",
+  href: "account-home"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Payment history</h1>
+
+
+    <div class="flexible-banner-float-none">
+      <ul class="govuk-list">
+        
+    <li>
+      <h3>Total amount left to repay</h3>
+      <span class="total-amount" id="new-total-owed"><b>£2915.00</b></span>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+<h2 class="govuk-heading-m mt40">Previous payments <br>
+  <!-- <span class="govuk-hint">You can view up to 100 payments.</span> -->
+</h2>
+
+
+
+<table class="govuk-table summary-pay">
+
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th class="govuk-table__header" scope="col">Payment date</th>
+
+      <th class="govuk-table__header" scope="col">Payment type</th>
+
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+
+      <!--  <th class="govuk-table__header govuk-table__header--numeric" scope="col">Balance</th> -->
+
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">7 July 2024</td>
+      <td class="govuk-table__cell">Payment</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;65.00</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">6 June 2024</td>
+      <td class="govuk-table__cell">Payment</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;65.00</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">6 May 2024</td>
+      <td class="govuk-table__cell">Payment</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;65.00</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">6 April 2024</td>
+      <td class="govuk-table__cell">Payment</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;65.00</td>
+      <!-- </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell">1 January 2024</td>
+      <td class="govuk-table__cell">Deduction from benefit</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;65.00</td>
+    </tr>
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell">1 December 2023</td>
+    <td class="govuk-table__cell">Deduction from benefit</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">&pound;65.00</td>
+  </tr>
+
+  <tr class="govuk-table__row">
+  <td class="govuk-table__cell">1 November 2023</td>
+  <td class="govuk-table__cell">Deduction from benefit</td>
+  <td class="govuk-table__cell govuk-table__cell--numeric">&pound;65.00</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">1 October 2023</td>
+<td class="govuk-table__cell">Deduction from benefit</td>
+<td class="govuk-table__cell govuk-table__cell--numeric">&pound;65.00</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">21 September 2023</td>
+<td class="govuk-table__cell">Deduction from benefit</td>
+<td class="govuk-table__cell govuk-table__cell--numeric">&pound;65.00</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">11 August 2023</td>
+<td class="govuk-table__cell">Deduction from benefit</td>
+<td class="govuk-table__cell govuk-table__cell--numeric">&pound;65.00</td>
+</tr>
+
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">1 July 2023</td>
+<td class="govuk-table__cell">Deduction from benefit</td>
+<td class="govuk-table__cell govuk-table__cell--numeric">&pound;65.00</td>
+</tr> -->
+
+
+
+
+</tbody>
+</table>
+
+
+
+<!--
+<nav class="govuk-pagination" role="navigation" aria-label="Pagination">
+<ul class="govuk-pagination__list">
+<li class="govuk-pagination__item govuk-pagination__item--current">
+<a class="govuk-link govuk-pagination__link" href="payment-history" aria-label="Page 1" aria-current="page">
+1
+</a>
+</li>
+<li class="govuk-pagination__item ">
+<a class="govuk-link govuk-pagination__link" href="payment-history-p2" aria-label="Page 2">
+2
+</a>
+</li>
+
+
+</ul>
+<div class="govuk-pagination__next">
+<a class="govuk-link govuk-pagination__link" href="payment-history-p2" rel="next"> <span class="govuk-pagination__link-title">Next<span class="govuk-visually-hidden"> page</span></span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="20" aria-hidden="true" focusable="false" viewBox="0 0 20 13">
+<path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+</svg></a>
+</div>
+</nav> -->
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+{% endblock %}
