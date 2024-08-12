@@ -1,0 +1,67 @@
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+Set up a payment plan
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+<nav class="dwp-language-toggle" aria-label="Language toggle">
+<ul class="dwp-language-toggle__list">
+  <li class="dwp-language-toggle__list-item" aria-current="true">
+    English
+  </li>
+  <li class="dwp-language-toggle__list-item">
+    <a href="#"
+      hreflang="cy"
+      lang="cy"
+      rel="alternate"
+      class="govuk-link"
+      aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+  </li>
+</ul>
+</nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-xl">
+			Set up a payment plan
+		</h1>
+
+		<br><br>
+
+		<p class="govuk-body">
+			Set up a payment plan based on how much you can afford and choose to pay in a way that suits you – either by Direct Debit or flexible payments.
+
+		</p>
+
+
+		<div class="govuk-inset-text">
+			Once your plan is setup, you can sign in to manage your plan, change payments, pay additional amounts or get help and support.
+		</div>
+
+
+					{{ govukButton({
+						text: "Continue",
+						href: ""
+					}) }}
+
+		<div class="govuk-button-group">
+
+
+		</div>
+
+
+</div>
+
+{% endblock %}

@@ -923,3 +923,74 @@ router.post('/one-login/signinchoice', function (req, res) {
   }
 
 })
+
+
+//// FIRST TIME USER -  ROUTES ////
+
+router.post('/v43/first-time/sign-in', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var signin = req.session.data['signin']
+
+  // Check whether the variable matches a condition
+  if (signin == 'onelogin'){
+    // Send user to next page
+    res.redirect('/v43/first-time/ol_transition')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v43/first-time/sign-in-security-code')
+  }
+
+})
+
+router.post('/v43/first-time/signinchoice', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var choice = req.session.data['choice']
+
+  // Check whether the variable matches a condition
+  if (choice == 'code'){
+    // Send user to next page
+    res.redirect('/v43/first-time/what-do-you-want-to-do')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v43/first-time/ol_transition')
+  }
+
+})
+
+router.post('/v43/first-time/what-do-you-want-to-do', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var choice = req.session.data['whatDoYouWantToDo']
+
+  // Check whether the variable matches a condition
+  if (choice == 'payment-options'){
+    // Send user to next page
+    res.redirect('/v43/first-time/payment-options')
+  } else if (choice == 'view-debt-details'){
+    // Send user to ineligible page
+    res.redirect('/v43/first-time/view-debt-details')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v43/first-time/help-support')
+  }
+
+})
+
+
+router.post('/v43/first-time/payment-options', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var choice = req.session.data['paymentOptions']
+
+  // Check whether the variable matches a condition
+  if (choice == 'pay-in-full'){
+    // Send user to next page
+    res.redirect('/v43/first-time/pay-the-full-amount')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v43/first-time/set-up-a-payment')
+  }
+
+})
