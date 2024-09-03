@@ -62,7 +62,13 @@
 					<li>
 						<h3>Payment amount</h3>
 						<b>
+              {% if data['custom-amount'] <= 59 and data['paymentChoices']=='customAmount' %}
+              &pound;{{ data['custom-amount'] }}
+
+              {% else %}
+
 			 &pound;{{ data['affordable-amount'] }}
+       {% endif %}
 
 				</b>
 					</li>
@@ -81,8 +87,6 @@
 
 				</div>
 
-
-
 				<p>How the review works:</p>
 
 				  <ul class="govuk-list govuk-list--bullet">
@@ -93,27 +97,9 @@
 
 				  </ul>
 
-
-
-
-
-		<!--	<h2 class="govuk-heading-m">How the review works</h2>
-
-			<p>We will send you a letter with details of when your review will take place and instructions to sign in to your account. You will then have 4 weeks to do your review.</p>
-
-<p>During the review, we will ask you questions to understand how much you can afford to pay and help you make changes to your plan if needed.</p>-->
-
-
-		<!--	<div class="govuk-inset-text">
-
-			<p>If you are able to increase your plan within the next 12 months, a review may not be needed.</p>
-			</div> -->
-
-
 			<div class="govuk-inset-text">
 				 Your pension may be affected if you still owe money when you retire.
 				 </div>
-			<!--<div class="govuk-inset-text">If your financial situation changes, you can change your payments at anytime by signing in and managing your plan.</div>-->
 
 
       <p><a href="dd-flex-option" class="govuk-button">

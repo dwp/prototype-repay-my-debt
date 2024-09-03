@@ -43,25 +43,20 @@ How do you want to make your payments?
 
     <div class="">
 
-      <h1 class="govuk-heading-xl mb40">How a more affordable plan works</h1>
+      <h1 class="govuk-heading-xl mb40">Affordable payment plans</h1>
+
+          <p>This is how an affordable payment plan works:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Enter an amount you can afford to pay each month.</li>
+           <li>If your financial situation improves, sign into your account to increase your monthly payments or pay additional one-off amounts.</li>
+           <li>If you cannot increase your payment plan over the next year, we will contact you to review your situation to understand how much you can afford.
 
 
+</li>
+          </ul>
 
 
-
-
-
-          <h2 class="govuk-heading-l"> <span class="govuk-caption-l">Step 1</span>Start your plan by entering an amount you can afford to pay each month </h2>
-          <p>If your financial situation improves, you should sign in to your account and manage your plan to increase your payments or pay additional amounts.</p>
-
-
-
-
-          <h2 class="govuk-heading-l"><span class="govuk-caption-l">Step 2</span>We will review your plan after 12 months</h2>
-          <p><!--If you have been unable to increase your payment plan, -->We will contact you to review your situation and understand how much you can afford.</p>
-
-        <h2 class="govuk-heading-l"><span class="govuk-caption-l">Step 3</span>Sign up for notifications</h2>
-        <p>You can receive reminders that you can manage your plan when your situation changes, take action if there are any problems with payments and be notified of any review dates.</p>
 
 <form action="lowPayChoice">
     <button class="govuk-button" data-module="govuk-button">
@@ -86,7 +81,7 @@ How do you want to make your payments?
 
 
 
-    <form class="form" action="customSummary" method="post">
+    <form class="form" action="/v43/fist-time/setup-plan/custom-amount" method="post">
 
 
       <div class="govuk-form-group">
@@ -96,9 +91,6 @@ How do you want to make your payments?
               How much do you want to pay?
             </h1>
           </legend>
-
-
-
 
           <div id="example-question" class="form-group inline">
             <span class="c-form-input-denote govuk-body">£</span>
@@ -141,35 +133,27 @@ How do you want to make your payments?
 
 
           <div class="govuk-radios">
-
-
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="ddFixedChoice" name="paymentOptions" type="radio" aria-describedby="ddFixedChoice-hint" value="ddFixedChoice">
-              <label class="govuk-label govuk-radios__label" for="ddFixedChoice">
-                <b>Direct Debit payments</b>
+              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="ddFixedChoice">
+                Monthly Direct Debit
               </label>
               <div id="ddFixedChoice-hint" class="govuk-hint govuk-radios__hint">
-                A fixed payment each month on a day that suits you.
+                A fixed automatic payment each month from your bank or building society account, on a day that suits you.
               </div>
             </div>
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="flexyPayChoice" name="paymentOptions" type="radio" value="flexyPayChoice" aria-describedby="flexyPayChoice-hint">
-              <label class="govuk-label govuk-radios__label" for="flexyPayChoice">
-                <b>Flexible payments</b>
+              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="flexyPayChoice">
+                Flexible payments throughout the month
               </label>
               <div id="flexyPayChoice-hint" class="govuk-hint govuk-radios__hint">
-                You must sign in each month and make payments towards your chosen amount &ndash; when you pay is up to you.
-              </div>
+You must sign in to this service each month to make payments – you can make more than one payment a month as long as you meet your agreed monthly target.              </div>
             </div>
-
-
           </div>
-
-
         </fieldset>
       </div>
-
 
       <button class="govuk-button" data-module="govuk-button">
         Continue
