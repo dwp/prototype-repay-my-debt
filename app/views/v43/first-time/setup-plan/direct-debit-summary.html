@@ -1,0 +1,403 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Payment plan summary
+{% endblock %}
+
+
+
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+
+
+
+
+
+    <form class="form" action="directFinish" method="post">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+        <span class="govuk-caption-xl">Payment plan</span>Summary</h1>
+
+        <table class="govuk-table mb40">
+
+          <caption class="visually-hidden">Plan summary</caption>
+
+          <tbody class="govuk-table__body">
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Total amount owed</th>
+              <td class="govuk-table__cell" colspan="2">&pound;4320.00
+              </td>
+
+
+            </tr>
+
+            {% if data['paymentOptions']=='ddFixedChoice'%}
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Payment type</th>
+              <td class="govuk-table__cell" colspan="2">Direct Debit
+              </td>
+
+
+            </tr>
+
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Payment breakdown</th>
+              <td class="govuk-table__cell">
+
+
+                {% if data['paymentChoices']=='12Month'%}
+
+                <p class="mb0">12 payments of &pound;320.00</p>
+
+
+                {% elif data['paymentChoices']=='24Month'%}
+
+                <p class="mb0">24 payments of &pound;180.00</p>
+
+
+                {% elif data['paymentChoices']=='36Month'%}
+
+
+
+                <p class="mb0">36 payments of &pound;120.00</p>
+
+
+                {% elif data['paymentChoices']=='48Month'%}
+
+                <p class="mb0">48 payments of &pound;90.00</p>
+
+                {% elif data['paymentChoices']=='72Month'%}
+
+                <p class="mb0">72 payments of &pound;60.00</p>
+
+
+
+                {% else %}
+
+                <p class="mb0">
+
+                  {% if data['paymentChoices']=='lowPayments'%}
+
+                  <p class="mb0">
+
+                    <script>
+                      function divide(num) { return num.toFixed(2); }
+
+                      var  num1 = 4320.00;
+
+                      var num2 = {{ data['affordable-amount'] }};
+
+                      var  result = Math.floor(num1 / num2);
+                      document.write(result);
+                    </script>   payments of {{data['affordable-amount'] | currency}}</p>
+
+                    {% else %}
+
+                    <p class="mb0">
+                    <script>
+                      function divide(num) { return num.toFixed(2); }
+
+                      var  num1 = 4320.00;
+
+                      var num2 = {{ data['custom-amount'] }};
+
+                      var  result = Math.floor(num1 / num2);
+                      document.write(result);
+                    </script>   payments of {{data['custom-amount'] | currency}}
+                  </p>
+                  {% endif %}
+
+
+
+                {% endif %}
+
+
+              </td>
+
+              <td class="govuk-table__cell changeDetails"><a href="edit-direct-debit-payment-plan">Change</a></td>
+
+
+            </tr>
+
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Payment dates</th>
+              <td class="govuk-table__cell dtList" >
+
+                <dl style="margin-top:0;">
+                  <dt>First payment</dt>
+                  <dd><script>
+                    var CurrentDate = new Date();
+                    console.log("Current date:", CurrentDate);
+                    CurrentDate.setMonth(CurrentDate.getMonth() + 1);
+                    document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
+                  </script></dd>
+                  <dt>Expected final payment</dt>
+                  <dd>
+
+                    {% if data['paymentChoices']=='12Month'%}
+
+                    <script>
+                      var  num1 = 4320.00;
+                      var num2 = 320;
+                      var x = Math.floor(num1 / num2); //or whatever offset
+                      var CurrentDate = new Date();
+                      console.log("Current date:", CurrentDate);
+                      CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                      document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                    </script>
+                    {% elif data['paymentChoices']=='24Month'%}
+
+                    <script>
+                      var  num1 = 4320.00;
+                      var num2 = 180;
+                      var x = Math.floor(num1 / num2); //or whatever offset
+                      var CurrentDate = new Date();
+                      console.log("Current date:", CurrentDate);
+                      CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                      document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                    </script>
+                    {% elif data['paymentChoices']=='36Month'%}
+
+
+                    <script>
+                      var  num1 = 4320.00;
+                      var num2 = 120;
+                      var x = Math.floor(num1 / num2); //or whatever offset
+                      var CurrentDate = new Date();
+                      console.log("Current date:", CurrentDate);
+                      CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                      document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                    </script>
+
+
+
+                    {% elif data['paymentChoices']=='48Month'%}
+
+
+                    <script>
+                      var  num1 = 4320.00;
+                      var num2 = 90;
+                      var x = Math.floor(num1 / num2); //or whatever offset
+                      var CurrentDate = new Date();
+                      console.log("Current date:", CurrentDate);
+                      CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                      document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                    </script>
+
+                    {% elif data['paymentChoices']=='72Month'%}
+
+                    <script>
+                      var  num1 = 4320.00;
+                      var num2 = 60;
+                      var x = Math.floor(num1 / num2); //or whatever offset
+                      var CurrentDate = new Date();
+                      console.log("Current date:", CurrentDate);
+                      CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                      document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                    </script>
+
+                    {% else %}
+
+
+
+                    {% if data['paymentChoices']=='lowPayments'%}
+
+                    <script>
+                      var  num1 = 4320.00;
+                      var num2 = {{ data['affordable-amount'] }};;
+                      var x = Math.floor(num1 / num2); //or whatever offset
+                      var CurrentDate = new Date();
+                      console.log("Current date:", CurrentDate);
+                      CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                      document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                    </script>
+
+                      {% else %}
+
+                      <script>
+                        var  num1 = 4320.00;
+                        var num2 = {{ data['custom-amount'] }};;
+                        var x = Math.floor(num1 / num2); //or whatever offset
+                        var CurrentDate = new Date();
+                        console.log("Current date:", CurrentDate);
+                        CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                        document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                      </script>
+                    {% endif %}
+
+
+
+                    {% endif %}
+
+                  </dd>
+                </dl>
+
+              </td>
+
+              <td class="govuk-table__cell changeDetails"><a href="edit-direct-debit-day">Change</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Account details</th>
+              <td class="govuk-table__cell dtList">
+                <dl>
+                  <dt>Account name</dt>
+                  <dd style="margin-inline-start:0px !important; margin:0px;">{{ data['accountName'] }}</dd>
+                  <dt>Sort code</dt>
+                  <dd>{{ data['sortCode'] }}</dd>
+                  <dt>Account number</dt>
+                  <dd>{{ data['accountNumber'] }}</dd>
+                </dl>
+
+              </td>
+              <td class="govuk-table__cell changeDetails"><a href="edit-bank-building-society-details">Change</a></td>
+            </tr>
+
+            {% endif %}
+
+
+            {% if data['reminder-notification-payment-setup-done-yes-no']=='no' %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Notification</th>
+              <td class="govuk-table__cell">
+                No
+              </td>
+              <td class="govuk-table__cell changeDetails"><a href="direct-debit-contact-you">Change</a></td>
+
+            </tr>
+
+            {% else %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Notification</th>
+              <td class="govuk-table__cell ">
+                <span class="govuk-!-font-weight-bold">Mobile number </span> <br> {{data['contactByMobile']}}
+              </td>
+              <td class="govuk-table__cell changeDetails"><a href="direct-debit-contact-you">Change</a></td>
+
+            </tr>
+
+            {% endif %}
+
+          </tbody>
+        </table>
+
+
+        <div class="ddGuarantee">
+          <h3 class="govuk-heading-s">The Direct Debit Guarantee</h3>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>This Guarantee is offered by all banks and building societies that accept instructions to pay Direct Debits.
+            </li>
+            <li>If there are any changes to the amount, date or frequency of your Direct Debit DWP will notify you 10 working
+              days in advance of your account being debited or as otherwise agreed. If you request DWP to collect a payment,
+              confirmation of the amount and date will be given to you at the time of request.</li>
+
+              <li>If an error is made in the payment of your Direct Debit, by DWP or your bank or building society,
+                you are entitled to a full and immediate refund of the amount paid from your bank or building society.
+                – If you receive a refund you are not entitled to, you must pay it back when DWP asks you to.</li>
+                <li>You can cancel a Direct Debit at any time by simply contacting your bank or building society.
+                  Written confirmation may be required. Please also notify us.</li>
+
+
+
+                </ul>
+              </div>
+
+
+
+
+              <h2 class="govuk-heading-m">Declaration</h2>
+
+              <p>By continuing, you confirm that you will:</p>
+
+              <ul class="govuk-list govuk-list--bullet mb30">
+
+                {% if data['paymentOptions']=='ddFixedChoice'%}
+                <li>pay the agreed monthly amount</li>
+                {% else %}
+                {% endif %}
+
+                {% if data['paymentOptions']=='flexyPayChoice'%}
+                <li>pay the agreed monthly amount</li>
+                {% else %}
+                {% endif %}
+
+
+                <li>let us know immediately if you’re struggling to keep up with payments</li>
+              </ul>
+
+
+
+              <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  If you do not keep up with our payments, we will ask your employer to make deductions from your pay, take debt enforcement action through the coursts or ask a debt collec tion agency to collect this money for us.
+
+                </strong>
+              </div>
+
+
+              <div class="govuk-inset-text">
+                <p>Your bank may charge you interest if you pay by credit card.
+                </p>
+              </div>
+
+
+              <button class="govuk-button" data-module="govuk-button">
+                Continue and set up Direct Debit
+              </button>
+
+
+
+
+
+            </form>
+
+
+
+
+
+
+
+          </div>
+        </div>
+
+        {% endblock %}

@@ -23,10 +23,6 @@ Enter payment details
 </nav>
 </main>
 
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
 {% endblock %}
 
 {% block content %}
@@ -34,16 +30,10 @@ Enter payment details
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-    <h1 class="govuk-heading-xl">
-      <span class="govuk-caption-l">Ashley Chamberlain</span>
-      Pay the full amount
 
-
-    </h1>
 
 
     <div id="card-details-wrap" wiid="N160">
-                    <h2 class="govuk-heading-m web-payment-button-section" wiid="N162">Enter card details</h2>
                   <div class="non-web-payment-button-section govuk-!-margin-bottom-5" wiid="N165">
                     <h1 class="govuk-heading-l " wiid="N167">Enter card details</h1>
                       <div class="payment-summary-wrap" wiid="N170">
@@ -67,8 +57,8 @@ Enter payment details
 
                   </div>
 
-                  <form id="card-details" name="cardDetails" method="POST" action="/card_details/7uc04qv2kcr5k2pba88mhkkh9h" novalidate="" wiid="N197">
-                    <input id="charge-id" name="chargeId" type="hidden" value="7uc04qv2kcr5k2pba88mhkkh9h" wiid="N199">
+                  <form id="card-details" name="cardDetails" method="POST" action="full-payment-success" novalidate="" wiid="N197">
+                    <input id="charge-id" name="chargeId" type="hidden" value="full-payment-success" wiid="N199">
                     <input id="csrf" name="csrfToken" type="hidden" value="DGDLOkxJ-7rzjghmM2zAPfUPsEKnLklCywMc" wiid="N201">
 
                     <div class="govuk-form-group card-no-group" data-validation="cardNo" wiid="N203">
@@ -86,29 +76,28 @@ Enter payment details
 
                       <ul class="accepted-cards field-empty" wiid="N214">
                             <li class="visa" data-key="visa" data-credit="true" data-debit="true" wiid="N216">
-                              <img src="/images/transparent-accessibiliity.gif" alt="Visa" wiid="N218">
+                              <img src="/public/images/transparent-accessibiliity.gif" alt="Visa" wiid="N218">
                             </li>
                             <li class="master-card" data-key="master-card" data-credit="true" data-debit="true" wiid="N221">
-                              <img src="/images/transparent-accessibiliity.gif" alt="Master Card" wiid="N223">
+                              <img src="/public/images/transparent-accessibiliity.gif" alt="Master Card" wiid="N223">
                             </li>
                             <li class="american-express" data-key="american-express" data-credit="true" data-debit="false" wiid="N226">
-                              <img src="/images/transparent-accessibiliity.gif" alt="American Express" wiid="N228">
+                              <img src="/public/images/transparent-accessibiliity.gif" alt="American Express" wiid="N228">
                             </li>
                             <li class="diners-club" data-key="diners-club" data-credit="true" data-debit="false" wiid="N231">
-                              <img src="/images/transparent-accessibiliity.gif" alt="Diners Club" wiid="N233">
+                              <img src="/public/images/transparent-accessibiliity.gif" alt="Diners Club" wiid="N233">
                             </li>
                             <li class="discover" data-key="discover" data-credit="true" data-debit="false" wiid="N236">
-                              <img src="/images/transparent-accessibiliity.gif" alt="Discover" wiid="N238">
+                              <img src="/public/images/transparent-accessibiliity.gif" alt="Discover" wiid="N238">
                             </li>
                             <li class="jcb" data-key="jcb" data-credit="true" data-debit="false" wiid="N241">
-                              <img src="/images/transparent-accessibiliity.gif" alt="Jcb" wiid="N243">
+                              <img src="/public/images/transparent-accessibiliity.gif" alt="Jcb" wiid="N243">
                             </li>
                             <li class="unionpay" data-key="unionpay" data-credit="true" data-debit="false" wiid="N246">
-                              <img src="/images/transparent-accessibiliity.gif" alt="Unionpay" wiid="N248">
+                              <img src="/public/images/transparent-accessibiliity.gif" alt="Unionpay" wiid="N248">
                             </li>
                       </ul>
 
-                      <div class="govuk-inset-text hidden" id="corporate-card-surcharge-message" wiid="N252"></div>
 
                       <input id="card-no" type="text" inputmode="numeric" pattern="[0-9]*" name="cardNo" maxlength="26" class="govuk-input govuk-!-width-three-quarters" autocomplete="cc-number" value="" wiid="N254">
                     </div>
@@ -169,18 +158,14 @@ Enter payment details
 
 
 
-                      <input id="cvc" type="text" inputmode="numeric" pattern="[0-9]*" value="" name="cvc" class="govuk-input govuk-input--width-3 cvc" maxlength="4" autocomplete="cc-csc" wiid="N325">
-                      <img src="/images/security-code.png" class="generic-cvc" alt="The last 3 digits on the back of the card" wiid="N327">
-                      <span class="either hidden" wiid="N329">
-                        or
-                      </span>
-                      <img src="/images/amex-security-code.png" class="amex-cvc hidden" alt="The last 4 digits after the card number on the front" wiid="N332">
+                      <input id="cvc" type="text" inputmode="numeric" pattern="[0-9]*" value="" name="cvc"style="float:left; margin-right:10px;" class="govuk-input govuk-input--width-3 cvc" maxlength="4" autocomplete="cc-csc" wiid="N325">
+                      <img src="/public/images/security-code.png" class="generic-cvc" alt="The last 3 digits on the back of the card" wiid="N327">
+
                      </div>
                       <div class="govuk-!-width-three-quarters govuk-!-padding-top-4 govuk-!-margin-top-8 pay-!-border-top" wiid="N335">
                           <fieldset class="govuk-fieldset" aria-describedby="address-hint" wiid="N337">
                             <legend wiid="N339">
                                 <h3 class="govuk-heading-m govuk-!-margin-bottom-1 web-payment-button-section" wiid="N341">Billing address</h3>
-                              <h2 class="govuk-heading-m govuk-!-margin-bottom-1 non-web-payment-button-section" wiid="N344">Billing address</h2>
                             </legend>
 
                             <div id="address-hint" class="govuk-body govuk-!-margin-bottom-6" wiid="N348">This is the address associated with the card</div>
@@ -496,7 +481,6 @@ Enter payment details
                           <div wiid="N1160">
                             <legend for="email" class="govuk-!-margin-bottom-6" wiid="N1162">
                                 <h3 class="govuk-heading-m govuk-!-margin-bottom-1 web-payment-button-section" wiid="N1164">Contact details</h3>
-                              <h2 class="govuk-heading-m govuk-!-margin-bottom-1 non-web-payment-button-section" wiid="N1167">Contact details</h2>
                             </legend>
                             <div id="email-hint" class="govuk-hint govuk-!-margin-bottom-2" wiid="N1171">We’ll send your payment confirmation here</div>
 
@@ -513,16 +497,15 @@ Enter payment details
                           </div>
                         </fieldset>
                       </div>
-                    <div wiid="N1188">
-                        <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" id="submit-card-details" wiid="N1190">
+                      <div class="govuk-button-group">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
       Continue
     </button>
-                    </div>
+    <a class="govuk-link" href="#">Cancel</a>
+  </div>
                   </form>
-                  <form id="cancel" name="cancel" method="POST" action="/card_details/7uc04qv2kcr5k2pba88mhkkh9h/cancel" class="form" novalidate="" wiid="N1195">
+                  <form id="cancel" name="cancel" method="POST" action="full-payment-success" class="form" novalidate="" wiid="N1195">
                     <div wiid="N1197">
-                      <input id="cancel-payment" type="submit" class="button-reset" value="Cancel payment" name="cancel" wiid="N1199">
-                      <input id="csrf2" name="csrfToken" type="hidden" value="DGDLOkxJ-7rzjghmM2zAPfUPsEKnLklCywMc" wiid="N1201">
                     </div>
                   </form>
                 </div>

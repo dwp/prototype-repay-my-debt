@@ -43,7 +43,7 @@ Payment options
 
     <form class="form" action="payment-options" method="post">
       <div class="govuk-inset-text" >
-        Total amount left to repay: <span class="total-amount">
+        Total amount owed: <span class="total-amount">
           &pound;2980.00
         </span>
       </div>
@@ -53,20 +53,20 @@ Payment options
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="paymentOptions" name="paymentOptions" type="radio" value="pay-in-full">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                Pay the full amount
+              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="whereDoYouLive">
+                Pay the full amount now
               </label>
               <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                A payment will be taken which will clear the amount you owe.
+                This will clear the amount you owe.
               </div>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="paymentOptions-2" name="paymentOptions" type="radio" value="setup-plan">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                Set up a payment plan
+              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="whereDoYouLive-2">
+                Pay back the amount over time
               </label>
               <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                  Pay how much you can afford in a way that suits you- either by monthly Direct Debit or flexible payments.
+                  Set up a payment plan – either a fixed monthly Direct Debit or flexible payments to suit you.
               </div>
             </div>
 

@@ -990,7 +990,40 @@ router.post('/v43/first-time/payment-options', function (req, res) {
     res.redirect('/v43/first-time/pay-the-full-amount')
   } else {
     // Send user to ineligible page
-    res.redirect('/v43/first-time/set-up-a-payment')
+    res.redirect('/v43/first-time/setup-plan/choose-payment-plan')
+  }
+
+})
+
+
+router.post('/v43/fist-time/setup-plan/direct-debit-account-owner', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var choice = req.session.data['authoriseDD']
+
+  // Check whether the variable matches a condition
+  if (choice == 'yesDD'){
+    // Send user to next page
+    res.redirect('/v43/first-time/setup-plan/directDebitDay')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v43/first-time/setup-plan/you-cannot-setup-direct-debit')
+  }
+
+})
+
+router.post('/v43/fist-time/setup-plan/custom-amount', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var customAmount = req.session.data['custom-amount']
+
+  // Check whether the variable matches a condition
+  if (customAmount >= 60){
+    // Send user to next page
+    res.redirect('/v43/first-time/setup-plan/dd-flex-option')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v43/first-time/setup-plan/start-affordable-plan')
   }
 
 })

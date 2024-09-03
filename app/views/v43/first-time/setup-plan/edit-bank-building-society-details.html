@@ -45,7 +45,7 @@ Bank or building society account details
 
 <br>
 
-        <form class="form" action="payment-reminders" method="post">
+        <form class="form" action="direct-debit-summary" method="post">
 
           <fieldset class="govuk-fieldset">
             <legend class="visually-hidden">
@@ -57,7 +57,7 @@ Bank or building society account details
                 Name on the account
               </label>
 
-              <input class="govuk-input govuk-input--width-30" id="accountName" name="accountName" type="text">
+              <input class="govuk-input govuk-input--width-30" id="accountName" name="accountName" type="text" value="{{data['accountName']}}">
 
             </div>
 
@@ -70,7 +70,7 @@ Bank or building society account details
                 Must be 6 digits long
               </div>
 
-              <input class="govuk-input govuk-input--width-10" id="sortCode" name="sortCode" type="text" aria-describedby="sort-code-hint">
+              <input class="govuk-input govuk-input--width-10" id="sortCode" name="sortCode" type="text" aria-describedby="sort-code-hint" value="{{data['sortCode']}}">
 
             </div>
 
@@ -84,21 +84,8 @@ Bank or building society account details
                 Must be between 6 and 8 digits long
               </div>
 
-              <input class="govuk-input govuk-input--width-10" id="accountNumber" name="accountNumber" type="text" aria-describedby="account-number-hint">
-
+              <input class="govuk-input govuk-input--width-10" id="accountNumber" name="accountNumber" type="text" aria-describedby="account-number-hint" value="{{data['accountNumber']}}">
             </div>
-
-            <!--<div class="govuk-form-group">
-            <label class="govuk-label" for="rollNumber">
-            Building society roll number (if you have one)
-          </label>
-          <div id="roll-number-hint" class="govuk-hint">
-          You can find it on your card, statement or passbook
-        </div>
-        <input class="govuk-input govuk-input--width-10" id="rollNumber" name="rollNumber" type="text" spellcheck="false" aria-describedby="roll-number-hint">
-      </div>-->
-
-
 
 
     </fieldset>
