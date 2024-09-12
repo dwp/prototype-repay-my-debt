@@ -93,7 +93,7 @@ What day of the month do you want your Direct Debit to be taken?
     <label class="visually-hidden" for="paymentDay">
       Payment day
     </label>
-    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="paymentDay" name="paymentDay" type="text" pattern="[0-9]*" inputmode="numeric">
+    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="paymentDay" name="paymentDay" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['paymentDay'] }}">
   </div>
 
 </fieldset>

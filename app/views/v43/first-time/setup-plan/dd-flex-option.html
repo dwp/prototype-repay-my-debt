@@ -56,7 +56,7 @@ How do you want to make your monthly payments?
 
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="ddFixedChoice" name="paymentOptions" type="radio" aria-describedby="ddFixedChoice-hint" value="ddFixedChoice">
+              <input class="govuk-radios__input" id="ddFixedChoice" name="paymentOptions" type="radio" aria-describedby="ddFixedChoice-hint" value="ddFixedChoice" {{ checked('paymentOptions','ddFixedChoice') }}>
               <label class="govuk-label govuk-radios__label" for="ddFixedChoice">
                 <b>Monthly Direct Debit</b>
               </label>
@@ -66,7 +66,7 @@ A fixed automatic payment each month from your bank or building society account,
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="flexyPayChoice" name="paymentOptions" type="radio" value="flexyPayChoice" aria-describedby="flexyPayChoice-hint">
+              <input class="govuk-radios__input" id="flexyPayChoice" name="paymentOptions" type="radio" value="flexyPayChoice" aria-describedby="flexyPayChoice-hint" {{ checked('paymentOptions','flexyPayChoice') }}>
               <label class="govuk-label govuk-radios__label" for="flexyPayChoice">
                 <b>Flexible payments throughout the month</b>
               </label>

@@ -55,13 +55,13 @@ Are you an account holder and the only person needed to authorise Direct Debits 
 
         <div class="govuk-radios govuk-radios--inline">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="yesDD" name="authoriseDD" type="radio" value="yesDD">
+            <input class="govuk-radios__input" id="yesDD" name="authoriseDD" type="radio" value="yesDD" {{ checked('authoriseDD','yesDD') }}>
             <label class="govuk-label govuk-radios__label" for="yesDD">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="noDD" name="authoriseDD" type="radio" value="noDD">
+            <input class="govuk-radios__input" id="noDD" name="authoriseDD" type="radio" value="noDD" {{ checked('authoriseDD','noDD') }}>
             <label class="govuk-label govuk-radios__label" for="noDD">
               No
             </label>

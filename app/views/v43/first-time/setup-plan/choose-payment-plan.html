@@ -48,7 +48,7 @@ Set up a payment plan
             <div class="govuk-radios">
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="12Month" name="paymentChoices" type="radio" value="12Month">
+                <input class="govuk-radios__input" id="12Month" name="paymentChoices" type="radio" value="12Month" {{ checked('paymentChoices','12Month') }}>
                 <label class="govuk-label govuk-radios__label" for="12Month">
                   <b>&pound;360.00</b> &ndash; 12 monthly payments
                 </label>
@@ -56,7 +56,7 @@ Set up a payment plan
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="24Month" name="paymentChoices" type="radio" value="24Month">
+                <input class="govuk-radios__input" id="24Month" name="paymentChoices" type="radio" value="24Month" {{ checked('paymentChoices','24Month') }}>
                 <label class="govuk-label govuk-radios__label" for="24Month">
                   <b>&pound;180.00</b> &ndash; 24 monthly payments
                 </label>
@@ -64,7 +64,7 @@ Set up a payment plan
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="36Month" name="paymentChoices" type="radio" value="36Month">
+                <input class="govuk-radios__input" id="36Month" name="paymentChoices" type="radio" value="36Month" {{ checked('paymentChoices','36Month') }}>
                 <label class="govuk-label govuk-radios__label" for="36Month">
                   <b>&pound;120.00</b> &ndash; 36 monthly payments
                 </label>
@@ -72,7 +72,7 @@ Set up a payment plan
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="48Month" name="paymentChoices" type="radio" value="48Month">
+                <input class="govuk-radios__input" id="48Month" name="paymentChoices" type="radio" value="48Month" {{ checked('paymentChoices','48Month') }}>
                 <label class="govuk-label govuk-radios__label" for="48Month">
                   <b>&pound;90.00</b> &ndash; 48 monthly payments
                 </label>
@@ -80,7 +80,7 @@ Set up a payment plan
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="72Month" name="paymentChoices" type="radio" value="72Month">
+                <input class="govuk-radios__input" id="72Month" name="paymentChoices" type="radio" value="72Month" {{ checked('paymentChoices','72Month') }}>
                 <label class="govuk-label govuk-radios__label" for="72Month">
                   <b>&pound;60.00</b> &ndash; 72 monthly payments
                 </label>
@@ -88,7 +88,7 @@ Set up a payment plan
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="customAmount" name="paymentChoices" type="radio" value="customAmount">
+                <input class="govuk-radios__input" id="customAmount" name="paymentChoices" type="radio" value="customAmount" {{ checked('paymentChoices','customAmount') }}>
                 <label class="govuk-label govuk-radios__label" for="customAmount">
                   <b>Enter a different amount above &pound;60.00</b>
                 </label>
@@ -97,7 +97,7 @@ Set up a payment plan
               <div class="govuk-radios__divider">or</div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="lowPayments" name="paymentChoices" type="radio" value="lowPayments" aria-describedby="lowPayments-hint">
+                <input class="govuk-radios__input" id="lowPayments" name="paymentChoices" type="radio" value="lowPayments" aria-describedby="lowPayments-hint" {{ checked('paymentChoices','lowPayments') }}>
                 <label class="govuk-label govuk-radios__label govuk-label--s" for="lowPayments">
                   I need a more affordable plan
                 </label>

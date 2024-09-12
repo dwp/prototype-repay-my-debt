@@ -970,10 +970,10 @@ router.post('/v43/first-time/what-do-you-want-to-do', function (req, res) {
     res.redirect('/v43/first-time/payment-options')
   } else if (choice == 'view-debt-details'){
     // Send user to ineligible page
-    res.redirect('/v43/first-time/view-debt-details')
+    res.redirect('/v43/first-time/details-of-what-you-owe')
   } else {
     // Send user to ineligible page
-    res.redirect('/v43/first-time/help-support')
+    res.redirect('/v43/first-time/help-and-support')
   }
 
 })

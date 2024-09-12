@@ -94,7 +94,7 @@ How do you want to make your payments?
 
           <div id="example-question" class="form-group inline">
             <span class="c-form-input-denote govuk-body">£</span>
-            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="custom-amount">
+            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="custom-amount"  value="{{data['custom-amount']}}">
           </div>
 
         </fieldset>
@@ -134,7 +134,7 @@ How do you want to make your payments?
 
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="ddFixedChoice" name="paymentOptions" type="radio" aria-describedby="ddFixedChoice-hint" value="ddFixedChoice">
+              <input class="govuk-radios__input" id="ddFixedChoice" name="paymentOptions" type="radio" aria-describedby="ddFixedChoice-hint" value="ddFixedChoice" {{ checked('paymentOptions','ddFixedChoice') }}>
               <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="ddFixedChoice">
                 Monthly Direct Debit
               </label>
@@ -144,7 +144,7 @@ How do you want to make your payments?
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="flexyPayChoice" name="paymentOptions" type="radio" value="flexyPayChoice" aria-describedby="flexyPayChoice-hint">
+              <input class="govuk-radios__input" id="flexyPayChoice" name="paymentOptions" type="radio" value="flexyPayChoice" aria-describedby="flexyPayChoice-hint" {{ checked('paymentOptions','flexyPayChoice') }}>
               <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="flexyPayChoice">
                 Flexible payments throughout the month
               </label>

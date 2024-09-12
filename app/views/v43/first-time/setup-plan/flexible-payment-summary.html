@@ -38,14 +38,6 @@ Payment plan summary
 
 
 
-<!-- <div class="clear-bar">
-<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
-<p>What you owe:
-<span>&pound;120.00</span></p>
-
-</div> -->
-
-
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-three-quarters">
@@ -76,7 +68,7 @@ Payment plan summary
 
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Total amount owed</th>
-              <td class="govuk-table__cell" colspan="2">&pound;4320.00
+              <td class="govuk-table__cell" colspan="2">&pound;4,320.00
               </td>
 
 
@@ -86,7 +78,7 @@ Payment plan summary
               <th scope="row" class="govuk-table__header">Plan type</th>
               <td class="govuk-table__cell">Affordable payment plan
               </td>
-              <td class="govuk-table__cell changeDetails"><a href="#">Change</a></td>
+              <td class="govuk-table__cell changeDetails"><a href="choose-payment-plan">Change</a></td>
 
             </tr>
 
@@ -104,7 +96,7 @@ Payment plan summary
               <th scope="row" class="govuk-table__header">Payment type</th>
               <td class="govuk-table__cell">Flexible payments
               </td>
-              <td class="govuk-table__cell changeDetails"><a href="#">Change</a></td>
+              <td class="govuk-table__cell changeDetails"><a href="dd-flex-option">Change</a></td>
 
             </tr>
 
@@ -127,7 +119,7 @@ Payment plan summary
 
               </td>
 
-              <td class="govuk-table__cell changeDetails"><a href="#">Change</a></td>
+              <td class="govuk-table__cell changeDetails"><a href="edit-lowPayChoice">Change</a></td>
 
 
             </tr>
@@ -143,7 +135,7 @@ Payment plan summary
 
               </td>
 
-              <td class="govuk-table__cell changeDetails"><a href="#">Change</a></td>
+              <td class="govuk-table__cell changeDetails"><a href="edit-flex-payment-target">Change</a></td>
 
 
             </tr>
@@ -182,27 +174,45 @@ Payment plan summary
             </tr> -->
 
 
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+            <table class="govuk-table ">
+              <caption class="visually-hidden">Notification preference </caption>
+              <h3 class="govuk-heading-m">Notification preference  </h3>
+              <tbody class="govuk-table__body">
+
+
             {% if data['reminder-notification-payment-setup-done-yes-no']=='no' %}
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Notification</th>
-              <td class="govuk-table__cell">
+              <th scope="row" class="govuk-table__header" style="width:40%;">Text message</th>
+              <td class="govuk-table__cell" style="width:45%;">
                 No
               </td>
-              <td class="govuk-table__cell changeDetails"><a href="#">Change</a></td>
+              <td class="govuk-table__cell changeDetails"><a href="payment-reminders">Change</a></td>
 
             </tr>
 
             {% else %}
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Notification</th>
-              <td class="govuk-table__cell">
-                Mobile number {{data['contactByMobile']}}
+              <th scope="row" class="govuk-table__header" style="width:40%;">Text message</th>
+              <td class="govuk-table__cell " style="width:45%;">
+Yes
               </td>
-              <td class="govuk-table__cell changeDetails"><a href="#">Change</a></td>
+              <td class="govuk-table__cell changeDetails"><a href="payment-reminders">Change</a></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header" style="width:40%;">Mobile number</th>
+              <td class="govuk-table__cell " style="width:45%;" colspan="2" >
+                {{data['contactByMobile']}}
+              </td>
 
             </tr>
 
             {% endif %}
+
+          </tbody>
+        </table>
             {% endif %}
 
 
@@ -234,7 +244,7 @@ Payment plan summary
 
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Total amount owed</th>
-              <td class="govuk-table__cell" colspan="2">&pound;4320.00
+              <td class="govuk-table__cell" colspan="2">&pound;4,320.00
               </td>
 
 
@@ -252,7 +262,7 @@ Payment plan summary
               <th scope="row" class="govuk-table__header">Payment type</th>
               <td class="govuk-table__cell">Flexible payments
               </td>
-              <td class="govuk-table__cell changeDetails"><a href="#">Change</a></td>
+              <td class="govuk-table__cell changeDetails"><a href="dd-flex-option">Change</a></td>
 
             </tr>
 
@@ -409,27 +419,45 @@ Payment plan summary
                 <p>(If monthly target is met each month)</p>
               </td>
             </tr>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+            <table class="govuk-table ">
+              <caption class="visually-hidden">Notification preference </caption>
+              <h3 class="govuk-heading-m">Notification preference  </h3>
+              <tbody class="govuk-table__body">
+
+
             {% if data['reminder-notification-payment-setup-done-yes-no']=='no' %}
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Notification</th>
-              <td class="govuk-table__cell">
+              <th scope="row" class="govuk-table__header" style="width:40%;">Text message</th>
+              <td class="govuk-table__cell" style="width:45%;">
                 No
               </td>
-              <td class="govuk-table__cell changeDetails"><a href="#">Change</a></td>
+              <td class="govuk-table__cell changeDetails"><a href="payment-reminders">Change</a></td>
 
             </tr>
 
             {% else %}
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Notification</th>
-              <td class="govuk-table__cell">
-                Mobile number <br> {{data['contactByMobile']}}
+              <th scope="row" class="govuk-table__header" style="width:40%;">Text message</th>
+              <td class="govuk-table__cell " style="width:45%;">
+Yes
               </td>
-              <td class="govuk-table__cell changeDetails"><a href="#">Change</a></td>
+              <td class="govuk-table__cell changeDetails"><a href="payment-reminders">Change</a></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header" style="width:40%;">Mobile number</th>
+              <td class="govuk-table__cell " style="width:45%;" colspan="2" >
+                {{data['contactByMobile']}}
+              </td>
 
             </tr>
 
             {% endif %}
+
+          </tbody>
+        </table>
 
             {% endif %}
 
