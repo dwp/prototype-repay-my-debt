@@ -1,0 +1,94 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Set up payment plan
+{% endblock %}
+
+
+
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+
+
+
+        <form class="form" action="#" method="post">
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+            How flexible payments work
+          </h1>
+
+        <p>Flexible payments work in the following way:
+
+          </p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>you make a payment today by card to start your flexible plan </li>
+
+            <li>your chosen payment amount of
+
+              {% if data['paymentChoices']=='customAmount'%}
+              {{ data['custom-amount'] | currency}}
+              {% else %}
+              {{ data['affordable-amount'] | currency}}
+              {% endif %}
+              is your minimum monthly target</li>
+
+            <li>you can make multiple smaller payments in a month to meet your minimum monthly target</li>
+
+            <li>if you regularly pay less than your minimum monthly target, we may contact you to discuss your situation</li>
+            <li>you can contact us at any time for help if you’re struggling to pay</li>
+          </ul>
+
+
+          <p ><span class="govuk-!-font-weight-bold">You need to make a payment today to start your plan so have your card ready.</span> Your bank may charge you interest if you pay by credit card
+          </p>
+
+
+          <p><a href="flex-payment-target" class="govuk-button">
+            Continue
+          </a></p>
+        </form>
+
+
+
+
+
+
+
+      </div>
+    </div>
+
+    {% endblock %}

@@ -42,8 +42,9 @@ What do you want to do?
 
     <form class="form" action="what-do-you-want-to-do" method="post">
       <div class="govuk-inset-text" >
-        Total amount left to repay: <span class="total-amount">
-          &pound;2980.00
+        Total amount owed:
+ <span class="total-amount">
+          &pound;4,320.00
 
         </span>
 
@@ -55,21 +56,21 @@ What do you want to do?
 
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive" name="whatDoYouWantToDo" type="radio" value="payment-options">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whatDoYouWantToDo" type="radio" value="payment-options" {{ checked('whatDoYouWantToDo','payment-options') }}>
               <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
                 I want to view my payment options
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whatDoYouWantToDo" type="radio" value="view-debt-details">
+              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whatDoYouWantToDo" type="radio" value="view-debt-details" {{ checked('whatDoYouWantToDo','view-debt-details') }}>
               <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
                 I want to view details of what I owe
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-3" name="whatDoYouWantToDo" type="radio" value="help-support">
+              <input class="govuk-radios__input" id="whereDoYouLive-3" name="whatDoYouWantToDo" type="radio" value="help-support" {{ checked('whatDoYouWantToDo','help-support') }}>
               <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
-                I need help and support in dealing with the money i owe
+                I need help and support in dealing with the money I owe
               </label>
             </div>
 

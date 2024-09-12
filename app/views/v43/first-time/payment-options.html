@@ -44,7 +44,7 @@ Payment options
     <form class="form" action="payment-options" method="post">
       <div class="govuk-inset-text" >
         Total amount owed: <span class="total-amount">
-          &pound;2980.00
+          &pound;4,320.00
         </span>
       </div>
       <div class="govuk-form-group">
@@ -52,7 +52,7 @@ Payment options
 
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="paymentOptions" name="paymentOptions" type="radio" value="pay-in-full">
+              <input class="govuk-radios__input" id="paymentOptions" name="paymentOptions" type="radio" value="pay-in-full" {{ checked('paymentOptions','pay-in-full') }}>
               <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="whereDoYouLive">
                 Pay the full amount now
               </label>
@@ -61,7 +61,7 @@ Payment options
               </div>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="paymentOptions-2" name="paymentOptions" type="radio" value="setup-plan">
+              <input class="govuk-radios__input" id="paymentOptions-2" name="paymentOptions" type="radio" value="setup-plan" {{ checked('paymentOptions','setup-plan') }}>
               <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="whereDoYouLive-2">
                 Pay back the amount over time
               </label>

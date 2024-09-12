@@ -60,7 +60,7 @@
 
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="contact" name="reminder-notification-payment-setup-done-yes-no" type="radio" value="yes" data-aria-controls="conditional-contact">
+        <input class="govuk-radios__input" id="contact" name="reminder-notification-payment-setup-done-yes-no" type="radio" value="yes" data-aria-controls="conditional-contact" {{ checked('reminder-notification-payment-setup-done-yes-no','yes') }}>
         <label class="govuk-label govuk-radios__label" for="contact">
           Yes
         </label>
@@ -71,11 +71,11 @@
             Enter your UK mobile phone number, like 07700900000
 
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="contact-by-mobile" name="contactByMobile" type="tel" spellcheck="false" autocomplete="email">
+          <input class="govuk-input govuk-!-width-one-half" id="contact-by-mobile" name="contactByMobile" type="tel" spellcheck="false" autocomplete="number" value={{data['contactByMobile']}}>
         </div>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="contact-2" name="reminder-notification-payment-setup-done-yes-no" type="radio" value="no" data-aria-controls="conditional-contact-2">
+        <input class="govuk-radios__input" id="contact-2" name="reminder-notification-payment-setup-done-yes-no" type="radio" value="no" data-aria-controls="conditional-contact-2" {{ checked('reminder-notification-payment-setup-done-yes-no','no') }}>
         <label class="govuk-label govuk-radios__label" for="contact-2">
           No
         </label>
