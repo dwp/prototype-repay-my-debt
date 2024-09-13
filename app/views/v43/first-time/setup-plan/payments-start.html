@@ -103,11 +103,34 @@ Set up payment plan
 
               {% if data['paymentChoices']=='customAmount'%}
               {{ data['custom-amount'] | currency}}
+
+
+              {% elif data['paymentChoices']=='12Month'%}
+
+          £360.00
+              {% elif data['paymentChoices']=='24Month'%}
+
+            £180.00
+              {% elif data['paymentChoices']=='36Month'%}
+
+
+          £120.00
+
+
+              {% elif data['paymentChoices']=='48Month'%}
+
+
+            £90.00
+
+              {% elif data['paymentChoices']=='72Month'%}
+
+              £60.00
+
               {% else %}
               {{ data['affordable-amount'] | currency}}
-              {% endif %}
+              {% endif %}              
               is your minimum monthly target</li>
-              
+
             <li>you can make multiple smaller payments in a month to meet your minimum monthly target</li>
 
             <li>if you regularly pay less than your minimum monthly target, we may contact you to discuss your situation</li>

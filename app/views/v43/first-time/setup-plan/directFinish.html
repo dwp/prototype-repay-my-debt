@@ -138,7 +138,9 @@ Your payment plan is set up
 
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Total amount owed</th>
-      <td class="govuk-table__cell">£4,320.00
+      <td class="govuk-table__cell">
+        {% set newDebt = 4320.00 - data['payment-amount']|float  %}
+               {{ newDebt | currency }}
       </td>
 
     </tr>
@@ -188,14 +190,14 @@ Your payment plan is set up
       <th scope="row" class="govuk-table__header">Payment to</th>
       <td class="govuk-table__cell">
 
-        DWP Debt management
+        DWP Debt Management
 
       </td>
 
     </tr>
 
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Expected end of debt</th>
+      <th scope="row" class="govuk-table__header">Expected final payment</th>
       <td class="govuk-table__cell" colspan="2">
 
         <script>
@@ -208,7 +210,7 @@ Your payment plan is set up
           document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
         </script>
 
-        <p>(If monthly target is met each month)</p>
+        <p>(if monthly target is met each month)</p>
       </td>
     </tr>
 
@@ -373,7 +375,8 @@ Your payment plan is set up
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Total amount owed</th>
-      <td class="govuk-table__cell">£4,320.00
+      <td class="govuk-table__cell">{% set newDebt = 4320.00 - data['payment-amount']|float  %}
+             {{ newDebt | currency }}
       </td>
 
     </tr>
@@ -477,14 +480,14 @@ Your payment plan is set up
       <th scope="row" class="govuk-table__header">Payment to</th>
       <td class="govuk-table__cell">
 
-        DWP Debt management
+        DWP Debt Management
 
       </td>
 
     </tr>
 
     <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Expected end of debt</th>
+    <th scope="row" class="govuk-table__header">Expected final payment</th>
     <td class="govuk-table__cell" colspan="2">
 
       {% if data['paymentChoices']=='12Month'%}
@@ -565,7 +568,7 @@ Your payment plan is set up
 
 
     <br>
-    <p>(If monthly target is met each month)</p>
+    <p>(if monthly target is met each month)</p>
   </td>
 </tr>
 
