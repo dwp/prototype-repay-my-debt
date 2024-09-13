@@ -51,7 +51,7 @@ Make a payment today to start your plan
         <ul class="govuk-list">
           <li>
             <h3>Total amount owed</h3>
-            <b>&pound;4320.00</b>
+            <b>&pound;4,320.00</b>
           </li>
 
 
@@ -88,11 +88,11 @@ Make a payment today to start your plan
 
               {% if data['paymentChoices']=='lowPayments'%}
 
-              &pound;{{ data['affordable-amount'] }}
+              {{ data['affordable-amount'] | currency }}
 
               {% else %}
 
-              &pound;100.00
+              {{ data['custom-amount'] | currency }}
 
               {% endif %}
 
