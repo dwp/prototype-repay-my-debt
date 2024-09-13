@@ -62,7 +62,7 @@ Payment plan summary
             {% if data['paymentChoices']=='lowPayments'%}
 
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header" style="width:40%;">Payment type</th>
+              <th scope="row" class="govuk-table__header" style="width:40%;">Plan type</th>
               <td class="govuk-table__cell" colspan="2" >Affordable Direct Debit
               </td>
 
@@ -71,6 +71,7 @@ Payment plan summary
 
             {% endif %}
 
+
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header" style="width:40%;">Total amount owed</th>
               <td class="govuk-table__cell" colspan="2" >&pound;4,320.00
@@ -78,6 +79,7 @@ Payment plan summary
 
 
             </tr>
+
 
             {% if data['paymentOptions']=='ddFixedChoice'%}
 
@@ -91,34 +93,34 @@ Payment plan summary
 
 
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Payment breakdown</th>
+              <th scope="row" class="govuk-table__header">Direct Debit amount</th>
               <td class="govuk-table__cell"style="width:45%;" >
 
 
                 {% if data['paymentChoices']=='12Month'%}
 
-                <p class="mb0">12 payments of &pound;320.00</p>
+                <p class="mb0">&pound;320.00</p>
 
 
                 {% elif data['paymentChoices']=='24Month'%}
 
-                <p class="mb0">24 payments of &pound;180.00</p>
+                <p class="mb0">&pound;180.00</p>
 
 
                 {% elif data['paymentChoices']=='36Month'%}
 
 
 
-                <p class="mb0">36 payments of &pound;120.00</p>
+                <p class="mb0">&pound;120.00</p>
 
 
                 {% elif data['paymentChoices']=='48Month'%}
 
-                <p class="mb0">48 payments of &pound;90.00</p>
+                <p class="mb0">&pound;90.00</p>
 
                 {% elif data['paymentChoices']=='72Month'%}
 
-                <p class="mb0">72 payments of &pound;60.00</p>
+                <p class="mb0">&pound;60.00</p>
 
 
 
@@ -130,16 +132,7 @@ Payment plan summary
 
                   <p class="mb0">
 
-                    <script>
-                      function divide(num) { return num.toFixed(2); }
-
-                      var  num1 = 4320.00;
-
-                      var num2 = {{ data['affordable-amount'] }};
-
-                      var  result = Math.floor(num1 / num2);
-                      document.write(result);
-                    </script>   payments of {{data['affordable-amount'] | currency}}</p>
+                     {{data['affordable-amount'] | currency}}</p>
 
                     {% else %}
 
@@ -167,7 +160,7 @@ Payment plan summary
                   <td class="govuk-table__cell changeDetails">
                     {% if data['paymentChoices']=='lowPayments'%}
 
-                    <a href="#">Change</a>
+                    <a href="edit-lowPayChoice">Change</a>
 
                     {% else %}
 

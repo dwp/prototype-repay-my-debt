@@ -61,7 +61,7 @@ Different amount
           <p class="govuk-!-font-weight-bold">You have chosen a monthly target amount below £60.00 - this means you will be setting up an affordable payment plan.</p>
 
 
-          
+
 
 
             <p>This is how an affordable payment plan works:</p>
@@ -74,7 +74,7 @@ Different amount
   </li>
             </ul>
 
-
+{% set affordableAmount = data['custom-amount'] %}
 
   <form action="dd-flex-option">
       <button class="govuk-button" data-module="govuk-button">

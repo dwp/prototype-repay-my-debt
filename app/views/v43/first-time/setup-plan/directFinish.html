@@ -74,16 +74,17 @@ Your payment plan is set up
       <tbody class="govuk-table__body">
 
 
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Plan type</th>
-      <td class="govuk-table__cell">Affordable payment plan
-      </td>
 
-    </tr>
 
 
 
     {% if data['paymentOptions']=='ddFixedChoice'%}
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Plan type</th>
+      <td class="govuk-table__cell">Affordable Direct Debit
+      </td>
+
+    </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Total amount owed</th>
       <td class="govuk-table__cell">£4,320.00
@@ -98,7 +99,7 @@ Your payment plan is set up
     </tr>
 
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Monthly target amount</th>
+      <th scope="row" class="govuk-table__header">Direct Debit amount</th>
       <td class="govuk-table__cell">
 
          {{ data['affordable-amount'] | currency     }}
@@ -107,7 +108,19 @@ Your payment plan is set up
 
 
     </tr>
+    <tr class="govuk-table__row" >
+      <th scope="row" class="govuk-table__header" style="width:40%;">First payment</th>
+      <td class="govuk-table__cell" colspan="2" style="width:45%;">
+        <script>
+          var CurrentDate = new Date();
+          console.log("Current date:", CurrentDate);
+          CurrentDate.setDate({{data['paymentDay']}});
+          CurrentDate.setMonth(CurrentDate.getMonth() + 1);
+          document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
+        </script>
+      </td>
 
+    </tr>
 
 
 
@@ -116,6 +129,19 @@ Your payment plan is set up
 
     {% else %}
 
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Payment plan</th>
+      <td class="govuk-table__cell">Affordable flexible payments
+      </td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total amount owed</th>
+      <td class="govuk-table__cell">£4,320.00
+      </td>
+
+    </tr>
 
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Payment type</th>
@@ -124,16 +150,11 @@ Your payment plan is set up
 
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Total amount owed</th>
-      <td class="govuk-table__cell">£4,320.00
-      </td>
-
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Monthly target amount</th>
+      <th scope="row" class="govuk-table__header">Monthly target</th>
       <td class="govuk-table__cell">
 
-         {{ data['affordable-amount'] | currency     }}
+         {{ data['affordable-amount'] | currency  }}
+
 
       </td>
 
@@ -153,14 +174,42 @@ Your payment plan is set up
     </tr>
 
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Plan review date</th>
+      <th scope="row" class="govuk-table__header">Payment method</th>
       <td class="govuk-table__cell">
 
-        August 2023
+        Card Payment
 
       </td>
 
 
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Payment to</th>
+      <td class="govuk-table__cell">
+
+        DWP Debt management
+
+      </td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Expected end of debt</th>
+      <td class="govuk-table__cell" colspan="2">
+
+        <script>
+          var  num1 = 4320.00 - {{ data['payment-amount'] }};
+          var num2 = {{data['affordable-amount']}};
+          var x = Math.floor(num1 / num2); //or whatever offset
+          var CurrentDate = new Date();
+          console.log("Current date:", CurrentDate);
+          CurrentDate.setMonth(CurrentDate.getMonth() + x);
+          document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+        </script>
+
+        <p>(If monthly target is met each month)</p>
+      </td>
     </tr>
 
     {% endif %}
@@ -317,7 +366,7 @@ Your payment plan is set up
 
 
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Payment type</th>
+      <th scope="row" class="govuk-table__header">Payment plan</th>
       <td class="govuk-table__cell">Flexible payments
       </td>
 
@@ -335,35 +384,36 @@ Your payment plan is set up
 
         {% if data['paymentChoices']=='12Month'%}
 
-        <p class="mb0">&pound;320.00 &ndash; for 12 months</p>
+        <p class="mb0">&pound;320.00 </p>
 
 
         {% elif data['paymentChoices']=='24Month'%}
 
-        <p class="mb0">&pound;180.00 &ndash; for 24 months</p>
+        <p class="mb0">&pound;180.00 </p>
 
 
         {% elif data['paymentChoices']=='36Month'%}
 
 
 
-        <p class="mb0">&pound;120.00 &ndash; for 36 months</p>
+        <p class="mb0">&pound;120.00 </p>
 
 
         {% elif data['paymentChoices']=='48Month'%}
 
-        <p class="mb0">&pound;90.00 &ndash; for 48 months</p>
+        <p class="mb0">&pound;90.00 </p>
 
         {% elif data['paymentChoices']=='72Month'%}
 
-        <p class="mb0">&pound;60.00 &ndash; for 72 months</p>
+        <p class="mb0">&pound;60.00 </p>
 
 
 
-        {% else %}
+        {% elif data['paymentChoices']=='lowPayments' %}
 
         <p class="mb0">
-          {{data['affordable-amount'] | currency}}  &ndash; for
+          {{data['affordable-amount'] | currency}}
+          <!-- &ndash; for
           <script>
             function divide(num) { return num.toFixed(2); }
 
@@ -373,7 +423,24 @@ Your payment plan is set up
 
             var  result = Math.floor(num1 / num2);
             document.write(result);
-          </script>   months</p>
+          </script>   months -->
+        </p>
+        {% else %}
+
+        <p class="mb0">
+          {{data['custom-amount'] | currency}}
+          <!-- &ndash; for
+          <script>
+            function divide(num) { return num.toFixed(2); }
+
+            var  num1 = 4320.00 - {{ data['payment-amount'] }};;
+
+            var num2 = {{ data['custom-amount'] }};
+
+            var  result = Math.floor(num1 / num2);
+            document.write(result);
+          </script>   months -->
+        </p>
 
         {% endif %}
 
@@ -397,7 +464,7 @@ Your payment plan is set up
     </tr>
 
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Payment type</th>
+      <th scope="row" class="govuk-table__header">Payment method</th>
       <td class="govuk-table__cell">
 
         Card payment
@@ -487,7 +554,7 @@ Your payment plan is set up
       <script>
         var  num1 = 4320.00 - {{ data['payment-amount'] }};
         var num2 = {{data['custom-amount']}};
-        var x = Math.floor(num1 / num2); //or whatever offset
+        var x = Math.floor(num1 / num2) +1; //or whatever offset
         var CurrentDate = new Date();
         console.log("Current date:", CurrentDate);
         CurrentDate.setMonth(CurrentDate.getMonth() + x);
@@ -519,39 +586,43 @@ Your payment plan is set up
 
   <p>Your payments will show on your bank statement as <strong>CENT REC GROUP DD</strong>.</p>
 
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <p class="govuk-heading-m">
+  Further Direct Debit details
+  </p>
 
 
-<!-- details link -->
-<details class="govuk-details">
-<summary class="govuk-details__summary">
-<span class="govuk-details__summary-text">
-Further Direct Debit details
-</span>
-</summary>
-
-<div class="govuk-details__text">
-   <!--  <p>Service user number: 941315 </p>-->
-    <p>If you have any problems or questions about your Direct Debit plan, contact Debt Management:</p>
-    <h2 class="govuk-heading-s">Debt Management</h2>
+  <div class="govuk-body">
+     <!--  <p>Service user number: 941315 </p>-->
+      <p>If you have any problems or questions about your Direct Debit plan, contact Debt Management:</p>
+      <h2 class="govuk-heading-s">Debt Management</h2>
 
 
-<!-- <p>Debt Accounting &amp; Finance<br>
-Warbreck House<br>
-Blackpool<br>
-FY2 0YE<br>
-United Kingdom</p> -->
+  <!-- <p>Debt Accounting &amp; Finance<br>
+  Warbreck House<br>
+  Blackpool<br>
+  FY2 0YE<br>
+  United Kingdom</p> -->
 
-<ul class="govuk-list">
-<li>Telephone: 0800 916 0647</li>
-<li>Textphone: 0800 916 0651</li>
-<li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
-</ul>
+  <ul class="govuk-list">
+  <li>Telephone: 0800 916 0647</li>
+  <li>Textphone: 0800 916 0651</li>
+  <li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
+  </ul>
 
-<p><a href="#" target="_blank">Find out about call charges</a></p>
+  <p><a href="#" target="_blank">Find out about call charges</a></p>
 
-</div>
-</details>
-<!-- end details link -->
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+  <p class="govuk-heading-m ">Reviewing your repayments
+</p>
+  <p> We may contact you in the future to review your  payments and will send you a notification with further details.
+
+<p></p>
 
 
 <p><a id="feedback" href="#" target="_blank">What did you think of this service? (opens in new tab)</a></p>
@@ -569,7 +640,7 @@ United Kingdom</p> -->
 
 {% endif %}
 
-  <p><a href="#">What did you think of this service? (opens in new tab)</a></p>
+  <!-- <p><a href="#">What did you think of this service? (opens in new tab)</a></p> -->
 
   <p><a href="/index.html" class="govuk-button">Go to Account home</a></p>
 

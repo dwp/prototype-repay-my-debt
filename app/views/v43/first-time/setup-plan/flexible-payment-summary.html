@@ -47,7 +47,7 @@ Payment plan summary
 
 
 
-    <form class="form" action="directFinish" method="post">
+    <form class="form" action="flex-card-details" method="post">
 
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
@@ -65,6 +65,13 @@ Payment plan summary
 
           <tbody class="govuk-table__body">
 
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Plan type</th>
+              <td class="govuk-table__cell">Affordable flexible payments
+              </td>
+              <td class="govuk-table__cell changeDetails"></td>
+
+            </tr>
 
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Total amount owed</th>
@@ -74,13 +81,7 @@ Payment plan summary
 
             </tr>
 
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Plan type</th>
-              <td class="govuk-table__cell">Affordable payment plan
-              </td>
-              <td class="govuk-table__cell changeDetails"><a href="choose-payment-plan">Change</a></td>
 
-            </tr>
 
 
 
@@ -96,16 +97,24 @@ Payment plan summary
               <th scope="row" class="govuk-table__header">Payment type</th>
               <td class="govuk-table__cell">Flexible payments
               </td>
-              <td class="govuk-table__cell changeDetails"><a href="dd-flex-option">Change</a></td>
+              <td class="govuk-table__cell changeDetails"> </td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Total amount owed</th>
+              <td class="govuk-table__cell" colspan="2">&pound;4,320.00
+              </td>
+
 
             </tr>
 
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Monthly target amount</th>
+              <th scope="row" class="govuk-table__header">Monthly target </th>
               <td class="govuk-table__cell">
 
                 <p class="mb0">
-                  {{data['affordable-amount'] | currency}}  &ndash; for
+                  {{data['affordable-amount'] | currency}}
+                  <!-- &ndash; for
                   <script>
                     function divide(num) { return num.toFixed(2); }
 
@@ -115,11 +124,12 @@ Payment plan summary
 
                     var  result = Math.floor(num1 / num2);
                     document.write(result);
-                  </script>   months</p>
+                  </script>   months -->
+                </p>
 
               </td>
 
-              <td class="govuk-table__cell changeDetails"><a href="edit-lowPayChoice">Change</a></td>
+              <td class="govuk-table__cell changeDetails"><a href="edit-lowPayChoice-flex">Change</a></td>
 
 
             </tr>
@@ -242,13 +252,13 @@ Yes
           <tbody class="govuk-table__body">
 
 
-            <tr class="govuk-table__row">
+            <!-- <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Total amount owed</th>
               <td class="govuk-table__cell" colspan="2">&pound;4,320.00
               </td>
 
 
-            </tr>
+            </tr> -->
 
 
             {% if data['paymentOptions']=='ddFixedChoice'%}
@@ -262,7 +272,14 @@ Yes
               <th scope="row" class="govuk-table__header">Payment type</th>
               <td class="govuk-table__cell">Flexible payments
               </td>
-              <td class="govuk-table__cell changeDetails"><a href="dd-flex-option">Change</a></td>
+              <td class="govuk-table__cell changeDetails"></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Total amount owed</th>
+              <td class="govuk-table__cell" colspan="2">&pound;4,320.00
+              </td>
+
 
             </tr>
 
@@ -272,35 +289,36 @@ Yes
 
                 {% if data['paymentChoices']=='12Month'%}
 
-                <p class="mb0">&pound;320.00 &ndash; for 12 months</p>
+                <p class="mb0">&pound;320.00 </p>
 
 
                 {% elif data['paymentChoices']=='24Month'%}
 
-                <p class="mb0">&pound;180.00 &ndash; for 24 months</p>
+                <p class="mb0">&pound;180.00</p>
 
 
                 {% elif data['paymentChoices']=='36Month'%}
 
 
 
-                <p class="mb0">&pound;120.00 &ndash; for 36 months</p>
+                <p class="mb0">&pound;120.00 </p>
 
 
                 {% elif data['paymentChoices']=='48Month'%}
 
-                <p class="mb0">&pound;90.00 &ndash; for 48 months</p>
+                <p class="mb0">&pound;90.00</p>
 
                 {% elif data['paymentChoices']=='72Month'%}
 
-                <p class="mb0">&pound;60.00 &ndash; for 72 months</p>
+                <p class="mb0">&pound;60.00</p>
 
 
 
                 {% else %}
 
                 <p class="mb0"> <p class="mb0">
-                  {{data['custom-amount'] | currency}}  &ndash; for
+                  {{data['custom-amount'] | currency}}
+                  <!-- &ndash; for
                   <script>
                     function divide(num) { return num.toFixed(2); }
 
@@ -310,13 +328,13 @@ Yes
 
                     var  result = Math.floor(num1 / num2);
                     document.write(result);
-                  </script>   months</p>
-
+                  </script>   months -->
+</p>
                 {% endif %}
 
               </td>
 
-              <td class="govuk-table__cell changeDetails"><a href="#">Change</a></td>
+              <td class="govuk-table__cell changeDetails"><a href="edit-dd-flex">Change</a></td>
 
 
             </tr>
@@ -406,7 +424,7 @@ Yes
                 <script>
                   var  num1 = 4320.00 - {{ data['payment-amount'] }};
                   var num2 = {{data['custom-amount']}};
-                  var x = Math.floor(num1 / num2); //or whatever offset
+                  var x = Math.floor(num1 / num2) + 1 ; //or whatever offset
                   var CurrentDate = new Date();
                   console.log("Current date:", CurrentDate);
                   CurrentDate.setMonth(CurrentDate.getMonth() + x);
@@ -520,7 +538,7 @@ Yes
 
 
               <button class="govuk-button" data-module="govuk-button">
-                Continue
+                Continue to Pay
               </button>
 
 
