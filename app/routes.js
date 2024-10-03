@@ -1027,3 +1027,21 @@ router.post('/v43/fist-time/setup-plan/custom-amount', function (req, res) {
   }
 
 })
+
+// Other supported users journeys
+
+router.post('/v43/generic/sign-in', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var signin = req.session.data['signin']
+
+  // Check whether the variable matches a condition
+  if (signin == 'onelogin'){
+    // Send user to next page
+    res.redirect('/v43/generic/ol_transition')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v43/generic/sign-in-security-code')
+  }
+
+})
