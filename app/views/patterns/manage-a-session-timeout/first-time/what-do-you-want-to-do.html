@@ -1,0 +1,110 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+What do you want to do?
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+<nav class="dwp-language-toggle" aria-label="Language toggle">
+<ul class="dwp-language-toggle__list">
+  <li class="dwp-language-toggle__list-item" aria-current="true">
+    English
+  </li>
+  <li class="dwp-language-toggle__list-item">
+    <a href="#"
+      hreflang="cy"
+      lang="cy"
+      rel="alternate"
+      class="govuk-link"
+      aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+  </li>
+</ul>
+</nav>
+</main>
+
+<!-- {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }} -->
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+
+
+    <meta name="hmrc-timeout-dialog"
+        content="hmrc-timeout-dialog"
+        data-language="en"
+        data-timeout="70"
+        data-countdown="68"
+        data-keep-alive-url="/patterns/manage-a-session-timeout/signedin-page.html"
+        data-sign-out-url="/patterns/manage-a-session-timeout/sign-out.html"
+        data-timeout-url=""
+        data-title="You will be signed out soon"
+        data-message="For your security, you will be signed out in"
+        data-message-suffix=""
+        data-keep-alive-button-text="Continue"
+        data-sign-out-button-text="Sign out"
+        data-synchronise-tabs=""
+        data-hide-sign-out-button=""/>
+
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Ashley Chamberlain</span>
+What do you want to do?
+
+    </h1>
+
+    <form class="form" action="what-do-you-want-to-do" method="post">
+      <div class="govuk-inset-text" >
+        Total amount owed:
+ <span class="total-amount">
+          &pound;4,320.00
+
+        </span>
+
+
+
+      </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whatDoYouWantToDo" type="radio" value="payment-options" {{ checked('whatDoYouWantToDo','payment-options') }}>
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                I want to view my payment options
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whatDoYouWantToDo" type="radio" value="view-debt-details" {{ checked('whatDoYouWantToDo','view-debt-details') }}>
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                I want to view details of what I owe
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-3" name="whatDoYouWantToDo" type="radio" value="help-support" {{ checked('whatDoYouWantToDo','help-support') }}>
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                I need help and support in dealing with the money I owe
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+        <br>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+					Continue
+				  </button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
