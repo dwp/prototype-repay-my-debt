@@ -34,22 +34,28 @@ Payment options
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-    <h1 class="govuk-heading-xl">
-      <span class="govuk-caption-l">Ashley Chamberlain</span>
-      Payment options
-
-
-    </h1>
 
     <form class="form" action="payment-options" method="post">
-      <div class="govuk-inset-text" >
-        Total amount owed: <span class="total-amount">
-          &pound;4,320.00
-        </span>
-      </div>
+
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
 
+              <h1 class="govuk-heading-xl">
+                <!-- <span class="govuk-caption-l">Ashley Chamberlain</span> -->
+                Payment options
+
+
+              </h1>
+
+
+   <div class="govuk-inset-text" >
+     Total amount owed: <span class="total-amount">
+       &pound;4,320.00
+     </span>
+   </div>
+   <div id="contact-hint" class="govuk-heading-s">
+Select a payment option
+</div>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="paymentOptions" name="paymentOptions" type="radio" value="pay-in-full" {{ checked('paymentOptions','pay-in-full') }}>
