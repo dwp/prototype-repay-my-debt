@@ -1,0 +1,66 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Your session will time out
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+<nav class="dwp-language-toggle" aria-label="Language toggle">
+<ul class="dwp-language-toggle__list">
+  <li class="dwp-language-toggle__list-item" aria-current="true">
+    English
+  </li>
+  <li class="dwp-language-toggle__list-item">
+    <a href="#"
+      hreflang="cy"
+      lang="cy"
+      rel="alternate"
+      class="govuk-link"
+      aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+  </li>
+</ul>
+</nav>
+</main>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<!-- <div class="clear-bar">
+<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+<p>What you owe:
+<span>&pound;120.00</span></p>
+
+</div> -->
+
+
+<div class="govuk-grid-row">
+
+	<div class="govuk-grid-column-two-thirds">
+		<form class="form" action="account-home" method="post">
+
+			<h1 id="dialog-title" class="govuk-heading-xl govuk-!-margin-bottom-6">
+				Session timeout notification
+			</h1>
+
+			<div class="govuk-body">
+				<p>We will automatically sign you out if you do not do anything for <b>92 minutes</b> and you will have to start again. This is to protect your information.
+
+
+
+</p>
+			</div>
+			<button class="govuk-button dialog-button js-dialog-close" data-module="govuk-button">Continue</button>
+
+		</form>
+	</div>
+</div>
+
+{% endblock %}
