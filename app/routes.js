@@ -1045,3 +1045,21 @@ router.post('/v43/generic/sign-in', function (req, res) {
   }
 
 })
+
+// Returning off benefit Users
+
+router.post('/v44/sign-in', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var signin = req.session.data['signin']
+
+  // Check whether the variable matches a condition
+  if (signin == 'onelogin'){
+    // Send user to next page
+    res.redirect('/v44/ol_transition')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v44/sign-in-security-code')
+  }
+
+})
