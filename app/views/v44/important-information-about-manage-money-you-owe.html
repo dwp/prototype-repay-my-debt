@@ -8,6 +8,24 @@ Important information about managing the money you owe to DWP
 
 
 {% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -31,10 +49,10 @@ Important information about managing the money you owe to DWP
 
 
 
-    <div class="flexible-banner-float-none">
+    <!-- <div class="flexible-banner-float-none">
       <ul class="govuk-list">
         <li>
-          <h3>Original amount owed</h3>
+          <h3>Amount left to pay</h3>
           <span id="new-debts-amount"><b>£3,300.00</b></span>
         </li>
         <li>
@@ -42,12 +60,37 @@ Important information about managing the money you owe to DWP
           <span id="new-debts-amount"><b>£280.11</b></span>
         </li>
         <li>
-          <h3>New total amount owed</h3>
+          <h3>Current amount left to pay</h3>
           <span class="total-amount" id="new-total-owed"><b>£3,580.11</b></span>
         </li>
       </ul>
-    </div>
+    </div> -->
 
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--m">Amount left to pay</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Details</th>
+          <th scope="col" class="govuk-table__header govuk-table__cell--numeric">Amount 	</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Previous amount </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£3,300.00</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">New amount added </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£280.11</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Total </th>
+          <th scope="row" class="govuk-table__header govuk-table__cell--numeric">£3,580.11</th>
+        </tr>
+      </tbody>
+    </table>
     <!-- <span><a href="debtBreakdownFull" style="margin-bottom:30px;"  class="secondary-invert">View details of what you owe</a></span> -->
 
     <!-- <div class="govuk-body">
@@ -59,15 +102,16 @@ Important information about managing the money you owe to DWP
     </div> -->
 
 
-    <p>Your current payments do not need to change. However, if you do not increase your payments, it will take longer to clear the amount you owe an may require a review.
+    <p>Your current payments do not need to change. However, if you do not increase your payments, it will take longer to clear the amount you owe and may require a review.
 
     </p>
 
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<p><a href="details-of-what-you-owe-list">View details of what you owe</a></p>
+    <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
 <table class="govuk-table govuk-table--small-text-until-tablet">
-  <caption class="govuk-table__caption govuk-table__caption--m">Newly added benefits and amounts</caption>
+  <caption class="govuk-table__caption govuk-table__caption--m">New amount added</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Benefit</th>
@@ -88,7 +132,7 @@ Important information about managing the money you owe to DWP
       <th scope="row" class="govuk-table__header govuk-table__cell--numeric">£280.11</th>
     </tr>
   </tbody>
-</table>
+</table> -->
 
 
     <p class="mt30"><a href="account-home" class="govuk-button">
