@@ -29,7 +29,7 @@ module.exports = {
   'other-income':'0.00',
 
   'paymentOptions' : 'ddFixedChoice',
-
+'additional-amount' :'0.00',
 
   'housing':'0.00',
   'utilities':'0.00',
