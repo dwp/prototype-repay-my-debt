@@ -28,6 +28,7 @@ module.exports = {
   'pension':'0.00',
   'other-income':'0.00',
 
+  'paymentOptions' : 'ddFixedChoice',
 
 
   'housing':'0.00',

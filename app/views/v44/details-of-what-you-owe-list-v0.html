@@ -1,0 +1,170 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Details of what you owe
+{% endblock %}
+
+
+{% block beforeContent %}
+<nav class="dwp-language-toggle" aria-label="change language">
+  <ul class="dwp-language-toggle__list">
+    <li lang="en" id="li-en" class="dwp-language-toggle__list-item">English</li>
+    <li lang="cy" id="li-cy" class="dwp-language-toggle__list-item"><span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span><a href="?lng=cy" class="govuk-link">Cymraeg</a></li>
+  </ul>
+</nav>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Details of what you owe</h1>
+
+    <!-- <div class="govuk-inset-text">
+    Total amount owed: <span class="total-amount">
+    &pound;1139.10
+
+  </span>
+
+
+</div>-->
+
+
+
+{% if data['deductionChange']=='DyesChange'%}
+
+<div class="govuk-inset-text">
+  Total amount left to repay: <span class="total-amount">
+    &pound;600.00
+
+  </span>
+
+
+
+</div>
+
+
+<div class="flexible-banner-float-none">
+  <ul class="govuk-list">
+    <li>
+      <h3>New payment</h3>
+      <span id="total-amount"><b>£{{ data['newDeductedAmount'] }}</span>
+      </li>
+    </ul>
+
+    <p>Your account will be updated within the next 7 days.
+    </p>
+  </div>
+  {% else %}
+
+  <div class="govuk-inset-text">
+    Total amount left to repay: <span class="total-amount">
+      &pound;2,320.00
+
+    </span>
+
+
+
+  </div>
+  {% endif %}
+
+
+
+  <table class="govuk-table govuk-table--small-text-until-tablet">
+    <caption class="govuk-table__caption govuk-table__caption--m">Benefits and debt amounts</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Name of the benefit</th>
+        <th scope="col" class="govuk-table__header">Original amount 	</th>
+        <th scope="col" class="govuk-table__header">Amount left to pay</th>
+        <th scope="col" class="govuk-table__header">Action</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"> Universal Credit - Overpayment (joint) </td>
+        <td class="govuk-table__cell">£1,500.00</td>
+        <td class="govuk-table__cell">£1,300.00</td>
+        <td class="govuk-table__cell"><a href="benefit-details">View details</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Universal Credit- Advance payment</td>
+        <td class="govuk-table__cell">£500.00</td>
+        <td class="govuk-table__cell">£200.00</td>
+        <td class="govuk-table__cell"><a href="#">View details</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Universal Credit - Recoverable Hardship Payment (joint)</td>
+        <td class="govuk-table__cell">£100.00</td>
+        <td class="govuk-table__cell">£20.00</td>
+        <td class="govuk-table__cell"><a href="#">View details</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Universal Credit - Budeting Advance (joint)</td>
+        <td class="govuk-table__cell">£300.00</td>
+        <td class="govuk-table__cell">£100.00</td>
+        <td class="govuk-table__cell"><a href="#">View details</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">HMRC - Tax Credit overpayment</td>
+        <td class="govuk-table__cell">-</td>
+        <td class="govuk-table__cell">£100.00</td>
+        <td class="govuk-table__cell"><a href="#">View details</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">ESA - Short term advance</td>
+        <td class="govuk-table__cell">-</td>
+        <td class="govuk-table__cell">£200.00</td>
+        <td class="govuk-table__cell"><a href="#">View details</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Jobseekers Allowance - Overpayment</td>
+        <td class="govuk-table__cell">£200.00</td>
+        <td class="govuk-table__cell">£200.00</td>
+        <td class="govuk-table__cell"><a href="#">View details</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Total </th>
+        <td class="govuk-table__cell">£3,200.00</td>
+        <td class="govuk-table__cell">£2,320.00</td>
+        <td class="govuk-table__cell"> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+  <h3 class="govuk-heading-m">Universal Credit repayments</h3>
+  <!-- <h4 class="govuk-heading-s">Universal Credit</h4> -->
+
+
+  <p>If you have any other deductions from your Universal Credit payment, they cannot be managed on this service. For example, any repayments for an advance taken out during your current claim.  </p>
+  <p>
+
+
+    <!-- If you owe money to Universal Credit as part of a joint claim, it will be included in the total amount but will not show in the details of what you owe as that cannot be managed on this service. -->
+
+
+  </p>
+  <p>For more information, refer to your Universal Credit statement.</p>
+
+
+
+</div>
+</div>
+
+{% endblock %}
