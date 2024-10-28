@@ -1063,3 +1063,36 @@ router.post('/v44/sign-in', function (req, res) {
   }
 
 })
+
+
+router.post('/v44/setup-plan/custom-amount', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var customAmount = req.session.data['custom-amount']
+
+  // Check whether the variable matches a condition
+  if (customAmount >= 60){
+    // Send user to next page
+    res.redirect('/v44/setup-plan/payments-start')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v44/setup-plan/start-affordable-plan')
+  }
+
+})
+
+router.post('/v44/setup-plan/direct-debit-account-owner', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var choice = req.session.data['authoriseDD']
+
+  // Check whether the variable matches a condition
+  if (choice == 'yesDD'){
+    // Send user to next page
+    res.redirect('/v44/setup-plan/directDebitDay')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v43/setup-plan/you-cannot-setup-direct-debit')
+  }
+
+})

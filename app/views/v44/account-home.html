@@ -26,13 +26,13 @@ Account home
 
         <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Account home</span>
-          David Jones
+          John Smith
         </h1>
 
       </div>
       <div class="govuk-inset-text" style="float:right;">
-        Total amount left to pay: <span class="total-amount">
-          &pound;4,320.00
+        Total amount left to pay <span class="total-amount">
+          &pound;3,580.11
 
         </span>
 
@@ -58,31 +58,108 @@ Account home
 
 
 
-  		 <div class="govuk-grid-column-one-half" >
+  		 <div class="govuk-grid-column-one-half">
 
 
-  			 <div class="scenario-panel" >
-  					   <h2 class="govuk-heading-s">Your repayments</h2>
+  			 <div class="scenario-panel">
+  					   <h2 class="govuk-heading-s">Payment plan details</h2>
 
-  					   <div class="scenario-inner-panel" >
-
-
-                 <div id="green-banner"  class="alert-green">
-              <p style="margin-bottom:0px;"> <strong>Previous repayment</strong><br>
-                         £65.00 on 6 April 2024.</p>
-                       </div>
+  					   <div class="scenario-inner-panel" style="height:315px;">
 
 
 
 
+              <!-- <div id="red-banner" class="payment-info alert-red">
+                      <p>You did not make a payment for:<br><strong>January 2024</strong></p>
+                    </div>-->
 
-<p>If your monthly repayments stay at £65.00, you will clear the total amount owed on 6 Jan 2028.
+<!-- Blue banner -->
 
-</p>
+  							   <table class="govuk-table">
+
+  								<tbody class="govuk-table__body">
+
+                    <tr class="govuk-table__row">
+                     <th scope="row" class="govuk-table__header">Plan type</th>
+                     <td class="govuk-table__cell">
 
 
-  					  <span><a href="details-of-what-you-owe" class="secondary-invert">View details of what you owe</a></span>
+                      	Flexible payments
+                     </td>
+                    </tr>
+  								 <tr class="govuk-table__row">
+  									<th scope="row" class="govuk-table__header">Monthly target</th>
+  									<td class="govuk-table__cell">
 
+
+                      £20.00
+  									</td>
+  								 </tr>
+
+                   <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Active month</th>
+                    <td class="govuk-table__cell" id="date">
+
+
+                      <script>
+                 const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                 const d = new Date();
+                 let month = months[d.getMonth()];
+
+                 document.getElementById("date").innerHTML = month + " " + d.getFullYear() ;
+
+
+
+                 </script>
+
+                    </td>
+                   </tr>
+
+
+  								</tbody>
+  							  </table>
+
+  							  <!-- <div class="flexible-banner-float-none alert-green">
+
+
+  							  <ul class="govuk-list">
+
+
+
+
+
+
+  								  <li>
+
+  										   <h3>Monthly target</h3>
+  										  <b>&pound;15.00</b>
+
+
+
+  								  </li>
+
+  								  <li>
+  									  <h3>Paid this month</h3>
+  									  <b>&pound;10.00</b>
+  								  </li>
+
+
+
+
+  							  </ul>
+
+
+
+  							  </div> -->
+
+<!-- <p class="govuk-inset-text">You will not be penalised if you do not meet your target this month.
+
+</p> -->
+
+
+
+  					  <span style="font-weight:normal;"><a href="setup-plan/choose-payment-plan" class="govuk-button govuk-button--secondary">Switch to Direct Debit payment plan</a></span>
 
 
 
@@ -106,14 +183,17 @@ Account home
 
 
 
-  			  <div class="scenario-panel" style="height:323px;">
+  			  <div class="scenario-panel" style="height:414px;">
   					   <h2 class="govuk-heading-s">Payment summary</h2>
 
 
   					   <div class="scenario-inner-panel">
 
-
-
+<!--
+                 <div id="green-banner" class="alert-green">
+<p> <strong>You have 1 payment pending</strong></p>
+                         <p>Payments can take 2 to 5 working days to clear and update your balance.</p>
+                       </div> -->
 
 
   							   <table class="govuk-table">
@@ -121,23 +201,34 @@ Account home
   								<tbody class="govuk-table__body">
 
 
-  								 <!-- <tr class="govuk-table__row">
-  									<th scope="row" class="govuk-table__header">Total payments</th>
+  								 <tr class="govuk-table__row">
+  									<th scope="row" class="govuk-table__header">Payments made</th>
   									<td class="govuk-table__cell">
 
 
-  								   15
+  								   23
   									</td>
-  								 </tr> -->
+  								 </tr>
+                   <tr class="govuk-table__row">
+                   <th scope="row" class="govuk-table__header">Paid this month</th>
+                   <td class="govuk-table__cell">
 
+
+
+                       £8.00
+
+
+
+                   </td>
+                   </tr>
 
   								 <tr class="govuk-table__row">
-  									<th scope="row" class="govuk-table__header">Total amount left to pay</th>
+  									<th scope="row" class="govuk-table__header">Total amount repaid</th>
   									<td class="govuk-table__cell">
 
 
 
-  								  &pound;2980.00
+  								  &pound;481.47
 
 
   									</td>
@@ -145,18 +236,7 @@ Account home
 
 
 
-  								  <!-- <tr class="govuk-table__row">
-  									<th scope="row" class="govuk-table__header">Expected end of debt</th>
-  									<td class="govuk-table__cell">
 
-
-
-  											January 2023
-
-
-
-  									</td>
-  								  </tr> -->
 
 
 
@@ -166,9 +246,10 @@ Account home
   								</tbody>
   							  </table>
 
+                  <span style="font-weight:normal;"><a href="#" class="govuk-button govuk-button--secondary">Make a flexible payment</a></span>
 
 
-  					   <span><a href="payment-history" class="secondary-invert mt10">View your payment history</a></span>
+  					   <span style="font-weight:normal;"><a href="#" class="govuk-button govuk-button--secondary">View your payment history</a></span>
 
 
   		  </div>
@@ -193,17 +274,15 @@ Account home
 
   			  <div class="govuk-grid-column-one-half">
 
-  			  <div class="scenario-panel">
-  					   <h2 class="govuk-heading-s">Manage your repayments
-</h2>
+  			  <div class="scenario-panel" style="height:222px;">
+  					   <h2 class="govuk-heading-s">What you owe</h2>
 
   					   <div class="scenario-inner-panel">
-  						<p>As you are repaying money to DWP, you can get help understanding how much you can afford if you are struggling with your repayments.
+  						<p>Details of the money you owe.</p>
 
-</p>
+<br>
 
-
-  					   <span><a href="/v42/account-improvement/on-benefit/manage-your-repayments/payment-review.html" class="secondary-invert dash-spacer">Understand how much you can afford</a></span>
+  					   <span style="font-weight:normal;"><a href="details-of-what-you-owe-list" class="govuk-button govuk-button--secondary">View details of what you owe</a></span>
   					   </div>
   				   </div>
 
@@ -220,13 +299,13 @@ Account home
 
   		  <div class="govuk-grid-column-one-half">
 
-  			  <div class="scenario-panel" style="height:245px;">
+  			  <div class="scenario-panel">
   					   <h2 class="govuk-heading-s">Help and support</h2>
 
   					   <div class="scenario-inner-panel">
-  						<p>Get help if you are struggling to pay and find out what to do next.</p>
-<br>
-  					   <span><a href="help-and-support" class="secondary-invert">Get help and support</a></span>
+  						<p>Get help if you're struggling to pay and find<br>out what to do next.</p>
+
+  					   <span style="font-weight:normal;"><a href="#" class="govuk-button govuk-button--secondary">Get help and support</a></span>
   					   </div>
   				   </div>
 
