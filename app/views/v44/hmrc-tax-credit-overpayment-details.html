@@ -1,0 +1,85 @@
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+HMRC - Tax Credits overpayment
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="dwp-language-toggle" aria-label="change language">
+  <ul class="dwp-language-toggle__list">
+    <li lang="en" id="li-en" class="dwp-language-toggle__list-item">English</li>
+    <li lang="cy" id="li-cy" class="dwp-language-toggle__list-item"><span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span><a href="?lng=cy" class="govuk-link">Cymraeg</a></li>
+  </ul>
+</nav>
+
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7 ">HMRC - Tax Credits overpayment</h1>
+
+    <dl class="govuk-summary-list">
+  <!-- <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Debt type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Overpayment (joint)
+    </dd>
+  </div> -->
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Award period ended
+    <dd class="govuk-summary-list__value">
+      09 July 2023
+
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Original amount owed
+    </dt>
+    <dd class="govuk-summary-list__value">
+	£150.76
+</dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+Current amount owed	    </dt>
+    <dd class="govuk-summary-list__value">
+      	£110.36
+    </dd>
+  </div>
+
+</dl>
+
+<h2 class="govuk-heading-m">Help and support</h2>
+<p>If you have any questions, you should contact HMRC directly:</p>
+
+
+<ul class="govuk-list">
+  <li>Telephone: 0345 300 3900</li>
+   <li>Welsh language: 0300 200 1900   </li>
+
+    <li>Monday to Friday, 8am to 4pm (closed on public holidays)</li>
+</ul>
+<p><a href="#">Find out about call charges (opens in a new tab)</a></p>
+
+  </div>
+</div>
+
+{% endblock %}
