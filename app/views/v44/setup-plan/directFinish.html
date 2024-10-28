@@ -87,7 +87,7 @@ Your payment plan is set up
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Total amount owed</th>
-          <td class="govuk-table__cell">£3,580.11
+          <td class="govuk-table__cell">£3,098.64
           </td>
 
         </tr>
@@ -252,7 +252,7 @@ Your payment plan is set up
         </tr> -->
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Total amount owed</th>
-          <td class="govuk-table__cell" colspan="2">£3,580.11
+          <td class="govuk-table__cell" colspan="2">£3,098.64
           </td>
 
 
@@ -311,7 +311,7 @@ Your payment plan is set up
                 <script>
                   function divide(num) { return num.toFixed(2); }
 
-                  var  num1 = 3580.11;
+                  var  num1 = 3098.64;
 
                   var num2 = {{ data['affordable-amount'] }};
 
@@ -325,7 +325,7 @@ Your payment plan is set up
                   <script>
                     function divide(num) { return num.toFixed(2); }
 
-                    var  num1 = 3580.11;
+                    var  num1 = 3098.64;
 
                     var num2 = {{ data['custom-amount'] }};
 
@@ -376,7 +376,7 @@ Your payment plan is set up
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Total amount owed</th>
-              <td class="govuk-table__cell">{% set newDebt = 3580.11 - data['payment-amount']|float  %}
+              <td class="govuk-table__cell">{% set newDebt = 3098.64 - data['payment-amount']|float  %}
                 {{ newDebt | currency }}
               </td>
 
@@ -484,7 +484,7 @@ Your payment plan is set up
             {% if data['paymentChoices']=='12Month'%}
 
             <script>
-              var  num1 = 3580.11;
+              var  num1 = 3098.64;
               var num2 = 299;
               var x = Math.floor(num1 / num2); //or whatever offset
               var CurrentDate = new Date();
@@ -495,7 +495,7 @@ Your payment plan is set up
             {% elif data['paymentChoices']=='24Month'%}
 
             <script>
-              var  num1 = 3580.11;
+              var  num1 = 3098.64;
               var num2 = 149;
               var x = Math.floor(num1 / num2); //or whatever offset
               var CurrentDate = new Date();
@@ -507,7 +507,7 @@ Your payment plan is set up
 
 
             <script>
-              var  num1 = 3580.11;
+              var  num1 = 3098.64;
               var num2 = 99.5;
               var x = Math.floor(num1 / num2); //or whatever offset
               var CurrentDate = new Date();
@@ -522,7 +522,7 @@ Your payment plan is set up
 
 
             <script>
-              var  num1 = 3580.11;
+              var  num1 = 3098.64;
               var num2 = 74.6;
               var x = Math.floor(num1 / num2); //or whatever offset
               var CurrentDate = new Date();
@@ -534,7 +534,7 @@ Your payment plan is set up
             {% elif data['paymentChoices']=='72Month'%}
 
             <script>
-              var  num1 = 3580.11;
+              var  num1 = 3098.64;
               var num2 = 50;
               var x = Math.floor(num1 / num2); //or whatever offset
               var CurrentDate = new Date();
@@ -546,7 +546,7 @@ Your payment plan is set up
             {% else %}
 
             <script>
-              var  num1 = 3580.11 - {{ data['payment-amount'] }};
+              var  num1 = 3098.64 - {{ data['payment-amount'] }};
               var num2 = {{data['custom-amount']}};
               var x = Math.floor(num1 / num2) +1; //or whatever offset
               var CurrentDate = new Date();
