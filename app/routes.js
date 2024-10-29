@@ -1092,7 +1092,7 @@ router.post('/v44/setup-plan/direct-debit-account-owner', function (req, res) {
     res.redirect('/v44/setup-plan/directDebitDay')
   } else {
     // Send user to ineligible page
-    res.redirect('/v43/setup-plan/you-cannot-setup-direct-debit')
+    res.redirect('/v44/setup-plan/you-cannot-setup-direct-debit')
   }
 
 })
