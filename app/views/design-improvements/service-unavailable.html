@@ -1,0 +1,44 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl">
+        Sorry, the service is unavailable
+      </h1>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+      <p>
+        You will be able to use the service later.
+      </p>
+
+<p>Contact us if you need to speak to someone about the service.</p>
+      <p wiid="N154"><strong wiid="N155">
+    DWP Debt Management
+  </strong></p>
+
+    <ul class="govuk-list" wiid="N158">
+    <li wiid="N160">Telephone: 0800 916 0647</li>
+    <li wiid="N163">Textphone: 0800 916 0651</li>
+    <li wiid="N166">Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
+  </ul>
+
+  <p wiid="N170"><a href="https://www.gov.uk/call-charges" target="_blank" wiid="N171">Find out about call charges (opens in a new tab)</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
