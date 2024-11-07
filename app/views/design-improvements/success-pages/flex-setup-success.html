@@ -44,123 +44,126 @@ Your payment plan is set up
 
     </div>
 
-    <h2 class="govuk-heading-m  ">Plan summary
-    </h2>
+    <h2 class="govuk-heading-m  ">Plan summary</h2>
 
 
     <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Total amount owed
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £2,320.00
-        </dd>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total amount owed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £2,320.00
+          </dd>
 
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Plan type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Monthly flexible payments
+          </dd>
+
+        </div>
+        </dl>
+        <h2 class="govuk-heading-m govuk-!-padding-top-7 ">Payment details</h2>
+
+
+        <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Monthly target
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £20.00
+          </dd>
+
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Expected number of payments
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <script>
+              var  num1 = 2320.00;
+              var num2 = 50;
+              var x = Math.floor(num1 / num2); //or whatever offset
+              document.write(x);
+            </script> <br>(if monthly target  is met each month)
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Expected final payment
+          </dt>
+          <dd class="govuk-summary-list__value">
+            November 2034
+
+          </dd>
+
+        </div>
+
+
+
+      </dl>
+      <div class="govuk-inset-text">
+        You will be sent confirmation of this agreement within 3 working days or no later than 10 working days before the first payment.
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Plan type
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Monthly flexible payments
-        </dd>
 
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Monthly target
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £20.00
-        </dd>
-
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Expected number of payments
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <script>
-            var  num1 = 2320.00;
-            var num2 = 50;
-            var x = Math.floor(num1 / num2); //or whatever offset
-            document.write(x);
-          </script>
-          <br>
-          (if monthly target remains the same)
-        </dd>
-
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Expected final payment
-        </dt>
-        <dd class="govuk-summary-list__value">
-          November 2034 <br>
-          (if monthly target  is met each month)
-        </dd>
-
-      </div>
-
-    </dl>
-    <div class="govuk-inset-text">
-      You will be sent confirmation of this agreement within 3 working days or no later than 10 working days before the first payment
-    </div>
-
-    <h2 class="govuk-heading-m govuk-!-padding-top-7">Payment today</h2>
+      <h2 class="govuk-heading-m govuk-!-padding-top-7">Payment today</h2>
 
 
-    <dl class="govuk-summary-list">
+      <dl class="govuk-summary-list">
 
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
           Payment amount
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £10.00
-        </dd>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £10
+          </dd>
 
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
           Payment type
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Card payment
-        </dd>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Card payment
+          </dd>
 
-      </div>
-
-    </dl>
-    <div class="govuk-inset-text">
-      You will recieve a payment confirmation email. It will take 2 to 5 working days for your payemnt to clear.</div>
-
+        </div>
+      </dl>
+      <div class="govuk-inset-text">
+        You will recieve a payment confirmation email. It will take 2 to 5 working days for your payemnt to clear.</div>
 
 
-      <h2 class="govuk-heading-m govuk-!-padding-top-7">Text message preferences
+
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-7">Contact preferences
+
+
       </h2>
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Text message
+            Text messages
           </dt>
           <dd class="govuk-summary-list__value">
-            Yes
-          </dd>
-
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Mobile number
-          </dt>
-          <dd class="govuk-summary-list__value">
+            Yes <br>
             07772190920
           </dd>
 
         </div>
+
 
 
 
@@ -176,6 +179,7 @@ Your payment plan is set up
 
         <p></p>
 
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
         <p><a id="feedback" href="#" target="_blank">What did you think of this service? (opens in new tab)</a></p>
 
