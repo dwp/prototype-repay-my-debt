@@ -17,7 +17,7 @@
     "govuk-frontend": "5.7.1",
     "govuk-one-login-service-header": "github:govuk-one-login/service-header",
     "govuk-prototype-kit": "13.16.2",
-    "hmrc-frontend": "6.34.0",
+    "hmrc-frontend": "6.41.0",
     "jquery": "3.7.1",
     "notifications-node-client": "8.2.1"
   }
