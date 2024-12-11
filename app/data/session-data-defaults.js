@@ -59,7 +59,10 @@ module.exports = {
   'spending-travel':'0',
   'spending-utilities':'0',
   'spending-phone':'0',
-  'spending-housing':'0'
+  'spending-housing':'0',
+  'dd-reminder-notification': 'no',
+  'dd-directdebit-day': '02',
+  'dd-payment-amount':'20.00'
 
 
 

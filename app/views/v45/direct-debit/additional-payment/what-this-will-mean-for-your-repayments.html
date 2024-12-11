@@ -1,0 +1,214 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+What this change will mean for you
+
+
+{% endblock %}
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+
+
+
+
+<div class="govuk-grid-row">
+  {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
+  {% set totalspending = data['spending-debt']|float + data['spending-phone']|float + data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
+  {% set balance = totalIncome-totalspending %}
+  <div class="govuk-grid-column-full">
+
+
+
+    <div class="govuk-grid-column-three-quarters" style="padding:0px;">
+
+      <h1 class="govuk-heading-xl" style="margin-bottom:50px;">What this additional payment will mean for you </h1>
+
+
+
+
+
+
+
+
+
+  <div class="flexible-banner-playback">
+    <ul class="govuk-list">
+
+
+      <li>
+        <h3>Payment today:</h3>
+        <span id="new-debts-amount"><b>{{ data['additional-amount']|currency }}</b></span>
+        <p><a class="govuk-link" href="make-an-additional-payment">Change</a></p>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
+<table class="govuk-table">
+
+
+  <!-- <caption class="govuk-table__caption govuk-table__caption--m ">DWP repayments
+</caption> -->
+<thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+    <th scope="col" class="govuk-table__header"></th>
+    <th scope="col" class="govuk-table__header">Before payment</th>
+    <th scope="col" class="govuk-table__header">After payment</th>
+
+  </tr>
+</thead>
+<tbody class="govuk-table__body">
+
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Total amount left to pay
+
+    </th>
+    <td class="govuk-table__cell govuk-table__cell">&pound;3,098.64</td>
+    <td class="govuk-table__cell govuk-table__cell">
+
+      <script>
+        function divide(num) { return num.toFixed(2); }
+
+
+
+        var num1 = 3098.64 - {{ data['additional-amount'] }};
+
+        document.write('&pound;'+num1);
+      </script>
+
+    </td>
+  </tr>
+
+
+
+
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__header">Estimated payments remaining
+  </th>
+  <td class="govuk-table__cell govuk-table__cell"><script>
+    function divide(num) { return num.toFixed(2); }
+
+    var  num1 = 3098.64;
+
+    var num2 = 20;
+
+    var  result = Math.floor(num1 / num2);
+    document.write(result);
+  </script></td>
+  <td class="govuk-table__cell govuk-table__cell"><script>
+    function divide(num) { return num.toFixed(2); }
+
+    var  num1 = 3098.64 - {{ data['additional-amount'] }};
+
+    var num2 = 20;
+
+    var  result = Math.floor(num1 / num2);
+    document.write(result);
+  </script></td>
+</tr>
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__header">Expected final payment
+    <!-- <div id="sign-in-hint" class="govuk-hint">
+    This date may change based on when your next payment is taken
+  </div> -->
+</th>
+<td class="govuk-table__cell govuk-table__cell">
+  <script>
+    var  num1 = 3098.64;
+    var num2 = 20;
+    var x = Math.floor(num1 / num2); //or whatever offset
+    var CurrentDate = new Date();
+    console.log("Current date:", CurrentDate);
+    CurrentDate.setMonth(CurrentDate.getMonth() + x);
+    document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+  </script>
+
+</td>
+
+<td class="govuk-table__cell govuk-table__cell">
+  <script>
+    var  num1 = 3098.64 - {{ data['additional-amount'] }};
+    var num2 = 20;
+    var x = Math.floor(num1 / num2); //or whatever offset
+    var CurrentDate = new Date();
+    console.log("Current date:", CurrentDate);
+    CurrentDate.setMonth(CurrentDate.getMonth() + x);
+    document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+  </script>
+
+</td>
+</tr>
+
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__header">Final payments amount
+  </th>
+  <td class="govuk-table__cell govuk-table__cell">£<script>
+    function divide(num) { return num.toFixed(2); }
+
+    var  num1 = 3098.64;
+
+    var num2 = 20;
+
+    var  result = Math.floor(num1 / num2);
+
+    var finalResult = num1 - 20 * result;
+    document.write(Math.round(finalResult * 100) / 100);
+  </script></td>
+  <td class="govuk-table__cell govuk-table__cell">£<script>
+    function divide(num) { return num.toFixed(2); }
+
+    var  num1 = 3098.64 - {{ data['additional-amount'] }};
+
+    var num2 = 20;
+    var  result = Math.floor(num1 / num2);
+    var finalResult = num1 - 20 * result;
+    document.write(Math.round(finalResult * 100) / 100);
+  </script></td>
+</tr>
+
+<!-- Comment from there if needed -->
+
+
+
+
+</tbody>
+</table>
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+<p><a href="additional-payment-contact-you" class="govuk-button mb0">Continue</a></p>
+
+<!-- <p><a href="would-you-like-to-receive-a-text-message-reminder-about-your-next-check" class="govuk-button mb0">Continue</a></p> -->
+
+
+
+</div>
+</div>
+
+{% endblock %}
