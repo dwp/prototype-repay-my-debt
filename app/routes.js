@@ -1096,3 +1096,22 @@ router.post('/v44/setup-plan/direct-debit-account-owner', function (req, res) {
   }
 
 })
+
+
+
+// DD return
+router.post('/v45/direct-debit/sign-in', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var signin = req.session.data['signin']
+
+  // Check whether the variable matches a condition
+  if (signin == 'onelogin'){
+    // Send user to next page
+    res.redirect('/v45/direct-debit/ol_transition')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v45/direct-debit/sign-in-security-code')
+  }
+
+})

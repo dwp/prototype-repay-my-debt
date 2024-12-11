@@ -38,7 +38,7 @@ Your payment plan is set up
 
       {% if data['paymentOptions']=='ddFixedChoice'%}
       <h1 class="govuk-panel__title">
-        Your payment plan is set up
+        Your payment plan has been changed
       </h1>
       <div class="govuk-panel__body">
 
@@ -69,7 +69,7 @@ Your payment plan is set up
             Total amount owed
           </dt>
           <dd class="govuk-summary-list__value">
-            £2,320.00
+            £3,098.64
           </dd>
 
         </div>
@@ -93,15 +93,23 @@ Your payment plan is set up
             Direct Debit amount
           </dt>
           <dd class="govuk-summary-list__value">
-            £20.00
+            {{data['new-dd-amount'] | currency}}
           </dd>
 
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Final payment amount          </dt>
-          <dd class="govuk-summary-list__value">
-          £19.21
+          <dd class="govuk-summary-list__value"> £<script>
+            function divide(num) { return num.toFixed(2); }
+
+            var  num1 = 3098.64 ;
+
+            var num2 = {{ data['new-dd-amount'] }};
+            var  result = Math.floor(num1 / num2);
+            var finalResult = num1 - num2 * result;
+            document.write(Math.round(finalResult * 100) / 100);
+          </script>
           </dd>
 
         </div>
@@ -111,10 +119,14 @@ Your payment plan is set up
           </dt>
           <dd class="govuk-summary-list__value">
             <script>
-              var  num1 = 2320.00;
-              var num2 = 50;
-              var x = Math.floor(num1 / num2); //or whatever offset
-              document.write(x);
+              function divide(num) { return num.toFixed(2); }
+
+              var  num1 = 3098.64;
+
+              var num2 = {{ data['new-dd-amount'] }};
+
+              var  result = Math.floor(num1 / num2);
+              document.write(result);
             </script>
           </dd>
 
@@ -137,54 +149,29 @@ Your payment plan is set up
           Direct Debit day
           </dt>
           <dd class="govuk-summary-list__value">
-            2
+            {{ data['new-dd-date'] }}
           </dd>
 
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            First payment
+          Expected final payment
           </dt>
           <dd class="govuk-summary-list__value">
-            02 December 2024
-          </dd>
-
-
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Expected final payment
-          </dt>
-          <dd class="govuk-summary-list__value">
-          02  November 2034
+            <script>
+              var  num1 = 3098.64 ;
+              var num2 = {{ data['new-dd-amount'] }};
+              var x = Math.floor(num1 / num2); //or whatever offset
+              var CurrentDate = new Date();
+              console.log("Current date:", CurrentDate);
+              CurrentDate.setMonth(CurrentDate.getMonth() + x);
+              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+            </script>
           </dd>
 
         </div>
 
       </dl>
-
-      <h2 class="govuk-heading-m govuk-!-padding-top-7">Contact preferences
-
-
-      </h2>
-
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Text messages
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Yes <br>
-            07772190920
-          </dd>
-
-        </div>
-
-
-
-
-      </dl>
-
 
 
 
