@@ -1,0 +1,100 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+You cannot set up a Direct Debit online
+
+{% endblock %}
+
+{% block beforeContent %}
+
+<main class="govuk-width-container">
+<nav class="dwp-language-toggle" aria-label="Language toggle">
+<ul class="dwp-language-toggle__list">
+  <li class="dwp-language-toggle__list-item" aria-current="true">
+    English
+  </li>
+  <li class="dwp-language-toggle__list-item">
+    <a href="#"
+      hreflang="cy"
+      lang="cy"
+      rel="alternate"
+      class="govuk-link"
+      aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+  </li>
+</ul>
+</nav>
+</main>
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+
+      <div class="govuk-grid-row">
+
+
+
+
+         <div class="govuk-grid-column-three-quarters">
+
+
+
+
+	   <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">You cannot set up a Direct Debit online
+
+ </h1>
+
+<div class="govuk-body">
+
+  <p>You must be an account holder and be able to authorise Direct Debits with your bank or building society.
+</p>
+<p>If you have a joint account and you and your partner both need to authorise Direct Debits, you can set up a Direct Debit by contacting Debt Management.
+
+</p>
+
+        </div>
+
+        <!-- <h2 class="govuk-heading-m">A flexible payment plan may work for you
+</h2>
+
+        <p>This is not a Direct Debit – you must sign in each month and make at least one payment.
+      </p>
+      <form class="" action="#" method="post">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Flexible payment plan
+        </button>
+      </form> -->
+
+<p>Alternatively, you must contact Debt Management to discuss the options available to you.
+
+</p>
+       <h2 class="govuk-heading-s ">Debt Management</h2>
+     <ul class="govuk-list">
+       <li>Telephone: 0800 916 0647</li>
+       <li>Textphone: 0800 916 0651</li>
+       <li>Monday to Friday, 8am to 7:30pm (except public holidays)</li>
+     </ul>
+     <p class="govuk-body">
+       <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+     </p>
+
+
+
+
+
+      </div>
+
+
+    </div>
+</div>
+
+{% endblock %}

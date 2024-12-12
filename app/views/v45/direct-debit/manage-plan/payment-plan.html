@@ -59,12 +59,12 @@ What this change will mean for you
 
   </ul>
   <div class="govuk-tabs__panel" id="past-day">
-    <h2 class="govuk-heading-l">Payments</h2>
+    <h2 class="govuk-heading-l">Payment plan details</h2>
 
     <dl class="govuk-summary-list">
      <div class="govuk-summary-list__row">
        <dt class="govuk-summary-list__key">
-         Payment plan details
+         Plan type
        </dt>
        <dd class="govuk-summary-list__value">
          Monthly Direct Debit
@@ -72,12 +72,59 @@ What this change will mean for you
      </div>
      <div class="govuk-summary-list__row">
        <dt class="govuk-summary-list__key">
-         Direct Debit payment day
+         Direct Debit amount
+       </dt>
+       <dd class="govuk-summary-list__value">
+         £20.00
+       </dd>
+     </div>
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">
+         Final payment amount
+       </dt>
+       <dd class="govuk-summary-list__value">
+         £<script>
+           function divide(num) { return num.toFixed(2); }
+
+           var  num1 = 3098.64;
+
+           var num2 = 20;
+
+           var  result = Math.floor(num1 / num2);
+
+           var finalResult = num1 - 20 * result;
+           document.write(Math.round(finalResult * 100) / 100);
+         </script>
+       </dd>
+     </div>
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">
+         Expected number of payments
+       </dt>
+       <dd class="govuk-summary-list__value">
+         <script>
+           function divide(num) { return num.toFixed(2); }
+
+           var  num1 = 3098.64;
+
+           var num2 = 20;
+
+           var  result = Math.floor(num1 / num2);
+           document.write(result);
+         </script>
+       </dd>
+
+
+     </div>
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">
+         Direct Debit day
        </dt>
        <dd class="govuk-summary-list__value">
          21
        </dd>
      </div>
+
      <div class="govuk-summary-list__row">
        <dt class="govuk-summary-list__key">
          Expected final payment
@@ -94,27 +141,8 @@ What this change will mean for you
          </script>
        </dd>
      </div>
-     <div class="govuk-summary-list__row">
-       <dt class="govuk-summary-list__key">
-         Expected final amount
-       </dt>
-       <dd class="govuk-summary-list__value">
-         £<script>
-           function divide(num) { return num.toFixed(2); }
-
-           var  num1 = 3098.64;
-
-           var num2 = 20;
-
-           var  result = Math.floor(num1 / num2);
-
-           var finalResult = num1 - 20 * result;
-           document.write(Math.round(finalResult * 100) / 100);
-         </script>
-       </dd>
 
 
-     </div>
    </dl>
    <a href="manage-payment-plan"><button type="submit" class="govuk-button" data-module="govuk-button">
 Manage payment plan
@@ -138,13 +166,13 @@ Manage payment plan
           </td>
 
         </tr>
-     
+
 
 
       </tbody>
     </table>
 
-    <p>If you want to opt out of recieving text messages for unsucessful payments, you need to contact Debt Management
+    <p>If you want to make changes to your contact preferences, call Debt Management.
    </p>
 
          <h2 class="govuk-heading-s ">Debt Management</h2>

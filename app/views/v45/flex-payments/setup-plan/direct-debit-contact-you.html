@@ -43,16 +43,13 @@
 
     <h1 class="govuk-heading-xl">
 
-      Do you want to change your Direct Debit monthly payment day?
+      Would you like us to text you if there are any problems with your payments?
 </h1>
 <br>
 
-<p>You cannot set up a Direct Debit between the 29th and 31st of the month.</p>
-<p>If your chosen day falls on a weekend or bank holiday, your payment will be taken on the next working day.</p>
 
 
-
-<form class="form" action=" /v45/direct-debit/manage-plan/direct-debit-summary" >
+<form class="form" action="direct-debit-summary" method="post">
 
 
   <div class="govuk-form-group">
@@ -61,7 +58,7 @@
 
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="contact" name="new-dd-date-preferences" type="radio" value="yes" data-aria-controls="conditional-contact" {{ checked('new-dd-date-preferences','yes') }}>
+        <input class="govuk-radios__input" id="contact" name="reminder-notification-payment-setup-done-yes-no" type="radio" value="yes" data-aria-controls="conditional-contact" {{ checked('reminder-notification-payment-setup-done-yes-no','yes') }}>
         <label class="govuk-label govuk-radios__label" for="contact">
           Yes
         </label>
@@ -69,22 +66,14 @@
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
         <div class="govuk-form-group">
           <label class="govuk-label" for="contact-by-email">
-            Enter a new payment day
+            Enter your UK mobile phone number, like 07700900000
 
           </label>
-
-
-
-
-        <p id="passport-issued-hint" class="govuk-hint">
-          For example, enter 2 or 02 for second day of the month.
-        </p>
-
-          <input class="govuk-input govuk-input--width-2" id="contact-by-mobile" name="new-dd-date" type="tel" spellcheck="false" autocomplete="email" value="{{data['new-dd-date']}}">
+          <input class="govuk-input govuk-!-width-one-half" id="contact-by-mobile" name="contactByMobile" type="tel" spellcheck="false" autocomplete="email" value="{{data['contactByMobile']}}">
         </div>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="contact-2" name="new-dd-date-preferences" type="radio" value="no" data-aria-controls="conditional-contact-2" {{ checked('new-dd-date-preferences','no') }}>
+        <input class="govuk-radios__input" id="contact-2" name="reminder-notification-payment-setup-done-yes-no" type="radio" value="no" data-aria-controls="conditional-contact-2" {{ checked('reminder-notification-payment-setup-done-yes-no','no') }}>
         <label class="govuk-label govuk-radios__label" for="contact-2">
           No
         </label>

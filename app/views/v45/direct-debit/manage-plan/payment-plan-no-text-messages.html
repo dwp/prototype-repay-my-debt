@@ -59,63 +59,92 @@ What this change will mean for you
 
   </ul>
   <div class="govuk-tabs__panel" id="past-day">
-    <h2 class="govuk-heading-l">Payments</h2>
+    <h2 class="govuk-heading-l">Payment plan details
+</h2>
 
-    <dl class="govuk-summary-list">
-     <div class="govuk-summary-list__row">
-       <dt class="govuk-summary-list__key">
-         Payment plan details
-       </dt>
-       <dd class="govuk-summary-list__value">
-         Monthly Direct Debit
-       </dd>
-     </div>
-     <div class="govuk-summary-list__row">
-       <dt class="govuk-summary-list__key">
-         Direct Debit payment day
-       </dt>
-       <dd class="govuk-summary-list__value">
-         21
-       </dd>
-     </div>
-     <div class="govuk-summary-list__row">
-       <dt class="govuk-summary-list__key">
-         Expected final payment
-       </dt>
-       <dd class="govuk-summary-list__value">
-         <script>
-           var  num1 = 3098.64;
-           var num2 = 20;
-           var x = Math.floor(num1 / num2); //or whatever offset
-           var CurrentDate = new Date();
-           console.log("Current date:", CurrentDate);
-           CurrentDate.setMonth(CurrentDate.getMonth() + x);
-           document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
-         </script>
-       </dd>
-     </div>
-     <div class="govuk-summary-list__row">
-       <dt class="govuk-summary-list__key">
-         Expected final amount
-       </dt>
-       <dd class="govuk-summary-list__value">
-         £<script>
-           function divide(num) { return num.toFixed(2); }
+<dl class="govuk-summary-list">
+ <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key">
+     Plan type
+   </dt>
+   <dd class="govuk-summary-list__value">
+     Monthly Direct Debit
+   </dd>
+ </div>
+ <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key">
+     Direct Debit amount
+   </dt>
+   <dd class="govuk-summary-list__value">
+     £20.00
+   </dd>
+ </div>
+ <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key">
+     Final payment amount
+   </dt>
+   <dd class="govuk-summary-list__value">
+     £<script>
+       function divide(num) { return num.toFixed(2); }
 
-           var  num1 = 3098.64;
+       var  num1 = 3098.64;
 
-           var num2 = 20;
+       var num2 = 20;
 
-           var  result = Math.floor(num1 / num2);
+       var  result = Math.floor(num1 / num2);
 
-           var finalResult = num1 - 20 * result;
-           document.write(Math.round(finalResult * 100) / 100);
-         </script>
-       </dd>
+       var finalResult = num1 - 20 * result;
+       document.write(Math.round(finalResult * 100) / 100);
+     </script>
+   </dd>
+ </div>
+ <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key">
+     Expected number of payments
+   </dt>
+   <dd class="govuk-summary-list__value">
+     <script>
+       function divide(num) { return num.toFixed(2); }
+
+       var  num1 = 3098.64;
+
+       var num2 = 20;
+
+       var  result = Math.floor(num1 / num2);
+       document.write(result);
+     </script>
+   </dd>
 
 
-     </div>
-   </dl>
+ </div>
+ <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key">
+     Direct Debit day
+   </dt>
+   <dd class="govuk-summary-list__value">
+     21
+   </dd>
+ </div>
+
+ <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key">
+     Expected final payment
+   </dt>
+   <dd class="govuk-summary-list__value">
+     <script>
+       var  num1 = 3098.64;
+       var num2 = 20;
+       var x = Math.floor(num1 / num2); //or whatever offset
+       var CurrentDate = new Date();
+       console.log("Current date:", CurrentDate);
+       CurrentDate.setMonth(CurrentDate.getMonth() + x);
+       document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+     </script>
+   </dd>
+ </div>
+
+
+</dl>
    <a href="manage-payment-plan"><button type="submit" class="govuk-button" data-module="govuk-button">
 Manage payment plan
 </button></a>
@@ -143,11 +172,11 @@ Manage payment plan
       </tbody>
     </table>
 
-    <p>You can opt in to reciev text messages for unsucessful payments.
+    <p>You can choose to receive text messages if there are any problems with your payments.
    </p>
 
    <a href="change-payment-contact-info"><button type="submit" class="govuk-button" data-module="govuk-button">
-Change text message preferences
+Change contact preferences
 </button></a>
 
   </div>
