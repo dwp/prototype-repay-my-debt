@@ -66,7 +66,13 @@ Payment plan summary
 
 
 
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header" style="width:40%;">Monthly target</th>
+              <td class="govuk-table__cell"  >&pound;20.00
+              </td>
+              <td class="govuk-table__cell changeDetails" style="width:45%;"  >    </td>
 
+            </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header" style="width:40%;">Payment today</th>
               <td class="govuk-table__cell" style="width:45%;" >{{ data['additional-amount'] | currency}}
@@ -77,6 +83,9 @@ Payment plan summary
             </tr>
 
 
+            {% if data['paymentOptions']=='ddFixedChoice'%}
+
+
               </tbody>
 
             </table>
@@ -85,41 +94,40 @@ Payment plan summary
 
 
 
-  <!-- 
-            <h2 class="govuk-heading-m govuk-!-padding-top-7">Contact preferences
+            {% endif %}
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+            <table class="govuk-table ">
+              <caption class="visually-hidden">Contact preferences </caption>
+              <h3 class="govuk-heading-m">Contact preferences </h3>
+              <tbody class="govuk-table__body">
 
 
-            </h2>
-
-          <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Text messages
-                </dt>
                 {% if data['reminder-notification-payment-setup-done-yes-no']=='no' %}
-                <dd class="govuk-summary-list__value">
-                  Yes <br>
-                  07772190920
-                </dd>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header" style="width:40%;">Text message</th>
+                  <td class="govuk-table__cell" style="width:45%;">
+                    No
+                  </td>
+                  <td class="govuk-table__cell changeDetails"><a href="additional-payment-contact-you">Change</a></td>
+
+                </tr>
+
                 {% else %}
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header" style="width:40%;">Text message</th>
+                  <td class="govuk-table__cell " style="width:45%;">
+                    Yes <br> {{data['contactByMobile']}}
+                  </td>
+                  <td class="govuk-table__cell changeDetails"><a href="direct-debit-contact-you">Change</a></td>
 
-                <dd class="govuk-summary-list__value">
-                  Yes <br>
-                  {{data['contactByMobile']}}
+                </tr>
+           
 
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Text message	</span></a>
-                </dd>
                 {% endif %}
 
-              </div>
-
-
-
-
-            </dl> -->
-
+              </tbody>
+            </table>
 
 
 

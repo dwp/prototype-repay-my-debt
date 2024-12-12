@@ -47,36 +47,37 @@ Set up payment plan
         <form class="form" action="#" method="post">
 
           <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
-            Manage payment plan
+            How flexible payments work
           </h1>
 
-        <p>You can change your:
+        <p>Flexible payments work in the following way:
 
           </p>
 
           <ul class="govuk-list govuk-list--bullet">
-            <li>Direct Debit amount</li>
+            <li>you make a payment today by card to start your flexible plan </li>
 
-            <li>Direct Debit payment day</li>
+            <li>your chosen payment amount of
 
+              {% if data['paymentChoices']=='customAmount'%}
+              {{ data['custom-amount'] | currency}}
+              {% else %}
+              {{ data['affordable-amount'] | currency}}
+              {% endif %}
+              is your minimum monthly target</li>
 
+            <li>you can make multiple smaller payments in a month to meet your minimum monthly target</li>
+
+            <li>if you regularly pay less than your minimum monthly target, we may contact you to discuss your situation</li>
+            <li>you can contact us at any time for help if you’re struggling to pay</li>
           </ul>
 
-<p class="govuk-heading-m">Do you want to change your bank details?</p>
-          <p>If you want to make changes to your bank details, you need to contact Debt Management.
-         </p>
 
-               <h2 class="govuk-heading-s ">Debt Management</h2>
-             <ul class="govuk-list">
-               <li>Telephone: 0800 916 0647</li>
-               <li>Textphone: 0800 916 0651</li>
-               <li>Monday to Friday, 8am to 7:30pm (except public holidays)</li>
-             </ul>
-             <p class="govuk-body">
-               <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
-             </p>
+          <p ><span class="govuk-!-font-weight-bold">You need to make a payment today to start your plan so have your card ready.</span> Your bank may charge you interest if you pay by credit card
+          </p>
 
-          <p><a href="edit-dd-amount" class="govuk-button">
+
+          <p><a href="flex-payment-target" class="govuk-button">
             Continue
           </a></p>
         </form>
