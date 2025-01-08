@@ -1,0 +1,46 @@
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+Sorry, you can't access this page
+
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl">
+        Sorry, you can't access this page
+      </h1>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+      <p>You cannot access this page due to security reasons. </p>
+
+      <a href="#"><button class="govuk-button" data-module="govuk-button">
+      Go to Account home
+      </button></a>
+    </div>
+  </div>
+
+{% endblock %}
