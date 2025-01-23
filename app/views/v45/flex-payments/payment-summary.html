@@ -1,0 +1,168 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Payment plan summary
+{% endblock %}
+
+
+
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+
+
+    {% set paymentOptions = ddFixedChoice %}
+
+
+
+    <form class="form" action="card-details" method="post">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+        <!-- <span class="govuk-caption-xl">Payment plan</span> -->
+
+        Summary</h1>
+
+        <table class="govuk-table mb40">
+          <caption class="visually-hidden">Plan summary</caption>
+
+
+          <tbody class="govuk-table__body">
+
+
+
+
+
+            <tr class="govuk-table__row">
+              <!-- <th scope="row" class="govuk-table__header" style="width:40%;">Monthly target</th>
+              <td class="govuk-table__cell"  >&pound;20.00
+              </td>
+              <td class="govuk-table__cell changeDetails" style="width:45%;"  >    </td>
+
+            </tr> -->
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header" style="width:40%;">Payment today</th>
+              <td class="govuk-table__cell" style="width:45%;" >{{ data['additional-amount'] | currency}}
+              </td>
+              <td class="govuk-table__cell changeDetails"><a href="make-a-payment-edit">Change</a></td>
+
+
+            </tr>
+
+
+            {% if data['paymentOptions']=='ddFixedChoice'%}
+
+
+              </tbody>
+
+            </table>
+
+
+
+
+
+            {% endif %}
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+            <table class="govuk-table ">
+              <caption class="visually-hidden">Contact preferences </caption>
+              <h3 class="govuk-heading-m">Contact preferences </h3>
+              <tbody class="govuk-table__body">
+
+
+                {% if data['reminder-notification-payment-setup-done-yes-no']=='no' %}
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header" style="width:40%;">Text message</th>
+                  <td class="govuk-table__cell" style="width:45%;">
+                    No
+                  </td>
+                  <td class="govuk-table__cell changeDetails"><a href="payment-contact-you-edit">Change</a></td>
+
+                </tr>
+
+                {% else %}
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header" style="width:40%;">Text message</th>
+                  <td class="govuk-table__cell " style="width:45%;">
+                    Yes <br> {{data['contactByMobile']}}
+                  </td>
+                  <td class="govuk-table__cell changeDetails"><a href="payment-contact-you-edit">Change</a></td>
+
+                </tr>
+
+
+                {% endif %}
+
+              </tbody>
+            </table>
+
+
+
+
+
+
+
+
+
+
+
+
+                  <div class="govuk-inset-text">
+                    <p>Your bank may charge you interest if you pay by credit card.
+                    </p>
+                  </div>
+
+
+                  <button class="govuk-button" data-module="govuk-button">
+                    Continue to pay
+                  </button>
+
+
+
+
+
+                </form>
+
+
+
+
+
+
+
+              </div>
+            </div>
+
+            {% endblock %}
