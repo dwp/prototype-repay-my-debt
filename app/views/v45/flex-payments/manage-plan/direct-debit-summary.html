@@ -2,7 +2,7 @@
 {% extends "layout-3.html" %}
 
 {% block pageTitle %}
-Check details before changing your payment plan
+Payment plan summary
 {% endblock %}
 
 
@@ -44,7 +44,6 @@ Check details before changing your payment plan
 
 
 
-    {% set paymentOptions = ddFixedChoice %}
 
 
 
@@ -90,7 +89,6 @@ Check details before changing your payment plan
 
             <h2 class="govuk-heading-m govuk-!-padding-top-7 ">Payment details</h2>
 
-            {% if data['paymentOptions']=='ddFixedChoice'%}
 
 
 
@@ -223,13 +221,13 @@ Check details before changing your payment plan
               </tbody>
 
             </table>
+            
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 
 
 
 
-            {% endif %}
 
 
 
