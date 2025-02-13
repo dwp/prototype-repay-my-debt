@@ -61,23 +61,20 @@ Your payment plan is set up
       <tbody class="govuk-table__body">
 
 
-        <tr class="govuk-table__row" >
-          <th scope="row" class="govuk-table__header" style="width:40%;">Payment date</th>
-          <td class="govuk-table__cell" colspan="2" style="width:45%;">
-            <script>
-              var CurrentDate = new Date();
-              console.log("Current date:", CurrentDate);
-              CurrentDate.setMonth(CurrentDate.getMonth());
-              document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
-            </script>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Payment method</th>
+          <td class="govuk-table__cell">
+
+            Card payment
+
           </td>
+
 
         </tr>
 
 
-
                 <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Additional payment amount</th>
+                  <th scope="row" class="govuk-table__header">Payment amount</th>
                   <td class="govuk-table__cell">
 
                     {{ data['additional-amount'] | currency     }}
@@ -90,16 +87,7 @@ Your payment plan is set up
 
 
 
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Payment method</th>
-          <td class="govuk-table__cell">
 
-            Card payment
-
-          </td>
-
-
-        </tr>
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Payment to</th>
@@ -111,7 +99,19 @@ Your payment plan is set up
 
         </tr>
 
+        <tr class="govuk-table__row" >
+          <th scope="row" class="govuk-table__header" style="width:40%;">Payment date</th>
+          <td class="govuk-table__cell" colspan="2" style="width:45%;">
+            <!-- <script>
+              var CurrentDate = new Date();
+              console.log("Current date:", CurrentDate);
+              CurrentDate.setMonth(CurrentDate.getMonth());
+              document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
+            </script> -->
+            30 January 2025
+          </td>
 
+        </tr>
 
 
       </tbody>
