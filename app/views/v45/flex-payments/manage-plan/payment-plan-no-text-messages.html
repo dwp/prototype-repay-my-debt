@@ -156,15 +156,26 @@ Manage payment plan
       <tbody class="govuk-table__body">
 
 
-
-
+        {% if data['reminder-notification-payment-setup-done-yes-no']=='no' %}
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header" style="width:40%;">Text message</th>
-          <td class="govuk-table__cell " style="width:45%;">
+          <th scope="row" class="govuk-table__header" style="width:50%;">Text message</th>
+          <td class="govuk-table__cell"  >
             No
           </td>
 
         </tr>
+
+        {% else %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:50%;">Text message</th>
+          <td class="govuk-table__cell "  >
+        Yes <br> {{data['contactByMobile']}}
+          </td>
+
+        </tr>
+
+
+        {% endif %}
 
 
 
@@ -172,7 +183,7 @@ Manage payment plan
       </tbody>
     </table>
 
-    <p>You can choose to receive text messages if there are any problems with your payments.
+    <p>You can choose to sign up for payment reminders by text message.
    </p>
 
    <a href="change-payment-contact-info"><button type="submit" class="govuk-button" data-module="govuk-button">
