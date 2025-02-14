@@ -251,7 +251,7 @@ Your payment plan is set up
 
         </tr> -->
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Total amount left to pay</th>
+          <th scope="row" class="govuk-table__header"  style="width:50%;">Total amount left to pay</th>
           <td class="govuk-table__cell" colspan="2">£3,098.64
           </td>
 
@@ -259,7 +259,7 @@ Your payment plan is set up
         </tr>
 
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Payment type</th>
+          <th scope="row" class="govuk-table__header" style="width:50%;">Payment type</th>
           <td class="govuk-table__cell" colspan="2">Monthly Direct Debit
           </td>
 
@@ -277,8 +277,8 @@ Your payment plan is set up
 
           <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Direct Debit amount	</th>
-          <td class="govuk-table__cell">
+          <th scope="row" class="govuk-table__header" style="width:50%;">Direct Debit amount	</th>
+          <td class="govuk-table__cell" colspan="2">
 
 
 
@@ -311,7 +311,6 @@ Your payment plan is set up
 
             {% else %}
 
-            <p class="mb0">
 
               {% if data['paymentChoices']=='lowPayments'%}
 
@@ -344,8 +343,6 @@ Your payment plan is set up
                 </p>
                 {% endif %}
 
-
-
                 {% endif %}
 
 
@@ -365,7 +362,7 @@ Your payment plan is set up
 
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Direct Debit day </th>
+          <th scope="row" class="govuk-table__header" style="width:50%;">Direct Debit day </th>
           <td class="govuk-table__cell dtList" >
 
 {{ data['paymentDay'] }}
@@ -483,7 +480,7 @@ Your payment plan is set up
 
 
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Payment method</th>
+          <th scope="row" class="govuk-table__header" style="width:50%;">Payment method</th>
           <td class="govuk-table__cell">
 
             Card payment
@@ -517,8 +514,8 @@ Your payment plan is set up
 
 
         {% if data['reminder-notification-payment-setup-done-yes-no']=='no' %}
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"  >Text message</th>
+        <tr class="govuk-table__row" >
+          <th scope="row" class="govuk-table__header" style="width:50%;" >Text message</th>
           <td class="govuk-table__cell" ">
             No
           </td>
@@ -527,7 +524,7 @@ Your payment plan is set up
 
         {% else %}
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"  >Text message</th>
+          <th scope="row" class="govuk-table__header" style="width:50%;" >Text message</th>
           <td class="govuk-table__cell "  >
             Yes <br>
             {{data['contactByMobile']}}
@@ -573,7 +570,7 @@ Your payment plan is set up
         <li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
       </ul>
 
-      <p><a href="#" target="_blank">Find out about call charges</a></p>
+      <p><a href="#" target="_blank">Find out about call charges (opens in new tab)</a></p>
 
     </div>
 

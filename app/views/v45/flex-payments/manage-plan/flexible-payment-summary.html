@@ -68,7 +68,7 @@ Check details before changing your payment plan
           <tbody class="govuk-table__body">
 
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Payment type</th>
+              <th scope="row" class="govuk-table__header" style="width:50%;">Payment type</th>
               <td class="govuk-table__cell">Monthly flexible payments
               </td>
               <td class="govuk-table__cell changeDetails"></td>
@@ -76,7 +76,7 @@ Check details before changing your payment plan
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Total amount owed</th>
-              <td class="govuk-table__cell" colspan="2">&pound;3,320.64
+              <td class="govuk-table__cell" colspan="2">&pound;3,098.64
               </td>
 
 
@@ -91,13 +91,13 @@ Check details before changing your payment plan
             <tbody class="govuk-table__body">
 
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Monthly target</th>
-              <td class="govuk-table__cell" style="width:47%;">
+              <th scope="row" class="govuk-table__header" style="width:50%;">Monthly target</th>
+              <td class="govuk-table__cell"  >
 
                 {{data['custom-amount'] | currency}}
               </td>
 
-              <td class="govuk-table__cell"><a href="edit-flex-payment-amount">Change</a></td>
+              <td class="govuk-table__cell" style="text-align:right;"><a href="edit-flex-payment-amount">Change</a></td>
 
 
             </tr>
@@ -123,7 +123,7 @@ Check details before changing your payment plan
 
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Expected number of payments</th>
+              <th scope="row" class="govuk-table__header" style="width:50%;">Expected number of payments</th>
               <td class="govuk-table__cell">
 
                 <script>
@@ -150,20 +150,20 @@ Check details before changing your payment plan
         <table class="govuk-table mb40">
 
 
-          <h2 class="govuk-heading-m govuk-!-padding-top-7">Payment dates</h2>
+          <h2 class="govuk-heading-m govuk-!-padding-top-7" style="width:50%;">Payment dates</h2>
 
             <tbody class="govuk-table__body">
 
 
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Expected final payment</th>
+              <th scope="row" class="govuk-table__header" style="width:50%;">Expected final payment</th>
               <td class="govuk-table__cell" colspan="3">
 
 
 
                 <script>
-                  var  num1 = 3098.64 - {{ data['payment-amount'] }};
-                  var num2 = {{data['custom-amount']}};
+                  var  num1 = 3098.64;
+                  var num2 = {{ data['custom-amount'] }};
                   var x = Math.floor(num1 / num2) + 1 ; //or whatever offset
                   var CurrentDate = new Date();
                   console.log("Current date:", CurrentDate);
@@ -196,30 +196,27 @@ Check details before changing your payment plan
 
             {% if data['reminder-notification-payment-setup-done-yes-no']=='no' %}
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header" style="width:40%;">Text message</th>
-              <td class="govuk-table__cell" style="width:45%;">
+              <th scope="row" class="govuk-table__header" style="width:50%;">Text message</th>
+              <td class="govuk-table__cell"  >
                 No
               </td>
-              <td class="govuk-table__cell changeDetails"><a href="payment-reminders">Change</a></td>
+              <td class="govuk-table__cell changeDetails" style="text-align:right;"><a href="payment-reminders">Change</a></td>
 
             </tr>
 
             {% else %}
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header" style="width:40%;">Text message</th>
-              <td class="govuk-table__cell " style="width:45%;">
-Yes
+              <th scope="row" class="govuk-table__header" style="width:50%;">Text message</th>
+              <td class="govuk-table__cell "   >
+Yes<br>
+{{data['contactByMobile']}}
               </td>
-              <td class="govuk-table__cell changeDetails"><a href="payment-reminders">Change</a></td>
+              <td class="govuk-table__cell changeDetails" style="text-align:right;"><a href="payment-reminders">Change</a></td>
 
             </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header" style="width:40%;">Mobile number</th>
-              <td class="govuk-table__cell " style="width:45%;" colspan="2" >
-                {{data['contactByMobile']}}
-              </td>
 
-            </tr>
+
+
 
             {% endif %}
 
