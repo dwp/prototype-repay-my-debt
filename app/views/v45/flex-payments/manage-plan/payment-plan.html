@@ -67,18 +67,21 @@ What this change will mean for you
          Plan type
        </dt>
        <dd class="govuk-summary-list__value">
-          Monthly flexible payments
+         Monthly flexible payments
        </dd>
      </div>
      <div class="govuk-summary-list__row">
        <dt class="govuk-summary-list__key">
-         Payment amount
+         Monthly target
        </dt>
        <dd class="govuk-summary-list__value">
          £20.00
+         <br>
+          <a href="how-much-do-you-want-to-pay">Change</a>
        </dd>
+
      </div>
-     <div class="govuk-summary-list__row">
+     <!-- <div class="govuk-summary-list__row">
        <dt class="govuk-summary-list__key">
          Final payment amount
        </dt>
@@ -96,7 +99,7 @@ What this change will mean for you
            document.write(Math.round(finalResult * 100) / 100);
          </script>
        </dd>
-     </div>
+     </div> -->
      <div class="govuk-summary-list__row">
        <dt class="govuk-summary-list__key">
          Expected number of payments
@@ -111,19 +114,20 @@ What this change will mean for you
 
            var  result = Math.floor(num1 / num2);
            document.write(result);
-         </script>
+         </script> <br>
+          <p>(if monthly target is met each month)</p>
        </dd>
 
 
      </div>
-     <div class="govuk-summary-list__row">
+     <!-- <div class="govuk-summary-list__row">
        <dt class="govuk-summary-list__key">
          Direct Debit day
        </dt>
        <dd class="govuk-summary-list__value">
          21
        </dd>
-     </div>
+     </div> -->
 
      <div class="govuk-summary-list__row">
        <dt class="govuk-summary-list__key">
@@ -139,14 +143,15 @@ What this change will mean for you
            CurrentDate.setMonth(CurrentDate.getMonth() + x);
            document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
          </script>
+
        </dd>
      </div>
 
 
-   </dl>
-   <a href="how-much-do-you-want-to-pay"><button type="submit" class="govuk-button" data-module="govuk-button">
+    </dl>
+   <!-- <a href="how-much-do-you-want-to-pay"><button type="submit" class="govuk-button" data-module="govuk-button">
 Manage payment plan
-</button></a>
+</button></a> -->
 
   </div>
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
