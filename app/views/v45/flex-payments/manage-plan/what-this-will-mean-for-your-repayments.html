@@ -62,7 +62,7 @@ What this means for your payment plan
 
 
       <li>
-        <h3>New monthly flexible payment:</h3>
+        <h3>New monthly target:</h3>
         <span id="new-debts-amount"><b>{{ data['custom-amount']|currency }}</b></span>
         <p><a class="govuk-link" href="edit-flex-payment-amount">Change</a></p>
       </li>
@@ -97,7 +97,7 @@ What this means for your payment plan
 
 
   <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Direct Debit amount
+    <th scope="row" class="govuk-table__header">Monthly target
 
     </th>
     <td class="govuk-table__cell govuk-table__cell">&pound;20.00</td>
@@ -106,7 +106,7 @@ What this means for your payment plan
   </tr>
 
 
-  <tr class="govuk-table__row">
+  <!-- <tr class="govuk-table__row">
     <th scope="row" class="govuk-table__header">Final payment amount
     </th>
     <td class="govuk-table__cell govuk-table__cell">£<script>
@@ -131,10 +131,10 @@ What this means for your payment plan
       var finalResult = num1 - num2 * result;
       document.write(Math.round(finalResult * 100) / 100);
     </script></td>
-  </tr>
+  </tr> -->
 
 <tr class="govuk-table__row">
-  <th scope="row" class="govuk-table__header">Expected number of payments
+  <th scope="row" class="govuk-table__header">Expected number of payments <br>(if monthly target is met each month)
   </th>
   <td class="govuk-table__cell govuk-table__cell"><script>
     function divide(num) { return num.toFixed(2); }

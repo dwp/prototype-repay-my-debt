@@ -102,7 +102,7 @@ Check details before changing your payment plan
 
             </tr>
 
-            <tr class="govuk-table__row">
+            <!-- <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Final payment amount</th>
               <td class="govuk-table__cell">
 
@@ -121,7 +121,7 @@ Check details before changing your payment plan
               <td class="govuk-table__cell "> </td>
 
 
-            </tr>
+            </tr> -->
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header" style="width:50%;">Expected number of payments</th>
               <td class="govuk-table__cell">
@@ -135,7 +135,8 @@ Check details before changing your payment plan
 
                   var  result = Math.floor(num1 / num2);
                   document.write(result);
-                </script>
+                </script>               <p>(if monthly target is met each month)</p>
+
               </td>
 
               <td class="govuk-table__cell "> </td>
@@ -143,20 +144,41 @@ Check details before changing your payment plan
 
             </tr>
 
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header" style="width:50%;">Expected final payment </th>
+              <td class="govuk-table__cell" colspan="3">
 
+
+
+                <script>
+                  var  num1 = 3098.64;
+                  var num2 = {{ data['custom-amount'] }};
+                  var x = Math.floor(num1 / num2) + 1 ; //or whatever offset
+                  var CurrentDate = new Date();
+                  console.log("Current date:", CurrentDate);
+                  CurrentDate.setMonth(CurrentDate.getMonth() + x + 1);
+                  document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                </script>
+
+
+
+                <br>
+              </td>
+
+            </tr>
 
           </tbody>
         </table>
         <table class="govuk-table mb40">
 
 
-          <h2 class="govuk-heading-m govuk-!-padding-top-7" style="width:50%;">Payment dates</h2>
+          <!-- <h2 class="govuk-heading-m govuk-!-padding-top-7" style="width:50%;">Payment dates</h2>
 
             <tbody class="govuk-table__body">
 
 
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header" style="width:50%;">Expected final payment</th>
+              <th scope="row" class="govuk-table__header" style="width:50%;">Expected final payment </th>
               <td class="govuk-table__cell" colspan="3">
 
 
@@ -186,11 +208,11 @@ Check details before changing your payment plan
 
 
 
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden"> -->
 
             <table class="govuk-table ">
-              <caption class="visually-hidden">Text message preferences</caption>
-              <h3 class="govuk-heading-m">Text message preferences </h3>
+              <caption class="visually-hidden">Contact preferences</caption>
+              <h3 class="govuk-heading-m">Contact preferences </h3>
               <tbody class="govuk-table__body">
 
 
