@@ -63,7 +63,8 @@ module.exports = {
   'dd-reminder-notification': 'no',
   'dd-directdebit-day': '02',
   'dd-payment-amount':'20.00',
-  'contactByMobile': '********302'
+//  'reminder-notification-payment-setup-done-yes-no':'no',
+  'contactByMobile-masked': '********302'
 
 
 
