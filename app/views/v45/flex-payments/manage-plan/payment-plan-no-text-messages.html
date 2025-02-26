@@ -161,7 +161,7 @@ Change monthly target
       <tbody class="govuk-table__body">
 
 
-        {% if data['reminder-notification-payment-setup-done-yes-no']=='no' %}
+
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header" style="width:50%;">Text message</th>
           <td class="govuk-table__cell"  >
@@ -170,18 +170,7 @@ Change monthly target
 
         </tr>
 
-        {% else %}
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header" style="width:50%;">Text message</th>
-          <td class="govuk-table__cell "  >
-        Yes <br> {{data['contactByMobile']}}
-          </td>
-
-        </tr>
-
-
-        {% endif %}
-
+ 
 
 
 
