@@ -1453,3 +1453,8 @@ color:#1d70b8;
     top: 0.1875em;
     height: 1em;
 }
+
+
+.govuk-breadcrumbs__list-item::before {
+    border-color: #ffffff;
+}

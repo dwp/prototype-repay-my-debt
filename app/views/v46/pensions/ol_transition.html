@@ -1,0 +1,75 @@
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+Sign in with GOV.UK One Login
+{% endblock %}
+
+{% block beforeContent %}
+
+<main class="govuk-width-container">
+	<nav class="dwp-language-toggle" aria-label="Language toggle">
+		<ul class="dwp-language-toggle__list">
+			<li class="dwp-language-toggle__list-item" aria-current="true">
+				English
+			</li>
+			<li class="dwp-language-toggle__list-item">
+				<a href="#"
+				hreflang="cy"
+				lang="cy"
+				rel="alternate"
+				class="govuk-link"
+				aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+			</li>
+		</ul>
+	</nav>
+</main>
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-three-quarters">
+
+		<form class="form" action="ol_startpage" method="post">
+
+						<h1 class="govuk-heading-xl">
+							Sign in with GOV.UK One Login
+						</h1>
+<br>
+<p>You need to sign in with your GOV.UK One Login. If you don't have a GOV.UK One Login, you'll need to create one.</p>
+
+<p>To help keep your information safe, you may be asked to prove your identity.</p>
+
+<p>You'll need:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+
+<li>a valid photo ID, such as your passport or driving licence</li>
+<li>your current home address (you will need to provide your previous address if you have moved within the last 3 months)</li>
+</ul>
+
+<h2 class="govuk-heading-m mt30">If you already have a GOV.UK One Login</h2>
+
+<p>Sign into GOV.UK One Login with the details you've previously set up.</p>
+
+
+
+
+			<button class="govuk-button" data-module="govuk-button">
+				Continue
+			</button>
+	</form>
+
+
+
+
+
+	</div>
+</div>
+
+{% endblock %}

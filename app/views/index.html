@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/for-test-main.html" %}
 
 {% block pageTitle %}
 Repay and manage benefit money you owe
@@ -6,46 +6,30 @@ Repay and manage benefit money you owe
 
 
 {% block content %}
-
-    <div class="scenario-panel mt40" >
-      <h2 class="govuk-heading-m">Research (February 2025)
-        <strong class="govuk-tag govuk-tag--red" style="float:right;">
-          Not done
-        </strong>
-
-      </h2>
+<div class="govuk-grid-row govuk-!-padding-4">
+<p>Research month: <strong>March 2025</strong>
+<span style="float:right;">Research status:
+  <strong class="govuk-tag govuk-tag--orange" >
+  In progress
+</strong></span></p>
 
 
-      <div class="scenario-inner-panel">
-
-
-
-        <a href="/v45/flex-payments/ol_start.html"><button type="submit" class="govuk-button" data-module="govuk-button">
+        <a href="/v46/pensions/ol_start.html"><button type="submit" class="govuk-button" data-module="govuk-button">
       Start Journey
     </button></a>
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 
     <p class="govuk-heading-s">Quick access</p>
 
         <ol class="govuk-list govuk-list--bullet">
-          <li><a href=" /v45/flex-payments/account-home">Account home  </a></li>
-          <li><a href="/v45/flex-payments/setup-plan/choose-payment-plan">Switch to Direct Debit payment plan  </a></li>
-          <li><a href="/v45/flex-payments//manage-plan/payment-plan-no-text-messages">View or manage your plan</a></li>
-          <li><a href="/v45/flex-payments/make-a-payment">Additional payment</a></li>
+          <li><a href=" /v46/pensions/account-home">Account home  </a></li>
 
 
         </ol>
 
 
-      </div>
-    </div>
 
 
 
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-    <p class="govuk-heading-s"><a href="archives">View archived scenarios</a></p>
-  </div>
 </div>
 
 {% endblock %}
