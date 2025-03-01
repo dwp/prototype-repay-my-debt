@@ -1146,3 +1146,21 @@ router.post('/v45/setup-plan/direct-debit-account-owner', function (req, res) {
   }
 
 })
+
+
+//Pensions ROUTES
+router.post('/v46/pensions/sign-in', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var signin = req.session.data['signin']
+
+  // Check whether the variable matches a condition
+  if (signin == 'onelogin'){
+    // Send user to next page
+    res.redirect('/v46/pensions/ol_transition')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v46/pensions/sign-in-security-code')
+  }
+
+})
