@@ -1,0 +1,74 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  Remove income
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">Income</span>
+
+        Are you sure you want to remove monthly earnings after tax?
+      </h1>
+<br>
+
+<form class="form" action="income-list" >
+
+  <div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+
+
+<div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="changedName" name="removeEarningsAfterTax" type="radio" value="yes">
+  <label class="govuk-label govuk-radios__label" for="changedName">
+    Yes
+  </label>
+</div>
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="changedName-2" name="removeEarningsAfterTax" type="radio" value="no">
+  <label class="govuk-label govuk-radios__label" for="changedName-2">
+    No
+  </label>
+</div>
+</div>
+</fieldset>
+</div>
+
+{% if data['removeEarningsAfterTax'] == 'yes' %}
+
+
+  {{ govukButton({
+    text: "Continue",
+    href: "income-list?income-monthly=0.00"
+  }) }}
+
+{% else %}
+{{ govukButton({
+  text: "Continue"
+}) }}
+{% endif %}
+
+</form>
+
+    </div>
+  </div>
+
+
+
+
+
+{% endblock %}

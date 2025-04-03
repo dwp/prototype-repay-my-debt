@@ -1,0 +1,72 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  Your future repayments
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+			   <h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+			   <p>What you owe:
+					   <span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+		<div class="govuk-grid-column-three-quarters">
+
+
+
+
+      <span class="govuk-caption-xl" wiid="N131">Manage your repayments</span>
+      <h1 class="govuk-heading-xl" style="margin-bottom:50px;">How much do you feel you can repay each month?</h1>
+
+
+
+        <form class="form" action="/how-much-you-can-afford-choices-negative" method="post" >
+          <p>Based on what you have now told us, you do not have any money left over each month. However, if you feel you can still pay something, you can enter an affordable amount.</p>
+
+
+<!-- <p class="govuk-heading-s">Enter amount that you feel like paying</p> -->
+<div class="govuk-input__wrapper">
+  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+  <input class="govuk-input govuk-input--width-10" id="newDeductedAmount" name="final-affordable-amount-v2" type="number" step="0.01" spellcheck="false" value="{{data['final-affordable-amount-v2']}}">
+</div>
+
+  <div class="govuk-inset-text">
+    <p>If you feel you are not able to pay anything at all, you need to contact us for help and discuss your options.</p>
+    <h2 class="govuk-heading-m ">Debt Management</h2>
+    <ul class="govuk-list">
+
+
+    <li>Telephone: 0800 916 0647</li>
+    <li>Textphone: 0800 916 0651</li>
+    <li>Monday to Friday, 8am to 7:30pm (except public holidays)</li>
+    </ul>
+    <p class="govuk-body">
+    <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+    </p>  </div>
+
+
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+Continue
+</button>
+</form>
+	</div>
+</div>
+
+{% endblock %}

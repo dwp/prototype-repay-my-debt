@@ -1,0 +1,45 @@
+
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+What you need to know
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to account home",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+									<h1 class="govuk-heading-xl govuk-!-margin-bottom-7">What you need to know</h1>
+
+
+<p>This service is for getting help to understand how much you can afford if you are struggling with your repayments.</p>
+
+<p>You can only manage repayments to DWP using this service.</p>
+
+<p>If you have any other deductions from your Universal Credit payment, they cannot be managed on this service. For example, any repayments for an advance taken out during your current claim.  </p>
+
+<button class="govuk-button" data-module="govuk-button">
+				Continue
+			</button>
+
+
+    </div>
+</div>
+
+{% endblock %}

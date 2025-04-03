@@ -1,0 +1,198 @@
+
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+  Payment history
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+   <div class="govuk-grid-column-three-quarters">
+
+
+
+
+	   <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Payment history</h1>
+
+
+     <div class="flexible-banner-float-none">
+       <ul class="govuk-list">
+         <li>
+           <h3>Payments taken</h3>
+           <span id="new-debts-amount"><b>35</b></span>
+         </li>
+         <li>
+           <h3>Total amount repaid</h3>
+           <span class="total-amount" id="new-total-owed"><b>£354.00</b></span>
+         </li>
+         <li>
+           <h3>Total amount left to pay</h3>
+           <span class="total-amount" id="new-total-owed"><b>£750.00</b></span>
+         </li>
+       </ul>
+     </div>
+
+
+<!--
+
+     <div id="green-banner" class="alert-green">
+       <h2 class="govuk-heading-m">You have 2 payments pending</h2>
+             <p> Payments can take 2 to 5 working days to clear and update your balance.</p>
+             <table class="govuk-table summary-pay">
+
+
+             <thead class="govuk-table__head">
+             <tr class="govuk-table__row">
+
+              <th class="govuk-table__header" scope="col">Payment date</th>
+
+              <th class="govuk-table__header" scope="col">Payment type</th>
+
+              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+
+
+             </tr>
+             </thead>
+
+             <tbody class="govuk-table__body">
+
+
+
+                <tr class="govuk-table__row">
+                   <td class="govuk-table__cell">01 December 2023</td>
+                   <td class="govuk-table__cell">Card payment</td>
+
+                   <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10.00</td>
+                 </tr>
+                 <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">03 December 2023</td>
+                    <td class="govuk-table__cell">Card payment</td>
+
+                    <td class="govuk-table__cell govuk-table__cell--numeric">&pound;5.00</td>
+                  </tr>
+
+
+
+
+
+
+             </tbody>
+             </table>
+           </div> -->
+
+
+
+<h2 class="govuk-heading-m mt40">All payments</h2>
+
+
+
+<table class="govuk-table summary-pay">
+
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+
+ <th class="govuk-table__header" scope="col">Payment date</th>
+
+ <th class="govuk-table__header" scope="col">Payment type</th>
+
+ <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+
+ <!--  <th class="govuk-table__header govuk-table__header--numeric" scope="col">Balance</th> -->
+
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+
+                  <tr class="govuk-table__row">
+                     <td class="govuk-table__cell">10 October 2021</td>
+                     <td class="govuk-table__cell">Deduction from benefit</td>
+                     <td class="govuk-table__cell govuk-table__cell--numeric">&pound;5.00</td>
+                   </tr>
+                   <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">10 September 2021</td>
+                      <td class="govuk-table__cell">Deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">&pound;5.00</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                       <td class="govuk-table__cell">10 August 2021</td>
+                       <td class="govuk-table__cell">Deduction from benefit</td>
+                       <td class="govuk-table__cell govuk-table__cell--numeric">&pound;5.00</td>
+                     </tr>
+                     <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">10 July 2021</td>
+                        <td class="govuk-table__cell">Payment</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">&pound;12.00</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                         <td class="govuk-table__cell">10 June 2021</td>
+                         <td class="govuk-table__cell">Payment</td>
+                         <td class="govuk-table__cell govuk-table__cell--numeric">&pound;19.00</td>
+                       </tr>
+
+
+
+
+
+</tbody>
+</table>
+
+
+
+
+          <nav class="govuk-pagination" role="navigation" aria-label="Pagination">
+            <div class="govuk-pagination__prev">
+    <a class="govuk-link govuk-pagination__link" href="payment-history-p3" rel="prev">
+      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+      </svg>
+      <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span></a>
+  </div>
+            <ul class="govuk-pagination__list">
+              <li class="govuk-pagination__item ">
+                <a class="govuk-link govuk-pagination__link" href="payment-history" aria-label="Page 1" aria-current="page">
+                  1
+                </a>
+              </li>
+              <li class="govuk-pagination__item ">
+                <a class="govuk-link govuk-pagination__link" href="payment-history-p2" aria-label="Page 2">
+                  2
+                </a>
+              </li>
+              <li class="govuk-pagination__item ">
+                <a class="govuk-link govuk-pagination__link" href="payment-history-p3" aria-label="Page 3">
+                  3
+                </a>
+              </li>
+              <li class="govuk-pagination__item govuk-pagination__item--current">
+                <a class="govuk-link govuk-pagination__link" href="payment-history-p4" aria-label="Page 4">
+                  4
+                </a>
+              </li>
+
+            </ul>
+
+          </nav>
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  Contact us to discuss your options
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+   <!-- <div class="clear-bar">
+			   <h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+			   <p>What you owe:
+					   <span>&pound;120.00</span></p>
+
+	   </div> -->
+
+
+	   <div class="govuk-grid-row">
+
+		<div class="govuk-grid-column-three-quarters">
+
+
+
+
+
+
+			  <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          <span class="govuk-caption-xl">Manage your repayments</span>
+          Contact us to discuss your options
+
+			  </h1>
+        <p>You need to contact us for help and discuss the options available to you.
+
+</p>
+
+
+<h2 class="govuk-heading-m ">Debt Management</h2>
+<ul class="govuk-list">
+
+
+<li>Telephone: 0800 916 0647</li>
+<li>Textphone: 0800 916 0651</li>
+<li>Monday to Friday, 8am to 7:30pm (except public holidays)</li>
+</ul>
+<p class="govuk-body">
+<a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+</p>
+
+      <!-- <p><a onclick="history.back()" class="govuk-button mb0">Back </a></p> -->
+
+	</div>
+</div>
+
+{% endblock %}

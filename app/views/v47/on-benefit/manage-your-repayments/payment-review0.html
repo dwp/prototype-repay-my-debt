@@ -1,0 +1,85 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Payment review
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+      <!-- <span class="govuk-caption-xl" wiid="N131">Ernie Smith</span> -->
+      <h1 class="govuk-heading-xl" style="margin-bottom:50px;">Manage your repayments</h1>
+
+
+
+
+
+    <p> We can help you understand how much you can afford to repay each month. We will ask you some questions to learn more about your financial situation.</p>
+    <p></p>
+
+    <p class="govuk-heading-m">What you need to know about this service</p>
+    <!--
+
+    <strong><p>You can only manage repayments to DWP using this service.</p></strong>
+
+
+    <div class="govuk-inset-text">
+    If you have any other deductions from your Universal Credit payment, they cannot be managed on this service. For example, any repayments for an advance taken out during your current claim.
+  </div>
+
+  <strong><p>For more information, refer to the 'Debts and loan repayments' section of your Universal Credit statement.</p></strong>-->
+
+
+  <p>You can only manage repayments to DWP - see the 'Debts and loan repayments' section of your Universal Credit statement.</p>
+  <p>You cannot manage other deductions from your Universal Credit payment. This includes repayments for advances taken out during your current claim.</p>
+
+  <!-- <p class="govuk-body"></p>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>You can only manage repayments to DWP - see the 'Debts and loan repayments' section of your Universal Credit statement.</li>
+  <li>You cannot manage other deductions from your Universal Credit payment. This includes repayments for an advance taken out during your current claim.</li>
+</ul> -->
+
+
+<!-- <p>If you have any other deductions from your Universal Credit payment, they cannot be managed on this service. For example, any repayments for an advance taken out during your current claim.
+
+</p> -->
+
+<!-- <ol class="govuk-list govuk-list--bullet">
+<li>income details (if any)</li>
+<li>income details (if any)</li>
+
+
+
+
+
+</ol> -->
+
+
+<p><a href="financial-situation" class="govuk-button">Continue</a></p>
+
+</div>
+</div>
+
+
+
+
+
+
+{% endblock %}
