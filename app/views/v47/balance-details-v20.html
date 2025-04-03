@@ -1,0 +1,240 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Your left over income
+
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
+      {% set totalspending = data['spending-debt']|float + data['spending-phone']|float + data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
+      {% set balance = totalIncome-totalspending %}
+
+      {% set enteredAmount = data['new-affordable-amount-v2'] %}
+      {% set differenceBetween = 65-enteredAmount %}
+      {% set newAmount = enteredAmount+differenceBetween %}
+
+      {% set balancewithEnteredAmount = balance + enteredAmount %}
+
+      {% set nagativebalance = totalIncome-totalspending %}
+
+
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">Manage your repayments</span>
+        Summary
+</h1>
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+ <p class="govuk-heading-m">Your income  <br><span class="govuk-body"><a class="govuk-link" href="income-changed">Change </a></span>
+</p>
+
+       <dl class="govuk-summary-list">
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__value">
+             Your total income
+           </dt>
+           <dd class="govuk-summary-list__value" style="text-align:right;">
+             {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
+             {{ totalIncome|currency }}
+                    </dd>
+
+         </div>
+
+
+
+       </dl>
+       <p class="govuk-heading-m">Your spending<br><span class="govuk-body"><a class="govuk-link" href="spending-changed">Change </a></span>
+      </p>
+
+       <dl class="govuk-summary-list">
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__value" >
+               Your total spending
+           </dt>
+           <dd class="govuk-summary-list__value" style="text-align:right;" >
+
+
+             {% set totalspending = data['spending-phone']|float + data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
+             {{ totalspending|currency}}
+
+
+            </dd>
+
+         </div>
+
+
+       </dl>
+       {% set balance = totalIncome-totalspending %}
+
+
+
+       {% if balance > 0 %}
+       <!-- <p class="govuk-!-font-size-24" style="padding:0px; margin:0px;">        Based on your current repayment rate of £65.00 you would have {{ balance|currency}}  left over.
+      </p> -->
+
+      <!-- <p>Based on what you told us:</p>
+      <ul wiid="N1248" class="govuk-list govuk-list--bullet">
+      <li wiid="N1261">at a repayment rate of £65.00, you would  {{ balance |currency }}  left over</li>
+      <li wiid="N1261">If you changed your repayment rate to {{data['new-affordable-amount-v2']|currency}} you would have {{ 95 |currency}} left over.
+
+      </ul> -->
+       {% else %}
+
+       <!-- <p class="govuk-!-font-size-24" style="padding:0px; margin:0px;">       Based on your current repayment rate of £65.00 you spending is {{ balance|currency}} more than your income.
+       </p> -->
+       <!-- <p>Based on what you told us:</p>
+       <ul wiid="N1248" class="govuk-list govuk-list--bullet">
+         <li wiid="N1261">at a repayment rate of £65.00, you would not have any money left over. </li>
+       <li wiid="N1261">If you changed your repayment rate to {{data['new-affordable-amount-v2']|currency}} you would have {{ -5 |currency}} (minus) left over.
+
+       </ul> -->
+
+<!-- <p><b>Option 2</b></p><br>
+       <p>Based on what you told us:</p>
+       <ul wiid="N1248" class="govuk-list govuk-list--bullet">
+       <li wiid="N1261">at a repayment rate of £65.00, you would not have any money left over </li>
+       <li wiid="N1261">If you changed your repayment rate to {{data['new-affordable-amount-v2']|currency}} you would have (minus) {{ nagativebalance|currency}}   left over
+
+
+        </li>
+
+       </ul> -->
+       {% endif %}
+
+
+
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+
+      <!-- <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:50% !important;">
+            Total income
+          </dt>
+          <dd class="govuk-summary-list__value" style="width:30%; !important">
+            {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
+            {{ totalIncome|currency }}
+                   </dd>
+          <dd class="govuk-summary-list__actions" style="width:20%; !important">
+            <a class="govuk-link" href="income-changed">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:50%; !important">
+              Total spending
+          </dt>
+          <dd class="govuk-summary-list__value" style="width:30%; !important">
+
+
+            {% set totalspending = data['spending-phone']|float + data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
+            {{ totalspending|currency}}
+
+
+
+           </dd>
+          <dd class="govuk-summary-list__actions" style="width:20%; !important">
+            <a class="govuk-link" href="spending-changed">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+
+
+      </dl> -->
+
+
+       <input type="hidden" id="left-over-income" name="left-over-income"  />
+
+<!-- <p >Amount left over
+<span class="govuk-heading-l"> {% set balance = totalIncome-totalspending %}
+{{ balance|currency}} (minus)
+
+
+
+</span>
+</p>-->
+<!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden"> -->
+
+<p class="govuk-heading-m">Left over income </p>
+<!--
+<p> </p>
+ <p >Including current monthly repayment of £65.00
+ <span class="govuk-heading-l">
+{{ balance|currency}} </span> -->
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__value" >
+      Total money left over
+    </dt>
+    <dd class="govuk-summary-list__value" style="text-align:right;">{% set balance = totalIncome-totalspending %}
+    {{ balance|currency}}
+
+             </dd>
+
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key"  >
+      Without current repayment amount of £65.00
+    </dt>
+    <dd class="govuk-summary-list__value" style="text-align:right;">
+      £65.00
+             </dd>
+
+
+  </div>
+  <br>
+
+</dl>
+<!-- <p >Not including your current monthly repayment
+<span class="govuk-heading-l"> {% set balance = balance+65 %}
+{{ balance|currency}} </span>
+<p>
+
+<br> -->
+{% if balance > 0 %}
+
+
+<form action="how-much-can-you-afford-to-repay.html">
+
+  <input type="hidden" id="left-out-balance" name="leftOutBalance-v2" value="{{ balance }}">
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+ Continue
+</button>
+</form>
+
+{% else %}
+ <form action="negative-income">
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+</form>
+
+
+{% endif %}
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

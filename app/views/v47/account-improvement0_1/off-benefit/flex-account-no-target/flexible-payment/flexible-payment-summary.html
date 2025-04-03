@@ -1,0 +1,112 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+  Payment plan summary
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back to account home",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">Payment plan</span> Summary
+      </h1>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+  <dl class="govuk-summary-list">
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Payment today
+          </dt>
+          <dd class="govuk-summary-list__value payment-today" id="amount">
+
+
+            <script type="text/javascript">
+
+
+                var z = {{ data['flexible-amount'] }};
+
+                document.getElementById("amount").innerHTML = "£"+ (z).toFixed(2);
+
+            </script>
+
+
+          </dd>
+
+            <dd class="govuk-summary-list__actions">
+
+                <a class="govuk-link change-payment" href="pay-flexible-amount">Change<span class="govuk-visually-hidden"> payment amount</span></a>
+
+            </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            Payment reminders
+          </dt>
+          <dd class="govuk-summary-list__value payment-reminder">
+            ********123
+          </dd>
+
+        </div>
+
+
+  </dl>
+
+
+
+
+
+
+
+      <h2 class="govuk-heading-m">Declaration</h2>
+
+      <p>By continuing, you confirm that you will:</p>
+
+      <ul class="govuk-list govuk-list--bullet mb30">
+        <li>pay the agreed monthly amount </li>
+        <li>let us know immediately if you’re struggling to keep up with payments</li>
+      </ul>
+
+      <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    If you do not keep up with your payments, we will ask your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.
+  </strong>
+</div>
+
+
+      <div class="govuk-inset-text">
+  Your bank may charge you interest if you pay by credit card.
+</div>
+
+
+      <form class="form" action="your-payment-was-successful" method="post" novalidate="">
+        <input type="hidden" name="_csrf" value="a3895b3d22230ee3b951d9c287480c0f5a8037e3777e4df6bb4ef02020dbe7239978acacb9ee1bca1698c6463097f0ff7d04702a0197d145d24dc0bafe162db0">
+
+
+
+
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue to pay
+</button>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1164,3 +1164,34 @@ router.post('/v46/pensions/sign-in', function (req, res) {
   }
 
 })
+
+//UC - April 2025 - improvments
+
+
+router.post('/how-much-you-can-afford-choices-negative', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var payableAmount = req.session.data['final-affordable-amount-v2']
+
+
+  if (payableAmount < 5){
+    res.redirect('/v47/on-benefit/manage-your-repayments/amount-too-low')
+  } else {
+    res.redirect('/v47/on-benefit/manage-your-repayments/what-this-will-mean-for-your-repayments-negative.html')
+  }
+
+})
+
+router.post('/how-much-you-can-afford-choices', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var payableAmount = req.session.data['final-affordable-amount-v2']
+
+
+  if (payableAmount < 5){
+    res.redirect('/v47/on-benefit/manage-your-repayments/amount-too-low')
+  } else {
+    res.redirect('/v47/on-benefit/manage-your-repayments/what-this-will-mean-for-your-repayments.html')
+  }
+
+})

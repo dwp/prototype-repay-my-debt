@@ -1,0 +1,82 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Do you want to continue using your security code to sign in?
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+	<div class="govuk-grid-column-three-quarters">
+
+
+
+
+		<form class="form"
+			action="account-home.html"
+			method="post">
+
+
+
+
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<span class="govuk-caption-xl">David Jones
+</span>
+					<h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+						Do you want to continue using your security code to sign in?
+
+					</h1>
+
+
+					<div class="govuk-radios">
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="codeContinue" name="keep-using-code" type="radio"
+								value="yes">
+							<label class="govuk-label--s govuk-radios__label govuk-body" for="codeContinue">
+								Yes, I want to continue using my security code
+							</label>
+							<span class="govuk-hint govuk-radios__hint">
+								It is important to make a note of this as you will need it each time you sign in.
+							</span>
+
+						</div>
+
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="regContinue" name="keep-using-code" type="radio"
+								value="no">
+							<label class="govuk-label--s govuk-radios__label govuk-body" for="regContinue">
+								No, I want to register an account to set an email address and password
+							</label>
+							<span class="govuk-hint govuk-radios__hint">
+								You will need to verify your identity.
+							</span>
+
+						</div>
+
+					</div>
+				</fieldset>
+
+
+
+				<a href="account-home" class="govuk-button">Continue</a>
+
+			</div>
+
+
+		</form>
+
+
+
+	</div>
+</div>
+
+{% endblock %}

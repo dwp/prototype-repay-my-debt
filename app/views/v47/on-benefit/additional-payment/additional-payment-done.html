@@ -1,0 +1,139 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Your payment plan is set up
+{% endblock %}
+
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+
+      <h1 class="govuk-panel__title">
+        Your payment was successful
+      </h1>
+      <div class="govuk-panel__body">
+
+        You will recieve a payment confirmation email
+      </div>
+
+
+    </div>
+
+
+
+<p> It will take 2 to 5 working days for your payment to clear.
+
+    <h2 class="govuk-heading-m">Payment summary</h2>
+
+    <table class="govuk-table mb40">
+
+      <caption class="visually-hidden">Payment summary</caption>
+
+
+      <tbody class="govuk-table__body">
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Payment method</th>
+          <td class="govuk-table__cell">
+
+            Card payment
+
+          </td>
+
+
+        </tr>
+
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Payment amount</th>
+                  <td class="govuk-table__cell">
+
+                    {{ data['additional-amount'] | currency     }}
+
+                  </td>
+
+
+                </tr>
+
+
+
+
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Payment to</th>
+          <td class="govuk-table__cell">
+
+            DWP Debt Management
+
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row" >
+          <th scope="row" class="govuk-table__header" style="width:40%;">Payment date</th>
+          <td class="govuk-table__cell" colspan="2" style="width:45%;">
+            <!-- <script>
+              var CurrentDate = new Date();
+              console.log("Current date:", CurrentDate);
+              CurrentDate.setMonth(CurrentDate.getMonth());
+              document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
+            </script> -->
+            30 January 2025
+          </td>
+
+        </tr>
+
+
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+        <p class="govuk-body">
+        <a href="#" class="govuk-link">What did you think of this service? (opens in new tab)</a>
+      </p>
+      <p><a href="/v47/on-benefit/account-home-after-additional.html" class="govuk-button">Go to Account home</a></p>
+
+
+
+    </div>
+  </div>
+
+  {% endblock %}
