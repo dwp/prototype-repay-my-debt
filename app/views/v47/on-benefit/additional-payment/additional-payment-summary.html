@@ -1,5 +1,5 @@
 
-{% extends "layout-3.html" %}
+{% extends "layout-main.html" %}
 
 {% block pageTitle %}
 Payment plan summary
@@ -85,7 +85,7 @@ Payment plan summary
 
 
 
-  <!-- 
+  <!--
             <h2 class="govuk-heading-m govuk-!-padding-top-7">Contact preferences
 
 
@@ -127,15 +127,21 @@ Payment plan summary
 
 
 
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-visually-hidden">Warning</span>
+                Your bank may charge you interest if you pay by credit card.
+              </strong>
+            </div>
 
 
 
-
-
+<!--
                   <div class="govuk-inset-text">
                     <p>Your bank may charge you interest if you pay by credit card.
                     </p>
-                  </div>
+                  </div> -->
 
 
                   <button class="govuk-button" data-module="govuk-button">

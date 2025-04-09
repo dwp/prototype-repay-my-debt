@@ -1,5 +1,5 @@
 
-{% extends "layout-3.html" %}
+{% extends "layout-main.html" %}
 
 {% block pageTitle %}
 Payment review
@@ -7,6 +7,14 @@ Payment review
 
 
 {% block beforeContent %}
+
+<nav class="dwp-language-toggle" aria-label="change language" wiid="N89">
+  <ul class="dwp-language-toggle__list" wiid="N91">
+    <li lang="en" id="li-en" class="dwp-language-toggle__list-item" wiid="N93">English </li>
+    <li lang="cy" id="li-cy" class="dwp-language-toggle__list-item" wiid="N96"><span class="govuk-visually-hidden" wiid="N97">Newid yr iaith ir Gymraeg</span><a href="?lng=cy" class="govuk-link" wiid="N99">Cymraeg</a></li>
+  </ul>
+</nav>
+
 {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"

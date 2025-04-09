@@ -1,11 +1,17 @@
 
-{% extends "layout-3.html" %}
+{% extends "layout-main.html" %}
 
 {% block pageTitle %}
 Help and support
 {% endblock %}
 
 {% block beforeContent %}
+<nav class="dwp-language-toggle" aria-label="change language" wiid="N89">
+  <ul class="dwp-language-toggle__list" wiid="N91">
+    <li lang="en" id="li-en" class="dwp-language-toggle__list-item" wiid="N93">English </li>
+    <li lang="cy" id="li-cy" class="dwp-language-toggle__list-item" wiid="N96"><span class="govuk-visually-hidden" wiid="N97">Newid yr iaith ir Gymraeg</span><a href="?lng=cy" class="govuk-link" wiid="N99">Cymraeg</a></li>
+  </ul>
+</nav>
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -42,21 +48,23 @@ Help and support
 
 <div class="govuk-body">
 <div class="govuk-inset-text">
-  <p>If you need to manage your repayments, you can get help understanding how much you can afford to repay.</p>
+  <p>If you need to manage your monthly repayments, you can get help understanding how much you can afford to repay.</p>
 
-  <a href="/v42/account-improvement/on-benefit-test-2/manage-your-repayments-test-2/financial-situation" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-	Manage your repayments
-  </a>
+  <p><a href="manage-your-repayments/manage-your-repayment-start.html"  >Manage your monthly repayments</a></p>
+
 </div>
         </div>
 
 
-   <p>You can contact us for general help and support.
+   <p>You can contact us to make additional payments, pay off the amount in full or get general help and support.
+
+
 </p>
 
 
 
-       <h2 class="govuk-heading-s ">Debt Management</h2>
+       <h2 class="govuk-heading-s ">DWP Debt Management
+</h2>
      <ul class="govuk-list">
        <li>Telephone: 0800 916 0647</li>
        <li>Textphone: 0800 916 0651</li>
@@ -69,13 +77,15 @@ Help and support
 <div class="govuk-!-padding-top-6">
      <h2 class="govuk-heading-m">Further advice</h2>
 
-    <p>In the meantime get:</p>
+    <p>If you would like independent advice, you can contact:
+</p>
 
 
 	 <ul class="govuk-list govuk-list--bullet">
-			 <li>help dealing with money problems from <a href="https://www.citizensadvice.org.uk/">Citizens Advice (opens in new tab)</a> </li>
-			 <li>expert debt advice from <a href="https://www.stepchange.org/">StepChange Debt Charity (opens in new tab)</a></li>
-			 <li>advice to improve your finances from <a href="https://www.moneyadviceservice.org.uk">Money Advice Service (opens in new tab)</a></li>
+     <li> <a href="https://www.moneyadviceservice.org.uk">MoneyHelper (opens in new tab)</a></li>
+			 <li> <a href="https://www.citizensadvice.org.uk/">Citizens Advice (opens in new tab)</a> </li>
+       <li> <a href="https://www.gov.uk/civil-legal-advice/">Civil Legal Advice (opens in new tab)</a> </li>
+			 <li> <a href="https://www.stepchange.org/">StepChange Debt Charity (opens in new tab)</a></li>
 	 </ul>
 
 
