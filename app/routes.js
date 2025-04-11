@@ -1195,3 +1195,31 @@ router.post('/how-much-you-can-afford-choices', function (req, res) {
   }
 
 })
+
+router.post('/paying-for-advance', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var payableAmount = req.session.data['paying-for-advance']
+
+
+  if (payableAmount == 'yes'){
+    res.redirect('/v47/on-benefit/additional-payment/make-an-additional-payment')
+  } else {
+    res.redirect('/v47/on-benefit/additional-payment/contact-us-for-paying-advance')
+  }
+
+})
+
+router.post('/payment-options-full-part', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var payableAmount = req.session.data['payment-options-full-part']
+
+
+  if (payableAmount == 'pay-in-full'){
+    res.redirect('/v47/on-benefit/additional-payment/additional-payment-summary-full-amount')
+  } else {
+    res.redirect('/v47/on-benefit/additional-payment/payment-amount')
+  }
+
+})

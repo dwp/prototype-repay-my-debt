@@ -48,7 +48,7 @@ Payment plan summary
 
 
 
-    <form class="form" action="card-details" method="post">
+    <form class="form" action="card-details-full" method="post">
 
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
@@ -73,12 +73,11 @@ Payment plan summary
             </tr>
 
 
-
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header" style="width:40%;">Payment today</th>
-              <td class="govuk-table__cell" style="width:45%;" >{{ data['additional-amount'] | currency}}
+              <td class="govuk-table__cell" style="width:45%;" > £2,915.00
               </td>
-              <td class="govuk-table__cell changeDetails"><a href="payment-part-edit">Change</a></td>
+              <td class="govuk-table__cell changeDetails"><a href="payment-in-full-edit">Change</a></td>
 
 
             </tr>
