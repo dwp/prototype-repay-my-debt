@@ -35,7 +35,7 @@ Payment options
   <div class="govuk-grid-column-three-quarters">
 
 
-    <form class="form" action="/payment-options-full-part" method="post">
+    <form class="form" action="/paying-for-advance" method="post">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -53,21 +53,13 @@ Payment options
        &pound;2,915.00
      </span>
    </div> -->
-   <div id="contact-hint" class="govuk-heading-s">
+   <!-- <div id="contact-hint" class="govuk-heading-s">
 Select what you want to do
-</div>
+</div> -->
           <div class="govuk-radios" data-module="govuk-radios">
+
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="payment-options-full-part" name="payment-options-full-part" type="radio" value="pay-in-full" {{ checked('paymentOptions','pay-in-full') }}>
-              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="whereDoYouLive">
-                Pay the full amount now
-              </label>
-              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                This will clear the amount you owe.
-              </div>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="payment-options-full-part-2" name="payment-options-full-part" type="radio" value="pay-part" {{ checked('paymentOptions','setup-plan') }}>
+              <input class="govuk-radios__input" id="paying-for-advance-2" name="paying-for-advance" type="radio" value="yes" {{ checked('paying-for-advance','yes') }}>
               <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="whereDoYouLive-2">
                 Pay additional payment
               </label>
@@ -75,7 +67,15 @@ Select what you want to do
                   This will reduce the amount you have to repay.
               </div>
             </div>
-
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="paying-for-advance-2" name="paying-for-advance" type="radio" value="no" {{ checked('paying-for-advance','no') }}>
+              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="whereDoYouLive-2">
+                Payment towards an advance
+              </label>
+              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  This will reduce the amount you have to repay.
+              </div>
+            </div>
 
 
           </div>
