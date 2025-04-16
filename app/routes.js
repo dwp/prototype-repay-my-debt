@@ -1223,3 +1223,18 @@ router.post('/payment-options-full-part', function (req, res) {
   }
 
 })
+
+router.post('/v47/additional-amount-check', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var payableAmount = req.session.data['additional-amount']
+
+
+  if (payableAmount >= 5.00){
+    res.redirect('/v47/on-benefit/additional-payment/additional-payment-summary')
+  } else {
+    res.redirect('/v47/on-benefit/additional-payment/payment-amount-error')
+
+  }
+
+})
