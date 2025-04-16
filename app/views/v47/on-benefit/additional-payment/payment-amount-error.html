@@ -30,6 +30,8 @@ Make an additional payment
   text: "Back",
   href: "javascript:window.history.back()"
 }) }}
+
+
 {% endblock %}
 
 
@@ -37,11 +39,25 @@ Make an additional payment
 
 
 
-
 	   <div class="govuk-grid-row">
 
         <div class="govuk-grid-column-three-quarters">
 
+          <div class="govuk-error-summary " data-module="govuk-error-summary" id="low-amount-error-summary">
+            <div role="alert">
+              <h2 class="govuk-error-summary__title">
+                There is a problem
+              </h2>
+              <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                  <li>
+                    <a href="#low-amount-error">The amount should be greater than or equal to £5.00</a>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
 
 
 
@@ -52,8 +68,7 @@ Make an additional payment
 
 
 
-
-											<div class="govuk-form-group">
+											<div class="govuk-form-group govuk-form-group--error" id="how-much-you-want-to-pay">
 												  <h1 class="govuk-label-wrapper">
 													  <label class="govuk-label govuk-label--xl" for="affordable-amount">
                               How much do you want to pay?
@@ -62,23 +77,22 @@ Make an additional payment
 												  </h1>
 
                           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
-
-
+                          <p id="low-amount-error" class="govuk-error-message ">
+                              <span class="govuk-visually-hidden">Error:</span> The amount should be greater than or equal to £5.00
+                            </p>
 												  <div class="govuk-input__wrapper">
 													<div class="govuk-input__prefix" aria-hidden="true">£</div>
-													<input class="govuk-input govuk-input--width-10" id="additional-amount" name="additional-amount" type="text" spellcheck="false" value="2915">
+													<input class="govuk-input govuk-input--width-10 govuk-input--error" id="additional-amount" name="additional-amount" type="text" spellcheck="false" value="{{ data['additional-amount']}}">
 												  </div>
-
-
-
-
 												</div>
 
 
 
 
 
-											<button class="govuk-button" data-module="govuk-button">
+
+
+											<button class="govuk-button" data-module="govuk-button" >
 											  Continue
 											</button>
 											</form>

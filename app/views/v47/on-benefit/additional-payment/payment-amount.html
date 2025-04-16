@@ -30,6 +30,8 @@ Make an additional payment
   text: "Back",
   href: "javascript:window.history.back()"
 }) }}
+
+
 {% endblock %}
 
 
@@ -45,15 +47,14 @@ Make an additional payment
 
 
 
-										<form class="form" action="additional-payment-summary" >
+          <form class="form" action="/v47/additional-amount-check" method="post"  >
 
 
 
 
 
 
-
-											<div class="govuk-form-group">
+											<div class="govuk-form-group " id="how-much-you-want-to-pay">
 												  <h1 class="govuk-label-wrapper">
 													  <label class="govuk-label govuk-label--xl" for="affordable-amount">
                               How much do you want to pay?
@@ -73,7 +74,9 @@ Make an additional payment
 
 
 
-											<button class="govuk-button" data-module="govuk-button">
+
+
+											<button class="govuk-button" data-module="govuk-button" >
 											  Continue
 											</button>
 											</form>
