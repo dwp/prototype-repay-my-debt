@@ -61,9 +61,11 @@ Make an additional payment
 
 													</label>
 												  </h1>
-                          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
-<p class="govuk-body-m">Total amount left to repay: <br>
-<span class="govuk-heading-m">£2,915.00 </span></p>
+                          <div class="govuk-inset-text" style="border:none; padding-left:0;">
+                            Total amount left to repay: <span class="total-amount">
+                              &pound;2,915.00
+                            </span>
+                          </div>
 
 
   <!--
@@ -80,7 +82,6 @@ Make an additional payment
                               </li>
                             </ul>
                           </div>-->
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 												  <div class="govuk-input__wrapper">
 													<div class="govuk-input__prefix" aria-hidden="true">£</div>
 													<input class="govuk-input govuk-input--width-10" id="additional-amount" name="additional-amount" type="text" spellcheck="false" value="{{ data['additional-amount']}}">
