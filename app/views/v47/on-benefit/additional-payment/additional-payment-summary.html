@@ -64,7 +64,7 @@ Payment summary
 
 
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header" style="width:40%;">Total amount left to repay:</th>
+              <th scope="row" class="govuk-table__header" style="width:40%;">Total amount left to repay</th>
               <td class="govuk-table__cell" style="width:45%;" >£2,915.00
               </td>
               <td class="govuk-table__cell changeDetails"></td>
@@ -75,7 +75,7 @@ Payment summary
 
 
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header" style="width:40%;">Payment today:</th>
+              <th scope="row" class="govuk-table__header" style="width:40%;">Payment today</th>
               <td class="govuk-table__cell" style="width:45%;" >{{ data['additional-amount'] | currency}}
               </td>
               <td class="govuk-table__cell changeDetails"><a href="payment-part-edit">Change</a></td>
@@ -134,21 +134,15 @@ Payment summary
 
 
 
-            <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-                <span class="govuk-visually-hidden">Warning</span>
-                Your bank may charge you interest if you pay by credit card.
-              </strong>
-            </div>
 
 
+                  <div >
+                    <p>Make sure you have enough money in your bank account to cover this payment.
 
-<!--
-                  <div class="govuk-inset-text">
-                    <p>Your bank may charge you interest if you pay by credit card.
+</p>
+                    <p class="govuk-!-font-weight-bold">Your bank may charge you interest if you pay by credit card.
                     </p>
-                  </div> -->
+                  </div>
 
 
                   <button class="govuk-button" data-module="govuk-button">
