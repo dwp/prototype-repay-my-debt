@@ -1,4 +1,4 @@
-
+43.50
 {% extends "layout-3.html" %}
 
 {% block pageTitle %}
@@ -73,15 +73,15 @@ What this change will mean for you
           <th scope="row" class="govuk-table__header">Total amount left to pay
 
           </th>
-          <td class="govuk-table__cell govuk-table__cell">&pound;2915.00</td>
-          <td class="govuk-table__cell govuk-table__cell">&pound;2915.00</td>
+          <td class="govuk-table__cell govuk-table__cell">&pound;215.00</td>
+          <td class="govuk-table__cell govuk-table__cell">&pound;215.00</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Monthly repayment
             <!-- <div id="sign-in-hint" class="govuk-hint">
             These appear under Debts and loans repayments on your Universal Credit statement.
           </div></th> -->
-          <td class="govuk-table__cell govuk-table__cell">&pound;65.00</td>
+          <td class="govuk-table__cell govuk-table__cell">&pound;43.50</td>
 
           <td class="govuk-table__cell govuk-table__cell">{{ data['new-affordable-amount']|currency }}</td>
         </tr>
@@ -92,7 +92,7 @@ What this change will mean for you
           <td class="govuk-table__cell govuk-table__cell"><script>
             function divide(num) { return num.toFixed(2); }
 
-            var  num1 = 2915.00;
+            var  num1 = 215.00;
 
             var num2 = {{ data['new-affordable-amount'] }};
 
@@ -108,8 +108,8 @@ What this change will mean for you
         </th>
         <td class="govuk-table__cell govuk-table__cell">
           <script>
-            var  num1 = 2915.00;
-            var num2 = 65;
+            var  num1 = 215.00;
+            var num2 = 43.5;
             var x = Math.floor(num1 / num2); //or whatever offset
             var CurrentDate = new Date();
             console.log("Current date:", CurrentDate);
@@ -121,7 +121,7 @@ What this change will mean for you
 
         <td class="govuk-table__cell govuk-table__cell">
           <script>
-            var  num1 = 2915.00;
+            var  num1 = 215.00;
             var num2 = {{ data['new-affordable-amount'] }};
             var x = Math.floor(num1 / num2); //or whatever offset
             var CurrentDate = new Date();
@@ -141,7 +141,7 @@ What this change will mean for you
   <div class="flexible-banner-playback">
     <ul class="govuk-list">
 
-      
+
       <li>
         <h3>Monthly repayment:</h3>
         <span id="new-debts-amount"><b>{{ data['final-affordable-amount-v2']|currency }}</b></span>
@@ -171,15 +171,15 @@ What this change will mean for you
     <th scope="row" class="govuk-table__header">Total amount left to pay
 
     </th>
-    <td class="govuk-table__cell govuk-table__cell">&pound;2,915.00</td>
-    <td class="govuk-table__cell govuk-table__cell">&pound;2,915.00</td>
+    <td class="govuk-table__cell govuk-table__cell">&pound;215.00</td>
+    <td class="govuk-table__cell govuk-table__cell">&pound;215.00</td>
   </tr>
   <tr class="govuk-table__row">
     <th scope="row" class="govuk-table__header">Monthly repayment
       <!-- <div id="sign-in-hint" class="govuk-hint">
       These appear under Debts and loans repayments on your Universal Credit statement.
     </div></th> -->
-    <td class="govuk-table__cell govuk-table__cell">&pound;65.00</td>
+    <td class="govuk-table__cell govuk-table__cell">&pound;43.50</td>
 
     <td class="govuk-table__cell govuk-table__cell">{{ data['final-affordable-amount-v2']|currency }}</td>
   </tr>
@@ -192,14 +192,14 @@ What this change will mean for you
     </div> -->
   </th>
   <td class="govuk-table__cell govuk-table__cell">
-    {% set IncludedBalance = balance+65 %}
+    {% set IncludedBalance = balance+43.50 %}
     {{ balance|currency}}
   </td>
 
   <td class="govuk-table__cell govuk-table__cell">
     {% set enteredAmount = data['final-affordable-amount-v2']  %}
-    {% set repaymentBalance = 65-enteredAmount  %}
-    {% set IncludedBalance = balance+65 %}
+    {% set repaymentBalance = 43.50-enteredAmount  %}
+    {% set IncludedBalance = balance+43.50 %}
 
     {% set newBalance = balance + repaymentBalance %}
 
@@ -219,11 +219,11 @@ What this change will mean for you
 <tr class="govuk-table__row">
   <th scope="row" class="govuk-table__header">Estimated repayments remaining
   </th>
-  <td class="govuk-table__cell govuk-table__cell">46</td>
+  <td class="govuk-table__cell govuk-table__cell">4</td>
   <td class="govuk-table__cell govuk-table__cell"><script>
     function divide(num) { return num.toFixed(2); }
 
-    var  num1 = 2915.00;
+    var  num1 = 215.00;
 
     var num2 = {{ data['final-affordable-amount-v2'] }};
 
@@ -239,8 +239,8 @@ What this change will mean for you
 </th>
 <td class="govuk-table__cell govuk-table__cell">
   <script>
-    var  num1 = 2915.00;
-    var num2 = 65;
+    var  num1 = 215.00;
+    var num2 = 43.50;
     var x = Math.floor(num1 / num2); //or whatever offset
     var CurrentDate = new Date();
     console.log("Current date:", CurrentDate);
@@ -252,7 +252,7 @@ What this change will mean for you
 
 <td class="govuk-table__cell govuk-table__cell">
   <script>
-    var  num1 = 2915.00;
+    var  num1 = 215.00;
     var num2 = {{ data['final-affordable-amount-v2'] }};
     var x = Math.floor(num1 / num2); //or whatever offset
     var CurrentDate = new Date();
