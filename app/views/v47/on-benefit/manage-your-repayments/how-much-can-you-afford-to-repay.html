@@ -26,7 +26,7 @@ How much do you now feel you can repay each month?
       {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
       {% set totalspending = data['spending-debt']|float + data['spending-phone']|float + data['spending-housing']|float + data['spending-utilities']|float + data['spending-travel']|float + data['spending-groceries']|float + data['spending-caring']|float + data['spending-other']|float %}
       {% set balance = totalIncome-totalspending %}
-      {% set balance = balance+65.00 %}
+      {% set balance = balance+43.50 %}
       <div class="govuk-inset-text">
         <p>Based on the information you gave us, you have
           <strong>{{ balance|currency }}</strong> available each month. </p>

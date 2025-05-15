@@ -89,13 +89,13 @@ What this change will mean for you
     <th scope="row" class="govuk-table__header">Total amount left to pay
 
     </th>
-    <td class="govuk-table__cell govuk-table__cell">&pound;2,915</td>
+    <td class="govuk-table__cell govuk-table__cell">&pound;215</td>
     <td class="govuk-table__cell govuk-table__cell">
 
       <script>
         function divide(num) { return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
 
-        var num1 = 2915 - {{ data['additional-amount'] }};
+        var num1 = 215 - {{ data['additional-amount'] }};
 
         document.write('&pound;'+num1.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
       </script>
@@ -111,7 +111,7 @@ What this change will mean for you
   <td class="govuk-table__cell govuk-table__cell">£<script>
     function divide(num) { return num.toFixed(2); }
 
-    var  num1 = 2915;
+    var  num1 = 215;
 
     var num2 = 41;
 
@@ -123,7 +123,7 @@ What this change will mean for you
   <td class="govuk-table__cell govuk-table__cell">£<script>
     function divide(num) { return num.toFixed(1); }
 
-    var  num1 = 2915 - {{ data['additional-amount'] }};
+    var  num1 = 215 - {{ data['additional-amount'] }};
 
     var num2 = 41;
     var  result = Math.floor(num1 / num2);
@@ -140,7 +140,7 @@ What this change will mean for you
   <td class="govuk-table__cell govuk-table__cell"><script>
     function divide(num) { return num.toFixed(2); }
 
-    var  num1 = 2915;
+    var  num1 = 215;
 
     var num2 = 41;
 
@@ -150,7 +150,7 @@ What this change will mean for you
   <td class="govuk-table__cell govuk-table__cell"><script>
     function divide(num) { return num.toFixed(2); }
 
-    var  num1 = 2915 - {{ data['additional-amount'] }};
+    var  num1 = 215 - {{ data['additional-amount'] }};
 
     var num2 = 41;
 
@@ -167,7 +167,7 @@ What this change will mean for you
 </th>
 <td class="govuk-table__cell govuk-table__cell">
   <script>
-    var  num1 = 2915;
+    var  num1 = 215;
     var num2 = 41;
     var x = Math.floor(num1 / num2); //or whatever offset
     var CurrentDate = new Date();
@@ -180,7 +180,7 @@ What this change will mean for you
 
 <td class="govuk-table__cell govuk-table__cell">
   <script>
-    var  num1 = 2915 - {{ data['additional-amount'] }};
+    var  num1 = 215 - {{ data['additional-amount'] }};
     var num2 = 41;
     var x = Math.floor(num1 / num2); //or whatever offset
     var CurrentDate = new Date();
