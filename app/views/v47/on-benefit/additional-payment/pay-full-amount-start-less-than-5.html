@@ -2,7 +2,7 @@
 {% extends "layout-main.html" %}
 
 {% block pageTitle %}
-Make a smaller one-off payment
+Pay off what you owe in full
 
 {% endblock %}
 
@@ -45,7 +45,7 @@ Make a smaller one-off payment
 
 
 
-										<form class="form" action="/v47/on-benefit/additional-payment/pay-the-full-amount-less-than-5" >
+										<form class="form" action="pay-the-full-amount-less-than-5" >
 
 
 
@@ -56,23 +56,13 @@ Make a smaller one-off payment
 											<div class="govuk-form-group">
 												  <h1 class="govuk-label-wrapper">
 													  <label class="govuk-label govuk-label--xl" for="affordable-amount">
-                              Make a smaller one-off payment
+                              Pay off what you owe in full
 													</label>
 												  </h1>
                           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+                          <p>If you want to pay off a <strong>Universal Credit advance</strong> in your current claim, <a href="/v47/on-benefit/help-and-support">contact DWP Debt Management</a>.</p>
 
-                          <p>If you want to pay off a <strong>Universal Credit advance </strong>in your current claim, <a href="/v47/on-benefit/help-and-support">contact DWP Debt Management</a>.</p>
-
-
-                      <p>You have £4.50 left to repay. If you want to make a payment by card, you will need to pay this amount in full.</p>
-
-                         <!-- <div class="govuk-warning-text">
-                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                            <strong class="govuk-warning-text__text">
-                              <span class="govuk-visually-hidden">Warning</span>
-                              You need to make sure that you do not overpay.
-                            </strong>
-                          </div> -->
+                          <p>You may have recently received a Universal Credit payment or have one due in the next 7 days. If so, wait for the deduction to appear in your <a href="/v47/on-benefit/payment-history">payment history</a> before paying off what you owe in full. This helps you avoid overpaying.</p>
 
 												</div>
 
@@ -80,8 +70,9 @@ Make a smaller one-off payment
 
 
 
+
 											<button class="govuk-button" data-module="govuk-button">
-											  Continue to pay full amount
+											  Continue
 											</button>
 											</form>
 
