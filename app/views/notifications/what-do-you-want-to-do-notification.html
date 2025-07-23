@@ -1,0 +1,94 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+What do you want to do?
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-three-quarters">
+
+
+		<div  class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content"   >
+
+        <h3>Card payments</h3>        <p >You will not be able to make card payments from 11:45pm on Saturday 12 July to 3:45pm on Sunday 14 July 2025.
+</p>
+        <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="max-width:none;"> -->
+
+
+
+
+
+
+
+      </div>
+    </div>
+
+
+	  <span class="govuk-caption-xl">David Jones-Lockyer</span>
+	  <h1 class="govuk-heading-xl">What do you want to do?</h1>
+	  <div class="govuk-inset-text">
+	Total amount owed: <br><span class="total-amount">£4,460.37</span>
+  </div>
+
+
+	  <form class="form" action="payment-options" method="post" novalidate="">
+
+  <div class="govuk-form-group">
+	<fieldset class="govuk-fieldset">
+	  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+		Select one option:
+	  </legend>
+
+<!-- Radios	 -->
+	  <div class="govuk-radios" data-module="govuk-radios">
+
+		<div class="govuk-radios__item">
+		  <input class="govuk-radios__input" id="what-do-you-want-to-do" name="selected-option" type="radio" value="payment/payment-options">
+		  <label class="govuk-label govuk-radios__label" for="what-do-you-want-to-do">
+			I want to view my payment options
+		  </label>
+		</div>
+
+		<div class="govuk-radios__item">
+		  <input class="govuk-radios__input" id="what-do-you-want-to-do-2" name="selected-option" type="radio" value="amount-breakdown">
+		  <label class="govuk-label govuk-radios__label" for="what-do-you-want-to-do-2">
+			I want to view details of what I owe
+		  </label>
+		</div>
+
+		<div class="govuk-radios__item">
+		  <input class="govuk-radios__input" id="what-do-you-want-to-do-3" name="selected-option" type="radio" value="help-and-support/further-advice">
+		  <label class="govuk-label govuk-radios__label" for="what-do-you-want-to-do-3">
+			I need help and support in dealing with the money I owe
+		  </label>
+		</div>
+
+	  </div>
+	</fieldset>
+  </div>
+  <!-- End radios -->
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+	Continue
+  </button>
+
+
+	  </form>
+	</div>
+  </div>
+
+
+
+{% endblock %}

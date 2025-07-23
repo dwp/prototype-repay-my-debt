@@ -1,0 +1,370 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Account home
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<!-- <div class="clear-bar">
+<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+<p>What you owe:
+<span>&pound;120.00</span></p>
+
+</div> -->
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="clear-bar stripped-border">
+      <div class="identifier">
+
+        <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Account home</span>
+          David Jones
+        </h1>
+
+      </div>
+      <div  >
+        <p style="float:right; border:0px; font-size:19px; text-align:right;"  >
+          Total amount left to pay:<br>
+           <span class="total-amount">
+            &pound;750.00
+
+          </span>
+</p>
+
+
+
+
+
+      </div>
+
+
+    </div>
+
+
+
+
+    <div class="govuk-grid-row">
+  	  <div class="govuk-grid-column-full">
+
+
+
+
+  		<div class="govuk-grid-row">
+
+        <div class="govuk-warning-text" style="margin-left: 12px;">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+You must make at least one payment every month.          </strong>
+        </div>
+
+
+
+  		 <div class="govuk-grid-column-one-half">
+
+
+  			 <div class="scenario-panel">
+  					   <h2 class="govuk-heading-s">Payment plan details</h2>
+
+  					   <div class="scenario-inner-panel" style="height:224px;">
+
+
+
+
+              <!-- <div id="red-banner" class="payment-info alert-red">
+                      <p>You did not make a payment for:<br><strong>January 2024</strong></p>
+                    </div>-->
+
+<!-- Blue banner -->
+
+  							   <table class="govuk-table">
+
+  								<tbody class="govuk-table__body">
+
+                    <tr class="govuk-table__row">
+                     <th scope="row" class="govuk-table__header">Plan type</th>
+                     <td class="govuk-table__cell">
+
+
+                      	Flexible payments
+                     </td>
+                    </tr>
+
+
+                   <!-- <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">You have pay your target by end of</th>
+                    <td class="govuk-table__cell" id="date">
+
+
+                      <script>
+                 const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                 const d = new Date();
+                 let month = months[d.getMonth()];
+
+                 document.getElementById("date").innerHTML = month + " " + d.getFullYear() ;
+
+
+
+                 </script>
+
+                    </td>
+                   </tr> -->
+
+
+  								</tbody>
+  							  </table>
+
+  							  <!-- <div class="flexible-banner-float-none alert-green">
+
+
+  							  <ul class="govuk-list">
+
+
+
+
+
+
+  								  <li>
+
+  										   <h3>Monthly target</h3>
+  										  <b>&pound;15.00</b>
+
+
+
+  								  </li>
+
+  								  <li>
+  									  <h3>Paid this month</h3>
+  									  <b>&pound;10.00</b>
+  								  </li>
+
+
+
+
+  							  </ul>
+
+
+
+  							  </div> -->
+
+<!-- <p class="govuk-inset-text">You will not be penalised if you do not meet your target this month.
+
+</p> -->
+
+<p>
+              <a href="/v48/manage-plan-no-target/payment-plan-no-text-messages.html">
+               View or manage your plan
+              </a> </p>
+              <p>
+
+  					  <!-- <span style="font-weight:normal;"><a href="#" class="secondary-invert">Switch to Direct Debit payment plan</a></span> -->
+
+
+              <a href="payment-history">
+               View your payment history
+              </a> </p>
+
+
+
+  					   </div>
+  				   </div>
+
+
+
+
+
+
+
+
+
+
+  		  </div>
+
+
+  		<div class="govuk-grid-column-one-half">
+
+
+
+  			  <div class="scenario-panel" style="height:324px;">
+  					   <h2 class="govuk-heading-s">Payments for July 2025</h2>
+
+
+  					   <div class="scenario-inner-panel">
+
+<!--
+                 <div id="green-banner" class="alert-green">
+<p> <strong>You have 1 payment pending</strong></p>
+                         <p>Payments can take 2 to 5 working days to clear and update your balance.</p>
+                       </div> -->
+
+
+  							   <table class="govuk-table">
+
+  								<tbody class="govuk-table__body">
+
+
+
+                   <tr class="govuk-table__row">
+                   <th scope="row" class="govuk-table__header">Paid in July</th>
+                   <td class="govuk-table__cell">
+
+
+
+                       £50.00
+
+
+
+                   </td>
+                   </tr>
+
+
+                 </tbody>
+                 </table>
+                 <p><a href="flex-payment-target-not-paid-no-target">
+                   Make a payment for July
+                  </a> </p>
+                  <p><a href="additional-payment/pay-full-amount-start">
+                    Pay off what you owe in full
+                   </a> </p>
+                 <!-- <table class="govuk-table">
+
+                <tbody class="govuk-table__body">
+
+                   <p>Additional payments are voluntary and help you pay off what you owe quicker.</p>
+
+
+  								 <tr class="govuk-table__row">
+  									<th scope="row" class="govuk-table__header">Additional payments this month</th>
+  									<td class="govuk-table__cell">
+
+
+
+  								  &pound;0.00
+
+
+  									</td>
+  								  </tr>
+
+
+
+
+
+
+
+
+
+
+  								</tbody>
+  							  </table>
+
+                  <p><a href="additional-payment/pay-full-amount-start">
+                    Pay off what you owe in full
+                   </a> </p>
+                  <p><a href="additional-payment/make-an-additional-payment-test2">
+                    Make a smaller one-off payment
+                   </a> </p><p>
+                     <p>
+
+                  </p> -->
+
+  		  </div>
+  			  </div>
+
+
+
+
+
+
+  		</div>
+
+
+  		</div>
+
+
+
+
+  		  <div class="govuk-grid-row">
+
+
+
+  			  <div class="govuk-grid-column-one-half">
+
+  			  <div class="scenario-panel" style="height:190px;">
+  					   <h2 class="govuk-heading-s">What you owe</h2>
+
+  					   <div class="scenario-inner-panel">
+  						<p>Details of the money you owe.</p>
+
+<br>
+
+<p>
+<a href="details-of-what-you-owe">View details of what you owe</a>
+</p>    					   </div>
+  				   </div>
+
+
+
+
+  		  </div>
+
+
+
+
+
+
+
+  		  <div class="govuk-grid-column-one-half">
+
+  			  <div class="scenario-panel">
+  					   <h2 class="govuk-heading-s">Help and support</h2>
+
+  					   <div class="scenario-inner-panel">
+                 <p>You can contact us for general help and support.</p>
+
+                 <p>  					  <a href="help-and-support" >Get help and support</a>
+                 </p>
+</div>
+  				   </div>
+
+
+
+
+  		  </div>
+
+
+
+  		</div>
+
+
+
+
+  	  </div>
+    </div>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+<!--<h4 class="govuk-heading-m">Messages</h4>
+
+<h4 class="govuk-heading-s">Universal Credit</h4>
+
+<p>Click<a href="indexAccountHome-onoff-inbox"> here</a> to read your messages.</p>>-->
+
+
+
+{% endblock %}
