@@ -1,0 +1,123 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  Payment reminder
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+    <h1 class="govuk-heading-xl">
+
+      Do you want to change your Direct Debit monthly amount?
+</h1>
+<br>
+
+
+
+<form class="form" action=" /v45/direct-debit/manage-plan/what-this-will-mean-for-your-repayments.html" >
+
+
+  <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="dd-change" type="radio" value="yes" data-aria-controls="conditional-contact" {{ checked('dd-change','yes') }}>
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-email">
+            Enter a new monthly amount
+
+          </label>
+          <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-10" id="contact-by-mobile" name="new-dd-amount" type="tel" spellcheck="false"  value="{{data['new-dd-amount']}}">
+          </div>
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="dd-change" type="radio" value="no" data-aria-controls="conditional-contact-2" {{ checked('dd-change','no') }}>
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          No
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+<!--
+  <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="confirm-details-change" name="reminder-notification-payment-setup-done-yes-no" type="radio" value="yes" {{checked('reminder-notification-payment-setup-done-yes-no','yes')}}>
+      <label class="govuk-label govuk-radios__label" for="changed-name">
+        Yes
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="confirm-details-change-2" name="reminder-notification-payment-setup-done-yes-no" type="radio" value="no" {{checked('reminder-notification-payment-setup-done-yes-no','no')}}>
+      <label class="govuk-label govuk-radios__label" for="changed-name-2">
+        No
+      </label>
+    </div>
+  </div> -->
+
+
+
+
+		<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+	 </form>
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

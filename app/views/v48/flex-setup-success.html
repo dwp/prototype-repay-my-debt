@@ -1,0 +1,279 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Your payment plan is set up
+{% endblock %}
+
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+
+      <h1 class="govuk-panel__title">
+        Your payment was successful and your plan is set up
+      </h1>
+
+
+
+    </div>
+
+    <h2 class="govuk-heading-m  ">Plan summary</h2>
+
+
+    <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total amount owed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £2,320.00
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Plan type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Monthly flexible payments
+          </dd>
+
+        </div>
+        </dl>
+        <h2 class="govuk-heading-m govuk-!-padding-top-7 ">Payment details</h2>
+
+
+        <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Monthly target
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £20.00
+          </dd>
+
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Expected number of payments
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <script>
+              var  num1 = 2320.00;
+              var num2 = 50;
+              var x = Math.floor(num1 / num2); //or whatever offset
+              document.write(x);
+            </script> <br>(if monthly target  is met each month)
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Expected final payment
+          </dt>
+          <dd class="govuk-summary-list__value">
+            November 2034
+
+          </dd>
+
+        </div>
+
+
+
+      </dl>
+
+
+            <p  class="govuk-!-font-weight-bold">
+
+              You must pay at least
+              £20.00
+
+                every month.
+
+
+
+            </p>
+
+            <p>
+
+            If you do not pay enough each month, your payment plan will be cancelled. We will then take further action which could include contacting your employer or a debt collection agency.
+            </p>
+
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-7">Payment today</h2>
+
+
+      <dl class="govuk-summary-list">
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Payment amount
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £10
+          </dd>
+
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Payment to
+          </dt>
+          <dd class="govuk-summary-list__value">
+            DWP Debt Management
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Payment type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Card payment
+          </dd>
+
+        </div>
+
+      </dl>
+      <div class="govuk-inset-text">
+        You will recieve a payment confirmation email. It will take 2 to 5 working days for your payemnt to clear.</div>
+
+
+
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-7">Contact preferences
+
+
+      </h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Text messages
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes <br>
+            07772190920
+          </dd>
+
+        </div>
+
+
+
+
+      </dl>
+
+
+<!--
+
+      <p class="govuk-heading-m govuk-!-padding-top-7">Reviewing your repayments
+      </p>
+      <p> We may contact you in the future to review your  payments and will send you a notification with further details.
+
+        <p></p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+ -->
+
+
+
+
+           <p ><span class="govuk-!-font-weight-regular">You must pay at least
+
+             <!-- {% if data['paymentChoices']=='customAmount'%}
+             {{ data['custom-amount'] | currency}}
+
+
+             {% elif data['paymentChoices']=='12Month'%}
+
+           £360.00
+             {% elif data['paymentChoices']=='24Month'%}
+
+           £180.00
+             {% elif data['paymentChoices']=='36Month'%}
+
+
+           £120.00
+
+
+             {% elif data['paymentChoices']=='48Month'%}
+
+
+           £90.00
+
+             {% elif data['paymentChoices']=='72Month'%}
+
+             £60.00
+
+             {% else %}
+             {{ data['affordable-amount'] | currency}}
+             {% endif %} -->
+
+           £60.00 every calendar month, including for June 2025.
+
+ </p><
+
+           <div class="govuk-warning-text">
+             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+             <strong class="govuk-warning-text__text">
+               <span class="govuk-visually-hidden">Warning</span>
+               If you do not keep up with your payments, we will take further action which could include asking your employer to make deductions from your pay, taking debt enforcement action through the courts or asking a debt collection agency to collect this money for us.
+             </strong>
+           </div>
+
+        <p><a id="feedback" href="#" target="_blank">What did you think of this service? (opens in new tab)</a></p>
+
+        <br>
+
+
+
+        <!-- <p><a href="#">What did you think of this service? (opens in new tab)</a></p> -->
+
+        <p><a href="/index.html" class="govuk-button">Go to Account home</a></p>
+
+
+
+        <!-- <p class="govuk-body">
+        <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+      </p> -->
+
+
+
+    </div>
+  </div>
+
+  {% endblock %}

@@ -1,0 +1,189 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+What this change will mean for you
+
+
+{% endblock %}
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Your plan
+
+      </h1>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#past-day">
+        Payment plan details
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Contact preferences
+      </a>
+    </li>
+
+  </ul>
+  <div class="govuk-tabs__panel" id="past-day">
+    <h2 class="govuk-heading-l">Payment plan details
+</h2>
+
+<dl class="govuk-summary-list">
+ <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key">
+     Plan type
+   </dt>
+   <dd class="govuk-summary-list__value">
+     Monthly Direct Debit
+   </dd>
+ </div>
+ <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key">
+     Direct Debit amount
+   </dt>
+   <dd class="govuk-summary-list__value">
+     £20.00
+   </dd>
+ </div>
+ <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key">
+     Final payment amount
+   </dt>
+   <dd class="govuk-summary-list__value">
+     £<script>
+       function divide(num) { return num.toFixed(2); }
+
+       var  num1 = 3098.64;
+
+       var num2 = 20;
+
+       var  result = Math.floor(num1 / num2);
+
+       var finalResult = num1 - 20 * result;
+       document.write(Math.round(finalResult * 100) / 100);
+     </script>
+   </dd>
+ </div>
+ <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key">
+     Expected number of payments
+   </dt>
+   <dd class="govuk-summary-list__value">
+     <script>
+       function divide(num) { return num.toFixed(2); }
+
+       var  num1 = 3098.64;
+
+       var num2 = 20;
+
+       var  result = Math.floor(num1 / num2);
+       document.write(result);
+     </script>
+   </dd>
+
+
+ </div>
+ <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key">
+     Direct Debit day
+   </dt>
+   <dd class="govuk-summary-list__value">
+     21
+   </dd>
+ </div>
+
+ <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key">
+     Expected final payment
+   </dt>
+   <dd class="govuk-summary-list__value">
+     <script>
+       var  num1 = 3098.64;
+       var num2 = 20;
+       var x = Math.floor(num1 / num2); //or whatever offset
+       var CurrentDate = new Date();
+       console.log("Current date:", CurrentDate);
+       CurrentDate.setMonth(CurrentDate.getMonth() + x);
+       document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+     </script>
+   </dd>
+ </div>
+
+
+</dl>
+   <a href="manage-payment-plan"><button type="submit" class="govuk-button" data-module="govuk-button">
+Manage payment plan
+</button></a>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <h2 class="govuk-heading-l">Contact preferences </h2>
+    <table class="govuk-table ">
+
+      <tbody class="govuk-table__body">
+
+
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:40%;">Text message</th>
+          <td class="govuk-table__cell " style="width:45%;">
+            No
+          </td>
+
+        </tr>
+
+
+
+
+      </tbody>
+    </table>
+
+    <p>You can choose to receive text messages if there are any problems with your payments.
+   </p>
+
+   <a href="change-payment-contact-info"><button type="submit" class="govuk-button" data-module="govuk-button">
+Change contact preferences
+</button></a>
+
+  </div>
+
+</div>
+
+    </div>
+  </div>
+
+{% endblock %}
