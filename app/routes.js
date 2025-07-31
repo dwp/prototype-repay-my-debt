@@ -1238,3 +1238,93 @@ router.post('/v47/additional-amount-check', function (req, res) {
   }
 
 })
+
+
+//V48 First time users
+
+router.post('/v48/first-time/what-do-you-want-to-do', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var choice = req.session.data['whatDoYouWantToDo']
+
+  // Check whether the variable matches a condition
+  if (choice == 'payment-options'){
+    // Send user to next page
+    res.redirect('/v48/first-time/payment-options')
+  } else if (choice == 'view-debt-details'){
+    // Send user to ineligible page
+    res.redirect('/v48/first-time/details-of-what-you-owe')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v48/first-time/help-and-support')
+  }
+
+})
+
+
+router.post('/v48/first-time/payment-options', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var choice = req.session.data['paymentOptions']
+
+  // Check whether the variable matches a condition
+  if (choice == 'pay-in-full'){
+    // Send user to next page
+    res.redirect('/v48/first-time/pay-the-full-amount')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v48/first-time/setup-plan/choose-payment-plan')
+  }
+
+})
+
+
+router.post('/v48/fist-time/setup-plan/custom-amount', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var customAmount = req.session.data['custom-amount']
+
+  // Check whether the variable matches a condition
+  if (customAmount >= 15.52){
+    // Send user to next page
+    res.redirect('/v48/first-time/setup-plan/dd-flex-option')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v48/first-time/setup-plan/start-affordable-plan')
+  }
+
+})
+
+
+router.post('/v48/fist-time/setup-plan/direct-debit-account-owner', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var choice = req.session.data['authoriseDD']
+
+  // Check whether the variable matches a condition
+  if (choice == 'yesDD'){
+    // Send user to next page
+    res.redirect('/v48/first-time/setup-plan/directDebitDay')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v48/first-time/setup-plan/you-cannot-setup-direct-debit')
+  }
+
+})
+
+
+router.post('/v48/fist-time/setup-plan/custom-amount', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var customAmount = req.session.data['custom-amount']
+
+  // Check whether the variable matches a condition
+  if (customAmount >= 15.52){
+    // Send user to next page
+    res.redirect('/v48/first-time/setup-plan/dd-flex-option')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v48/first-time/setup-plan/start-affordable-plan')
+  }
+
+})

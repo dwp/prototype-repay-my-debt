@@ -1,0 +1,157 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Make a payment today to start your plan
+
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-xl">
+
+      Make a payment today  to start your plan</h1>
+
+      <br>
+      <div class="flexible-banner-float-none">
+
+        <ul class="govuk-list">
+          <li>
+            <h3>Total amount owed</h3>
+            <b>&pound;750.00</b>
+          </li>
+
+
+          <li>
+            <h3>Monthly target</h3>
+            <b>
+
+              {% if data['paymentChoices']=='12Month'%}
+
+              &pound;62.50
+
+
+              {% elif data['paymentChoices']=='24Month'%}
+
+              &pound;31.25
+
+
+              {% elif data['paymentChoices']=='36Month'%}
+
+              &pound;20.83
+
+
+              {% elif data['paymentChoices']=='48Month'%}
+
+              &pound;15.62
+
+
+
+
+
+              {% else %}
+
+              {% if data['paymentChoices']=='lowPayments'%}
+
+              {{ data['affordable-amount'] | currency }}
+
+              {% else %}
+
+              {{ data['custom-amount'] | currency}}
+
+              {% endif %}
+
+              {% endif %}
+
+            </b>
+          </li>
+
+
+        </ul>
+
+      </div>
+      <form class="form" action="payment-reminders" method="post">
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                How much of
+                <script>
+                    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                    const d = new Date();
+                    let month = months[d.getMonth()];
+                    document.write(month + '&prime;s ');
+                  </script>monthly target do you want to pay today?
+              </h1>
+            </legend>
+
+            <div id="event-name-hint" class="govuk-hint">
+                If you do not pay all of
+                <script>
+                    const mon = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                    const e = new Date();
+                    let day = mon[e.getMonth()];
+                    document.write(day + '&prime;s ');
+                  </script>
+
+                monthly target today, you will need to pay the remainder before the end of the month.
+              </div>
+            <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" aria-hidden="true">£</div>
+              <input class="govuk-input govuk-input--width-10" id="payment-amount" name="payment-amount" type="text" spellcheck="false" value="{{ data['payment-amount']}}">
+            </div>
+
+
+
+          </fieldset>
+        </div>
+
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+
+
+    </div>
+  </div>
+
+  {% endblock %}

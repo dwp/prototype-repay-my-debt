@@ -1,0 +1,240 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Set up payment plan
+{% endblock %}
+
+
+
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+
+    {% if data['paymentOptions']=='ddFixedChoice'%}
+
+
+    <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">
+
+
+
+    </span>Direct Debit payments</h1>
+
+
+    <!--  {% include "includes/amountOwed.html" %} -->
+
+    <p class="mt30">If you want to set up a Direct Debit online:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>you must be an account holder and be able to authorise monthly Direct Debits with <br>your bank or building society</li>
+      <li>you will need your bank or building society account details</li>
+      <li>you will also need your sort code and account number if you have a building society account</li>
+    </ul>
+
+    <div class="govuk-inset-text mt0">
+      Once your plan is set up, you can sign in to manage your plan, change payments, pay additional amounts or get help and support.
+    </div>
+
+    <h2 class="govuk-heading-m">
+      For joint account holders:
+    </h2>
+    <p>If you have a joint account and you and your partner both need to authorise Direct Debits, you can set up a Direct Debit by contacting Debt Management:
+
+      <p class="govuk-!-font-weight-bold">Debt Management</p>
+      <p>Telephone: 0800 916 0647 <br>
+        Telephone: 0800 916 0651 <br>
+        Monday to Friday, 8am to 7:30pm (closed on public holidays)</p>
+        <p><a href="#">Find out about call charges</a></p>
+
+
+
+        <p><a href="directOwner" class="govuk-button">
+          Continue
+        </a></p>
+
+        {% else %}
+        <form class="form" action="#" method="post">
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+            How flexible payments work
+          </h1>
+
+          <p>Flexible payments work in the following way:
+
+          </p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Make a card payment today to set up your flexible plan
+            </li>
+
+            <li>Your monthly target is
+
+              {% if data['paymentChoices']=='customAmount'%}
+              {{ data['custom-amount'] | currency}}
+
+
+              {% elif data['paymentChoices']=='12Month'%}
+
+              £62.50
+              {% elif data['paymentChoices']=='24Month'%}
+
+              £31.25
+              {% elif data['paymentChoices']=='36Month'%}
+
+
+              £20.83
+
+
+              {% elif data['paymentChoices']=='48Month'%}
+
+
+              £15.52
+
+
+
+              {% else %}
+              {{ data['affordable-amount'] | currency}}
+              {% endif %}
+              but you can pay more if you want to</li>
+
+              <li>You can make multiple payments throughout the month as long as you pay at least
+
+                {% if data['paymentChoices']=='customAmount'%}
+                {{ data['custom-amount'] | currency}}
+
+
+                {% elif data['paymentChoices']=='12Month'%}
+
+                £62.50
+                {% elif data['paymentChoices']=='24Month'%}
+
+                £31.25
+                {% elif data['paymentChoices']=='36Month'%}
+
+
+                £20.83
+
+
+                {% elif data['paymentChoices']=='48Month'%}
+
+
+                £15.52
+
+
+
+                {% else %}
+                {{ data['affordable-amount'] | currency}}
+                {% endif %}
+                every month</li>
+
+                <li>You must contact us for help if you’re struggling to pay</li>
+
+
+              </ul>
+
+              <p id="currentMonthYear">You must pay at least
+
+                {% if data['paymentChoices']=='customAmount'%}
+                {{ data['custom-amount'] | currency}}
+
+
+                {% elif data['paymentChoices']=='12Month'%}
+
+                £62.50
+                {% elif data['paymentChoices']=='24Month'%}
+
+                £31.25
+                {% elif data['paymentChoices']=='36Month'%}
+
+
+                £20.83
+
+
+                {% elif data['paymentChoices']=='48Month'%}
+
+
+                £15.52
+
+
+
+                {% else %}
+                {{ data['affordable-amount'] | currency}}
+                {% endif %}
+                every calendar month, including for
+
+                <script>
+                  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                  const d = new Date();
+                  let month = months[d.getMonth()];
+                  document.write(month + ' '+d.getFullYear());
+                </script>.
+              </p>
+
+
+
+
+
+
+              <p class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span class="govuk-visually-hidden">Warning</span>
+                  <strong>
+                    If you do not keep up with your payments, we will take further action which may include asking your employer to make deductions from your pay, taking debt enforcement action through the courts, asking a debt collection agency to collect this money for us or recovering it from future benefits and State Pension you get.
+                  </strong>
+
+
+                </p>
+
+                <p style="padding-left:0px;"><a href="flex-payment-target" class="govuk-button">
+                  Continue
+                </a></p>
+              </form>
+
+
+
+
+
+              {% endif %}
+
+
+
+
+
+            </div>
+          </div>
+
+          {% endblock %}

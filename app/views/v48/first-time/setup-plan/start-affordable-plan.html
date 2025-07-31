@@ -1,0 +1,88 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Different amount
+{% endblock %}
+
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+{% if data['custom-amount'] >= 60 %}
+
+  {% elif data['custom-amount'] <= 59 %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-three-quarters"
+      <div >
+
+        <h1 class="govuk-heading-xl mb40">Affordable payment plan</h1>
+
+
+        <div class="flexible-banner-playback" wiid="N110">
+            <ul class="govuk-list" wiid="N112">
+
+
+              <li wiid="N114">
+                <h3 wiid="N116">Monthly payment:</h3>
+                <span id="new-debts-amount" wiid="N119"><b wiid="N120">{{data['custom-amount'] | currency}}</b></span>
+                <p wiid="N123"><a class="govuk-link" href="dd-flex" wiid="N124">Change</a></p>
+              </li>
+
+            </ul>
+          </div>
+          <p class="govuk-!-font-weight-bold">The monthly payment you entered means you will be setting up an affordable payment plan.</p>
+
+            <p>This is how an affordable payment plan works:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+             <li>if your financial situation improves, sign into your account to increase your monthly payments or pay additional one-off amounts</li>
+             <li>if you cannot increase your payment plan over the next year, we may contact you to review your situation to understand how much you can afford
+
+
+  </li>
+            </ul>
+
+{% set affordableAmount = data['custom-amount'] %}
+
+  <form action="dd-flex-option">
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+  </form>
+    </div>
+
+
+  </div>
+  </div>
+  {% endif %}
+
+
+  {% endblock %}

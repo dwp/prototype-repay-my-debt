@@ -43,26 +43,27 @@ Make a payment today to start your plan
 
     <h1 class="govuk-heading-xl">
 
-      Make a payment for July
-</h1>
+      Make an additional payment for July </h1>
 
-      <br>
-      <div id="event-name-hint" class="govuk-body">
-You must make at least one payment every month.        </div>
-      <br>
+<br><br>
+
 
       <form class="form" action="payment-reminders" method="post">
 
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <!-- <h1 class="govuk-fieldset__heading">
-                How much of June’s monthly target do you want to pay today?
+<!--             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                How much do you want to pay today?
               </h1>
-            </legend> -->
+            </legend>
 
+            <div id="event-name-hint" class="govuk-hint">
+                Making addtional payments means you will pay your debt off quicker.
+              </div>
 
+   -->
             <div class="govuk-input__wrapper">
               <div class="govuk-input__prefix" aria-hidden="true">£</div>
               <input class="govuk-input govuk-input--width-10" id="payment-amount" name="payment-amount" type="text" spellcheck="false" value="{{ data['payment-amount']}}">

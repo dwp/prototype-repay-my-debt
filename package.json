@@ -14,9 +14,9 @@
     "@govuk-prototype-kit/task-list": "2.0.0",
     "@x-govuk/govuk-prototype-filters": "2.0.0",
     "eslint-config-base": "1.0.0",
-    "govuk-frontend": "5.9.0",
+    "govuk-frontend": "5.11.1",
     "govuk-one-login-service-header": "github:govuk-one-login/service-header",
-    "govuk-prototype-kit": "13.16.2",
+    "govuk-prototype-kit": "13.17.0",
     "hmrc-frontend": "6.65.0",
     "jquery": "3.7.1",
     "notifications-node-client": "8.2.1"

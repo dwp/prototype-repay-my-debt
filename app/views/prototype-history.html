@@ -7,9 +7,16 @@ Prototype history
 
 {% block content %}
 
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/"
+}) }}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body govuk-!-margin-top-0">
+    <h1 class="govuk-heading-xl">Prototype history</h1>
 
 
     <!-- START HISTORY -->
@@ -27,8 +34,8 @@ Prototype history
                     <a href="/v47/on-benefit/ol_start.html"><button type="submit" class="govuk-button" data-module="govuk-button">
                   Start Journey
                 </button></a>
-                <br>
-                <hr class="govuk-section-break govuk-section-break--s govuk-section-break--hidden">
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
                 <p class="govuk-heading-s">Quick access</p>
 
                     <ol class="govuk-list govuk-list--bullet">

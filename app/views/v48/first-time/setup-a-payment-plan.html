@@ -1,0 +1,45 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Set up a payment plan
+      </h1>
+
+      <p>Set up a payment plan based on how much you can afford and choose to pay in a way that suits you – either by Direct Debit or flexible payments.</p>
+
+      <div id="once-setup" class="govuk-inset-text">
+        Once your plan is setup, you can sign in to manage your plan, change payments, pay additional amounts or get help and support.
+      </div>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "#",
+        isStartButton: false
+      }) }}
+
+    </div>
+
+
+  </div>
+
+{% endblock %}
