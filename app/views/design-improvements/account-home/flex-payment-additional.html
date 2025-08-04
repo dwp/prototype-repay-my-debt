@@ -43,7 +43,13 @@ Make a payment today to start your plan
 
     <h1 class="govuk-heading-xl">
 
-      Make an additional payment for July </h1>
+      Make an additional payment for <script>
+          const mon = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+          const da = new Date();
+          let mont = mon[da.getMonth()];
+          document.write(mont);
+        </script> </h1>
 
 <br><br>
 
