@@ -89,7 +89,7 @@ Account home
 
 
 
-                         {{ data['payment-amount'] | currency}}
+                       {{ data['payment-amount'] | currency }}
 
 
 
@@ -101,73 +101,75 @@ Account home
 
 
 
-                       {% if data['paymentChoices']=='12Month'%}
+                                              {% if data['paymentChoices']=='12Month'%}
 
-                       <script>
-                         var  num1 = {{ data['payment-amount']}};
-                         var num2 = 62.5;
-                         var x = num2-num1; //or whatever offset
-                         document.write('£'+x.toFixed(2));
- </script>
-                       {% elif data['paymentChoices']=='24Month'%}
+                                              <script>
+                                                var  num1 = {{ data['payment-amount']}};
+                                                var num2 = 62.5;
+                                                var x = num2-num1; //or whatever offset
+                                                document.write('£'+x.toFixed(2));
+                        </script>
+                                              {% elif data['paymentChoices']=='24Month'%}
 
-                       <script>
-                         var  num1 = {{ data['payment-amount']}};
-                         var num2 = 31.25;
-                         var x = num2-num1; //or whatever offset
+                                              <script>
+                                                var  num1 = {{ data['payment-amount']}};
+                                                var num2 = 31.25;
+                                                var x = num2-num1; //or whatever offset
 
-                         document.write('£'+x.toFixed(2));
- </script>
-                       {% elif data['paymentChoices']=='36Month'%}
-
-
-                       <script>
-                         var  num1 = {{ data['payment-amount']}};
-                         var num2 = 20.83;
-                         var x = num2-num1; //or whatever offset
-                         document.write('£'+x.toFixed(2));
-     </script>
+                                                document.write('£'+x.toFixed(2));
+                        </script>
+                                              {% elif data['paymentChoices']=='36Month'%}
 
 
-
-                       {% elif data['paymentChoices']=='48Month'%}
-
-
-                       <script>
-                         var  num1 = {{ data['payment-amount']}};
-                         var num2 = 15.62;
-                         var x = num2-num1; //or whatever offset
-                         document.write('£'+x.toFixed(2));
-                       </script>
-
-
-                       {% else %}
+                                              <script>
+                                                var  num1 = {{ data['payment-amount']}};
+                                                var num2 = 20.83;
+                                                var x = num2-num1; //or whatever offset
+                                                document.write('£'+x.toFixed(2));
+                            </script>
 
 
 
-                       {% if data['paymentChoices']=='lowPayments'%}
-
-                       <script>
-                         var  num1 = {{ data['payment-amount']}};
-                         var num2 = {{ data['payment-amount'] }};;
-                         var x = num2-num1; //or whatever offset
-
-                         document.write('£'+x.toFixed(2));
-
-                       </script>
-
-                       {% else %}
+                                              {% elif data['paymentChoices']=='48Month'%}
 
 
-                       <script>
-                         var  num1 = {{ data['payment-amount']}};
-                         var num2 = {{ data['custom-amount'] }};;
-                         document.write('£'+x.toFixed(2));
-                         document.write(x);
+                                              <script>
+                                                var  num1 = {{ data['payment-amount']}};
+                                                var num2 = 15.62;
+                                                var x = num2-num1; //or whatever offset
+                                                document.write('£'+x.toFixed(2));
+                                              </script>
 
-                       </script>
-                       {% endif %}
-                       {% endif %}
+
+                                              {% else %}
+
+
+
+                                              {% if data['paymentChoices']=='lowPayments'%}
+
+                                              <script>
+                                                var  num1 = {{ data['payment-amount']}};
+                                                var num2 = {{ data['payment-amount'] }};;
+                                                var x = num2-num1; //or whatever offset
+
+                                                document.write('£'+x.toFixed(2));
+
+                                              </script>
+
+                                              {% else %}
+
+
+                                              <script>
+                                                var  num1 = {{ data['payment-amount']}};
+                                                var num2 = {{ data['custom-amount'] }};;
+                                                document.write('£'+x.toFixed(2));
+                                                document.write(x);
+
+                                              </script>
+                                              {% endif %}
+                                              {% endif %}
+
+
 
 
 

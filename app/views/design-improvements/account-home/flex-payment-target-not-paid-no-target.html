@@ -43,7 +43,13 @@ Make a payment today to start your plan
 
     <h1 class="govuk-heading-xl">
 
-      Make a payment for July
+      Make a payment for <script>
+          const mon = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+          const da = new Date();
+          let mont = mon[da.getMonth()];
+          document.write(mont);
+        </script>
 </h1>
 
       <br>
@@ -51,7 +57,7 @@ Make a payment today to start your plan
 You must make at least one payment every month.        </div>
       <br>
 
-      <form class="form" action="payment-reminders" method="post">
+      <form class="form" action="#" method="post">
 
 
         <div class="govuk-form-group">

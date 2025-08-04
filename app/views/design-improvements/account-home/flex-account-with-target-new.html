@@ -65,7 +65,13 @@ Account home
 
 
             <div class="scenario-panel" style="height:324px;">
-                 <h2 class="govuk-heading-s">Payments for July 2025</h2>
+                 <h2 class="govuk-heading-s">Payments for  <script>
+                     const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                     const d = new Date();
+                     let month = months[d.getMonth()];
+                     document.write(month);
+                   </script>  2025</h2>
 
 
                  <div class="scenario-inner-panel">
@@ -84,7 +90,13 @@ Account home
 
 
                      <tr class="govuk-table__row">
-                     <th scope="row" class="govuk-table__header">Paid in July</th>
+                     <th scope="row" class="govuk-table__header">Paid in <script>
+                         const m = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                         const de = new Date();
+                         let mo = m[de.getMonth()];
+                         document.write(mo);
+                       </script></th>
                      <td class="govuk-table__cell">
 
 
@@ -96,7 +108,13 @@ Account home
                      </td>
                      </tr>
                      <tr class="govuk-table__row">
-                     <th scope="row" class="govuk-table__header">Left to pay in July</th>
+                     <th scope="row" class="govuk-table__header">Left to pay in  <script>
+                         const mon = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                         const da = new Date();
+                         let mont = mon[da.getMonth()];
+                         document.write(mont);
+                       </script></th>
                      <td class="govuk-table__cell">
 
 
@@ -110,11 +128,17 @@ Account home
 
                    </tbody>
                    </table>
-                   <p><a href="additional-payment/pay-full-amount-start">
+                   <p><a href="#">
                      Pay off what you owe in full
                     </a> </p>
                    <p><a href="flex-payment-additional">
-                     Make an additional payment for July
+                     Make an additional payment for <script>
+                         const monthss = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                         const ds = new Date();
+                         let monthes = monthss[ds.getMonth()];
+                         document.write(monthes);
+                       </script>
                     </a> </p>
 
                    <!-- <table class="govuk-table">
@@ -270,7 +294,7 @@ Account home
 </p> -->
 
 <p>
-              <a href="/v48/manage-plan/payment-plan.html">
+              <a href="#">
                View or manage your plan
               </a> </p>
               <p>
@@ -278,7 +302,7 @@ Account home
   					  <!-- <span style="font-weight:normal;"><a href="#" class="secondary-invert">Switch to Direct Debit payment plan</a></span> -->
 
 
-              <a href="payment-history">
+              <a href="#">
                View your payment history
               </a> </p>
 
@@ -321,7 +345,7 @@ Account home
 <br>
 
 <p>
-<a href="details-of-what-you-owe">View details of what you owe</a>
+<a href="#"">View details of what you owe</a>
 </p>    					   </div>
   				   </div>
 
@@ -344,7 +368,7 @@ Account home
   					   <div class="scenario-inner-panel">
                  <p>You can contact us for general help and support.</p>
 
-                 <p>  					  <a href="help-and-support" >Get help and support</a>
+                 <p>  					  <a href="#" >Get help and support</a>
                  </p>
 </div>
   				   </div>

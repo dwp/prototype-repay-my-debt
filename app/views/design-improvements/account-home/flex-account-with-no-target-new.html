@@ -90,7 +90,13 @@ You must make at least one payment every month.          </strong>
 
 
                      <tr class="govuk-table__row">
-                     <th scope="row" class="govuk-table__header">Paid in July</th>
+                     <th scope="row" class="govuk-table__header">Paid in <script>
+                         const mon = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                         const da = new Date();
+                         let mont = mon[da.getMonth()];
+                         document.write(mont);
+                       </script></th>
                      <td class="govuk-table__cell">
 
 
@@ -106,7 +112,13 @@ You must make at least one payment every month.          </strong>
                    </tbody>
                    </table>
                    <p><a href="flex-payment-target-not-paid-no-target">
-                     Make a payment for July
+                     Make a payment for <script>
+                         const monthss = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                         const ds = new Date();
+                         let monthes = monthss[ds.getMonth()];
+                         document.write(monthes);
+                       </script>
                     </a> </p>
                     <p><a href="additional-payment/pay-full-amount-start">
                       Pay off what you owe in full

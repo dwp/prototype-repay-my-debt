@@ -37,13 +37,12 @@ Set up payment plan
 
 {% block content %}
 
+
+{% if data['paymentOptions']=='ddFixedChoice'%}
+
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-three-quarters">
-
-
-    {% if data['paymentOptions']=='ddFixedChoice'%}
-
 
     <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">
 
@@ -63,9 +62,8 @@ Set up payment plan
       <li>you will also need your sort code and account number if you have a building society account</li>
     </ul>
 
-    <div class="govuk-inset-text mt0">
-      Once your plan is set up, you can sign in to manage your plan, change payments, pay additional amounts or get help and support.
-    </div>
+    <p>      Once your plan is set up, you can sign in to manage your plan, change payments, pay additional amounts or get help and support.
+    </p>
 
     <h2 class="govuk-heading-m">
       For joint account holders:
@@ -84,16 +82,24 @@ Set up payment plan
           Continue
         </a></p>
 
-        {% else %}
-        <form class="form" action="#" method="post">
+      </div>
+    </div>
+
+
+
+    {% else %}
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-three-quarters">
+
+
 
           <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
             How flexible payments work
           </h1>
 
-          <p>Flexible payments work in the following way:
-
-          </p>
+          <p>Flexible payments work in the following way: </p>
 
           <ul class="govuk-list govuk-list--bullet">
             <li>Make a card payment today to set up your flexible plan
@@ -203,38 +209,34 @@ Set up payment plan
                 </script>.
               </p>
 
-
-
-
-
-
-              <p class="govuk-warning-text">
+              <div class="govuk-warning-text">
                 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                 <strong class="govuk-warning-text__text">
                   <span class="govuk-visually-hidden">Warning</span>
-                  <strong>
-                    If you do not keep up with your payments, we will take further action which may include asking your employer to make deductions from your pay, taking debt enforcement action through the courts, asking a debt collection agency to collect this money for us or recovering it from future benefits and State Pension you get.
-                  </strong>
+                  If you do not keep up with your payments, we will take further action which may include asking your employer to make deductions from your pay, taking debt enforcement action through the courts, asking a debt collection agency to collect this money for us or recovering it from future benefits and State Pension you get.
+
+                </strong>
+              </div>
 
 
-                </p>
+
 
                 <p style="padding-left:0px;"><a href="flex-payment-target" class="govuk-button">
                   Continue
                 </a></p>
-              </form>
-
-
-
-
-
-              {% endif %}
-
 
 
 
 
             </div>
           </div>
+
+          {% endif %}
+
+
+
+
+
+
 
           {% endblock %}

@@ -64,7 +64,7 @@ Account home
 
 
 
-            <div class="scenario-panel" style="height:324px;">
+            <div class="scenario-panel" style="height:454px;">
                  <h2 class="govuk-heading-s">Payments for <script>
                      const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
@@ -76,11 +76,11 @@ Account home
 
                  <div class="scenario-inner-panel">
 
-      <!--
+
                    <div id="green-banner" class="alert-green">
-      <p> <strong>You have 1 payment pending</strong></p>
+        <p> <strong>You have 1 payment pending</strong></p>
                            <p>Payments can take 2 to 5 working days to clear and update your balance.</p>
-                         </div> -->
+                         </div>
 
 
                      <table class="govuk-table">
@@ -91,18 +91,18 @@ Account home
 
                      <tr class="govuk-table__row">
                      <th scope="row" class="govuk-table__header">Paid in <script>
-                         const m = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                         const mo = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
                          const de = new Date();
-                         let mo = m[de.getMonth()];
-                         document.write(mo);
+                         let m = mo[de.getMonth()];
+                         document.write(m);
                        </script></th>
                      <td class="govuk-table__cell">
 
 
 
-                         £10.00
 
+£0.00
 
 
                      </td>
@@ -111,15 +111,54 @@ Account home
                      <th scope="row" class="govuk-table__header">Left to pay in <script>
                          const mon = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
-                         const da = new Date();
-                         let mont = mon[da.getMonth()];
+                         const dat = new Date();
+                         let mont = mon[dat.getMonth()];
                          document.write(mont);
                        </script></th>
                      <td class="govuk-table__cell">
 
 
+                       {% if data['paymentChoices']=='12Month'%}
 
-                         £40.00
+                       &pound;62.50
+
+
+                       {% elif data['paymentChoices']=='24Month'%}
+
+                       &pound;31.25
+
+
+                       {% elif data['paymentChoices']=='36Month'%}
+
+                       &pound;20.83
+
+
+                       {% elif data['paymentChoices']=='48Month'%}
+
+                       &pound;15.62
+
+
+
+
+
+                       {% else %}
+
+                       {% if data['paymentChoices']=='lowPayments'%}
+
+                       {{ data['affordable-amount'] | currency }}
+
+                       {% else %}
+
+                       {{ data['custom-amount'] | currency}}
+
+                       {% endif %}
+
+                       {% endif %}
+
+
+
+
+
 
 
 
@@ -130,59 +169,18 @@ Account home
                    </table>
                    <p><a href="flex-payment-target-not-paid">
                      Make a payment towards your <script>
-                         const monthss = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                         const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
-                         const ds = new Date();
-                         let monthes = monthss[ds.getMonth()];
-                         document.write(monthes);
+                         const d = new Date();
+                         let month = months[d.getMonth()];
+                         document.write(month + '&prime;s ');
                        </script> target
                     </a> </p>
 
-                   <p><a href="additional-payment/pay-full-amount-start">
+                   <p><a href="first-time/pay-the-full-amount">
                      Pay off what you owe in full
                     </a> </p>
 
-
-                   <!-- <table class="govuk-table">
-
-                  <tbody class="govuk-table__body">
-
-                     <p>Additional payments are voluntary and help you pay off what you owe quicker.</p>
-
-
-                     <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">Additional payments this month</th>
-                      <td class="govuk-table__cell">
-
-
-
-                      &pound;0.00
-
-
-                      </td>
-                      </tr>
-
-
-
-
-
-
-
-
-
-
-                    </tbody>
-                    </table>
-
-                    <p><a href="additional-payment/pay-full-amount-start">
-                      Pay off what you owe in full
-                     </a> </p>
-                    <p><a href="additional-payment/make-an-additional-payment-test2">
-                      Make a smaller one-off payment
-                     </a> </p><p>
-                       <p>
-
-                    </p> -->
 
           </div>
             </div>
@@ -229,73 +227,52 @@ Account home
   									<td class="govuk-table__cell">
 
 
-                      £50.00
+                      {% if data['paymentChoices']=='12Month'%}
+
+                      &pound;62.50
+
+
+                      {% elif data['paymentChoices']=='24Month'%}
+
+                      &pound;31.25
+
+
+                      {% elif data['paymentChoices']=='36Month'%}
+
+                      &pound;20.83
+
+
+                      {% elif data['paymentChoices']=='48Month'%}
+
+                      &pound;15.62
+
+
+
+
+
+                      {% else %}
+
+                        {% if data['paymentChoices']=='lowPayments'%}
+
+                        {{ data['affordable-amount'] | currency }}
+
+                        {% else %}
+
+                        {{ data['custom-amount'] | currency}}
+
+                        {% endif %}
+                      {% endif %}
+
   									</td>
   								 </tr>
-
-                   <!-- <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">You have pay your target by end of</th>
-                    <td class="govuk-table__cell" id="date">
-
-
-                      <script>
-                 const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-
-                 const d = new Date();
-                 let month = months[d.getMonth()];
-
-                 document.getElementById("date").innerHTML = month + " " + d.getFullYear() ;
-
-
-
-                 </script>
-
-                    </td>
-                   </tr> -->
 
 
   								</tbody>
   							  </table>
 
-  							  <!-- <div class="flexible-banner-float-none alert-green">
-
-
-  							  <ul class="govuk-list">
-
-
-
-
-
-
-  								  <li>
-
-  										   <h3>Monthly target</h3>
-  										  <b>&pound;15.00</b>
-
-
-
-  								  </li>
-
-  								  <li>
-  									  <h3>Paid this month</h3>
-  									  <b>&pound;10.00</b>
-  								  </li>
-
-
-
-
-  							  </ul>
-
-
-
-  							  </div> -->
-
-<!-- <p class="govuk-inset-text">You will not be penalised if you do not meet your target this month.
-
-</p> -->
 
 <p>
-              <a href="#">
+              <a href="/v48/manage-plan/payment-plan.html">
                View or manage your plan
               </a> </p>
               <p>
@@ -303,7 +280,7 @@ Account home
   					  <!-- <span style="font-weight:normal;"><a href="#" class="secondary-invert">Switch to Direct Debit payment plan</a></span> -->
 
 
-              <a href="#">
+              <a href="payment-history">
                View your payment history
               </a> </p>
 

@@ -75,7 +75,43 @@ What this change will mean for you
          Monthly target
        </dt>
        <dd class="govuk-summary-list__value">
-         £50.00
+
+
+                               {% if data['paymentChoices']=='12Month'%}
+
+                               &pound;62.50
+
+
+                               {% elif data['paymentChoices']=='24Month'%}
+
+                               &pound;31.25
+
+
+                               {% elif data['paymentChoices']=='36Month'%}
+
+                               &pound;20.83
+
+
+                               {% elif data['paymentChoices']=='48Month'%}
+
+                               &pound;15.62
+
+
+
+
+
+                               {% else %}
+
+                                 {% if data['paymentChoices']=='lowPayments'%}
+
+                                 {{ data['affordable-amount'] | currency }}
+
+                                 {% else %}
+
+                                 {{ data['custom-amount'] | currency}}
+
+                                 {% endif %}
+                               {% endif %}
        </dd>
      </div>
 
@@ -84,16 +120,74 @@ What this change will mean for you
          Expected number of payments
        </dt>
        <dd class="govuk-summary-list__value">
-         <script>
-           function divide(num) { return num.toFixed(2); }
 
-           var  num1 = 750.00;
+                                   {% if data['paymentChoices']=='12Month'%}
 
-           var num2 = 60;
-
-           var  result = Math.floor(num1 / num2);
-           document.write(result);
+                                   <script>
+                                     var  num1 = 750.00;
+                                     var num2 = 62.5;
+                                     var x = Math.floor(num1 / num2); //or whatever offset
+                                     document.write(x);
          </script>
+                                   {% elif data['paymentChoices']=='24Month'%}
+
+                                   <script>
+                                     var  num1 = 750.00;
+                                     var num2 = 31.25;
+                                     var x = Math.floor(num1 / num2); //or whatever offset
+                                     var CurrentDate = new Date();
+                                     document.write(x);
+           </script>
+                                   {% elif data['paymentChoices']=='36Month'%}
+
+
+                                   <script>
+                                     var  num1 = 750.00;
+                                     var num2 = 20.83;
+                                     var x = Math.floor(num1 / num2); //or whatever offset
+                                     document.write(x);
+                 </script>
+
+
+
+                                   {% elif data['paymentChoices']=='48Month'%}
+
+
+                                   <script>
+                                     var  num1 = 750.00;
+                                     var num2 = 15.62;
+                                     var x = Math.floor(num1 / num2); //or whatever offset
+                                     document.write(x);
+
+                                   </script>
+
+
+                                   {% else %}
+
+
+
+                                   {% if data['paymentChoices']=='lowPayments'%}
+
+                                   <script>
+                                     var  num1 = 750.00;
+                                     var num2 = {{ data['affordable-amount'] }};;
+                                     var x = Math.floor(num1 / num2); //or whatever offset
+                                     document.write(x);
+
+                                   </script>
+
+                                   {% else %}
+
+
+                                   <script>
+                                     var  num1 = 750.00;
+                                     var num2 = {{ data['custom-amount'] }};;
+                                     var x = Math.floor(num1 / num2); //or whatever offset
+                                     document.write(x);
+
+                                   </script>
+                                   {% endif %}
+                                   {% endif %}
        </dd>
 
 
@@ -104,15 +198,86 @@ What this change will mean for you
          Expected final payment
        </dt>
        <dd class="govuk-summary-list__value">
+         {% if data['paymentChoices']=='12Month'%}
+
          <script>
-           var  num1 = 750;
-           var num2 = 50;
+           var  num1 = 750.00;
+           var num2 = 62.5;
            var x = Math.floor(num1 / num2); //or whatever offset
            var CurrentDate = new Date();
            console.log("Current date:", CurrentDate);
            CurrentDate.setMonth(CurrentDate.getMonth() + x);
            document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
          </script>
+         {% elif data['paymentChoices']=='24Month'%}
+
+         <script>
+           var  num1 = 750.00;
+           var num2 = 31.25;
+           var x = Math.floor(num1 / num2); //or whatever offset
+           var CurrentDate = new Date();
+           console.log("Current date:", CurrentDate);
+           CurrentDate.setMonth(CurrentDate.getMonth() + x);
+           document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+         </script>
+         {% elif data['paymentChoices']=='36Month'%}
+
+
+         <script>
+           var  num1 = 750.00;
+           var num2 = 20.83;
+           var x = Math.floor(num1 / num2); //or whatever offset
+           var CurrentDate = new Date();
+           console.log("Current date:", CurrentDate);
+           CurrentDate.setMonth(CurrentDate.getMonth() + x);
+           document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+         </script>
+
+
+
+         {% elif data['paymentChoices']=='48Month'%}
+
+
+         <script>
+           var  num1 = 750.00;
+           var num2 = 15.62;
+           var x = Math.floor(num1 / num2); //or whatever offset
+           var CurrentDate = new Date();
+           console.log("Current date:", CurrentDate);
+           CurrentDate.setMonth(CurrentDate.getMonth() + x);
+           document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+         </script>
+
+
+         {% else %}
+
+
+
+         {% if data['paymentChoices']=='lowPayments'%}
+
+         <script>
+           var  num1 = 750.00;
+           var num2 = {{ data['affordable-amount'] }};;
+           var x = Math.floor(num1 / num2); //or whatever offset
+           var CurrentDate = new Date();
+           console.log("Current date:", CurrentDate);
+           CurrentDate.setMonth(CurrentDate.getMonth() + x);
+           document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+         </script>
+
+         {% else %}
+
+         <script>
+           var  num1 = 750.00;
+           var num2 = {{ data['custom-amount'] }};;
+           var x = Math.floor(num1 / num2); //or whatever offset
+           var CurrentDate = new Date();
+           console.log("Current date:", CurrentDate);
+           CurrentDate.setMonth(CurrentDate.getMonth() + x);
+           document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+         </script>
+         {% endif %}
+         {% endif %}
        </dd>
      </div>
 
