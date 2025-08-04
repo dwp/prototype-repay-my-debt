@@ -71,7 +71,13 @@ You must make at least one payment every month.          </strong>
 
 
             <div class="scenario-panel" style="height:324px;">
-                 <h2 class="govuk-heading-s">Payments for July 2025</h2>
+                 <h2 class="govuk-heading-s">Payments for <script>
+                     const monthsss = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                     const dss = new Date();
+                     let monthess = monthsss[dss.getMonth()];
+                     document.write(monthess);
+                   </script> 2025</h2>
 
 
                  <div class="scenario-inner-panel">
@@ -120,7 +126,7 @@ You must make at least one payment every month.          </strong>
                          document.write(monthes);
                        </script>
                     </a> </p>
-                    <p><a href="additional-payment/pay-full-amount-start">
+                    <p><a href="#">
                       Pay off what you owe in full
                      </a> </p>
                    <!-- <table class="govuk-table">
@@ -276,7 +282,7 @@ You must make at least one payment every month.          </strong>
   					  <!-- <span style="font-weight:normal;"><a href="#" class="secondary-invert">Switch to Direct Debit payment plan</a></span> -->
 
 
-              <a href="payment-history">
+              <a href="#">
                View your payment history
               </a> </p>
 
@@ -319,7 +325,7 @@ You must make at least one payment every month.          </strong>
 <br>
 
 <p>
-<a href="details-of-what-you-owe">View details of what you owe</a>
+<a href="#">View details of what you owe</a>
 </p>    					   </div>
   				   </div>
 
@@ -342,7 +348,7 @@ You must make at least one payment every month.          </strong>
   					   <div class="scenario-inner-panel">
                  <p>You can contact us for general help and support.</p>
 
-                 <p>  					  <a href="help-and-support" >Get help and support</a>
+                 <p>  					  <a href="#" >Get help and support</a>
                  </p>
 </div>
   				   </div>
