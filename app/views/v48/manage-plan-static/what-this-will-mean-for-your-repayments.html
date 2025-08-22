@@ -102,48 +102,7 @@ What this means for your payment plan
     </th>
     <td class="govuk-table__cell govuk-table__cell">
 
-      {% if data['paymentChoices']=='12Month'%}
-
-      {% set setpaymentTo = 62.50 %}
-
-
-
-      {% elif data['paymentChoices']=='24Month'%}
-
-      {% set setpaymentTo = 31.25 %}
-
-
-      {% elif data['paymentChoices']=='36Month'%}
-
-      {% set setpaymentTo = 20.83 %}
-
-
-      {% elif data['paymentChoices']=='48Month'%}
-
-      {% set setpaymentTo = 15.62 %}
-
-
-
-
-
-      {% else %}
-
-      {% if data['paymentChoices']=='lowPayments'%}
-
-      {% set setpaymentTo = data['affordable-amount']|float %}
-
-
-      {% else %}
-
-      {% set setpaymentTo = data['custom-amount']|float %}
-
-
-
-      {% endif %}
-
-      {% endif %}
-
-&pound;{{ setpaymentTo }}</td>
+&pound;50.00</td>
     <td class="govuk-table__cell govuk-table__cell"> {{ data['new-dd-amount'] | currency }}</td>
 
   </tr>
@@ -183,7 +142,7 @@ What this means for your payment plan
 
     var  num1 = 750;
 
-    var num2 = {{ setpaymentTo }};
+    var num2 = 50.00;
 
     var  result = Math.floor(num1 / num2);
     document.write(result);
@@ -208,7 +167,7 @@ What this means for your payment plan
 <td class="govuk-table__cell govuk-table__cell">
   <script>
     var  num1 = 750;
-    var num2 = {{ setpaymentTo }};
+    var num2 = 50.00;
     var x = Math.floor(num1 / num2); //or whatever offset
     var CurrentDate = new Date();
     console.log("Current date:", CurrentDate);

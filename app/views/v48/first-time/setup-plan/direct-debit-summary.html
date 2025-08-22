@@ -394,41 +394,50 @@ Payment plan summary
 
 
 
-                  <h2 class="govuk-heading-m">Declaration</h2>
-
-                  <p>By continuing, you confirm that you will:</p>
-
-                  <ul class="govuk-list govuk-list--bullet mb30">
-
-                    {% if data['paymentOptions']=='ddFixedChoice'%}
-                    <li>pay the agreed monthly amount</li>
-                    {% else %}
-                    {% endif %}
-
-                    {% if data['paymentOptions']=='flexyPayChoice'%}
-                    <li>pay the agreed monthly amount</li>
-                    {% else %}
-                    {% endif %}
-
-
-                    <li>let us know immediately if you’re struggling to keep up with payments</li>
-                  </ul>
 
 
 
                   <div class="govuk-warning-text">
                     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                     <strong class="govuk-warning-text__text">
-                      If you do not keep up with our payments, we will ask your employer to make deductions from your pay, take debt enforcement action through the coursts or ask a debt collec tion agency to collect this money for us.
-
-                    </strong>
+                  If you do not keep up with your payments, we will take further action to recover the money owed.</strong>
                   </div>
+                  <p class="govuk-body">Further action to recover money owed may include:</p>
+                                <ul class="govuk-list govuk-list--bullet mb30">
+
+                <li>asking your employer to deduct it from your pay</li>
+                <li>taking debt enforcement action through the courts</li>
+                <li>asking a debt collection agency to collect it for us</li>
+                <li>recovering it from future benefits and State Pension you get</li>
 
 
-                  <div class="govuk-inset-text">
-                    <p>Your bank may charge you interest if you pay by credit card.
-                    </p>
-                  </div>
+                                </ul>
+
+
+                                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+                                                  <h2 class="govuk-heading-m">Declaration</h2>
+
+                                                  <p>By continuing, you confirm that you will:</p>
+
+                                                  <ul class="govuk-list govuk-list--bullet mb30">
+
+                                                    {% if data['paymentOptions']=='ddFixedChoice'%}
+                                                    <li>pay the agreed monthly amount</li>
+                                                    {% else %}
+                                                    {% endif %}
+
+                                                    {% if data['paymentOptions']=='flexyPayChoice'%}
+                                                    <li>pay the agreed monthly amount</li>
+                                                    {% else %}
+                                                    {% endif %}
+
+
+                                                    <li>let us know immediately if you’re struggling to keep up with payments</li>
+                                                  </ul>
+                                                  <p class="govuk-!-font-weight-bold">Your bank may charge you interest if you pay by credit card.
+                                                  </p>
 
 
                   <button class="govuk-button" data-module="govuk-button">

@@ -69,18 +69,21 @@ Your payment plan is set up
             Total amount owed
           </dt>
           <dd class="govuk-summary-list__value">
-            £3,098.64
+            £750.00
           </dd>
-
+          <dd class="govuk-summary-list__actions">
+          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Plan type
           </dt>
           <dd class="govuk-summary-list__value">
-            Monthly Direct Debit
+            Monthly flexible payments
           </dd>
-
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="edit-dd-flex">Change<span class="govuk-visually-hidden"> Monthly flexible payments</span></a>
+          </dd>
         </div>
         </dl>
         <h2 class="govuk-heading-m govuk-!-padding-top-7 ">Payment details</h2>
@@ -90,31 +93,14 @@ Your payment plan is set up
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Direct Debit amount
+            Monthly target
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['new-dd-amount'] | currency}}
+          {{ data['new-dd-amount'] | currency }}
           </dd>
-
-        </div>
-
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Final payment amount          </dt>
-          <dd class="govuk-summary-list__value"> £<script>
-            function divide(num) { return num.toFixed(2); }
-
-            var  num1 = 3098.64 ;
-
-            var num2 = {{ data['new-dd-amount'] }};
-            var  result = Math.floor(num1 / num2);
-            var finalResult = num1 - num2 * result;
-            document.write(Math.round(finalResult * 100) / 100);
-          </script>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="edit-dd-flex">Change<span class="govuk-visually-hidden"> Monthly target</span></a>
           </dd>
-
         </div>
 
         <div class="govuk-summary-list__row">
@@ -125,43 +111,31 @@ Your payment plan is set up
             <script>
               function divide(num) { return num.toFixed(2); }
 
-              var  num1 = 3098.64;
+              var  num1 = 750;
 
               var num2 = {{ data['new-dd-amount'] }};
 
               var  result = Math.floor(num1 / num2);
               document.write(result);
             </script>
+            <br>
+          (if monthly target  is met each month)
+
+
+
+
           </dd>
-
-        </div>
-
-
-      </dl>
-
-
-      <h2 class="govuk-heading-m govuk-!-padding-top-7">Payment dates</h2>
-
-
-      <dl class="govuk-summary-list">
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-          Direct Debit day
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['new-dd-date'] }}
+          <dd class="govuk-summary-list__actions">
           </dd>
-
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-          Expected final payment
+            Expected final payment
           </dt>
           <dd class="govuk-summary-list__value">
+
             <script>
-              var  num1 = 3098.64 ;
+              var  num1 = 750.00;
               var num2 = {{ data['new-dd-amount'] }};
               var x = Math.floor(num1 / num2); //or whatever offset
               var CurrentDate = new Date();
@@ -169,38 +143,28 @@ Your payment plan is set up
               CurrentDate.setMonth(CurrentDate.getMonth() + x);
               document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
             </script>
-          </dd>
 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
         </div>
 
+
+
       </dl>
+      <p id="currentMonthYear" class="govuk-!-font-weight-bold">You must pay at least
+{{ data['new-dd-amount'] | currency }}
+        every calendar month.
+
+
+      </p>
+
+<p>
+      If you do not pay enough each month, your payment plan will be cancelled. We will then take further action which could include contacting your employer or a debt collection agency.</p>
 
 
 
-  <p>Your payments will show on your bank statement as <strong>CENT REC GROUP DD</strong>.</p>
 
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-  <p class="govuk-heading-m">
-  Further Direct Debit details
-  </p>
-
-
-  <div class="govuk-body">
-     <!--  <p>Service user number: 941315 </p>-->
-      <p>If you have any problems or questions about your Direct Debit plan, contact Debt Management:</p>
-      <h2 class="govuk-heading-s">Debt Management</h2>
-
-
-  <ul class="govuk-list">
-  <li>Telephone: 0800 916 0647</li>
-  <li>Textphone: 0800 916 0651</li>
-  <li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
-  </ul>
-
-  <p><a href="#" target="_blank">Find out about call charges (opens in new tab)</a></p>
-
-  </div>
 
   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -221,7 +185,7 @@ Your payment plan is set up
 
   <!-- <p><a href="#">What did you think of this service? (opens in new tab)</a></p> -->
 
-  <p><a href="/index.html" class="govuk-button">Go to Account home</a></p>
+  <p><a href="/v48/account-home-flex-payment-monthly-changed.html" class="govuk-button">Go to Account home</a></p>
 
 
 

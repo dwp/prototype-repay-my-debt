@@ -77,12 +77,7 @@ What this means for your payment plan
   <caption class="govuk-table__caption govuk-table__caption--m ">Your payment plan
 </caption>
 <thead class="govuk-table__head">
-  <tr class="govuk-table__row">
-    <th scope="col" class="govuk-table__header"></th>
-    <th scope="col" class="govuk-table__header">Current</th>
-    <th scope="col" class="govuk-table__header">New</th>
 
-  </tr>
 </thead>
 <tbody class="govuk-table__body">
 
@@ -90,7 +85,7 @@ What this means for your payment plan
     <th scope="row" class="govuk-table__header">Total amount left to pay
 
     </th>
-    <td class="govuk-table__cell govuk-table__cell">&pound;750.00</td>
+    <!-- <td class="govuk-table__cell govuk-table__cell">&pound;750.00</td> -->
     <td class="govuk-table__cell govuk-table__cell">&pound;750.00</td>
 
   </tr>
@@ -100,50 +95,9 @@ What this means for your payment plan
     <th scope="row" class="govuk-table__header">Monthly flexible payment amount
 
     </th>
-    <td class="govuk-table__cell govuk-table__cell">
+    <!-- <td class="govuk-table__cell govuk-table__cell">
 
-      {% if data['paymentChoices']=='12Month'%}
-
-      {% set setpaymentTo = 62.50 %}
-
-
-
-      {% elif data['paymentChoices']=='24Month'%}
-
-      {% set setpaymentTo = 31.25 %}
-
-
-      {% elif data['paymentChoices']=='36Month'%}
-
-      {% set setpaymentTo = 20.83 %}
-
-
-      {% elif data['paymentChoices']=='48Month'%}
-
-      {% set setpaymentTo = 15.62 %}
-
-
-
-
-
-      {% else %}
-
-      {% if data['paymentChoices']=='lowPayments'%}
-
-      {% set setpaymentTo = data['affordable-amount']|float %}
-
-
-      {% else %}
-
-      {% set setpaymentTo = data['custom-amount']|float %}
-
-
-
-      {% endif %}
-
-      {% endif %}
-
-&pound;{{ setpaymentTo }}</td>
+&pound;50.00</td> -->
     <td class="govuk-table__cell govuk-table__cell"> {{ data['new-dd-amount'] | currency }}</td>
 
   </tr>
@@ -178,16 +132,16 @@ What this means for your payment plan
 <tr class="govuk-table__row">
   <th scope="row" class="govuk-table__header">Expected number of payments
   </th>
-  <td class="govuk-table__cell govuk-table__cell"><script>
+  <!-- <td class="govuk-table__cell govuk-table__cell"><script>
     function divide(num) { return num.toFixed(2); }
 
     var  num1 = 750;
 
-    var num2 = {{ setpaymentTo }};
+    var num2 = 50.00;
 
     var  result = Math.floor(num1 / num2);
     document.write(result);
-  </script></td>
+  </script></td>-->
   <td class="govuk-table__cell govuk-table__cell"><script>
     function divide(num) { return num.toFixed(2); }
 
@@ -205,10 +159,10 @@ What this means for your payment plan
     This date may change based on when your next payment is taken
   </div> -->
 </th>
-<td class="govuk-table__cell govuk-table__cell">
+<!-- <td class="govuk-table__cell govuk-table__cell">
   <script>
     var  num1 = 750;
-    var num2 = {{ setpaymentTo }};
+    var num2 = 50.00;
     var x = Math.floor(num1 / num2); //or whatever offset
     var CurrentDate = new Date();
     console.log("Current date:", CurrentDate);
@@ -216,7 +170,7 @@ What this means for your payment plan
     document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
   </script>
 
-</td>
+</td> -->
 
 <td class="govuk-table__cell govuk-table__cell">
   <script>

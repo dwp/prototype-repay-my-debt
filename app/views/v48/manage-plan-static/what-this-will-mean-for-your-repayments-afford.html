@@ -62,9 +62,9 @@ What this means for your payment plan
 
 
       <li>
-        <h3>New monthly flexible payment:</h3>
+        <h3>New monthly Direct Debit amount:</h3>
         <span id="new-debts-amount"><b>{{ data['new-dd-amount']|currency }}</b></span>
-        <p><a class="govuk-link" href="edit-flex-monthly-amount">Change</a></p>
+        <p><a class="govuk-link" href="edit-dd-amount">Change</a></p>
       </li>
 
     </ul>
@@ -90,90 +90,48 @@ What this means for your payment plan
     <th scope="row" class="govuk-table__header">Total amount left to pay
 
     </th>
-    <td class="govuk-table__cell govuk-table__cell">&pound;750.00</td>
-    <td class="govuk-table__cell govuk-table__cell">&pound;750.00</td>
+    <td class="govuk-table__cell govuk-table__cell">&pound;3,098.64</td>
+    <td class="govuk-table__cell govuk-table__cell">&pound;3,098.64</td>
 
   </tr>
 
 
   <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Monthly flexible payment amount
+    <th scope="row" class="govuk-table__header">Direct Debit amount
 
     </th>
-    <td class="govuk-table__cell govuk-table__cell">
-
-      {% if data['paymentChoices']=='12Month'%}
-
-      {% set setpaymentTo = 62.50 %}
-
-
-
-      {% elif data['paymentChoices']=='24Month'%}
-
-      {% set setpaymentTo = 31.25 %}
-
-
-      {% elif data['paymentChoices']=='36Month'%}
-
-      {% set setpaymentTo = 20.83 %}
-
-
-      {% elif data['paymentChoices']=='48Month'%}
-
-      {% set setpaymentTo = 15.62 %}
-
-
-
-
-
-      {% else %}
-
-      {% if data['paymentChoices']=='lowPayments'%}
-
-      {% set setpaymentTo = data['affordable-amount']|float %}
-
-
-      {% else %}
-
-      {% set setpaymentTo = data['custom-amount']|float %}
-
-
-
-      {% endif %}
-
-      {% endif %}
-
-&pound;{{ setpaymentTo }}</td>
+    <td class="govuk-table__cell govuk-table__cell">&pound;20.00</td>
     <td class="govuk-table__cell govuk-table__cell"> {{ data['new-dd-amount'] | currency }}</td>
 
   </tr>
 
-  <!-- <tr class="govuk-table__row">
+
+  <tr class="govuk-table__row">
     <th scope="row" class="govuk-table__header">Final payment amount
     </th>
     <td class="govuk-table__cell govuk-table__cell">£<script>
       function divide(num) { return num.toFixed(2); }
 
-      var  num1 = 750.00;
+      var  num1 = 3098.64;
 
-      var num2 = {{ setpaymentTo }};
+      var num2 = 20;
 
       var  result = Math.floor(num1 / num2);
 
-      var finalResult = num1 - num2 * result;
+      var finalResult = num1 - 20 * result;
       document.write(Math.round(finalResult * 100) / 100);
     </script></td>
     <td class="govuk-table__cell govuk-table__cell">£<script>
       function divide(num) { return num.toFixed(2); }
 
-      var  num1 = 750 ;
+      var  num1 = 3098.64 ;
 
       var num2 = {{ data['new-dd-amount'] }};
       var  result = Math.floor(num1 / num2);
       var finalResult = num1 - num2 * result;
       document.write(Math.round(finalResult * 100) / 100);
     </script></td>
-  </tr> -->
+  </tr>
 
 <tr class="govuk-table__row">
   <th scope="row" class="govuk-table__header">Expected number of payments
@@ -181,9 +139,9 @@ What this means for your payment plan
   <td class="govuk-table__cell govuk-table__cell"><script>
     function divide(num) { return num.toFixed(2); }
 
-    var  num1 = 750;
+    var  num1 = 3098.64;
 
-    var num2 = {{ setpaymentTo }};
+    var num2 = 20;
 
     var  result = Math.floor(num1 / num2);
     document.write(result);
@@ -191,7 +149,7 @@ What this means for your payment plan
   <td class="govuk-table__cell govuk-table__cell"><script>
     function divide(num) { return num.toFixed(2); }
 
-    var  num1 = 750;
+    var  num1 = 3098.64;
 
     var num2 = {{ data['new-dd-amount'] }};
 
@@ -207,8 +165,8 @@ What this means for your payment plan
 </th>
 <td class="govuk-table__cell govuk-table__cell">
   <script>
-    var  num1 = 750;
-    var num2 = {{ setpaymentTo }};
+    var  num1 = 3098.64;
+    var num2 = 20;
     var x = Math.floor(num1 / num2); //or whatever offset
     var CurrentDate = new Date();
     console.log("Current date:", CurrentDate);
@@ -220,7 +178,7 @@ What this means for your payment plan
 
 <td class="govuk-table__cell govuk-table__cell">
   <script>
-    var  num1 = 750 ;
+    var  num1 = 3098.64 ;
     var num2 = {{ data['new-dd-amount'] }};
     var x = Math.floor(num1 / num2); //or whatever offset
     var CurrentDate = new Date();
@@ -240,9 +198,10 @@ What this means for your payment plan
 </tbody>
 </table>
 
-
+<p>The monthly payment you entered means you will be setting up an affordable payment plan.</p>
+<p>We may contact you in the future to review your payments.</p>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
-<p><a href="flex-payment-change-summary" class="govuk-button mb0">Continue</a></p>
+<p><a href="edit-direct-debit-day" class="govuk-button mb0">Continue</a></p>
 
 <!-- <p><a href="would-you-like-to-receive-a-text-message-reminder-about-your-next-check" class="govuk-button mb0">Continue</a></p> -->
 

@@ -1,0 +1,314 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Account home
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<!-- <div class="clear-bar">
+<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+<p>What you owe:
+<span>&pound;120.00</span></p>
+
+</div> -->
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="clear-bar stripped-border">
+      <div class="identifier">
+
+        <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Account home</span>
+          David Jones
+        </h1>
+
+      </div>
+      <div  >
+        <p style="float:right; border:0px; font-size:19px; text-align:right;"  >
+          Total amount left to pay:<br>
+           <span class="total-amount">
+            &pound;750.00
+
+          </span>
+</p>
+
+
+
+
+
+      </div>
+
+
+    </div>
+
+
+
+
+    <div class="govuk-grid-row">
+  	  <div class="govuk-grid-column-full">
+
+
+
+
+  		<div class="govuk-grid-row">
+
+
+        <div class="govuk-grid-column-one-half">
+
+
+
+            <div class="scenario-panel" style="height:454px;">
+                 <h2 class="govuk-heading-s">Payments for <script>
+                     const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                     const d = new Date();
+                     let month = months[d.getMonth()];
+                     document.write(month);
+                   </script> 2025</h2>
+
+
+                 <div class="scenario-inner-panel">
+
+
+                   <div id="green-banner" class="alert-green">
+        <p> <strong>You have 1 payment pending</strong></p>
+                           <p>Payments can take 2 to 5 working days to clear and update your balance.</p>
+                         </div>
+
+
+                     <table class="govuk-table">
+
+                    <tbody class="govuk-table__body">
+
+
+
+                     <tr class="govuk-table__row">
+                     <th scope="row" class="govuk-table__header">Paid in <script>
+                         const mo = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                         const de = new Date();
+                         let m = mo[de.getMonth()];
+                         document.write(m);
+                       </script></th>
+                     <td class="govuk-table__cell">
+
+
+
+
+£0.00
+
+
+                     </td>
+                     </tr>
+                     <tr class="govuk-table__row">
+                     <th scope="row" class="govuk-table__header">Left to pay in <script>
+                         const mon = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                         const dat = new Date();
+                         let mont = mon[dat.getMonth()];
+                         document.write(mont);
+                       </script></th>
+                     <td class="govuk-table__cell">
+
+£50.00
+
+
+
+
+
+                     </td>
+                     </tr>
+
+                   </tbody>
+                   </table>
+                   <p><a href="flex-payment-target-not-paid">
+                     Make a payment towards your <script>
+                         const monthsz = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                         const des = new Date();
+                         let monthz = monthsz[des.getMonth()];
+                         document.write(monthz);
+                       </script> target
+                    </a> </p>
+
+                   <p><a href="first-time/pay-the-full-amount">
+                     Pay off what you owe in full
+                    </a> </p>
+
+
+          </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+  		 <div class="govuk-grid-column-one-half">
+
+
+  			 <div class="scenario-panel">
+  					   <h2 class="govuk-heading-s">Payment plan details</h2>
+
+  					   <div class="scenario-inner-panel" style="height:224px;">
+
+
+
+
+              <!-- <div id="red-banner" class="payment-info alert-red">
+                      <p>You did not make a payment for:<br><strong>January 2024</strong></p>
+                    </div>-->
+
+<!-- Blue banner -->
+
+  							   <table class="govuk-table">
+
+  								<tbody class="govuk-table__body">
+
+                    <tr class="govuk-table__row">
+                     <th scope="row" class="govuk-table__header">Plan type</th>
+                     <td class="govuk-table__cell">
+
+
+                       Monthly flexible payments
+                     </td>
+                    </tr>
+  								 <tr class="govuk-table__row">
+  									<th scope="row" class="govuk-table__header">Monthly target</th>
+  									<td class="govuk-table__cell">
+
+                      £50.00
+
+
+  									</td>
+  								 </tr>
+
+
+  								</tbody>
+  							  </table>
+
+
+<p>
+              <a href="/v48/manage-plan-static/payment-plan-no-text-messages.html">
+               View or manage your plan
+              </a> </p>
+              <p>
+
+  					  <!-- <span style="font-weight:normal;"><a href="#" class="secondary-invert">Switch to Direct Debit payment plan</a></span> -->
+
+
+              <a href="payment-history">
+               View your payment history
+              </a> </p>
+
+
+
+  					   </div>
+  				   </div>
+
+
+
+
+
+
+
+
+
+
+  		  </div>
+
+
+
+
+
+  		</div>
+
+
+
+
+  		  <div class="govuk-grid-row">
+
+
+
+  			  <div class="govuk-grid-column-one-half">
+
+  			  <div class="scenario-panel" style="height:190px;">
+  					   <h2 class="govuk-heading-s">What you owe</h2>
+
+  					   <div class="scenario-inner-panel">
+  						<p>Details of the money you owe.</p>
+
+<br>
+
+<p>
+<a href="#">View details of what you owe</a>
+</p>    					   </div>
+  				   </div>
+
+
+
+
+  		  </div>
+
+
+
+
+
+
+
+  		  <div class="govuk-grid-column-one-half">
+
+  			  <div class="scenario-panel">
+  					   <h2 class="govuk-heading-s">Help and support</h2>
+
+  					   <div class="scenario-inner-panel">
+                 <p>You can contact us for general help and support.</p>
+
+                 <p>  					  <a href="#" >Get help and support</a>
+                 </p>
+</div>
+  				   </div>
+
+
+
+
+  		  </div>
+
+
+
+  		</div>
+
+
+
+
+  	  </div>
+    </div>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+<!--<h4 class="govuk-heading-m">Messages</h4>
+
+<h4 class="govuk-heading-s">Universal Credit</h4>
+
+<p>Click<a href="indexAccountHome-onoff-inbox"> here</a> to read your messages.</p>>-->
+
+
+
+{% endblock %}

@@ -46,15 +46,12 @@
       Would you like to sign up for payment reminders by text message?
 </h1>
 <br>
-  <p >We will text you each month, reminding you to make a payment.
+
+<p>We will text you each month, reminding you to make a payment.
 
 
 
-</p>
-
-
-
-<form class="form" action="flexible-payment-summary" method="post">
+<form class="form" action="contact-info-summary" method="post">
 
 
   <div class="govuk-form-group">
@@ -74,7 +71,7 @@
             Enter your UK mobile phone number, like 07700900000
 
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="contact-by-mobile" name="contactByMobile" type="tel" spellcheck="false" autocomplete="number" value={{data['contactByMobile']}}>
+          <input class="govuk-input govuk-!-width-one-half" id="contact-by-mobile" name="contactByMobile" type="tel" spellcheck="false" autocomplete="email" value="{{data['contactByMobile']}}">
         </div>
       </div>
       <div class="govuk-radios__item">
