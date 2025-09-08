@@ -29,6 +29,78 @@ Your payment plan is set up
 
 {% block content %}
 
+{% if data['reminder-notification-payment-setup-done-yes-no']=='no' %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+
+      <h1 class="govuk-panel__title">
+        Your contact preferences have not been changed
+      </h1>
+
+
+    </div>
+
+    <h2 class="govuk-heading-m  ">Contact preferences
+
+
+    </h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Text messages
+        </dt>
+        {% if data['reminder-notification-payment-setup-done-yes-no']=='no' %}
+        <dd class="govuk-summary-list__value">
+          No <br>
+
+        </dd>
+        {% else %}
+
+        <dd class="govuk-summary-list__value">
+          Yes <br>
+          {{data['contactByMobile']}}
+
+        </dd>
+
+        {% endif %}
+
+      </div>
+
+
+
+
+    </dl>
+
+<!-- <p class="govuk-heading-m">Payment reminders</p> -->
+
+<p>You can choose to sign up for payment reminders by text message by changing your <a href="change-payment-contact-info">contact preferences</a>.</p>
+
+
+
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+
+
+
+
+        <p class="govuk-body">
+        <a href="#" class="govuk-link">What did you think of this service? (opens in new tab)</a>
+      </p>
+      <p><a href="/v48/account-home-flex-manage-plan.html" class="govuk-button">Go to Account home</a></p>
+
+
+
+    </div>
+  </div>
+
+  {% else %}
+
+
 
 <div class="govuk-grid-row">
 
@@ -41,10 +113,39 @@ Your payment plan is set up
       </h1>
 
 
-    </div>
+    </div><hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
-<p class="govuk-heading-m">What happens next</p>
-<p>You will only receive text messages for unsuccessful payments. </p>
+    <h2 class="govuk-heading-m  ">Contact preferences
+
+
+    </h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Text messages
+        </dt>
+        {% if data['reminder-notification-payment-setup-done-yes-no']=='no' %}
+        <dd class="govuk-summary-list__value">
+          No <br>
+
+        </dd>
+        {% else %}
+
+        <dd class="govuk-summary-list__value">
+          Yes <br>
+          {{data['contactByMobile']}}
+
+        </dd>
+
+        {% endif %}
+
+      </div>
+
+
+
+
+    </dl>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
 <p class="govuk-heading-m">Change your contact preferences</p>
 
@@ -63,11 +164,15 @@ Your payment plan is set up
 
 
 
+     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+
+     <p class="govuk-heading-m">What happens next</p>
+     <p>You will only receive text messages reminding you to make a payment. </p>
 
 
 
-
-
+     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
 
         <p class="govuk-body">
@@ -79,5 +184,6 @@ Your payment plan is set up
 
     </div>
   </div>
+  {% endif %}
 
   {% endblock %}
