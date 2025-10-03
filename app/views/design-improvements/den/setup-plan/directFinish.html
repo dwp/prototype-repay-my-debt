@@ -1,0 +1,816 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Your payment plan is set up
+{% endblock %}
+
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+
+      {% if data['paymentOptions']=='ddFixedChoice'%}
+      <h1 class="govuk-panel__title">
+        Your payment was successful and your plan is set up
+      </h1>
+
+      {% else %}
+
+      <h1 class="govuk-panel__title">
+        Your payment was successful and your plan is set up
+      </h1>
+
+      {% endif %}
+
+    </div>
+
+
+
+
+    {% if data['paymentChoices']=='lowPayments'%}
+
+
+
+
+
+
+
+
+    {% if data['paymentOptions']=='ddFixedChoice'%}
+    <h2 class="govuk-heading-m">Plan summary</h2>
+
+    <table class="govuk-table mb40">
+
+      <caption class="visually-hidden">Plan summary</caption>
+
+
+      <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Plan type</th>
+      <td class="govuk-table__cell">Affordable Direct Debit
+      </td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total amount owed</th>
+      <td class="govuk-table__cell">£750.00
+      </td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Payment type</th>
+      <td class="govuk-table__cell">Direct Debit
+      </td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Direct Debit amount</th>
+      <td class="govuk-table__cell">
+
+         {{ data['affordable-amount'] | currency     }}
+
+      </td>
+
+
+    </tr>
+    <tr class="govuk-table__row" >
+      <th scope="row" class="govuk-table__header" style="width:40%;">First payment</th>
+      <td class="govuk-table__cell" colspan="2" style="width:45%;">
+        <script>
+          var CurrentDate = new Date();
+          console.log("Current date:", CurrentDate);
+          CurrentDate.setDate({{data['paymentDay']}});
+          CurrentDate.setMonth(CurrentDate.getMonth() + 1);
+          document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
+        </script>
+      </td>
+
+    </tr>
+
+
+</table>
+
+
+
+    {% else %}
+    <h2 class="govuk-heading-m">Plan summary</h2>
+
+    <table class="govuk-table mb40">
+
+      <caption class="visually-hidden">Plan summary</caption>
+
+
+      <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Payment plan</th>
+      <td class="govuk-table__cell">Affordable flexible payments
+      </td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total amount owed</th>
+      <td class="govuk-table__cell">
+        {% set newDebt = 750.00 - data['payment-amount']|float  %}
+               {{ newDebt | currency }}
+      </td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Payment type</th>
+      <td class="govuk-table__cell">Monthly Flexible payments
+      </td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Monthly target</th>
+      <td class="govuk-table__cell">
+
+         {{ data['affordable-amount'] | currency  }}
+
+
+      </td>
+
+
+    </tr>
+
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Payment today</th>
+      <td class="govuk-table__cell">
+
+         {{ data['payment-amount'] | currency }}
+
+      </td>
+
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Payment method</th>
+      <td class="govuk-table__cell">
+
+        Card Payment
+
+      </td>
+
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Payment to</th>
+      <td class="govuk-table__cell">
+
+        DWP Debt Management
+
+      </td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Expected final payment</th>
+      <td class="govuk-table__cell" colspan="2">
+
+        <script>
+          var  num1 = 750.00 - {{ data['payment-amount'] }};
+          var num2 = {{data['affordable-amount']}};
+          var x = Math.floor(num1 / num2); //or whatever offset
+          var CurrentDate = new Date();
+          console.log("Current date:", CurrentDate);
+          CurrentDate.setMonth(CurrentDate.getMonth() + x);
+          document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+        </script>
+
+        <p>(if monthly target is met each month)</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    {% endif %}
+
+
+
+
+
+
+
+
+
+{% else %}
+
+
+
+
+
+    {% if data['paymentOptions']=='ddFixedChoice'%}
+
+    <h2 class="govuk-heading-m">Plan summary</h2>
+
+    <table class="govuk-table mb40">
+
+      <caption class="visually-hidden">Plan summary</caption>
+
+
+      <tbody class="govuk-table__body">
+
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Plan type</th>
+      <td class="govuk-table__cell" colspan="2">Monthly Direct Debit
+      </td>
+
+
+    </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Total amount owed</th>
+          <td class="govuk-table__cell" colspan="2">£750.00
+          </td>
+
+
+        </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Payment type</th>
+      <td class="govuk-table__cell" colspan="2">Direct Debit
+      </td>
+
+
+    </tr>
+
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Direct Debit amount	</th>
+      <td class="govuk-table__cell">
+
+
+        {% if data['paymentChoices']=='12Month'%}
+
+        <p class="mb0">&pound;62.50</p>
+
+
+        {% elif data['paymentChoices']=='24Month'%}
+
+        <p class="mb0"> &pound;31.25</p>
+
+
+        {% elif data['paymentChoices']=='36Month'%}
+
+
+
+        <p class="mb0">  &pound;20.83</p>
+
+
+        {% elif data['paymentChoices']=='48Month'%}
+
+        <p class="mb0"> &pound;15.62</p>
+
+
+
+
+        {% else %}
+
+        <p class="mb0">
+
+          {% if data['paymentChoices']=='lowPayments'%}
+
+          <p class="mb0">
+
+            <script>
+              function divide(num) { return num.toFixed(2); }
+
+              var  num1 = 750.00;
+
+              var num2 = {{ data['affordable-amount'] }};
+
+              var  result = Math.floor(num1 / num2);
+              document.write(result);
+            </script>   payments of {{data['affordable-amount'] | currency}}</p>
+
+            {% else %}
+
+            <p class="mb0">
+            <script>
+              function divide(num) { return num.toFixed(2); }
+
+              var  num1 = 750.00;
+
+              var num2 = {{ data['custom-amount'] }};
+
+              var  result = Math.floor(num1 / num2);
+              document.write(result);
+            </script>   payments of {{data['custom-amount'] | currency}}
+          </p>
+          {% endif %}
+
+
+
+        {% endif %}
+
+
+      </td>
+
+
+
+    </tr>
+
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">First payment date</th>
+      <td class="govuk-table__cell dtList" >
+        <script>
+          var CurrentDate = new Date();
+          console.log("Current date:", CurrentDate);
+          CurrentDate.setMonth(CurrentDate.getMonth() + 1);
+          document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
+        </script>
+
+
+      </td>
+    </tr>
+
+
+</table>
+
+
+    {% else %}
+
+
+                      <h2 class="govuk-heading-m  ">Plan summary</h2>
+
+
+                      <dl class="govuk-summary-list">
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Total amount owed
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              £750.00
+                            </dd>
+
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Plan type
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              Monthly flexible payments
+                            </dd>
+
+                          </div>
+                          </dl>
+                          <h2 class="govuk-heading-m govuk-!-padding-top-7 ">Payment details</h2>
+
+
+                          <dl class="govuk-summary-list">
+
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Monthly target
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {% if data['paymentChoices']=='12Month'%}
+
+                              &pound;62.50
+
+
+                              {% elif data['paymentChoices']=='24Month'%}
+
+                              &pound;31.25
+
+
+                              {% elif data['paymentChoices']=='36Month'%}
+
+                              &pound;20.83
+
+
+                              {% elif data['paymentChoices']=='48Month'%}
+
+                              &pound;15.62
+
+
+
+
+
+                              {% else %}
+
+                              {% if data['paymentChoices']=='lowPayments'%}
+
+                              {{ data['affordable-amount'] | currency }}
+
+                              {% else %}
+
+                              {{ data['custom-amount'] | currency}}
+
+                              {% endif %}
+
+                              {% endif %}
+                            </dd>
+
+                          </div>
+
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Expected number of payments
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+
+                              {% if data['paymentChoices']=='12Month'%}
+
+                              <script>
+                                var  num1 = 750.00;
+                                var num2 = 62.5;
+                                var x = Math.floor(num1 / num2); //or whatever offset
+                                document.write(x);
+    </script>
+                              {% elif data['paymentChoices']=='24Month'%}
+
+                              <script>
+                                var  num1 = 750.00;
+                                var num2 = 31.25;
+                                var x = Math.floor(num1 / num2); //or whatever offset
+                                var CurrentDate = new Date();
+                                document.write(x);
+      </script>
+                              {% elif data['paymentChoices']=='36Month'%}
+
+
+                              <script>
+                                var  num1 = 750.00;
+                                var num2 = 20.83;
+                                var x = Math.floor(num1 / num2); //or whatever offset
+                                document.write(x);
+            </script>
+
+
+
+                              {% elif data['paymentChoices']=='48Month'%}
+
+
+                              <script>
+                                var  num1 = 750.00;
+                                var num2 = 15.62;
+                                var x = Math.floor(num1 / num2); //or whatever offset
+                                document.write(x);
+
+                              </script>
+
+
+                              {% else %}
+
+
+
+                              {% if data['paymentChoices']=='lowPayments'%}
+
+                              <script>
+                                var  num1 = 750.00;
+                                var num2 = {{ data['affordable-amount'] }};;
+                                var x = Math.floor(num1 / num2); //or whatever offset
+                                document.write(x);
+
+                              </script>
+
+                              {% else %}
+
+
+                              <script>
+                                var  num1 = 750.00;
+                                var num2 = {{ data['custom-amount'] }};;
+                                var x = Math.floor(num1 / num2); //or whatever offset
+                                document.write(x);
+
+                              </script>
+                              {% endif %}
+                              {% endif %}
+                              <br>
+                            (if monthly target  is met each month)
+
+
+
+
+                            </dd>
+
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Expected final payment
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+
+                              {% if data['paymentChoices']=='12Month'%}
+
+                              <script>
+                                var  num1 = 750.00;
+                                var num2 = 62.5;
+                                var x = Math.floor(num1 / num2); //or whatever offset
+                                var CurrentDate = new Date();
+                                console.log("Current date:", CurrentDate);
+                                CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                                document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                              </script>
+                              {% elif data['paymentChoices']=='24Month'%}
+
+                              <script>
+                                var  num1 = 750.00;
+                                var num2 = 31.25;
+                                var x = Math.floor(num1 / num2); //or whatever offset
+                                var CurrentDate = new Date();
+                                console.log("Current date:", CurrentDate);
+                                CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                                document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                              </script>
+                              {% elif data['paymentChoices']=='36Month'%}
+
+
+                              <script>
+                                var  num1 = 750.00;
+                                var num2 = 20.83;
+                                var x = Math.floor(num1 / num2); //or whatever offset
+                                var CurrentDate = new Date();
+                                console.log("Current date:", CurrentDate);
+                                CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                                document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                              </script>
+
+
+
+                              {% elif data['paymentChoices']=='48Month'%}
+
+
+                              <script>
+                                var  num1 = 750.00;
+                                var num2 = 15.62;
+                                var x = Math.floor(num1 / num2); //or whatever offset
+                                var CurrentDate = new Date();
+                                console.log("Current date:", CurrentDate);
+                                CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                                document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                              </script>
+
+
+                              {% else %}
+
+
+
+                              {% if data['paymentChoices']=='lowPayments'%}
+
+                              <script>
+                                var  num1 = 750.00;
+                                var num2 = {{ data['affordable-amount'] }};;
+                                var x = Math.floor(num1 / num2); //or whatever offset
+                                var CurrentDate = new Date();
+                                console.log("Current date:", CurrentDate);
+                                CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                                document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                              </script>
+
+                              {% else %}
+
+                              <script>
+                                var  num1 = 750.00;
+                                var num2 = {{ data['custom-amount'] }};;
+                                var x = Math.floor(num1 / num2); //or whatever offset
+                                var CurrentDate = new Date();
+                                console.log("Current date:", CurrentDate);
+                                CurrentDate.setMonth(CurrentDate.getMonth() + x);
+                                document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+                              </script>
+                              {% endif %}
+                              {% endif %}
+
+                            </dd>
+
+
+                          </div>
+
+
+                        </dl>
+
+                        <p id="currentMonthYear" class="govuk-!-font-weight-bold">You must pay at least
+
+                          {% if data['paymentChoices']=='customAmount'%}
+                          {{ data['custom-amount'] | currency}}
+
+
+                          {% elif data['paymentChoices']=='12Month'%}
+
+                          £62.50
+                          {% elif data['paymentChoices']=='24Month'%}
+
+                          £31.25
+                          {% elif data['paymentChoices']=='36Month'%}
+
+
+                          £20.83
+
+
+                          {% elif data['paymentChoices']=='48Month'%}
+
+
+                          £15.52
+
+
+
+                          {% else %}
+                          {{ data['affordable-amount'] | currency}}
+                          {% endif %}
+                          every calendar month.
+
+
+                        </p>
+
+<p>
+                        If you do not pay enough each month, your payment plan will be cancelled. We will then take further action which could include contacting your employer or a debt collection agency.</p>
+
+                        <h2 class="govuk-heading-m govuk-!-padding-top-7">Payment today</h2>
+
+
+                        <dl class="govuk-summary-list">
+
+
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            Payment amount
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {{ data['payment-amount'] | currency}}
+
+                            </dd>
+
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            Payment to
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              DWP Debt Management
+
+                            </dd>
+
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            Payment type
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+Card payment
+                            </dd>
+
+                          </div>
+
+
+                        </dl>
+
+
+<p>You will recieve a payment confirmation email. It will take 2 to 5 working days for your payment to clear.
+
+</p>
+
+                        <h2 class="govuk-heading-m govuk-!-padding-top-7">Contact preferences
+
+
+                        </h2>
+
+                        <dl class="govuk-summary-list">
+
+                          {% if data['reminder-notification-payment-setup-done-yes-no']=='no' %}
+
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Text messages
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              No
+                            </dd>
+
+                          {% else %}
+
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Text messages
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              Yes <br>
+                              {{data['contactByMobile']}}
+                            </dd>
+
+
+                              {% endif %}
+
+                          </div>
+
+
+                        </dl>
+
+
+
+                {% endif %}
+
+
+
+
+{% endif %}
+
+{% if data['paymentOptions']=='ddFixedChoice'%}
+
+
+  <p>Your payments will show on your bank statement as <strong>CENT REC GROUP DD</strong>.</p>
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <p class="govuk-heading-m">
+  Further Direct Debit details
+  </p>
+
+
+  <div class="govuk-body">
+     <!--  <p>Service user number: 941315 </p>-->
+      <p>If you have any problems or questions about your Direct Debit plan, contact Debt Management:</p>
+      <h2 class="govuk-heading-s">Debt Management</h2>
+
+
+  <!-- <p>Debt Accounting &amp; Finance<br>
+  Warbreck House<br>
+  Blackpool<br>
+  FY2 0YE<br>
+  United Kingdom</p> -->
+
+  <ul class="govuk-list">
+  <li>Telephone: 0800 916 0647</li>
+  <li>Textphone: 0800 916 0651</li>
+  <li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
+  </ul>
+
+  <p><a href="#" target="_blank">Find out about call charges</a></p>
+
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+  <p class="govuk-heading-m ">Reviewing your repayments
+</p>
+  <p> We may contact you in the future to review your  payments and will send you a notification with further details.
+
+<p></p>
+
+
+<p><a id="feedback" href="#" target="_blank">What did you think of this service? (opens in new tab)</a></p>
+
+<br>
+
+{% else %}
+
+
+  <p class="govuk-heading-m ">Reviewing your repayments
+</p>
+  <p> We may contact you in the future to review your  payments and will send you a notification with further details.
+
+<p></p>
+
+{% endif %}
+
+  <!-- <p><a href="#">What did you think of this service? (opens in new tab)</a></p> -->
+
+  <p><a href="/design-improvements/den/account-home-dd-active.html" class="govuk-button">Go to Account home</a></p>
+
+
+
+  <!-- <p class="govuk-body">
+  <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+</p> -->
+
+
+
+</div>
+</div>
+
+{% endblock %}

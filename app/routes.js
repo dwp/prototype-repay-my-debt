@@ -1328,3 +1328,20 @@ router.post('/v48/fist-time/setup-plan/custom-amount', function (req, res) {
   }
 
 })
+
+
+router.post('/design-improvement/setup-plan/direct-debit-account-owner', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var choice = req.session.data['authoriseDD']
+
+  // Check whether the variable matches a condition
+  if (choice == 'yesDD'){
+    // Send user to next page
+    res.redirect('/design-improvements/den/setup-plan/directDebitDay.html')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/design-improvements/den/setup-plan/you-cannot-setup-direct-debit.html')
+  }
+
+})

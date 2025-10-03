@@ -1,0 +1,97 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+How do you want to make your monthly payments?
+
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+
+    <form class="form" action="payments-start" method="post">
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb20">
+            <h1 class="govuk-fieldset__heading">
+              How do you want to make your monthly payments?
+            </h1>
+          </legend>
+
+
+
+          <div class="govuk-radios">
+
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="ddFixedChoice" name="paymentOptions" type="radio" aria-describedby="ddFixedChoice-hint" value="ddFixedChoice" {{ checked('paymentOptions','ddFixedChoice') }}>
+              <label class="govuk-label govuk-radios__label" for="ddFixedChoice">
+                <b>Monthly Direct Debit</b>
+              </label>
+              <div id="ddFixedChoice-hint" class="govuk-hint govuk-radios__hint">
+                We will take a payment every month from your bank or building society account, on a day that suits you.
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="flexyPayChoice" name="paymentOptions" type="radio" value="flexyPayChoice" aria-describedby="flexyPayChoice-hint" {{ checked('paymentOptions','flexyPayChoice') }}>
+              <label class="govuk-label govuk-radios__label" for="flexyPayChoice">
+                <b>Flexible payments throughout the month</b>
+              </label>
+              <div id="flexyPayChoice-hint" class="govuk-hint govuk-radios__hint">
+                You must sign in to this service to pay your chosen amount every month.
+              </div>
+            </div>
+
+
+          </div>
+
+
+        </fieldset>
+      </div>
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+
+
+  </div>
+
+</div>
+
+{% endblock %}

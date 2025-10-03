@@ -1,0 +1,517 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Enter payment details
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+<nav class="dwp-language-toggle" aria-label="Language toggle">
+<ul class="dwp-language-toggle__list">
+  <li class="dwp-language-toggle__list-item" aria-current="true">
+    English
+  </li>
+  <li class="dwp-language-toggle__list-item">
+    <a href="#"
+      hreflang="cy"
+      lang="cy"
+      rel="alternate"
+      class="govuk-link"
+      aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+  </li>
+</ul>
+</nav>
+</main>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+
+
+
+    <div id="card-details-wrap" wiid="N160">
+                  <div class="non-web-payment-button-section govuk-!-margin-bottom-5" wiid="N165">
+                    <h1 class="govuk-heading-l " wiid="N167">Enter card details</h1>
+                      <div class="payment-summary-wrap" wiid="N170">
+        <div class="payment-summary" wiid="N172">
+            <h2 class="govuk-heading-m" wiid="N174">Payment summary</h2>
+            <p id="payment-description" class="govuk-body" wiid="N177">
+            Your payment to DWP Debt Management
+            </p>
+            <p class="govuk-body hidden" id="payment-summary-breakdown" wiid="N180">
+            Amount
+            <span class="govuk-!-font-weight-bold" id="payment-summary-breakdown-amount" wiid="N182"></span><br wiid="N183">
+            Corporate card fee:
+            <span class="govuk-!-font-weight-bold" id="payment-summary-corporate-card-fee" wiid="N185"></span>
+            </p>
+            <p class="govuk-body govuk-!-margin-bottom-0" wiid="N188">
+            Total amount:
+            <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" data-amount="{{  data['payment-amount']  | currency }}" wiid="N190">{{  data['payment-amount']  | currency }}</span>
+            </p>
+        </div>
+      </div>
+
+                  </div>
+
+                  <form id="card-details" name="cardDetails" method="POST" action="directFinish" novalidate="" wiid="N197">
+                    <input id="charge-id" name="chargeId" type="hidden" value="full-payment-success" wiid="N199">
+                    <input id="csrf" name="csrfToken" type="hidden" value="DGDLOkxJ-7rzjghmM2zAPfUPsEKnLklCywMc" wiid="N201">
+
+                    <div class="govuk-form-group card-no-group" data-validation="cardNo" wiid="N203">
+                      <label id="card-no-lbl" for="card-no" class="govuk-label govuk-label--s govuk-!-width-three-quarters" wiid="N205">
+                        <span class="card-no-label" data-label-replace="cardNo" data-original-label="Card number" wiid="N207">
+                          Card number
+                        </span>
+                      </label>
+
+
+
+                      <p class="govuk-body accepted-cards-hint withdrawal-text govuk-!-margin-bottom-0" wiid="N211">
+                          Accepted credit and debit card types
+                      </p>
+
+                      <ul class="accepted-cards field-empty" wiid="N214">
+                            <li class="visa" data-key="visa" data-credit="true" data-debit="true" wiid="N216">
+                              <img src="/public/images/transparent-accessibiliity.gif" alt="Visa" wiid="N218">
+                            </li>
+                            <li class="master-card" data-key="master-card" data-credit="true" data-debit="true" wiid="N221">
+                              <img src="/public/images/transparent-accessibiliity.gif" alt="Master Card" wiid="N223">
+                            </li>
+                            <li class="american-express" data-key="american-express" data-credit="true" data-debit="false" wiid="N226">
+                              <img src="/public/images/transparent-accessibiliity.gif" alt="American Express" wiid="N228">
+                            </li>
+                            <li class="diners-club" data-key="diners-club" data-credit="true" data-debit="false" wiid="N231">
+                              <img src="/public/images/transparent-accessibiliity.gif" alt="Diners Club" wiid="N233">
+                            </li>
+                            <li class="discover" data-key="discover" data-credit="true" data-debit="false" wiid="N236">
+                              <img src="/public/images/transparent-accessibiliity.gif" alt="Discover" wiid="N238">
+                            </li>
+                            <li class="jcb" data-key="jcb" data-credit="true" data-debit="false" wiid="N241">
+                              <img src="/public/images/transparent-accessibiliity.gif" alt="Jcb" wiid="N243">
+                            </li>
+                            <li class="unionpay" data-key="unionpay" data-credit="true" data-debit="false" wiid="N246">
+                              <img src="/public/images/transparent-accessibiliity.gif" alt="Unionpay" wiid="N248">
+                            </li>
+                      </ul>
+
+
+                      <input id="card-no" type="text" inputmode="numeric" pattern="[0-9]*" name="cardNo" maxlength="26" class="govuk-input govuk-!-width-three-quarters" autocomplete="cc-number" value="" wiid="N254">
+                    </div>
+
+                    <div class="govuk-form-group govuk-clearfix govuk-!-margin-bottom-7  expiry-date" data-validation="expiryMonth" wiid="N257">
+                      <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-date-hint" wiid="N259">
+                        <legend wiid="N261">
+                          <div class="govuk-label govuk-label--s" id="expiry-date-lbl" for="expiry-month" wiid="N263">
+                            <span class="expiry-date-label" data-label-replace="expiryMonth" data-original-label="Expiry date" wiid="N265">
+                              Expiry date
+                            </span>
+                          </div>
+                        </legend>
+                        <div class="govuk-hint govuk-!-margin-bottom-2" id="expiry-date-hint" wiid="N270">
+                          For example, 10/26
+                        </div>
+                        <div class="govuk-date-input__item govuk-date-input__item--month govuk-date-input__item--with-separator" wiid="N273">
+                          <label class="govuk-label govuk-date-input__label" for="expiry-month" wiid="N275">Month</label>
+                          <input id="expiry-month" data-cy="expiry-month" type="text" inputmode="numeric" pattern="[0-9]*" name="expiryMonth" value="" class="govuk-input govuk-date-input__input govuk-input--width-3" minlength="1" maxlength="2" autocomplete="cc-exp-month" wiid="N278">
+                        </div>
+                        <div class="govuk-date-input__item govuk-date-input__item--year" wiid="N281">
+                          <label for="expiry-year" class="govuk-label govuk-date-input__label" wiid="N283">Year</label>
+                          <input id="expiry-year" data-cy="expiry-year" type="text" inputmode="numeric" pattern="[0-9]*" name="expiryYear" value="" minlength="2" maxlength="4" class="govuk-input govuk-date-input__input govuk-input--width-3" autocomplete="cc-exp-year" data-required="" wiid="N286">
+                        </div>
+                      </fieldset>
+                    </div>
+                    <div class="govuk-form-group" data-validation="cardholderName" wiid="N291">
+                      <label id="cardholder-name-lbl" for="cardholder-name" class="govuk-label govuk-label--s" wiid="N293">
+                        <span data-label-replace="cardholderName" data-original-label="Name on card" class="card-holder-name-label" wiid="N295">
+                          Name on card
+                        </span>
+                      </label>
+
+
+                      <input id="cardholder-name" data-cy="cardholder-name" type="text" name="cardholderName" maxlength="200" class="govuk-input govuk-!-width-three-quarters" value="" autocomplete="cc-name" wiid="N299">
+                    </div>
+
+                    <div class="govuk-form-group cvc govuk-clearfix" data-validation="cvc" wiid="N302">
+                      <label id="cvc-lbl" for="cvc" class="govuk-label govuk-label--s" wiid="N304">
+                        <span class="cvc-label" data-label-replace="cvc" data-original-label="Card security code" wiid="N306">
+                          Card security code
+                        </span>
+                      </label>
+
+                      <div class="govuk-hint govuk-!-margin-bottom-2" wiid="N310">
+                        <span class="generic-cvc" wiid="N312">
+                          The last 3 digits on the back of the card
+                        </span>
+                        <span class="amex-cvc hidden" wiid="N315">
+                          <span class="hidden" wiid="N317">
+                            For American Express,
+                          </span>
+                          <span class="no-js-lowercase" wiid="N320">
+                            The last 4 digits after the card number on the front
+                          </span>
+                        </span>
+                      </div>
+
+
+
+                      <input id="cvc" type="text" inputmode="numeric" pattern="[0-9]*" value="" name="cvc"style="float:left; margin-right:10px;" class="govuk-input govuk-input--width-3 cvc" maxlength="4" autocomplete="cc-csc" wiid="N325">
+                      <img src="/public/images/security-code.png" class="generic-cvc" alt="The last 3 digits on the back of the card" wiid="N327">
+
+                     </div>
+                      <div class="govuk-!-width-three-quarters govuk-!-padding-top-4 govuk-!-margin-top-8 pay-!-border-top" wiid="N335">
+                          <fieldset class="govuk-fieldset" aria-describedby="address-hint" wiid="N337">
+                            <legend wiid="N339">
+                                <h3 class="govuk-heading-m govuk-!-margin-bottom-1 web-payment-button-section" wiid="N341">Billing address</h3>
+                            </legend>
+
+                            <div id="address-hint" class="govuk-body govuk-!-margin-bottom-6" wiid="N348">This is the address associated with the card</div>
+
+                            <div class="govuk-form-group address" data-validation="addressLine1" wiid="N351">
+                              <label id="address-line-1-lbl" for="address-line-1" class="govuk-label" wiid="N353">
+                                <span class="address-line-1-label" data-label-replace="addressLine1" data-original-label="Address line 1" wiid="N355">
+                                      Address line 1
+                                </span>
+                              </label>
+
+
+                              <input id="address-line-1" type="text" name="addressLine1" maxlength="100" class="govuk-input" value="" autocomplete="billing address-line1" wiid="N359">
+                            </div>
+
+                            <div class="govuk-form-group address" data-validation="addressLine2" wiid="N362">
+                              <label id="address-line-2-lbl" for="address-line-2" class="govuk-label" wiid="N364">
+                                <span class="address-line-2-label" data-label-replace="addressLine2" data-original-label="Address line 2 (optional)" wiid="N366">
+                                      Address line 2 (optional)
+                                </span>
+                              </label>
+
+
+                              <input id="address-line-2" type="text" name="addressLine2" maxlength="100" class="govuk-input" data-last-of-form-group="" value="" aria-label="Enter address line 2" autocomplete="billing address-line2" data-cy="address-line-2" wiid="N370">
+                            </div>
+
+                            <div class="govuk-form-group govuk-!-width-three-quarters" data-validation="addressCity" wiid="N373">
+                              <label id="address-city-lbl" for="address-city" class="govuk-label" wiid="N375">
+                                <span class="address-city-label" data-label-replace="addressCity" data-original-label="Town or city" wiid="N377">
+                                  Town or city
+                                </span>
+                              </label>
+
+
+                              <input id="address-city" type="text" name="addressCity" maxlength="100" class="govuk-input govuk-!-width-three-quarters" value="" autocomplete="billing address-level2" wiid="N381">
+                            </div>
+
+                            <div class="govuk-form-group " data-validation="addressCountry" wiid="N384">
+                              <label id="address-country-lbl" for="address-country" class="govuk-label" wiid="N386">
+                                <span class="address-country-label" data-label-replace="addressCountry" data-original-label="Country or territory" wiid="N388">
+                                  Country or territory
+                                </span>
+                              </label>
+
+
+                              <div wiid="N1268"><div class="autocomplete__wrapper" wiid="N1269"><div style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;"><div id="address-country__status--A" role="status" aria-atomic="true" aria-live="polite"></div><div id="address-country__status--B" role="status" aria-atomic="true" aria-live="polite"></div></div><input aria-expanded="false" aria-owns="address-country__listbox" aria-autocomplete="both" aria-describedby="address-country__assistiveHint" autocomplete="country-disabled-autocomplete" class="autocomplete__input autocomplete__input--default" id="address-country" name="" placeholder="" type="text" role="combobox"><ul class="autocomplete__menu autocomplete__menu--overlay autocomplete__menu--hidden" id="address-country__listbox" role="listbox"><li aria-selected="false" class="autocomplete__option" id="address-country__option--0" role="option" tabindex="-1" aria-posinset="1" aria-setsize="1"><strong>United Kingdom</strong></li></ul><span id="address-country__assistiveHint" style="display: none;">When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.</span></div></div><select name="addressCountry" class="govuk-select" id="address-country-select" autocomplete="billing country-name" wiid="N392" style="display: none;">
+                                  <option value="AF" wiid="N394">Afghanistan</option>
+                                  <option value="AL" wiid="N397">Albania</option>
+                                  <option value="DZ" wiid="N400">Algeria</option>
+                                  <option value="AS" wiid="N403">American Samoa</option>
+                                  <option value="AD" wiid="N406">Andorra</option>
+                                  <option value="AO" wiid="N409">Angola</option>
+                                  <option value="AI" wiid="N412">Anguilla</option>
+                                  <option value="AQ" wiid="N415">Antarctica</option>
+                                  <option value="AG" wiid="N418">Antigua and Barbuda</option>
+                                  <option value="AR" wiid="N421">Argentina</option>
+                                  <option value="AM" wiid="N424">Armenia</option>
+                                  <option value="AW" wiid="N427">Aruba</option>
+                                  <option value="AU" wiid="N430">Australia</option>
+                                  <option value="AT" wiid="N433">Austria</option>
+                                  <option value="AZ" wiid="N436">Azerbaijan</option>
+                                  <option value="BH" wiid="N439">Bahrain</option>
+                                  <option value="BD" wiid="N442">Bangladesh</option>
+                                  <option value="BB" wiid="N445">Barbados</option>
+                                  <option value="BY" wiid="N448">Belarus</option>
+                                  <option value="BE" wiid="N451">Belgium</option>
+                                  <option value="BZ" wiid="N454">Belize</option>
+                                  <option value="BJ" wiid="N457">Benin</option>
+                                  <option value="BM" wiid="N460">Bermuda</option>
+                                  <option value="BT" wiid="N463">Bhutan</option>
+                                  <option value="BO" wiid="N466">Bolivia</option>
+                                  <option value="BQ" wiid="N469">Bonaire</option>
+                                  <option value="BA" wiid="N472">Bosnia and Herzegovina</option>
+                                  <option value="BW" wiid="N475">Botswana</option>
+                                  <option value="BV" wiid="N478">Bouvet Island</option>
+                                  <option value="BR" wiid="N481">Brazil</option>
+                                  <option value="IO" wiid="N484">British Indian Ocean Territory</option>
+                                  <option value="VG" wiid="N487">British Virgin Islands</option>
+                                  <option value="BN" wiid="N490">Brunei</option>
+                                  <option value="BG" wiid="N493">Bulgaria</option>
+                                  <option value="BF" wiid="N496">Burkina Faso</option>
+                                  <option value="MM" wiid="N499">Myanmar (Burma)</option>
+                                  <option value="BI" wiid="N502">Burundi</option>
+                                  <option value="KH" wiid="N505">Cambodia</option>
+                                  <option value="CM" wiid="N508">Cameroon</option>
+                                  <option value="CA" wiid="N511">Canada</option>
+                                  <option value="CV" wiid="N514">Cape Verde</option>
+                                  <option value="KY" wiid="N517">Cayman Islands</option>
+                                  <option value="CF" wiid="N520">Central African Republic</option>
+                                  <option value="TD" wiid="N523">Chad</option>
+                                  <option value="CL" wiid="N526">Chile</option>
+                                  <option value="CN" wiid="N529">China</option>
+                                  <option value="CX" wiid="N532">Christmas Island</option>
+                                  <option value="CC" wiid="N535">Cocos (Keeling) Islands</option>
+                                  <option value="CO" wiid="N538">Colombia</option>
+                                  <option value="KM" wiid="N541">Comoros</option>
+                                  <option value="CG" wiid="N544">Congo</option>
+                                  <option value="CD" wiid="N547">Congo (Democratic Republic)</option>
+                                  <option value="CK" wiid="N550">Cook Islands</option>
+                                  <option value="CR" wiid="N553">Costa Rica</option>
+                                  <option value="HR" wiid="N556">Croatia</option>
+                                  <option value="CU" wiid="N559">Cuba</option>
+                                  <option value="CW" wiid="N562">Curaçao</option>
+                                  <option value="CY" wiid="N565">Cyprus</option>
+                                  <option value="CZ" wiid="N568">Czechia</option>
+                                  <option value="DK" wiid="N571">Denmark</option>
+                                  <option value="DJ" wiid="N574">Djibouti</option>
+                                  <option value="DM" wiid="N577">Dominica</option>
+                                  <option value="DO" wiid="N580">Dominican Republic</option>
+                                  <option value="TL" wiid="N583">East Timor</option>
+                                  <option value="EC" wiid="N586">Ecuador</option>
+                                  <option value="EG" wiid="N589">Egypt</option>
+                                  <option value="SV" wiid="N592">El Salvador</option>
+                                  <option value="GQ" wiid="N595">Equatorial Guinea</option>
+                                  <option value="ER" wiid="N598">Eritrea</option>
+                                  <option value="EE" wiid="N601">Estonia</option>
+                                  <option value="ET" wiid="N604">Ethiopia</option>
+                                  <option value="FK" wiid="N607">Falkland Islands</option>
+                                  <option value="FO" wiid="N610">Faroe Islands</option>
+                                  <option value="FJ" wiid="N613">Fiji</option>
+                                  <option value="FI" wiid="N616">Finland</option>
+                                  <option value="FR" wiid="N619">France</option>
+                                  <option value="GF" wiid="N622">French Guiana</option>
+                                  <option value="PF" wiid="N625">French Polynesia</option>
+                                  <option value="TF" wiid="N628">French Southern Territories</option>
+                                  <option value="GA" wiid="N631">Gabon</option>
+                                  <option value="GE" wiid="N634">Georgia</option>
+                                  <option value="DE" wiid="N637">Germany</option>
+                                  <option value="GH" wiid="N640">Ghana</option>
+                                  <option value="GI" wiid="N643">Gibraltar</option>
+                                  <option value="GR" wiid="N646">Greece</option>
+                                  <option value="GL" wiid="N649">Greenland</option>
+                                  <option value="GD" wiid="N652">Grenada</option>
+                                  <option value="GP" wiid="N655">Guadeloupe</option>
+                                  <option value="GU" wiid="N658">Guam</option>
+                                  <option value="GT" wiid="N661">Guatemala</option>
+                                  <option value="GG" wiid="N664">Guernsey</option>
+                                  <option value="GN" wiid="N667">Guinea</option>
+                                  <option value="GW" wiid="N670">Guinea-Bissau</option>
+                                  <option value="GY" wiid="N673">Guyana</option>
+                                  <option value="HT" wiid="N676">Haiti</option>
+                                  <option value="HM" wiid="N679">Heard Island and McDonald Islands</option>
+                                  <option value="HN" wiid="N682">Honduras</option>
+                                  <option value="HK" wiid="N685">Hong Kong</option>
+                                  <option value="HU" wiid="N688">Hungary</option>
+                                  <option value="IS" wiid="N691">Iceland</option>
+                                  <option value="IN" wiid="N694">India</option>
+                                  <option value="ID" wiid="N697">Indonesia</option>
+                                  <option value="IR" wiid="N700">Iran</option>
+                                  <option value="IQ" wiid="N703">Iraq</option>
+                                  <option value="IE" wiid="N706">Ireland</option>
+                                  <option value="IM" wiid="N709">Isle of Man</option>
+                                  <option value="IL" wiid="N712">Israel</option>
+                                  <option value="IT" wiid="N715">Italy</option>
+                                  <option value="CI" wiid="N718">Ivory Coast</option>
+                                  <option value="JM" wiid="N721">Jamaica</option>
+                                  <option value="JP" wiid="N724">Japan</option>
+                                  <option value="JE" wiid="N727">Jersey</option>
+                                  <option value="JO" wiid="N730">Jordan</option>
+                                  <option value="KZ" wiid="N733">Kazakhstan</option>
+                                  <option value="KE" wiid="N736">Kenya</option>
+                                  <option value="KI" wiid="N739">Kiribati</option>
+                                  <option value="XK" wiid="N742">Kosovo</option>
+                                  <option value="KW" wiid="N745">Kuwait</option>
+                                  <option value="KG" wiid="N748">Kyrgyzstan</option>
+                                  <option value="LA" wiid="N751">Laos</option>
+                                  <option value="LV" wiid="N754">Latvia</option>
+                                  <option value="LB" wiid="N757">Lebanon</option>
+                                  <option value="LS" wiid="N760">Lesotho</option>
+                                  <option value="LR" wiid="N763">Liberia</option>
+                                  <option value="LY" wiid="N766">Libya</option>
+                                  <option value="LI" wiid="N769">Liechtenstein</option>
+                                  <option value="LT" wiid="N772">Lithuania</option>
+                                  <option value="LU" wiid="N775">Luxembourg</option>
+                                  <option value="MO" wiid="N778">Macao</option>
+                                  <option value="MK" wiid="N781">North Macedonia</option>
+                                  <option value="MG" wiid="N784">Madagascar</option>
+                                  <option value="MW" wiid="N787">Malawi</option>
+                                  <option value="MY" wiid="N790">Malaysia</option>
+                                  <option value="MV" wiid="N793">Maldives</option>
+                                  <option value="ML" wiid="N796">Mali</option>
+                                  <option value="MT" wiid="N799">Malta</option>
+                                  <option value="MH" wiid="N802">Marshall Islands</option>
+                                  <option value="MQ" wiid="N805">Martinique</option>
+                                  <option value="MR" wiid="N808">Mauritania</option>
+                                  <option value="MU" wiid="N811">Mauritius</option>
+                                  <option value="YT" wiid="N814">Mayotte</option>
+                                  <option value="MX" wiid="N817">Mexico</option>
+                                  <option value="FM" wiid="N820">Micronesia</option>
+                                  <option value="MD" wiid="N823">Moldova</option>
+                                  <option value="MC" wiid="N826">Monaco</option>
+                                  <option value="MN" wiid="N829">Mongolia</option>
+                                  <option value="ME" wiid="N832">Montenegro</option>
+                                  <option value="MS" wiid="N835">Montserrat</option>
+                                  <option value="MA" wiid="N838">Morocco</option>
+                                  <option value="MZ" wiid="N841">Mozambique</option>
+                                  <option value="NA" wiid="N844">Namibia</option>
+                                  <option value="NR" wiid="N847">Nauru</option>
+                                  <option value="NP" wiid="N850">Nepal</option>
+                                  <option value="NL" wiid="N853">Netherlands</option>
+                                  <option value="NC" wiid="N856">New Caledonia</option>
+                                  <option value="NZ" wiid="N859">New Zealand</option>
+                                  <option value="NI" wiid="N862">Nicaragua</option>
+                                  <option value="NE" wiid="N865">Niger</option>
+                                  <option value="NG" wiid="N868">Nigeria</option>
+                                  <option value="NU" wiid="N871">Niue</option>
+                                  <option value="NF" wiid="N874">Norfolk Island</option>
+                                  <option value="KP" wiid="N877">North Korea</option>
+                                  <option value="MP" wiid="N880">Northern Mariana Islands</option>
+                                  <option value="NO" wiid="N883">Norway</option>
+                                  <option value="PS" wiid="N886">Occupied Palestinian Territories</option>
+                                  <option value="OM" wiid="N889">Oman</option>
+                                  <option value="PK" wiid="N892">Pakistan</option>
+                                  <option value="PW" wiid="N895">Palau</option>
+                                  <option value="PA" wiid="N898">Panama</option>
+                                  <option value="PG" wiid="N901">Papua New Guinea</option>
+                                  <option value="PY" wiid="N904">Paraguay</option>
+                                  <option value="PE" wiid="N907">Peru</option>
+                                  <option value="PH" wiid="N910">Philippines</option>
+                                  <option value="PN" wiid="N913">Pitcairn, Henderson, Ducie and Oeno Islands</option>
+                                  <option value="PL" wiid="N916">Poland</option>
+                                  <option value="PT" wiid="N919">Portugal</option>
+                                  <option value="PR" wiid="N922">Puerto Rico</option>
+                                  <option value="QA" wiid="N925">Qatar</option>
+                                  <option value="RO" wiid="N928">Romania</option>
+                                  <option value="RU" wiid="N931">Russia</option>
+                                  <option value="RW" wiid="N934">Rwanda</option>
+                                  <option value="RE" wiid="N937">Réunion</option>
+                                  <option value="BL" wiid="N940">Saint Barthélemy</option>
+                                  <option value="SH" wiid="N943">Saint Helena</option>
+                                  <option value="PM" wiid="N946">Saint Pierre and Miquelon</option>
+                                  <option value="MF" wiid="N949">Saint-Martin (French part)</option>
+                                  <option value="WS" wiid="N952">Samoa</option>
+                                  <option value="SM" wiid="N955">San Marino</option>
+                                  <option value="ST" wiid="N958">Sao Tome and Principe</option>
+                                  <option value="SA" wiid="N961">Saudi Arabia</option>
+                                  <option value="SN" wiid="N964">Senegal</option>
+                                  <option value="RS" wiid="N967">Serbia</option>
+                                  <option value="SC" wiid="N970">Seychelles</option>
+                                  <option value="SL" wiid="N973">Sierra Leone</option>
+                                  <option value="SG" wiid="N976">Singapore</option>
+                                  <option value="SX" wiid="N979">Sint Maarten (Dutch part)</option>
+                                  <option value="SK" wiid="N982">Slovakia</option>
+                                  <option value="SI" wiid="N985">Slovenia</option>
+                                  <option value="SB" wiid="N988">Solomon Islands</option>
+                                  <option value="SO" wiid="N991">Somalia</option>
+                                  <option value="ZA" wiid="N994">South Africa</option>
+                                  <option value="GS" wiid="N997">South Georgia and South Sandwich Islands</option>
+                                  <option value="KR" wiid="N1000">South Korea</option>
+                                  <option value="SS" wiid="N1003">South Sudan</option>
+                                  <option value="ES" wiid="N1006">Spain</option>
+                                  <option value="LK" wiid="N1009">Sri Lanka</option>
+                                  <option value="KN" wiid="N1012">St Kitts and Nevis</option>
+                                  <option value="LC" wiid="N1015">St Lucia</option>
+                                  <option value="VC" wiid="N1018">St Vincent</option>
+                                  <option value="SD" wiid="N1021">Sudan</option>
+                                  <option value="SR" wiid="N1024">Suriname</option>
+                                  <option value="SJ" wiid="N1027">Svalbard and Jan Mayen</option>
+                                  <option value="SZ" wiid="N1030">Eswatini</option>
+                                  <option value="SE" wiid="N1033">Sweden</option>
+                                  <option value="CH" wiid="N1036">Switzerland</option>
+                                  <option value="SY" wiid="N1039">Syria</option>
+                                  <option value="TW" wiid="N1042">Taiwan</option>
+                                  <option value="TJ" wiid="N1045">Tajikistan</option>
+                                  <option value="TZ" wiid="N1048">Tanzania</option>
+                                  <option value="TH" wiid="N1051">Thailand</option>
+                                  <option value="BS" wiid="N1054">The Bahamas</option>
+                                  <option value="GM" wiid="N1057">The Gambia</option>
+                                  <option value="TG" wiid="N1060">Togo</option>
+                                  <option value="TK" wiid="N1063">Tokelau</option>
+                                  <option value="TO" wiid="N1066">Tonga</option>
+                                  <option value="TT" wiid="N1069">Trinidad and Tobago</option>
+                                  <option value="TN" wiid="N1072">Tunisia</option>
+                                  <option value="TR" wiid="N1075">Turkey</option>
+                                  <option value="TM" wiid="N1078">Turkmenistan</option>
+                                  <option value="TC" wiid="N1081">Turks and Caicos Islands</option>
+                                  <option value="TV" wiid="N1084">Tuvalu</option>
+                                  <option value="UG" wiid="N1087">Uganda</option>
+                                  <option value="UA" wiid="N1090">Ukraine</option>
+                                  <option value="AE" wiid="N1093">United Arab Emirates</option>
+                                  <option value="GB" selected="selected" wiid="N1096">United Kingdom</option>
+                                  <option value="US" wiid="N1099">United States</option>
+                                  <option value="VI" wiid="N1102">United States Virgin Islands</option>
+                                  <option value="UY" wiid="N1105">Uruguay</option>
+                                  <option value="UZ" wiid="N1108">Uzbekistan</option>
+                                  <option value="VU" wiid="N1111">Vanuatu</option>
+                                  <option value="VA" wiid="N1114">Vatican City</option>
+                                  <option value="VE" wiid="N1117">Venezuela</option>
+                                  <option value="VN" wiid="N1120">Vietnam</option>
+                                  <option value="WF" wiid="N1123">Wallis and Futuna</option>
+                                  <option value="EH" wiid="N1126">Western Sahara</option>
+                                  <option value="YE" wiid="N1129">Yemen</option>
+                                  <option value="ZM" wiid="N1132">Zambia</option>
+                                  <option value="ZW" wiid="N1135">Zimbabwe</option>
+                                  <option value="AX" wiid="N1138">Åland Islands</option>
+                              </select>
+                            </div>
+
+                            <div class="govuk-form-group  govuk-!-margin-bottom-0" data-validation="addressPostcode" wiid="N1143">
+                              <label id="address-postcode-lbl" for="address-postcode" class="govuk-label" wiid="N1145">
+                                <span class="address-postcode-label" data-label-replace="addressPostcode" data-original-label="Postcode" wiid="N1147">
+                                  Postcode
+                                </span>
+                              </label>
+
+
+                              <input id="address-postcode" type="text" name="addressPostcode" maxlength="10" class="govuk-input govuk-!-width-one-quarter" value="" autocomplete="billing postal-code" wiid="N1151">
+                            </div>
+                        </fieldset>
+                      </div>
+                      <div class="govuk-!-width-three-quarters email-container govuk-!-padding-top-4 govuk-!-margin-top-8 pay-!-border-top" wiid="N1156">
+                        <fieldset class="govuk-fieldset" aria-describedby="email-hint" wiid="N1158">
+                          <div wiid="N1160">
+                            <legend for="email" class="govuk-!-margin-bottom-6" wiid="N1162">
+                                <h3 class="govuk-heading-m govuk-!-margin-bottom-1 web-payment-button-section" wiid="N1164">Contact details</h3>
+                            </legend>
+                            <div id="email-hint" class="govuk-hint govuk-!-margin-bottom-2" wiid="N1171">We’ll send your payment confirmation here</div>
+
+                            <div class="govuk-form-group " data-validation="email" wiid="N1174">
+                              <label id="email-lbl" for="email" class="govuk-label" wiid="N1176">
+                                <span class="email-label" data-label-replace="email" data-original-label="Email" wiid="N1178">
+                                    Email
+                                </span>
+                              </label>
+
+
+                              <input id="email" type="email" name="email" maxlength="254" class="govuk-input govuk-!-width-full" value="" autocomplete="email" data-confirmation="true" data-confirmation-label="An email will be sent to: " wiid="N1182">
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                      <div class="govuk-button-group">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+    <a class="govuk-link" href="#">Cancel</a>
+  </div>
+                  </form>
+                  <form id="cancel" name="cancel" method="POST" action="full-payment-success" class="form" novalidate="" wiid="N1195">
+                    <div wiid="N1197">
+                    </div>
+                  </form>
+                </div>
+
+
+  </div>
+</div>
+
+{% endblock %}

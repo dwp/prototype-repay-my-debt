@@ -1,0 +1,182 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+How do you want to make your payments?
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+{% if data['paymentChoices']=='lowPayments'%}
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+
+    <div class="">
+
+      <h1 class="govuk-heading-xl mb40">Affordable payment plans</h1>
+
+          <p>This is how an affordable payment plan works:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>enter an amount you can afford to pay each month</li>
+           <li>if your financial situation improves, sign into your account to increase your monthly payments or pay additional one-off amounts</li>
+           <li>if you cannot increase your payment plan over the next year, we may contact you to review your situation to understand how much you can afford
+
+
+</li>
+          </ul>
+
+
+
+<form action="lowPayChoice">
+    <button class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+</form>
+  </div>
+
+
+</div>
+</div>
+
+
+
+{% elif data['paymentChoices']=='customAmount'%}
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+
+
+
+    <form class="form" action="/v48/fist-time/setup-plan/custom-amount" method="post">
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              How much do you want to pay?
+            </h1>
+          </legend>
+
+          <div id="example-question" class="form-group inline">
+            <span class="c-form-input-denote govuk-body">£</span>
+            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="custom-amount"  value="{{data['custom-amount']}}">
+          </div>
+
+        </fieldset>
+      </div>
+
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+  </div>
+</div>
+
+
+{% else %}
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+
+    <form class="form" action="payments-start" method="post">
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb20">
+            <h1 class="govuk-fieldset__heading">
+              How do you want to make your monthly payments?
+            </h1>
+          </legend>
+
+
+
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="ddFixedChoice" name="paymentOptions" type="radio" aria-describedby="ddFixedChoice-hint" value="ddFixedChoice" {{ checked('paymentOptions','ddFixedChoice') }}>
+              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="ddFixedChoice">
+                Monthly Direct Debit
+              </label>
+              <div id="ddFixedChoice-hint" class="govuk-hint govuk-radios__hint">
+                We will take a payment every month from your bank or building society account, on a day that suits you.
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="flexyPayChoice" name="paymentOptions" type="radio" value="flexyPayChoice" aria-describedby="flexyPayChoice-hint" {{ checked('paymentOptions','flexyPayChoice') }}>
+              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="flexyPayChoice">
+                Flexible payments throughout the month
+              </label>
+              <div id="flexyPayChoice-hint" class="govuk-hint govuk-radios__hint">
+                You must sign in to this service to pay your chosen amount every month.
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+
+
+  </div>
+
+</div>
+
+
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+{% endblock %}
