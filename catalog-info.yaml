@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: prototype.interface.repay-my-debt-prototype
-  title: repay-my-debt-prototype
+  title: Repay-My-Debt-Prototype
   description: |
     TODO: Prototype for Repay and manage benefit money you owe
 
