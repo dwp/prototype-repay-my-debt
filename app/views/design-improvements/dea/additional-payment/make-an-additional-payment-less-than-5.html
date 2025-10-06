@@ -2,7 +2,7 @@
 {% extends "layout-main.html" %}
 
 {% block pageTitle %}
-Pay off what you owe in full
+Make a smaller one-off payment
 
 {% endblock %}
 
@@ -45,7 +45,7 @@ Pay off what you owe in full
 
 
 
-										<form class="form" action="pay-the-full-amount" >
+										<form class="form" action="/v47/on-benefit/additional-payment/pay-the-full-amount-less-than-5" >
 
 
 
@@ -56,12 +56,23 @@ Pay off what you owe in full
 											<div class="govuk-form-group">
 												  <h1 class="govuk-label-wrapper">
 													  <label class="govuk-label govuk-label--xl" for="affordable-amount">
-                              Pay off what you owe in full
+                              Make a smaller one-off payment
 													</label>
 												  </h1>
                           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 
-                          <p>You may have recently made a Direct Debit payment or have one due in the next 7 days.</p><p> If so, wait for it to appear in your <a href="design-improvements/den/payment-history.html">payment history</a> before paying off what you owe in full. This helps you avoid overpaying.</p>
+                          <p>If you want to pay off a <strong>Universal Credit advance </strong>in your current claim, <a href="/v47/on-benefit/help-and-support">contact DWP Debt Management</a>.</p>
+
+
+                      <p>You have £4.50 left to repay. If you want to make a payment by card, you will need to pay this amount in full.</p>
+
+                         <!-- <div class="govuk-warning-text">
+                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                            <strong class="govuk-warning-text__text">
+                              <span class="govuk-visually-hidden">Warning</span>
+                              You need to make sure that you do not overpay.
+                            </strong>
+                          </div> -->
 
 												</div>
 
@@ -69,9 +80,8 @@ Pay off what you owe in full
 
 
 
-
 											<button class="govuk-button" data-module="govuk-button">
-											  Continue
+											  Continue to pay full amount
 											</button>
 											</form>
 
