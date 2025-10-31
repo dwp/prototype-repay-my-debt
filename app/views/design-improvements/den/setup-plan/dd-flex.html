@@ -81,7 +81,7 @@ How do you want to make your payments?
 
 
 
-    <form class="form" action="/v48/fist-time/setup-plan/custom-amount" method="post">
+    <form class="form" action="payments-start" method="post">
 
 
       <div class="govuk-form-group">
@@ -119,52 +119,46 @@ How do you want to make your payments?
   <div class="govuk-grid-column-three-quarters">
 
 
-    <form class="form" action="payments-start" method="post">
+    <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">
 
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb20">
-            <h1 class="govuk-fieldset__heading">
-              How do you want to make your monthly payments?
-            </h1>
-          </legend>
+          </span>Direct Debit payments</h1>
+
+
+          <!--  {% include "includes/amountOwed.html" %} -->
+
+          <p class="mt30">If you want to set up a Direct Debit online:
+          </p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>you must be an account holder and be able to authorise monthly Direct Debits with <br>your bank or building society</li>
+            <li>you will need your bank or building society account details</li>
+            <li>you will also need your sort code and account number if you have a building society account</li>
+          </ul>
+
+          <p>      Once your plan is set up, you can sign in to manage your plan, change payments, pay additional amounts or get help and support.
+          </p>
+
+          <h2 class="govuk-heading-m">
+            For joint account holders:
+          </h2>
+          <p>If you have a joint account and you and your partner both need to authorise Direct Debits, you can set up a Direct Debit by contacting Debt Management:
+
+            <p class="govuk-!-font-weight-bold">Debt Management</p>
+            <p>Telephone: 0800 916 0647 <br>
+              Telephone: 0800 916 0651 <br>
+              Monday to Friday, 8am to 7:30pm (closed on public holidays)</p>
+              <p><a href="#">Find out about call charges</a></p>
 
 
 
-          <div class="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="ddFixedChoice" name="paymentOptions" type="radio" aria-describedby="ddFixedChoice-hint" value="ddFixedChoice" {{ checked('paymentOptions','ddFixedChoice') }}>
-              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="ddFixedChoice">
-                Monthly Direct Debit
-              </label>
-              <div id="ddFixedChoice-hint" class="govuk-hint govuk-radios__hint">
-                We will take a payment every month from your bank or building society account, on a day that suits you.
-              </div>
-            </div>
+              <p><a href="directOwner" class="govuk-button">
+                Continue
+              </a></p>
 
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="flexyPayChoice" name="paymentOptions" type="radio" value="flexyPayChoice" aria-describedby="flexyPayChoice-hint" {{ checked('paymentOptions','flexyPayChoice') }}>
-              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="flexyPayChoice">
-                Flexible payments throughout the month
-              </label>
-              <div id="flexyPayChoice-hint" class="govuk-hint govuk-radios__hint">
-                You must sign in to this service to pay your chosen amount every month.
             </div>
           </div>
-        </fieldset>
-      </div>
 
-      <button class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
-    </form>
-
-
-
-  </div>
-
-</div>
 
 
 

@@ -59,7 +59,7 @@ Bank or building society account details
   <div id="with-hint-hint" class="govuk-hint">
     Must be no longer than 18 characters.
   </div>
-  <input class="govuk-input govuk-input--width-20 govuk-js-character-count" id="with-hint" name="accountName"  aria-describedby="without-hint-info with-hint-hint">
+  <input class="govuk-input govuk-input--width-20 govuk-js-character-count" id="with-hint" name="accountName"  aria-describedby="without-hint-info with-hint-hint" value="{{data['accountName']}}">
   <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
       You can enter up to 18 characters
     </div>
@@ -74,7 +74,7 @@ Bank or building society account details
                 Must be 6 digits long, like 309430
               </div>
 
-              <input class="govuk-input govuk-input--width-10" id="sortCode" name="sortCode" type="text" aria-describedby="sort-code-hint">
+              <input class="govuk-input govuk-input--width-10" id="sortCode" name="sortCode" type="text" aria-describedby="sort-code-hint" value="{{data['sortCode']}}">
 
             </div>
 
@@ -92,7 +92,7 @@ Bank or building society account details
                 Must be 8 digits long, like 00733445
               </div>
 
-              <input class="govuk-input govuk-input--width-10 govuk-js-character-count" id="with-hint" name="accountNumber" type="text" aria-describedby="account-number-hint">
+              <input class="govuk-input govuk-input--width-10 govuk-js-character-count" id="with-hint" name="accountNumber" type="text" aria-describedby="account-number-hint" value="{{data['accountNumber']}}">
 
             </div>
 

@@ -41,6 +41,9 @@ Payment plan summary
 
   <div class="govuk-grid-column-three-quarters">
 
+
+    <form class="form" action="directFinish" method="post">
+
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
     Check details before setting up your payment plan</h1>
 
@@ -66,7 +69,7 @@ Payment plan summary
             Monthly Direct Debit
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Monhtly Direct Debit</span></a>
+            <!-- <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Monhtly Direct Debit</span></a> -->
           </dd>
         </div>
         </dl>
@@ -117,16 +120,7 @@ Payment plan summary
                                 {% else %}
 
                                 <p class="mb0">
-                                  <script>
-                                    function divide(num) { return num.toFixed(2); }
-
-                                    var  num1 = 750.00;
-
-                                    var num2 = {{ data['custom-amount'] }};
-
-                                    var  result = Math.floor(num1 / num2);
-                                    document.write(result);
-                                  </script>   payments of {{data['custom-amount'] | currency}}
+                                  {{data['custom-amount'] | currency}}
                                 </p>
                                 {% endif %}
 
@@ -135,20 +129,133 @@ Payment plan summary
                                 {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Direct Debit amount</span></a>
+            <a class="govuk-link" href="choose-payment-plan">Change<span class="govuk-visually-hidden"> Direct Debit amount</span></a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Final payment amount          </dt>
           <dd class="govuk-summary-list__value">
-            <script>
-              var CurrentDate = new Date();
-              console.log("Current date:", CurrentDate);
-              CurrentDate.setDate({{data['paymentDay']}});
-              CurrentDate.setMonth(CurrentDate.getMonth() + 1);
-              document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
-            </script>
+
+                                {% if data['paymentChoices']=='12Month'%}
+
+                                <p class="mb0">£<script>
+                                    function divide(num) { return num.toFixed(2); }
+
+                                    var  num1 = 750 ;
+
+                                    var num2 = 62.5;
+                                    var  result = Math.floor(num1 / num2);
+                                    var finalResult = num1 - num2 * result;
+                                    var results = Math.round(finalResult * 100) / 100;
+                                    document.write(results.toFixed(2));                                   </script>
+
+                                 </p>
+
+
+                                {% elif data['paymentChoices']=='24Month'%}
+
+                                <p class="mb0">£<script>
+                                    function divide(num) { return num.toFixed(2); }
+
+                                    var  num1 = 750 ;
+
+                                    var num2 = 31.25;
+                                    var  result = Math.floor(num1 / num2);
+                                    var finalResult = num1 - num2 * result;
+                                    var results = Math.round(finalResult * 100) / 100;
+                                    document.write(results.toFixed(2));                                   </script>
+
+                                 </p>
+
+
+                                {% elif data['paymentChoices']=='36Month'%}
+
+
+
+                                <p class="mb0">£<script>
+                                    function divide(num) { return num.toFixed(2); }
+
+                                    var  num1 = 750 ;
+                                    var num2 = 20.83;
+                                    var  result = Math.floor(num1 / num2);
+                                    var finalResult = num1 - num2 * result;
+                                    var results = Math.round(finalResult * 100) / 100;
+                                    document.write(results.toFixed(2));                                   </script>
+
+                                    </p>
+
+
+                                {% elif data['paymentChoices']=='48Month'%}
+
+                                <p class="mb0">£ <script>
+                                    function divide(num) { return num.toFixed(2); }
+
+                                    var  num1 = 750 ;
+
+                                    var num2 = 15.62;
+                                    var  result = Math.floor(num1 / num2);
+                                    var finalResult = num1 - num2 * result;
+                                    var results = Math.round(finalResult * 100) / 100;
+                                    document.write(results.toFixed(2));                                   </script>
+
+                                  </p>
+
+                                {% elif data['paymentChoices']=='72Month'%}
+
+                                <p class="mb0">£<script>
+                                    function divide(num) { return num.toFixed(2); }
+
+                                    var  num1 = 750 ;
+
+                                    var num2 = 50;
+                                    var  result = Math.floor(num1 / num2);
+                                    var finalResult = num1 - num2 * result;
+                                    var results = Math.round(finalResult * 100) / 100;
+                                    document.write(results.toFixed(2));                                   </script>
+                                    </p>
+
+
+
+                                {% else %}
+
+                                <p class="mb0">
+
+                                  {% if data['paymentChoices']=='lowPayments'%}
+
+                                  <p class="mb0">£<script>
+                                      function divide(num) { return num.toFixed(2); }
+
+                                      var  num1 = 750 ;
+
+                                      var num2 = {{data['affordable-amount'] }};
+                                      var  result = Math.floor(num1 / num2);
+                                      var finalResult = num1 - num2 * result;
+                                      var results = Math.round(finalResult * 100) / 100;
+                                      document.write(results.toFixed(2));                                    </script>
+                                     </p>
+
+                                    {% else %}
+
+                                    <p class="mb0">£<script>
+                                        function divide(num) { return num.toFixed(2); }
+
+                                        var  num1 = 750 ;
+
+                                        var num2 = {{data['custom-amount'] }};
+                                        var  result = Math.floor(num1 / num2);
+                                        var finalResult = num1 - num2 * result;
+                                        var results = Math.round(finalResult * 100) / 100;
+                                        document.write(results.toFixed(2));
+
+                                      </script>
+
+                                    </p>
+                                    {% endif %}
+
+
+
+                                    {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
@@ -158,101 +265,118 @@ Payment plan summary
             Expected number of payments
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['paymentChoices']=='12Month'%}
 
-            <script>
-              var  num1 = 3098.64;
-              var num2 = 299;
-              var x = Math.floor(num1 / num2); //or whatever offset
-              var CurrentDate = new Date();
-              console.log("Current date:", CurrentDate);
-              CurrentDate.setMonth(CurrentDate.getMonth() + x);
-              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
-            </script>
-            {% elif data['paymentChoices']=='24Month'%}
+                                {% if data['paymentChoices']=='12Month'%}
 
-            <script>
-              var  num1 = 3098.64;
-              var num2 = 149;
-              var x = Math.floor(num1 / num2); //or whatever offset
-              var CurrentDate = new Date();
-              console.log("Current date:", CurrentDate);
-              CurrentDate.setMonth(CurrentDate.getMonth() + x);
-              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
-            </script>
-            {% elif data['paymentChoices']=='36Month'%}
+                                <p class="mb0"><script>
+                                    function divide(num) { return num.toFixed(2); }
+
+                                    var  num1 = 750;
+
+                                    var num2 = 62.5;
+
+                                    var  result = Math.floor(num1 / num2);
+                                    document.write(result);
+                                  </script>  </p>
 
 
-            <script>
-              var  num1 = 3098.64;
-              var num2 = 99.5;
-              var x = Math.floor(num1 / num2); //or whatever offset
-              var CurrentDate = new Date();
-              console.log("Current date:", CurrentDate);
-              CurrentDate.setMonth(CurrentDate.getMonth() + x);
-              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
-            </script>
+                                {% elif data['paymentChoices']=='24Month'%}
+
+                                <p class="mb0"><script>
+                                    function divide(num) { return num.toFixed(2); }
+
+                                    var  num1 = 750;
+
+                                    var num2 = 31.25;
+
+                                    var  result = Math.floor(num1 / num2);
+                                    document.write(result);
+                                  </script> </p>
+
+
+                                {% elif data['paymentChoices']=='36Month'%}
 
 
 
-            {% elif data['paymentChoices']=='48Month'%}
+                                <p class="mb0"><script>
+                                    function divide(num) { return num.toFixed(2); }
+
+                                    var  num1 = 750;
+
+                                    var num2 = 20.83;
+
+                                    var  result = Math.floor(num1 / num2);
+                                    document.write(result);
+                                  </script>  </p>
 
 
-            <script>
-              var  num1 = 3098.64
-              var num2 = 74.6;
-              var x = Math.floor(num1 / num2); //or whatever offset
-              var CurrentDate = new Date();
-              console.log("Current date:", CurrentDate);
-              CurrentDate.setMonth(CurrentDate.getMonth() + x);
-              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
-            </script>
+                                {% elif data['paymentChoices']=='48Month'%}
 
-            {% elif data['paymentChoices']=='72Month'%}
+                                <p class="mb0"><script>
+                                    function divide(num) { return num.toFixed(2); }
 
-            <script>
-              var  num1 = 3098.64;
-              var num2 = 50;
-              var x = Math.floor(num1 / num2); //or whatever offset
-              var CurrentDate = new Date();
-              console.log("Current date:", CurrentDate);
-              CurrentDate.setMonth(CurrentDate.getMonth() + x);
-              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
-            </script>
+                                    var  num1 = 750;
 
-            {% else %}
+                                    var num2 = 15.62;
 
+                                    var  result = Math.floor(num1 / num2);
+                                    document.write(result);
+                                  </script> </p>
 
+                                {% elif data['paymentChoices']=='72Month'%}
 
-            {% if data['paymentChoices']=='lowPayments'%}
+                                <p class="mb0"><script>
+                                    function divide(num) { return num.toFixed(2); }
 
-            <script>
-              var  num1 = 3098.64;
-              var num2 = {{ data['affordable-amount'] }};;
-              var x = Math.floor(num1 / num2); //or whatever offset
-              var CurrentDate = new Date();
-              console.log("Current date:", CurrentDate);
-              CurrentDate.setMonth(CurrentDate.getMonth() + x);
-              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
-            </script>
+                                    var  num1 = 750;
 
-            {% else %}
+                                    var num2 = 50;
 
-            <script>
-              var  num1 = 3098.64;
-              var num2 = {{ data['custom-amount'] }};;
-              var x = Math.floor(num1 / num2); //or whatever offset
-              var CurrentDate = new Date();
-              console.log("Current date:", CurrentDate);
-              CurrentDate.setMonth(CurrentDate.getMonth() + x);
-              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
-            </script>
-            {% endif %}
+                                    var  result = Math.floor(num1 / num2);
+                                    document.write(result);
+                                  </script>  </p>
 
 
 
-            {% endif %}
+                                {% else %}
 
+                                <p class="mb0">
+
+                                  {% if data['paymentChoices']=='lowPayments'%}
+
+
+
+                                    <p class="mb0"><script>
+                                        function divide(num) { return num.toFixed(2); }
+
+                                        var  num1 = 750;
+
+                                        var num2 = {{data['affordable-amount']}};
+
+                                        var  result = Math.floor(num1 / num2);
+                                        document.write(result);
+                                      </script>  </p>
+
+
+                                    {% else %}
+
+                                    <p class="mb0">
+                                      <script>
+                                        function divide(num) { return num.toFixed(2); }
+
+                                        var  num1 = 750;
+
+                                        var num2 = {{ data['custom-amount'] }};
+
+                                        var  result = Math.floor(num1 / num2);
+                                        document.write(result);
+                                      </script>
+                                    </p>
+                                    {% endif %}
+
+
+
+                                    {% endif %}
 
 
           </dd>
@@ -277,10 +401,10 @@ Payment plan summary
           Direct Debit day
           </dt>
           <dd class="govuk-summary-list__value">
-            02
+            {{ data ['paymentDay']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Direct Debit amount</span></a>
+            <a class="govuk-link" href="directDebitDay">Change<span class="govuk-visually-hidden"> Direct Debit amount</span></a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -288,7 +412,12 @@ Payment plan summary
             First payment
           </dt>
           <dd class="govuk-summary-list__value">
-            02 December 2024
+            <script>
+              var CurrentDate = new Date();
+              var m = {{ data ['paymentDay']}};
+              CurrentDate.setMonth(CurrentDate.getMonth() + 1);
+              document.write(m + ' ' + CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+            </script>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> Direct Debit amount</span></a>
@@ -300,7 +429,89 @@ Payment plan summary
             Expected final payment
           </dt>
           <dd class="govuk-summary-list__value">
-            November 2034
+            {% if data['paymentChoices']=='12Month'%}
+
+            <script>
+              var  num1 = 750.00;
+              var num2 = 62.5;
+              var x = Math.floor(num1 / num2); //or whatever offset
+              var CurrentDate = new Date();
+              console.log("Current date:", CurrentDate);
+              CurrentDate.setMonth(CurrentDate.getMonth() + x);
+              document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
+            </script>
+            {% elif data['paymentChoices']=='24Month'%}
+
+            <script>
+              var  num1 = 750.00;
+              var num2 = 31.25;
+              var x = Math.floor(num1 / num2); //or whatever offset
+              var CurrentDate = new Date();
+              console.log("Current date:", CurrentDate);
+              CurrentDate.setMonth(CurrentDate.getMonth() + x);
+              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+            </script>
+            {% elif data['paymentChoices']=='36Month'%}
+
+
+            <script>
+              var  num1 = 750.00;
+              var num2 = 20.83;
+              var x = Math.floor(num1 / num2); //or whatever offset
+              var CurrentDate = new Date();
+              console.log("Current date:", CurrentDate);
+              CurrentDate.setMonth(CurrentDate.getMonth() + x);
+              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+            </script>
+
+
+
+            {% elif data['paymentChoices']=='48Month'%}
+
+
+            <script>
+              var  num1 = 750.00;
+              var num2 = 15.62;
+              var x = Math.floor(num1 / num2); //or whatever offset
+              var CurrentDate = new Date();
+              console.log("Current date:", CurrentDate);
+              CurrentDate.setMonth(CurrentDate.getMonth() + x);
+              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+            </script>
+
+
+            {% else %}
+
+
+
+            {% if data['paymentChoices']=='lowPayments'%}
+
+            <script>
+              var  num1 = 750.00;
+              var num2 = {{ data['affordable-amount'] }};;
+              var x = Math.floor(num1 / num2); //or whatever offset
+              var CurrentDate = new Date();
+              console.log("Current date:", CurrentDate);
+              CurrentDate.setMonth(CurrentDate.getMonth() + x);
+              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+            </script>
+
+            {% else %}
+
+            <script>
+              var  num1 = 750.00;
+              var num2 = {{ data['custom-amount'] }};;
+              var x = Math.floor(num1 / num2); //or whatever offset
+              var CurrentDate = new Date();
+              console.log("Current date:", CurrentDate);
+              CurrentDate.setMonth(CurrentDate.getMonth() + x);
+              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+            </script>
+            {% endif %}
+
+
+
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> Direct Debit amount</span></a>
@@ -318,12 +529,12 @@ Payment plan summary
             Account details
           </dt>
           <dd class="govuk-summary-list__value">
-            Alex John Smith <br>
-            090920 <br>
-            00123456
+            {{ data ['accountName']}} <br>
+            {{ data ['sortCode']}} <br>
+            {{ data ['accountNumber']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Direct Debit amount</span></a>
+            <a class="govuk-link" href="bank-building-society-details">Change<span class="govuk-visually-hidden"> Direct Debit amount</span></a>
           </dd>
         </div>
 
@@ -447,7 +658,7 @@ Payment plan summary
                           Continue and set up Direct Debit
                         </button>
 
-
+</form>
 
           </div>
         </div>

@@ -1345,3 +1345,41 @@ router.post('/design-improvement/setup-plan/direct-debit-account-owner', functio
   }
 
 })
+
+
+
+
+
+router.post('/design-improvements/setup-plan/custom-amount', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var customAmount = req.session.data['custom-amount']
+
+  // Check whether the variable matches a condition
+  if (customAmount >= 15.52){
+    // Send user to next page
+    res.redirect('/design-improvements/setup-plan/dd-flex-option')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/design-improvements/start-affordable-plan')
+  }
+
+})
+
+
+
+router.post('/dd-setup-done/dd-change', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var ddChange = req.session.data['dd-change']
+
+  // Check whether the variable matches a condition
+  if (ddChange == 'yes'){
+    // Send user to next page
+    res.redirect('/design-improvements/den/direct-debit-setup-done/manage-plan/what-this-will-mean-for-your-repayments-afford')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/design-improvements/den/direct-debit-setup-done/manage-plan/edit-direct-debit-day')
+  }
+
+})

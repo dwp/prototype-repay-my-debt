@@ -1,0 +1,177 @@
+
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+Repay and manage benefit money you owe
+{% endblock %}
+
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+<nav class="dwp-language-toggle" aria-label="Language toggle">
+<ul class="dwp-language-toggle__list">
+  <li class="dwp-language-toggle__list-item" aria-current="true">
+    English
+  </li>
+  <li class="dwp-language-toggle__list-item">
+    <a href="#"
+      hreflang="cy"
+      lang="cy"
+      rel="alternate"
+      class="govuk-link"
+      aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+  </li>
+</ul>
+</nav>
+</main>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<!-- <div class="clear-bar">
+<h2 class="govuk-heading-l">Ashley Chamberlain<span>ZZ 41 54 60 Z</span></h2>
+<p>What you owe:
+<span>&pound;120.00</span></p>
+
+</div> -->
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">{{ serviceName }}</h1>
+
+    <br>
+
+
+    <p>You can use this service to:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>check how much you owe</li>
+      <li>find out why you need to repay money</li>
+      <li>view your payment history</li>
+      <li>pay back what you owe in full or make a one-off payment</li>
+      <li>get help and support about the money you owe</li>
+
+    </ul>
+
+
+    <p class="govuk-inset-text">This service is also available in <a href="#">Welsh (Cymraeg)</a>.</p>
+
+
+
+    <h2 class="govuk-heading-m mt30">If you’re getting Universal Credit</h2>
+
+    <p>Your benefit payments will be reduced until you’ve paid back the money.</p>
+    <p>You can use this service to check when you will have repaid the money.</p>
+
+    <p class="govuk-inset-text">You cannot use this service to manage money you owe from an advance you got on your current Universal Credit claim. <a href="#">Contact Universal Credit</a> instead.</p>
+
+
+    <h2 class="govuk-heading-m mt30">If you’ve stopped getting benefits</h2>
+    <p>You’ll get a letter from the Department for Work and Pensions (DWP) telling you that you can use this service. If you live in Northern Ireland, the letter will come from the Department for Communities (DfC).
+
+</p>
+
+
+    <p>After you get the letter, you can use the service to set up or manage a Direct Debit or flexible payment plan.
+
+</p>
+
+
+
+
+
+
+
+
+
+
+<p class="govuk-heading-m">Sign in to the service</p>
+<p>You can sign in with the security code in your letter from DWP or DfC. You can also sign in with GOV.UK One Login. You’ll be able to create a GOV.UK One Login if you do not already have one.
+</p>
+
+
+
+    <p><a href="ol_signin" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+      Start now
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+      </svg>
+    </a>
+  </p>
+
+
+
+<h2 id="other-ways-to-pay-if-youve-stopped-getting-benefits" class="govuk-heading-m" >Other ways to pay if you’ve stopped getting benefits</h2>
+
+<p>If you’ve stopped getting benefits, there are other ways to repay the money.</p>
+
+
+<p class="govuk-inset-text">If you live in Northern Ireland you can pay by contacting the <a href="#">Department for Communities.</a></p>
+
+<h3 id="pay-using-online-banking" class="govuk-heading-s">Pay using online banking</h3>
+
+<p>If you’re paying from a UK bank account, use the following details:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>account name -  DWP Debt Management</li>
+  <li>sort code - 60 70 80</li>
+  <li>account number - 10025634</li>
+  <li>payment reference - the reference number on your letter from <abbr title="Department for Work and Pensions">DWP</abbr> or your National Insurance number</li>
+</ul>
+
+<p>If you’re paying from an overseas account, use the following details:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>account name -  DWP Debt Management</li>
+  <li>account number (IBAN) - GB30NWBK60708010025634</li>
+  <li>bank identifier code (BIC) - NWBKGB2L</li>
+  <li>payment reference - the reference number on your letter from <abbr title="Department for Work and Pensions">DWP</abbr> or your National Insurance number</li>
+</ul>
+
+
+<h3 id="pay-using-direct-debit-debit-card-cheques-or-cash" class="govuk-heading-s">Pay using Direct Debit, debit card, cheques or cash</h3>
+
+<p>Contact DWP Debt Management to:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>set up monthly repayments by Direct Debit</li>
+  <li>make a payment using a debit card</li>
+  <li>request a paying-in slip for cheque or cash payments</li>
+</ul>
+
+
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+<h2 id="other-ways-to-pay-if-youve-stopped-getting-benefits" class="govuk-heading-m" >Get help with your repayments</h2>
+
+<p>Contact DWP Debt Management if you need help managing your repayments. They can talk you through your options, including what you can afford to pay.</p>
+
+<h2 id="other-ways-to-pay-if-youve-stopped-getting-benefits" class="govuk-heading-m" >Contact DWP Debt Management
+
+</h2>
+
+<div class="contact">
+<p>
+Telephone: 0800 916 0647  <br>
+Textphone: 0800 916 0651<br>
+<a href="http://ngts.org.uk/">NGT text relay</a> (if you cannot hear or speak on the phone): 18001 then 0800 916 0647<br>
+<a href="http://dwpdmmenu.signvideo.net">Video relay service</a> for British Sign Language (BSL) users - <a href="https://www.youtube.com/watch?v=Osx7FFxFpNY" data-youtube-player="off">check you can use the service</a><br>
+Calling from abroad: +44 (0)161 904 1233<br>
+Monday to Friday, 8am to 7:30pm<br>
+<a href="/call-charges">Find out about call charges</a></p>
+</div>
+
+
+
+
+</div>
+</div>
+
+{% endblock %}

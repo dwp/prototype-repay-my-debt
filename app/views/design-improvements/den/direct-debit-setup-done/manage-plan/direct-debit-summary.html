@@ -1,0 +1,485 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Payment plan summary
+{% endblock %}
+
+
+
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+
+    <form class="form" action="dd-setup-success" method="post">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+    Check details before setting up your payment plan</h1>
+
+    <h2 class="govuk-heading-m  ">Plan summary</h2>
+
+
+    <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total amount owed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £750.00
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Plan type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Monthly Direct Debit
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Monhtly Direct Debit</span></a> -->
+          </dd>
+        </div>
+        </dl>
+
+
+        {% if data['dd-change']== 'yes'%}
+
+        <h2 class="govuk-heading-m govuk-!-padding-top-7 ">Payment details</h2>
+
+
+        <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Direct Debit amount
+          </dt>
+          <dd class="govuk-summary-list__value">
+             {{ data['new-dd-amount'] | currency }}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="edit-dd-amount">Change<span class="govuk-visually-hidden"> Direct Debit amount</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Final payment amount          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <p class="mb0">£<script>
+                function divide(num) { return num.toFixed(2); }
+
+                var  num1 = 750 ;
+
+                var num2 = {{ data['new-dd-amount'] }};
+                var  result = Math.floor(num1 / num2);
+                var finalResult = num1 - num2 * result;
+                var results = Math.round(finalResult * 100) / 100;
+                document.write(results.toFixed(2));
+
+              </script>
+
+            </p>
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Expected number of payments
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <p class="mb0">
+              <script>
+                function divide(num) { return num.toFixed(2); }
+
+                var  num1 = 750;
+
+                var num2 = {{ data['new-dd-amount'] }};
+
+                var  result = Math.floor(num1 / num2);
+                document.write(result);
+              </script>
+            </p>
+
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+
+
+
+      </dl>
+
+
+      {% else %}
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-7 ">Payment details</h2>
+
+
+      <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Direct Debit amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+           £12.50
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="edit-dd-amount">Change<span class="govuk-visually-hidden"> Direct Debit amount</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final payment amount          </dt>
+        <dd class="govuk-summary-list__value">
+
+          <p class="mb0">£<script>
+              function divide(num) { return num.toFixed(2); }
+
+              var  num1 = 750 ;
+
+              var num2 = 12.5;
+              var  result = Math.floor(num1 / num2);
+              var finalResult = num1 - num2 * result;
+              var results = Math.round(finalResult * 100) / 100;
+              document.write(results.toFixed(2));
+
+            </script>
+
+          </p>
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Expected number of payments
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <p class="mb0">
+            <script>
+              function divide(num) { return num.toFixed(2); }
+
+              var  num1 = 750;
+
+              var num2 = 12.5;
+
+              var  result = Math.floor(num1 / num2);
+              document.write(result);
+            </script>
+          </p>
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+
+
+
+
+    </dl>
+
+
+
+  {% endif %}
+
+      {% if data['new-dd-date-preferences']== 'yes'%}
+
+
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-7">Payment dates</h2>
+
+
+      <dl class="govuk-summary-list">
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Direct Debit day
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data ['new-dd-date']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="edit-direct-debit-day">Change<span class="govuk-visually-hidden"> Direct Debit amount</span></a>
+          </dd>
+        </div>
+
+  {% if data['dd-change']== 'yes'%}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Next payment
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <script>
+              var CurrentDate = new Date();
+              var m = {{ data ['new-dd-date']}};
+              CurrentDate.setMonth(CurrentDate.getMonth() + 1);
+              document.write(m + ' ' + CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+            </script>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> Direct Debit amount</span></a>
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Expected final payment
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <script>
+              var  num1 = 750.00;
+              var num2 = {{data['new-dd-amount']}};
+              var x = Math.floor(num1 / num2); //or whatever offset
+              var CurrentDate = new Date();
+              console.log("Current date:", CurrentDate);
+              CurrentDate.setMonth(CurrentDate.getMonth() + x);
+              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+            </script>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> Direct Debit amount</span></a>
+        </dd>
+        </div>
+
+
+        {% else %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Next payment
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <script>
+              var CurrentDate = new Date();
+              var m = {{ data ['new-dd-date']}};
+              CurrentDate.setMonth(CurrentDate.getMonth() + 1);
+              document.write(m + ' ' + CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+            </script>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> Direct Debit amount</span></a>
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Expected final payment
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <script>
+              var  num1 = 750.00;
+              var num2 = 12.5;
+              var x = Math.floor(num1 / num2); //or whatever offset
+              var CurrentDate = new Date();
+              console.log("Current date:", CurrentDate);
+              CurrentDate.setMonth(CurrentDate.getMonth() + x);
+              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+            </script>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> Direct Debit amount</span></a>
+        </dd>
+        </div>
+
+
+        {% endif %}
+      </dl>
+
+
+
+
+
+      {% else %}
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-7">Payment dates</h2>
+
+
+      <dl class="govuk-summary-list">
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Direct Debit day
+          </dt>
+          <dd class="govuk-summary-list__value">
+            5
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="edit-direct-debit-day">Change<span class="govuk-visually-hidden"> Direct Debit amount</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Next payment
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <script>
+              var CurrentDate = new Date();
+              var m = 5;
+              CurrentDate.setMonth(CurrentDate.getMonth() + 1);
+              document.write(m + ' ' + CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+            </script>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> Direct Debit amount</span></a>
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Expected final payment
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <script>
+              var  num1 = 750.00;
+              var num2 = 12.50;
+              var x = Math.floor(num1 / num2); //or whatever offset
+              var CurrentDate = new Date();
+              console.log("Current date:", CurrentDate);
+              CurrentDate.setMonth(CurrentDate.getMonth() + x);
+              document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
+            </script>
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> Direct Debit amount</span></a>
+        </dd>
+        </div>
+
+      </dl>
+
+ {% endif %}
+
+
+
+
+                  <div class="ddGuarantee">
+                    <h3 class="govuk-heading-s">The Direct Debit Guarantee</h3>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>This Guarantee is offered by all banks and building societies that accept instructions to pay Direct Debits.
+                      </li>
+                      <li>If there are any changes to the amount, date or frequency of your Direct Debit DWP will notify you 10 working
+                        days in advance of your account being debited or as otherwise agreed. If you request DWP to collect a payment,
+                        confirmation of the amount and date will be given to you at the time of request.</li>
+
+                        <li>If an error is made in the payment of your Direct Debit, by DWP or your bank or building society,
+                          you are entitled to a full and immediate refund of the amount paid from your bank or building society.
+                          – If you receive a refund you are not entitled to, you must pay it back when DWP asks you to.</li>
+                          <li>You can cancel a Direct Debit at any time by simply contacting your bank or building society.
+                            Written confirmation may be required. Please also notify us.</li>
+
+
+
+                          </ul>
+                        </div>
+
+
+
+
+
+
+
+                        <div class="govuk-warning-text">
+                          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                          <strong class="govuk-warning-text__text">
+                        If you do not keep up with your payments, we will take further action to recover the money owed.</strong>
+                        </div>
+                        <p class="govuk-body">Further action to recover money owed may include:</p>
+                                      <ul class="govuk-list govuk-list--bullet mb30">
+
+                      <li>asking your employer to deduct it from your pay</li>
+                      <li>taking debt enforcement action through the courts</li>
+                      <li>asking a debt collection agency to collect it for us</li>
+                      <li>recovering it from future benefits and State Pension you get</li>
+
+
+                                      </ul>
+
+
+                                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+                                                        <h2 class="govuk-heading-m">Declaration</h2>
+
+                                                        <p>By continuing, you confirm that you will:</p>
+
+                                                        <ul class="govuk-list govuk-list--bullet mb30">
+
+                                                          {% if data['paymentOptions']=='ddFixedChoice'%}
+                                                          <li>pay the agreed monthly amount</li>
+                                                          {% else %}
+                                                          {% endif %}
+
+                                                          {% if data['paymentOptions']=='flexyPayChoice'%}
+                                                          <li>pay the agreed monthly amount</li>
+                                                          {% else %}
+                                                          {% endif %}
+
+
+                                                          <li>let us know immediately if you’re struggling to keep up with payments</li>
+                                                        </ul>
+                                                        <p class="govuk-!-font-weight-bold">Your bank may charge you interest if you pay by credit card.
+                                                        </p>
+
+
+                        <button class="govuk-button" data-module="govuk-button">
+                          Continue and set up Direct Debit
+                        </button>
+
+</form>
+
+          </div>
+        </div>
+
+
+
+
+            {% endblock %}

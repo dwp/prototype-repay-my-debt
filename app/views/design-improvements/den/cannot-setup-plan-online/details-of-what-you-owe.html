@@ -1,0 +1,325 @@
+
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Details of what you owe
+{% endblock %}
+
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+<nav class="dwp-language-toggle" aria-label="Language toggle">
+<ul class="dwp-language-toggle__list">
+  <li class="dwp-language-toggle__list-item" aria-current="true">
+    English
+  </li>
+  <li class="dwp-language-toggle__list-item">
+    <a href="#"
+      hreflang="cy"
+      lang="cy"
+      rel="alternate"
+      class="govuk-link"
+      aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+  </li>
+</ul>
+</nav>
+</main>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+									<h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Details of what you owe</h1>
+
+                  <!-- <div class="govuk-inset-text">
+         			 Total amount owed: <span class="total-amount">
+         			&pound;1139.10
+
+         									 </span>
+
+
+         			</div>-->
+
+
+
+                            {% if data['deductionChange']=='DyesChange'%}
+
+                            <div >
+                              <p>
+                              Total amount left to repay: <br> <span class="total-amount">
+                                &pound;750.00
+
+                              </span>
+                              </p>
+
+
+                            </div>
+
+
+                            <div class="flexible-banner-float-none">
+                              <ul class="govuk-list">
+                                <li>
+                                  <h3>New payment</h3>
+                                  <span id="total-amount"><b>£{{ data['newDeductedAmount'] }}</span>
+                                </li>
+                              </ul>
+
+                              <p>Your account will be updated within the next 7 days.
+                            </p>
+                            </div>
+              {% else %}
+
+              <div >
+                <p>Total amount left to repay:<br> <span class="total-amount">
+                  &pound;750.00
+
+                </span>
+
+
+<p>
+              </div>
+  {% endif %}
+ <div class="govuk-accordion mb50" data-module="govuk-accordion" id="accordion-with-summary-sections">
+
+
+
+ 	<div class="govuk-accordion__section ">
+ 		  <div class="govuk-accordion__section-header">
+ 			<h2 class="govuk-accordion__section-heading">
+ 			  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+ 				Universal Credit
+ 			  </span>
+ 			 </h2>
+
+
+
+ 		<div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
+ 			Overpayment
+ 			</div>
+
+ 		  </div>
+ 		  <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2">
+
+
+
+ 		  <div class="flexible-banner-float-none">
+
+
+
+
+
+ 				 <table class="govuk-table">
+
+ 			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+
+
+
+ 					<tbody class="govuk-table__body">
+
+
+ 					<tr class="govuk-table__row">
+ 						 <th scope="row" class="govuk-table__header">Overpayment period</th>
+ 						  <td class="govuk-table__cell"> 	21 June 2025 to 30 July 2025</td>
+ 						</tr>
+
+            <tr class="govuk-table__row">
+               <th scope="row" class="govuk-table__header">Original amount owed</th>
+                <td class="govuk-table__cell">&pound;500.00</td>
+              </tr>
+ 							 <tr class="govuk-table__row">
+ 								  <th scope="row" class="govuk-table__header">Current amount owed</th>
+ 								   <td class="govuk-table__cell">&pound;500.00</td>
+ 								 </tr>
+
+
+
+
+ 					</tbody>
+
+ 		  </table>
+
+
+
+ 		  <!-- <h4 class="govuk-heading-s">Final payment date</h4>
+
+
+ 			<p>If your current repayment amount stays at £10.00 you will clear this Tax Credits overpayment in
+
+         <script>
+          var  num1 = 170.00;
+          var num2 =  10;
+          var x = Math.floor(num1 / num2); //or whatever offset
+          var CurrentDate = new Date();
+          console.log("Current date:", CurrentDate);
+          CurrentDate.setMonth(CurrentDate.getMonth() + x);
+           document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
+        </script>.
+       </p> -->
+
+       <h4 class="govuk-heading-s">Overpayment reason</h4>
+      <p>
+      You were overpaid because you or your partner earned too much from employment, either full time or part time.</p>
+      <p>You were sent a letter about your overpayment on 25 July 2025.</p>
+
+
+
+
+ 		  </div>
+
+ 	 <p>You can check your Universal Credit journal if you have access to it for more details, or contact Universal Credit:</p>
+
+
+ 	 <ul class="govuk-list">
+ 	   <li>Telephone: 0800 012 1331</li>
+      <li>Textphone: 0800 012 1441 (for deaf or hard of hearing users and customers with speech difficulties)</li>
+
+
+       <li>Monday to Friday, 10am to 4pm (closed on bank holidays)</li>
+ 	 </ul>
+
+  <p class="govuk-body">
+    <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+  </p>
+
+ 		  </div>
+ 		</div>
+
+    <div class="govuk-accordion__section ">
+   		  <div class="govuk-accordion__section-header">
+   			<h2 class="govuk-accordion__section-heading">
+   			  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+   				Universal Credit
+   			  </span>
+   			 </h2>
+
+
+
+   		<div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
+   			Overpayment (joint)
+   			</div>
+
+   		  </div>
+   		  <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2">
+
+
+
+   		  <div class="flexible-banner-float-none">
+
+
+
+
+
+   				 <table class="govuk-table">
+
+   			   <caption class="visually-hidden">Overpayment detail</caption>
+
+
+
+
+
+   					<tbody class="govuk-table__body">
+
+
+   					<tr class="govuk-table__row">
+   						 <th scope="row" class="govuk-table__header">Overpayment period</th>
+   						  <td class="govuk-table__cell"> 	1 April 2025 to 30 April 2025</td>
+   						</tr>
+
+              <tr class="govuk-table__row">
+                 <th scope="row" class="govuk-table__header">Original amount owed</th>
+                  <td class="govuk-table__cell">&pound;250.00</td>
+                </tr>
+   							 <tr class="govuk-table__row">
+   								  <th scope="row" class="govuk-table__header">Current amount owed</th>
+   								   <td class="govuk-table__cell">&pound;250.00</td>
+   								 </tr>
+
+
+
+
+   					</tbody>
+
+   		  </table>
+
+
+
+   		  <!-- <h4 class="govuk-heading-s">Final payment date</h4>
+
+
+   			<p>If your current repayment amount stays at £10.00 you will clear this Tax Credits overpayment in
+
+           <script>
+            var  num1 = 170.00;
+            var num2 =  10;
+            var x = Math.floor(num1 / num2); //or whatever offset
+            var CurrentDate = new Date();
+            console.log("Current date:", CurrentDate);
+            CurrentDate.setMonth(CurrentDate.getMonth() + x);
+             document.write(CurrentDate.toGMTString().split(' ').slice(1,4).join(' '));
+          </script>.
+         </p> -->
+
+         <h4 class="govuk-heading-s">Overpayment reason</h4>
+        <p>
+        You were overpaid because you or your partner earned too much from employment, either full time or part time.</p>
+        <p>You were sent a letter about your overpayment on 5 July 2025.</p>
+
+        <h4 class="govuk-heading-s">Money you owe with your partner
+        </h4>
+        <p>
+        This amount is shared with your partner so you're both responsible for the repayments.
+
+        The total amount will show on your account and also your partner's. </p>
+
+
+   		  </div>
+
+   	 <p>You can check your Universal Credit journal if you have access to it for more details, or contact Universal Credit:</p>
+
+
+   	 <ul class="govuk-list">
+   	   <li>Telephone: 0800 012 1331</li>
+        <li>Textphone: 0800 012 1441 (for deaf or hard of hearing users and customers with speech difficulties)</li>
+
+
+         <li>Monday to Friday, 10am to 4pm (closed on bank holidays)</li>
+   	 </ul>
+
+    <p class="govuk-body">
+      <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges</a>
+    </p>
+
+   		  </div>
+   		</div>
+
+
+
+
+
+
+
+</div>
+ <!-- // Accordian end -->
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

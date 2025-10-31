@@ -1,0 +1,93 @@
+
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Pay off what you owe in full
+
+{% endblock %}
+
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+	   <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+
+
+										<form class="form" action="../pay-off-full-amount/pay-the-full-amount" >
+
+
+											<div class="govuk-form-group">
+												  <h1 class="govuk-label-wrapper">
+													  <label class="govuk-label govuk-label--xl" for="affordable-amount">
+                              Manage your plan
+													</label>
+												  </h1>
+                          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+                          <p>To make changes to your payment plan, including changing the monthly amount or the date of payment, you need to call us:</p>
+            
+            
+                          <h2 class="govuk-heading-m">DWP Debt Management</h2>
+
+	<ul class="govuk-list">
+	    <li>Telephone: 0800 169 0343</li>
+        <li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
+	</ul>
+
+     <p class="govuk-body">
+       <a class="govuk-link" href="https://www.gov.uk/call-charges" target="_blank">Find out about call charges (opens in new tab)</a>
+     </p>
+
+												</div>
+
+
+
+
+
+
+											<!-- 
+                <button class="govuk-button" data-module="govuk-button">
+											  Continue
+											</button>
+											</form> -->
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

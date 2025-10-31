@@ -93,8 +93,44 @@ Account home
           									<th scope="row" class="govuk-table__header">Direct Debit amount</th>
           									<td class="govuk-table__cell">
 
-                              £50.00
 
+
+                                                     {% if data['paymentChoices']=='12Month'%}
+
+                                                     &pound;62.50
+
+
+                                                     {% elif data['paymentChoices']=='24Month'%}
+
+                                                     &pound;31.25
+
+
+                                                     {% elif data['paymentChoices']=='36Month'%}
+
+                                                     &pound;20.83
+
+
+                                                     {% elif data['paymentChoices']=='48Month'%}
+
+                                                     &pound;15.62
+
+
+
+
+
+                                                     {% else %}
+
+                                                     {% if data['paymentChoices']=='lowPayments'%}
+
+                                                     {{ data['affordable-amount'] | currency }}
+
+                                                     {% else %}
+
+                                                     {{ data['custom-amount'] | currency}}
+
+                                                     {% endif %}
+
+                                                     {% endif %}
 
           									</td>
           								 </tr>
@@ -249,7 +285,7 @@ Account home
   						<p>Details of the money you owe.</p>
 
 <p>
-<a href="#">View details of what you owe</a>
+<a href="details-of-what-you-owe">View details of what you owe</a>
 </p>    					   </div>
   				   </div>
 
@@ -272,7 +308,7 @@ Account home
   					   <div class="scenario-inner-panel">
                  <p>You can contact us for general help and support.</p>
 
-                 <p>  					  <a href="#" >Get help and support</a>
+                 <p>  					  <a href="help-and-support" >Get help and support</a>
                  </p>
 </div>
   				   </div>
