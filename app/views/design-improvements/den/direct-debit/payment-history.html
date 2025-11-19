@@ -1,11 +1,12 @@
 
-{% extends "layout-main.html" %}
+{% extends "layout-3.html" %}
 
 {% block pageTitle %}
-  Payment history
+Help and support
 {% endblock %}
 
 {% block beforeContent %}
+
 <main class="govuk-width-container">
   <nav class="dwp-language-toggle" aria-label="Language toggle">
     <ul class="dwp-language-toggle__list">
@@ -23,94 +24,177 @@
     </ul>
   </nav>
 </main>
-  {{ govukBackLink({
-    text: "Back",
-    href: "account-home"
-  }) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-   <div class="govuk-grid-column-three-quarters">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+    <div class="govuk-grid-row">
 
 
 
 
-	   <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Payment history</h1>
+      <div class="govuk-grid-column-three-quarters">
 
 
 
-          <div class="flexible-banner-float-none">
-            <ul class="govuk-list">
-              <!-- <li>
-                <h3>Payments taken</h3>
-                <span id="new-debts-amount"><b>15</b></span>
-              </li>
-              <li>
-                <h3>Total amount repaid</h3>
-                <span class="total-amount" id="new-total-owed"><b>£300.00</b></span>
-              </li> -->
-              <li>
-                <h3>Total amount left to pay</h3>
-                <span class="total-amount" id="new-total-owed"><b>£750.00</b></span>
-              </li>
-            </ul>
-          </div>
 
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Help and support
+        </h1>
 
-          {% if data['additional-amount'] == 0 %}
+        <div class="govuk-body">
 
 
 
-           {% else %}
-
-           {% endif %}
-
-
-           <h2 class="govuk-heading-m mt40">Previous payments <br>
-           <!-- <span class="govuk-hint">May include payments towards debts already paid off.</span> -->
-           </h2>
-
-
-
-           <table class="govuk-table summary-pay">
-
-
-           <thead class="govuk-table__head">
-           <tr class="govuk-table__row">
-
-            <th class="govuk-table__header" scope="col">Payment date</th>
-
-            <th class="govuk-table__header" scope="col">Payment type</th>
-
-            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
-
-            <!--  <th class="govuk-table__header govuk-table__header--numeric" scope="col">Balance</th> -->
-
-
-           </tr>
-           </thead>
-
-           <tbody class="govuk-table__body">
-             <tr class="govuk-table__row">
-               <td class="govuk-table__cell">When you make payments they will appear here</td>
-               <td class="govuk-table__cell"> </td>
-               <td class="govuk-table__cell govuk-table__cell--numeric"> </td>
-             </tr>
-
-
-
-           </tbody>
-           </table>
+          <p>You can contact us for general help and support and to discuss your payment options.
 
 
 
 
 
+          </p>
+        </div>
+
+        <h2 class="govuk-heading-s ">DWP Debt Management</h2>
+        <ul class="govuk-list">
+          <li>Telephone: 0800 158 5519</li>
+          <li>Textphone: 0800 916 0651</li>
+          <li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
+        </ul>
+        <p class="govuk-body">
+          <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges (opens in new tab)</a>
+        </p>
+
+        <div class="govuk-!-padding-top-6">
+          <h2 class="govuk-heading-m">Further advice</h2>
+
+          <p>If you would like independent advice, you can contact:</p>
 
 
-    </div>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://www.moneyhelper.org.uk/">MoneyHelper (opens in new tab)</a>
+            </li>
+            <li>
+              <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://www.citizensadvice.org.uk/">Citizens Advice (opens in new tab)</a>
+            </li>
+            <li>
+              <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://www.gov.uk/civil-legal-advice">Civil Legal Advice (opens in new tab)</a>
+            </li>
+            <li>
+              <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://www.stepchange.org/">StepChange Debt Charity (opens in new tab)</a>
+            </li>
+          </ul>
+
+
+          <!--			<div class="govuk-inset-text">
+          <h2 class="govuk-heading-m">If you're struggling to pay, contact Debt Management immediately.</h2>
+          <ul class="govuk-list">
+          <li>Telephone: 020 7946 0101</li>
+          <li>Textphone: 020 7946 0102</li>
+          <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+        </ul>
+
+      </div> -->
+
+
+
+
+
+
+      <!--					<form class="form" action="/scenario-8/paymentDetail" method="post">
+
+
+      <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+      Or alternatively, we can call you
+    </h1>
+  </legend>
+
+  <div class="govuk-form-group">
+  <label class="govuk-label govuk-label--s" for="contact-by-email">
+  Contact number
+</label>
+<input class="govuk-input govuk-input--width-20" id="contact-by-email" name="contact-by-email" type="number" spellcheck="false">
+</div>
+
+
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+<h1 class="govuk-fieldset__heading">
+When will you be available?
+</h1>
+</legend>
+
+
+<div class="govuk-radios">
+<div class="govuk-radios__item">
+<input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england" aria-describedby="suitable-time">
+<label class="govuk-label govuk-radios__label" for="where-do-you-live">
+Morning
+</label>
+</div>
+<div class="govuk-radios__item">
+<input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland" aria-describedby="suitable-time">
+<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+Afternoon
+</label>
+</div>
+<div class="govuk-radios__item">
+<input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales" aria-describedby="suitable-time">
+<label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+Evening
+</label>
+</div>
+
+</div>
+</fieldset>
+</div>
+
+
+
+
+
+
+</fieldset>
+</div> -->
+
+
+<!--	<button class="govuk-button" data-module="govuk-button">
+Continue
+</button>
+
+</form> -->
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+</div>
 </div>
 
 {% endblock %}
