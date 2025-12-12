@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Payment hsitory – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Payment history
+      </h1>
+
+      <p>
+        May include payments for what you previously owed. Recent payments can take time to show.
+      </p>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Payments</caption>
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Date</th>
+            <th scope="col" class="govuk-table__header">Type</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amount</th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+            <td class="govuk-table__cell">7 May 2025</td>
+            <td class="govuk-table__cell">Deduction from benefit</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">&pound;43.50</td>
+            </tr>
+            <tr class="govuk-table__row">
+            <td class="govuk-table__cell">7 May 2025</td>
+            <td class="govuk-table__cell">Deduction from employer</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">&pound;43.50</td>
+            </tr>
+            <tr class="govuk-table__row">
+            <td class="govuk-table__cell">7 May 2025</td>
+            <td class="govuk-table__cell">Payment</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">&pound;43.50</td>
+            </tr>
+        </tbody>
+        </table>
+
+    </div>
+  </div>
+
+{% endblock %}
