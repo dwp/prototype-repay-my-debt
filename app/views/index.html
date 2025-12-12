@@ -4,58 +4,151 @@
 Repay and manage benefit money you owe
 {% endblock %}
 
-
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds-from-desktop">
+  <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
       Prototype
-
     </h1>
-
-  </div>
-</div>
 
 <div class="govuk-grid-row govuk-!-padding-4">
 
+    <p class="govuk-body">This service is in <strong class="govuk-tag govuk-tag--turquoise">Live</strong>, we continue to make iterations to the service.</p>
 
-        <p>Research month: <strong>Novemeber 2025</strong> &nbsp; | &nbsp;
-        <span >Research status:
-          <strong class="govuk-tag govuk-tag--grey" >
-          Draft
-        </strong></span></p>
+    <p>UCD Team:</p>
 
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Sophie Friell (Interaction Desginer)</li>
+      <li>Dani Sharp (Content Designer)</li>
+      <li>Michael Lo (User Research)</li>
+    </ul>
 
-        <p class="govuk-heading-m">Scenarios </p>
+    <h2 class="govuk-heading-l">What we are currently working on</h2>
 
-        <p>Not in employment or self-employed</p>
+    
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Payment history clarity 
+            </h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <a class="govuk-link" href="https://dwpdigital.atlassian.net/browse/DDSP-13739" target="_blank">Jira ticket<span class="govuk-visually-hidden"></span></a>
+              </li>
+              
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Status
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <strong class="govuk-tag govuk-tag--pink">
+                    In design
+                  </strong>
+                </dd>
+              </div>
 
-        <ul class="govuk-list">
-          <li>
-            <a href="/design-improvements/den/account-home.html">A payment plan has not been set-up yet</a>
-          </li>
-          <li>
-            <a href=" /design-improvements/den/direct-debit-setup-done/account-home.html">A payment plan has been set-up using direct debit</a>
-          </li>
-          <li>
-            <a href="/design-improvements/den/alternate-payment-setup-done/account-home.html">A payment plan has been set-up a using a standing order with an agent over the phone</a>
-          </li>
-          <li>
-            <a href="/design-improvements/den/cannot-setup-plan-online/account-home.html">Homepage</a>
-          </li>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Description
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Payment history lists details of all payments, including those for debts that have now been cleared. User feedback shows confusion when trying to match debt figures shown on details of what you owe with payments showing on payment history.
+                </dd>
+              </div>
 
-        </ul>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Links
+                </dt>
+                <dd class="govuk-summary-list__value">
 
-<p>In employment</p>
-        <ul class="govuk-list">
-          <li>
-            <a href=" /design-improvements/dea/account-home.html">Log in and view details </a>
-          </li>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              DEA & DEN user flows
+            </h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <!-- <a class="govuk-link" href="#" target="_blank">Jira ticket<span class="govuk-visually-hidden"></span></a> -->
+                 <!-- Jira ticket -->
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Status
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <strong class="govuk-tag govuk-tag--red">
+                    Prototype update
+                  </strong>
 
-        </ul>
+                  <br></br>
 
+                  <strong class="govuk-tag govuk-tag--yellow">
+                    UR planning
+                  </strong>
+                </dd>
+              </div>
 
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Description
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  DEA and DEN users will now be able to use the Repay service. While these pages have been taken from existing user flows they will need to be retested for any iterations.
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Scenarios (Not in employment or self-employed)
+                </dt>
+                <dd class="govuk-summary-list__value">
+
+                <ul class="govuk-list govuk-list--spaced">
+                  <li>
+                    <a href="/design-improvements/den/account-home.html">Payment plan has not set-up</a>
+                  </li>
+                  <li>
+                    <a href=" /design-improvements/den/direct-debit-setup-done/account-home.html">Payment plan set-up using direct debit</a>
+                  </li>
+                  <li>
+                    <a href="/design-improvements/den/alternate-payment-setup-done/account-home.html">Payment plan set-up a using a standing order with an agent over the phone</a>
+                  </li>
+                  <li>
+                    <a href="/design-improvements/den/cannot-setup-plan-online/account-home.html">Homepage</a>
+                  </li>
+                </ul>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Scenarios (In employment)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                <ul class="govuk-list">
+                    <li>
+                      <a href=" /design-improvements/dea/account-home.html">Log in and view details </a>
+                    </li>
+                </ul>                
+      </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
 
 </div>
 
