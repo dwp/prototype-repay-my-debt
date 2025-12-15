@@ -1,0 +1,118 @@
+{% extends "layout-3a.html" %}
+
+{% block pageTitle %}
+Sign in to your Repay and manage benefit money you owe account – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+<nav class="dwp-language-toggle" aria-label="Language toggle">
+<ul class="dwp-language-toggle__list">
+  <li class="dwp-language-toggle__list-item" aria-current="true">
+    English
+  </li>
+  <li class="dwp-language-toggle__list-item">
+    <a href="#"
+      hreflang="cy"
+      lang="cy"
+      rel="alternate"
+      class="govuk-link"
+      aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+  </li>
+</ul>
+</nav>
+</main>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-three-quarters">
+
+		<form class="form" action="sign-in-security-code" method="post">
+
+
+			<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+				<div class="govuk-notification-banner__header">
+				  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+					Important
+				  </h2>
+				</div>
+				<div class="govuk-notification-banner__content">
+				  <p class="govuk-notification-banner__heading">
+					<strong>Sorry, there is a problem with OneLogin</strong>
+					<p>OneLogin is currently unavailable. Try again later.</p>
+					<p>You can still sign in with your security code.</p>
+				</div>
+			  </div>
+
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">
+							Sign in to your Repay and manage benefit money you owe account
+						</h1>
+					</legend>
+
+					<br>
+					
+					<div id="changedName-hint" class="govuk-body">
+						You can now only sign in using one of the following options. You cannot use your Universal Credit account to sign in.
+					  </div>
+
+					<div class="govuk-radios" data-module="govuk-radios">
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="inRegister" name="signin" type="radio"
+								aria-describedby="sign-in-item-hint" value="onelogin" >
+							<label class="govuk-label govuk-radios__label" for="inRegister">
+								<b>
+
+									Sign in with or create a GOV.UK One Login</b>
+							</label>
+							<div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+
+								To help keep your information safe, you may be asked to prove your identity.
+
+							</div>
+						</div>
+
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="register-account" name="signin" type="radio"
+								value="code" aria-describedby="sign-in-3-item-hint">
+							<label class="govuk-label govuk-radios__label" for="sign-in-3">
+								<b>Sign in with a security code</b>
+							</label>
+							<div id="sign-in-3-item-hint" class="govuk-hint govuk-radios__hint">
+								You can find this code in the invitation letter we sent you.
+							</div>
+						</div>
+
+					</div>
+
+				</fieldset>
+			</div>
+
+
+
+
+
+			<button class="govuk-button" data-module="govuk-button">
+				Continue
+			</button>
+	</form>
+
+
+
+
+
+	</div>
+</div>
+
+{% endblock %}
