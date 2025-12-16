@@ -1,0 +1,104 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+How do you want to make your monthly payments? – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+
+{% block beforeContent %}
+
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<!-- VERSION OF MONTHLY OPTIONS PAGE WHEN DIRECT DEBIT IS DOWN UNSCHEUDLED MAINTANCE -->
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-three-quarters">	  
+
+		<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+				<div class="govuk-notification-banner__header">
+				  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+					Important
+				  </h2>
+				</div>
+				<div class="govuk-notification-banner__content">
+				  <p class="govuk-notification-banner__heading">
+					<strong>Direct Debit payment plans</strong>
+					<p style="max-width:1024px !important;">You cannot set up a new Direct Debit at this time. Try again later.</p>
+				</div>
+		</div>
+  
+	  <h1 class="govuk-heading-xl">How do you want to make your monthly payments?</h1>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+  
+	  <form class="form" action="/payment/payment-options" method="post" novalidate="">
+		<input type="hidden" name="_csrf" value="#">
+  
+  
+  <div class="govuk-form-group">
+	<fieldset class="govuk-fieldset">
+	
+	  <div class="govuk-radios" data-module="govuk-radios">
+		<div class="govuk-radios__item">
+		  <input class="govuk-radios__input" id="payment-options" name="selected-option" type="radio" value="pay-full-amount" aria-describedby="payment-options-item-hint">
+		  <label class="govuk-label govuk-radios__label" for="payment-options">
+			<strong>Monthly Direct Debit</strong>
+		  </label>
+		  
+		  <div id="payment-options-item-hint" class="govuk-hint govuk-radios__hint">
+			We will take a payment every month from your bank or building society account, on a day that suits you.
+		  </div>
+		  
+		</div>
+		
+		<div class="govuk-radios__item">
+		  <input class="govuk-radios__input" id="payment-options-2" name="selected-option" type="radio" value="/payment/payment-plan/setup" aria-describedby="payment-options-2-item-hint">
+		  <label class="govuk-label govuk-radios__label" for="payment-options-2">
+			<strong>Flexible payments throughout the month</strong>
+		  </label>
+		  
+		  <div id="payment-options-2-item-hint" class="govuk-hint govuk-radios__hint">
+			You must sign in to this service to pay your chosen amount every month.
+		  </div>
+		  
+		</div>
+	  </div>
+	
+	</fieldset>
+  </div>
+  
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+	Continue
+  </button>
+  
+  
+	  </form>
+	</div>
+  </div>
+
+
+{% endblock %}

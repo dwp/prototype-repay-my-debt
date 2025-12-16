@@ -1,0 +1,161 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Your plan – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+{% block beforeContent %}
+
+<!-- VERSION OF YOUR PLAN PAGE WHEN DIRECT DEBIT IS DOWN UNSCHEUDLED MAINTANCE -->
+
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+				<div class="govuk-notification-banner__header">
+				  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+					Important
+				  </h2>
+				</div>
+				<div class="govuk-notification-banner__content">
+				  <p class="govuk-notification-banner__heading">
+					<strong>Direct Debit payment plans</strong>
+					<p style="max-width:1024px !important;">You will not be able to set up new Direct Debit payment plans from 8am to 10am on Sunday 26 October 2025.</p>
+				</div>
+			</div>
+
+      <h1 class="govuk-heading-xl">
+        Your plan
+      </h1>
+      
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+      
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+  
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="#payment-plan-details">
+                Payment plan details
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#contact-preferences">
+                Contact preferences
+              </a>
+            </li>
+
+  </ul>
+  <div class="govuk-tabs__panel" id="payment-plan-details">
+    <h2 class="govuk-heading-m">Payment plan details</h2>
+
+    <dl class="govuk-summary-list">
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">
+         Plan type
+       </dt>
+       <dd class="govuk-summary-list__value">
+         Monthly flexible payments
+       </dd>
+     </div>
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">
+         Monthly target
+       </dt>
+       <dd class="govuk-summary-list__value">
+         £15.00
+       </dd>
+     </div>
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">
+         Expected number of payments
+       </dt>
+       <dd class="govuk-summary-list__value">
+         100
+       </dd>
+     </div>
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">
+         Expected final payment
+       </dt>
+       <dd class="govuk-summary-list__value">
+         May 2027
+       </dd>
+   </dl>
+
+   <p class="govuk-body">
+    <a href="#">Change monthly target</a>
+   </p>
+
+   <p class="govuk-body">
+    <a href="#"> Switch to Direct Debit payment plan</a>
+   </p>
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="contact-preferences">
+    <h2 class="govuk-heading-l">Contact preferences</h2>
+    <table class="govuk-table ">
+
+      <tbody class="govuk-table__body">
+
+
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:40%;">Text message</th>
+          <td class="govuk-table__cell " style="width:45%;">
+            Yes <br>
+            *********010
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+    <p>If you want to make changes to your contact preferences, call Debt Management.
+   </p>
+
+         <h2 class="govuk-heading-s ">Debt Management</h2>
+       <ul class="govuk-list">
+         <li>Telephone: 0800 916 0647</li>
+         <li>Textphone: 0800 916 0651</li>
+         <li>Monday to Friday, 8am to 7:30pm (except public holidays)</li>
+       </ul>
+       <p class="govuk-body">
+         <a class="govuk-link" target="_blank" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers">Find out about call charges (opens in a new tab)</a>
+       </p>
+  </div>
+
+</div>
+
+    </div>
+  </div>
+
+{% endblock %}
