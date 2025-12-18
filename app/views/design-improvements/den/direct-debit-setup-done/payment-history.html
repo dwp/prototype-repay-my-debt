@@ -1,114 +1,58 @@
-
-{% extends "layout-main.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Payment history
+  Payment history – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-<main class="govuk-width-container">
-  <nav class="dwp-language-toggle" aria-label="Language toggle">
-    <ul class="dwp-language-toggle__list">
-      <li class="dwp-language-toggle__list-item" aria-current="true">
-        English
-      </li>
-      <li class="dwp-language-toggle__list-item">
-        <a href="#"
-        hreflang="cy"
-        lang="cy"
-        rel="alternate"
-        class="govuk-link"
-        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
-      </li>
-    </ul>
-  </nav>
-</main>
-<a href="javascript:history.back()" class="govuk-back-link"> Back</a>
-
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
-   <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-two-thirds">
 
+      <h1 class="govuk-heading-l">
+        Payment history
+      </h1>
 
+      <p class="govuk-body">
+        May include payments for what you previously owed.
+      </p>
 
-
-	   <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Payment history</h1>
-
-
-
-          <div class="flexible-banner-float-none">
-            <ul class="govuk-list">
-              <!-- <li>
-                <h3>Payments taken</h3>
-                <span id="new-debts-amount"><b>15</b></span>
-              </li>
-              <li>
-                <h3>Total amount repaid</h3>
-                <span class="total-amount" id="new-total-owed"><b>£300.00</b></span>
-              </li> -->
-              <li>
-                <h3>Total amount left to pay</h3>
-                <span class="total-amount" id="new-total-owed"><b>£750.00</b></span>
-              </li>
-            </ul>
-          </div>
-
-
-          {% if data['additional-amount'] == 0 %}
-
-
-
-           {% else %}
-
-           {% endif %}
-
-
-           <h2 class="govuk-heading-m mt40">Previous payments <br>
-           <!-- <span class="govuk-hint">May include payments towards debts already paid off.</span> -->
-           </h2>
-
-
-
-           <table class="govuk-table summary-pay">
-
-
-           <thead class="govuk-table__head">
-           <tr class="govuk-table__row">
-
-            <th class="govuk-table__header" scope="col">Payment date</th>
-
-            <th class="govuk-table__header" scope="col">Payment type</th>
-
-            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
-
-            <!--  <th class="govuk-table__header govuk-table__header--numeric" scope="col">Balance</th> -->
-
-
-           </tr>
-           </thead>
-
-           <tbody class="govuk-table__body">
-             <tr class="govuk-table__row">
-               <td class="govuk-table__cell">When you make payments they will appear here</td>
-               <td class="govuk-table__cell"> </td>
-               <td class="govuk-table__cell govuk-table__cell--numeric"> </td>
-             </tr>
-
-
-
-           </tbody>
-           </table>
-
-
-
-
-
-
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Payments</caption>
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Date</th>
+            <th scope="col" class="govuk-table__header">Type</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amount</th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+            <td class="govuk-table__cell">15 Dec 2025</td>
+            <td class="govuk-table__cell">Payment</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">&pound;12.50</td>
+            </tr>
+            <tr class="govuk-table__row">
+            <td class="govuk-table__cell">10 Nov 2025</td>
+            <td class="govuk-table__cell">Payment</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">&pound;12.50</td>
+            </tr>
+            <tr class="govuk-table__row">
+            <td class="govuk-table__cell">7 Oct 2025</td>
+            <td class="govuk-table__cell">Payment</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">&pound;105.90</td>
+            </tr>
+        </tbody>
+        </table>
 
     </div>
-</div>
+  </div>
 
 {% endblock %}

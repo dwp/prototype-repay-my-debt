@@ -88,13 +88,13 @@ How do you want to make your payments?
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
-              How much do you want to pay?
+              How much do you want to pay each month?
             </h1>
           </legend>
 
-          <div id="example-question" class="form-group inline">
-            <span class="c-form-input-denote govuk-body">£</span>
-            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="number" name="custom-amount"  value="{{data['custom-amount']}}">
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-10" id="currency" name="custom-amount" type="number" spellcheck="false" aria-describedby="currency-hint">
           </div>
 
         </fieldset>
@@ -148,7 +148,7 @@ How do you want to make your payments?
             <p>Telephone: 0800 916 0647 <br>
               Telephone: 0800 916 0651 <br>
               Monday to Friday, 8am to 7:30pm (closed on public holidays)</p>
-              <p><a href="#">Find out about call charges</a></p>
+              <p><a href="#">Find out about call charges (opens in new tab)</a></p>
 
 
 

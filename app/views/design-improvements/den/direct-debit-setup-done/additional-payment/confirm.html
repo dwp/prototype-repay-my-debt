@@ -1,0 +1,125 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Pay the full amount
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-xl">
+      Confirm your payment
+    </h1>
+
+    <br>
+
+    <div id="card-details-wrap" wiid="N160">
+      <div class="non-web-payment-button-section govuk-!-margin-bottom-5" wiid="N165">
+        <div class="payment-summary-wrap" wiid="N170">
+          <div class="payment-summary" wiid="N172">
+            <h2 class="govuk-heading-m" wiid="N174">Payment summary</h2>
+            <p id="payment-description" class="govuk-body" wiid="N177">
+              Your payment to DWP Debt Management
+            </p>
+            <p class="govuk-body hidden" id="payment-summary-breakdown" wiid="N180">
+              Amount
+              <span class="govuk-!-font-weight-bold" id="payment-summary-breakdown-amount" wiid="N182"></span><br wiid="N183">
+              Corporate card fee:
+              <span class="govuk-!-font-weight-bold" id="payment-summary-corporate-card-fee" wiid="N185"></span>
+            </p>
+            <p class="govuk-body govuk-!-margin-bottom-0" wiid="N188">
+              Total amount:
+              <br>
+              <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" data-amount="£750.00" wiid="N190">{{  data['additional-amount'] }}</span>
+            </p>
+          </div>
+        </div>
+      
+      <br>
+
+      <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Card number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      ************1111
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Expiry date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      12/26
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name on card
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Test
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Billing address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">72 Guild Street, London, SE23 6FH</p>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Confirmation email
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">test@test.com</p>
+    </dd>
+  </div>
+</dl>
+
+<div class="govuk-button-group">
+  <a method="post" href="additional-payment-done"><button type="submit" class="govuk-button" data-module="govuk-button">
+    Confirm payment
+  </button></a>
+</div>
+
+<div class="govuk-button-group">
+  <a method="post" href="#"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Cancel payment
+  </button></a>
+</div>
+
+  </div>
+</div>
+
+{% endblock %}

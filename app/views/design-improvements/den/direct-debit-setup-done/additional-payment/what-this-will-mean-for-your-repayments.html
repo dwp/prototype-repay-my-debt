@@ -48,21 +48,13 @@ What this change will mean for you
 
       <h1 class="govuk-heading-xl" style="margin-bottom:50px;">What this additional payment will mean for you </h1>
 
-
-
-
-
-
-
-
-
   <div class="flexible-banner-playback">
     <ul class="govuk-list">
 
 
       <li>
         <h3>Payment today:</h3>
-        <span id="new-debts-amount"><b>{{ data['additional-amount']|currency }}</b></span>
+        <span id="new-debts-amount"><b>{{ data['additional-amount']}}</b></span>
         <p><a class="govuk-link" href="make-an-additional-payment">Change</a></p>
       </li>
 
@@ -216,11 +208,6 @@ What this change will mean for you
     document.write(CurrentDate.toGMTString().split(' ').slice(2,4).join(' '));
   </script>
 
-   
-
-
-
-
 </td>
 </tr>
 <!-- Comment from there if needed -->
@@ -233,7 +220,7 @@ What this change will mean for you
 
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
-<p><a href="additional-payment-summary" class="govuk-button mb0">Continue</a></p>
+<p><a href="card-details.html" class="govuk-button mb0">Continue</a></p>
 
 <!-- <p><a href="would-you-like-to-receive-a-text-message-reminder-about-your-next-check" class="govuk-button mb0">Continue</a></p> -->
 

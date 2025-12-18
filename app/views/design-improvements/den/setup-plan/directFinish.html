@@ -36,18 +36,14 @@ Your payment plan is set up
 
     <div class="govuk-panel govuk-panel--confirmation">
 
-      {% if data['paymentOptions']=='ddFixedChoice'%}
       <h1 class="govuk-panel__title">
-        Your payment was successful and your plan is set up
+        Your payment plan is set up
       </h1>
 
-      {% else %}
+      <div class="govuk-panel__body">
+        You will be sent confirmation of this agreement within 3 working days or no later than 10 working days before the first payment
+      </div>
 
-      <h1 class="govuk-panel__title">
-        Your payment was successful and your plan is set up
-      </h1>
-
-      {% endif %}
 
     </div>
 
@@ -116,12 +112,12 @@ Your payment plan is set up
 
                               <p class="mb0">
 
-                                 {{data['affordable-amount'] | currency}}</p>
+                                 &pound;{{data['affordable-amount']}}</p>
 
                                 {% else %}
 
                                 <p class="mb0">
-                                 {{data['custom-amount'] | currency}}
+                                 &pound;{{data['custom-amount']}}
                                 </p>
                                 {% endif %}
 
@@ -579,16 +575,8 @@ Your payment plan is set up
 
 
   <div class="govuk-body">
-     <!--  <p>Service user number: 941315 </p>-->
       <p>If you have any problems or questions about your Direct Debit plan, contact Debt Management:</p>
       <h2 class="govuk-heading-s">Debt Management</h2>
-
-
-  <!-- <p>Debt Accounting &amp; Finance<br>
-  Warbreck House<br>
-  Blackpool<br>
-  FY2 0YE<br>
-  United Kingdom</p> -->
 
   <ul class="govuk-list">
   <li>Telephone: 0800 916 0647</li>
@@ -596,7 +584,7 @@ Your payment plan is set up
   <li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
   </ul>
 
-  <p><a href="#" target="_blank">Find out about call charges (opens in new tab)</a></p>
+  <p><a href="#">Find out about call charges (opens in new tab)</a></p>
 
   </div>
 
@@ -610,23 +598,11 @@ Your payment plan is set up
 <p></p>
 
 
-<p><a id="feedback" href="#" target="_blank">What did you think of this service? (opens in new tab)</a></p>
+<p><a id="feedback" href="#">What did you think of this service? (opens in new tab)</a></p>
 
 <br>
 
-
-
-  <!-- <p><a href="#">What did you think of this service? (opens in new tab)</a></p> -->
-
-  <p><a href="/design-improvements/den/direct-debit/account-home" class="govuk-button">Go to Account home</a></p>
-
-
-
-  <!-- <p class="govuk-body">
-  <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
-</p> -->
-
-
+  <p><a href="../../../research-index.html" class="govuk-button">Go to Account home</a></p>
 
 </div>
 </div>

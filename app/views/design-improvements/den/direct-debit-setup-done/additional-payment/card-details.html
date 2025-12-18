@@ -50,14 +50,14 @@ Enter payment details
             </p>
             <p class="govuk-body govuk-!-margin-bottom-0" wiid="N188">
             Total amount:
-            <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" data-amount="{{  data['additional-amount']  | currency }}" wiid="N190">{{  data['additional-amount']  | currency }}</span>
+            <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" data-amount="{{  data['additional-amount']}}" wiid="N190">{{  data['additional-amount'] }}</span>
             </p>
         </div>
       </div>
 
                   </div>
 
-                  <form id="card-details" name="cardDetails" method="POST" action="additional-payment-done" novalidate="" wiid="N197">
+                  <form id="card-details" name="cardDetails" method="POST" action="confirm" novalidate="" wiid="N197">
                     <input id="charge-id" name="chargeId" type="hidden" value="full-payment-success" wiid="N199">
                     <input id="csrf" name="csrfToken" type="hidden" value="DGDLOkxJ-7rzjghmM2zAPfUPsEKnLklCywMc" wiid="N201">
 
@@ -504,7 +504,7 @@ Enter payment details
     <a class="govuk-link" href="#">Cancel</a>
   </div>
                   </form>
-                  <form id="cancel" name="cancel" method="POST" action="additional-payment-done" class="form" novalidate="" wiid="N1195">
+                  <form id="cancel" name="cancel" method="POST" action="confirm" class="form" novalidate="" wiid="N1195">
                     <div wiid="N1197">
                     </div>
                   </form>

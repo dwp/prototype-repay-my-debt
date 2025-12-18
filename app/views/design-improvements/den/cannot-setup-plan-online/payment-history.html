@@ -1,88 +1,47 @@
-{% extends "layout-main.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Payment history
+  Payment history – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-<nav class="dwp-language-toggle" aria-label="change language" wiid="N89">
-  <ul class="dwp-language-toggle__list" wiid="N91">
-    <li lang="en" id="li-en" class="dwp-language-toggle__list-item" wiid="N93">English </li>
-    <li lang="cy" id="li-cy" class="dwp-language-toggle__list-item" wiid="N96"><span class="govuk-visually-hidden" wiid="N97">Newid yr iaith ir Gymraeg</span><a href="?lng=cy" class="govuk-link" wiid="N99">Cymraeg</a></li>
-  </ul>
-</nav>
   {{ govukBackLink({
     text: "Back",
-    href: "account-home"
+    href: "javascript:window.history.back()"
   }) }}
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
-   <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-two-thirds">
 
+      <h1 class="govuk-heading-l">
+        Payment history
+      </h1>
 
+      <p class="govuk-body">
+        May include payments for what you previously owed.
+      </p>
 
-
-	   <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Payment history</h1>
-
-     <div >
-       <p>Total amount left to repay:<br> <span class="total-amount">
-         &pound;750.00
-
-       </span>
-
-
-   <p>
-     </div>
-
-
-
-
-
-
-<h2 class="govuk-heading-m mt40">Previous payments <br>
-<!-- <span class="govuk-hint">May include payments towards debts already paid off.</span> -->
-</h2>
-
-
-
-<table class="govuk-table summary-pay">
-
-
-<thead class="govuk-table__head">
-<tr class="govuk-table__row">
-
- <th class="govuk-table__header" scope="col">Payment date</th>
-
- <th class="govuk-table__header" scope="col">Payment type</th>
-
- <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
-
- <!--  <th class="govuk-table__header govuk-table__header--numeric" scope="col">Balance</th> -->
-
-
-</tr>
-</thead>
-
-<tbody class="govuk-table__body">
-  <tr class="govuk-table__row">
-    <td class="govuk-table__cell">When you make payments they will appear here</td>
-    <td class="govuk-table__cell"> </td>
-    <td class="govuk-table__cell govuk-table__cell--numeric"> </td>
-  </tr>
-
-
-
-</tbody>
-</table>
-
-
-
-
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Payments</caption>
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Date</th>
+            <th scope="col" class="govuk-table__header">Type</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amount</th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+            <td class="govuk-table__cell">When you make payments they will appear here</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        </tbody>
+        </table>
 
     </div>
-</div>
+  </div>
 
 {% endblock %}
