@@ -1,0 +1,156 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Account home – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+	<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+				<div class="govuk-notification-banner__header">
+				  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+					Important
+				  </h2>
+				</div>
+				<div class="govuk-notification-banner__content">
+				  	<p class="govuk-heading-l" style="max-width:1024px !important;">
+					You need to set up a payment plan
+					</p>
+					<p style="max-width:1024px !important;">As your claim has ended, we will no longer be deducting money from your benefit payments.</p>
+					<p style="max-width:1024px !important;">Although you can pay the full amount, we understand it may not be possible to pay it in one go, so you can:</p>
+					<ul class="govuk-list govuk-list--bullet">
+					<li>set up a Direct Debit plan</li>
+					<li>set up a flexible payment plan</li>
+					</ul>
+					<div class="govuk-inset-text">
+						You now need to <a href="#">set up a payment plan</a>.
+					</div>
+				</div>
+			  </div>
+
+    <div class="clear-bar stripped-border">
+      <div class="identifier">
+
+        <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Account home</span>
+          David Jones
+        </h1>
+
+      </div>
+      <div>
+        <p style="float:right; border:0px; font-size:19px; text-align:right;"  >
+          Total amount left to pay:<br>
+           <span class="total-amount">
+            &pound;750.00
+
+          </span>
+        </p>
+
+		</div>
+
+    </div>
+
+    <div class="govuk-grid-row">
+  	  <div class="govuk-grid-column-full">
+  		<div class="govuk-grid-row">
+
+  		 <div class="govuk-grid-column-one-half">
+
+  			 <div class="scenario-panel">
+  					   <h2 class="govuk-heading-s">Your repayments</h2>
+
+  					   <div class="scenario-inner-panel">
+
+  						<p class="govuk-body">As your claim has ended, we will no longer be deducting money from your benefit payments.</p>
+						
+						<p class="govuk-body">You can set up a payment plan now.</p>
+
+              <p class="govuk-body">
+				<a href="#">
+                  Set up a payment plan
+                </a> 
+			  </p>
+
+  			</div>
+  		</div>
+	</div>
+
+  		<div class="govuk-grid-column-one-half">
+
+  			<div class="scenario-panel" style="height:260px;">
+  				<h2 class="govuk-heading-s">Payment summary</h2>
+
+  					<div class="scenario-inner-panel" >
+
+						<dl class="govuk-summary-list">
+						<div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+							Total amount left to pay:
+							</dt>
+							<dd class="govuk-summary-list__value">
+							£750.00
+							</dd>
+						</div>
+						
+						</dl>
+
+						<p class="govuk-body">
+							<a href="#">
+								View your payment history
+							</a> 
+						</p>
+
+  		            </div>
+  			</div>
+
+		</div>
+
+  		</div>
+
+  		  <div class="govuk-grid-row">
+
+  			  <div class="govuk-grid-column-one-half">
+
+  			  		<div class="scenario-panel">
+  					   	<h2 class="govuk-heading-s">What you owe</h2>
+
+  					   <div class="scenario-inner-panel">
+  						<p class="govuk-body">Details of the money you owe.</p>
+
+						<p class="govuk-body">
+							<a href="#">View details of what you owe</a>
+						</p>  					   
+					</div>
+
+  				</div>
+
+  		  </div>
+
+  		  <div class="govuk-grid-column-one-half">
+
+  			  <div class="scenario-panel">
+  					   <h2 class="govuk-heading-s">Help and support</h2>
+
+  					   <div class="scenario-inner-panel">
+  						<p class="govuk-body">You can contact us for general help and support.</p>
+
+              			<p class="govuk-body">  					  
+							<a href="#" >Get help and support</a>
+              			</p>
+
+
+              	</div>
+  			</div>
+
+  		  </div>
+
+  		</div>
+
+  	  </div>
+    
+
+{% endblock %}
