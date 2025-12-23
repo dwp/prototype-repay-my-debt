@@ -1,0 +1,117 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Payment options – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+
+{% block beforeContent %}
+
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<!-- VERSION OF AMOUNT HOME PAGE WHEN CARD PAYMENTS ARE DOWN UNSCHEUDLED MAINTANCE -->
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-three-quarters">
+    
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+		<div class="govuk-notification-banner__header">
+			<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+				Important
+			</h2>
+			</div>
+			<div class="govuk-notification-banner__content">
+				<p class="govuk-notification-banner__heading">
+				<strong>Card payments</strong>
+				<p style="max-width:1024px !important;">You cannot make card payments at this time. Try again later.</p>
+				<p style="max-width:1024px !important;">If you need to make a payment now, you can <a href="#">contact us for help and support</a>.</p>
+			</div>
+	  </div>
+  
+	  <h1 class="govuk-heading-xl">Payment options</h1>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+      
+      <div>
+        <p>Total amount left to repay:<br> 
+            <span class="total-amount">
+            &pound;4,460.37
+            </span>
+        <p>
+    </div>
+  
+  
+	  <form class="form" action="/payment/payment-options" method="post" novalidate="">
+		<input type="hidden" name="_csrf" value="#">
+  
+  
+  <div class="govuk-form-group">
+	<fieldset class="govuk-fieldset">
+	  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+		Select a payment option:
+	  </legend>
+	
+	  <div class="govuk-radios" data-module="govuk-radios">
+		<div class="govuk-radios__item">
+		  <input class="govuk-radios__input" id="payment-options" name="selected-option" type="radio" value="pay-full-amount" aria-describedby="payment-options-item-hint">
+		  <label class="govuk-label govuk-radios__label" for="payment-options">
+			<strong>Pay the full amount</strong>
+		  </label>
+		  
+		  <div id="payment-options-item-hint" class="govuk-hint govuk-radios__hint">
+			This will clear the amount you owe.
+		  </div>
+		  
+		</div>
+		
+		<div class="govuk-radios__item">
+		  <input class="govuk-radios__input" id="payment-options-2" name="selected-option" type="radio" value="/payment/payment-plan/setup" aria-describedby="payment-options-2-item-hint">
+		  <label class="govuk-label govuk-radios__label" for="payment-options-2">
+			<strong>Pay back the amount over time</strong>
+		  </label>
+		  
+		  <div id="payment-options-2-item-hint" class="govuk-hint govuk-radios__hint">
+			Set up a payment plan - either a fixed monthly Direct Debit or flexible payments to suit you.
+		  </div>
+		  
+		</div>
+	  </div>
+	
+	</fieldset>
+  </div>
+  
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+	Continue
+  </button>
+  
+  
+	  </form>
+	</div>
+  </div>
+
+
+{% endblock %}

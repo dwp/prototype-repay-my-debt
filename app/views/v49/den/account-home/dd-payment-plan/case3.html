@@ -1,0 +1,179 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Account home – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+
+{% block content %}
+
+<!-- VERSION OF AMOUNT HOME PAGE WHEN CARD PAYMENTS HAVE SCHEUDLED MAINTANCE -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+	<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+		<div class="govuk-notification-banner__header">
+			<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+				Important
+			</h2>
+			</div>
+			<div class="govuk-notification-banner__content">
+				<p class="govuk-notification-banner__heading">
+				<strong>Card payments</strong>
+				<p style="max-width:1024px !important;">You will not be able to make card payments from 8am to 10am on Sunday 26 October 2025.</p>
+			</div>
+	</div>
+
+    <div class="clear-bar stripped-border">
+      <div class="identifier">
+
+        <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Account home</span>
+          David Jones
+        </h1>
+
+      </div>
+      <div>
+        <p style="float:right; border:0px; font-size:19px; text-align:right;"  >
+          Total amount left to pay:<br>
+           <span class="total-amount">
+            &pound;750.00
+
+          </span>
+        </p>
+
+		</div>
+
+    </div>
+
+    <div class="govuk-grid-row">
+  	  <div class="govuk-grid-column-full">
+  		<div class="govuk-grid-row">
+
+  		 <div class="govuk-grid-column-one-half">
+
+  			 <div class="scenario-panel">
+  					   <h2 class="govuk-heading-s">Payment plan details</h2>
+
+  					   <div class="scenario-inner-panel">
+
+						<table class="govuk-table">
+
+  								<tbody class="govuk-table__body">
+
+									<tr class="govuk-table__row">
+									<th scope="row" class="govuk-table__header">Plan type</th>
+									<td class="govuk-table__cell">
+										Monthly Direct Debit
+									</td>
+									</tr>
+
+  								    <tr class="govuk-table__row">
+  									<th scope="row" class="govuk-table__header">Direct Debit amount</th>
+  									<td class="govuk-table__cell">
+                                        £15.00
+  									</td>
+									</tr>
+
+  								</tbody>
+  							  </table>
+
+              <p class="govuk-body">
+				<a href="#">
+                  View or manage your plan
+                </a> 
+			  </p>
+
+              <p class="govuk-body">
+               <a href="#">
+                  View your payment history
+               </a> 
+			  </p>
+
+  			</div>
+  		</div>
+	</div>
+
+  		<div class="govuk-grid-column-one-half">
+
+  			<div class="scenario-panel" style="height:320px;">
+  				<h2 class="govuk-heading-s">Payments for January 2026</h2>
+
+  					<div class="scenario-inner-panel" >
+
+  						<table class="govuk-table">
+
+  								<tbody class="govuk-table__body">
+
+									<tr class="govuk-table__row">
+									<th scope="row" class="govuk-table__header">Paid in January</th>
+									<td class="govuk-table__cell">
+										£0.00
+									</td>
+									</tr>
+
+  								</tbody>
+  							  </table>
+
+						<p class="govuk-body">
+							<a href="#">
+								Pay off what you owe in full
+							</a> 
+						</p>
+
+						<p class="govuk-body">
+							<a href="#">
+								Made an additional payment
+							</a> 
+						</p>
+
+  		            </div>
+  			</div>
+
+		</div>
+
+  		</div>
+
+  		  <div class="govuk-grid-row">
+
+  			  <div class="govuk-grid-column-one-half">
+
+  			  		<div class="scenario-panel">
+  					   	<h2 class="govuk-heading-s">What you owe</h2>
+
+  					   <div class="scenario-inner-panel">
+  						<p class="govuk-body">Details of the money you owe.</p>
+
+						<p class="govuk-body">
+							<a href="#">View details of what you owe</a>
+						</p>  					   
+					</div>
+
+  				</div>
+
+  		  </div>
+
+  		  <div class="govuk-grid-column-one-half">
+
+  			  <div class="scenario-panel">
+  					   <h2 class="govuk-heading-s">Help and support</h2>
+
+  					   <div class="scenario-inner-panel">
+  						<p class="govuk-body">You can contact us for general help and support.</p>
+
+              			<p class="govuk-body">  					  
+							<a href="#">Get help and support</a>
+              			</p>
+
+              	</div>
+  			</div>
+
+  		  </div>
+
+  		</div>
+
+  	  </div>
+    
+
+{% endblock %}
