@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  ADD H1 – {{ serviceName }} – GOV.UK Prototype Kit
+  Change your payment date – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -33,29 +33,26 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="../payment-summary/index.html">
+      <form class="form" action="../first-payment/indexb.html">
 
       <h1 class="govuk-heading-l">
-        H1
+        Change your payment date
       </h1>
 
-      <p>Paragraph text</p>
+      <p>Your Direct Debit payments will be taken from your account on your chosen day of the month until you have repaid what you owe.</p>
 
-      <p>Paragraph text</p>
+      <p>Your chosen date must be between day 1 and day 28 of the month.</p>
 
       <div class="moj-datepicker" data-module="moj-date-picker" data-min-date="23/01/2026" data-max-date="10/03/2026" data-excluded-dates="29/01/2026 30/01/2026 31/01/2025" data-excluded-days="">
       <div class="govuk-form-group">
         <input class="govuk-input moj-js-datepicker-input" id="date" name="date" type="text" value="23/02/2026" aria-describedby="date-hint" autocomplete="off">
       </div>
     </div>
-    
-    
 
         <div class="govuk-button-group">
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Continue
           </button>
-          <a class="govuk-link" href="../payment-summary/index.html">Cancel</a>
         </div>
 
       </form>

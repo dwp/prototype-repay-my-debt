@@ -1,0 +1,104 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What this change will mean for you – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="../payment-summary/index.html">
+
+      <h1 class="govuk-heading-l">
+        What this change will mean for you
+      </h1>
+
+      <p>Check you are happy with the updated Direct Debit details before continuing.</p>
+
+      <h2 class="govuk-heading-m">Payment dates</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <strong>Before</strong>
+            </dd>
+            <dd class="govuk-summary-list__value">
+              <strong>After</strong>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Direct Debit day
+            </dt>
+            <dd class="govuk-summary-list__value">
+              23
+            </dd>
+            <dd class="govuk-summary-list__value">
+              3
+            </dd>
+            
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              First payment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              23 February 2026
+            </dd>
+            <dd class="govuk-summary-list__value">
+              3 March 2026
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expected final payment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              23 May 2027
+            </dd>
+            <dd class="govuk-summary-list__value">
+              3 June 2027
+            </dd>
+          </div>
+        </dl>
+
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <a class="govuk-link" href="../payment-summary/index.html">Cancel</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
