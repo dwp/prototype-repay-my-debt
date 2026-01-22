@@ -1,0 +1,100 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+What this change will mean for you – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+{% block beforeContent %}
+
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <form class="form" action="./check-details-before-changing-your-payment-plan" method="post">
+
+      <h1 class="govuk-heading-xl">
+        What this change will mean for you
+      </h1>
+
+      <br>
+
+      <div class="flexible-banner-playback">
+        <ul class="govuk-list">
+
+
+          <li>
+            <h3>New monthly flexible payment:</h3>
+            <span id="new-debts-amount"><b>£80.00</b></span>
+            <p><a class="govuk-link" href="./enter-your-new-monthly-target-amount/index.html">Change</a></p>
+          </li>
+
+        </ul>
+      </div>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Your payment plan</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header">Current</th>
+            <th scope="col" class="govuk-table__header">New</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Total amount left to pay</th>
+            <td class="govuk-table__cell">£720.00</td>
+            <td class="govuk-table__cell">£720.00</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Monthly flexible payment amount</th>
+            <td class="govuk-table__cell">£100.00</td>
+            <td class="govuk-table__cell">£80.00</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Expected number of payments</th>
+            <td class="govuk-table__cell">8</td>
+            <td class="govuk-table__cell">11</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Expected final payment</th>
+            <td class="govuk-table__cell">November 2026</td>
+            <td class="govuk-table__cell">January 2027</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

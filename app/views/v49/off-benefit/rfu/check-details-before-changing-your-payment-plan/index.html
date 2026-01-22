@@ -1,0 +1,143 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Check details before changing your payment plan – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+{% block beforeContent %}
+
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <form class="form" action="./your-payment-plan-has-been-changed" method="post">
+
+      <h1 class="govuk-heading-xl">
+        Check details before changing your payment plan
+      </h1>
+
+      <br>
+      </br>
+
+      <h2 class="govuk-heading-m">Plan summary</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Total amount owed
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £720.00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Plan type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Monthly flexible payments
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Payment details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Monthly target
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £80.00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expected number of monthly payments
+            </dt>
+            <dd class="govuk-summary-list__value">
+              11
+              <br>
+              (if monthly target is met each month)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expected final payment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              January 2027
+            </dd>
+          </div>
+        </dl>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+             If you do not keep up with your payments, we will take further action to recover the money owed.
+          </strong>
+        </div>
+
+        <p class="govuk-body">Further action to recvoer money owed may include:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+
+          <li>asking your employer to deduct it from your pay</li>
+          <li>taking debt enforcement action through the courts</li>
+          <li>asking a debt collection agency to collect it for us</li>
+          <li>recovering it from future benefits and State Pension you get</li>
+
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Declaration</h2>
+
+        <p class="govuk-body">By continuing, you confirm that you will:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+
+          <li>pay the agreed monthly amount</li>
+          <li>let us know immediately if you’re struggling to keep up with payments</li>
+
+        </ul>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue and change payment plan
+        </button>
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Your payment plan has been changed – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+{% block beforeContent %}
+
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <form class="form" action="./account-home/case4.html" method="post">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Your payment plan has been changed
+          </h1>
+      </div>
+
+     
+
+      <h2 class="govuk-heading-m">Plan summary</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Total amount owed
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £720.00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Plan type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Monthly flexible payments
+            </dd>
+            
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Payment details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Monthly target
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £80.00
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expected number of monthly payments
+            </dt>
+            <dd class="govuk-summary-list__value">
+              11
+              <br>
+              (if monthly target is met each month)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expected final payment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              January 2027
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Reviewing your repayments</h2>
+
+        <p class="govuk-body">We may contact you in the future to review your payments and will send you a notification with further details.</p>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <p><a href="#">What did you think of this service? (opens in new tab)</a></p>
+
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Go to Account home
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
