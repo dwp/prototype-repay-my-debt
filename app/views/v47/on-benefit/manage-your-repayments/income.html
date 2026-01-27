@@ -126,7 +126,7 @@ For example, income from any other benefits like Child Benefit, Disability Livin
 
   <p style="display:none;" class="govuk-heading-m" ><span class="govuk-body">Total monthly income:<br></span>
     {% set totalIncome = data['income-pension']|float + data['income-other']|float + data['income-universal-credit']|float + data['income-take-home']|float %}
-{{ totalIncome|currency }}
+{{ totalIncome | currency }}
 
 
 
