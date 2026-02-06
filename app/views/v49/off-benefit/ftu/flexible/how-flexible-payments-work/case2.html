@@ -1,0 +1,78 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+How flexible payments work – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+
+{% block beforeContent %}
+
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<!-- VERSION OF AMOUNT HOME PAGE WHEN CARD PAYMENTS ARE DOWN UNSCHEUDLED MAINTANCE -->
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-three-quarters">	  
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+		<div class="govuk-notification-banner__header">
+			<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+				Important
+			</h2>
+			</div>
+			<div class="govuk-notification-banner__content">
+				<p class="govuk-notification-banner__heading">
+				<strong>Card payments</strong>
+				<p style="max-width:1024px !important;">You cannot make online card payments at this time. Try again later.</p>
+				<p style="max-width:1024px !important;">If you need to make a payment now, you can <a href="#">contact us for help and support</a>.</p>
+			</div>
+	  </div>
+  
+	  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">How flexible payments work</h1>
+
+       <p>Flexible payments work in the following way:</p>
+
+		<ul class="govuk-list govuk-list--bullet">
+		<li>Make a card payment to set up your flexible plan</li>
+		<li>Your monthly target is £150.00 but you can pay more if you want to</li>
+		<li>You can make multiple payments throughout the months long as you pay at least £150.00 every month</li>
+		<li>You can contact us for help if you're struggling to pay</li>
+		</ul>
+
+		<p>You must pay at least £150.00 every calender month, including for March 2026</p>
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+	Continue
+  </button>
+  
+  
+	  </form>
+	</div>
+  </div>
+
+
+{% endblock %}

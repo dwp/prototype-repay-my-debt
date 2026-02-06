@@ -1,0 +1,67 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Make a smaller one-off payment – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form class="form" action="#" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb20">
+            <h1 class="govuk-fieldset__heading">
+              Make a smaller one-off payment
+            </h1>
+          </legend>
+
+          <div class="govuk-form-group">					  
+            
+            <p>If you want to pay off a <strong>Universal Credit advance</strong> in your current claim, <a href="#">contact DWP Debt Management</a>.</p>
+
+            <p>If you make a smaller one-off payment now, it won't affect deductions from your monthly Universal Credit. These will continue until you have paid off all the money you owe.</p>
+
+		   </div>
+       
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+       </fieldset>
+      </div>
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

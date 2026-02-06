@@ -1,0 +1,81 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Pay the full amount – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+
+{% block beforeContent %}
+
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<!-- VERSION OF AMOUNT HOME PAGE WHEN CARD PAYMENTS ARE DOWN UNSCHEUDLED MAINTANCE -->
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-three-quarters">
+        
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+		<div class="govuk-notification-banner__header">
+			<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+				Important
+			</h2>
+			</div>
+			<div class="govuk-notification-banner__content">
+				<p class="govuk-notification-banner__heading">
+				<strong>Card payments</strong>
+				<p style="max-width:1024px !important;">You cannot make online card payments at this time. Try again later.</p>
+				<p style="max-width:1024px !important;">If you need to make a payment now, you can <a href="#">contact us for help and support</a>.</p>
+			</div>
+	  </div>
+  
+	  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Pay the full amount</h1>
+  
+	  <form class="form" action="#" method="post" novalidate="">
+
+        <div class="govuk-inset-text" style="border:none; padding-left:0;">
+        Total amount left to repay: <span class="total-amount">
+          &pound;215.00
+        </span>
+
+        <br>
+                  
+        <p >Make sure you have enough money in your bank account to cover this payment.</p>
+
+        <p class="govuk-!-font-weight-bold">Your bank may charge you interest if you pay by credit card.</p>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+      Continue to payment
+        </button>
+
+      </div>
+
+	  </form>
+	</div>
+  </div>
+
+
+{% endblock %}
