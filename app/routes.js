@@ -1383,3 +1383,27 @@ router.post('/dd-setup-done/dd-change', function (req, res) {
   }
 
 })
+
+router.post('/v49/payment-plan-routing', function (req, res) {
+
+  var option = req.session.data['paymentOption']
+
+  if (option == 'Pay a different amount'){
+    res.redirect('/v49/off-benefit/rfu/direct-debit/payment-plan/different-amount/index.html')
+  } else {
+    res.redirect('/v49/off-benefit/rfu/direct-debit/setup/index.html')
+  }
+
+})
+
+router.post('/v49/account-holder-routing', function (req, res) {
+
+  var accountHolder = req.session.data['accountHolder']
+
+  if (accountHolder == 'yes'){
+    res.redirect('/v49/off-benefit/rfu/direct-debit/payment-date/index.html')
+  } else {
+    res.redirect('/v49/off-benefit/rfu/direct-debit/not-account-holder/index.html')
+  }
+
+})

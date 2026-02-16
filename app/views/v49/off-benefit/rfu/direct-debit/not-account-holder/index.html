@@ -1,0 +1,72 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+You cannot set up a Direct Debit online – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+
+{% block beforeContent %}
+
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-three-quarters">	  
+
+	<form class="form" action="#" method="post" novalidate="">
+
+        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+                You cannot set up a Direct Debit online
+            </h1>
+            </legend>
+
+            <br>
+
+            <p class="govuk-body">You must be an account holder and be able to authorise Direct Debits with your bank or building society.</p>
+
+            <p class="govuk-body">If you have a joint account and you and your partner both need to authorise Direct Debits, you can set up a Direct Debit by contacting DWP Debt Management.</p>
+
+            <p class="govuk-body">Alternatively, you must contact DWP Debt Management to discuss the options available to you.</p>
+
+             <p><strong>DWP Debt Management</strong></p>
+  
+			<ul class="govuk-list">
+			<li>Telephone: 0800 158 5519</li>
+			<li>Textphone: 18001 then 0800 158 5519 when using <a href="https://www.relayuk.bt.com/" target="_blank">Relay UK (opens in new tab)</a></li>
+			<li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
+		    </ul>
+  
+            <p class="govuk-body"><a href="https://www.gov.uk/call-charges" target="_blank">Find out about call charges (opens in new tab)</a></p>
+
+  </fieldset>	
+  
+	  </form>
+	</div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Are you an account holder and the only person needed to authorise Direct Debits with your bank or building society? – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+
+{% block beforeContent %}
+
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-three-quarters">	  
+
+	<form class="form" action="../../../../../v49/account-holder-routing" method="post" novalidate="">
+
+        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+                Are you an account holder and the only person needed to authorise Direct Debits with your bank or building society?
+            </h1>
+            </legend>
+    
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="accountHolder" name="accountHolder" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="accountHolder">
+                Yes
+                </label>
+            </div>
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="accountHolder-2" name="accountHolder" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="accountHolder-2">
+                No
+                </label>
+            </div>
+            </div>
+
+            <br>
+
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+
+  </fieldset>	
+  
+	  </form>
+	</div>
+  </div>
+
+{% endblock %}

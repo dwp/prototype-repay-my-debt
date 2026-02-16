@@ -1,0 +1,247 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check details before setting up your payment plan – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check details before setting up your payment plan
+      </h1>
+
+      <h2 class="govuk-heading-m">Plan summary</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Total amount owed
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £750.00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Plan type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Monthly Direct Debit
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Payment details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Direct Debit amount
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £62.50
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Final payment amount
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £62.50
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expected number of payments
+            </dt>
+            <dd class="govuk-summary-list__value">
+              12
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Payment dates</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Direct Debit day
+            </dt>
+            <dd class="govuk-summary-list__value">
+              23
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              First payment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              23 February 2026
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expected final payment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              23 January 2027
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
+      
+       <div style="margin-top:-30px; margin-bottom:50px;">
+          <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Contact us to discuss your first payment date
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            It may be possible to extend your first payment date by up to a month.
+
+            <br></br>
+
+            You can <a href="#">contact us for help and support</a>. We can discuss your options and arrange your Direct Debit over the phone.
+
+          </div>
+        </details>
+        </div>
+
+        
+
+        <h2 class="govuk-heading-m">Bank or building society account details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Account details
+            </dt>
+            <dd class="govuk-summary-list__value">
+              David Jones <br>
+              123456 <br>
+              12345678
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Contact preferences</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Text messages
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes<br>
+              0123456789<br>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        <div class="ddGuarantee">
+          <h3 class="govuk-heading-s">The Direct Debit Guarantee</h3>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  This Guarantee is offered by all banks and building societies that accept instructions to pay Direct Debits.
+                </li>
+                <li>
+                  If there are any changes to the amount, date or frequency of your Direct Debit DWP will notify you 10 working
+                  days in advance of your account being debited or as otherwise agreed. If you request DWP to collect a payment,
+                  confirmation of the amount and date will be given to you at the time of request.
+                </li>
+                <li>
+                  If an error is made in the payment of your Direct Debit, by DWP or your bank or building society,
+                    you are entitled to a full and immediate refund of the amount paid from your bank or building society.
+                    – If you receive a refund you are not entitled to, you must pay it back when DWP asks you to.
+                </li>
+                <li>
+                  You can cancel a Direct Debit at any time by simply contacting your bank or building society.
+                  Written confirmation may be required. Please also notify us.
+                </li>
+              </ul>
+        </div>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            If you do not keep up with your payments, we will take further action to recover the money owed.
+          </strong>
+        </div>
+
+        <p>Further action to recover money owned may include:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>asking your employer to deduct it from your pay</li>
+          <li>taking debt enforement action through the courts</li>
+          <li>asking a debt collection agency to collect it for us</li>
+          <li>recovering it from future benefits and State Pension you get</li>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Declaration</h2>
+
+        <p>By continuing, you confirm that you will:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>pay the agreed monthly amount</li>
+          <li>let us know immediately if you're struggling to keep up with payments</li>
+        </ul>
+
+        <p><strong>Your bank may charge you interest if you pay by credit card.</strong></p>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue and set up Direct Debit
+        </button>
+
+    </div>
+  </div>
+
+{% endblock %}

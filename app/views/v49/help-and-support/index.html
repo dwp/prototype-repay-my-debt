@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Help and support – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">
+        Help and support
+      </h1>
+
+      <p class="govuk-body">If you're struggling to pay, you can temporarily reduce your payments. Alternatively, you must contact DWP Debt Management to discuss the options available to you.</p>
+
+     <p><strong>DWP Debt Management</strong></p>
+            <ul class="govuk-list">
+            <li>Telephone: 0800 158 5519</li>
+            <li>Textphone: 18001 then 0800 158 5519 when using <a href="https://www.relayuk.bt.com/" target="_blank">Relay UK (opens in new tab)</a></li>
+            <li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
+              </ul>
+
+            <p class="govuk-body">
+              <a class="govuk-link" target="_blank" href="https://www.gov.uk/call-charges">Find out about call charges (opens in a new tab)</a>
+            </p>
+
+        <h2 class="govuk-heading-m">Further advice</h2>
+
+        <p class="govuk-body">If you would like independent advice, you can contact:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://www.moneyhelper.org.uk/">MoneyHelper (opens in new tab)</a>
+            </li>
+            <li>
+              <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://www.citizensadvice.org.uk/">Citizens Advice (opens in new tab)</a>
+            </li>
+            <li>
+              <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://www.gov.uk/civil-legal-advice">Civil Legal Advice (opens in new tab)</a>
+            </li>
+            <li>
+              <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://www.stepchange.org/">StepChange Debt Charity (opens in new tab)</a>
+            </li>
+          </ul>
+
+    </div>
+  </div>
+
+{% endblock %}

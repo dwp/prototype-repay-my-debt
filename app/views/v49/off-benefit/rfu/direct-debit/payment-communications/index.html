@@ -1,0 +1,96 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Would you like us to text you if there are any problems with your payments? – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+
+{% block beforeContent %}
+
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-three-quarters">	  
+
+	<form class="form" action="./payment-summary/v1" method="post" novalidate="">
+
+        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+                Would you like us to text you if there are any problems with your payments?
+            </h1>
+            </legend>
+
+
+            <div class="govuk-inset-text">
+                <p class="govuk-body"><strong>Mobile Number</strong></p>
+
+                <p class="govuk-body">********487</p>
+
+                <p class="govuk-body">If you need to change your mobile number, you must contact DWP Debt Management.</p>
+
+                <p class="govuk-body"><strong>DWP Debt Management</strong></p>
+
+                <ul class="govuk-list">
+                <li>Telephone: 0800 158 5519</li>
+                <li>Textphone: 18001 then 0800 158 5519 when using <a href="https://www.relayuk.bt.com/" target="_blank">Relay UK (opens in new tab)</a></li>
+                <li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
+                </ul>
+
+                <p class="govuk-body"><a class="govuk-link" target="_blank" href="https://www.gov.uk/call-charges">Find out about call charges (opens in a new tab)</a></p>
+            </div>
+
+            <h2 class="govuk-heading-m">Would you like us to contact you?</h2>
+
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="changedName">
+                    Yes
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="changedName-2">
+                    No
+                    </label>
+                </div>
+            </div>
+    
+            <br>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+
+  </fieldset>	
+  
+	  </form>
+	</div>
+  </div>
+
+{% endblock %}

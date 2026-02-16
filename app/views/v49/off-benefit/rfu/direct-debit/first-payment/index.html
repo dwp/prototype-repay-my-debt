@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Change your payment date – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="../first-payment/indexb.html">
+
+      <h1 class="govuk-heading-l">
+        Change your payment date
+      </h1>
+
+      <p>Your Direct Debit payments will be taken from your account on your chosen day of the month until you have repaid what you owe.</p>
+
+      <p>Your chosen date must be between day 1 and day 28 of the month.</p>
+
+      <div class="moj-datepicker" data-module="moj-date-picker" data-min-date="23/01/2026" data-max-date="10/03/2026" data-excluded-dates="29/01/2026 30/01/2026 31/01/2025" data-excluded-days="">
+      <div class="govuk-form-group">
+        <input class="govuk-input moj-js-datepicker-input" id="date" name="date" type="text" value="23/02/2026" aria-describedby="date-hint" autocomplete="off">
+      </div>
+    </div>
+
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,198 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check details before setting up your payment plan – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      	<form class="form" action="../../../rdd/account-home/index.html" method="post" novalidate="">
+
+            <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Your payment plan is set up
+          </h1>
+          <div class="govuk-panel__body">
+            You will be sent confirmation of this agreement within 3 working days or no later than 10 working days before the first payment
+          </div>
+        </div>
+
+      <h2 class="govuk-heading-m">Plan summary</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Total amount owed
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £750.00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Plan type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Monthly Direct Debit
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Payment details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Direct Debit amount
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £62.50
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Final payment amount
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £62.50
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expected number of payments
+            </dt>
+            <dd class="govuk-summary-list__value">
+              12
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Payment dates</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Direct Debit day
+            </dt>
+            <dd class="govuk-summary-list__value">
+              23
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              First payment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              23 February 2026
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expected final payment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              23 January 2027
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Contact preferences</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Text messages
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
+
+       <p class="govuk-body">Your payments will show on your bank statement as <strong>CENT REC GROUP DD</strong>.</p>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <br>
+
+        <h2 class="govuk-heading-m">Further Direct Debit details</h2>
+
+        <p class="govuk-body">If you have any problems or questions about your Direct Debit plan, contact DWP Debt Management:</p>
+
+        <p><strong>DWP Debt Management</strong></p>
+            <ul class="govuk-list">
+            <li>Telephone: 0800 158 5519</li>
+            <li>Textphone: 18001 then 0800 158 5519 when using <a href="https://www.relayuk.bt.com/" target="_blank">Relay UK (opens in new tab)</a></li>
+            <li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
+              </ul>
+
+            <p class="govuk-body">
+              <a class="govuk-link" target="_blank" href="https://www.gov.uk/call-charges">Find out about call charges (opens in a new tab)</a>
+            </p>
+        
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <br>
+
+        <h2 class="govuk-heading-m">Reviewing your repayments</h2>
+
+        <p class="govuk-body">We may contact you in the future to review your payments and will send you a notification with further details.</p>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <br>
+
+        <p class="govuk-body"><a href="#">What did you think of this service? (opens in a new tab)</a></p>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Go to Account home
+        </button>
+
+        </form>
+
+    </div>
+  </div>
+
+{% endblock %}
