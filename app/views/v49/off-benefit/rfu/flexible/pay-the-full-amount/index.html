@@ -1,0 +1,59 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Pay the full amount – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+<nav class="dwp-language-toggle" aria-label="Language toggle">
+<ul class="dwp-language-toggle__list">
+  <li class="dwp-language-toggle__list-item" aria-current="true">
+    English
+  </li>
+  <li class="dwp-language-toggle__list-item">
+    <a href="#"
+      hreflang="cy"
+      lang="cy"
+      rel="alternate"
+      class="govuk-link"
+      aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+  </li>
+</ul>
+</nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-xl">
+      Pay the full amount
+    </h1>
+
+    <form class="form" action="#" method="post" novalidate="" >
+      <div class="govuk-inset-text" style="border:none; padding-left:0;">
+        Total amount left to repay: <span class="total-amount">
+          &pound;750.00
+        </span>
+      </div>
+          <input type="hidden" name="_csrf" value="2980.00">
+          <p >Make sure you have enough money in your bank account to cover this payment.</p>
+          <p class="govuk-!-font-weight-bold">Your bank may charge you interest if you pay by credit card.</p>
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Continue to payment
+    </button>
+
+        </form>
+  </div>
+</div>
+
+{% endblock %}

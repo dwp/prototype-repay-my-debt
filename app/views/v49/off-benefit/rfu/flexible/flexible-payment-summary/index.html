@@ -1,0 +1,105 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Summary – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form class="form" action="../card-details/index" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb30">
+            <h1 class="govuk-fieldset__heading">
+              Summary
+            </h1>
+          </legend>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Payment today
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £10.00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Contact preferences</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Text messages
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+              <br>
+              ********010
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
+
+        <p class="govuk-body">If you want to make changes to your contact preference, call DWP Debt Management.</p>
+
+         <p><strong>DWP Debt Management</strong></p>
+            <ul class="govuk-list">
+            <li>Telephone: 0800 158 5519</li>
+            <li>Textphone: 18001 then 0800 158 5519 when using <a href="https://www.relayuk.bt.com/" target="_blank">Relay UK (opens in new tab)</a></li>
+            <li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
+              </ul>
+
+            <p class="govuk-body">
+              <a class="govuk-link" target="_blank" href="https://www.gov.uk/call-charges">Find out about call charges (opens in a new tab)</a>
+            </p>
+
+            <p class="govuk-body"><strong>Your bank may charge you interest if you pay by credit card.</strong></p>
+
+            <button class="govuk-button" data-module="govuk-button">
+              Continue to payment
+            </button>
+
+        </fieldset>
+      </div>
+
+      
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
