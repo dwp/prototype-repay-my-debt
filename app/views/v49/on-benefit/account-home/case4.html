@@ -1,0 +1,155 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Account home – {{ serviceName }} – GOV.UK Prototype Kit
+
+{% endblock %}
+
+{% block content %}
+
+<!-- VERSION OF AMOUNT HOME PAGE WHEN THERE IS AN ISSUE WITH THE PUSH ADAPTER -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+	<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+		<div class="govuk-notification-banner__header">
+			<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+				Important
+			</h2>
+			</div>
+			<div class="govuk-notification-banner__content">
+				<p class="govuk-notification-banner__heading">
+				<strong>Incorrect balances</strong>
+				<p style="max-width:1024px !important;">Your account may not show the most up-to-date amount.</p>
+				<p style="max-width:1024px !important;">We are working to fix this problem. Try again later.</p>
+			</div>
+	</div>
+
+    <div class="clear-bar stripped-border">
+      <div class="identifier">
+
+        <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Account home</span>
+          David Jones
+        </h1>
+
+      </div>
+      <div>
+        <p style="float:right; border:0px; font-size:19px; text-align:right;"  >
+          Total amount left to repay:<br>
+           <span class="total-amount">
+            &pound;750.00
+
+          </span>
+        </p>
+
+		</div>
+
+    </div>
+
+    <div class="govuk-grid-row">
+  	  <div class="govuk-grid-column-full">
+  		<div class="govuk-grid-row">
+
+  		 <div class="govuk-grid-column-one-half">
+
+  			 <div class="scenario-panel">
+  					   <h2 class="govuk-heading-s">Your repayments</h2>
+
+  					   <div class="scenario-inner-panel">
+
+						<div id="green-banner"  class="alert-green">
+              			<p style="margin-bottom:0px;"> <strong>Previous repayment</strong><br>
+                         £50.00 on 28 Jan 2026</p>
+                       </div>
+
+  						<p class="govuk-body">If your monthly repayments stay at £50.00, you will clear the total amount owed in October 2030.</p>
+
+              <p class="govuk-body">
+				<a href="#">
+                  View details of what you owe
+                </a> 
+			  </p>
+
+			  <p class="govuk-body">
+				<a href="#">
+                  View your payment history
+                </a> 
+			  </p>
+
+  			</div>
+  		</div>
+	</div>
+
+  		<div class="govuk-grid-column-one-half">
+
+  			<div class="scenario-panel" style="height:360px;">
+  				<h2 class="govuk-heading-s">Make additional payments</h2>
+
+  					<div class="scenario-inner-panel" >
+
+						<p>Additional payments are voluntary and help you pay off what you owe quicker.</p>
+
+						<p class="govuk-body">
+							<a href="#">
+								Pay off what you owe in full
+							</a> 
+						</p>
+
+						<p class="govuk-body">
+							<a href="#">
+								Make a smaller one-off payment
+							</a> 
+						</p>
+
+  		            </div>
+  			</div>
+
+		</div>
+
+  		</div>
+
+  		  <div class="govuk-grid-row">
+
+  			  <div class="govuk-grid-column-one-half">
+
+  			  		<div class="scenario-panel">
+  					   	<h2 class="govuk-heading-s">Manage your monthly repayments</h2>
+
+  					   <div class="scenario-inner-panel">
+  						<p class="govuk-body">As you are repaying money to the DfC, you can get help understanding how much you can afford if you are struggling with your repayments.</p>
+
+						<p class="govuk-body">
+							<a href="#">Manage your monthly repayments</a>
+						</p>  					   
+					</div>
+
+  				</div>
+
+  		  </div>
+
+  		  <div class="govuk-grid-column-one-half">
+
+  			  <div class="scenario-panel" style="height:240px;">
+  					   <h2 class="govuk-heading-s">Help and support</h2>
+
+  					   <div class="scenario-inner-panel">
+  						<p class="govuk-body">You can contact us for general help and support.</p>
+
+              			<p class="govuk-body">  					  
+							<a href="#" >Get help and support</a>
+              			</p>
+
+
+              	</div>
+  			</div>
+
+  		  </div>
+
+  		</div>
+
+  	  </div>
+    
+
+{% endblock %}
