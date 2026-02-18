@@ -48,7 +48,17 @@ What this change will mean for you – {{ serviceName }} – GOV.UK Prototype Ki
 
           <li>
             <h3>New monthly flexible payment:</h3>
-            <span id="new-debts-amount"><b>£80.00</b></span>
+            <span id="new-debts-amount"><b>
+              {% if (data['newMonthlyTarget'] ) %} 
+                  £{{ data['newMonthlyTarget'] }} 
+
+                  {% else %}
+
+                  £80.00
+
+              {% endif %}
+              
+            </b></span>
             <p><a class="govuk-link" href="./enter-your-new-monthly-target-amount/index.html">Change</a></p>
           </li>
 
@@ -73,7 +83,16 @@ What this change will mean for you – {{ serviceName }} – GOV.UK Prototype Ki
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Monthly flexible payment amount</th>
             <td class="govuk-table__cell">£100.00</td>
-            <td class="govuk-table__cell">£80.00</td>
+            <td class="govuk-table__cell">
+              {% if (data['newMonthlyTarget'] ) %} 
+                  £{{ data['newMonthlyTarget'] }} 
+
+                  {% else %}
+
+                  £80.00
+
+              {% endif %}
+            </td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Expected number of payments</th>

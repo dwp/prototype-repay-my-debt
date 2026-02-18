@@ -1,0 +1,119 @@
+{% extends "layout-main-not-signnedin.html" %}
+
+{% block pageTitle %}
+Sign in
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7 ">Sign in</h1>
+
+    <br>
+    <form class="form" action="account-home" method="post">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="visually-hidden">Sign in details</legend>
+
+        <div class="govuk-form-group">
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            label: {
+              text: "Enter your security code",
+              classes: "govuk-label--m",
+              isPageHeading: true
+            },
+            classes: "govuk-input--width-20",
+            hint: {
+              text: "This code contains only numbers and it can be up to 11 digits.
+              "
+            },
+            id: "width-20",
+            name: "width-20",
+            inputmode: "text",
+            spellcheck: false
+          }) }}
+
+
+          <details class="govuk-details mt20" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                I have problems with my security code or do not have one
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p>If you’re struggling to enter your code or do not have one, contact us.</p>
+
+              <h2 class="govuk-heading-s">If you live in Great Britain:</h2>
+              <ul class="govuk-list">
+                <li>Telephone: 0800 158 5519</li>
+                <li>Textphone: 18001 then 0800 158 5519 when using <a href="https://www.relayuk.bt.com/" target="_blank">Relay UK (opens in new tab)</a></li>
+                <li>Monday to Friday, 8am to 7:30pm (closed on public holidays)</li>
+              </ul>
+              <p class="govuk-body">
+                <a class="govuk-link" href="https://www.gov.uk/call-charges" target="_blank">Find out about call charges in Great Britain (opens in new tab)</a>
+              </p>
+
+              <h2 class="govuk-heading-s">If you live in Northern Ireland:</h2>
+              <ul class="govuk-list">
+                <li>Telephone: 0800 587 1322</li>
+                <li>Textphone: 18001 then 0800 587 1322 when using <a href="https://www.relayuk.bt.com/" target="_blank">Relay UK (opens in a new tab)</a>
+                </li>
+                <li>Monday to Friday, 9am to 4pm (closed on public holidays)</li>
+              </ul>
+              <p class="govuk-body">
+                <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers" target="_blank">Find out about call charges in Northern Ireland (opens in new tab)</a>
+                </p>
+              </div>
+            </details>
+          </div>
+
+          {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+          {{ govukDateInput({
+            id: "date-of-birth",
+            namePrefix: "passport-issued",
+            fieldset: {
+              legend: {
+                text: "Enter your date of birth",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 12 3 1997"
+            }
+          }) }}
+
+
+        </fieldset>
+
+        <!--<button class="govuk-button" data-module="govuk-button">
+        Sign in
+      </button>-->
+
+      <a href="../off-benefit/rfu/account-home/index.html" class="govuk-button">Sign in</a>
+
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1407,3 +1407,15 @@ router.post('/v49/account-holder-routing', function (req, res) {
   }
 
 })
+
+router.post('/v49/payment-date-check', function (req, res) {
+
+  var ddPaymentDay = req.session.data['ddPaymentDay']
+
+  if (ddPaymentDay == ''){
+    res.redirect('#')
+  } else {
+    res.redirect('/v49/off-benefit/rfu/account-details/index.html')
+  }
+
+})

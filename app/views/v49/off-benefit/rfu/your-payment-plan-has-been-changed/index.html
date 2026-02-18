@@ -74,7 +74,14 @@ Your payment plan has been changed – {{ serviceName }} – GOV.UK Prototype Ki
               Monthly target
             </dt>
             <dd class="govuk-summary-list__value">
-              £80.00
+              {% if (data['newMonthlyTarget'] ) %} 
+                  £{{ data['newMonthlyTarget'] }} 
+
+                  {% else %}
+
+                  £80.00
+
+              {% endif %}
             </dd>
           </div>
           <div class="govuk-summary-list__row">

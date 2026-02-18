@@ -33,7 +33,26 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="../account-details/index.html">
+      <form class="form" action="../account-details/index">
+
+      {% if data ['error'] == 'test' %}
+
+      <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#">Enter your full name</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
 
       <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -48,11 +67,16 @@
 
             <p class="govuk-body">If your chosen day falls on a weekend or bank holiday, your payment will be taken on the next working day.</p>
 
-            <div class="govuk-form-group">
+            <div class="govuk-form-group {% if data['error'] == 'test' %}govuk-form-group--error{% endif %}">
                 <label class="visually-hidden" for="paymentDay">
                 Payment day
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="paymentDay" name="paymentDay" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['paymentDay']}}" >
+                {% if data['error'] == 'test' %}
+                <p id="cost-per-item-error-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> Day cannot include letters or special characters, for example ! or £
+                </p>
+                {% endif %}
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="ddPaymentDay" name="ddPaymentDay" type="text" inputmode="numeric" value="{{data['ddPaymentDay']}}" >
             </div>
 
       </fieldset>
