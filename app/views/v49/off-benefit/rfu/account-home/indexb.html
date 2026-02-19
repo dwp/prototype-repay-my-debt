@@ -10,6 +10,8 @@ Account home – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
+	<!-- FOR MARCH UR CAN BE DELETED AFTER -->
+
     <div class="clear-bar stripped-border">
       <div class="identifier">
 
@@ -50,38 +52,30 @@ Account home – {{ serviceName }} – GOV.UK Prototype Kit
 									<tr class="govuk-table__row">
 									<th scope="row" class="govuk-table__header">Plan type</th>
 									<td class="govuk-table__cell">
-										Monthly Direct Debit
+										Monthly flexible payments
 									</td>
 									</tr>
 
   								    <tr class="govuk-table__row">
-  									<th scope="row" class="govuk-table__header">Direct Debit amount</th>
+  									<th scope="row" class="govuk-table__header">Monthly target</th>
   									<td class="govuk-table__cell">
-                                        £41.63
+                                        £100.00
   									</td>
-									</tr>
-
-									<tr class="govuk-table__row">
-  									<th scope="row" class="govuk-table__header">Direct Debit day</th>
-  									<td class="govuk-table__cell">
-                                        12
-  									</td>
-									</tr>
-
-									<tr class="govuk-table__row">
-  									<th scope="row" class="govuk-table__header">Expected final payment</th>
-  									<td class="govuk-table__cell">
-                                        28 March 2027
-  									</td>
-									</tr>
+  								 </tr>
 
   								</tbody>
   							  </table>
 
               <p class="govuk-body">
-				<a href="../account-home/index.html">
+				<a href="../your-plan/index.html">
                   View or manage your plan
                 </a> 
+			  </p>
+
+              <p class="govuk-body">
+               <a href="../payment-history/index.html">
+                  View your payment history
+               </a> 
 			  </p>
 
   			</div>
@@ -90,8 +84,8 @@ Account home – {{ serviceName }} – GOV.UK Prototype Kit
 
   		<div class="govuk-grid-column-one-half">
 
-  			<div class="scenario-panel" style="height:365px;">
-  				<h2 class="govuk-heading-s">Payment summary</h2>
+  			<div class="scenario-panel">
+  				<h2 class="govuk-heading-s">Payments for March 2026</h2>
 
   					<div class="scenario-inner-panel">
 
@@ -100,9 +94,16 @@ Account home – {{ serviceName }} – GOV.UK Prototype Kit
   							<tbody class="govuk-table__body">
 
                      			<tr class="govuk-table__row">
-                     				<th scope="row" class="govuk-table__header">Paid this month</th>
+                     				<th scope="row" class="govuk-table__header">Paid in March</th>
                      				<td class="govuk-table__cell">
-										£0.00
+										£20.00
+									</td>
+                     			</tr>
+
+								<tr class="govuk-table__row">
+                     				<th scope="row" class="govuk-table__header">Left to pay in March</th>
+                     				<td class="govuk-table__cell">
+										£80.00
 									</td>
                      			</tr>
 
@@ -110,15 +111,15 @@ Account home – {{ serviceName }} – GOV.UK Prototype Kit
   						</table>
 
 						<p class="govuk-body">
-							<a href="#">
-								Make an additional payment
+							<a href="../flexible/pay-flexible-amount/index.html">
+								Make a payment towards your March target
 							</a> 
 						</p>
 
 						<p class="govuk-body">
-						<a href="#">
-							View your payment history
-						</a> 
+							<a href="../flexible/pay-the-full-amount/index">
+							Pay off what you owe in full
+							</a> 
 						</p>
 
   		            </div>
@@ -139,7 +140,7 @@ Account home – {{ serviceName }} – GOV.UK Prototype Kit
   						<p class="govuk-body">Details of the money you owe.</p>
 
 						<p class="govuk-body">
-							<a href="#">View details of what you owe</a>
+							<a href="../../../details-of-what-you-owe/index.html">View details of what you owe</a>
 						</p>  					   
 					</div>
 
@@ -156,7 +157,7 @@ Account home – {{ serviceName }} – GOV.UK Prototype Kit
   						<p class="govuk-body">You can contact us for general help and support.</p>
 
               			<p class="govuk-body">  					  
-							<a href="#" >Get help and support</a>
+							<a href="../../../help-and-support/index.html" >Get help and support</a>
               			</p>
 
 
