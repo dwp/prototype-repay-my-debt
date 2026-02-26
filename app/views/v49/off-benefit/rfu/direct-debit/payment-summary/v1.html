@@ -106,10 +106,16 @@
               Direct Debit day
             </dt>
             <dd class="govuk-summary-list__value">
-              23
+              {% if (data['ddPaymentDay'] ) %} {{ data['ddPaymentDay'] }} 
+
+              {% else %}
+
+              3
+
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+              <a class="govuk-link" href="../payment-date?origin=cya">Change<span class="govuk-visually-hidden"> contact details</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -117,7 +123,13 @@
               First payment
             </dt>
             <dd class="govuk-summary-list__value">
-              23 February 2026
+              {% if (data['ddPaymentDay'] ) %} {{ data['ddPaymentDay'] }} 
+
+              {% else %}
+
+              3
+
+              {% endif %} April 2026
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -127,7 +139,13 @@
               Expected final payment
             </dt>
             <dd class="govuk-summary-list__value">
-              23 January 2027
+              {% if (data['ddPaymentDay'] ) %} {{ data['ddPaymentDay'] }} 
+
+              {% else %}
+
+              3
+
+              {% endif %} April 2027
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>

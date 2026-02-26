@@ -1408,14 +1408,24 @@ router.post('/v49/account-holder-routing', function (req, res) {
 
 })
 
-router.post('/v49/payment-date-check', function (req, res) {
+// router.post('/v49/payment-date-check', function (req, res) {
 
-  var ddPaymentDay = req.session.data['ddPaymentDay']
+//   var ddPaymentDay = req.session.data['ddPaymentDay']
 
-  if (ddPaymentDay == ''){
-    res.redirect('#')
+//   if (ddPaymentDay == ''){
+//     res.redirect('#')
+//   } else {
+//     res.redirect('/v49/off-benefit/rfu/account-details/index.html')
+//   }
+
+// })
+
+router.post('/v49/payment-date-routing', function (req, res) {
+
+  if (req.query.origin) {
+    res.redirect('/v49/off-benefit/rfu/direct-debit/payment-summary/v1.html')
   } else {
-    res.redirect('/v49/off-benefit/rfu/account-details/index.html')
+    res.redirect('/v49/off-benefit/rfu/direct-debit/account-details/index')
   }
 
 })
