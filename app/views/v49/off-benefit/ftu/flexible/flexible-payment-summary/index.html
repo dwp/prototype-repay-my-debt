@@ -1,0 +1,184 @@
+{% extends "layout-3.html" %}
+
+{% block pageTitle %}
+Check details before setting up your playment plan – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form class="form" action="../card-details/index" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb30">
+            <h1 class="govuk-fieldset__heading">
+              Check details before setting up your playment plan
+            </h1>
+          </legend>
+
+        <h2 class="govuk-heading-m">Plan summary</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Total amount owed
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £520.000
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Plan type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Monthly flexible payments
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">Change</a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Payment details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Monthly target
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £83.34
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">Change</a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expected number of payments
+            </dt>
+            <dd class="govuk-summary-list__value">
+              6
+              <br>
+              (if monthly target is met each month)
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expected final payment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              August 2026
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Payment today
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £20.00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Contact preferences</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Text messages
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+              <br>
+              07407138010
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+             If you do not keep up with your payments, we will take further action to recover the money owed.
+          </strong>
+        </div>
+
+         <p>Further action to recover money owned may include:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>asking your employer to deduct it from your pay</li>
+          <li>taking debt enforement action through the courts</li>
+          <li>asking a debt collection agency to collect it for us</li>
+          <li>recovering it from future benefits and State Pension you get</li>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Declaration</h2>
+
+        <p>By continuing, you confirm that you will:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>pay the agreed monthly amount</li>
+          <li>let us know immediately if you're struggling to keep up with payments</li>
+        </ul>
+
+        <p><strong>Your bank may charge you interest if you pay by credit card.</strong></p>
+
+            <button class="govuk-button" data-module="govuk-button">
+              Continue to payment
+            </button>
+
+        </fieldset>
+      </div>
+
+      
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

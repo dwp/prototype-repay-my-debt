@@ -1,0 +1,173 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Your payment was successful
+{% endblock %}
+
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+
+      <h1 class="govuk-panel__title">
+        Your payment was successful and your plan is set up
+      </h1>
+
+    </div>
+
+    <h2 class="govuk-heading-m">Plan summary</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Total amount owed
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £520.000
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Plan type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Monthly flexible payments
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Payment details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Monthly target
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £83.34
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expected number of payments
+            </dt>
+            <dd class="govuk-summary-list__value">
+              6
+              <br>
+              (if monthly target is met each month)
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expected final payment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              August 2026
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Payment today
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £20.00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Payment to
+            </dt>
+            <dd class="govuk-summary-list__value">
+              DWP Debt Management
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Payment type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Card payment
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
+
+        <p>You will recieve a payment confirmation email. It will take 2 to 5 working days for your payment to clear.</p>
+
+        <h2 class="govuk-heading-m">Contact preferences</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Text messages
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+              <br>
+              07407138010
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
+
+      <h2 class="govuk-heading-m">Reviewing your repayments</h2>
+
+      <p>We may contact you in future to review your payments and will send you a notification with further details.</p>
+
+
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">What did you think of this service? (opens in new tab)</a>
+      </p>
+      <p><a href="../../../../off-benefit/rfu/account-home/index" class="govuk-button">Go to account home</a></p>
+    </div>
+  </div>
+
+  {% endblock %}
