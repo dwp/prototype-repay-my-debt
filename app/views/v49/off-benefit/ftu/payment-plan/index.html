@@ -37,7 +37,7 @@ Choose a payment plan – {{ serviceName }} – GOV.UK Prototype Kit
 
     <!-- NEED TO ADD ROUTING  -->
 
-    <form class="form" action="../monthly-option/index" method="post">
+    <form class="form" action="/v49/off-benefit/ftu/payment-plan/payment-plan-routing" method="post">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -51,48 +51,56 @@ Choose a payment plan – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-radios">
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="paymentOption" name="paymentOption" type="radio" value="3 monthly payments" {{ checked('paymentChoices','12Month') }}>
-                <label class="govuk-label govuk-radios__label" for="paymentOption">
-                  <b>&pound;166.67</b> &ndash; 3 monthly payments
+                <input class="govuk-radios__input" id="paymentPlanAmount" name="paymentPlanAmount" type="radio" value="3 monthly payments">
+                <label class="govuk-label govuk-radios__label" for="paymentPlanAmount">
+                  <b>&pound;173.33</b> &ndash; 3 monthly payments
                 </label>
 
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="paymentOption-2" name="paymentOption" type="radio" value="6 monthly payments" {{ checked('paymentChoices','24Month') }}>
-                <label class="govuk-label govuk-radios__label" for="paymentOption-2">
-                  <b>&pound;83.34</b> &ndash; 6 monthly payments
+                <input class="govuk-radios__input" id="paymentPlanAmount-2" name="paymentPlanAmount" type="radio" value="6 monthly payments">
+                <label class="govuk-label govuk-radios__label" for="paymentPlanAmount-2">
+                  <b>&pound;86.66</b> &ndash; 6 monthly payments
                 </label>
 
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="paymentOption-3" name="paymentOption" type="radio" value="12 monthly payments" {{ checked('paymentChoices','36Month') }}>
-                <label class="govuk-label govuk-radios__label" for="paymentOption-3">
-                  <b>&pound;41.67</b> &ndash; 12 monthly payments
+                <input class="govuk-radios__input" id="paymentPlanAmount-3" name="paymentPlanAmount" type="radio" value="12 monthly payments">
+                <label class="govuk-label govuk-radios__label" for="paymentPlanAmount-3">
+                  <b>&pound;43.33</b> &ndash; 12 monthly payments
                 </label>
 
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="paymentOption-4" name="paymentOption" type="radio" value="18 monthly payments" {{ checked('paymentChoices','48Month') }}>
-                <label class="govuk-label govuk-radios__label" for="paymentOption-4">
-                  <b>&pound;27.78</b> &ndash; 18 monthly payments
+                <input class="govuk-radios__input" id="paymentPlanAmount-4" name="paymentPlanAmount" type="radio" value="18 monthly payments">
+                <label class="govuk-label govuk-radios__label" for="paymentPlanAmount-4">
+                  <b>&pound;28.88</b> &ndash; 18 monthly payments
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="paymentOption-5" name="paymentOption" type="radio" value="24 monthly payments" {{ checked('paymentChoices','48Month') }}>
-                <label class="govuk-label govuk-radios__label" for="paymentOption-5">
-                  <b>&pound;20.84</b> &ndash; 24 monthly payments
+                <input class="govuk-radios__input" id="paymentPlanAmount-5" name="paymentPlanAmount" type="radio" value="24 monthly payments">
+                <label class="govuk-label govuk-radios__label" for="paymentPlanAmount-5">
+                  <b>&pound;21.66</b> &ndash; 24 monthly payments
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="paymentPlanAmount-6" name="paymentPlanAmount" type="radio" value="Pay a different amount above">
+                <label class="govuk-label govuk-radios__label" for="paymentPlanAmount-6">
+                  <b>Pay a different amount above &pound;21.66</b>
                 </label>
               </div>
 
               <div class="govuk-radios__divider">or</div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="paymentOption-6" name="paymentOption" type="radio" value="Pay a different amount" aria-describedby="lowPayments-hint" {{ checked('paymentChoices','lowPayments') }}>
-                <label class="govuk-label govuk-radios__label govuk-label--s" for="Pay a different amount">
-                  Pay a different amount
+                <input class="govuk-radios__input" id="paymentPlanAmount-7" name="paymentPlanAmount" type="radio" value="I need a more affordable plan">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="paymentPlanAmount-7">
+                  I need a more affordable plan
+                  <br>
+                  <p class="govuk-hint">A more affordable plan may work if you're on a low or varied income.</p>
                 </label>
               </div>
             </div>

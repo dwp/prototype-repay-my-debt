@@ -50,7 +50,7 @@ What do you want to do? – {{ serviceName }} – GOV.UK Prototype Kit
     </div>
   
   
-	  <form class="form" action="./payment-options" method="post" novalidate="">
+	  <form class="form" action="/v49/off-benefit/ftu/what-do-you-want-to-do/what-do-you-want-to-do-routing" method="post">
 		<input type="hidden" name="_csrf" value="#">
   
   
@@ -62,22 +62,22 @@ What do you want to do? – {{ serviceName }} – GOV.UK Prototype Kit
 	
 	  <div class="govuk-radios" data-module="govuk-radios">
 		<div class="govuk-radios__item">
-		  <input class="govuk-radios__input" id="payment-options" name="selected-option" type="radio" value="pay-full-amount" aria-describedby="payment-options-item-hint">
-		  <label class="govuk-label govuk-radios__label" for="payment-options">
+		  <input class="govuk-radios__input" id="selected-option" name="selected-option" type="radio" value="I want to view my payment options" aria-describedby="selected-option-2">
+		  <label class="govuk-label govuk-radios__label" for="selected-option">
 			I want to view my payment options
 		  </label> 
 		</div>
 		
 		<div class="govuk-radios__item">
-		  <input class="govuk-radios__input" id="payment-options-2" name="selected-option" type="radio" value="/payment/payment-plan/setup" aria-describedby="payment-options-2-item-hint">
-		  <label class="govuk-label govuk-radios__label" for="payment-options-2">
+		  <input class="govuk-radios__input" id="selected-option-2" name="selected-option" type="radio" value="I want to view details of what I owe" aria-describedby="selected-option-2">
+		  <label class="govuk-label govuk-radios__label" for="selected-option-2">
 			I want to view details of what I owe
 		  </label>  
 		</div>
 
         <div class="govuk-radios__item">
-		  <input class="govuk-radios__input" id="payment-options-2" name="selected-option" type="radio" value="/payment/payment-plan/setup" aria-describedby="payment-options-2-item-hint">
-		  <label class="govuk-label govuk-radios__label" for="payment-options-2">
+		  <input class="govuk-radios__input" id="selected-option-3" name="selected-option" type="radio" value="I need help and support in dealing with the money I owe" aria-describedby="selected-options-3">
+		  <label class="govuk-label govuk-radios__label" for="selected-option-3">
 			I need help and support in dealing with the money I owe
 		  </label>  
 		</div>

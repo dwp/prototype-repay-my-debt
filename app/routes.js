@@ -3,8 +3,11 @@
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
 
-const govukPrototypeKit = require('govuk-prototype-kit')
-const router = govukPrototypeKit.requests.setupRouter()
+const v49 = require("./routes/routes-v49");
+
+const govukPrototypeKit = require('govuk-prototype-kit');
+const router = govukPrototypeKit.requests.setupRouter();
+
 
 // Add your routes here
 

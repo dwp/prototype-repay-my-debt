@@ -41,7 +41,7 @@ Payment options – {{ serviceName }} – GOV.UK Prototype Kit
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
       
       <div>
-        <p>Total amount left to repay:<br> 
+        <p>Total amount owed:<br> 
             <span class="total-amount">
             &pound;520.00
             </span>
@@ -49,7 +49,7 @@ Payment options – {{ serviceName }} – GOV.UK Prototype Kit
     </div>
   
   
-	  <form class="form" action="./payment-plan/index" method="post" novalidate="">
+	  <form class="form" action="/v49/off-benefit/ftu/payment-options/payment-options-routing" method="post">
 		<input type="hidden" name="_csrf" value="#">
   
   
@@ -61,8 +61,8 @@ Payment options – {{ serviceName }} – GOV.UK Prototype Kit
 	
 	  <div class="govuk-radios" data-module="govuk-radios">
 		<div class="govuk-radios__item">
-		  <input class="govuk-radios__input" id="payment-options" name="selected-option" type="radio" value="pay-full-amount" aria-describedby="payment-options-item-hint">
-		  <label class="govuk-label govuk-radios__label" for="payment-options">
+		  <input class="govuk-radios__input" id="payment-option" name="payment-option" type="radio" value="Pay the full amount" aria-describedby="payment-options">
+		  <label class="govuk-label govuk-radios__label" for="payment-option">
 			<strong>Pay the full amount</strong>
 		  </label>
 		  
@@ -73,8 +73,8 @@ Payment options – {{ serviceName }} – GOV.UK Prototype Kit
 		</div>
 		
 		<div class="govuk-radios__item">
-		  <input class="govuk-radios__input" id="payment-options-2" name="selected-option" type="radio" value="/payment/payment-plan/setup" aria-describedby="payment-options-2-item-hint">
-		  <label class="govuk-label govuk-radios__label" for="payment-options-2">
+		  <input class="govuk-radios__input" id="payment-option-2" name="payment-option" type="radio" value="Pay back the amount over time" aria-describedby="payment-options-2">
+		  <label class="govuk-label govuk-radios__label" for="payment-option-2">
 			<strong>Pay back the amount over time</strong>
 		  </label>
 		  
