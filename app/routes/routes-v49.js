@@ -11,12 +11,25 @@ router.post('/v49/off-benefit/rfu/direct-debit/payment-date/check-payment-date',
     var ddPaymentDay = request.session.data['ddPaymentDay'];
     var referer = request.session.data['referer'];
 
-    if(referer == undefined) {
-        response.redirect('/v49/off-benefit/rfu/direct-debit/account-details');
+    if(ddPaymentDay == undefined || ddPaymentDay == "" ) {
+        response.redirect('/v49/off-benefit/rfu/direct-debit/payment-date/?error=empty');
+    }
+
+    // else if(ddPaymentDay.includes('[a-zA-Z]')) {
+    //     response.redirect('#');
+    // }
+
+    else if(referer == undefined) {
+        response.redirect('/v49/off-benefit/rfu/direct-debit/account-details/index');
     }
 
     else if (referer.includes('/payment-summary')) {
         response.redirect('/v49/off-benefit/rfu/direct-debit/payment-summary/v1');
+
+    }
+
+    else {
+        response.redirect('/v49/off-benefit/rfu/direct-debit/account-details/index');
 
     }
 
@@ -89,3 +102,9 @@ router.post('/v49/off-benefit/ftu/monthly-option/monthly-option-routing', functi
     }
 
 });
+
+router.post('/v49/research-index-routing', function (req, res) {
+
+    res.redirect('/v49/research-index')
+
+})

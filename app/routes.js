@@ -1432,3 +1432,10 @@ router.post('/v49/payment-date-routing', function (req, res) {
   }
 
 })
+
+router.post('/v49/research-index-routing', function (req, res) {
+
+  
+    res.redirect('/v49/research-index')
+
+})
