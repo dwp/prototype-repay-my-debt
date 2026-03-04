@@ -15,9 +15,9 @@ router.post('/v49/off-benefit/rfu/direct-debit/payment-date/check-payment-date',
         response.redirect('/v49/off-benefit/rfu/direct-debit/payment-date/?error=empty');
     }
 
-    // else if(ddPaymentDay.includes('[a-zA-Z]')) {
-    //     response.redirect('#');
-    // }
+    else if (ddPaymentDay.match(/[a-zA-Z]/g)) {
+        response.redirect('/v49/off-benefit/rfu/direct-debit/payment-date/?error=letters');
+    }
 
     else if(referer == undefined) {
         response.redirect('/v49/off-benefit/rfu/direct-debit/account-details/index');

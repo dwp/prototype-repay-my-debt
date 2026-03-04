@@ -54,7 +54,26 @@
 
       {% endif %}
 
-      <div class="govuk-form-group govuk-form-group{% if data['error'] == 'empty' %}--error{% endif %} ">
+      {% if data ['error'] == 'letters' %}
+
+      <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#">Day cannot include letters or special characters, for example ! or £</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
+
+      <div class="govuk-form-group govuk-form-group{% if data['error'] %}--error{% endif %} ">
 
 
       <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
@@ -70,7 +89,7 @@
 
             <p class="govuk-body">If your chosen day falls on a weekend or bank holiday, your payment will be taken on the next working day.</p>
 
-            <div class="govuk-form-group govuk-form-group{% if data['error'] == 'empty' %}--error{% endif %}">
+            <div class="govuk-form-group govuk-form-group{% if data['error'] %}--error {% endif %}">
                 <label class="visually-hidden" for="paymentDay">
                 Payment day
                 </label>
@@ -78,8 +97,14 @@
                 <p id="cost-per-item-error-error" class="govuk-error-message">
                   <span class="govuk-visually-hidden">Error:</span> Enter your selected payment day
                 </p>
+                {% elif data['error'] == 'letters' %}
+                <p id="cost-per-item-error-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> Day cannot include letters or special characters, for example ! or £
+                </p>
+                {% else %}
+
                 {% endif %}
-                <input class="govuk-input govuk-input{% if data['error'] == 'empty' %}--error{% endif %} govuk-input--width-2" id="ddPaymentDay" name="ddPaymentDay" type="text" inputmode="numeric" value="{{data['ddPaymentDay']}}" >
+                <input class="govuk-input govuk-input{% if data['error'] %}--error{% endif %} govuk-input--width-2" id="ddPaymentDay" name="ddPaymentDay" type="text" inputmode="numeric" value="{{data['ddPaymentDay']}}" >
             </div>
 
       </fieldset>
