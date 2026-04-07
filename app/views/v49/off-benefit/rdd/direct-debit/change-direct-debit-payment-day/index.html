@@ -38,7 +38,7 @@
       <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-            What day of the month do you want your Direct Debit to be taken?
+            Do you want to change your Direct Debit monthly payment day?
           </h1>
         </legend>
 
@@ -46,14 +46,35 @@
 
             <p class="govuk-body">If your chosen day falls on a weekend or bank holiday, your payment will be taken on the next working day.</p>
 
-            <div class="govuk-form-group">
-                <label class="visually-hidden" for="paymentDay">
-                Payment day
+            <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="contact">
+                Yes
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="paymentDay" name="paymentDay" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['paymentDay']}}" >
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-email">
+                    Enter a new payment day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="paymentDay" name="paymentDay" type="text" pattern="[0-9]*" spellcheck="false" inputmode="numeric">
+                </div>
+            </div>
+
+             <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email">
+                <label class="govuk-label govuk-radios__label" >
+                No
+                </label>
+            </div>
+
             </div>
 
       </fieldset>
+
+      <br>
 
         <div class="govuk-button-group">
           <button type="submit" class="govuk-button" data-module="govuk-button">
