@@ -1,0 +1,274 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        Correspondent search results
+      </h1>
+
+          <div class="govuk-grid-column-one-third">
+
+  <div class="moj-filter-layout">
+  <div class="moj-filter-layout__filter">
+    <div class="moj-filter" data-module="moj-filter">
+      <div class="moj-filter__header">
+        <div class="moj-filter__header-title">
+          <h2 class="govuk-heading-m">Filter</h2>
+        </div>
+        <div class="moj-filter__header-action">
+        </div>
+      </div>
+      <div class="moj-filter__content">
+          
+        <div class="moj-filter__options">
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Correspondent name
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Postcode
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+           <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Customer National Insurance Number
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Correspondent type
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Status
+              </legend>
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                  <label class="govuk-label govuk-checkboxes__label" for="type">
+                    Active (18)
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                  <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                    Inactive (5)
+                  </label>
+                </div>
+                
+              </div>
+            </fieldset>
+          </div>
+
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Apply filters
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+ </div>
+  <!-- <div class="moj-filter-layout__content">
+    <div class="moj-action-bar">
+      <div class="moj-action-bar__filter"></div>
+      <div class="moj-button-menu" data-module="moj-button-menu">
+        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary govuk-button--secondary" data-module="govuk-button">
+          Action 1
+        </button>
+        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary govuk-button--secondary" data-module="govuk-button">
+          Action 2
+        </button>
+      </div>
+    </div> -->
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <p><strong>2 correspondent records</strong> </p>
+
+      <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Bernardo Jones (SFCL)
+    </h2>
+
+    <strong class="govuk-tag govuk-tag--teal">
+      Active
+    </strong>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Correspondent type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          SFCL
+        </dd> -->
+      <!-- </div> -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Correspondent address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          87 Dasia Avenue, Dyfed, Wales, WG3 3PX
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Correspondent for
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Cristobal McKenzie
+
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Customer NINO
+        </dt>
+        <dd class="govuk-summary-list__value">
+          QQ 12 34 56 C
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Amount outstanding
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £1003
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Individual balance
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+          <li>£1000 (PIP Disallowed)</li>
+          <li>3 (Benefit Cap Supp Payments)</li>
+        </ul>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Bernardo Jones (SFCL)
+    </h2>
+
+    <strong class="govuk-tag govuk-tag--teal">
+      Active
+    </strong>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Correspondent type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          SFCL
+        </dd> -->
+      <!-- </div> -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Correspondent address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          87 Dasia Avenue, Dyfed, Wales, WG3 3PX
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Correspondent for
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Cristobal McKenzie
+
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Customer NINO
+        </dt>
+        <dd class="govuk-summary-list__value">
+          QQ 12 34 56 C
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Amount outstanding
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £1003
+
+          <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Individual balance
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+<ul class="govuk-list govuk-list--bullet">
+          <li>£1000 (PIP Disallowed)</li>
+          <li>3 (Benefit Cap Supp Payments)</li>
+        </ul>  </div>
+</details>
+          
+        </dd>
+      </div>
+      
+    </dl>
+  </div>
+</div>
+
+
+    </div>
+      
+
+
+  </div>
+
+{% endblock %}
