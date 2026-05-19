@@ -1,0 +1,104 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Your payment was successful – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Your payment was successful
+          </h1>
+          <div class="govuk-panel__body">
+            You will receive a payment confirmation email
+          </div>
+        </div>
+
+        <p class="govuk-body">It will take 2 to 5 working days for your payment to clear.</p>
+
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+                <span class="govuk-visually-hidden">Warning</span>
+                If you made repayments by standing order, you need to cancel your repayments yourself or contact your bank.
+            </strong>
+            </div>
+
+        <!-- <p class="govuk-body">If you made repayments by standing order, you need to cancel your repayments yourself or contact your bank.</p> -->
+
+        <h2 class="govuk-heading-m">Payment summary</h2>
+
+        <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Payment method
+            </dt>
+            <dd class="govuk-summary-list__value">
+            Card payment
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Payment amount
+            </dt>
+            <dd class="govuk-summary-list__value">
+            £750.00
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Payment to
+            </dt>
+            <dd class="govuk-summary-list__value">
+            DWP Debt Management
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Payment date
+            </dt>
+            <dd class="govuk-summary-list__value">
+                19 May 2026
+            </dd>
+        </div>
+        </dl>
+
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">What did you think of this service? (opens in new tab)</a>
+        </p>
+      </div>
+
+      
+
+    </div>
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+        Finish and sign out
+    </button>
+</div>
+
+{% endblock %}
