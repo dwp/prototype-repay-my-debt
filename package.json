@@ -14,7 +14,7 @@
     "body-parser": "2.2.2",
     "express": "5.2.1",
     "govuk-frontend": "6.1.0",
-    "govuk-prototype-kit": "13.18.1"
+    "@dwp-govuk/govuk-prototype-kit": "latest"
   },
   "overrides": {
     "minimatch": "^10.2.1",
