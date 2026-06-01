@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        Theresa Morris
+      </h1>
+
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+
+    <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      NINO
+    </dt>
+    <dd class="govuk-summary-list__value">
+      QQ 12 34 56 C
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      77 Windmill Hill,
+      <br>
+      Enfield,
+      <br>
+      Middlesex,
+      <br>
+      EN2 7AF
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      24-08-1979
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of death
+    </dt>
+    <dd class="govuk-summary-list__value">
+      03-05-2026
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Telephone number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      020 8367 9977
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Partner NINO
+    </dt>
+    <dd class="govuk-summary-list__value">
+      QQ 12 34 56 C
+    </dd>
+  </div>
+</dl>
+
+      <h2 class="govuk-heading-m">
+        Debtor Accounts
+      </h2>
+
+
+
+   
+
+
+
+</div>
+
+
+
+      
+
+
+  </div>
+
+{% endblock %}
