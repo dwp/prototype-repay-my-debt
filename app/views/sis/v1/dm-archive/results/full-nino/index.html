@@ -1,7 +1,8 @@
 {% extends "layouts/main.html" %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
 {% block pageTitle %}
-  Search – {{ serviceName }} – GOV.UK Prototype Kit
+  Theresa Morris – Suspense investigation – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,16 +16,11 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-
-      <h1 class="govuk-heading-l">
-        Theresa Morris
-      </h1>
-
-      </div>
 
       <div class="govuk-grid-column-two-thirds">
-
+ <h1 class="govuk-heading-l">
+        Theresa Morris
+      </h1>
 
     <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
@@ -82,11 +78,280 @@
     </dd>
   </div>
 </dl>
+</div>
+</div>
 
-      <h2 class="govuk-heading-m">
-        Debtor Accounts
+<h2 class="govuk-heading-m">
+        Debtor accounts
       </h2>
 
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+<div class="moj-filter-layout">
+  <div class="moj-filter-layout__filter">
+    <div class="moj-filter" data-module="moj-filter">
+      <div class="moj-filter__header">
+        <div class="moj-filter__header-title">
+          <h2 class="govuk-heading-m">Filter</h2>
+        </div>
+        <div class="moj-filter__header-action">
+        </div>
+      </div>
+      <div class="moj-filter__content">
+          
+        <div class="moj-filter__options">
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Account number
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Benefit type ID
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+           <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Overpayment amount
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+         
+          <br>
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Apply filters
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+ </div>
+      
+
+  <div class="govuk-grid-column-two-thirds">
+
+      
+
+      <p><strong>4 results</strong></p>
+
+  <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      RPCONT
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="./transactions/index.html">Transactions<span class="govuk-visually-hidden">DFR</span></a>
+      </li>
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="./diary/index.html">Diary<span class="govuk-visually-hidden">DFR</span></a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Description
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Retirement penison: Contrbutiion
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          12345678967
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          05-03-2026
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          123
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £10.00
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Overpayment amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £1,356.43
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      DLAC
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#">Transactions<span class="govuk-visually-hidden">DFR</span></a>
+      </li>
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#">Diary<span class="govuk-visually-hidden">DFR</span></a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Description
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Disability Living Allowance: Careers
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          4280206908
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          06-11-2020
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          4
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £0.00
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Overpayment amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £356.43
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      IIDB
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#">Transactions<span class="govuk-visually-hidden">IIDB</span></a>
+      </li>
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#">Diary<span class="govuk-visually-hidden">IIDB</span></a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Description
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Industrial Injuries Disablement Benefit
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          42802045678
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          16-11-2002
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          92
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £12.50
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Overpayment amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £2,305.13
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+</div>
+</div>
 
 
    

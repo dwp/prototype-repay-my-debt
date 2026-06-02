@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Search – {{ serviceName }} – GOV.UK Prototype Kit
+  Search – Suspense investigation – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,6 +12,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+          <form class="form" action="../results/partial/index" method="post">
 
       <h1 class="govuk-heading-l">
         XXX
@@ -51,6 +52,7 @@
         Search
       </button>
 
+      </form>
   </div>
 </div>
       
