@@ -5,7 +5,10 @@
 {% endblock %}
 
 {% block beforeContent %}
-
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -15,12 +18,12 @@
           <form class="form" action="../results/partial/index" method="post">
 
       <h1 class="govuk-heading-l">
-        XXX
+        Customer details
       </h1>
 
        <div class="govuk-form-group">
             <label class="govuk-label" for="passport-number">
-              NINO
+              Customer NINO
             </label>
             <!-- <div id="passport-number-hint" class="govuk-hint">
               For example, 502135326
@@ -30,7 +33,7 @@
 
       <div class="govuk-form-group">
             <label class="govuk-label" for="passport-number">
-              Full name
+              Customer name
             </label>
             <!-- <div id="passport-number-hint" class="govuk-hint">
               For example, 502135326
@@ -40,7 +43,7 @@
 
       <div class="govuk-form-group">
             <label class="govuk-label" for="passport-number">
-              Location
+              Customer address
             </label>
             <!-- <div id="passport-number-hint" class="govuk-hint">
               For example, 502135326
