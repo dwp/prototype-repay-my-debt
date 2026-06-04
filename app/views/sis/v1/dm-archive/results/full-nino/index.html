@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "layout-sis.html" %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
 {% block pageTitle %}
@@ -82,7 +82,7 @@
 </div>
 
 <h2 class="govuk-heading-m">
-        Debtor accounts
+        Customer benefit accounts
       </h2>
 
  <div class="govuk-grid-row">
@@ -146,6 +146,8 @@
 
       <p><strong>4 results</strong></p>
 
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
   <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">
@@ -153,10 +155,10 @@
     </h2>
     <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="./transactions/index.html">Transactions<span class="govuk-visually-hidden">DFR</span></a>
+        <a class="govuk-link" href="./transactions/index.html">View transactions<span class="govuk-visually-hidden">DFR</span></a>
       </li>
       <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="./diary/index.html">Diary<span class="govuk-visually-hidden">DFR</span></a>
+        <a class="govuk-link" href="./diary/index.html">View diary<span class="govuk-visually-hidden">DFR</span></a>
       </li>
     </ul>
   </div>
@@ -164,10 +166,10 @@
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Description
+          Benefit type
         </dt>
         <dd class="govuk-summary-list__value">
-          Retirement penison: Contrbutiion
+          Retirement penison: Contrbutiion (RPCONT)
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -221,10 +223,10 @@
     </h2>
     <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="#">Transactions<span class="govuk-visually-hidden">DFR</span></a>
+        <a class="govuk-link" href="#">View transactions<span class="govuk-visually-hidden">DFR</span></a>
       </li>
       <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="#">Diary<span class="govuk-visually-hidden">DFR</span></a>
+        <a class="govuk-link" href="#">View diary<span class="govuk-visually-hidden">DFR</span></a>
       </li>
     </ul>
   </div>
@@ -232,10 +234,10 @@
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Description
+          Benefit type
         </dt>
         <dd class="govuk-summary-list__value">
-          Disability Living Allowance: Careers
+          Disability Living Allowance:Care Compnt (DLAC)
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -289,10 +291,10 @@
     </h2>
     <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="#">Transactions<span class="govuk-visually-hidden">IIDB</span></a>
+        <a class="govuk-link" href="#">View transactions<span class="govuk-visually-hidden">IIDB</span></a>
       </li>
       <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="#">Diary<span class="govuk-visually-hidden">IIDB</span></a>
+        <a class="govuk-link" href="#">View diary<span class="govuk-visually-hidden">IIDB</span></a>
       </li>
     </ul>
   </div>
@@ -300,10 +302,10 @@
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Description
+          Benefit type
         </dt>
         <dd class="govuk-summary-list__value">
-          Industrial Injuries Disablement Benefit
+          Industrial Injuries Disablement Benefit (IIDB)
         </dd>
       </div>
       <div class="govuk-summary-list__row">
