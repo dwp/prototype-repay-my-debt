@@ -2,7 +2,7 @@
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
 {% block pageTitle %}
-  Samuel McDonald – Suspense investigation – GOV.UK Prototype Kit
+  Eloise Bryan – Suspense investigation – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,7 +19,7 @@
 
       <div class="govuk-grid-column-two-thirds">
  <h1 class="govuk-heading-l">
-        Samuel McDonald
+        Eloise Bryan
       </h1>
 
     <dl class="govuk-summary-list">
@@ -28,7 +28,7 @@
       NINO
     </dt>
     <dd class="govuk-summary-list__value">
-      NS 64 38 20 J
+      JZ 84 26 19 B
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -36,13 +36,13 @@
       Address
     </dt>
     <dd class="govuk-summary-list__value">
-      41 Boroughbridge Road,
+      99 Nith Street,
       <br>
-      Harborne,
+      Anderston,
       <br>
-      Birmingham,
+      Glasgow,
       <br>
-      B1 5NB
+      G1 0EJ
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -50,23 +50,23 @@
       Date of birth
     </dt>
     <dd class="govuk-summary-list__value">
-      04-26-1955
+      1-27-1990
     </dd>
   </div>
-  <div class="govuk-summary-list__row">
+  <!-- <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Date of death
     </dt>
     <dd class="govuk-summary-list__value">
       03-05-2026
     </dd>
-  </div>
+  </div> -->
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Telephone number
     </dt>
     <dd class="govuk-summary-list__value">
-      078 2547 0250
+      070 1142 5582
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -98,6 +98,21 @@
         </div>
       </div>
       <div class="moj-filter__content">
+
+        <!-- filter selected -->
+
+        <div class="moj-filter__selected">
+      <div class="moj-filter__selected-heading">
+        <div class="moj-filter__heading-title">
+          <h2 class="govuk-heading-m">Selected filters</h2>
+        </div>
+  
+      </div>
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Overpayment amount</h3>
+      <ul class="moj-filter-tags">
+        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> 350.00</a></li>
+      </ul>
+    </div>
           
         <div class="moj-filter__options">
           
@@ -144,21 +159,21 @@
 
       
 
-      <p><strong>2 results</strong></p>
+      <p><strong>1 results</strong></p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-  <div class="govuk-summary-card">
+<div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">
-      RPCONT
+      TCOP
     </h2>
     <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="./transactions/a.html">View transactions<span class="govuk-visually-hidden">DFR</span></a>
+        <a class="govuk-link" href="./transactions/b">View transactions<span class="govuk-visually-hidden">FC</span></a>
       </li>
       <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="./diary/a.html">View diary<span class="govuk-visually-hidden">DFR</span></a>
+        <a class="govuk-link" href="./diary/b">View diary<span class="govuk-visually-hidden">FC</span></a>
       </li>
     </ul>
   </div>
@@ -169,7 +184,7 @@
           Benefit type
         </dt>
         <dd class="govuk-summary-list__value">
-          Retirement penison: Contrbutiion (RPCONT)
+          Tax Credit Overpayment (TCOP)
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -201,7 +216,7 @@
           Final transaction amount
         </dt>
         <dd class="govuk-summary-list__value">
-          £0.00
+          £00.00
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -209,80 +224,14 @@
           Overpayment amount
         </dt>
         <dd class="govuk-summary-list__value">
-          £250.00
+          £350.00
         </dd>
       </div>
     </dl>
   </div>
 </div>
 
-<div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">
-      BB
-    </h2>
-    <ul class="govuk-summary-card__actions">
-      <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="#">View transactions<span class="govuk-visually-hidden">BB</span></a>
-      </li>
-      <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="#">View diary<span class="govuk-visually-hidden">BB</span></a>
-      </li>
-    </ul>
-  </div>
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Benefit type
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Bereavement Benefit (BB)
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Account number
-        </dt>
-        <dd class="govuk-summary-list__value">
-          4280206908
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Final transaction date
-        </dt>
-        <dd class="govuk-summary-list__value">
-          06-11-2020
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Final transaction ID
-        </dt>
-        <dd class="govuk-summary-list__value">
-          4
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Final transaction amount
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £0.00
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Overpayment amount
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £100.00
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
+
 
 </div>
 </div>

@@ -1,0 +1,76 @@
+{% extends "layout-sis.html" %}
+
+{% block pageTitle %}
+  Customer details – Suspense investigation – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+          <form class="form" action="../results/full-nino/c" method="post">
+
+      <h1 class="govuk-heading-l">
+        Customer details
+      </h1>
+
+       <div class="govuk-form-group">
+            <label class="govuk-label" for="passport-number">
+              Customer NINO
+            </label>
+            <!-- <div id="passport-number-hint" class="govuk-hint">
+              For example, 502135326
+            </div> -->
+            <input class="govuk-input govuk-input--width-10" id="one-half" name="oneHalf" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+            <label class="govuk-label" for="passport-number">
+              Customer account number
+            </label>
+            <!-- <div id="passport-number-hint" class="govuk-hint">
+              For example, 502135326
+            </div> -->
+            <input class="govuk-input govuk-input--width-10" id="one-half" name="oneHalf" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+            <label class="govuk-label" for="passport-number">
+              Customer name
+            </label>
+            <!-- <div id="passport-number-hint" class="govuk-hint">
+              For example, 502135326
+            </div> -->
+            <input class="govuk-input govuk-!-width-one-half" id="one-half" name="oneHalf" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+            <label class="govuk-label" for="passport-number">
+              Customer address
+            </label>
+            <!-- <div id="passport-number-hint" class="govuk-hint">
+              For example, 502135326
+            </div> -->
+            <input class="govuk-input govuk-!-width-one-half" id="one-half" name="oneHalf" type="text">
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Search
+      </button>
+
+      </form>
+  </div>
+</div>
+      
+
+
+  </div>
+
+{% endblock %}

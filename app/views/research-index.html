@@ -1,7 +1,7 @@
-{% extends "layouts/main.html" %}
+{% extends "layout-sis.html" %}
 
 {% block pageTitle %}
-Repay and manage benefit money you owe
+Research links
 {% endblock %}
 
 {% block content %}
@@ -14,43 +14,66 @@ Repay and manage benefit money you owe
 
 <div class="govuk-grid-row govuk-!-padding-4">
 
-  <h2 class="govuk-heading-m">Service versions: flexible payments</h2>
+  <h2 class="govuk-heading-m">Scenario A</h2>
 
-  <ul class="govuk-list govuk-list--spaced">
+  <p>Information available:</p>
+
+  <ul class="govuk-list govuk-list--bullet">
 
                   <li>
-                    <a href="/v49/off-benefit/ftu/start-page/index">Link 1: Start page</a>
+                    Partial NINO: NS 64 38 20
                   </li>
 
                   <li>
-                    <a href="/v49/off-benefit/rfu/account-home/indexb">Link 2: Account home (5 days later)</a>
+                    Payment amount: £250.00
                   </li>
 
-                  <li>
-                    <a href="/v49/off-benefit/rfu/text-messages/case2">Text message 1: Received 15 April 2026, you have not yet made a payment for April</a>
-                  </li>
-
-                  <li>
-                    <a href="/v49/off-benefit/rfu/text-messages/case3">Text message 2: Received later in May, you have still not made a payment for April</a>
-                  </li>
-
-                  <li>
-                    <a href="/v49/off-benefit/rfu/account-home/indexc">Link 3: Account home</a>
-                  </li>
   </ul>
 
-  <h2 class="govuk-heading-m">Service versions: direct debit payments</h2>
+  <p><a href="/sis/v1/dm-archive/homepage/a" target="_blank">Link to begin search (opens in new tab)</a></p>
 
-  <ul class="govuk-list govuk-list--spaced">
+  <br>
+
+  <h2 class="govuk-heading-m">Scenario B</h2>
+
+   <p>Information available:</p>
+
+  <ul class="govuk-list govuk-list--bullet">
+
                   <li>
-                    <a href="/v49/off-benefit/rdd/account-home/index">Link 4: Account home</a>
+                    Partial NINO: JZ 84 26 19 B
                   </li>
 
                   <li>
-                    <a href="/v49/off-benefit/rfu/text-messages/index">Text message 3: Recieved when there is a direct debit issue</a>
+                    Payment amount: £350.00
                   </li>
-                  
-                </ul>
+
+  </ul>
+
+  <p><a href="/sis/v1/dm-archive/homepage/b" target="_blank">Link to begin search (opens in new tab)</a></p>
+
+  <br>
+
+  <h2 class="govuk-heading-m">Scenario C</h2>
+
+   <p>Information available:</p>
+
+  <ul class="govuk-list govuk-list--bullet">
+
+                  <li>
+                    Router account number: 583742961
+                  </li>
+
+                  <li>
+                    Payment amount: £160.00
+                  </li>
+
+  </ul>
+
+  <p><a href="/sis/v1/dm-archive/homepage/c" target="_blank">Link to begin search (opens in new tab)</a></p>
+
+  <br>
+
 
 </div>
 

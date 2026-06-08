@@ -1,0 +1,228 @@
+{% extends "layout-sis.html" %}
+
+{% block pageTitle %}
+  RPCONT Transactions – Suspense investigation – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <span class="govuk-caption-l">Mason Stephens</span>
+      <h1 class="govuk-heading-l">Transaction data</h1>
+
+
+      <table class="govuk-table govuk-table--small-text-until-tablet">
+          <caption class="govuk-table__caption govuk-table__caption--m">Bereavement Benefit</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Component ID</th>
+      <th scope="col" class="govuk-table__header">Transaction ID</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+      <th scope="col" class="govuk-table__header">Posting date</th>
+      <th scope="col" class="govuk-table__header">Amount</th>
+      <th scope="col" class="govuk-table__header">Value date</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">REC</td>
+      <td class="govuk-table__cell">1</td>
+      <td class="govuk-table__cell">Initial Recoverable Amount</td>
+      <td class="govuk-table__cell">12-03-2020</td>
+      <td class="govuk-table__cell">£160.00</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">NRC</td>
+      <td class="govuk-table__cell">2</td>
+      <td class="govuk-table__cell">DM Calculated NonRec Amount</td>
+      <td class="govuk-table__cell">12-03-2020</td>
+      <td class="govuk-table__cell">£160.00</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">REC</td>
+      <td class="govuk-table__cell">3</td>
+      <td class="govuk-table__cell">Intial Recoverable Credit</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+      <td class="govuk-table__cell">-£160.00</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">NRC</td>
+      <td class="govuk-table__cell">4</td>
+      <td class="govuk-table__cell">Non Recoverable Write Off</td>
+      <td class="govuk-table__cell">25-11-2021</td>
+      <td class="govuk-table__cell">-£160.00</td>
+      <td class="govuk-table__cell">25-12-2021</td>
+    </tr>
+     <!-- <tr class="govuk-table__row">
+      <td class="govuk-table__cell">REC</td>
+      <td class="govuk-table__cell">1</td>
+      <td class="govuk-table__cell">Initial Recoverable Amount</td>
+      <td class="govuk-table__cell">12-03-2020</td>
+      <td class="govuk-table__cell">£173.14</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">NRC</td>
+      <td class="govuk-table__cell">2</td>
+      <td class="govuk-table__cell">DM Calculated NonRec Amount</td>
+      <td class="govuk-table__cell">12-03-2020</td>
+      <td class="govuk-table__cell">£173.14</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">REC</td>
+      <td class="govuk-table__cell">3</td>
+      <td class="govuk-table__cell">Intial Recoverable Credit</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+      <td class="govuk-table__cell">-£173.14</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">NRC</td>
+      <td class="govuk-table__cell">4</td>
+      <td class="govuk-table__cell">Non Recoverable Write Off</td>
+      <td class="govuk-table__cell">25-11-2021</td>
+      <td class="govuk-table__cell">-£173.14</td>
+      <td class="govuk-table__cell">25-12-2021</td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">REC</td>
+      <td class="govuk-table__cell">1</td>
+      <td class="govuk-table__cell">Initial Recoverable Amount</td>
+      <td class="govuk-table__cell">12-03-2020</td>
+      <td class="govuk-table__cell">£173.14</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">NRC</td>
+      <td class="govuk-table__cell">2</td>
+      <td class="govuk-table__cell">DM Calculated NonRec Amount</td>
+      <td class="govuk-table__cell">12-03-2020</td>
+      <td class="govuk-table__cell">£173.14</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">REC</td>
+      <td class="govuk-table__cell">3</td>
+      <td class="govuk-table__cell">Intial Recoverable Credit</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+      <td class="govuk-table__cell">-£173.14</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">NRC</td>
+      <td class="govuk-table__cell">4</td>
+      <td class="govuk-table__cell">Non Recoverable Write Off</td>
+      <td class="govuk-table__cell">25-11-2021</td>
+      <td class="govuk-table__cell">-£173.14</td>
+      <td class="govuk-table__cell">25-12-2021</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">REC</td>
+      <td class="govuk-table__cell">3</td>
+      <td class="govuk-table__cell">Intial Recoverable Credit</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+      <td class="govuk-table__cell">-£173.14</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">NRC</td>
+      <td class="govuk-table__cell">4</td>
+      <td class="govuk-table__cell">Non Recoverable Write Off</td>
+      <td class="govuk-table__cell">25-11-2021</td>
+      <td class="govuk-table__cell">-£173.14</td>
+      <td class="govuk-table__cell">25-12-2021</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">REC</td>
+      <td class="govuk-table__cell">3</td>
+      <td class="govuk-table__cell">Intial Recoverable Credit</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+      <td class="govuk-table__cell">-£173.14</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">NRC</td>
+      <td class="govuk-table__cell">4</td>
+      <td class="govuk-table__cell">Non Recoverable Write Off</td>
+      <td class="govuk-table__cell">25-11-2021</td>
+      <td class="govuk-table__cell">-£173.14</td>
+      <td class="govuk-table__cell">25-12-2021</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">REC</td>
+      <td class="govuk-table__cell">3</td>
+      <td class="govuk-table__cell">Intial Recoverable Credit</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+      <td class="govuk-table__cell">-£173.14</td>
+      <td class="govuk-table__cell">26-11-2020</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">NRC</td>
+      <td class="govuk-table__cell">4</td>
+      <td class="govuk-table__cell">Non Recoverable Write Off</td>
+      <td class="govuk-table__cell">25-11-2021</td>
+      <td class="govuk-table__cell">-£173.14</td>
+      <td class="govuk-table__cell">25-12-2021</td>
+    </tr>
+  </tbody>
+</table>
+
+<nav class="govuk-pagination" aria-label="Pagination">
+  <ul class="govuk-pagination__list">
+    <li class="govuk-pagination__item govuk-pagination__item--current">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+        1
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+        2
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+        3
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+      <span class="govuk-pagination__link-title">
+        Next<span class="govuk-visually-hidden"> page</span>
+      </span>
+      <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg>
+    </a>
+  </div>
+</nav>
+ -->
+
+</tbody>
+
+</table>
+
+
+
+
+      
+
+
+  </div>
+
+{% endblock %}
