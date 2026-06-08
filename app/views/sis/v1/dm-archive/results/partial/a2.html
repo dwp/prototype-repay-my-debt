@@ -1,0 +1,255 @@
+{% extends "layout-sis.html" %}
+
+{% block pageTitle %}
+  Potential customer matches – Suspense investigation – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        Potential customer matches
+      </h1>
+
+      <p class="govuk-body">Your search:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Customer NINO: <strong>NS 64 38 20</strong></li>
+      </ul>
+
+      <p><a href="#">Change search</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+
+  <div class="moj-filter-layout">
+  <div class="moj-filter-layout__filter">
+    <div class="moj-filter" data-module="moj-filter">
+      <div class="moj-filter__header">
+        <div class="moj-filter__header-title">
+          <h2 class="govuk-heading-m">Filter</h2>
+        </div>
+        <div class="moj-filter__header-action">
+        </div>
+      </div>
+      <div class="moj-filter__content">
+          
+        <div class="moj-filter__options">
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              First name
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Last name
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+           <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              NINO
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Postcode
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <br>
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Apply filters
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+ </div>
+  <!-- <div class="moj-filter-layout__content">
+    <div class="moj-action-bar">
+      <div class="moj-action-bar__filter"></div>
+      <div class="moj-button-menu" data-module="moj-button-menu">
+        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary govuk-button--secondary" data-module="govuk-button">
+          Action 1
+        </button>
+        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary govuk-button--secondary" data-module="govuk-button">
+          Action 2
+        </button>
+      </div>
+    </div> -->
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <p><strong>12 customer records</strong> </p>
+<!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+
+
+ <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper" style="padding-bottom: 0px;">
+    <div class="govuk-form-group">
+    <h2 class="govuk-summary-card__title">
+       Samuel McDonald
+    </h2>
+    <p style="padding-bottom: -50px;">NINO: NS 64 38 20 J
+      <br>
+      Postcode: B1 5NB
+    </p>
+    
+    </div>
+
+    <!-- NEED TO ADD NINO -->
+
+    <ul class="govuk-summary-card__actions" style="padding-bottom: 0;">
+      <li class="govuk-summary-card__action" style="padding-bottom: 0;">
+        <a class="govuk-link" href="../full-nino/a">View<span class="govuk-visually-hidden">Samuel McDonald</span></a>
+      </li>
+    </ul>
+</div>
+    
+  <div class="govuk-summary-card__content">
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Account number</th>
+          <th scope="col" class="govuk-table__header">Benefit type</th>
+          <th scope="col" class="govuk-table__header">Balance</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">12345678967</td>
+          <td class="govuk-table__cell">RPCONT</td>
+          <td class="govuk-table__cell">£250.00</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">12345678967</td>
+          <td class="govuk-table__cell">VRA</td>
+          <td class="govuk-table__cell">£100.00</td>
+        </tr>
+
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"><strong>TOTAL</strong></td>
+          <td class="govuk-table__cell"><strong>£350.00</strong></td>
+        </tr>
+
+        </tbody>
+      </table>
+    
+</div>
+</div>
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <div class="govuk-form-group">
+    <h2 class="govuk-summary-card__title">
+       Jacob Willis
+    </h2>
+    <p style="padding-bottom: -50px;">NINO: NS 64 38 20 V
+      <br>
+      Postcode: NW7 8NP
+    </p>
+    </div>
+
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> Adam James</span></a>
+      </li>
+    </ul>
+</div>
+    
+  <div class="govuk-summary-card__content">
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Account number</th>
+          <th scope="col" class="govuk-table__header">Benefit type</th>
+          <th scope="col" class="govuk-table__header">Balance</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">12345678967</td>
+          <td class="govuk-table__cell">RPCONT</td>
+          <td class="govuk-table__cell">£450.00</td>
+        </tr>
+
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"><strong>TOTAL</strong></td>
+          <td class="govuk-table__cell"><strong>£450</strong></td>
+        </tr>
+
+        </tbody>
+      </table>
+    
+</div>
+</div>
+<nav class="govuk-pagination" aria-label="Pagination">
+  <div class="govuk-pagination__prev">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+      </svg>
+      <span class="govuk-pagination__link-title">
+        Previous<span class="govuk-visually-hidden"> page</span>
+      </span>
+    </a>
+  </div>
+  <ul class="govuk-pagination__list">
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="./a.html" aria-label="Page 1">
+        1
+      </a>
+    </li>
+    <li class="govuk-pagination__item govuk-pagination__item--current">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+        2
+      </a>
+    </li>
+    </ul>
+</nav>
+
+
+
+
+</div>
+
+  </div>
+
+{% endblock %}
