@@ -1,7 +1,7 @@
 {% extends "layout-sis.html" %}
 
 {% block pageTitle %}
-  Potential customer matches – Suspense investigation – GOV.UK Prototype Kit
+  Customer search results – Suspense investigation – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-l">
-        Potential customer matches
+        Customer search results
       </h1>
 
       <p class="govuk-body">Your search:</p>
@@ -59,7 +59,7 @@
 
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--s" for="keywords">
-              Account number
+              Benefit account number
             </label>
             <input class="govuk-input" id="keywords" name="keywords" type="text">
           </div>
@@ -149,29 +149,26 @@
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Account number</th>
           <th scope="col" class="govuk-table__header">Benefit type</th>
-          <th scope="col" class="govuk-table__header">Balance</th>
+          <th scope="col" class="govuk-table__header">Benefit account</th>
+          <th scope="col" class="govuk-table__header">Final transaction</th>
+          <th scope="col" class="govuk-table__header">Transaction type</th>
         </tr>
       </thead>
 
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">12345678967</td>
           <td class="govuk-table__cell">RPCONT</td>
-          <td class="govuk-table__cell">£250.00</td>
+          <td class="govuk-table__cell">24844646663</td>
+          <td class="govuk-table__cell">- £250.00</td>
+          <td class="govuk-table__cell">300</td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">12345678967</td>
           <td class="govuk-table__cell">BB</td>
-          <td class="govuk-table__cell">£100.00</td>
-        </tr>
-
-         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"></td>
-          <td class="govuk-table__cell"><strong>TOTAL</strong></td>
-          <td class="govuk-table__cell"><strong>£350.00</strong></td>
+          <td class="govuk-table__cell">19287894084</td>
+          <td class="govuk-table__cell">- £100.00</td>
+          <td class="govuk-table__cell">300</td>
         </tr>
 
         </tbody>
@@ -205,23 +202,19 @@
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Account number</th>
           <th scope="col" class="govuk-table__header">Benefit type</th>
-          <th scope="col" class="govuk-table__header">Balance</th>
+          <th scope="col" class="govuk-table__header">Benefit account</th>
+          <th scope="col" class="govuk-table__header">Final transaction</th>
+          <th scope="col" class="govuk-table__header">Transaction type</th>
         </tr>
       </thead>
 
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">12345678967</td>
           <td class="govuk-table__cell">RPCONT</td>
-          <td class="govuk-table__cell">£450.00</td>
-        </tr>
-
-         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"></td>
-          <td class="govuk-table__cell"><strong>TOTAL</strong></td>
-          <td class="govuk-table__cell"><strong>£450.00</strong></td>
+          <td class="govuk-table__cell">90557510568</td>
+          <td class="govuk-table__cell">- £450.00</td>
+          <td class="govuk-table__cell">300</td>
         </tr>
 
         </tbody>

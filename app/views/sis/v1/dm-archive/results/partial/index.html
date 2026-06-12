@@ -1,7 +1,7 @@
 {% extends "layout-sis.html" %}
 
 {% block pageTitle %}
-  Potential customer matches – Suspense investigation – GOV.UK Prototype Kit
+  Customer search results – Suspense investigation – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-l">
-        Potential customer matches
+        Customer search results
       </h1>
   <div class="govuk-grid-row">
 
@@ -47,7 +47,7 @@
 
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--s" for="keywords">
-              Account number
+              Benefit account number
             </label>
             <input class="govuk-input" id="keywords" name="keywords" type="text">
           </div>
@@ -123,8 +123,6 @@
     
     </div>
 
-    <!-- NEED TO ADD NINO -->
-
     <ul class="govuk-summary-card__actions" style="padding-bottom: 0;">
       <li class="govuk-summary-card__action" style="padding-bottom: 0;">
         <a class="govuk-link" href="../full-nino/index">View<span class="govuk-visually-hidden"> Theresa Morris </span></a>
@@ -137,29 +135,27 @@
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Account number</th>
           <th scope="col" class="govuk-table__header">Benefit type</th>
-          <th scope="col" class="govuk-table__header">Balance</th>
+          <th scope="col" class="govuk-table__header">Benefit account</th>
+          <th scope="col" class="govuk-table__header">Final transaction</th>
+          <th scope="col" class="govuk-table__header">Transaction type</th>
         </tr>
       </thead>
 
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">12345678967</td>
           <td class="govuk-table__cell">RPCONT</td>
-          <td class="govuk-table__cell">£100.00</td>
+          <td class="govuk-table__cell">12345678967</td>
+          <td class="govuk-table__cell">- £190.00</td>
+          <td class="govuk-table__cell">900</td>
+
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">12345678967</td>
           <td class="govuk-table__cell">VRA</td>
-          <td class="govuk-table__cell">£3,890.00</td>
-        </tr>
-
-         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"></td>
-          <td class="govuk-table__cell"><strong>TOTAL</strong></td>
-          <td class="govuk-table__cell"><strong>£3,990.00</strong></td>
+          <td class="govuk-table__cell">12345678967</td>
+          <td class="govuk-table__cell">- £3,890.00</td>
+          <td class="govuk-table__cell">900</td>
         </tr>
 
         </tbody>
@@ -170,12 +166,17 @@
 
 
 <div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
+  <div class="govuk-summary-card__title-wrapper" style="padding-bottom: 0px;">
+    <div class="govuk-form-group">
     <h2 class="govuk-summary-card__title">
-        Adam James
+       Theresa Morris
     </h2>
-
-    <!-- NEED TO ADD NINO -->
+    <p style="padding-bottom: -50px;">NINO: QQ 12 34 56 C
+      <br>
+      Postcode: CA13 9FH
+    </p>
+    
+    </div>
 
     <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
@@ -187,31 +188,31 @@
   <div class="govuk-summary-card__content">
 
     <table class="govuk-table">
+
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Account number</th>
           <th scope="col" class="govuk-table__header">Benefit type</th>
-          <th scope="col" class="govuk-table__header">Balance</th>
+          <th scope="col" class="govuk-table__header">Benefit account</th>
+          <th scope="col" class="govuk-table__header">Final transaction</th>
+          <th scope="col" class="govuk-table__header">Transaction type</th>
         </tr>
       </thead>
 
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">12345678967</td>
           <td class="govuk-table__cell">RPCONT</td>
-          <td class="govuk-table__cell">£450.00</td>
+          <td class="govuk-table__cell">12345678967</td>
+                    <td class="govuk-table__cell">- £450.00</td>
+
+          <td class="govuk-table__cell">800</td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">12345678967</td>
           <td class="govuk-table__cell">VRA</td>
-          <td class="govuk-table__cell">£100.00</td>
-        </tr>
+          <td class="govuk-table__cell">12345678967</td>
+                    <td class="govuk-table__cell">- £100.00</td>
 
-         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"></td>
-          <td class="govuk-table__cell"><strong>TOTAL</strong></td>
-          <td class="govuk-table__cell"><strong>£550.00</strong></td>
+          <td class="govuk-table__cell">400</td>
         </tr>
 
         </tbody>
@@ -222,12 +223,17 @@
 
 
 <div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
+  <div class="govuk-summary-card__title-wrapper" style="padding-bottom: 0px;">
+    <div class="govuk-form-group">
     <h2 class="govuk-summary-card__title">
-         Nick Walker
+       Theresa Morris
     </h2>
-
-    <!-- NEED TO ADD NINO -->
+    <p style="padding-bottom: -50px;">NINO: QQ 12 34 56 C
+      <br>
+      Postcode: CA13 9FH
+    </p>
+    
+    </div>
 
     <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
@@ -241,51 +247,52 @@
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Account number</th>
           <th scope="col" class="govuk-table__header">Benefit type</th>
-          <th scope="col" class="govuk-table__header">Balance</th>
+          <th scope="col" class="govuk-table__header">Benefit account</th>
+          <th scope="col" class="govuk-table__header">Final transaction</th>
+          <th scope="col" class="govuk-table__header">Transaction type</th>
         </tr>
       </thead>
 
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">12345678967</td>
           <td class="govuk-table__cell">RPCONT</td>
-          <td class="govuk-table__cell">£50.00</td>
+          <td class="govuk-table__cell">12345678967</td>
+          <td class="govuk-table__cell">- £50.00</td>
+          <td class="govuk-table__cell">900</td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">12345678967</td>
           <td class="govuk-table__cell">VRA</td>
-          <td class="govuk-table__cell">£100.00</td>
+          <td class="govuk-table__cell">12345678967</td>
+          <td class="govuk-table__cell">- £100.00</td>
+          <td class="govuk-table__cell">300</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">12345678967</td>
           <td class="govuk-table__cell">RPCONT</td>
-          <td class="govuk-table__cell">£50.00</td>
+          <td class="govuk-table__cell">12345678967</td>
+          <td class="govuk-table__cell">- £50.00</td>
+          <td class="govuk-table__cell">900</td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">12345678967</td>
           <td class="govuk-table__cell">VRA</td>
-          <td class="govuk-table__cell">£100.00</td>
+          <td class="govuk-table__cell">12345678967</td>
+          <td class="govuk-table__cell">- £100.00</td>
+          <td class="govuk-table__cell">300</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">12345678967</td>
           <td class="govuk-table__cell">RPCONT</td>
-          <td class="govuk-table__cell">£50.00</td>
+          <td class="govuk-table__cell">12345678967</td>
+          <td class="govuk-table__cell">- £50.00</td>
+          <td class="govuk-table__cell">900</td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">12345678967</td>
           <td class="govuk-table__cell">VRA</td>
-          <td class="govuk-table__cell">£100.00</td>
-        </tr>
-
-         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"></td>
-          <td class="govuk-table__cell"><strong>TOTAL</strong></td>
-          <td class="govuk-table__cell"><strong>£450.00</strong></td>
+          <td class="govuk-table__cell">12345678967</td>
+          <td class="govuk-table__cell">- £100.00</td>
+          <td class="govuk-table__cell">300</td>
         </tr>
 
         </tbody>
