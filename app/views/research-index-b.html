@@ -1,0 +1,47 @@
+{% extends "layout-main-not-signnedin.html" %}
+
+{% block pageTitle %}
+Research links
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Research links
+    </h1>
+
+<div class="govuk-grid-row govuk-!-padding-4">
+
+  <ul class="govuk-list govuk-list--bullet">
+
+                  <li>
+                    UC message
+                  </li>
+
+                  <li>
+                    GOV.UK guidance
+                  </li>
+
+                  <li>
+                    Repay and Manage Benefit Money you Owe 
+                  </li>
+
+                  <li>
+                    Communication options  
+                  </li>
+
+  </ul>
+
+</div>
+
+{% endblock %}
