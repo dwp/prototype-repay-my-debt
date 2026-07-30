@@ -1,0 +1,69 @@
+{% extends "layout-main.html" %}
+
+{% block pageTitle %}
+Manage your monthly repayments – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<main class="govuk-width-container">
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle__list">
+      <li class="dwp-language-toggle__list-item" aria-current="true">
+        English
+      </li>
+      <li class="dwp-language-toggle__list-item">
+        <a href="#"
+        hreflang="cy"
+        lang="cy"
+        rel="alternate"
+        class="govuk-link"
+        aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl" style="margin-bottom:50px;">Manage your monthly repayments</h1>
+
+    <p> We can help you understand how much you can afford to repay each month. We will ask you some questions to learn more about your financial situation.
+</p>
+
+    <p class="govuk-heading-m">What you need to know about using this service</p>
+    <p>You can:</p>
+    <ol class="govuk-list govuk-list--bullet">
+
+      <li>make changes to your monthly repayments</li>
+      <li>manage repayments to DWP only - see the ‘Debts and loan repayments’ section of your Universal Credit statement</li>
+
+    </ol>
+
+  <p>You cannot:</p>
+  <ol class="govuk-list govuk-list--bullet">
+    <li>set up a payment plan - repayments are automatically deducted from your Universal Credit</li>
+    <li>manage other deductions from your Universal Credit payment such as repayments for advances taken out during your current claim</li>
+
+  </ol>
+
+<p><a href="financial-situation" class="govuk-button">Continue</a></p>
+
+</div>
+</div>
+
+
+
+
+
+
+{% endblock %}
