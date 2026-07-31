@@ -1,7 +1,7 @@
 {% extends "layout-main.html" %}
 
 {% block pageTitle %}
-Account home – {{ serviceName }} – GOV.UK Prototype Kit
+Make an additional payment – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,28 +29,24 @@ Account home – {{ serviceName }} – GOV.UK Prototype Kit
 }) }}
 {% endblock %}
 
+
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
+    <form class="form" action="#" method="post">
 
-    <h1 class="govuk-heading-l">
-          Examples of different ways of communicating 
-    </h1>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl mb30">
+            <h1 class="govuk-fieldset__heading">
+              Letter
+            </h1>
+          </legend>
 
-    <p class="govuk-body">You can buy:</p>
-        <ul class="govuk-list govuk-list--bullet">
-        <li>letter</li>
-        <li>phone</li>
-        <li>text</li>
-        <li>email</li>
-        <li>online chat</li>
-        <li>online service (repay and manage benefit money you owe)</li>
-        </ul>
+          <iframe  src="/app/assets/documents/journal-invite.pdf" width="100%" height="800" style="border:1px solid #b1b4b6"></iframe>
 
-  		</div>
-
-  	  </div>
-    
+  </div>
+</div>
 
 {% endblock %}
