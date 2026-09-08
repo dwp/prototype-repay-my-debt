@@ -10,7 +10,7 @@
     "@govuk-prototype-kit/common-templates": "3.0.0",
     "@govuk-prototype-kit/step-by-step": "3.0.0",
     "@ministryofjustice/frontend": "10.0.1",
-    "@x-govuk/govuk-prototype-filters": "2.1.0",
+    "@x-govuk/govuk-prototype-filters": "2.2.0",
     "body-parser": "2.2.2",
     "express": "5.2.1",
     "govuk-frontend": "6.4.0",
