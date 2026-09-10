@@ -13,7 +13,7 @@
     "@x-govuk/govuk-prototype-filters": "2.2.0",
     "body-parser": "2.2.2",
     "express": "5.2.1",
-    "govuk-frontend": "6.4.0",
+    "govuk-frontend": "6.5.0",
     "govuk-prototype-kit": "13.20.4"
   },
   "overrides": {
