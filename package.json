@@ -7,7 +7,7 @@
   "dependencies": {
     "@dwp/dwp-frontend": "4.1.0",
     "@govuk-one-login/service-header": "6.0.0",
-    "@govuk-prototype-kit/common-templates": "3.0.0",
+    "@govuk-prototype-kit/common-templates": "3.0.1",
     "@govuk-prototype-kit/step-by-step": "3.0.0",
     "@ministryofjustice/frontend": "10.0.1",
     "@x-govuk/govuk-prototype-filters": "2.2.0",
